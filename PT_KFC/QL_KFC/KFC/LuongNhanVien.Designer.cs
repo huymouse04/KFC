@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.dgvLuongNhanVien = new System.Windows.Forms.DataGridView();
             this.cbThang = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLamMoi = new CustomButton.VBButton();
             this.btnThem = new CustomButton.VBButton();
             this.btnXuat = new CustomButton.VBButton();
             this.btnTimKiem = new CustomButton.VBButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.dgvLuongNhanVien = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLuongNhanVien)).BeginInit();
             this.SuspendLayout();
@@ -57,43 +57,9 @@
             this.panel1.Size = new System.Drawing.Size(1156, 216);
             this.panel1.TabIndex = 8;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(370, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(412, 45);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Tính Lương Nhân Viên";
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTimKiem.Location = new System.Drawing.Point(405, 96);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(297, 22);
-            this.txtTimKiem.TabIndex = 18;
-            // 
-            // dgvLuongNhanVien
-            // 
-            this.dgvLuongNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLuongNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLuongNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvLuongNhanVien.Location = new System.Drawing.Point(0, 216);
-            this.dgvLuongNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvLuongNhanVien.Name = "dgvLuongNhanVien";
-            this.dgvLuongNhanVien.RowHeadersWidth = 62;
-            this.dgvLuongNhanVien.RowTemplate.Height = 28;
-            this.dgvLuongNhanVien.Size = new System.Drawing.Size(1156, 385);
-            this.dgvLuongNhanVien.TabIndex = 7;
-            this.dgvLuongNhanVien.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuongNhanVien_CellDoubleClick);
-            // 
             // cbThang
             // 
+            this.cbThang.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbThang.FormattingEnabled = true;
             this.cbThang.Items.AddRange(new object[] {
@@ -113,6 +79,18 @@
             this.cbThang.Name = "cbThang";
             this.cbThang.Size = new System.Drawing.Size(297, 24);
             this.cbThang.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(370, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(412, 45);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Tính Lương Nhân Viên";
             // 
             // btnLamMoi
             // 
@@ -197,6 +175,29 @@
             this.btnTimKiem.TextColor = System.Drawing.Color.White;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTimKiem.Location = new System.Drawing.Point(405, 96);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(297, 22);
+            this.txtTimKiem.TabIndex = 18;
+            // 
+            // dgvLuongNhanVien
+            // 
+            this.dgvLuongNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLuongNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLuongNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvLuongNhanVien.Location = new System.Drawing.Point(0, 216);
+            this.dgvLuongNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvLuongNhanVien.Name = "dgvLuongNhanVien";
+            this.dgvLuongNhanVien.RowHeadersWidth = 62;
+            this.dgvLuongNhanVien.RowTemplate.Height = 28;
+            this.dgvLuongNhanVien.Size = new System.Drawing.Size(1156, 385);
+            this.dgvLuongNhanVien.TabIndex = 7;
+            this.dgvLuongNhanVien.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuongNhanVien_CellDoubleClick);
             // 
             // LuongNhanVien
             // 

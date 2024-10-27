@@ -459,17 +459,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLKFCDataSet.xsc">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLKFCDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLKFCDataSet.xss">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -543,6 +532,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLKFCDataSet.xsc">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLKFCDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKFCDataSet.xss">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\sql.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>

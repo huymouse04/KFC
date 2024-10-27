@@ -227,7 +227,10 @@ namespace KFC
                         Thang = int.Parse(selectedRow.Cells["Thang"].Value.ToString()), // Lấy tháng từ DataGridView
                         SoNgayLam = int.Parse(selectedRow.Cells["SoNgayLam"].Value.ToString()),
                         ThuongChuyenCan = int.Parse(selectedRow.Cells["ThuongChuyenCan"].Value.ToString()),
-                        ThuongHieuSuat = int.Parse(selectedRow.Cells["ThuongHieuSuat"].Value.ToString())
+                        ThuongHieuSuat = int.Parse(selectedRow.Cells["ThuongHieuSuat"].Value.ToString()),
+                        SoGioLamThem = int.Parse(selectedRow.Cells["SoGioLamThem"].Value.ToString()),
+                        KhoanTru = int.Parse(selectedRow.Cells["KhoanTru"].Value.ToString())
+
                     };
 
                     // Lấy thông tin nhân viên từ BUS
