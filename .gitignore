@@ -2,9 +2,3 @@
 */bin/
 */obj/
 *.suo
-<<<<<<< HEAD
-PT_KFC/QL_KFC/BUS/bin/Debug/*.dll
-PT_KFC/QL_KFC/BUS/bin/Debug/*.pdb
-PT_KFC/QL_KFC/KFC/.vs/KFC/v17/.suo
-=======
->>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef

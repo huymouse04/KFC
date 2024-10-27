@@ -608,7 +608,7 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\KFC\obj\Debug\K
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.Up2Date
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.pdb
-<<<<<<< HEAD
+
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.AssemblyReference.cache
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.SuggestedBindingRedirects.cache
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe.config
@@ -654,7 +654,7 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.cspr
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.CoreCompileInputs.cache
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.pdb
-=======
+
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.AssemblyReference.cache
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.SuggestedBindingRedirects.cache
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe.config
@@ -783,8 +783,7 @@ D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\pt\Microsoft.ReportViewer.WinForms.re
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.Up2Date
->>>>>>> master
+
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\Reports\RPNhapHang.rdlc
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\KFC.exe.config
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\KFC.exe
@@ -869,4 +868,4 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\ru\Micro
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.Up2Date
->>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
+
