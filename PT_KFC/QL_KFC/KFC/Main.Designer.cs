@@ -47,6 +47,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Body = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -346,6 +347,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Body.BackgroundImage = global::KFC.Properties.Resources.banner5;
+            this.panel_Body.Controls.Add(this.checkBox1);
             this.panel_Body.Controls.Add(this.panel1);
             this.panel_Body.Controls.Add(this.flowLayoutPanel1);
             this.panel_Body.Location = new System.Drawing.Point(0, 0);
@@ -354,6 +356,16 @@
             this.panel_Body.Size = new System.Drawing.Size(1354, 915);
             this.panel_Body.TabIndex = 17;
             this.panel_Body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(677, 345);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(95, 20);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -369,6 +381,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_Body.ResumeLayout(false);
+            this.panel_Body.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,6 +404,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_Body;
         private CustomButton.VBButton btnThoat;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
