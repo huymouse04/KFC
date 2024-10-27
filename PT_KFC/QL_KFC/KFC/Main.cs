@@ -14,11 +14,11 @@ namespace KFC
     public partial class Main : Form
     {
 
-<<<<<<< HEAD
+
 //huy huy huy huy huy 
-=======
+
 //hung hung hung hung
->>>>>>> d53a6d52131c95054106d6377f29073f5775cf5c
+
 
 
 
