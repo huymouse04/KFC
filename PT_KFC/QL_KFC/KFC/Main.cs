@@ -19,14 +19,13 @@ namespace KFC
 
 //hung hung hung hung
 
-<<<<<<< HEAD
+
         //jhgdfsaa
         //ujtgtrfds
         //kiyujgtrfdsa
-=======
+
         //vclllll
         //dfghjk
->>>>>>> huy
 
 
 
