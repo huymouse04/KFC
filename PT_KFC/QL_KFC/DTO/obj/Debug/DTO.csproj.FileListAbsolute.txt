@@ -162,7 +162,6 @@ E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.csproj.Up2Date
 E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.dll
 E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.pdb
-<<<<<<< HEAD
 D:\ProJect\KFC\PT_KFC\QL_KFC\DTO\bin\Debug\DTO.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\DTO\bin\Debug\DTO.pdb
 D:\ProJect\KFC\PT_KFC\QL_KFC\DTO\bin\Debug\Microsoft.ReportViewer.Common.dll
@@ -242,7 +241,7 @@ D:\ProJect\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\ProJect\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.csproj.Up2Date
 D:\ProJect\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.pdb
-=======
+
 D:\GIT\KFC\PT_KFC\QL_KFC\DTO\bin\Debug\DTO.dll
 D:\GIT\KFC\PT_KFC\QL_KFC\DTO\bin\Debug\DTO.pdb
 D:\GIT\KFC\PT_KFC\QL_KFC\DTO\bin\Debug\Microsoft.ReportViewer.Common.dll
@@ -318,4 +317,4 @@ D:\GIT\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\GIT\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.csproj.Up2Date
 D:\GIT\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.dll
 D:\GIT\KFC\PT_KFC\QL_KFC\DTO\obj\Debug\DTO.pdb
->>>>>>> tam
+
