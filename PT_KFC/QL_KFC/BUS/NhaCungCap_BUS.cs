@@ -2,6 +2,9 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BUS
 {
@@ -11,14 +14,15 @@ namespace BUS
 
         public NhaCungCap_BUS() { }
 
+        // Phương thức tìm kiếm nhà cung cấp
+        public List<NhaCungCap_DTO> SearchNhaCungCap(string searchTerm)
+        {
+            return dao.SearchNhaCungCap(searchTerm); // Gọi phương thức tìm kiếm từ DAO
+        }
+
         // Lấy nhà cung cấp theo mã
         public NhaCungCap_DTO GetNhaCungCapByMa(string maNhaCungCap)
         {
-            if (string.IsNullOrWhiteSpace(maNhaCungCap))
-            {
-                throw new ArgumentException("Mã nhà cung cấp không thể rỗng hoặc null", nameof(maNhaCungCap));
-            }
-
             var nhaCungCap = dao.GetNhaCungCapByMa(maNhaCungCap);
             if (nhaCungCap != null)
             {
@@ -45,17 +49,8 @@ namespace BUS
         // Thêm nhà cung cấp mới
         public void AddNhaCungCap(NhaCungCap_DTO nhaCungCap)
         {
-            ValidateNhaCungCap(nhaCungCap);
-
-            // Không cần chuyển đổi nếu AnhNhaCungCap là byte[]
-            try
-            {
-                dao.AddNhaCungCap(nhaCungCap);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi thêm nhà cung cấp: " + ex.Message);
-            }
+            ValidateNhaCungCap(nhaCungCap); // Kiểm tra dữ liệu đầu vào
+            dao.AddNhaCungCap(nhaCungCap);
         }
 
         // Lấy tất cả nhà cung cấp
@@ -67,17 +62,8 @@ namespace BUS
         // Cập nhật thông tin nhà cung cấp
         public void UpdateNhaCungCap(NhaCungCap_DTO nhaCungCap)
         {
-            ValidateNhaCungCap(nhaCungCap);
-
-            // Không cần chuyển đổi nếu AnhNhaCungCap là byte[]
-            try
-            {
-                dao.UpdateNhaCungCap(nhaCungCap);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi cập nhật nhà cung cấp: " + ex.Message);
-            }
+            ValidateNhaCungCap(nhaCungCap); // Kiểm tra dữ liệu đầu vào
+            dao.UpdateNhaCungCap(nhaCungCap);
         }
 
         // Xóa nhà cung cấp
@@ -85,17 +71,10 @@ namespace BUS
         {
             if (string.IsNullOrWhiteSpace(maNhaCungCap))
             {
-                throw new ArgumentException("Mã nhà cung cấp không thể rỗng hoặc null", nameof(maNhaCungCap));
+                throw new ArgumentException("Mã nhà cung cấp không thể rỗng hoặc null");
             }
 
-            try
-            {
-                dao.DeleteNhaCungCap(maNhaCungCap);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi khi xóa nhà cung cấp: " + ex.Message);
-            }
+            dao.DeleteNhaCungCap(maNhaCungCap);
         }
 
         // Kiểm tra thông tin nhà cung cấp
@@ -111,7 +90,6 @@ namespace BUS
                 throw new ArgumentException("Mã nhà cung cấp không thể rỗng hoặc null", nameof(nhaCungCap.MaNhaCungCap));
             }
 
-            // Kiểm tra các thuộc tính khác như TenNhaCungCap, SoDienThoai nếu cần
             if (string.IsNullOrWhiteSpace(nhaCungCap.TenNhaCungCap))
             {
                 throw new ArgumentException("Tên nhà cung cấp không thể rỗng hoặc null", nameof(nhaCungCap.TenNhaCungCap));
