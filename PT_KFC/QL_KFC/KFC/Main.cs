@@ -13,6 +13,12 @@ namespace KFC
 {
     public partial class Main : Form
     {
+
+//huy huy huy huy huy 
+
+
+
+
         private Image[] images; // Mảng chứa ảnh từ tài nguyên
         private int currentImageIndex = 0;
         private Timer timer;
