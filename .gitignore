@@ -11,3 +11,6 @@
 *.userosscache
 *.sln.docstates
 *.cache
+PT_KFC/QL_KFC/**/bin/
+PT_KFC/QL_KFC/**/obj/
+
