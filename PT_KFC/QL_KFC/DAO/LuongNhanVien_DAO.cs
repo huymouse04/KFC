@@ -23,14 +23,23 @@ namespace DAO
         {
             try
             {
+                // Kiểm tra hợp lệ cho SoNgayLam
+                if (luong.SoNgayLam < 0 || luong.SoNgayLam > 31)
+                {
+                    MessageBox.Show("Số ngày làm phải từ 0 đến 31.");
+                    return false;
+                }
+
                 Luong l = new Luong
                 {
                     MaNhanVien = luong.MaNhanVien,
-                    LuongCoBan = luong.LuongCoBan, // Cast to double?  
+                    LuongCoBan = luong.LuongCoBan, // Kiểu int
                     Thang = luong.Thang,
                     SoNgayLam = luong.SoNgayLam,
-                    ThuongChuyenCan = luong.ThuongChuyenCan, // Cast to double?  
-                    ThuongHieuSuat = luong.ThuongHieuSuat // Cast to double?  
+                    ThuongChuyenCan = luong.ThuongChuyenCan, // Kiểu int
+                    ThuongHieuSuat = luong.ThuongHieuSuat, // Kiểu int
+                    SoGioLamThem = luong.SoGioLamThem, // Kiểu int
+                    KhoanTru = luong.KhoanTru // Kiểu int
                 };
 
                 DB.Luongs.InsertOnSubmit(l);
@@ -45,11 +54,17 @@ namespace DAO
         }
 
         // Sửa thông tin lương  
-        // Sửa thông tin lương  
         public bool SuaLuong(LuongNhanVien_DTO luong)
         {
             try
             {
+                // Kiểm tra hợp lệ cho SoNgayLam
+                if (luong.SoNgayLam < 0 || luong.SoNgayLam > 31)
+                {
+                    MessageBox.Show("Số ngày làm phải từ 0 đến 31.");
+                    return false;
+                }
+
                 // Tìm kiếm đối tượng trong cơ sở dữ liệu dựa trên MaNhanVien và Thang (khóa chính)
                 var existingLuong = DB.Luongs.FirstOrDefault(x => x.MaNhanVien == luong.MaNhanVien && x.Thang == luong.Thang);
 
@@ -60,6 +75,8 @@ namespace DAO
                     existingLuong.SoNgayLam = luong.SoNgayLam;
                     existingLuong.ThuongChuyenCan = luong.ThuongChuyenCan;
                     existingLuong.ThuongHieuSuat = luong.ThuongHieuSuat;
+                    existingLuong.SoGioLamThem = luong.SoGioLamThem;
+                    existingLuong.KhoanTru = luong.KhoanTru;
 
                     // Lưu thay đổi
                     DB.SubmitChanges();
@@ -74,12 +91,12 @@ namespace DAO
             catch (Exception ex)
             {
                 // Ghi log lỗi để phân tích
-                Console.WriteLine(ex.Message);
+                Console.WriteLine("Lỗi khi sửa lương: " + ex.Message);
                 return false;
             }
         }
 
-
+        // Lấy danh sách lương
         public List<LuongNhanVien_DTO> LayDanhSachLuong()
         {
             try
@@ -91,11 +108,13 @@ namespace DAO
                             MaNhanVien = luong.MaNhanVien,
                             TenNhanVien = nhanVien.TenNhanVien,
                             ChucVu = nhanVien.ChucVu,
-                            LuongCoBan = (int)luong.LuongCoBan,
+                            LuongCoBan = luong.LuongCoBan,
                             Thang = luong.Thang,
-                            SoNgayLam = (int)luong.SoNgayLam,
+                            SoNgayLam = luong.SoNgayLam,
                             ThuongChuyenCan = (int)luong.ThuongChuyenCan,
-                            ThuongHieuSuat = (int)luong.ThuongHieuSuat
+                            ThuongHieuSuat = (int)luong.ThuongHieuSuat,
+                            SoGioLamThem = (int)luong.SoGioLamThem,
+                            KhoanTru = (int)luong.KhoanTru
                         }).ToList();
             }
             catch (Exception ex)
@@ -105,29 +124,33 @@ namespace DAO
             }
         }
 
-        // Phương thức tìm kiếm nhân viên dựa trên tham số nhập vào
+        // Tìm kiếm lương nhân viên
         public List<LuongNhanVien_DTO> SearchLuongNhanVien(string searchTerm)
         {
             var query = from luong in DB.Luongs
                         join nhanVien in DB.NhanViens on luong.MaNhanVien equals nhanVien.MaNhanVien
                         where luong.MaNhanVien.Contains(searchTerm) ||
-                        nhanVien.ChucVu.Contains(searchTerm) ||
-                                nhanVien.TenNhanVien.Contains(searchTerm) ||
-                                luong.Thang.ToString().Contains(searchTerm)
+                              nhanVien.ChucVu.Contains(searchTerm) ||
+                              nhanVien.TenNhanVien.Contains(searchTerm) ||
+                              luong.Thang.ToString().Contains(searchTerm)
                         select new LuongNhanVien_DTO
                         {
                             MaNhanVien = luong.MaNhanVien,
                             TenNhanVien = nhanVien.TenNhanVien,
-                            ChucVu = nhanVien.ChucVu, // lấy chức vụ từ bảng nhân viên
-                            LuongCoBan = (int)luong.LuongCoBan,
+                            ChucVu = nhanVien.ChucVu,
+                            LuongCoBan = luong.LuongCoBan,
                             Thang = luong.Thang,
-                            SoNgayLam = (int)luong.SoNgayLam,
+                            SoNgayLam = luong.SoNgayLam,
                             ThuongChuyenCan = (int)luong.ThuongChuyenCan,
-                            ThuongHieuSuat = (int)luong.ThuongHieuSuat
+                            ThuongHieuSuat = (int)luong.ThuongHieuSuat,
+                            SoGioLamThem = (int)luong.SoGioLamThem,
+                            KhoanTru = (int)luong.KhoanTru
                         };
+
             return query.ToList();
         }
 
+        // Lấy lương theo tháng
         public List<LuongNhanVien_DTO> GetLuongByMonth(int month)
         {
             try
@@ -138,35 +161,41 @@ namespace DAO
                     MaNhanVien = l.MaNhanVien,
                     TenNhanVien = l.NhanVien.TenNhanVien,
                     ChucVu = l.NhanVien.ChucVu,
-                    LuongCoBan = (int)l.LuongCoBan,
+                    LuongCoBan = l.LuongCoBan,
                     Thang = l.Thang,
-                    SoNgayLam = (int)l.SoNgayLam,
+                    SoNgayLam = l.SoNgayLam,
                     ThuongChuyenCan = (int)l.ThuongChuyenCan,
-                    ThuongHieuSuat = (int)l.ThuongHieuSuat
-                })
-                .ToList();
+                    ThuongHieuSuat = (int)l.ThuongHieuSuat,
+                    SoGioLamThem = (int)l.SoGioLamThem,
+                    KhoanTru = (int)l.KhoanTru
+                }).ToList();
             }
             catch (Exception ex)
             {
                 throw new Exception("Lỗi khi lấy danh sách lương: " + ex.Message);
             }
         }
+
+        // Lấy lương nhân viên theo mã
         public LuongNhanVien_DTO GetLuongNhanVienByMa(string maNhanVien)
         {
-            // Giả sử bạn đang sử dụng LINQ để truy vấn
             var result = (from l in DB.Luongs
                           where l.MaNhanVien == maNhanVien
                           select new LuongNhanVien_DTO
                           {
                               MaNhanVien = l.MaNhanVien,
-                              LuongCoBan = (int)l.LuongCoBan,  // Kiểm tra kiểu dữ liệu
+                              LuongCoBan = l.LuongCoBan,
                               Thang = l.Thang,
-                              SoNgayLam = (int)l.SoNgayLam,
+                              SoNgayLam = l.SoNgayLam,
                               ThuongChuyenCan = (int)l.ThuongChuyenCan,
-                              ThuongHieuSuat = (int)l.ThuongHieuSuat
+                              ThuongHieuSuat = (int)l.ThuongHieuSuat,
+                              SoGioLamThem = (int)l.SoGioLamThem,
+                              KhoanTru = (int)l.KhoanTru
                           }).FirstOrDefault();
             return result;
         }
+
+        // Tìm kiếm lương theo tháng
         public List<LuongNhanVien_DTO> SearchLuongNhanVienTheoThang(string searchTerm, int month)
         {
             var query = from luong in DB.Luongs
@@ -178,11 +207,13 @@ namespace DAO
                             MaNhanVien = luong.MaNhanVien,
                             TenNhanVien = nhanVien.TenNhanVien,
                             ChucVu = nhanVien.ChucVu,
-                            LuongCoBan = (int)luong.LuongCoBan,
+                            LuongCoBan = luong.LuongCoBan,
                             Thang = luong.Thang,
-                            SoNgayLam = (int)luong.SoNgayLam,
+                            SoNgayLam = luong.SoNgayLam,
                             ThuongChuyenCan = (int)luong.ThuongChuyenCan,
-                            ThuongHieuSuat = (int)luong.ThuongHieuSuat
+                            ThuongHieuSuat = (int)luong.ThuongHieuSuat,
+                            SoGioLamThem = (int)luong.SoGioLamThem,
+                            KhoanTru = (int)luong.KhoanTru
                         };
 
             return query.ToList();

@@ -1,1 +1,13 @@
 .vs/
+*/bin/
+*/obj/
+*.suo
+# Ignore binary files
+*.dll
+*.exe
+*.pdb
+# Ignore Visual Studio files
+*.user
+*.userosscache
+*.sln.docstates
+*.cache

@@ -34,46 +34,46 @@ namespace DAO
                                 NgayNhap = nh.NgayNhap,
                                 MaLoaiHang = j.MaLoaiHang,
                                 MaNhaCungCap = m.MaNhaCungCap,
-                                DonGia=nh.DonGia
+                                DonGia = nh.DonGia
 
                             };
 
             return nhapHangs.ToList();
         }
-       public List<NhapHang_DTO> GetNhapHangByConditions(string maSanPham, string maLoaiHang, string maNhaCungCap)
-{
-    var query = from nh in DB.NhapHangs
-                join k in DB.Khos on nh.MaSanPham equals k.MaSanPham
-                join j in DB.LoaiHangs on nh.MaLoaiHang equals j.MaLoaiHang
-                join m in DB.NhaCungCaps on nh.MaNhaCungCap equals m.MaNhaCungCap
-                select new NhapHang_DTO
-                {
-                    MaNhapHang = nh.MaNhapHang,
-                    MaSanPham = k.MaSanPham,
-                    TenSanPham = k.TenSanPham,
-                    DonViTinh = nh.DonViTinh,
-                    SoLuong = nh.SoLuong,
-                    NgayNhap = nh.NgayNhap,
-                    MaLoaiHang = j.MaLoaiHang,
-                    MaNhaCungCap = m.MaNhaCungCap,
-                    DonGia = nh.DonGia
-                };
+        public List<NhapHang_DTO> GetNhapHangByConditions(string maSanPham, string maLoaiHang, string maNhaCungCap)
+        {
+            var query = from nh in DB.NhapHangs
+                        join k in DB.Khos on nh.MaSanPham equals k.MaSanPham
+                        join j in DB.LoaiHangs on nh.MaLoaiHang equals j.MaLoaiHang
+                        join m in DB.NhaCungCaps on nh.MaNhaCungCap equals m.MaNhaCungCap
+                        select new NhapHang_DTO
+                        {
+                            MaNhapHang = nh.MaNhapHang,
+                            MaSanPham = k.MaSanPham,
+                            TenSanPham = k.TenSanPham,
+                            DonViTinh = nh.DonViTinh,
+                            SoLuong = nh.SoLuong,
+                            NgayNhap = nh.NgayNhap,
+                            MaLoaiHang = j.MaLoaiHang,
+                            MaNhaCungCap = m.MaNhaCungCap,
+                            DonGia = nh.DonGia
+                        };
 
-    if (!string.IsNullOrEmpty(maSanPham))
-    {
-        query = query.Where(nh => nh.MaSanPham == maSanPham);
-    }
-    if (!string.IsNullOrEmpty(maLoaiHang))
-    {
-        query = query.Where(nh => nh.MaLoaiHang == maLoaiHang);
-    }
-    if (!string.IsNullOrEmpty(maNhaCungCap))
-    {
-        query = query.Where(nh => nh.MaNhaCungCap == maNhaCungCap);
-    }
+            if (!string.IsNullOrEmpty(maSanPham))
+            {
+                query = query.Where(nh => nh.MaSanPham == maSanPham);
+            }
+            if (!string.IsNullOrEmpty(maLoaiHang))
+            {
+                query = query.Where(nh => nh.MaLoaiHang == maLoaiHang);
+            }
+            if (!string.IsNullOrEmpty(maNhaCungCap))
+            {
+                query = query.Where(nh => nh.MaNhaCungCap == maNhaCungCap);
+            }
 
-    return query.ToList();
-}
+            return query.ToList();
+        }
 
 
         public void AddNhapHang(NhapHang_DTO nhapHang)
@@ -94,16 +94,28 @@ namespace DAO
             UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong);
         }
 
-        public void UpdateKhoSoLuong(string maSanPham, int soLuong)
+        public void UpdateKhoSoLuong(string maSanPham, int soLuongMoi)
         {
+            // Tìm kiếm sản phẩm trong bảng Kho
             var existingKho = DB.Khos.FirstOrDefault(k => k.MaSanPham == maSanPham);
+
             if (existingKho != null)
             {
-                existingKho.SoLuong += soLuong; 
+                // Lấy số lượng hiện tại trong bảng Kho
+                int soLuongKhoHienTai = existingKho.SoLuong;
+
+                // Cập nhật số lượng mới trong Kho dựa trên số lượng nhập hàng mới
+                existingKho.SoLuong = soLuongKhoHienTai + soLuongMoi;
+
+                // Lưu thay đổi vào cơ sở dữ liệu
                 DB.SubmitChanges();
             }
-           
+            else
+            {
+                throw new InvalidOperationException("Sản phẩm không tồn tại trong kho, không thể cập nhật số lượng.");
+            }
         }
+
         public List<NhapHang_DTO> GetNhapHangByTenSP(string tenSP)
         {
             var result = from nh in DB.NhapHangs
@@ -139,7 +151,7 @@ namespace DAO
                              NgayNhap = nh.NgayNhap,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
-                             TenSanPham=k.TenSanPham,
+                             TenSanPham = k.TenSanPham,
                              DonGia = nh.DonGia
                          };
 
@@ -153,14 +165,14 @@ namespace DAO
                          where nh.MaSanPham == maSP
                          select new NhapHang_DTO
                          {
-                                MaNhapHang = nh.MaNhapHang,
-                                MaSanPham = nh.MaSanPham,
-                                DonViTinh = nh.DonViTinh,
-                                SoLuong = nh.SoLuong,
-                                NgayNhap = nh.NgayNhap,
-                                MaLoaiHang = nh.MaLoaiHang,
-                                MaNhaCungCap = nh.MaNhaCungCap,
-                                TenSanPham = k.TenSanPham,
+                             MaNhapHang = nh.MaNhapHang,
+                             MaSanPham = nh.MaSanPham,
+                             DonViTinh = nh.DonViTinh,
+                             SoLuong = nh.SoLuong,
+                             NgayNhap = nh.NgayNhap,
+                             MaLoaiHang = nh.MaLoaiHang,
+                             MaNhaCungCap = nh.MaNhaCungCap,
+                             TenSanPham = k.TenSanPham,
                              DonGia = nh.DonGia
                          };
 
@@ -251,34 +263,38 @@ namespace DAO
             var query = from lh in DB.LoaiHangs
                         select new
                         {
-                            lh.MaLoaiHang
+                            lh.MaLoaiHang,
+                            lh.TenLoaiHang
                         };
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("MaLoaiHang", typeof(string));
+            dataTable.Columns.Add("TenLoaiHang", typeof(string));
 
             foreach (var item in query)
             {
-                dataTable.Rows.Add(item.MaLoaiHang);
+                dataTable.Rows.Add(item.MaLoaiHang, item.TenLoaiHang);
             }
 
             return dataTable;
         }
+
 
         public DataTable GetAllNCC()
         {
             var query = from ncc in DB.NhaCungCaps
                         select new
                         {
-                            ncc.MaNhaCungCap
+                            ncc.MaNhaCungCap,
+                            ncc.TenNhaCungCap
                         };
 
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("MaNhaCungCap", typeof(string));
-
+            dataTable.Columns.Add("TenNhaCungCap", typeof(string));
             foreach (var item in query)
             {
-                dataTable.Rows.Add(item.MaNhaCungCap);
+                dataTable.Rows.Add(item.MaNhaCungCap, item.TenNhaCungCap);
             }
 
             return dataTable;
@@ -289,27 +305,61 @@ namespace DAO
             var query = from sp in DB.Khos
                         select new
                         {
+                            sp.TenSanPham,
                             sp.MaSanPham
                         };
 
             DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("TenSanPham", typeof(string));
             dataTable.Columns.Add("MaSanPham", typeof(string));
+            foreach (var item in query)
+            {
+                dataTable.Rows.Add(item.TenSanPham, item.MaSanPham);
+            }
+
+            return dataTable;
+        }
+        public DataTable GetAllLH2(string maLoaiHang)
+        {
+            // Thực hiện truy vấn với điều kiện lọc theo maLoaiHang
+            var query = from k in DB.Khos
+                        join lh in DB.LoaiHangs on k.MaLoaiHang equals lh.MaLoaiHang
+                        where k.MaLoaiHang == maLoaiHang // Điều kiện lọc
+                        select new
+                        {
+                            k.MaLoaiHang,
+                            TenLoaiHang = lh.TenLoaiHang
+                        };
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaLoaiHang", typeof(string));
+            dataTable.Columns.Add("TenLoaiHang", typeof(string));
 
             foreach (var item in query)
             {
-                dataTable.Rows.Add(item.MaSanPham);
+                dataTable.Rows.Add(item.MaLoaiHang, item.TenLoaiHang);
             }
 
             return dataTable;
         }
 
-        public string GetTenSanPhamByMa(string maSanPham)
+        public NhapHang_DTO GetTenSanPhamByMa(string tensp)
         {
-            return DB.Khos
-                     .Where(sp => sp.MaSanPham == maSanPham)
-                     .Select(sp => sp.TenSanPham)
-                     .FirstOrDefault();
+            var result = (from kho in DB.Khos
+                          join lh in DB.LoaiHangs on kho.MaLoaiHang equals lh.MaLoaiHang
+                          where kho.TenSanPham == tensp
+                          select new NhapHang_DTO
+                          {
+                              MaSanPham = kho.MaSanPham,
+
+                              DonViTinh = kho.DonViTinh,
+                              DonGia = kho.DonGia,
+                              MaLoaiHang = kho.MaLoaiHang,
+
+                          }).FirstOrDefault();
+
+            return result;
         }
-       
+
     }
 }

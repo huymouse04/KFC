@@ -34,12 +34,12 @@ namespace KFC
             cbMaLH.ValueMember = "MaLoaiHang";
 
             cbMaNCC.DataSource = nh.GetAllNCC();
-            cbMaNCC.DisplayMember = "MaNhaCungCap";
+            cbMaNCC.DisplayMember = "TenNhaCungCap";
             cbMaNCC.ValueMember = "MaNhaCungCap";
 
-            cbMaSP.DataSource = nh.GetAllSP();
-            cbMaSP.DisplayMember = "MaSanPham";
-            cbMaSP.ValueMember = "MaSanPham";
+            cbTenSP.DataSource = nh.GetAllSP();
+            cbTenSP.DisplayMember = "TenSanPham";
+            cbTenSP.ValueMember = "TenSanPham";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace KFC
                 try
                 {
                     nh.AddNhapHang(nhapHang);
-                    nh.UpdateSLKho(nhapHang.MaSanPham,nhapHang.SoLuong);
+                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong);
                     MessageBox.Show("Thêm nhập hàng thành công!");
                     LoadData();
                     ClearInputFields();
@@ -71,7 +71,7 @@ namespace KFC
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtTenSP.Text))
+            if (string.IsNullOrWhiteSpace(txtMaSP.Text))
             {
                 MessageBox.Show("Tên sản phẩm không được để trống.");
                 return false;
@@ -97,16 +97,16 @@ namespace KFC
 
             nhapHang = new NhapHang_DTO
             {
-                
-                MaNhapHang = isUpdate ? int.Parse(txtMaNH.Text) : 0, 
-                MaSanPham = cbMaSP.SelectedValue.ToString(),
+
+                MaNhapHang = isUpdate ? int.Parse(txtMaNH.Text) : 0,
+                MaSanPham = txtMaSP.Text,
                 SoLuong = soLuong,
                 DonViTinh = txtDVT.Text,
                 DonGia = dongia,
                 NgayNhap = dtpNN.Value,
                 MaNhaCungCap = cbMaNCC.SelectedValue.ToString(),
                 MaLoaiHang = cbMaLH.SelectedValue.ToString(),
-                TenSanPham = txtTenSP.Text
+                TenSanPham = cbTenSP.SelectedValue.ToString()
             };
 
             return true;
@@ -118,9 +118,9 @@ namespace KFC
             txtMaNH.Clear();
             txtSL.Clear();
             txtDVT.Clear();
-            txtTenSP.Clear();
+            txtMaSP.Clear();
             txtDonGia.Clear();
-            cbMaSP.SelectedIndex = -1;
+            cbTenSP.SelectedIndex = -1;
             cbMaNCC.SelectedIndex = -1;
             cbMaLH.SelectedIndex = -1;
         }
@@ -132,10 +132,10 @@ namespace KFC
                 int dong = e.RowIndex;
 
                 txtMaNH.Text = dtGVNH.Rows[dong].Cells["MaNhapHang"]?.Value?.ToString() ?? string.Empty;
-                cbMaSP.SelectedValue = dtGVNH.Rows[dong].Cells["MaSanPham"]?.Value?.ToString() ?? string.Empty;
+
                 txtSL.Text = dtGVNH.Rows[dong].Cells["SoLuong"]?.Value?.ToString() ?? string.Empty;
                 txtDVT.Text = dtGVNH.Rows[dong].Cells["DonViTinh"]?.Value?.ToString() ?? string.Empty;
-                txtTenSP.Text = dtGVNH.Rows[dong].Cells["TenSanPham"]?.Value?.ToString() ?? string.Empty;
+                txtMaSP.Text = dtGVNH.Rows[dong].Cells["MaSanPham"]?.Value?.ToString() ?? string.Empty;
                 txtDonGia.Text = dtGVNH.Rows[dong].Cells["DonGia"]?.Value?.ToString() ?? string.Empty;
                 if (DateTime.TryParse(dtGVNH.Rows[dong].Cells["NgayNhap"]?.Value?.ToString(), out DateTime ngayNhap))
                 {
@@ -145,7 +145,7 @@ namespace KFC
                 {
                     dtpNN.Value = DateTime.Now;
                 }
-
+                cbTenSP.SelectedValue = dtGVNH.Rows[dong].Cells["TenSanPham"]?.Value?.ToString() ?? string.Empty;
                 cbMaLH.SelectedValue = dtGVNH.Rows[dong].Cells["MaLoaiHang"]?.Value?.ToString() ?? string.Empty;
                 cbMaNCC.SelectedValue = dtGVNH.Rows[dong].Cells["MaNhaCungCap"]?.Value?.ToString() ?? string.Empty;
             }
@@ -182,7 +182,7 @@ namespace KFC
                 return;
             }
 
-            if (ValidateInput(out NhapHang_DTO nhapHang, true)) 
+            if (ValidateInput(out NhapHang_DTO nhapHang, true))
             {
                 try
                 {
@@ -225,9 +225,9 @@ namespace KFC
                 }
 
                 // Kiểm tra tìm kiếm theo mã sản phẩm
-                if (!string.IsNullOrWhiteSpace(cbMaSP.Text))
+                if (!string.IsNullOrWhiteSpace(txtMaSP.Text))
                 {
-                    List<NhapHang_DTO> nhapHangSP = nh.GetNhapHangByMaSP(cbMaSP.Text);
+                    List<NhapHang_DTO> nhapHangSP = nh.GetNhapHangByMaSP(txtMaSP.Text);
                     if (nhapHangSP != null && nhapHangSP.Count > 0)
                     {
                         nhapHangList.AddRange(nhapHangSP); // Thêm vào danh sách
@@ -235,7 +235,7 @@ namespace KFC
                 }
                 if (!string.IsNullOrWhiteSpace(cbMaNCC.Text))
                 {
-                    List<NhapHang_DTO> nhapHangNCCList = nh.GetNhapHangByMaNCC(cbMaNCC.Text);
+                    List<NhapHang_DTO> nhapHangNCCList = nh.GetNhapHangByMaNCC(cbMaNCC.SelectedValue.ToString());
                     if (nhapHangNCCList != null && nhapHangNCCList.Count > 0)
                     {
                         nhapHangList.AddRange(nhapHangNCCList);
@@ -244,15 +244,15 @@ namespace KFC
                 // Kiểm tra tìm kiếm theo mã loại hàng
                 if (!string.IsNullOrWhiteSpace(cbMaLH.Text))
                 {
-                    List<NhapHang_DTO> nhapHangLH = nh.GetNhapHangByMaLH(cbMaLH.Text);
+                    List<NhapHang_DTO> nhapHangLH = nh.GetNhapHangByMaLH(cbMaLH.SelectedValue.ToString());
                     if (nhapHangLH != null && nhapHangLH.Count > 0)
                     {
                         nhapHangList.AddRange(nhapHangLH); // Thêm vào danh sách
                     }
                 }
-                if (!string.IsNullOrWhiteSpace(txtTenSP.Text))
+                if (!string.IsNullOrWhiteSpace(cbTenSP.Text))
                 {
-                    List<NhapHang_DTO> nhapHangByTenSP = nh.GetNhapHangByTenSP(txtTenSP.Text.Trim());
+                    List<NhapHang_DTO> nhapHangByTenSP = nh.GetNhapHangByTenSP(cbTenSP.SelectedValue.ToString());
                     if (nhapHangByTenSP != null && nhapHangByTenSP.Count > 0)
                     {
                         nhapHangList.AddRange(nhapHangByTenSP); // Thêm vào danh sách
@@ -287,9 +287,11 @@ namespace KFC
 
             // Tạo nguồn dữ liệu cho báo cáo
             List<NhapHang_DTO> reportData;
-            string maSanPham = cbMaSP.Text.Trim();  // Mã sản phẩm
-            string maLoaiHang = cbMaLH.Text.Trim();  // Mã loại hàng
-            string maNhaCungCap = cbMaNCC.Text.Trim();  // Mã nhà cung cấp
+            string maSanPham = txtMaSP.Text.Trim();  // Mã sản phẩm
+
+            // Kiểm tra nếu SelectedValue của cbMaLH và cbMaNCC là null
+            string maLoaiHang = cbMaLH.SelectedValue?.ToString();  // Mã loại hàng
+            string maNhaCungCap = cbMaNCC.SelectedValue?.ToString();  // Mã nhà cung cấp
 
             if (!string.IsNullOrEmpty(maSanPham) || !string.IsNullOrEmpty(maLoaiHang) || !string.IsNullOrEmpty(maNhaCungCap))
             {
@@ -315,15 +317,25 @@ namespace KFC
             {
                 reportData = nh.GetAllNhapHang(); // Lấy toàn bộ danh sách
             }
-            ClearInputFields();
-            var reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", reportData);
-            viewer.LocalReport.DataSources.Clear();
-            viewer.LocalReport.DataSources.Add(reportDataSource);
 
-            viewer.RefreshReport();
-            reportForm.Controls.Add(viewer);
-            viewer.Dock = DockStyle.Fill;
-            reportForm.ShowDialog();
+            ClearInputFields();
+
+            // Kiểm tra reportData trước khi sử dụng
+            if (reportData != null && reportData.Count > 0)
+            {
+                var reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", reportData);
+                viewer.LocalReport.DataSources.Clear();
+                viewer.LocalReport.DataSources.Add(reportDataSource);
+                viewer.RefreshReport();
+
+                reportForm.Controls.Add(viewer);
+                viewer.Dock = DockStyle.Fill;
+                reportForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất báo cáo.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void dtGVNH_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -333,20 +345,44 @@ namespace KFC
 
         private void cbMaSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbMaSP.SelectedItem != null)
+            if (cbTenSP.SelectedItem != null)
             {
-                string maSanPham = cbMaSP.SelectedValue.ToString();  
+                string tensp = cbTenSP.SelectedValue.ToString();
 
-                NhapHang_DAO nhapHangDao = new NhapHang_DAO();
-                string tenSanPham = nhapHangDao.GetTenSanPhamByMa(maSanPham);
+                NhapHang_BUS nhapHangBus = new NhapHang_BUS();
+                NhapHang_DTO nhapHangDTO = nhapHangBus.GetTenSanPhamByMa(tensp);
 
-                // Cập nhật giá trị cho textbox
-                txtTenSP.Text = tenSanPham ?? string.Empty;  
+                // Cập nhật giá trị cho các textbox
+                if (nhapHangDTO != null)
+                {
+                    txtMaSP.Text = nhapHangDTO.MaSanPham ?? string.Empty;
+                    txtDVT.Text = nhapHangDTO.DonViTinh ?? string.Empty;  // Nếu bạn có textbox cho đơn vị tính
+                    txtDonGia.Text = nhapHangDTO.DonGia?.ToString() ?? "0";  // Chuyển đổi giá thành chuỗi
+                    
+                    
+                }
+                else
+                {
+                    // Nếu không tìm thấy sản phẩm, làm trống các textbox
+                    txtMaSP.Text = string.Empty;
+                    txtDVT.Text = string.Empty;
+                    txtDonGia.Text = string.Empty;
+                }
             }
             else
             {
-                txtTenSP.Text = string.Empty; 
+                // Nếu không có sản phẩm được chọn, làm trống các textbox
+                txtMaSP.Text = string.Empty;
+                txtDVT.Text = string.Empty;
+                txtDonGia.Text = string.Empty;
             }
         }
+
+        private void lbMSP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
