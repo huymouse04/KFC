@@ -3,28 +3,49 @@
   "WorkspaceRootPath": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\luongnhanvienrp.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\luongnhanvienrp.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:luongnhanvienrp.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\capnhatluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:capnhatluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\capnhatluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:capnhatluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD5523A2-1D6E-49D4-9947-8BF1FFBC2E8F}|..\\DAO\\DAO.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\dao\\luongnhanvien_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\capnhatnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:capnhatnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\capnhatloaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:capnhatloaihang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\luongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:luongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\luongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:luongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{907CD591-69B5-404E-BD27-FBF9373186D7}|..\\DTO\\DTO.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\dto\\luongnhanvien_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BA46191-C03D-421E-8ADD-4332A4734886}|..\\BUS\\BUS.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\bus\\luongnhanvien_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\capnhatnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:capnhatnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,19 +55,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "LuongNhanVienRP.rdlc [Design]",
               "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\LuongNhanVienRP.rdlc",
               "RelativeDocumentMoniker": "LuongNhanVienRP.rdlc",
               "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\LuongNhanVienRP.rdlc [Design]",
               "RelativeToolTip": "LuongNhanVienRP.rdlc [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2024-10-24T18:39:39.081Z",
-              "IsPinned": true
+              "WhenOpened": "2024-10-27T15:49:40.795Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
@@ -85,69 +110,140 @@
               "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Main.Designer.cs",
-              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.Designer.cs",
-              "RelativeDocumentMoniker": "Main.Designer.cs",
-              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.Designer.cs",
-              "RelativeToolTip": "Main.Designer.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAiwIwBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T12:33:28.722Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Main.cs",
-              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
-              "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
-              "RelativeToolTip": "Main.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T11:54:50.623Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Main.cs [Design]",
-              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
-              "RelativeDocumentMoniker": "Main.cs",
-              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.cs [Design]",
-              "RelativeToolTip": "Main.cs [Design]",
+              "Title": "CapNhatNhaCungCap.cs [Design]",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhaCungCap.cs",
+              "RelativeDocumentMoniker": "CapNhatNhaCungCap.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhaCungCap.cs [Design]",
+              "RelativeToolTip": "CapNhatNhaCungCap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-27T11:11:19.341Z"
+              "WhenOpened": "2024-10-27T15:41:27.59Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CapNhatLoaiHang.cs [Design]",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatLoaiHang.cs",
+              "RelativeDocumentMoniker": "CapNhatLoaiHang.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatLoaiHang.cs [Design]",
+              "RelativeToolTip": "CapNhatLoaiHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T15:41:26.606Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LuongNhanVien_DTO.cs",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\DTO\\LuongNhanVien_DTO.cs",
+              "RelativeDocumentMoniker": "..\\DTO\\LuongNhanVien_DTO.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\DTO\\LuongNhanVien_DTO.cs",
+              "RelativeToolTip": "..\\DTO\\LuongNhanVien_DTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T15:26:05.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LuongNhanVien_BUS.cs",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\BUS\\LuongNhanVien_BUS.cs",
+              "RelativeDocumentMoniker": "..\\BUS\\LuongNhanVien_BUS.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\BUS\\LuongNhanVien_BUS.cs",
+              "RelativeToolTip": "..\\BUS\\LuongNhanVien_BUS.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAwwGgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:50:01.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LuongNhanVien.cs",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\LuongNhanVien.cs",
+              "RelativeDocumentMoniker": "LuongNhanVien.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\LuongNhanVien.cs",
+              "RelativeToolTip": "LuongNhanVien.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAOcAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:42:43.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LuongNhanVien.cs [Design]",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\LuongNhanVien.cs",
+              "RelativeDocumentMoniker": "LuongNhanVien.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\LuongNhanVien.cs [Design]",
+              "RelativeToolTip": "LuongNhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:42:42.053Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CapNhatNhanVien.cs [Design]",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhanVien.cs",
+              "RelativeDocumentMoniker": "CapNhatNhanVien.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhanVien.cs [Design]",
+              "RelativeToolTip": "CapNhatNhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:38:12.754Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NhanVien.cs [Design]",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\NhanVien.cs",
+              "RelativeDocumentMoniker": "NhanVien.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\NhanVien.cs [Design]",
+              "RelativeToolTip": "NhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:38:06.378Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FormReport.cs",
-              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs",
-              "RelativeDocumentMoniker": "FormReport.cs",
-              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs",
-              "RelativeToolTip": "FormReport.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwC0AAAAaAAAAAAAAAA==",
+              "Title": "LuongNhanVien_DAO.cs",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\DAO\\LuongNhanVien_DAO.cs",
+              "RelativeDocumentMoniker": "..\\DAO\\LuongNhanVien_DAO.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\DAO\\LuongNhanVien_DAO.cs",
+              "RelativeToolTip": "..\\DAO\\LuongNhanVien_DAO.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAYwNUAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T12:19:10.452Z",
+              "WhenOpened": "2024-10-27T14:32:50.643Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormReport.cs [Design]",
-              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs",
-              "RelativeDocumentMoniker": "FormReport.cs",
-              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs [Design]",
-              "RelativeToolTip": "FormReport.cs [Design]",
+              "Title": "CapNhatLuong.cs",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatLuong.cs",
+              "RelativeDocumentMoniker": "CapNhatLuong.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatLuong.cs",
+              "RelativeToolTip": "CapNhatLuong.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAwwD0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T02:07:46.087Z",
+              "WhenOpened": "2024-10-27T14:31:50.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CapNhatLuong.cs [Design]",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatLuong.cs",
+              "RelativeDocumentMoniker": "CapNhatLuong.cs",
+              "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\CapNhatLuong.cs [Design]",
+              "RelativeToolTip": "CapNhatLuong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:31:45.338Z",
               "EditorCaption": " [Design]"
             }
           ]

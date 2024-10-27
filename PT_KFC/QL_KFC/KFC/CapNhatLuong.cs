@@ -45,9 +45,28 @@ namespace KFC
             cboMaNV.SelectedIndexChanged += cboMaNV_SelectedIndexChanged;
             txtTenNV.Enabled = false;
             txtChucVu.Enabled = false;
+
+
+            txtLuongCB.KeyPress += txt_KeyPress;
+            txtSoNgayLam.KeyPress += txt_KeyPress;
+            txtThuongCC.KeyPress += txt_KeyPress;
+            txtThuongNL.KeyPress += txt_KeyPress;
+            txtGioLamThem.KeyPress += txt_KeyPress;
+            txtKhoanTru.KeyPress += txt_KeyPress;
+
+            txtLuongCB.Validating += txt_Validating;
+            txtSoNgayLam.Validating += txt_Validating;
+            txtThuongCC.Validating += txt_Validating;
+            txtThuongNL.Validating += txt_Validating;
+            txtGioLamThem.Validating += txt_Validating;
+            txtKhoanTru.Validating += txt_Validating;
+
             txtThuongCC.TextChanged += CalculateTotalSalary;
             txtLuongCB.TextChanged += CalculateTotalSalary;
             txtThuongNL.TextChanged += CalculateTotalSalary;
+            txtKhoanTru.TextChanged += CalculateTotalSalary;
+            txtGioLamThem.TextChanged += CalculateTotalSalary;
+            txtSoNgayLam.TextChanged += CalculateTotalSalary;
         }
 
         private void InitializeFormForEditing()
@@ -65,11 +84,28 @@ namespace KFC
                 MessageBox.Show("Thông tin lương không hợp lệ.");
             }
 
+            txtLuongCB.KeyPress += txt_KeyPress;
+            txtSoNgayLam.KeyPress += txt_KeyPress;
+            txtThuongCC.KeyPress += txt_KeyPress;
+            txtThuongNL.KeyPress += txt_KeyPress;
+            txtGioLamThem.KeyPress += txt_KeyPress;
+            txtKhoanTru.KeyPress += txt_KeyPress;
+
+            txtLuongCB.Validating += txt_Validating;
+            txtSoNgayLam.Validating += txt_Validating;
+            txtThuongCC.Validating += txt_Validating;
+            txtThuongNL.Validating += txt_Validating;
+            txtGioLamThem.Validating += txt_Validating;
+            txtKhoanTru.Validating += txt_Validating;
+
             txtTenNV.Enabled = false;
             txtChucVu.Enabled = false;
             txtThuongCC.TextChanged += CalculateTotalSalary;
             txtLuongCB.TextChanged += CalculateTotalSalary;
             txtThuongNL.TextChanged += CalculateTotalSalary;
+            txtKhoanTru.TextChanged += CalculateTotalSalary;
+            txtGioLamThem.TextChanged += CalculateTotalSalary;
+            txtSoNgayLam.TextChanged += CalculateTotalSalary;
         }
 
         private void LoadMonthsToComboBox()
@@ -92,6 +128,8 @@ namespace KFC
                 txtSoNgayLam.Text = luong.SoNgayLam.ToString();
                 txtThuongCC.Text = luong.ThuongChuyenCan.ToString();
                 txtThuongNL.Text = luong.ThuongHieuSuat.ToString();
+                txtGioLamThem.Text = luong.SoGioLamThem.ToString();
+                txtKhoanTru.Text = luong.KhoanTru.ToString();
 
                 // Đặt giá trị cho cboThang
                 if (luong.Thang >= 1 && luong.Thang <= 12)
@@ -118,15 +156,19 @@ namespace KFC
             int soNgayLam = 0;
             int thuongChuyenCan = 0;
             int thuongHieuSuat = 0;
+            int gioLamThem = 0; 
+            int khoanTru = 0;
 
             // Kiểm tra và chuyển đổi giá trị từ các TextBox  
             int.TryParse(txtLuongCB.Text, out luongCoBan);
             int.TryParse(txtSoNgayLam.Text, out soNgayLam);
             int.TryParse(txtThuongCC.Text, out thuongChuyenCan);
             int.TryParse(txtThuongNL.Text, out thuongHieuSuat);
+            int.TryParse(txtGioLamThem.Text, out gioLamThem);
+            int.TryParse(txtKhoanTru.Text, out khoanTru);
 
             // Tính tổng lương theo công thức  
-            int tongLuong = (luongCoBan * soNgayLam) + thuongChuyenCan + thuongHieuSuat;
+            int tongLuong = (luongCoBan /30 * soNgayLam) + thuongChuyenCan + thuongHieuSuat + (gioLamThem * (luongCoBan / 30 / 8)) - khoanTru;
 
             // Cập nhật tổng lương vào txtTongLuong  
             txtTongLuong.Text = tongLuong.ToString();
@@ -162,6 +204,8 @@ namespace KFC
             txtThuongCC.Text = string.Empty;
             txtThuongNL.Text = string.Empty;
             cboThang.Text = string.Empty;
+            txtGioLamThem.Text = string.Empty;
+            txtKhoanTru.Text = string.Empty;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -176,7 +220,9 @@ namespace KFC
                     Thang = int.Parse(cboThang.Text),
                     SoNgayLam = int.Parse(txtSoNgayLam.Text),
                     ThuongChuyenCan = int.Parse(txtThuongCC.Text),
-                    ThuongHieuSuat = int.Parse(txtThuongNL.Text)
+                    ThuongHieuSuat = int.Parse(txtThuongNL.Text),
+                    SoGioLamThem = int.Parse(txtThuongCC.Text),
+                    KhoanTru = int.Parse(txtThuongNL.Text)
                 };
 
                 // Nếu đang ở chế độ cập nhật, gọi phương thức cập nhật
@@ -216,6 +262,28 @@ namespace KFC
         private void btnHuy_Click(object sender, EventArgs e)
         {
             New();
+        }
+
+        private void txt_Validating(object sender, CancelEventArgs e)
+        {
+            if (sender is TextBox txt)
+            {
+                // Kiểm tra nếu TextBox rỗng hoặc không phải số
+                if (!int.TryParse(txt.Text, out _))
+                {
+                    MessageBox.Show("Vui lòng nhập một số hợp lệ.");
+                    e.Cancel = true; // Hủy sự kiện nếu không hợp lệ
+                }
+            }
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Chỉ cho phép nhập số và xóa
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Hủy sự kiện nếu không phải số hoặc phím xóa
+            }
         }
     }
 }
