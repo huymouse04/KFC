@@ -1,0 +1,348 @@
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.pdb
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll.config
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.pdb
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\1\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.pdb
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll.config
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.pdb
+D:\ProJect\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\ProJect\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\ProJect\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\ProJect\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\stdole.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Tasks.Core.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.MSXML.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Utilities.Core.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Framework.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Interop.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.xml
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.xml
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.xml
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.xml
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.xml
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ProJect\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\stdole.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Tasks.Core.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.MSXML.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Utilities.Core.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Framework.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Interop.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.pdb
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll.config
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.pdb
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.xml
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.xml
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.xml
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.xml
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.xml
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
+D:\ThanhHung\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Design.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\stdole.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Tasks.Core.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.MSXML.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Framework.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Interop.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.pdb
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll.config
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.pdb
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.xml
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.xml
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.xml
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.xml
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.xml
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
+E:\PT_KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Common.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.Design.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\stdole.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Tasks.Core.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.MSXML.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Utilities.Core.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.Build.Framework.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Interop.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.pdb
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll.config
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DTO.pdb
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE.xml
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\EnvDTE80.xml
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj.xml
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj80.xml
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\VSLangProj2.xml
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
+E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
