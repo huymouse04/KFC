@@ -58,10 +58,14 @@ namespace BUS
             ValidateNhapHang(nhapHang);
             dao.UpdateNhapHang(nhapHang); // Thực hiện cập nhật vào DAO
         }
-        public void UpdateSLKho(string maSP, int soLuong)
+        public void UpdateSLKho(string maSP, int soLuong, string tenSanPham, string donViTinh, float donGia, string maLoaiHang)
         {
-            
-            dao.UpdateKhoSoLuong(maSP,soLuong); // Thực hiện cập nhật vào DAO
+            if (string.IsNullOrWhiteSpace(maSP))
+            {
+                throw new ArgumentException("Mã sản phẩm không hợp lệ", nameof(maSP));
+            }
+
+            dao.UpdateKhoSoLuong(maSP, soLuong, tenSanPham, donViTinh, donGia, maLoaiHang);
         }
         public void DeleteNhapHang(int maNhapHang)
         {
@@ -125,9 +129,9 @@ namespace BUS
             return dao.GetAllLH();
         }
 
-        public string GetTenSP(string maSP)
+        public NhapHang_DTO GetTenSanPhamByMa(string maSanPham)
         {
-            return dao.GetTenSanPhamByMa(maSP);
+            return dao.GetTenSanPhamByMa(maSanPham);
         }
 
         public DataTable GetAllSP()
