@@ -45,18 +45,8 @@
             this.btnDoanhThu = new CustomButton.VBButton();
             this.btnThoat = new CustomButton.VBButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.cgfh = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button8 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -332,56 +322,11 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.cgfh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(146, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1208, 130);
             this.panel1.TabIndex = 1;
-            // 
-            // button5
-            // 
-<<<<<<< HEAD
-            this.button5.Location = new System.Drawing.Point(205, 29);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-=======
-            this.button5.Location = new System.Drawing.Point(182, 23);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(67, 18);
->>>>>>> huy
-            this.button5.TabIndex = 3;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-<<<<<<< HEAD
-            this.button4.Location = new System.Drawing.Point(850, 60);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-=======
-            this.button4.Location = new System.Drawing.Point(756, 48);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(67, 18);
->>>>>>> huy
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // cgfh
-            // 
-            this.cgfh.Location = new System.Drawing.Point(128, 77);
-            this.cgfh.Name = "cgfh";
-            this.cgfh.Size = new System.Drawing.Size(75, 23);
-            this.cgfh.TabIndex = 1;
-            this.cgfh.Text = "gfch";
-            this.cgfh.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -395,27 +340,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "KFC";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(493, 450);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // panel_Body
             // 
             this.panel_Body.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Body.BackgroundImage = global::KFC.Properties.Resources.banner5;
-            this.panel_Body.Controls.Add(this.button7);
-            this.panel_Body.Controls.Add(this.button6);
-            this.panel_Body.Controls.Add(this.button3);
-            this.panel_Body.Controls.Add(this.button2);
-            this.panel_Body.Controls.Add(this.button1);
-            this.panel_Body.Controls.Add(this.checkBox1);
             this.panel_Body.Controls.Add(this.panel1);
             this.panel_Body.Controls.Add(this.flowLayoutPanel1);
             this.panel_Body.Location = new System.Drawing.Point(0, 0);
@@ -424,80 +354,6 @@
             this.panel_Body.Size = new System.Drawing.Size(1354, 915);
             this.panel_Body.TabIndex = 17;
             this.panel_Body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(938, 415);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(294, 275);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-<<<<<<< HEAD
-            this.button6.Location = new System.Drawing.Point(484, 139);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-=======
-            this.button6.Location = new System.Drawing.Point(430, 111);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(67, 18);
->>>>>>> huy
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(1090, 248);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 97);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(796, 492);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(677, 345);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 20);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-<<<<<<< HEAD
-            this.button7.Location = new System.Drawing.Point(762, 202);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(326, 199);
-=======
-            this.button7.Location = new System.Drawing.Point(937, 382);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(294, 275);
->>>>>>> huy
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button8.Location = new System.Drawing.Point(877, 11);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(199, 131);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -513,7 +369,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel_Body.ResumeLayout(false);
-            this.panel_Body.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -536,23 +391,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_Body;
         private CustomButton.VBButton btnThoat;
-        private System.Windows.Forms.CheckBox checkBox1;
-<<<<<<< HEAD
-        private System.Windows.Forms.Button button2;
-=======
->>>>>>> b7bbca3e2de7c6c872e3772b027eac8aaad38c28
-        private System.Windows.Forms.Button button1;
-<<<<<<< HEAD
-        private System.Windows.Forms.Button cgfh;
-=======
->>>>>>> 9f394df151369430ff442513deaa33f4c9f1c65c
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-<<<<<<< HEAD
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
 =======
         private System.Windows.Forms.Button r;
 >>>>>>> master
