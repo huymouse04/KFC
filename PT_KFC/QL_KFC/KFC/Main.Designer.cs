@@ -51,11 +51,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_Body = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -331,6 +332,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
+            this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.cgfh);
@@ -411,6 +413,15 @@
             this.panel_Body.TabIndex = 17;
             this.panel_Body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(938, 415);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(294, 275);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(430, 111);
@@ -449,14 +460,14 @@
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // button8
             // 
-            this.button7.Location = new System.Drawing.Point(937, 382);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(294, 275);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button8.Location = new System.Drawing.Point(877, 11);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(199, 131);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -511,6 +522,7 @@
 <<<<<<< HEAD
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
 =======
         private System.Windows.Forms.Button r;
 >>>>>>> master
