@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\",
   "Documents": [
     {
@@ -25,6 +26,37 @@
     {
       "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\luongnhanvienrp.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:luongnhanvienrp.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+=======
+  "WorkspaceRootPath": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|d:\\git\\kfc\\pt_kfc\\ql_kfc\\kfc\\nhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:nhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|d:\\git\\kfc\\pt_kfc\\ql_kfc\\kfc\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|d:\\git\\kfc\\pt_kfc\\ql_kfc\\kfc\\nhacungcapcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:nhacungcapcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|d:\\git\\kfc\\pt_kfc\\ql_kfc\\kfc\\nhacungcapcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:nhacungcapcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|d:\\git\\kfc\\pt_kfc\\ql_kfc\\kfc\\nhanviencontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:nhanviencontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\capnhatnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:capnhatnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|d:\\git\\kfc\\pt_kfc\\ql_kfc\\kfc\\capnhatnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:capnhatnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+>>>>>>> tam
     }
   ],
   "DocumentGroupContainers": [
@@ -34,6 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 12,
           "Children": [
             {
@@ -47,6 +80,13 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
               "WhenOpened": "2024-10-24T18:39:39.081Z",
               "IsPinned": true
+=======
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+>>>>>>> tam
             },
             {
               "$type": "Bookmark",
@@ -103,6 +143,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "Main.cs",
               "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
@@ -134,12 +175,22 @@
               "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs",
               "RelativeToolTip": "FormReport.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAQwC0AAAAaAAAAAAAAAA==",
+=======
+              "DocumentIndex": 2,
+              "Title": "NhaCungCapControl.cs",
+              "DocumentMoniker": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhaCungCapControl.cs",
+              "RelativeDocumentMoniker": "NhaCungCapControl.cs",
+              "ToolTip": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhaCungCapControl.cs",
+              "RelativeToolTip": "NhaCungCapControl.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAASwBQAAAAUAAAAAAAAAA==",
+>>>>>>> tam
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T12:19:10.452Z",
+              "WhenOpened": "2024-10-27T14:56:16.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "FormReport.cs [Design]",
               "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs",
@@ -149,6 +200,81 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-25T02:07:46.087Z",
               "EditorCaption": " [Design]"
+=======
+              "DocumentIndex": 3,
+              "Title": "NhaCungCapControl.cs [Design]",
+              "DocumentMoniker": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhaCungCapControl.cs",
+              "RelativeDocumentMoniker": "NhaCungCapControl.cs",
+              "ToolTip": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhaCungCapControl.cs [Design]",
+              "RelativeToolTip": "NhaCungCapControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:56:14.54Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NhanVien.cs",
+              "DocumentMoniker": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhanVien.cs",
+              "RelativeDocumentMoniker": "NhanVien.cs",
+              "ToolTip": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhanVien.cs",
+              "RelativeToolTip": "NhanVien.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAQwMQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:51:35.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NhaCungCap.cs",
+              "DocumentMoniker": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhaCungCap.cs",
+              "RelativeDocumentMoniker": "NhaCungCap.cs",
+              "ToolTip": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhaCungCap.cs",
+              "RelativeToolTip": "NhaCungCap.cs",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAgwAEBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:41:03.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NhanVienControl.cs",
+              "DocumentMoniker": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhanVienControl.cs",
+              "RelativeDocumentMoniker": "NhanVienControl.cs",
+              "ToolTip": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\NhanVienControl.cs",
+              "RelativeToolTip": "NhanVienControl.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAYwH0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:56:37.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CapNhatNhaCungCap.cs [Design]",
+              "DocumentMoniker": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhaCungCap.cs",
+              "RelativeDocumentMoniker": "CapNhatNhaCungCap.cs",
+              "ToolTip": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhaCungCap.cs [Design]",
+              "RelativeToolTip": "CapNhatNhaCungCap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:35:28.114Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CapNhatNhaCungCap.cs",
+              "DocumentMoniker": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhaCungCap.cs",
+              "RelativeDocumentMoniker": "CapNhatNhaCungCap.cs",
+              "ToolTip": "D:\\GIT\\KFC\\PT_KFC\\QL_KFC\\KFC\\CapNhatNhaCungCap.cs",
+              "RelativeToolTip": "CapNhatNhaCungCap.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T11:45:27.552Z",
+              "EditorCaption": ""
+>>>>>>> tam
             }
           ]
         }

@@ -38,6 +38,7 @@ namespace KFC
             foreach (var nhaCungCap in nhaCungCapList)
             {
                 NhaCungCapControl control = new NhaCungCapControl();
+                control.UpdateData(nhaCungCap);
                 flpNhaCungCap.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
             }
         }
@@ -60,20 +61,18 @@ namespace KFC
                 return;
             }
 
-            // Mở form cập nhật với thông tin đầy đủ
-            using (CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap(nhaCungCapDayDu))
-            {
-                if (formCapNhat.ShowDialog() == DialogResult.OK)
-                {
-                    // Nếu form cập nhật thành công, nạp lại danh sách nhà cung cấp
-                    LoadData();
-                }
-            }
+            CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap(nhaCungCapDayDu);
+            formCapNhat.ShowDialog();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
            // CapNhatNhaCungCap formCNNCC = new CapNhatNhaCungCap();
+=======
+            CapNhatNhaCungCap capNhat = new CapNhatNhaCungCap();
+            capNhat.ShowDialog();
+>>>>>>> tam
 
         }
 
@@ -157,32 +156,86 @@ namespace KFC
             }
         }
 
-        //private void btnXuat_Click(object sender, EventArgs e)
-        //{
-        //    string tuKhoa = txtTimKiem.Text.Trim();
-        //    List<NhaCungCap_DTO> ketQuaList;
+        public DataTable ConvertListToDataTable(List<DTO.NhanVien_DTO> list)
+        {
+            DataTable dataTable = new DataTable(typeof(DTO.NhanVien_DTO).Name);
 
-        //    if (string.IsNullOrEmpty(tuKhoa))
-        //    {
-        //        ketQuaList = bus.GetAllNhaCungCap();
-        //    }
-        //    else
-        //    {
-        //        ketQuaList = bus.SearchNhaCungCap(tuKhoa);
-        //    }
+            // Lấy tất cả các thuộc tính của DTO.NhanVien_DTO
+            var properties = typeof(DTO.NhanVien_DTO).GetProperties();
 
-        //    if (ketQuaList == null || ketQuaList.Count == 0)
-        //    {
-        //        MessageBox.Show("Không tìm thấy nhà cung cấp nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        return;
-        //    }
+            // Tạo các cột cho DataTable dựa trên các thuộc tính
+            foreach (var prop in properties)
+            {
+                var propType = prop.PropertyType;
 
-        //    // Chuyển đổi List<NhaCungCap_DTO> sang DataTable
-        //    DataTable ketQua = ConvertListToDataTable(ketQuaList);
+                // Nếu là DateTime, tạo cột với kiểu string để chỉ hiển thị ngày
+                if (propType == typeof(DateTime) ||
+                    (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(Nullable<>) && Nullable.GetUnderlyingType(propType) == typeof(DateTime)))
+                {
+                    dataTable.Columns.Add(prop.Name, typeof(string)); // Đổi cột thành kiểu string
+                }
+                else
+                {
+                    // Kiểm tra nếu thuộc tính là kiểu Nullable, lấy kiểu cơ bản nếu cần
+                    if (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                    {
+                        propType = Nullable.GetUnderlyingType(propType);
+                    }
+                    dataTable.Columns.Add(prop.Name, propType);
+                }
 
-        //    FormReport formNhaCungCap = new FormReport(FormReport.LoaiBaoCao.NhaCungCap, ketQua);
-        //    formNhaCungCap.Show();
-        //}
+                // Thêm dữ liệu từ List vào DataTable
+                foreach (var item in list)
+                {
+                    var values = new object[properties.Length];
+                    for (int i = 0; i < properties.Length; i++)
+                    {
+                        var propValue = properties[i].GetValue(item, null);
+
+                        // Kiểm tra nếu là kiểu DateTime và định dạng lại chỉ hiển thị ngày
+                        if (propValue is DateTime dateValue)
+                        {
+                            values[i] = dateValue.ToString("dd/MM/yyyy"); // Chuyển đổi DateTime thành string chỉ chứa ngày
+                        }
+                        else
+                        {
+                            values[i] = propValue ?? DBNull.Value; // Gán DBNull.Value nếu giá trị null
+                        }
+                    }
+                    dataTable.Rows.Add(values);
+                }
+
+            }
+            return dataTable;
+
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            //    string tuKhoa = txtTimKiem.Text.Trim();
+            //    List<NhaCungCap_DTO> ketQuaList;
+
+            //    if (string.IsNullOrEmpty(tuKhoa))
+            //    {
+            //        ketQuaList = bus.GetAllNhaCungCap();
+            //    }
+            //    else
+            //    {
+            //        ketQuaList = bus.SearchNhaCungCap(tuKhoa);
+            //    }
+
+            //    if (ketQuaList == null || ketQuaList.Count == 0)
+            //    {
+            //        MessageBox.Show("Không tìm thấy nhà cung cấp nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        return;
+            //    }
+
+            //    // Chuyển đổi List<NhaCungCap_DTO> sang DataTable
+            //    DataTable ketQua = ConvertListToDataTable(ketQuaList);
+
+            //    FormReport formNhaCungCap = new FormReport(FormReport.LoaiBaoCao.NhaCungCap, ketQua);
+            //    formNhaCungCap.Show();
+        }
 
         public DataTable ConvertListToDataTable(List<NhaCungCap_DTO> list)
         {
