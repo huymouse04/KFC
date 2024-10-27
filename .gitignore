@@ -6,5 +6,7 @@
 *.dll
 *.exe
 *.pdb
-*.suo
-
+# Ignore Visual Studio files
+*.user
+*.userosscache
+*.sln.docstates
