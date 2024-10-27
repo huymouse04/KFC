@@ -73,7 +73,7 @@ namespace KFC
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            CapNhatNhaCungCap formCNNCC = new CapNhatNhaCungCap();
+           // CapNhatNhaCungCap formCNNCC = new CapNhatNhaCungCap();
 
         }
 
