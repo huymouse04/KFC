@@ -11,3 +11,11 @@
 *.userosscache
 *.sln.docstates
 *.cache
+PT_KFC/QL_KFC/**/bin/
+PT_KFC/QL_KFC/**/obj/
+PT_KFC/QL_KFC/BUS/obj/
+PT_KFC/QL_KFC/DAO/obj/
+PT_KFC/QL_KFC/DTO/obj/
+PT_KFC/QL_KFC/KFC/obj/
+
+
