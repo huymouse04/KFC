@@ -481,7 +481,6 @@
             // button8
             // 
 <<<<<<< HEAD
-<<<<<<< HEAD
             this.button7.Location = new System.Drawing.Point(762, 202);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(326, 199);
@@ -493,14 +492,12 @@
             this.button7.TabIndex = 7;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
-=======
             this.button8.Location = new System.Drawing.Point(877, 11);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(199, 131);
             this.button8.TabIndex = 4;
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
->>>>>>> huy
             // 
             // Main
             // 
