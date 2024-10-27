@@ -301,80 +301,7 @@ namespace KFC
             }
         }
 
-        private void btnCapNhat_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Lấy mã sản phẩm cũ từ DataGridView
-                string maSanPhamCu = dtGVKHO.SelectedRows[0].Cells["MaSanPham"].Value.ToString();
-
-                // Lấy mã sản phẩm mới từ TextBox
-                string maSanPhamMoi = txtMaSP.Text.Trim();
-
-                // Nếu mã sản phẩm mới khác mã cũ thì kiểm tra xem có tồn tại không
-                if (maSanPhamMoi != maSanPhamCu && khoBUS.CheckMaSanPhamExists(maSanPhamMoi))
-                {
-                    MessageBox.Show("Mã sản phẩm này đã tồn tại, vui lòng nhập mã khác.");
-                    return;
-                }
-
-                // Nếu mã sản phẩm hợp lệ (không bị trùng), tiến hành cập nhật
-                var kho = new Kho_DTO
-                {
-                    MaSanPham = maSanPhamMoi, // Mã sản phẩm mới hoặc không đổi
-                    TenSanPham = txtTenSP.Text,
-                    SoLuong = int.Parse(txtSL.Text),
-                    DonViTinh = txtDVT.Text,
-                    DonGia = float.Parse(txtDonGia.Text),
-                    MaLoaiHang = cbLH.SelectedValue.ToString()
-                };
-
-                // Tiến hành cập nhật sản phẩm trong cơ sở dữ liệu
-                khoBUS.UpdateKho(kho, maSanPhamCu); // Cập nhật với mã sản phẩm cũ
-
-                MessageBox.Show("Cập nhật sản phẩm thành công.");
-
-                // Tải lại dữ liệu vào DataGridView
-                LoadDataGridView();
-
-                // Reset form về trạng thái ban đầu
-                ClearForm();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi cập nhật sản phẩm: " + ex.Message);
-            }
-        }
-
-        private void vbButton7_Click(object sender, EventArgs e)
-        {
-            if (dtGVKHO.SelectedRows.Count > 0)
-            {
-                var result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
-                {
-                    try
-                    {
-                        string maSanPham = dtGVKHO.SelectedRows[0].Cells["MaSanPham"].Value.ToString();
-                        khoBUS.DeleteKho(maSanPham);
-                        MessageBox.Show("Xóa sản phẩm thành công.");
-                        LoadDataGridView(); // Tải lại dữ liệu vào DataGridView sau khi xóa
-                        ResetTextBoxes();   // Đặt lại các TextBox về trạng thái ban đầu
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một dòng để xóa.");
-            }
-        }
-
-       
-
+        
         private void btnLoaiHang_Click_1(object sender, EventArgs e)
         {
             openLoaiHangForm();
@@ -463,6 +390,78 @@ namespace KFC
         private void btnNCC_Click_1(object sender, EventArgs e)
         {
             openNhaCungCapForm();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dtGVKHO.SelectedRows.Count > 0)
+            {
+                var result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        string maSanPham = dtGVKHO.SelectedRows[0].Cells["MaSanPham"].Value.ToString();
+                        khoBUS.DeleteKho(maSanPham);
+                        MessageBox.Show("Xóa sản phẩm thành công.");
+                        LoadDataGridView(); // Tải lại dữ liệu vào DataGridView sau khi xóa
+                        ResetTextBoxes();   // Đặt lại các TextBox về trạng thái ban đầu
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để xóa.");
+            }
+        }
+
+        private void btnCapNhat_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy mã sản phẩm cũ từ DataGridView
+                string maSanPhamCu = dtGVKHO.SelectedRows[0].Cells["MaSanPham"].Value.ToString();
+
+                // Lấy mã sản phẩm mới từ TextBox
+                string maSanPhamMoi = txtMaSP.Text.Trim();
+
+                // Nếu mã sản phẩm mới khác mã cũ thì kiểm tra xem có tồn tại không
+                if (maSanPhamMoi != maSanPhamCu && khoBUS.CheckMaSanPhamExists(maSanPhamMoi))
+                {
+                    MessageBox.Show("Mã sản phẩm này đã tồn tại, vui lòng nhập mã khác.");
+                    return;
+                }
+
+                // Nếu mã sản phẩm hợp lệ (không bị trùng), tiến hành cập nhật
+                var kho = new Kho_DTO
+                {
+                    MaSanPham = maSanPhamMoi, // Mã sản phẩm mới hoặc không đổi
+                    TenSanPham = txtTenSP.Text,
+                    SoLuong = int.Parse(txtSL.Text),
+                    DonViTinh = txtDVT.Text,
+                    DonGia = float.Parse(txtDonGia.Text),
+                    MaLoaiHang = cbLH.SelectedValue.ToString()
+                };
+
+                // Tiến hành cập nhật sản phẩm trong cơ sở dữ liệu
+                khoBUS.UpdateKho(kho, maSanPhamCu); // Cập nhật với mã sản phẩm cũ
+
+                MessageBox.Show("Cập nhật sản phẩm thành công.");
+
+                // Tải lại dữ liệu vào DataGridView
+                LoadDataGridView();
+
+                // Reset form về trạng thái ban đầu
+                ClearForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật sản phẩm: " + ex.Message);
+            }   
         }
 
 
