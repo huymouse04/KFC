@@ -49,7 +49,7 @@ namespace KFC
                 try
                 {
                     nh.AddNhapHang(nhapHang);
-                    nh.UpdateSLKho(nhapHang.MaSanPham,nhapHang.SoLuong);
+                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong, nhapHang.TenSanPham, nhapHang.DonViTinh, (float)(nhapHang.DonGia ?? 0), nhapHang.MaLoaiHang);
                     MessageBox.Show("Thêm nhập hàng thành công!");
                     LoadData();
                     ClearInputFields();
@@ -187,7 +187,7 @@ namespace KFC
                 try
                 {
                     nh.UpdateNhapHang(nhapHang);
-                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong);
+                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong, nhapHang.TenSanPham, nhapHang.DonViTinh, (float)(nhapHang.DonGia ?? 0), nhapHang.MaLoaiHang);
                     MessageBox.Show("Cập nhật nhập hàng thành công!");
                     LoadData();
 
@@ -335,17 +335,32 @@ namespace KFC
         {
             if (cbMaSP.SelectedItem != null)
             {
-                string maSanPham = cbMaSP.SelectedValue.ToString();  
+                string maSanPham = cbMaSP.SelectedValue.ToString();
 
-                NhapHang_DAO nhapHangDao = new NhapHang_DAO();
-                string tenSanPham = nhapHangDao.GetTenSanPhamByMa(maSanPham);
+                NhapHang_BUS nhapHangBus = new NhapHang_BUS();
+                NhapHang_DTO nhapHangDTO = nhapHangBus.GetTenSanPhamByMa(maSanPham);
 
-                // Cập nhật giá trị cho textbox
-                txtTenSP.Text = tenSanPham ?? string.Empty;  
+                // Cập nhật giá trị cho các textbox
+                if (nhapHangDTO != null)
+                {
+                    txtTenSP.Text = nhapHangDTO.TenSanPham ?? string.Empty;
+                    txtDVT.Text = nhapHangDTO.DonViTinh ?? string.Empty;  // Nếu bạn có textbox cho đơn vị tính
+                    txtDonGia.Text = nhapHangDTO.DonGia?.ToString() ?? "0";  // Chuyển đổi giá thành chuỗi
+                }
+                else
+                {
+                    // Nếu không tìm thấy sản phẩm, làm trống các textbox
+                    txtTenSP.Text = string.Empty;
+                    txtDVT.Text = string.Empty;
+                    txtDonGia.Text = string.Empty;
+                }
             }
             else
             {
-                txtTenSP.Text = string.Empty; 
+                // Nếu không có sản phẩm được chọn, làm trống các textbox
+                txtTenSP.Text = string.Empty;
+                txtDVT.Text = string.Empty;
+                txtDonGia.Text = string.Empty;
             }
         }
     }
