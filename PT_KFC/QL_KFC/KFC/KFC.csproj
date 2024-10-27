@@ -301,7 +301,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RoundedPictureBox.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThucDon.cs">
       <SubType>Form</SubType>
