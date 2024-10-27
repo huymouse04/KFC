@@ -2,3 +2,9 @@
 */bin/
 */obj/
 *.suo
+# Ignore binary files
+*.dll
+*.exe
+*.pdb
+*.suo
+

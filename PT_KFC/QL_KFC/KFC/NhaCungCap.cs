@@ -67,12 +67,9 @@ namespace KFC
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-           // CapNhatNhaCungCap formCNNCC = new CapNhatNhaCungCap();
-=======
+
             CapNhatNhaCungCap capNhat = new CapNhatNhaCungCap();
             capNhat.ShowDialog();
->>>>>>> tam
 
         }
 
