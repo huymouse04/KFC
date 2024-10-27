@@ -45,14 +45,13 @@
             this.btnDoanhThu = new CustomButton.VBButton();
             this.btnThoat = new CustomButton.VBButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Body = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.button2 = new System.Windows.Forms.Button();
-=======
->>>>>>> b7bbca3e2de7c6c872e3772b027eac8aaad38c28
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cgfh = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -329,13 +328,22 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.cgfh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(164, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1359, 162);
             this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(493, 450);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -355,6 +363,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Body.BackgroundImage = global::KFC.Properties.Resources.banner5;
+            this.panel_Body.Controls.Add(this.button3);
             this.panel_Body.Controls.Add(this.button2);
             this.panel_Body.Controls.Add(this.button1);
             this.panel_Body.Controls.Add(this.checkBox1);
@@ -367,6 +376,15 @@
             this.panel_Body.TabIndex = 17;
             this.panel_Body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(796, 492);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -377,31 +395,24 @@
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // cgfh
             // 
-<<<<<<< HEAD
-            this.button1.Location = new System.Drawing.Point(493, 450);
-=======
-            this.button1.Location = new System.Drawing.Point(892, 56);
->>>>>>> b7bbca3e2de7c6c872e3772b027eac8aaad38c28
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cgfh.Location = new System.Drawing.Point(128, 77);
+            this.cgfh.Name = "cgfh";
+            this.cgfh.Size = new System.Drawing.Size(75, 23);
+            this.cgfh.TabIndex = 1;
+            this.cgfh.Text = "gfch";
+            this.cgfh.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
-            // button2
+            // button3
             // 
-            this.button2.Location = new System.Drawing.Point(796, 492);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(1090, 248);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(142, 97);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-=======
->>>>>>> b7bbca3e2de7c6c872e3772b027eac8aaad38c28
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -446,6 +457,8 @@
 =======
 >>>>>>> b7bbca3e2de7c6c872e3772b027eac8aaad38c28
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cgfh;
+        private System.Windows.Forms.Button button3;
     }
 }
 
