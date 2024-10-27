@@ -348,8 +348,6 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\B
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
 <<<<<<< HEAD
 =======
-
-
 >>>>>>> master
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
@@ -435,9 +433,6 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.cspr
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
-<<<<<<< HEAD
-=======
-
 D:\ProJect\KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
 D:\ProJect\KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll
@@ -522,7 +517,6 @@ D:\ProJect\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\ProJect\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\ProJect\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
-
 D:\GIT\KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.dll
 D:\GIT\KFC\PT_KFC\QL_KFC\BUS\bin\Debug\BUS.pdb
 D:\GIT\KFC\PT_KFC\QL_KFC\BUS\bin\Debug\DAO.dll
@@ -603,5 +597,3 @@ D:\GIT\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\GIT\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GIT\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.dll
 D:\GIT\KFC\PT_KFC\QL_KFC\BUS\obj\Debug\BUS.pdb
-
->>>>>>> master

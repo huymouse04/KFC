@@ -338,7 +338,6 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\DAO\obj\Debug\D
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\KFC\PT_KFC\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.pdb
 <<<<<<< HEAD
 =======
-
 D:\ProJect\KFC\PT_KFC\QL_KFC\DAO\bin\Debug\DAO.dll.config
 D:\ProJect\KFC\PT_KFC\QL_KFC\DAO\bin\Debug\DAO.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\DAO\bin\Debug\DAO.pdb
@@ -504,9 +503,6 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.cspr
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.csproj.Up2Date
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.dll
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.pdb
-<<<<<<< HEAD
-=======
-
 D:\GIT\KFC\PT_KFC\QL_KFC\DAO\bin\Debug\DAO.dll.config
 D:\GIT\KFC\PT_KFC\QL_KFC\DAO\bin\Debug\DAO.dll
 D:\GIT\KFC\PT_KFC\QL_KFC\DAO\bin\Debug\DAO.pdb
@@ -585,5 +581,3 @@ D:\GIT\KFC\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\GIT\KFC\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.csproj.Up2Date
 D:\GIT\KFC\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.dll
 D:\GIT\KFC\PT_KFC\QL_KFC\DAO\obj\Debug\DAO.pdb
-
->>>>>>> master
