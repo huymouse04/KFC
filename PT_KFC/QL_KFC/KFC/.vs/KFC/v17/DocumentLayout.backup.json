@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\",
   "Documents": [
     {
+<<<<<<< HEAD
+=======
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+>>>>>>> master
       "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,6 +22,7 @@
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,6 +31,12 @@
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+=======
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|e:\\kc\\chuyen de phat trien ung dung 1 2\\git\\pt_kfc\\ql_kfc\\kfc\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+>>>>>>> master
       "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\luongnhanvienrp.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:luongnhanvienrp.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     }
@@ -34,6 +48,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
 <<<<<<< HEAD
           "SelectedChildIndex": 8,
           "Children": [
@@ -55,6 +70,13 @@
               "DocumentIndex": 9,
 >>>>>>> master
 >>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
+=======
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+>>>>>>> master
               "Title": "LuongNhanVienRP.rdlc [Design]",
               "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\LuongNhanVienRP.rdlc",
               "RelativeDocumentMoniker": "LuongNhanVienRP.rdlc",
@@ -67,6 +89,7 @@
             },
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
               "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
@@ -75,6 +98,20 @@
             },
             {
               "$type": "Bookmark",
+=======
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+>>>>>>> master
               "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
@@ -88,6 +125,17 @@
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+<<<<<<< HEAD
+=======
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+>>>>>>> master
             },
             {
               "$type": "Bookmark",
@@ -96,13 +144,18 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 0,
+=======
+              "DocumentIndex": 1,
+>>>>>>> master
               "Title": "Main.Designer.cs",
               "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.Designer.cs",
               "RelativeDocumentMoniker": "Main.Designer.cs",
               "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.Designer.cs",
               "RelativeToolTip": "Main.Designer.cs",
               "ViewState": "AgIAAHkBAAAAAAAAAAASwIwBAAAAAAAAAAAAAA==",
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
               "DocumentIndex": 0,
@@ -115,12 +168,15 @@
               "RelativeToolTip": "Main.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
 >>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
+=======
+>>>>>>> master
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T12:33:28.722Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "DocumentIndex": 3,
               "Title": "Main.cs",
@@ -131,6 +187,11 @@
               "Title": "Main.cs [Design]",
               "DocumentMoniker": "D:\\ProJect\\KFC\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
 >>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
+=======
+              "DocumentIndex": 0,
+              "Title": "Main.cs",
+              "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
+>>>>>>> master
               "RelativeDocumentMoniker": "Main.cs",
               "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
               "RelativeToolTip": "Main.cs",
@@ -154,6 +215,7 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
+<<<<<<< HEAD
               "DocumentIndex": 1,
 =======
 <<<<<<< HEAD
@@ -162,6 +224,9 @@
               "DocumentIndex": 7,
 >>>>>>> master
 >>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
+=======
+              "DocumentIndex": 2,
+>>>>>>> master
               "Title": "FormReport.cs",
               "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs",
               "RelativeDocumentMoniker": "FormReport.cs",
@@ -174,6 +239,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "DocumentIndex": 2,
 =======
@@ -194,12 +260,16 @@
               "DocumentIndex": 10,
 >>>>>>> master
 >>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
+=======
+              "DocumentIndex": 3,
+>>>>>>> master
               "Title": "FormReport.cs [Design]",
               "DocumentMoniker": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs",
               "RelativeDocumentMoniker": "FormReport.cs",
               "ToolTip": "E:\\KC\\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\\GIT\\PT_KFC\\QL_KFC\\KFC\\FormReport.cs [Design]",
               "RelativeToolTip": "FormReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
 <<<<<<< HEAD
               "WhenOpened": "2024-10-25T02:07:46.087Z",
               "EditorCaption": " [Design]"
@@ -538,6 +608,10 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T19:41:55.89Z"
 >>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
+=======
+              "WhenOpened": "2024-10-25T02:07:46.087Z",
+              "EditorCaption": " [Design]"
+>>>>>>> master
             }
           ]
         }
