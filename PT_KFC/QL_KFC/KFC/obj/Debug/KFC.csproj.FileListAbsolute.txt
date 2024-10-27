@@ -127,6 +127,52 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.cspr
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.Up2Date
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.pdb
+<<<<<<< HEAD
+=======
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.AssemblyReference.cache
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.SuggestedBindingRedirects.cache
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe.config
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.Ban.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.BanControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhapBan.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatCombo.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatKhachHang.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatKhuyenMai.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatLoaiHang.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatLuong.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatNhaCungCap.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatNhanVien.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.CapNhatThucDon.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.ChiTietCombo.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.Combo.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.ComboControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.Connection.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.DangNhap.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.DoanhThu.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.DonDat.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.FormReport.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.HoaDon.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.KhachHang.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.KhachHangControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.Kho.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.KhuyenMai.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.KhuyenMaiControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.LichSuHoaDon.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.LoaiHang.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.LoaiHangControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.LuongNhanVien.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.Main.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.NhaCungCap.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.NhaCungCapControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.NhanVien.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.NhanVienControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.NhapHang.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.Properties.Resources.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.ThucDon.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.ThucDonControl.resources
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.GenerateResource.cache
+D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.CoreCompileInputs.cache
+>>>>>>> e329d39f0dc2036f36899197684f1fe90ae73711
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\Reports\RPNhapHang.rdlc
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\KFC.exe.config
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\KFC.exe
@@ -210,6 +256,7 @@ D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\pt\Microsoft.ReportViewer.WinForms.re
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+<<<<<<< HEAD
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.AssemblyReference.cache
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.SuggestedBindingRedirects.cache
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe.config
@@ -253,6 +300,8 @@ D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.ThucDon.resources
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.ThucDonControl.resources
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.GenerateResource.cache
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.CoreCompileInputs.cache
+=======
+>>>>>>> e329d39f0dc2036f36899197684f1fe90ae73711
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.Up2Date
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.exe
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.pdb
