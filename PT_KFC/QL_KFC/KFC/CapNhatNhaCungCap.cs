@@ -1,146 +1,217 @@
-﻿using BUS;
-using DAO;
-using DTO;
+﻿using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using System.IO;
 
 namespace KFC
 {
     public partial class CapNhatNhaCungCap : Form
     {
-
-        // Khai báo sự kiện để gửi dữ liệu nhà cung cấp sau khi thêm/cập nhật thành công
-        public event EventHandler<NhaCungCap_DTO> OnNhaCungCapSaved;
-
+        private NhaCungCap_DTO nhaCungCap; // Biến lưu trữ thông tin nhà cung cấp
+        private bool isUpdateMode; // Đánh dấu xem là chế độ cập nhật hay thêm mới
         private NhaCungCap_BUS bus = new NhaCungCap_BUS();
-        private NhaCungCap_DTO nhaCungCap;
+
+        public CapNhatNhaCungCap()
+        {
+            InitializeComponent();
+            isUpdateMode = false; // Đánh dấu đây là chế độ thêm mới
+            txtMaNCC.Enabled = true;
+        }
+
         public CapNhatNhaCungCap(NhaCungCap_DTO nhaCungCap)
         {
             InitializeComponent();
             this.nhaCungCap = nhaCungCap;
-            LoadData();
+            isUpdateMode = true; // Đánh dấu đây là chế độ cập nhật
+            txtMaNCC.Enabled = false; // Khóa trường mã nhà cung cấp để không thể thay đổi
+
+            if (nhaCungCap != null)
+            {
+                SetNhaCungCapData(nhaCungCap);
+            }
+            else
+            {
+                MessageBox.Show("Thông tin nhà cung cấp không hợp lệ.");
+            }
+        }
+
+        // Hàm này để nhận dữ liệu nhà cung cấp từ NhaCungCapControl  
+        private void SetNhaCungCapData(NhaCungCap_DTO nhaCungCap)
+        {
+            if (nhaCungCap != null)
+            {
+                txtTenNCC.Text = nhaCungCap.TenNhaCungCap;
+                txtMaNCC.Text = nhaCungCap.MaNhaCungCap;
+                txtDiaChi.Text = nhaCungCap.DiaChi;
+                mtbSDT.Text = nhaCungCap.SoDienThoai;
+                txtGhiChu.Text = nhaCungCap.GhiChu;
+
+                // Kiểm tra và hiển thị ảnh nhà cung cấp nếu có
+                if (nhaCungCap.AnhNhaCungCap != null && nhaCungCap.AnhNhaCungCap.Length > 0)
+                {
+                    try
+                    {
+                        using (MemoryStream ms = new MemoryStream(nhaCungCap.AnhNhaCungCap))
+                        {
+                            pbAnhNCC.Image = Image.FromStream(ms);
+                            pbAnhNCC.SizeMode = PictureBoxSizeMode.Zoom;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không thể hiển thị ảnh: " + ex.Message);
+                        pbAnhNCC.Image = Properties.Resources.logo;
+                        pbAnhNCC.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+                else
+                {
+                    pbAnhNCC.Image = Properties.Resources.logo;
+                    pbAnhNCC.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Thông tin nhà cung cấp không có sẵn.");
+            }
+        }
+
+        // Phương thức chuyển đổi hình ảnh sang mảng byte[]
+        private byte[] ConvertImageToByteArray(Image image)
+        {
+            if (image == null) return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        // Phương thức làm sạch các trường nhập liệu
+        private void ClearInputFields()
+        {
+            txtMaNCC.Clear();
+            txtTenNCC.Clear();
+            txtDiaChi.Clear();
+            mtbSDT.Clear();
+            txtGhiChu.Clear();
+            pbAnhNCC.Image = null;
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.InitialDirectory = "C:\\";
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Giải phóng hình ảnh cũ nếu có
-                    pbNCC.Image?.Dispose();
-                    pbNCC.Image = Image.FromFile(openFileDialog.FileName);
-                }
-            }
-        }
-
-        private void LoadData()
-        {
-            if (nhaCungCap != null)
-            {
-                txtMaNCC.Text = nhaCungCap.MaNhaCungCap;
-                txtTenNCC.Text = nhaCungCap.TenNhaCungCap;
-                txtDiaChi.Text = nhaCungCap.DiaChi;
-                txtSDT.Text = nhaCungCap.SoDienThoai;
-                txtGhiChu.Text = nhaCungCap.GhiChu;
-
-                // Xử lý hình ảnh
-                if (nhaCungCap.AnhNhaCungCap != null && nhaCungCap.AnhNhaCungCap.Length > 0)
-                {
+                    txtPath.Text = openFileDialog.FileName;
                     try
                     {
-                        using (var ms = new MemoryStream(nhaCungCap.AnhNhaCungCap))
-                        {
-                            pbNCC.Image?.Dispose(); // Giải phóng hình ảnh cũ nếu có
-                            pbNCC.Image = Image.FromStream(ms);
-                            pbNCC.SizeMode = PictureBoxSizeMode.Zoom;
-                        }
+                        byte[] imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+                        pbAnhNCC.Image = Image.FromFile(openFileDialog.FileName);
+                        pbAnhNCC.SizeMode = PictureBoxSizeMode.Zoom;
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Không thể tải hình ảnh: " + ex.Message);
+                        MessageBox.Show("Lỗi khi tải ảnh: " + ex.Message);
                     }
                 }
-                else
-                {
-                    SetDefaultImage(); // Có thể giữ lại hoặc loại bỏ
-                }
             }
-        }
-
-        private void SetDefaultImage()
-        {
-            pbNCC.Image?.Dispose(); // Giải phóng hình ảnh cũ nếu có
-            pbNCC.Image = null; // Có thể để null nếu không cần ảnh mặc định
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                // Kiểm tra các trường thông tin bắt buộc
-                if (string.IsNullOrEmpty(txtMaNCC.Text))
+                if (txtMaNCC.Text.Length > 10)
                 {
-                    MessageBox.Show("Vui lòng nhập mã nhà cung cấp.");
+                    MessageBox.Show("Mã nhà cung cấp không được vượt quá 10 ký tự.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(txtTenNCC.Text))
+                if (string.IsNullOrWhiteSpace(txtTenNCC.Text) || txtTenNCC.Text.Length > 100)
                 {
-                    MessageBox.Show("Vui lòng nhập tên nhà cung cấp.");
+                    MessageBox.Show("Tên nhà cung cấp không được để trống và không quá 100 ký tự.");
                     return;
                 }
 
-                if (string.IsNullOrEmpty(txtSDT.Text))
+                if (!mtbSDT.Text.StartsWith("0") || mtbSDT.Text.Length != 10)
                 {
-                    MessageBox.Show("Vui lòng nhập số điện thoại.");
+                    MessageBox.Show("Số điện thoại phải bắt đầu bằng số 0 và đủ 10 số.");
                     return;
                 }
 
-                // Cập nhật nhà cung cấp
-                nhaCungCap.MaNhaCungCap = txtMaNCC.Text;
-                nhaCungCap.TenNhaCungCap = txtTenNCC.Text;
-                nhaCungCap.DiaChi = txtDiaChi.Text;
-                nhaCungCap.SoDienThoai = txtSDT.Text;
-                nhaCungCap.GhiChu = txtGhiChu.Text;
-
-                // Xử lý ảnh nếu có chọn
-                if (pbNCC.Image != null)
+                if (txtDiaChi.Text.Length > 200)
                 {
-                    using (var ms = new MemoryStream())
-                    {
-                        pbNCC.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        nhaCungCap.AnhNhaCungCap = ms.ToArray();
-                    }
+                    MessageBox.Show("Địa chỉ không được vượt quá 200 ký tự.");
+                    return;
                 }
 
-                // Cập nhật nhà cung cấp
-                bus.UpdateNhaCungCap(nhaCungCap);
-                LoadData();
-                MessageBox.Show("Cập nhật nhà cung cấp thành công!");
-                OnNhaCungCapSaved?.Invoke(this, nhaCungCap);
+                if (isUpdateMode)
+                {
+                    UpdateNhaCungCap();
+                }
+                else
+                {
+                    AddNhaCungCap();
+                }
 
-                // Tải lại dữ liệu để hiển thị thông tin đã cập nhật
+                MessageBox.Show("Lưu nhà cung cấp thành công!");
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void UpdateNhaCungCap()
+        {
+            nhaCungCap.TenNhaCungCap = txtTenNCC.Text.Trim();
+            nhaCungCap.DiaChi = txtDiaChi.Text.Trim();
+            nhaCungCap.SoDienThoai = mtbSDT.Text.Trim();
+            nhaCungCap.GhiChu = txtGhiChu.Text.Trim();
+
+            if (pbAnhNCC.Image != null)
+            {
+                nhaCungCap.AnhNhaCungCap = ConvertImageToByteArray(pbAnhNCC.Image);
+            }
+
+            bus.UpdateNhaCungCap(nhaCungCap);
+        }
+
+        private void AddNhaCungCap()
+        {
+            NhaCungCap_DTO newNhaCungCap = new NhaCungCap_DTO
+            {
+                MaNhaCungCap = txtMaNCC.Text.Trim(),
+                TenNhaCungCap = txtTenNCC.Text.Trim(),
+                DiaChi = txtDiaChi.Text.Trim(),
+                SoDienThoai = mtbSDT.Text.Trim(),
+                GhiChu = txtGhiChu.Text.Trim(),
+                AnhNhaCungCap = ConvertImageToByteArray(pbAnhNCC.Image)
+            };
+
+            bus.AddNhaCungCap(newNhaCungCap);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            this.Close(); // Đóng form mà không lưu thay đổi
-
+            ClearInputFields();
         }
     }
 }

@@ -1,10 +1,16 @@
 ﻿using BUS;
-using DAO;
 using DTO;
 using KFC.Properties;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Data.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KFC
@@ -12,8 +18,8 @@ namespace KFC
     public partial class NhaCungCapControl : UserControl
     {
         public NhaCungCap_DTO nhaCungCap { get; private set; }
-        private static NhaCungCapControl selectedControl; // Đối tượng đã chọn
         private int clickCount = 0; // Biến đếm số lần nhấp
+        private static NhaCungCapControl selectedControl; // Đối tượng đã chọn
 
         public bool IsSelected { get; set; }
 
@@ -101,6 +107,18 @@ namespace KFC
             set { lblSoDienThoai.Text = value; }
         }
 
+        public byte[] ConvertImageToByteArray(string imagePath)
+        {
+            using (var fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+            {
+                using (var ms = new MemoryStream())
+                {
+                    fs.CopyTo(ms);
+                    return ms.ToArray();
+                }
+            }
+        }
+
         private void NhaCungCapControl_DoubleClick(object sender, EventArgs e)
         {
             // Mở form cập nhật khi click đúp
@@ -111,12 +129,17 @@ namespace KFC
             }
         }
 
+        private bool IsDoubleClick()
+        {
+            return MouseButtons == MouseButtons.Left && Control.MouseButtons == MouseButtons.None;
+        }
+
+
         private void NhaCungCapControl_MouseDown(object sender, MouseEventArgs e)
         {
             // Xử lý sự kiện nhấn chuột
             if (e.Button == MouseButtons.Left)
             {
-                clickCount++; // Tăng biến đếm mỗi khi nhấp chuột
 
                 if (!Control.ModifierKeys.HasFlag(Keys.Control)) // Kiểm tra phím Ctrl có được giữ không
                 {
