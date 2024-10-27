@@ -785,6 +785,7 @@ D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForm
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\ProJect\KFC\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.Up2Date
 >>>>>>> master
+<<<<<<< HEAD
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\Reports\RPNhapHang.rdlc
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\KFC.exe.config
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\KFC.exe
@@ -869,3 +870,5 @@ E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\ru\Micro
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\obj\Debug\KFC.csproj.Up2Date
+=======
+>>>>>>> 596a05fe40970766a960cc6db1ba8c741bf3fbef
