@@ -91,18 +91,38 @@ namespace DAO
 
             DB.NhapHangs.InsertOnSubmit(newNhapHang);
             DB.SubmitChanges();
-            UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong);
+            UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong, nhapHang.TenSanPham, nhapHang.DonViTinh, nhapHang.DonGia, nhapHang.MaLoaiHang);
+
         }
 
-        public void UpdateKhoSoLuong(string maSanPham, int soLuong)
+        public void UpdateKhoSoLuong(string maSanPham, int soLuong, string tenSanPham, string donViTinh, double? donGia, string maLoaiHang)
         {
+            // Tìm kiếm sản phẩm trong bảng kho theo mã sản phẩm
             var existingKho = DB.Khos.FirstOrDefault(k => k.MaSanPham == maSanPham);
+
+            // Kiểm tra nếu sản phẩm đã tồn tại trong kho
             if (existingKho != null)
             {
-                existingKho.SoLuong += soLuong; 
-                DB.SubmitChanges();
+                // Cập nhật số lượng nếu sản phẩm tồn tại
+                existingKho.SoLuong += soLuong;
             }
-           
+            else
+            {
+                // Nếu không tồn tại, tạo mới bản ghi kho với thông tin chi tiết
+                var newKho = new Kho
+                {
+                    MaSanPham = maSanPham,
+                    TenSanPham = tenSanPham,
+                    SoLuong = soLuong,
+                    DonViTinh = donViTinh,
+                    DonGia = donGia,
+                    MaLoaiHang = maLoaiHang
+                };
+                DB.Khos.InsertOnSubmit(newKho);
+            }
+
+            // Lưu thay đổi vào cơ sở dữ liệu
+            DB.SubmitChanges();
         }
         public List<NhapHang_DTO> GetNhapHangByTenSP(string tenSP)
         {
@@ -303,13 +323,23 @@ namespace DAO
             return dataTable;
         }
 
-        public string GetTenSanPhamByMa(string maSanPham)
+        public NhapHang_DTO GetTenSanPhamByMa(string maSanPham)
         {
-            return DB.Khos
-                     .Where(sp => sp.MaSanPham == maSanPham)
-                     .Select(sp => sp.TenSanPham)
-                     .FirstOrDefault();
+            var result = (from kho in DB.Khos
+                          join lh in DB.LoaiHangs on kho.MaLoaiHang equals lh.MaLoaiHang
+                          where kho.MaSanPham == maSanPham
+                          select new NhapHang_DTO
+                          {
+                              MaSanPham = kho.MaSanPham,
+                              TenSanPham = kho.TenSanPham,
+                              DonViTinh = kho.DonViTinh,
+                              DonGia = kho.DonGia,
+                              MaLoaiHang = kho.MaLoaiHang,
+
+                          }).FirstOrDefault();
+
+            return result;
         }
-       
+
     }
 }
