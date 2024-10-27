@@ -391,9 +391,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_Body;
         private CustomButton.VBButton btnThoat;
-=======
+
         private System.Windows.Forms.Button r;
->>>>>>> master
+
     }
 }
 
