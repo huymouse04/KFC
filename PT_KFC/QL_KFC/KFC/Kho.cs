@@ -394,7 +394,7 @@ namespace KFC
             openNhaCungCapForm();
         }
 
-<<<<<<< HEAD
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dtGVKHO.SelectedRows.Count > 0)
@@ -467,12 +467,12 @@ namespace KFC
             }   
         }
 
-=======
+
         private void btnXuat_Click(object sender, EventArgs e)
         {
             string tuKhoa = txtMaSP.Text.Trim();
             List<DTO.Kho_DTO> ketQuaList;
->>>>>>> tam
+
 
             if (string.IsNullOrEmpty(tuKhoa))
             {
