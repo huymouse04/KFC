@@ -72,6 +72,11 @@ namespace KFC
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+
+
+            CapNhatNhaCungCap capNhat = new CapNhatNhaCungCap();
+            capNhat.ShowDialog();
+
             using (CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap()) 
             {
                 if (formCapNhat.ShowDialog() == DialogResult.OK)
@@ -79,6 +84,8 @@ namespace KFC
                     LoadData();
                 }
             }
+
+
 
         }
 
