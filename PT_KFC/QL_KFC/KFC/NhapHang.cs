@@ -123,6 +123,7 @@ namespace KFC
             cbTenSP.SelectedIndex = -1;
             cbMaNCC.SelectedIndex = -1;
             cbMaLH.SelectedIndex = -1;
+            dtpNN.Value=DateTime.Now;
         }
 
         private void dtGVNH_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -383,6 +384,9 @@ namespace KFC
 
         }
 
-        
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearInputFields();
+        }
     }
 }
