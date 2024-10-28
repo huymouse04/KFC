@@ -392,6 +392,7 @@
     <EmbeddedResource Include="Kho.resx">
       <DependentUpon>Kho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoRP.rdlc" />
     <EmbeddedResource Include="KhuyenMai.resx">
       <DependentUpon>KhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
