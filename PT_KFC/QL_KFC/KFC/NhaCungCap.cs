@@ -61,14 +61,24 @@ namespace KFC
                 return;
             }
 
-            CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap(nhaCungCapDayDu);
-            formCapNhat.ShowDialog();
+            using (CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap(nhaCungCapDayDu)) 
+            {
+                if (formCapNhat.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            CapNhatNhaCungCap capNhat = new CapNhatNhaCungCap();
-            capNhat.ShowDialog();
+            using (CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap()) 
+            {
+                if (formCapNhat.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
 
         }
 
