@@ -236,36 +236,7 @@ namespace KFC
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string maSanPham = txtMaSP.Text;
-
-                // Kiểm tra nếu mã sản phẩm đã tồn tại
-                if (khoBUS.CheckMaSanPhamExists(maSanPham))
-                {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại, vui lòng nhập mã khác.");
-                    return;
-                }
-
-                // Thêm sản phẩm mới
-                var kho = new Kho_DTO
-                {
-                    MaSanPham = maSanPham,
-                    TenSanPham = txtTenSP.Text,
-                    SoLuong = int.Parse(txtSL.Text),
-                    DonViTinh = txtDVT.Text,
-                    DonGia = float.Parse(txtDonGia.Text),
-                    MaLoaiHang = cbLH.SelectedValue.ToString()
-                };
-
-                khoBUS.AddKho(kho);
-                MessageBox.Show("Thêm sản phẩm thành công.");
-                LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi thêm sản phẩm: " + ex.Message);
-            }
+           
         }
 
        
@@ -524,6 +495,38 @@ namespace KFC
             return dataTable;
         }
 
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string maSanPham = txtMaSP.Text;
 
+                // Kiểm tra nếu mã sản phẩm đã tồn tại
+                if (khoBUS.CheckMaSanPhamExists(maSanPham))
+                {
+                    MessageBox.Show("Mã sản phẩm đã tồn tại, vui lòng nhập mã khác.");
+                    return;
+                }
+
+                // Thêm sản phẩm mới
+                var kho = new Kho_DTO
+                {
+                    MaSanPham = maSanPham,
+                    TenSanPham = txtTenSP.Text,
+                    SoLuong = int.Parse(txtSL.Text),
+                    DonViTinh = txtDVT.Text,
+                    DonGia = float.Parse(txtDonGia.Text),
+                    MaLoaiHang = cbLH.SelectedValue.ToString()
+                };
+
+                khoBUS.AddKho(kho);
+                MessageBox.Show("Thêm sản phẩm thành công.");
+                LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm sản phẩm: " + ex.Message);
+            }
+        }
     }
 }
