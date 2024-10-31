@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKFC" Class="KFCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MOUSE\TESTDB;Initial Catalog=QLKFC;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLKFCConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-7UF615BR\SQLEXPRESS;Initial Catalog=QLKFC;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLKFCConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="MaBan" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -131,6 +131,17 @@
       <Association Name="LoaiHang_NhapHang" Member="NhapHangs" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="NhapHang" />
     </Type>
   </Table>
+  <Table Name="dbo.Luong" Member="Luongs">
+    <Type Name="Luong">
+      <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SoNgayLam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThuongChuyenCan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThuongHieuSuat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NhanVien_Luong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
     <Type Name="NhaCungCap">
       <Column Name="MaNhaCungCap" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -167,23 +178,12 @@
       <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MaNhaCungCap" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgaySanXuat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayHetHan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="NhapHang_DoanhThu" Member="DoanhThus" ThisKey="MaNhapHang" OtherKey="MaNhapHang" Type="DoanhThu" />
       <Association Name="LoaiHang_NhapHang" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
       <Association Name="NhaCungCap_NhapHang" Member="NhaCungCap" ThisKey="MaNhaCungCap" OtherKey="MaNhaCungCap" Type="NhaCungCap" IsForeignKey="true" />
       <Association Name="Kho_NhapHang" Member="Kho" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="Kho" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Luong" Member="Luongs">
-    <Type Name="Luong">
-      <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoNgayLam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SoGioLamThem" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThuongChuyenCan" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ThuongHieuSuat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="KhoanTru" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="NhanVien_Luong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
