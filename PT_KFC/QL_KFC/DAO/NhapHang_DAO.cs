@@ -32,10 +32,11 @@ namespace DAO
                                 DonViTinh = nh.DonViTinh,
                                 SoLuong = nh.SoLuong,
                                 NgayNhap = nh.NgayNhap,
+                                NgaySanXuat = nh.NgaySanXuat,
+                                NgayHetHan = nh.NgayHetHan,
                                 MaLoaiHang = j.MaLoaiHang,
                                 MaNhaCungCap = m.MaNhaCungCap,
                                 DonGia = nh.DonGia
-
                             };
 
             return nhapHangs.ToList();
@@ -54,6 +55,8 @@ namespace DAO
                             DonViTinh = nh.DonViTinh,
                             SoLuong = nh.SoLuong,
                             NgayNhap = nh.NgayNhap,
+                            NgaySanXuat = nh.NgaySanXuat,
+                            NgayHetHan = nh.NgayHetHan,
                             MaLoaiHang = j.MaLoaiHang,
                             MaNhaCungCap = m.MaNhaCungCap,
                             DonGia = nh.DonGia
@@ -75,24 +78,42 @@ namespace DAO
             return query.ToList();
         }
 
-
         public void AddNhapHang(NhapHang_DTO nhapHang)
         {
-            var newNhapHang = new NhapHang
+            try
             {
-                MaSanPham = nhapHang.MaSanPham,
-                SoLuong = nhapHang.SoLuong,
-                DonViTinh = nhapHang.DonViTinh,
-                NgayNhap = nhapHang.NgayNhap,
-                MaLoaiHang = nhapHang.MaLoaiHang,
-                MaNhaCungCap = nhapHang.MaNhaCungCap,
-                DonGia = nhapHang.DonGia
-            };
+                if (nhapHang.NgaySanXuat > nhapHang.NgayNhap)
+                {
+                    throw new ArgumentException("Lỗi: Ngày sản xuất phải nhỏ hơn hoặc bằng Ngày nhập.");
+                }
+                if (nhapHang.NgayNhap >= nhapHang.NgayHetHan)
+                {
+                    throw new ArgumentException("Lỗi: Ngày nhập phải nhỏ hơn Ngày hết hạn.");
+                }
 
-            DB.NhapHangs.InsertOnSubmit(newNhapHang);
-            DB.SubmitChanges();
-            UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong);
+                var newNhapHang = new NhapHang
+                {
+                    MaSanPham = nhapHang.MaSanPham,
+                    SoLuong = nhapHang.SoLuong,
+                    DonViTinh = nhapHang.DonViTinh,
+                    NgaySanXuat = nhapHang.NgaySanXuat,
+                    NgayNhap = nhapHang.NgayNhap,
+                    NgayHetHan = nhapHang.NgayHetHan,
+                    MaLoaiHang = nhapHang.MaLoaiHang,
+                    MaNhaCungCap = nhapHang.MaNhaCungCap,
+                    DonGia = nhapHang.DonGia
+                };
+
+                DB.NhapHangs.InsertOnSubmit(newNhapHang);
+                DB.SubmitChanges();
+                UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);  // Xuất lỗi chi tiết
+            }
         }
+
 
         public void UpdateKhoSoLuong(string maSanPham, int soLuongMoi)
         {
@@ -129,6 +150,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              DonGia = nh.DonGia
@@ -136,6 +159,7 @@ namespace DAO
 
             return result.ToList();
         }
+
         public List<NhapHang_DTO> GetNhapHangByMa(int maNhapHang)
         {
             var result = from nh in DB.NhapHangs
@@ -149,6 +173,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -170,6 +196,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -191,6 +219,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -211,6 +241,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -224,30 +256,42 @@ namespace DAO
             try
             {
                 var existingNhapHang = DB.NhapHangs.FirstOrDefault(nh => nh.MaNhapHang == nhapHang.MaNhapHang);
-                if (existingNhapHang != null)
+                if (existingNhapHang == null)
                 {
-                    existingNhapHang.MaSanPham = nhapHang.MaSanPham;
-                    existingNhapHang.SoLuong = nhapHang.SoLuong;
-                    existingNhapHang.DonViTinh = nhapHang.DonViTinh;
-                    existingNhapHang.NgayNhap = nhapHang.NgayNhap;
-                    existingNhapHang.MaLoaiHang = nhapHang.MaLoaiHang;
-                    existingNhapHang.MaNhaCungCap = nhapHang.MaNhaCungCap;
-                    existingNhapHang.DonGia = nhapHang.DonGia;
+                    throw new ArgumentException("Lỗi: Mã nhập hàng không tồn tại.");
+                }
 
-                    DB.SubmitChanges();
-                    Console.WriteLine("Cập nhật thành công."); // Ghi log thành công
-                }
-                else
+                if (nhapHang.NgaySanXuat > nhapHang.NgayNhap)
                 {
-                    Console.WriteLine("Mã nhập hàng không tồn tại."); // Ghi log không tìm thấy
+                    throw new ArgumentException("Lỗi: Ngày sản xuất phải nhỏ hơn hoặc bằng Ngày nhập.");
                 }
+                if (nhapHang.NgayNhap >= nhapHang.NgayHetHan)
+                {
+                    throw new ArgumentException("Lỗi: Ngày nhập phải nhỏ hơn Ngày hết hạn.");
+                }
+
+                existingNhapHang.MaSanPham = nhapHang.MaSanPham;
+                existingNhapHang.SoLuong = nhapHang.SoLuong;
+                existingNhapHang.DonViTinh = nhapHang.DonViTinh;
+                existingNhapHang.NgaySanXuat = nhapHang.NgaySanXuat;
+                existingNhapHang.NgayNhap = nhapHang.NgayNhap;
+                existingNhapHang.NgayHetHan = nhapHang.NgayHetHan;
+                existingNhapHang.MaLoaiHang = nhapHang.MaLoaiHang;
+                existingNhapHang.MaNhaCungCap = nhapHang.MaNhaCungCap;
+                existingNhapHang.DonGia = nhapHang.DonGia;
+
+                DB.SubmitChanges();
+                Console.WriteLine("Cập nhật thành công.");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);  // Xuất lỗi chi tiết
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Lỗi khi cập nhật: {ex.Message}"); // Ghi log lỗi
+                Console.WriteLine($"Lỗi không xác định: {ex.Message}");  // Lỗi hệ thống hoặc ngoại lệ khác
             }
         }
-
         public void DeleteNhapHang(int maNhapHang)
         {
             var existingNhapHang = DB.NhapHangs.FirstOrDefault(nh => nh.MaNhapHang == maNhapHang);
