@@ -124,12 +124,6 @@
     <Compile Include="CapNhatLoaiHang.Designer.cs">
       <DependentUpon>CapNhatLoaiHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapNhatLuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatLuong.Designer.cs">
-      <DependentUpon>CapNhatLuong.cs</DependentUpon>
-    </Compile>
     <Compile Include="CapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,9 +331,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatLoaiHang.resx">
       <DependentUpon>CapNhatLoaiHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatLuong.resx">
-      <DependentUpon>CapNhatLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatNhaCungCap.resx">
       <DependentUpon>CapNhatNhaCungCap.cs</DependentUpon>

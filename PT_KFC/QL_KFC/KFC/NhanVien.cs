@@ -19,6 +19,7 @@ namespace KFC
 
         private NhanVien_DTO nhanVien; // Biến lưu trữ thông tin nhân viên
         private NhanVien_BUS bus = new NhanVien_BUS();
+
         public NhanVien()
         {
             InitializeComponent();
@@ -52,7 +53,6 @@ namespace KFC
                 control.UpdateData(nhanVien); // Cập nhật thông tin nhân viên vào control
                 control.UserControlDoubleClicked += (s, e) => HienThiThongTinNhanVien(nhanVien);
 
-
                 flpNhanVien.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
                 flpNhanVien.Refresh();
             }
@@ -61,6 +61,8 @@ namespace KFC
         private void HienThiThongTinNhanVien(NhanVien_DTO nhanVien)
         {
             if (nhanVien == null) return;
+
+            txtMaNV.Enabled = false;
 
             txtMaNV.Text = nhanVien.MaNhanVien;
             txtTenNV.Text = nhanVien.TenNhanVien;
@@ -96,12 +98,22 @@ namespace KFC
 
         private void btnLuongNhanVien_Click(object sender, EventArgs e)
         {
-            LuongNhanVien FormLuong = new LuongNhanVien();
-            FormLuong.ShowDialog();
+            // Mở form lương
+            LuongNhanVien luongForm = new LuongNhanVien();
+            luongForm.ShowDialog();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            // Kiểm tra nếu các TextBox trống
+            if (string.IsNullOrWhiteSpace(txtMaNV.Text) || string.IsNullOrWhiteSpace(txtTenNV.Text) || string.IsNullOrWhiteSpace(txtDiaChi.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtSoGioLam.Text) || string.IsNullOrWhiteSpace(cbChucVu.Text) ||
+                string.IsNullOrWhiteSpace(mtbSDT.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngăn không cho tiếp tục thực hiện
+            }
+
 
             var newNhanVien = new NhanVien_DTO
             {
@@ -152,7 +164,7 @@ namespace KFC
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LoadData();
-            txtTimKiem.Clear();
+            txtMaNV.Enabled = true;
             ClearInputFields();
         }
 
@@ -165,11 +177,16 @@ namespace KFC
 
             // Cập nhật FlowLayoutPanel với kết quả tìm kiếm
             flpNhanVien.Controls.Clear();
+            // Duyệt qua danh sách nhân viên và thêm vào FlowLayoutPanel
             foreach (var nhanVien in result)
             {
                 NhanVienControl control = new NhanVienControl();
-                // control.UpdateData(nhanVien); // Cập nhật thông tin nhân viên vào control
+                control.UpdateData(nhanVien); // Cập nhật thông tin nhân viên vào control
+                control.UserControlDoubleClicked += (s, i) => HienThiThongTinNhanVien(nhanVien);
+
+
                 flpNhanVien.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
+                flpNhanVien.Refresh();
             }
 
             if (result.Count == 0)
@@ -379,6 +396,7 @@ namespace KFC
             mtbSDT.Clear();
             txtEmail.Clear();
             txtDiaChi.Clear();
+            txtTimKiem.Clear();
             txtSoGioLam.Clear();
             cbChucVu.SelectedIndex = -1;
             rdbNam.Checked = false;
@@ -404,6 +422,15 @@ namespace KFC
 
         private void btnCapNhatNV_Click(object sender, EventArgs e)
         {
+
+            // Kiểm tra nếu các TextBox trống
+            if (string.IsNullOrWhiteSpace(txtMaNV.Text) || string.IsNullOrWhiteSpace(txtTenNV.Text) || string.IsNullOrWhiteSpace(txtDiaChi.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtSoGioLam.Text) || string.IsNullOrWhiteSpace(cbChucVu.Text) ||
+                string.IsNullOrWhiteSpace(mtbSDT.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngăn không cho tiếp tục thực hiện
+            }
 
             var updatedNhanVien = new NhanVien_DTO
             {

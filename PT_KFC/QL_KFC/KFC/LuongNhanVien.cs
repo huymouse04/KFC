@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DAO;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -16,13 +17,19 @@ namespace KFC
     {
         private string maNhanVien;
         private int thang;
+        private int nam;
         private LuongNhanVien_BUS bus = new LuongNhanVien_BUS();
         private NhanVien_BUS nvbus = new NhanVien_BUS();
         public LuongNhanVien()
         {
             InitializeComponent();
-            LoadData(); // Tải dữ liệu khi mở form
+           
 
+            bus = new LuongNhanVien_BUS();
+
+            // Kiểm tra và thêm lương khi mở form
+            bus.KiemTraVaThemLuong();
+            LoadData(); // Tải dữ liệu khi mở form
         }
 
         public void CapNhatDanhSachLuong()
@@ -62,105 +69,98 @@ namespace KFC
 
 
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string searchTerm = txtTimKiem.Text.Trim();
-            int? month = null;
+        //private void btnTimKiem_Click(object sender, EventArgs e)
+        //{
+        //    string searchTerm = txtTimKiem.Text.Trim();
+        //    int? month = null;
 
-            // Kiểm tra nếu ComboBox chọn tháng có giá trị hợp lệ
-            if (cbThang.SelectedIndex != -1)
-            {
-                month = int.Parse(cbThang.SelectedItem.ToString()); // Lấy giá trị tháng từ ComboBox
-            }
+        //    // Kiểm tra nếu ComboBox chọn tháng có giá trị hợp lệ
+        //    if (cbThang.SelectedIndex != -1)
+        //    {
+        //        month = int.Parse(cbThang.SelectedItem.ToString()); // Lấy giá trị tháng từ ComboBox
+        //    }
 
-            List<LuongNhanVien_DTO> results = new List<LuongNhanVien_DTO>();
+        //    List<LuongNhanVien_DTO> results = new List<LuongNhanVien_DTO>();
 
-            // Nếu người dùng chọn tháng và có từ khóa tìm kiếm
-            if (!string.IsNullOrEmpty(searchTerm) && month.HasValue)
-            {
-                results = bus.SearchLuongNhanVienTheoThang(searchTerm, month.Value);
-            }
-            // Nếu chỉ chọn tháng mà không có từ khóa tìm kiếm
-            else if (month.HasValue)
-            {
-                results = bus.SearchLuongByMonth(month.Value);
-            }
-            // Nếu chỉ tìm theo từ khóa mà không chọn tháng
-            else if (!string.IsNullOrEmpty(searchTerm))
-            {
-                results = bus.SearchLuongNhanVien(searchTerm);
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm hoặc chọn tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+        //    // Nếu người dùng chọn tháng và có từ khóa tìm kiếm
+        //    if (!string.IsNullOrEmpty(searchTerm) && month.HasValue)
+        //    {
+        //        results = bus.SearchLuongNhanVienTheoThang(searchTerm, month.Value);
+        //    }
+        //    // Nếu chỉ chọn tháng mà không có từ khóa tìm kiếm
+        //    else if (month.HasValue)
+        //    {
+        //        results = bus.SearchLuongByMonth(month.Value);
+        //    }
+        //    // Nếu chỉ tìm theo từ khóa mà không chọn tháng
+        //    else if (!string.IsNullOrEmpty(searchTerm))
+        //    {
+        //        results = bus.SearchLuongNhanVien(searchTerm);
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm hoặc chọn tháng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
 
-            // Hiển thị kết quả lên DataGridView
-            dgvLuongNhanVien.DataSource = results;
+        //    // Hiển thị kết quả lên DataGridView
+        //    dgvLuongNhanVien.DataSource = results;
 
-            // Kiểm tra nếu không có kết quả nào được tìm thấy
-            if (results == null || results.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy kết quả nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+        //    // Kiểm tra nếu không có kết quả nào được tìm thấy
+        //    if (results == null || results.Count == 0)
+        //    {
+        //        MessageBox.Show("Không tìm thấy kết quả nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
 
-        private void btnXuat_Click(object sender, EventArgs e)
-        {
-            string tuKhoa = txtTimKiem.Text.Trim();
-            int? thang = null;  // Biến để lưu giá trị tháng nếu được chọn
+        //private void btnXuat_Click(object sender, EventArgs e)
+        //{
+        //    string tuKhoa = txtTimKiem.Text.Trim();
+        //    int? thang = null;  // Biến để lưu giá trị tháng nếu được chọn
 
-            // Nếu ComboBox tháng được chọn, lấy giá trị tháng
-            if (cbThang.SelectedIndex != -1)
-            {
-                thang = int.Parse(cbThang.SelectedItem.ToString()); // Lấy giá trị tháng từ ComboBox
-            }
+        //    // Nếu ComboBox tháng được chọn, lấy giá trị tháng
+        //    if (cbThang.SelectedIndex != -1)
+        //    {
+        //        thang = int.Parse(cbThang.SelectedItem.ToString()); // Lấy giá trị tháng từ ComboBox
+        //    }
 
-            List<DTO.LuongNhanVien_DTO> ketQuaList = new List<DTO.LuongNhanVien_DTO>();
+        //    List<DTO.LuongNhanVien_DTO> ketQuaList = new List<DTO.LuongNhanVien_DTO>();
 
-            // Nếu từ khóa rỗng và không chọn tháng, lấy tất cả nhân viên
-            if (string.IsNullOrEmpty(tuKhoa) && thang == null)
-            {
-                ketQuaList = bus.LayDanhSachLuong(); // Lấy tất cả dữ liệu
-            }
-            else if (!string.IsNullOrEmpty(tuKhoa) && thang != null)
-            {
-                // Kết hợp tìm kiếm theo từ khóa và tháng
-                ketQuaList = bus.SearchLuongNhanVienTheoThang(tuKhoa, thang.Value);
-            }
-            else if (thang != null)
-            {
-                // Nếu chỉ chọn tháng, tìm theo tháng
-                ketQuaList = bus.SearchLuongByMonth(thang.Value);
-            }
-            else
-            {
-                // Nếu chỉ tìm theo từ khóa (không có tháng)
-                ketQuaList = bus.SearchLuongNhanVien(tuKhoa);
-            }
+        //    // Nếu từ khóa rỗng và không chọn tháng, lấy tất cả nhân viên
+        //    if (string.IsNullOrEmpty(tuKhoa) && thang == null)
+        //    {
+        //        ketQuaList = bus.LayDanhSachLuong(); // Lấy tất cả dữ liệu
+        //    }
+        //    else if (!string.IsNullOrEmpty(tuKhoa) && thang != null)
+        //    {
+        //        // Kết hợp tìm kiếm theo từ khóa và tháng
+        //        ketQuaList = bus.SearchLuongNhanVienTheoThang(tuKhoa, thang.Value);
+        //    }
+        //    else if (thang != null)
+        //    {
+        //        // Nếu chỉ chọn tháng, tìm theo tháng
+        //        ketQuaList = bus.SearchLuongByMonth(thang.Value);
+        //    }
+        //    else
+        //    {
+        //        // Nếu chỉ tìm theo từ khóa (không có tháng)
+        //        ketQuaList = bus.SearchLuongNhanVien(tuKhoa);
+        //    }
 
-            // Kiểm tra kết quả tìm kiếm
-            if (ketQuaList == null || ketQuaList.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy nhân viên nào với từ khóa hoặc tháng đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+        //    // Kiểm tra kết quả tìm kiếm
+        //    if (ketQuaList == null || ketQuaList.Count == 0)
+        //    {
+        //        MessageBox.Show("Không tìm thấy nhân viên nào với từ khóa hoặc tháng đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
 
-            // Chuyển đổi List<DTO.LuongNhanVien_DTO> sang DataTable
-            DataTable ketQua = ConvertListToDataTable(ketQuaList);
+        //    // Chuyển đổi List<DTO.LuongNhanVien_DTO> sang DataTable
+        //    DataTable ketQua = ConvertListToDataTable(ketQuaList);
 
-            // Hiển thị báo cáo
-            FormReport formLuong = new FormReport(FormReport.LoaiBaoCao.LuongNhanVien, ketQua);
-            formLuong.Show();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            CapNhatLuong cnl = new CapNhatLuong();
-            cnl.ShowDialog();
-
-        }
+        //    // Hiển thị báo cáo
+        //    FormReport formLuong = new FormReport(FormReport.LoaiBaoCao.LuongNhanVien, ketQua);
+        //    formLuong.Show();
+        //}
 
         public DataTable ConvertListToDataTable(List<DTO.LuongNhanVien_DTO> list)
         {
@@ -246,10 +246,6 @@ namespace KFC
                         return;
                     }
 
-                    // Mở Form Cập Nhật
-                    var capNhatLuongForm = new CapNhatLuong(luongDTO, this);
-                    capNhatLuongForm.SalaryUpdated += (s, ev) => this.CapNhatDanhSachLuong(); // Đăng ký sự kiện
-                    capNhatLuongForm.ShowDialog();
                 }
                 catch (Exception ex)
                 {

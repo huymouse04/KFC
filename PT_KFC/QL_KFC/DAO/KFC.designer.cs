@@ -3850,6 +3850,8 @@ namespace DAO
 		
 		private int _Thang;
 		
+		private int _Nam;
+		
 		private int _LuongCoBan;
 		
 		private int _SoNgayLam;
@@ -3872,6 +3874,8 @@ namespace DAO
     partial void OnMaNhanVienChanged();
     partial void OnThangChanging(int value);
     partial void OnThangChanged();
+    partial void OnNamChanging(int value);
+    partial void OnNamChanged();
     partial void OnLuongCoBanChanging(int value);
     partial void OnLuongCoBanChanged();
     partial void OnSoNgayLamChanging(int value);
@@ -3932,6 +3936,26 @@ namespace DAO
 					this._Thang = value;
 					this.SendPropertyChanged("Thang");
 					this.OnThangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nam", DbType="Int NOT NULL")]
+		public int Nam
+		{
+			get
+			{
+				return this._Nam;
+			}
+			set
+			{
+				if ((this._Nam != value))
+				{
+					this.OnNamChanging(value);
+					this.SendPropertyChanging();
+					this._Nam = value;
+					this.SendPropertyChanged("Nam");
+					this.OnNamChanged();
 				}
 			}
 		}

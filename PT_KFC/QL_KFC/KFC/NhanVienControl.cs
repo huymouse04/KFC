@@ -77,6 +77,7 @@ namespace KFC
                 child.DoubleClick += NhanVienControl_DoubleClick;
                 RegisterDoubleClickEvent(child); // Đăng ký đệ quy cho tất cả các con
             }
+         
         }
 
         // Hàm đăng ký sự kiện click cho tất cả các thành phần con

@@ -76,15 +76,60 @@ namespace DAO
         {
             try
             {
+                // Kiểm tra các thuộc tính bắt buộc không được để trống và độ dài tối đa
+                if (string.IsNullOrWhiteSpace(nhanVien.MaNhanVien))
+                {
+                    throw new Exception("Mã nhân viên không được để trống.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.TenNhanVien))
+                {
+                    throw new Exception("Tên nhân viên không được để trống.");
+                }
+                if (nhanVien.TenNhanVien.Length > 250)
+                {
+                    throw new Exception("Tên nhân viên không được quá 250 ký tự.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.GioiTinh))
+                {
+                    throw new Exception("Giới tính không được để trống.");
+                }
+                if (!nhanVien.NgaySinh.HasValue || nhanVien.NgaySinh < new DateTime(1753, 1, 1))
+                {
+                    throw new Exception("Ngày sinh không hợp lệ.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.SoDienThoai))
+                {
+                    throw new Exception("Số điện thoại không được để trống.");
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SoDienThoai, @"^0\d{9}$"))
+                {
+                    throw new Exception("Số điện thoại phải có đúng 10 chữ số và bắt đầu bằng số 0.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.Email))
+                {
+                    throw new Exception("Email không được để trống.");
+                }
+                if (nhanVien.Email.Length > 150)
+                {
+                    throw new Exception("Email không được quá 150 ký tự.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.DiaChi))
+                {
+                    throw new Exception("Địa chỉ không được để trống.");
+                }
+                if (nhanVien.DiaChi.Length > 300)
+                {
+                    throw new Exception("Địa chỉ không được quá 300 ký tự.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.ChucVu))
+                {
+                    throw new Exception("Chức vụ không được để trống.");
+                }
+
+                // Kiểm tra mã nhân viên đã tồn tại chưa
                 if (IsMaNhanVienExists(nhanVien.MaNhanVien))
                 {
                     throw new Exception("Mã nhân viên đã tồn tại!");
-                }
-
-                // Kiểm tra giới tính
-                if (nhanVien.GioiTinh == null || string.IsNullOrWhiteSpace(nhanVien.GioiTinh))
-                {
-                    throw new Exception("Bạn phải chọn giới tính.");
                 }
 
                 // Kiểm tra email hợp lệ
@@ -112,6 +157,7 @@ namespace DAO
                 HandleException(ex);
             }
         }
+
 
         public List<NhanVien_DTO> GetAllNhanVien()
         {
