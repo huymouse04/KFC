@@ -12,6 +12,7 @@ using System.Data.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
 
 namespace KFC
 {
@@ -26,43 +27,35 @@ namespace KFC
 
         private NhanVien_BUS bus = new NhanVien_BUS();
 
+        public event EventHandler UserControlDoubleClicked;
+
+
         public NhanVienControl()
         {
             InitializeComponent();
+            if (!DesignMode)
+            {
+                bus = new NhanVien_BUS();
+            }
+
             RegisterClickEvent(this);
-            RegisterDoubleClickEvent(this);  // Đăng ký sự kiện click đúp
+            RegisterDoubleClickEvent(this);
+
+
+            this.DoubleClick += (s, e) => UserControlDoubleClicked?.Invoke(this, EventArgs.Empty);
 
         }
+
+
+
+        //protected virtual void OnNhanVienDoubleClicked(NhanVien_DTO nhanVien)
+        //{
+        //    NhanVienDoubleClicked?.Invoke(nhanVien);
+        //}
 
         public NhanVien_DTO GetNhanVien()
         {
             return nhanVien;
-        }
-
-
-      
-        // Hàm đăng ký sự kiện click cho tất cả các thành phần con
-        private void RegisterClickEvent(Control control)
-        {
-            // Đăng ký sự kiện nhấn chuột cho chính control
-            control.MouseDown += NhanVienControl_MouseDown;
-
-            // Đăng ký sự kiện click cho tất cả các thành phần con
-            foreach (Control childControl in control.Controls)
-            {
-                RegisterClickEvent(childControl);
-            }
-        }
-
-        // Hàm đăng ký sự kiện click đúp cho tất cả các thành phần con
-        private void RegisterDoubleClickEvent(Control control)
-        {
-            control.DoubleClick += NhanVienControl_DoubleClick; // Đăng ký sự kiện click đúp
-
-            foreach (Control childControl in control.Controls)
-            {
-                RegisterDoubleClickEvent(childControl); // Đăng ký sự kiện cho điều khiển con
-            }
         }
 
         public void UpdateData(NhanVien_DTO nhanVien)
@@ -75,27 +68,27 @@ namespace KFC
             this.nhanVien = nhanVien; // Gán dữ liệu nhân viên để sử dụng trong các sự kiện
             lblTenNV.Text = nhanVien.TenNhanVien; // Hiển thị tên nhân viên  
             lblChucVu.Text = nhanVien.ChucVu; // Hiển thị chức vụ  
+        }
 
-            if (nhanVien.AnhNhanVien != null && nhanVien.AnhNhanVien.Length > 0)
+        private void RegisterDoubleClickEvent(Control control)
+        {
+            foreach (Control child in control.Controls)
             {
-                try
-                {
-                    // Chuyển đổi byte[] thành Image
-                    using (var ms = new MemoryStream(nhanVien.AnhNhanVien))
-                    {
-                        pbNhanVien.Image = Image.FromStream(ms);
-                        pbNhanVien.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi chế độ hiển thị hình ảnh
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Không thể tải hình ảnh: " + ex.Message);
-                    pbNhanVien.Image = Resources.logo; // Hình ảnh mặc định  
-                }
+                child.DoubleClick += NhanVienControl_DoubleClick;
+                RegisterDoubleClickEvent(child); // Đăng ký đệ quy cho tất cả các con
             }
-            else
+        }
+
+        // Hàm đăng ký sự kiện click cho tất cả các thành phần con
+        private void RegisterClickEvent(Control control)
+        {
+            // Đăng ký sự kiện nhấn chuột cho chính control
+            control.MouseDown += NhanVienControl_MouseDown;
+
+            // Đăng ký sự kiện click cho tất cả các thành phần con
+            foreach (Control childControl in control.Controls)
             {
-                pbNhanVien.Image = Resources.logo; // Hình ảnh mặc định  
+                RegisterClickEvent(childControl);
             }
         }
 
@@ -122,16 +115,6 @@ namespace KFC
                     fs.CopyTo(ms);
                     return ms.ToArray();
                 }
-            }
-        }
-
-        private void NhanVienControl_DoubleClick(object sender, EventArgs e)
-        {
-            // Mở form cập nhật khi click đúp
-            if (nhanVien != null) // Kiểm tra xem nhanVien có hợp lệ không
-            {
-                CapNhatNhanVien capNhatForm = new CapNhatNhanVien(nhanVien);
-                capNhatForm.ShowDialog(); // Hiển thị form cập nhật nhân viên
             }
         }
 
@@ -165,6 +148,17 @@ namespace KFC
                     this.BackColor = IsSelected ? Color.LightBlue : Color.Transparent;
                 }
             }
+        }
+
+        private void NhanVienControl_DoubleClick(object sender, EventArgs e)
+        {
+            UserControlDoubleClicked?.Invoke(this, e);
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

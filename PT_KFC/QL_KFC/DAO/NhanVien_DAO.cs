@@ -16,7 +16,13 @@ namespace DAO
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
 
-        public NhanVien_DAO() { }
+        public NhanVien_DAO() {
+            if (string.IsNullOrEmpty(Connection_DAO.ConnectionString))
+            {
+                throw new InvalidOperationException("Connection string is not initialized. Please initialize it before using the DAO.");
+            }
+            DB = new KFCDataContext(Connection_DAO.ConnectionString);
+        }
 
 
         // Phương thức tìm kiếm nhân viên dựa trên tham số nhập vào
@@ -54,7 +60,6 @@ namespace DAO
                 return null;
             }
         }
-
 
         public NhanVien GetNhanVienByMa(string maNhanVien)
         {
@@ -107,8 +112,6 @@ namespace DAO
                 HandleException(ex);
             }
         }
-
-
 
         public List<NhanVien_DTO> GetAllNhanVien()
         {
@@ -168,8 +171,6 @@ namespace DAO
             }
         }
 
-
-
         public void DeleteNhanVien(string maNhanVien)
         {
             try
@@ -177,6 +178,15 @@ namespace DAO
                 var existingNhanVien = DB.NhanViens.FirstOrDefault(nv => nv.MaNhanVien == maNhanVien);
                 if (existingNhanVien != null)
                 {
+                    // Kiểm tra xem nhân viên có lương không
+                    if (KiemTraNhanVienCoLuong(maNhanVien))
+                    {
+                        // Xóa tất cả các bản ghi trong bảng lương liên quan đến nhân viên
+                        var luongRecords = DB.Luongs.Where(l => l.MaNhanVien == maNhanVien).ToList();
+                        DB.Luongs.DeleteAllOnSubmit(luongRecords);
+                    }
+
+                    // Xóa nhân viên
                     DB.NhanViens.DeleteOnSubmit(existingNhanVien);
                     DB.SubmitChanges();
                 }
@@ -245,6 +255,14 @@ namespace DAO
             }
 
             return true;
+        }
+
+        public bool KiemTraNhanVienCoLuong(string maNhanVien)
+        {
+            using (var context = new KFCDataContext(Connection_DAO.ConnectionString))
+            {
+                return context.Luongs.Any(l => l.MaNhanVien == maNhanVien);
+            }
         }
 
     }

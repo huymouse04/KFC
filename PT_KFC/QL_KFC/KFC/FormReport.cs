@@ -15,7 +15,7 @@ namespace KFC
     {
         public enum LoaiBaoCao
         {
-            NhanVien,
+          
             LuongNhanVien,
             Kho,
         }
@@ -39,9 +39,6 @@ namespace KFC
 
             switch (loaiBaoCao)
             {
-                case LoaiBaoCao.NhanVien:
-                    reportViewer1.LocalReport.ReportEmbeddedResource = "KFC.NhanVienRP.rdlc";
-                    break;
                 case LoaiBaoCao.LuongNhanVien:
                     reportViewer1.LocalReport.ReportEmbeddedResource = "KFC.LuongNhanVienRP.rdlc";
                     break;
