@@ -22,6 +22,41 @@ namespace DAO
 
         public LuongNhanVien_DAO() { }
 
+        public void CapNhatLuong(LuongNhanVien_DTO luongDTO)
+        {
+            try
+            {
+                // Tìm lương hiện tại của nhân viên
+                var luongToUpdate = DB.Luongs.FirstOrDefault(l => l.MaNhanVien == luongDTO.MaNhanVien
+                                                                    && l.Thang == luongDTO.Thang
+                                                                    && l.Nam == luongDTO.Nam);
+                if (luongToUpdate != null)
+                {
+                    // Cập nhật các trường thông tin
+                    luongToUpdate.LuongCoBan = luongDTO.LuongCoBan;
+                    luongToUpdate.SoNgayLam = luongDTO.SoNgayLam;
+                    luongToUpdate.ThuongChuyenCan = luongDTO.ThuongChuyenCan;
+                    luongToUpdate.ThuongHieuSuat = luongDTO.ThuongHieuSuat;
+                    luongToUpdate.SoGioLamThem = luongDTO.SoGioLamThem;
+                    luongToUpdate.KhoanTru = luongDTO.KhoanTru;
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    DB.SubmitChanges();
+
+                    MessageBox.Show("Cập nhật lương thành công cho nhân viên " + luongDTO.MaNhanVien, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin lương cho nhân viên này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật lương: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public List<LuongNhanVien_DTO> TimKiemLuong(int? thang, int? nam, string keyword)
         {
             try
@@ -61,8 +96,6 @@ namespace DAO
                 throw new Exception("Lỗi khi tìm kiếm lương: " + ex.Message);
             }
         }
-
-
 
         public List<LuongNhanVien_DTO> LayDanhSachLuong()
         {
