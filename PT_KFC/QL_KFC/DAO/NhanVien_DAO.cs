@@ -16,7 +16,13 @@ namespace DAO
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
 
-        public NhanVien_DAO() { }
+        public NhanVien_DAO() {
+            if (string.IsNullOrEmpty(Connection_DAO.ConnectionString))
+            {
+                throw new InvalidOperationException("Connection string is not initialized. Please initialize it before using the DAO.");
+            }
+            DB = new KFCDataContext(Connection_DAO.ConnectionString);
+        }
 
 
         // Phương thức tìm kiếm nhân viên dựa trên tham số nhập vào
@@ -55,7 +61,6 @@ namespace DAO
             }
         }
 
-
         public NhanVien GetNhanVienByMa(string maNhanVien)
         {
             // Trả về nhân viên từ cơ sở dữ liệu theo mã nhân viên
@@ -71,15 +76,60 @@ namespace DAO
         {
             try
             {
+                // Kiểm tra các thuộc tính bắt buộc không được để trống và độ dài tối đa
+                if (string.IsNullOrWhiteSpace(nhanVien.MaNhanVien))
+                {
+                    throw new Exception("Mã nhân viên không được để trống.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.TenNhanVien))
+                {
+                    throw new Exception("Tên nhân viên không được để trống.");
+                }
+                if (nhanVien.TenNhanVien.Length > 250)
+                {
+                    throw new Exception("Tên nhân viên không được quá 250 ký tự.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.GioiTinh))
+                {
+                    throw new Exception("Giới tính không được để trống.");
+                }
+                if (!nhanVien.NgaySinh.HasValue || nhanVien.NgaySinh < new DateTime(1753, 1, 1))
+                {
+                    throw new Exception("Ngày sinh không hợp lệ.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.SoDienThoai))
+                {
+                    throw new Exception("Số điện thoại không được để trống.");
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(nhanVien.SoDienThoai, @"^0\d{9}$"))
+                {
+                    throw new Exception("Số điện thoại phải có đúng 10 chữ số và bắt đầu bằng số 0.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.Email))
+                {
+                    throw new Exception("Email không được để trống.");
+                }
+                if (nhanVien.Email.Length > 150)
+                {
+                    throw new Exception("Email không được quá 150 ký tự.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.DiaChi))
+                {
+                    throw new Exception("Địa chỉ không được để trống.");
+                }
+                if (nhanVien.DiaChi.Length > 300)
+                {
+                    throw new Exception("Địa chỉ không được quá 300 ký tự.");
+                }
+                if (string.IsNullOrWhiteSpace(nhanVien.ChucVu))
+                {
+                    throw new Exception("Chức vụ không được để trống.");
+                }
+
+                // Kiểm tra mã nhân viên đã tồn tại chưa
                 if (IsMaNhanVienExists(nhanVien.MaNhanVien))
                 {
                     throw new Exception("Mã nhân viên đã tồn tại!");
-                }
-
-                // Kiểm tra giới tính
-                if (nhanVien.GioiTinh == null || string.IsNullOrWhiteSpace(nhanVien.GioiTinh))
-                {
-                    throw new Exception("Bạn phải chọn giới tính.");
                 }
 
                 // Kiểm tra email hợp lệ
@@ -107,7 +157,6 @@ namespace DAO
                 HandleException(ex);
             }
         }
-
 
 
         public List<NhanVien_DTO> GetAllNhanVien()
@@ -168,8 +217,6 @@ namespace DAO
             }
         }
 
-
-
         public void DeleteNhanVien(string maNhanVien)
         {
             try
@@ -177,6 +224,15 @@ namespace DAO
                 var existingNhanVien = DB.NhanViens.FirstOrDefault(nv => nv.MaNhanVien == maNhanVien);
                 if (existingNhanVien != null)
                 {
+                    // Kiểm tra xem nhân viên có lương không
+                    if (KiemTraNhanVienCoLuong(maNhanVien))
+                    {
+                        // Xóa tất cả các bản ghi trong bảng lương liên quan đến nhân viên
+                        var luongRecords = DB.Luongs.Where(l => l.MaNhanVien == maNhanVien).ToList();
+                        DB.Luongs.DeleteAllOnSubmit(luongRecords);
+                    }
+
+                    // Xóa nhân viên
                     DB.NhanViens.DeleteOnSubmit(existingNhanVien);
                     DB.SubmitChanges();
                 }
@@ -245,6 +301,14 @@ namespace DAO
             }
 
             return true;
+        }
+
+        public bool KiemTraNhanVienCoLuong(string maNhanVien)
+        {
+            using (var context = new KFCDataContext(Connection_DAO.ConnectionString))
+            {
+                return context.Luongs.Any(l => l.MaNhanVien == maNhanVien);
+            }
         }
 
     }

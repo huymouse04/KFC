@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbMaNCC = new System.Windows.Forms.ComboBox();
             this.lbMNCC = new System.Windows.Forms.Label();
             this.lbMLH = new System.Windows.Forms.Label();
@@ -52,11 +52,14 @@
             this.pnTop = new System.Windows.Forms.Panel();
             this.dtGVNH = new System.Windows.Forms.DataGridView();
             this.btnClear = new CustomButton.VBButton();
+<<<<<<< HEAD
             this.btnXuat = new CustomButton.VBButton();
             this.btnTimKiem = new CustomButton.VBButton();
             this.btnThem = new CustomButton.VBButton();
             this.btnCapNhat = new CustomButton.VBButton();
             this.btnXoa = new CustomButton.VBButton();
+=======
+>>>>>>> master
             this.pnBET.SuspendLayout();
             this.pnTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGVNH)).BeginInit();
@@ -147,6 +150,114 @@
             this.btnDonGia.TabIndex = 31;
             this.btnDonGia.Text = "Đơn giá:\r\n";
             // 
+<<<<<<< HEAD
+=======
+            // btnXuat
+            // 
+            this.btnXuat.BackColor = System.Drawing.Color.Firebrick;
+            this.btnXuat.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnXuat.BorderColor = System.Drawing.Color.Crimson;
+            this.btnXuat.BorderRadius = 10;
+            this.btnXuat.BorderSize = 0;
+            this.btnXuat.FlatAppearance.BorderSize = 0;
+            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuat.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuat.ForeColor = System.Drawing.Color.White;
+            this.btnXuat.Location = new System.Drawing.Point(999, 254);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(151, 44);
+            this.btnXuat.TabIndex = 30;
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.TextColor = System.Drawing.Color.White;
+            this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Firebrick;
+            this.btnTimKiem.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnTimKiem.BorderColor = System.Drawing.Color.LavenderBlush;
+            this.btnTimKiem.BorderRadius = 10;
+            this.btnTimKiem.BorderSize = 0;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btnTimKiem.Location = new System.Drawing.Point(999, 196);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(151, 44);
+            this.btnTimKiem.TabIndex = 29;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.TextColor = System.Drawing.Color.White;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Firebrick;
+            this.btnThem.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnThem.BorderColor = System.Drawing.Color.Crimson;
+            this.btnThem.BorderRadius = 10;
+            this.btnThem.BorderSize = 0;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(999, 28);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(151, 44);
+            this.btnThem.TabIndex = 28;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextColor = System.Drawing.Color.White;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCapNhat.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnCapNhat.BorderColor = System.Drawing.Color.Crimson;
+            this.btnCapNhat.BorderRadius = 10;
+            this.btnCapNhat.BorderSize = 0;
+            this.btnCapNhat.FlatAppearance.BorderSize = 0;
+            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.Location = new System.Drawing.Point(999, 85);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(151, 44);
+            this.btnCapNhat.TabIndex = 27;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.TextColor = System.Drawing.Color.White;
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
+            this.btnXoa.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnXoa.BorderColor = System.Drawing.Color.LavenderBlush;
+            this.btnXoa.BorderRadius = 10;
+            this.btnXoa.BorderSize = 0;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(999, 140);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(151, 44);
+            this.btnXoa.TabIndex = 26;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextColor = System.Drawing.Color.White;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+>>>>>>> master
             // txtMaSP
             // 
             this.txtMaSP.Location = new System.Drawing.Point(215, 166);
@@ -314,14 +425,14 @@
             this.dtGVNH.Margin = new System.Windows.Forms.Padding(4);
             this.dtGVNH.Name = "dtGVNH";
             this.dtGVNH.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGVNH.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGVNH.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtGVNH.RowHeadersWidth = 51;
             this.dtGVNH.Size = new System.Drawing.Size(1156, 358);
             this.dtGVNH.TabIndex = 7;
@@ -339,7 +450,11 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btnClear.Location = new System.Drawing.Point(817, 270);
+=======
+            this.btnClear.Location = new System.Drawing.Point(801, 264);
+>>>>>>> master
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(151, 44);
@@ -349,6 +464,7 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+<<<<<<< HEAD
             // btnXuat
             // 
             this.btnXuat.BackColor = System.Drawing.Color.Firebrick;
@@ -454,6 +570,8 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+=======
+>>>>>>> master
             // NhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

@@ -29,13 +29,14 @@ CREATE TABLE NhanVien (
 CREATE TABLE Luong (  
     MaNhanVien VARCHAR(30) NOT NULL,  
     Thang INT NOT NULL,  
+	Nam INT NOT NULL,  
     LuongCoBan INT NOT NULL,  
     SoNgayLam INT NOT NULL,  
     SoGioLamThem INT , -- Số giờ làm thêm
     ThuongChuyenCan INT, -- Thưởng chuyên cần
     ThuongHieuSuat INT , -- Thưởng hiệu suất
     KhoanTru INT, -- Khoản trừ (thuế, bảo hiểm, v.v.)
-    PRIMARY KEY (MaNhanVien, Thang),  
+    PRIMARY KEY (MaNhanVien, Thang, Nam),  
     FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)  
 );  
 --ALTER TABLE Luong
@@ -192,64 +193,55 @@ CREATE TABLE DoanhThu (
 	FOREIGN KEY (MaNhapHang) REFERENCES NhapHang(MaNhapHang)
 );
 
-INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Email, DiaChi, ChucVu, SoGioLam) 
-VALUES 
-(N'NV001', NULL, N'Nguyễn Văn A', N'Nam', '01/01/1990', '0901234567', 'vana@gmail.com', N'Hà Nội', N'Quản lý', 160),
-(N'NV002', NULL, N'Trần Thị B', N'Nữ', '02/02/1992', '0902234567', 'thib@gmail.com', N'Hà Nội', N'Nhân viên', 150),
-(N'NV003', NULL, N'Lê Văn C', N'Nam', '03/03/1989', '0903234567', 'vanc@gmail.com', N'Hồ Chí Minh', N'Quản lý', 170),
-(N'NV004', NULL, N'Phạm Thị D', N'Nữ', '04/04/1993', '0904234567', 'thid@gmail.com', N'Hải Phòng', N'Nhân viên', 145),
-(N'NV005', NULL, N'Hoàng Văn E', N'Nam', '05/05/1991', '0905234567', 'vane@gmail.com', N'Đà Nẵng', N'Nhân viên', 155),
-(N'NV006', NULL, N'Nguyễn Thị F', N'Nữ', '06/06/1990', '0906234567', 'thif@gmail.com', N'Cần Thơ', N'Nhân viên', 160),
-(N'NV007', NULL, N'Đỗ Văn G', N'Nam', '07/07/1994', '0907234567', 'vang@gmail.com', N'Quảng Ninh', N'Nhân viên', 165),
-(N'NV008', NULL, N'Vũ Thị H', N'Nữ', '08/08/1991', '0908234567', 'thih@gmail.com', N'Thanh Hóa', N'Nhân viên', 150),
-(N'NV009', NULL, N'Bùi Văn I', N'Nam', '09/09/1992', '0909234567', 'vani@gmail.com', N'Hà Nội', N'Nhân viên', 140),
-(N'NV010', NULL, N'Phạm Thị K', N'Nữ', '10/10/1993', '0900234567', 'thik@gmail.com', N'Hải Phòng', N'Nhân viên', 130),
-(N'NV011', NULL, N'Nguyễn Văn L', N'Nam', '11/11/1988', '0910234567', 'vanl@gmail.com', N'Hồ Chí Minh', N'Quản lý', 170),
-(N'NV012', NULL, N'Lê Thị M', N'Nữ', '12/12/1990', '0911234567', 'thim@gmail.com', N'Đà Nẵng', N'Nhân viên', 160),
-(N'NV013', NULL, N'Phạm Văn N', N'Nam', '13/01/1995', '0912234567', 'vann@gmail.com', N'Cần Thơ', N'Nhân viên', 140),
-(N'NV014', NULL, N'Trần Thị O', N'Nữ', '14/02/1992', '0913234567', 'thio@gmail.com', N'Thanh Hóa', N'Nhân viên', 150),
-(N'NV015', NULL, N'Đỗ Văn P', N'Nam', '15/03/1989', '0914234567', 'vanp@gmail.com', N'Quảng Ninh', N'Quản lý', 160),
-(N'NV016', NULL, N'Vũ Thị Q', N'Nữ', '16/04/1993', '0915234567', 'thiq@gmail.com', N'Hà Nội', N'Nhân viên', 155),
-(N'NV017', NULL, N'Bùi Văn R', N'Nam', '17/05/1991', '0916234567', 'vanr@gmail.com', N'Hồ Chí Minh', N'Nhân viên', 150),
-(N'NV018', NULL, N'Hoàng Thị S', N'Nữ', '18/06/1990', '0917234567', 'this@gmail.com', N'Hải Phòng', N'Nhân viên', 145),
-(N'NV019', NULL, N'Nguyễn Văn T', N'Nam', '19/07/1992', '0918234567', 'vant@gmail.com', N'Đà Nẵng', N'Nhân viên', 150),
-(N'NV020', NULL, N'Phạm Thị U', N'Nữ', '20/08/1994', '0919234567', 'thiu@gmail.com', N'Cần Thơ', N'Nhân viên', 160);
+INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Email, DiaChi, ChucVu, SoGioLam) VALUES
+('NV001', NULL, N'Nguyễn Văn A', N'Nam', '01/01/1990', '0123456789', 'vana@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV002', NULL, N'Trần Thị B', N'Nữ', '02/02/1991', '0123456780', 'thib@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV003', NULL, N'Lê Văn C', N'Nam', '03/03/1992', '0123456781', 'vanc@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV004', NULL, N'Phạm Thị D', N'Nữ', '04/04/1993', '0123456782', 'thid@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV005', NULL, N'Nguyễn Văn E', N'Nam', '05/05/1994', '0123456783', 'vane@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV006', NULL, N'Trần Thị F', N'Nữ', '06/06/1995', '0123456784', 'thif@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV007', NULL, N'Lê Văn G', N'Nam', '07/07/1996', '0123456785', 'vang@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV008', NULL, N'Phạm Thị H', N'Nữ', '08/08/1997', '0123456786', 'thih@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV009', NULL, N'Nguyễn Văn I', N'Nam', '09/09/1998', '0123456787', 'vani@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV010', NULL, N'Trần Thị J', N'Nữ', '10/10/1999', '0123456788', 'thij@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV011', NULL, N'Lê Văn K', N'Nam', '11/11/1988', '0123456789', 'vank@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV012', NULL, N'Phạm Thị L', N'Nữ', '12/12/1987', '0123456790', 'thil@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV013', NULL, N'Nguyễn Văn M', N'Nam', '13/01/1986', '0123456791', 'vanm@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV014', NULL, N'Trần Thị N', N'Nữ', '14/02/1985', '0123456792', 'thin@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV015', NULL, N'Lê Văn O', N'Nam', '15/03/1984', '0123456793', 'vano@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV016', NULL, N'Phạm Thị P', N'Nữ', '16/04/1983', '0123456794', 'thip@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV017', NULL, N'Nguyễn Văn Q', N'Nam', '17/05/1982', '0123456795', 'vanq@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV018', NULL, N'Trần Thị R', N'Nữ', '18/06/1981', '0123456796', 'thir@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV019', NULL, N'Lê Văn S', N'Nam', '19/07/1980', '0123456797', 'vans@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV020', NULL, N'Phạm Thị T', N'Nữ', '20/08/1979', '0123456798', 'thit@gmail.com', N'Hà Nội', N'Nhân viên', 160);
 
 
 
 
-INSERT INTO Luong (MaNhanVien, LuongCoBan, Thang, SoNgayLam, SoGioLamThem, ThuongChuyenCan, ThuongHieuSuat, KhoanTru)
-VALUES
-('NV001', 7000000, 7, 22, 5, 500000, 1000000, 300000),
-('NV001', 7000000, 4, 20, 2, 300000, 800000, 200000),
-('NV002', 6500000, 1, 21, 3, 400000, 900000, 250000),
-('NV002', 6500000, 8, 22, 4, 500000, 1000000, 300000),
-('NV003', 8000000, 10, 23, 2, 500000, 1200000, 400000),
-('NV003', 8000000, 2, 21, 6, 400000, 1100000, 350000),
-('NV004', 6000000, 11, 20, 1, 300000, 800000, 150000),
-('NV004', 6000000, 5, 22, 4, 500000, 900000, 200000),
-('NV005', 5500000, 9, 22, 0, 400000, 700000, 180000),
-('NV005', 5500000, 3, 21, 2, 300000, 600000, 100000),
-('NV006', 6500000, 6, 22, 3, 500000, 900000, 250000),
-('NV006', 6500000, 12, 22, 5, 500000, 1000000, 300000),
-('NV007', 7000000, 4, 23, 6, 600000, 1200000, 400000),
-('NV007', 7000000, 3, 20, 0, 300000, 800000, 100000),
-('NV008', 6000000, 8, 21, 1, 400000, 900000, 150000),
-('NV008', 6000000, 5, 22, 2, 500000, 1000000, 200000),
-('NV009', 5500000, 1, 22, 2, 300000, 700000, 120000),
-('NV009', 5500000, 6, 21, 0, 300000, 600000, 130000),
-('NV010', 5000000, 2, 20, 4, 200000, 500000, 90000),
-('NV010', 5000000, 11, 22, 3, 400000, 700000, 150000),
-('NV011', 7500000, 3, 23, 5, 600000, 1200000, 500000),
-('NV011', 7500000, 10, 22, 4, 500000, 1100000, 400000),
-('NV012', 6000000, 9, 21, 3, 400000, 900000, 200000),
-('NV012', 6000000, 12, 22, 4, 500000, 1000000, 300000),
-('NV013', 5500000, 5, 22, 2, 300000, 700000, 150000),
-('NV013', 5500000, 8, 20, 1, 200000, 600000, 100000),
-('NV014', 6500000, 4, 21, 3, 500000, 900000, 250000),
-('NV014', 6500000, 1, 22, 2, 500000, 1000000, 300000),
-('NV015', 7000000, 2, 22, 4, 600000, 1100000, 200000),
-('NV015', 7000000, 11, 22, 5, 500000, 1200000, 300000);
+
+
+INSERT INTO Luong (MaNhanVien, Thang, Nam, LuongCoBan, SoNgayLam, SoGioLamThem, ThuongChuyenCan, ThuongHieuSuat, KhoanTru) VALUES
+('NV001', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV002', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV003', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV004', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV005', 10, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV006', 10, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV007', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV008', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV009', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV010', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV011', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV012', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV013', 10, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV014', 10, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV015', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV016', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV017', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV018', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV019', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV020', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000);
+
 
 
 
@@ -305,7 +297,7 @@ select * from NhapHang
 
 select * from Kho
 
-SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 2;
+SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 10 AND Nam = 2024;
 DELETE FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 2; -- Thay MãNhânViênCầnXóa và 1 bằng giá trị cụ thể
 
 
