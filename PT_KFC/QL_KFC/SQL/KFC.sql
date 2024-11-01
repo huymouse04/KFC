@@ -36,7 +36,7 @@ CREATE TABLE Luong (
     ThuongChuyenCan INT, -- Thưởng chuyên cần
     ThuongHieuSuat INT , -- Thưởng hiệu suất
     KhoanTru INT, -- Khoản trừ (thuế, bảo hiểm, v.v.)
-    PRIMARY KEY (MaNhanVien, Thang),  
+    PRIMARY KEY (MaNhanVien, Thang, Nam),  
     FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)  
 );  
 --ALTER TABLE Luong
@@ -297,7 +297,7 @@ select * from NhapHang
 
 select * from Kho
 
-SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 2;
+SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 10 AND Nam = 2024;
 DELETE FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 2; -- Thay MãNhânViênCầnXóa và 1 bằng giá trị cụ thể
 
 

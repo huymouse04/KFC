@@ -22,7 +22,48 @@ namespace DAO
 
         public LuongNhanVien_DAO() { }
 
-        // Lấy danh sách lương
+        public List<LuongNhanVien_DTO> TimKiemLuong(int? thang, int? nam, string keyword)
+        {
+            try
+            {
+                var query = from luong in DB.Luongs
+                            join nhanVien in DB.NhanViens on luong.MaNhanVien equals nhanVien.MaNhanVien
+                            where (thang == null || luong.Thang == thang)
+                                  && (nam == null || luong.Nam == nam)
+                                  && (string.IsNullOrEmpty(keyword) ||
+                                      luong.MaNhanVien.Contains(keyword) ||
+                                      nhanVien.TenNhanVien.Contains(keyword) ||
+                                      nhanVien.ChucVu.Contains(keyword))
+                            select new LuongNhanVien_DTO
+                            {
+                                MaNhanVien = luong.MaNhanVien,
+                                TenNhanVien = nhanVien.TenNhanVien,
+                                ChucVu = nhanVien.ChucVu,
+                                LuongCoBan = luong.LuongCoBan,
+                                Thang = luong.Thang,
+                                Nam = luong.Nam,
+                                SoNgayLam = luong.SoNgayLam,
+                                ThuongChuyenCan = (int)luong.ThuongChuyenCan,
+                                ThuongHieuSuat = (int)luong.ThuongHieuSuat,
+                                SoGioLamThem = (int)luong.SoGioLamThem,
+                                KhoanTru = (int)luong.KhoanTru
+                            };
+
+                var resultList = query.ToList();
+
+                // Hiển thị số lượng kết quả tìm kiếm
+                MessageBox.Show("Số lượng kết quả tìm kiếm: " + resultList.Count);
+
+                return resultList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm lương: " + ex.Message);
+            }
+        }
+
+
+
         public List<LuongNhanVien_DTO> LayDanhSachLuong()
         {
             try
@@ -50,6 +91,7 @@ namespace DAO
                 return new List<LuongNhanVien_DTO>();
             }
         }
+
 
         // Kiểm tra xem lương đã được thêm hay chưa
         public bool IsLuongAdded => isLuongAdded;
