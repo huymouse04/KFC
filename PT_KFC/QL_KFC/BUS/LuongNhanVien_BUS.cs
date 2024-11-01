@@ -15,6 +15,10 @@ namespace BUS
 
         public LuongNhanVien_BUS() { }
 
+      public List<LuongNhanVien_DTO> TimKiemLuong(string key)
+        {
+          return  dao.TimKiemLuongNhanVien(key);
+        }
 
         public void KiemTraVaThemLuong()
         {

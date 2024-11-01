@@ -3940,7 +3940,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nam", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nam", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int Nam
 		{
 			get

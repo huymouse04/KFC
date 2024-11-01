@@ -99,7 +99,7 @@ namespace KFC
         private void btnLuongNhanVien_Click(object sender, EventArgs e)
         {
             // Mở form lương
-            LuongNhanVien luongForm = new LuongNhanVien();
+            LuongNhanViens luongForm = new LuongNhanViens();
             luongForm.ShowDialog();
         }
 
@@ -461,5 +461,10 @@ namespace KFC
 
         }
 
+        private void vbButton1_Click(object sender, EventArgs e)
+        {
+            LuongNhanViens d = new LuongNhanViens();
+            d.ShowDialog();
+        }
     }
 }

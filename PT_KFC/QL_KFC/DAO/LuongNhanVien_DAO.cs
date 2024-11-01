@@ -22,7 +22,40 @@ namespace DAO
 
         public LuongNhanVien_DAO() { }
 
-        // Lấy danh sách lương
+
+
+        public List<LuongNhanVien_DTO> TimKiemLuongNhanVien(string keyword)
+        {
+            var query = from luong in DB.Luongs
+                        join nhanVien in DB.NhanViens on luong.MaNhanVien equals nhanVien.MaNhanVien
+                        where luong.MaNhanVien.Contains(keyword) ||
+                              nhanVien.ChucVu.Contains(keyword) ||
+                              nhanVien.TenNhanVien.Contains(keyword) ||
+                              luong.Thang.ToString().Contains(keyword)
+                        select new LuongNhanVien_DTO
+                        {
+                            MaNhanVien = luong.MaNhanVien,
+                            TenNhanVien = nhanVien.TenNhanVien,
+                            ChucVu = nhanVien.ChucVu,
+                            LuongCoBan = luong.LuongCoBan,
+                            Thang = luong.Thang,
+                            Nam = luong.Nam,
+                            SoNgayLam = luong.SoNgayLam,
+                            ThuongChuyenCan = (int)luong.ThuongChuyenCan,
+                            ThuongHieuSuat = (int)luong.ThuongHieuSuat,
+                            SoGioLamThem = (int)luong.SoGioLamThem,
+                            KhoanTru = (int)luong.KhoanTru
+                        };
+
+            var resultList = query.ToList();
+
+            // Kiểm tra xem có bao nhiêu kết quả trả về
+            MessageBox.Show("Số lượng kết quả tìm kiếm: " + resultList.Count);
+            return resultList;
+        }
+
+
+
         public List<LuongNhanVien_DTO> LayDanhSachLuong()
         {
             try
@@ -50,6 +83,7 @@ namespace DAO
                 return new List<LuongNhanVien_DTO>();
             }
         }
+
 
         // Kiểm tra xem lương đã được thêm hay chưa
         public bool IsLuongAdded => isLuongAdded;

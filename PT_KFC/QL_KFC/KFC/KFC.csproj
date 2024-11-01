@@ -240,11 +240,11 @@
     <Compile Include="LoaiHangControl.Designer.cs">
       <DependentUpon>LoaiHangControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="LuongNhanVien.cs">
+    <Compile Include="LuongNhanViens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LuongNhanVien.Designer.cs">
-      <DependentUpon>LuongNhanVien.cs</DependentUpon>
+    <Compile Include="LuongNhanViens.Designer.cs">
+      <DependentUpon>LuongNhanViens.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -390,8 +390,8 @@
     <EmbeddedResource Include="LoaiHangControl.resx">
       <DependentUpon>LoaiHangControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LuongNhanVien.resx">
-      <DependentUpon>LuongNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="LuongNhanViens.resx">
+      <DependentUpon>LuongNhanViens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LuongNhanVienRP.rdlc" />
     <EmbeddedResource Include="Main.resx">
