@@ -98,9 +98,15 @@ namespace KFC
 
         private void btnLuongNhanVien_Click(object sender, EventArgs e)
         {
-            // Mở form lương
+            // Mở form lương như là một form con của Main
             LuongNhanViens luongForm = new LuongNhanViens();
-            luongForm.ShowDialog();
+            luongForm.TopLevel = false; // Đặt form con
+            luongForm.FormBorderStyle = FormBorderStyle.None; // Ẩn viền
+            luongForm.Dock = DockStyle.Fill; // Đặt dock cho form con
+            this.Parent.Controls.Add(luongForm); // Thêm form vào panel của Main
+            this.Parent.Tag = luongForm; // Gán tag để truy cập nếu cần
+            luongForm.BringToFront(); // Đưa form lên trên cùng
+            luongForm.Show(); // Hiện form
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -461,5 +467,21 @@ namespace KFC
 
         }
 
+        private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra xem chức vụ được chọn có phải là "Tạm Thời" không
+            if (cbChucVu.Text != "Tạm Thời")
+            {
+                // Gán số giờ làm mặc định là 100
+                txtSoGioLam.Text = "100";
+                txtSoGioLam.Enabled = false; // Vô hiệu hóa TextBox nếu không cần nhập
+            }
+            else
+            {
+                // Gán số giờ làm mặc định là 100
+                txtSoGioLam.Text = "0";
+                txtSoGioLam.Enabled = false; // Vô hiệu hóa TextBox nếu không cần nhập
+            }
+        }
     }
 }
