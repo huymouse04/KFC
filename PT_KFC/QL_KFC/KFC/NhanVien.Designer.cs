@@ -59,7 +59,6 @@
             this.btnXoa = new CustomButton.VBButton();
             this.btnThem = new CustomButton.VBButton();
             this.flpNhanVien = new System.Windows.Forms.FlowLayoutPanel();
-            this.vbButton1 = new CustomButton.VBButton();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnhNV)).BeginInit();
@@ -67,7 +66,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.vbButton1);
             this.panel3.Controls.Add(this.btnCapNhatNV);
             this.panel3.Controls.Add(this.txtSoGioLam);
             this.panel3.Controls.Add(this.label8);
@@ -482,27 +480,6 @@
             this.flpNhanVien.Size = new System.Drawing.Size(1677, 434);
             this.flpNhanVien.TabIndex = 17;
             // 
-            // vbButton1
-            // 
-            this.vbButton1.BackColor = System.Drawing.Color.Firebrick;
-            this.vbButton1.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.vbButton1.BorderColor = System.Drawing.Color.Crimson;
-            this.vbButton1.BorderRadius = 10;
-            this.vbButton1.BorderSize = 0;
-            this.vbButton1.FlatAppearance.BorderSize = 0;
-            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton1.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(812, 174);
-            this.vbButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.vbButton1.Name = "vbButton1";
-            this.vbButton1.Size = new System.Drawing.Size(209, 55);
-            this.vbButton1.TabIndex = 46;
-            this.vbButton1.Text = "Lương Nhân viên";
-            this.vbButton1.TextColor = System.Drawing.Color.White;
-            this.vbButton1.UseVisualStyleBackColor = false;
-            this.vbButton1.Click += new System.EventHandler(this.vbButton1_Click);
-            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -553,6 +530,5 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private CustomButton.VBButton btnCapNhatNV;
-        private CustomButton.VBButton vbButton1;
     }
 }

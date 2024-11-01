@@ -461,10 +461,5 @@ namespace KFC
 
         }
 
-        private void vbButton1_Click(object sender, EventArgs e)
-        {
-            LuongNhanViens d = new LuongNhanViens();
-            d.ShowDialog();
-        }
     }
 }

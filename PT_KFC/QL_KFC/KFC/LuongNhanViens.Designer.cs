@@ -124,7 +124,6 @@
             this.vbButton3.Text = "Tìm kiếm";
             this.vbButton3.TextColor = System.Drawing.Color.White;
             this.vbButton3.UseVisualStyleBackColor = false;
-            this.vbButton3.Click += new System.EventHandler(this.vbButton3_Click);
             // 
             // vbButton2
             // 
@@ -456,13 +455,13 @@
             this.label14.TabIndex = 7;
             this.label14.Text = "Tháng :";
             // 
-            // LuongNhanVien
+            // LuongNhanViens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1516, 621);
             this.Controls.Add(this.panel1);
-            this.Name = "LuongNhanVien";
+            this.Name = "LuongNhanViens";
             this.Text = "LuongNhanVien";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
