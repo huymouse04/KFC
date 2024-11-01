@@ -17,6 +17,8 @@ namespace KFC
 
         private LuongNhanVien_BUS bus = new LuongNhanVien_BUS();
 
+        // Tạo đối tượng DTO
+        private LuongNhanVien_DTO luongNhanVien = new LuongNhanVien_DTO();
         public LuongNhanViens()
         {
             InitializeComponent();
@@ -27,7 +29,9 @@ namespace KFC
             // Kiểm tra và thêm lương khi mở form
             bus.KiemTraVaThemLuong();
             LoadData(); // Tải dữ liệu khi mở form
-
+            txtMaNV.Enabled = false;
+            txtHoTenNV.Enabled = false;
+            txtChucVu.Enabled = false;
         }
 
         private void LoadThang()
@@ -160,6 +164,7 @@ namespace KFC
                     txtTongTien.Text = row.Cells["TongLuong"].Value.ToString();
                 }
             }
+
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -176,34 +181,54 @@ namespace KFC
                 return;
             }
 
-            // Kiểm tra kiểu dữ liệu
-            if (!int.TryParse(txtSoNgayCong.Text, out int soNgayCong) ||
-                !int.TryParse(txtThuongCC.Text, out int thuongChuyenCan) ||
-                !int.TryParse(txtThuongHS.Text, out int thuongHieuSuat) ||
-                !int.TryParse(txtSoGioLamThem.Text, out int soGioLamThem) ||
-                !int.TryParse(txtKhoanTru.Text, out int khoanTru) ||
-                !int.TryParse(txtLuongCB.Text, out int luongCoBan))
+            // Kiểm tra kiểu dữ liệu và chuyển đổi giá trị
+            if (!int.TryParse(txtSoNgayCong.Text, out int soNgayCong))
             {
-                MessageBox.Show("Vui lòng nhập đúng kiểu dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Giá trị ngày công không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(txtThuongCC.Text, out int thuongChuyenCan))
+            {
+                MessageBox.Show("Giá trị thưởng chuyên cần không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(txtThuongHS.Text, out int thuongHieuSuat))
+            {
+                MessageBox.Show("Giá trị thưởng hiệu suất không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(txtSoGioLamThem.Text, out int soGioLamThem))
+            {
+                MessageBox.Show("Giá trị giờ làm thêm không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(txtKhoanTru.Text, out int khoanTru))
+            {
+                MessageBox.Show("Giá trị khoản trừ không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(txtLuongCB.Text, out int luongCoBan))
+            {
+                MessageBox.Show("Giá trị lương cơ bản không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Lấy mã nhân viên hiện tại
             string maNhanVien = txtMaNV.Text;
 
-            // Giả sử bạn đã lấy tên và chức vụ từ cơ sở dữ liệu khi mở form
-            string tenNhanVien = txtHoTenNV.Text; // Để ReadOnly
-            string chucVu = txtChucVu.Text;       // Để ReadOnly
+            // Giữ nguyên tên và chức vụ
+            string tenNhanVien = txtHoTenNV.Text;
+            string chucVu = txtChucVu.Text;
 
             // Tạo đối tượng DTO
             LuongNhanVien_DTO luongDTO = new LuongNhanVien_DTO
             {
-                MaNhanVien = maNhanVien, // Giữ nguyên mã nhân viên
-                TenNhanVien = tenNhanVien, // Giữ nguyên tên nhân viên
-                ChucVu = chucVu, // Giữ nguyên chức vụ
+                MaNhanVien = maNhanVien,
+                TenNhanVien = tenNhanVien,
+                ChucVu = chucVu,
                 LuongCoBan = luongCoBan,
-                Thang = int.Parse(cboThang.SelectedItem.ToString()),
-                Nam = int.Parse(cboNam.SelectedItem.ToString()),
+                Thang = int.TryParse(cboThang.SelectedItem?.ToString(), out int thang) ? thang : 0,
+                Nam = int.TryParse(cboNam.SelectedItem?.ToString(), out int nam) ? nam : 0,
                 SoNgayLam = soNgayCong,
                 ThuongChuyenCan = thuongChuyenCan,
                 ThuongHieuSuat = thuongHieuSuat,
@@ -216,9 +241,45 @@ namespace KFC
             LoadData();
         }
 
+        private void CapNhatGiaTriDTO()
+        {
+            // Sử dụng int.TryParse để đảm bảo chuyển đổi thành công hoặc gán giá trị 0 nếu không hợp lệ
+            if (!int.TryParse(txtLuongCB.Text, out int lcb))
+                lcb = 0;
+            luongNhanVien.LuongCoBan = lcb;
+
+            if (!int.TryParse(txtSoNgayCong.Text, out int snl))
+                snl = 0;
+            luongNhanVien.SoNgayLam = snl;
+
+            if (!int.TryParse(txtThuongCC.Text, out int tcc))
+                tcc = 0;
+            luongNhanVien.ThuongChuyenCan = tcc;
+
+            if (!int.TryParse(txtThuongHS.Text, out int ths))
+                ths = 0;
+            luongNhanVien.ThuongHieuSuat = ths;
+
+            if (!int.TryParse(txtSoGioLamThem.Text, out int sglt))
+                sglt = 0;
+            luongNhanVien.SoGioLamThem = sglt;
+
+            if (!int.TryParse(txtKhoanTru.Text, out int kt))
+                kt = 0;
+            luongNhanVien.KhoanTru = kt;
+        }
+
+
+        // Hàm hiển thị tổng lương trên Form
+        private void HienThiTongLuong()
+        {
+            txtTongTien.Text = luongNhanVien.TongLuong.ToString("#,0");
+        }
+
         private void txtLuongCB_TextChanged(object sender, EventArgs e)
         {
-
+            CapNhatGiaTriDTO();
+            HienThiTongLuong();
         }
     }
 }
