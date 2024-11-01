@@ -281,5 +281,10 @@ namespace KFC
             CapNhatGiaTriDTO();
             HienThiTongLuong();
         }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

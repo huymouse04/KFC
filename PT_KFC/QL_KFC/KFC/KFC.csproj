@@ -290,12 +290,6 @@
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="ThucDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThucDon.Designer.cs">
-      <DependentUpon>ThucDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThucDonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -425,9 +419,6 @@
     <EmbeddedResource Include="Reports\RPNhapHang.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThucDon.resx">
-      <DependentUpon>ThucDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThucDonControl.resx">
       <DependentUpon>ThucDonControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,17 +432,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLKFCDataSet.xsc">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLKFCDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLKFCDataSet.xss">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -525,6 +505,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLKFCDataSet.xsc">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLKFCDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKFCDataSet.xss">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\sql.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>

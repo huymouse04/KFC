@@ -15,6 +15,9 @@
               <Width>2.77517cm</Width>
             </TablixColumn>
             <TablixColumn>
+              <Width>2.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>3.57385cm</Width>
             </TablixColumn>
             <TablixColumn>
@@ -128,6 +131,42 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>Yellow</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Nam</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <FontSize>16pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -419,6 +458,36 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Nam">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Nam.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Nam</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="SoNgayLam">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -581,6 +650,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -597,7 +667,7 @@
         <Top>1.12781cm</Top>
         <Left>1.36957cm</Left>
         <Height>1.66567cm</Height>
-        <Width>30.32136cm</Width>
+        <Width>32.82135cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -608,7 +678,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>12.75174in</Width>
+  <Width>13.46099in</Width>
   <Page>
     <PageHeader>
       <Height>2.56117cm</Height>
@@ -716,6 +786,10 @@
           <DataField>Thang</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="Nam">
+          <DataField>Nam</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="LuongCoBan">
           <DataField>LuongCoBan</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -743,7 +817,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>QLKFCDataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\KC\CHUYEN DE PHAT TRIEN UNG DUNG 1 2\GIT\PT_KFC\QL_KFC\KFC\QLKFCDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\K\KFC\PT_KFC\QL_KFC\KFC\QLKFCDataSet.xsd</rd:SchemaPath>
         <rd:TableName>Luong</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
