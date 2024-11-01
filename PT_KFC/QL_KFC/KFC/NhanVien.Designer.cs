@@ -97,7 +97,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1677, 98);
+            this.panel3.Size = new System.Drawing.Size(1677, 87);
             this.panel3.TabIndex = 16;
             // 
             // btnCapNhatNV
@@ -476,9 +476,9 @@
             // 
             this.flpNhanVien.AutoScroll = true;
             this.flpNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flpNhanVien.Location = new System.Drawing.Point(0, 98);
+            this.flpNhanVien.Location = new System.Drawing.Point(0, 87);
             this.flpNhanVien.Name = "flpNhanVien";
-            this.flpNhanVien.Size = new System.Drawing.Size(1677, 642);
+            this.flpNhanVien.Size = new System.Drawing.Size(1677, 653);
             this.flpNhanVien.TabIndex = 17;
             // 
             // NhanVien
