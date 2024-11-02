@@ -130,12 +130,6 @@
     <Compile Include="CapNhatNhaCungCap.Designer.cs">
       <DependentUpon>CapNhatNhaCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapNhatNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatNhanVien.Designer.cs">
-      <DependentUpon>CapNhatNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="CapNhatThucDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -347,9 +341,6 @@
     <EmbeddedResource Include="CapNhatNhaCungCap.resx">
       <DependentUpon>CapNhatNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatNhanVien.resx">
-      <DependentUpon>CapNhatNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CapNhatThucDon.resx">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +383,7 @@
     <EmbeddedResource Include="Kho.resx">
       <DependentUpon>Kho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoRP.rdlc" />
     <EmbeddedResource Include="KhuyenMai.resx">
       <DependentUpon>KhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,7 +418,6 @@
     <EmbeddedResource Include="NhanVienControl.resx">
       <DependentUpon>NhanVienControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVienRP.rdlc" />
     <EmbeddedResource Include="NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>

@@ -221,8 +221,8 @@ namespace KFC
                     SoNgayLam = int.Parse(txtSoNgayLam.Text),
                     ThuongChuyenCan = int.Parse(txtThuongCC.Text),
                     ThuongHieuSuat = int.Parse(txtThuongNL.Text),
-                    SoGioLamThem = int.Parse(txtThuongCC.Text),
-                    KhoanTru = int.Parse(txtThuongNL.Text)
+                    SoGioLamThem = int.Parse(txtGioLamThem.Text),
+                    KhoanTru = int.Parse(txtKhoanTru.Text)
                 };
 
                 // Nếu đang ở chế độ cập nhật, gọi phương thức cập nhật
