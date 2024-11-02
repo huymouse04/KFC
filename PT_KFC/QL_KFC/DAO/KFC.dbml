@@ -134,11 +134,13 @@
   <Table Name="dbo.Luong" Member="Luongs">
     <Type Name="Luong">
       <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SoNgayLam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayLam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoGioLamThem" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ThuongChuyenCan" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ThuongHieuSuat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KhoanTru" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NhanVien_Luong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>

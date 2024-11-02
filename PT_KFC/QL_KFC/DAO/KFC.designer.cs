@@ -457,7 +457,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary HinhAnh
 		{
 			get
@@ -2951,15 +2951,19 @@ namespace DAO
 		
 		private string _MaNhanVien;
 		
-		private System.Nullable<int> _LuongCoBan;
-		
 		private int _Thang;
 		
-		private System.Nullable<int> _SoNgayLam;
+		private int _LuongCoBan;
+		
+		private int _SoNgayLam;
+		
+		private System.Nullable<int> _SoGioLamThem;
 		
 		private System.Nullable<int> _ThuongChuyenCan;
 		
 		private System.Nullable<int> _ThuongHieuSuat;
+		
+		private System.Nullable<int> _KhoanTru;
 		
 		private EntityRef<NhanVien> _NhanVien;
 		
@@ -2969,16 +2973,20 @@ namespace DAO
     partial void OnCreated();
     partial void OnMaNhanVienChanging(string value);
     partial void OnMaNhanVienChanged();
-    partial void OnLuongCoBanChanging(System.Nullable<int> value);
-    partial void OnLuongCoBanChanged();
     partial void OnThangChanging(int value);
     partial void OnThangChanged();
-    partial void OnSoNgayLamChanging(System.Nullable<int> value);
+    partial void OnLuongCoBanChanging(int value);
+    partial void OnLuongCoBanChanged();
+    partial void OnSoNgayLamChanging(int value);
     partial void OnSoNgayLamChanged();
+    partial void OnSoGioLamThemChanging(System.Nullable<int> value);
+    partial void OnSoGioLamThemChanged();
     partial void OnThuongChuyenCanChanging(System.Nullable<int> value);
     partial void OnThuongChuyenCanChanged();
     partial void OnThuongHieuSuatChanging(System.Nullable<int> value);
     partial void OnThuongHieuSuatChanged();
+    partial void OnKhoanTruChanging(System.Nullable<int> value);
+    partial void OnKhoanTruChanged();
     #endregion
 		
 		public Luong()
@@ -3011,26 +3019,6 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LuongCoBan", DbType="Int")]
-		public System.Nullable<int> LuongCoBan
-		{
-			get
-			{
-				return this._LuongCoBan;
-			}
-			set
-			{
-				if ((this._LuongCoBan != value))
-				{
-					this.OnLuongCoBanChanging(value);
-					this.SendPropertyChanging();
-					this._LuongCoBan = value;
-					this.SendPropertyChanged("LuongCoBan");
-					this.OnLuongCoBanChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thang", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int Thang
 		{
@@ -3051,8 +3039,28 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoNgayLam", DbType="Int")]
-		public System.Nullable<int> SoNgayLam
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LuongCoBan", DbType="Int NOT NULL")]
+		public int LuongCoBan
+		{
+			get
+			{
+				return this._LuongCoBan;
+			}
+			set
+			{
+				if ((this._LuongCoBan != value))
+				{
+					this.OnLuongCoBanChanging(value);
+					this.SendPropertyChanging();
+					this._LuongCoBan = value;
+					this.SendPropertyChanged("LuongCoBan");
+					this.OnLuongCoBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoNgayLam", DbType="Int NOT NULL")]
+		public int SoNgayLam
 		{
 			get
 			{
@@ -3067,6 +3075,26 @@ namespace DAO
 					this._SoNgayLam = value;
 					this.SendPropertyChanged("SoNgayLam");
 					this.OnSoNgayLamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoGioLamThem", DbType="Int")]
+		public System.Nullable<int> SoGioLamThem
+		{
+			get
+			{
+				return this._SoGioLamThem;
+			}
+			set
+			{
+				if ((this._SoGioLamThem != value))
+				{
+					this.OnSoGioLamThemChanging(value);
+					this.SendPropertyChanging();
+					this._SoGioLamThem = value;
+					this.SendPropertyChanged("SoGioLamThem");
+					this.OnSoGioLamThemChanged();
 				}
 			}
 		}
@@ -3107,6 +3135,26 @@ namespace DAO
 					this._ThuongHieuSuat = value;
 					this.SendPropertyChanged("ThuongHieuSuat");
 					this.OnThuongHieuSuatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KhoanTru", DbType="Int")]
+		public System.Nullable<int> KhoanTru
+		{
+			get
+			{
+				return this._KhoanTru;
+			}
+			set
+			{
+				if ((this._KhoanTru != value))
+				{
+					this.OnKhoanTruChanging(value);
+					this.SendPropertyChanging();
+					this._KhoanTru = value;
+					this.SendPropertyChanged("KhoanTru");
+					this.OnKhoanTruChanged();
 				}
 			}
 		}
@@ -3250,7 +3298,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhaCungCap", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhaCungCap", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary AnhNhaCungCap
 		{
 			get
@@ -3456,7 +3504,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhanVien", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhanVien", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary AnhNhanVien
 		{
 			get

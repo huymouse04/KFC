@@ -33,10 +33,11 @@ namespace DAO
                                 SoLuong = nh.SoLuong,
                                 NgayNhap = nh.NgayNhap,
                                 NgaySanXuat = nh.NgaySanXuat,
-                                NgayHetHan = nh.NgayHetHan,
+                                NgayHetHan=nh.NgayHetHan,
                                 MaLoaiHang = j.MaLoaiHang,
                                 MaNhaCungCap = m.MaNhaCungCap,
                                 DonGia = nh.DonGia
+
                             };
 
             return nhapHangs.ToList();
@@ -77,6 +78,7 @@ namespace DAO
 
             return query.ToList();
         }
+
 
         public void AddNhapHang(NhapHang_DTO nhapHang)
         {
@@ -127,7 +129,7 @@ namespace DAO
 
                 // Cập nhật số lượng mới trong Kho dựa trên số lượng nhập hàng mới
                 existingKho.SoLuong = soLuongKhoHienTai + soLuongMoi;
-
+                
                 // Lưu thay đổi vào cơ sở dữ liệu
                 DB.SubmitChanges();
             }
@@ -159,7 +161,6 @@ namespace DAO
 
             return result.ToList();
         }
-
         public List<NhapHang_DTO> GetNhapHangByMa(int maNhapHang)
         {
             var result = from nh in DB.NhapHangs

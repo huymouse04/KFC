@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Connection_DTO.cs" />
     <Compile Include="Kho_DTO.cs" />
+    <Compile Include="KhuyenMai_DTO.cs" />
     <Compile Include="LoaiHang_DTO.cs" />
     <Compile Include="LuongNhanVien_DTO.cs" />
     <Compile Include="NhaCungCap_DTO.cs" />

@@ -189,7 +189,9 @@ CREATE TABLE DoanhThu (
     FOREIGN KEY (MaHoaDon) REFERENCES HoaDon(MaHoaDon),  
 	FOREIGN KEY (MaNhapHang) REFERENCES NhapHang(MaNhapHang)
 );
-
+ALTER TABLE NhapHang
+ADD NgaySanXuat DATETIME,
+    NgayHetHan DATETIME;
 INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Email, DiaChi, ChucVu, SoGioLam) 
 VALUES 
 (N'NV001', NULL, N'Nguyễn Văn A', N'Nam', '01/01/1990', '0901234567', 'vana@gmail.com', N'Hà Nội', N'Quản lý', 160),
@@ -296,9 +298,27 @@ INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong) VALUES
 INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
 ('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
 
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-01', NgayHetHan = '2024-12-01'
+WHERE MaSanPham = 'GR01';
 
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-05', NgayHetHan = '2024-12-05'
+WHERE MaSanPham = 'GQ01';
 
-select * from NhapHang
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-10', NgayHetHan = '2025-10-10'
+WHERE MaSanPham = 'NUOC01';
+
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-12', NgayHetHan = '2025-01-12'
+WHERE MaSanPham = 'TAN01';
+
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-15', NgayHetHan = '2024-11-15'
+WHERE MaSanPham = 'BMC01';
+
+select * from Luong
 
 select * from Kho
 
