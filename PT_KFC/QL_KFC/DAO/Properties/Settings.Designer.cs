@@ -33,5 +33,16 @@ namespace DAO.Properties {
                 return ((string)(this["QLKFCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-DT6K7IMU\\MSSQLSERVER01;Initial Catalog=QLKFC;Integrated Securi" +
+            "ty=True;TrustServerCertificate=True")]
+        public string QLKFCConnectionString1 {
+            get {
+                return ((string)(this["QLKFCConnectionString1"]));
+            }
+        }
     }
 }

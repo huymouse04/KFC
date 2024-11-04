@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection_BUS.cs" />
+    <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="KhoHang_BUS.cs" />
     <Compile Include="LoaiHang_BUS.cs" />
     <Compile Include="LuongNhanVien_BUS.cs" />

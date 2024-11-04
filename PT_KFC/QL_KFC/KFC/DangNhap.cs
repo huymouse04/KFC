@@ -95,8 +95,9 @@ namespace KFC
                 {
                     mainForm.SetButtonState(false); // Hạn chế một số nút
                 }
-
+  
                 mainForm.Show(); // Hiển thị form chính  
+
             }
             else
             {

@@ -13,6 +13,7 @@ namespace KFC
 {
     public partial class FormReport : Form
     {
+
         public enum LoaiBaoCao
         {
             NhanVien,
@@ -22,7 +23,6 @@ namespace KFC
 
         private LoaiBaoCao loaiBaoCao;
         private DataTable duLieuBaoCao;
-
 
         public FormReport(LoaiBaoCao loaiBaoCao, DataTable duLieuBaoCao)
         {
@@ -53,6 +53,11 @@ namespace KFC
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
             reportViewer1.RefreshReport();
+
+            // Cập nhật báo cáo
+            reportViewer1.RefreshReport();
         }
+
+
     }
 }

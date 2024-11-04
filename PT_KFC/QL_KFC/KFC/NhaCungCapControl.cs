@@ -162,5 +162,17 @@ namespace KFC
                 }
             }
         }
+
+        private void NhaCungCapControl_Paint(object sender, PaintEventArgs e)
+        {
+            Color borderColor = Color.Red; // Màu viền
+            int borderWidth = 2; // Độ dày viền
+
+            using (Pen pen = new Pen(borderColor, borderWidth))
+            {
+                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                e.Graphics.DrawRectangle(pen, 0, 0, this.Width - 1, this.Height - 1);
+            }
+        }
     }
 }
