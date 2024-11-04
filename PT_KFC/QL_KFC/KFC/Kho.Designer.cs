@@ -81,6 +81,7 @@
             // 
             // lbKHO
             // 
+<<<<<<< HEAD
            
             // 
             // cbLH
@@ -92,6 +93,21 @@
 
             this.dtGVKHO.Location = new System.Drawing.Point(0, 277);
 
+=======
+
+            // 
+            // cbLH
+            // 
+            this.cbLH.FormattingEnabled = true;
+            this.cbLH.Location = new System.Drawing.Point(709, 245);
+            this.cbLH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLH.Name = "cbLH";
+            this.cbLH.Size = new System.Drawing.Size(247, 24);
+            this.cbLH.TabIndex = 5;
+
+            this.dtGVKHO.Location = new System.Drawing.Point(0, 490);
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.dtGVKHO.Name = "dtGVKHO";
             this.dtGVKHO.RowHeadersWidth = 51;
             this.dtGVKHO.Size = new System.Drawing.Size(1031, 237);
@@ -121,6 +137,7 @@
             // 
             // txtDonGia
             // 
+<<<<<<< HEAD
             this.txtDonGia.Location = new System.Drawing.Point(709, 178);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDonGia.Name = "txtDonGia";
@@ -130,6 +147,8 @@
             // txtDVT
             // 
            
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
             this.txtDonGia.Location = new System.Drawing.Point(624, 218);
             this.txtDonGia.Name = "txtDonGia";
@@ -148,6 +167,10 @@
             // 
             this.lbDG.AutoSize = true;
             this.lbDG.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.lbDG.Location = new System.Drawing.Point(474, 218);
 
             this.lbDG.Name = "lbDG";
@@ -161,6 +184,10 @@
             this.lbDVT.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             this.lbDVT.Location = new System.Drawing.Point(474, 175);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.lbDVT.Name = "lbDVT";
             this.lbDVT.Size = new System.Drawing.Size(142, 27);
             this.lbDVT.TabIndex = 68;
@@ -181,6 +208,10 @@
             this.lbSL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             this.lbSL.Location = new System.Drawing.Point(100, 322);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.lbSL.Name = "lbSL";
             this.lbSL.Size = new System.Drawing.Size(119, 27);
             this.lbSL.TabIndex = 62;
@@ -208,6 +239,10 @@
             this.lbTSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             this.lbTSP.Location = new System.Drawing.Point(100, 270);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.lbTSP.Name = "lbTSP";
             this.lbTSP.Size = new System.Drawing.Size(160, 27);
             this.lbTSP.TabIndex = 59;
@@ -219,6 +254,10 @@
             this.lbMSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             this.lbMSP.Location = new System.Drawing.Point(100, 220);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.lbMSP.Name = "lbMSP";
             this.lbMSP.Size = new System.Drawing.Size(156, 27);
             this.lbMSP.TabIndex = 58;
@@ -237,7 +276,10 @@
 
             this.panel_Body.Size = new System.Drawing.Size(950, 661);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.panel_Body.TabIndex = 1;
             // 
             // pnTop
@@ -295,7 +337,12 @@
             this.pnBET.Location = new System.Drawing.Point(0, 0);
             this.pnBET.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBET.Name = "pnBET";
+<<<<<<< HEAD
    this.pnBET.Size = new System.Drawing.Size(1031, 490);
+=======
+
+            this.pnBET.Size = new System.Drawing.Size(1031, 490);
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.pnBET.TabIndex = 0;
             // 
             // dtpNgayHetHan
@@ -344,6 +391,7 @@
             this.btnLamMoi.BorderSize = 0;
             this.btnLamMoi.FlatAppearance.BorderSize = 0;
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
 
             
             this.btnLamMoi.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -354,6 +402,9 @@
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
 
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(142, 48);
             this.btnLamMoi.TabIndex = 16;
@@ -374,6 +425,7 @@
             this.btnXuat.FlatAppearance.BorderSize = 0;
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 
+<<<<<<< HEAD
             this.btnXuat.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
             this.btnXuat.Location = new System.Drawing.Point(840, 311);
@@ -386,6 +438,12 @@
             this.btnXuat.TextColor = System.Drawing.Color.White;
             this.btnXuat.UseVisualStyleBackColor = false;
             //this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+=======
+            this.btnXuat.Text = "Xuất";
+            this.btnXuat.TextColor = System.Drawing.Color.White;
+            this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
             // 
             // btnThem
@@ -399,6 +457,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 
             this.btnThem.Location = new System.Drawing.Point(16, 311);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -415,6 +474,9 @@
             this.btnThem.Size = new System.Drawing.Size(142, 48);
             this.btnThem.TabIndex = 8;
 
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.btnThem.Text = "Thêm";
             this.btnThem.TextColor = System.Drawing.Color.White;
             this.btnThem.UseVisualStyleBackColor = false;
@@ -431,12 +493,15 @@
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 
 
             this.btnCapNhat.Location = new System.Drawing.Point(168, 253);
 
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(142, 48);
             this.btnCapNhat.TabIndex = 9;
@@ -448,6 +513,7 @@
             // 
             // btnXoa
             // 
+<<<<<<< HEAD
 
             this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
             this.btnDelete.BackgroundColor = System.Drawing.Color.Firebrick;
@@ -468,6 +534,8 @@
             this.btnDelete.UseVisualStyleBackColor = false;
             //this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             // 
             // btnTimKiem
             // 
@@ -480,11 +548,13 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 
 
             this.btnTimKiem.Location = new System.Drawing.Point(477, 254);
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(142, 48);
@@ -505,12 +575,16 @@
             this.btnLoaiHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoaiHang.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnLoaiHang.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 
 
             this.btnLoaiHang.Location = new System.Drawing.Point(791, 67);
 
             this.btnLoaiHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.Size = new System.Drawing.Size(142, 48);
             this.btnLoaiHang.TabIndex = 13;
@@ -531,6 +605,7 @@
             this.btnNCC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNCC.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNCC.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 
 
             this.btnNCC.Location = new System.Drawing.Point(791, 132);
@@ -538,6 +613,8 @@
             this.btnNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
 
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.btnNCC.Name = "btnNCC";
             this.btnNCC.Size = new System.Drawing.Size(142, 48);
             this.btnNCC.TabIndex = 14;
@@ -558,13 +635,18 @@
             this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhapHang.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhapHang.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
 
 
             this.btnNhapHang.Location = new System.Drawing.Point(791, 197);
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
-            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(142, 48);
             this.btnNhapHang.TabIndex = 15;
@@ -578,13 +660,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
             this.ClientSize = new System.Drawing.Size(950, 661);
             this.Controls.Add(this.panel_Body);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
             this.Name = "Kho";
             this.Text = "Kho";
             ((System.ComponentModel.ISupportInitialize)(this.dtGVKHO)).EndInit();
