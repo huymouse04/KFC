@@ -141,5 +141,17 @@ namespace KFC
             openformMain(new Kho());
         }
 
+<<<<<<< HEAD
+=======
+        private void btnThucDon_Click(object sender, EventArgs e)
+        {
+            openformMain(new ThucDon());
+        }
+
+        private void btnKhuyenMai_Click(object sender, EventArgs e)
+        {
+            openformMain(new KhuyenMai());
+        }
+>>>>>>> hungg
     }
 }

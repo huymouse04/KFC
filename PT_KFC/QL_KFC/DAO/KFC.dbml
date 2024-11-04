@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLKFC" Class="KFCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MOUSE\TESTDB;Initial Catalog=QLKFC;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLKFCConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-7UF615BR\SQLEXPRESS;Initial Catalog=QLKFC;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="QLKFCConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ban" Member="Bans">
     <Type Name="Ban">
       <Column Name="MaBan" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -16,6 +16,8 @@
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Association Name="ThucDon_ChiTietDonDat" Member="ChiTietDonDats" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ChiTietDonDat" />
+      <Association Name="Kho_ThucDon" Member="Kho" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="Kho" IsForeignKey="true" />
+      <Association Name="LoaiHang_ThucDon" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Combo" Member="Combos">
@@ -107,6 +109,7 @@
       <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Kho_ThucDon" Member="ThucDon" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ThucDon" Cardinality="One" />
       <Association Name="Kho_ChiTietCombo" Member="ChiTietCombos" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ChiTietCombo" />
       <Association Name="Kho_NhapHang" Member="NhapHangs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="NhapHang" />
       <Association Name="LoaiHang_Kho" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
@@ -127,8 +130,22 @@
     <Type Name="LoaiHang">
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLoaiHang" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiHang_ThucDon" Member="ThucDons" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="ThucDon" />
       <Association Name="LoaiHang_Kho" Member="Khos" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="Kho" />
       <Association Name="LoaiHang_NhapHang" Member="NhapHangs" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="NhapHang" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Luong" Member="Luongs">
+    <Type Name="Luong">
+      <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LuongCoBan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayLam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SoGioLamThem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThuongChuyenCan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThuongHieuSuat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KhoanTru" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NhanVien_Luong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.NhaCungCap" Member="NhaCungCaps">
@@ -167,12 +184,15 @@
       <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MaNhaCungCap" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NgaySanXuat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayHetHan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="NhapHang_DoanhThu" Member="DoanhThus" ThisKey="MaNhapHang" OtherKey="MaNhapHang" Type="DoanhThu" />
       <Association Name="LoaiHang_NhapHang" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
       <Association Name="NhaCungCap_NhapHang" Member="NhaCungCap" ThisKey="MaNhaCungCap" OtherKey="MaNhaCungCap" Type="NhaCungCap" IsForeignKey="true" />
       <Association Name="Kho_NhapHang" Member="Kho" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="Kho" IsForeignKey="true" />
     </Type>
   </Table>
+<<<<<<< HEAD
   <Table Name="dbo.Luong" Member="Luongs">
     <Type Name="Luong">
       <Column Name="MaNhanVien" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -187,4 +207,6 @@
       <Association Name="NhanVien_Luong" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
     </Type>
   </Table>
+=======
+>>>>>>> hungg
 </Database>

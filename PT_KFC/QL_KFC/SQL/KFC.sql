@@ -192,6 +192,7 @@ CREATE TABLE DoanhThu (
     FOREIGN KEY (MaHoaDon) REFERENCES HoaDon(MaHoaDon),  
 	FOREIGN KEY (MaNhapHang) REFERENCES NhapHang(MaNhapHang)
 );
+<<<<<<< HEAD
 
 INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Email, DiaChi, ChucVu, SoGioLam) VALUES
 ('NV001', NULL, N'Nguyễn Văn A', N'Nam', '01/01/1990', '0123456789', 'vana@gmail.com', N'Hà Nội', N'Quản lý', 160),
@@ -214,6 +215,33 @@ INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, 
 ('NV018', NULL, N'Trần Thị R', N'Nữ', '18/06/1981', '0123456796', 'thir@gmail.com', N'Hà Nội', N'Nhân viên', 160),
 ('NV019', NULL, N'Lê Văn S', N'Nam', '19/07/1980', '0123456797', 'vans@gmail.com', N'Hà Nội', N'Nhân viên', 160),
 ('NV020', NULL, N'Phạm Thị T', N'Nữ', '20/08/1979', '0123456798', 'thit@gmail.com', N'Hà Nội', N'Nhân viên', 160);
+=======
+ALTER TABLE NhapHang
+ADD NgaySanXuat DATETIME,
+    NgayHetHan DATETIME;
+INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Email, DiaChi, ChucVu, SoGioLam) 
+VALUES 
+(N'NV001', NULL, N'Nguyễn Văn A', N'Nam', '01/01/1990', '0901234567', 'vana@gmail.com', N'Hà Nội', N'Quản lý', 160),
+(N'NV002', NULL, N'Trần Thị B', N'Nữ', '02/02/1992', '0902234567', 'thib@gmail.com', N'Hà Nội', N'Nhân viên', 150),
+(N'NV003', NULL, N'Lê Văn C', N'Nam', '03/03/1989', '0903234567', 'vanc@gmail.com', N'Hồ Chí Minh', N'Quản lý', 170),
+(N'NV004', NULL, N'Phạm Thị D', N'Nữ', '04/04/1993', '0904234567', 'thid@gmail.com', N'Hải Phòng', N'Nhân viên', 145),
+(N'NV005', NULL, N'Hoàng Văn E', N'Nam', '05/05/1991', '0905234567', 'vane@gmail.com', N'Đà Nẵng', N'Nhân viên', 155),
+(N'NV006', NULL, N'Nguyễn Thị F', N'Nữ', '06/06/1990', '0906234567', 'thif@gmail.com', N'Cần Thơ', N'Nhân viên', 160),
+(N'NV007', NULL, N'Đỗ Văn G', N'Nam', '07/07/1994', '0907234567', 'vang@gmail.com', N'Quảng Ninh', N'Nhân viên', 165),
+(N'NV008', NULL, N'Vũ Thị H', N'Nữ', '08/08/1991', '0908234567', 'thih@gmail.com', N'Thanh Hóa', N'Nhân viên', 150),
+(N'NV009', NULL, N'Bùi Văn I', N'Nam', '09/09/1992', '0909234567', 'vani@gmail.com', N'Hà Nội', N'Nhân viên', 140),
+(N'NV010', NULL, N'Phạm Thị K', N'Nữ', '10/10/1993', '0900234567', 'thik@gmail.com', N'Hải Phòng', N'Nhân viên', 130),
+(N'NV011', NULL, N'Nguyễn Văn L', N'Nam', '11/11/1988', '0910234567', 'vanl@gmail.com', N'Hồ Chí Minh', N'Quản lý', 170),
+(N'NV012', NULL, N'Lê Thị M', N'Nữ', '12/12/1990', '0911234567', 'thim@gmail.com', N'Đà Nẵng', N'Nhân viên', 160),
+(N'NV013', NULL, N'Phạm Văn N', N'Nam', '13/01/1995', '0912234567', 'vann@gmail.com', N'Cần Thơ', N'Nhân viên', 140),
+(N'NV014', NULL, N'Trần Thị O', N'Nữ', '14/02/1992', '0913234567', 'thio@gmail.com', N'Thanh Hóa', N'Nhân viên', 150),
+(N'NV015', NULL, N'Đỗ Văn P', N'Nam', '15/03/1989', '0914234567', 'vanp@gmail.com', N'Quảng Ninh', N'Quản lý', 160),
+(N'NV016', NULL, N'Vũ Thị Q', N'Nữ', '16/04/1993', '0915234567', 'thiq@gmail.com', N'Hà Nội', N'Nhân viên', 155),
+(N'NV017', NULL, N'Bùi Văn R', N'Nam', '17/05/1991', '0916234567', 'vanr@gmail.com', N'Hồ Chí Minh', N'Nhân viên', 150),
+(N'NV018', NULL, N'Hoàng Thị S', N'Nữ', '18/06/1990', '0917234567', 'this@gmail.com', N'Hải Phòng', N'Nhân viên', 145),
+(N'NV019', NULL, N'Nguyễn Văn T', N'Nam', '19/07/1992', '0918234567', 'vant@gmail.com', N'Đà Nẵng', N'Nhân viên', 150),
+(N'NV020', NULL, N'Phạm Thị U', N'Nữ', '20/08/1994', '0919234567', 'thiu@gmail.com', N'Cần Thơ', N'Nhân viên', 160);
+>>>>>>> hungg
 
 
 
@@ -291,9 +319,27 @@ INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong) VALUES
 INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
 ('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
 
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-01', NgayHetHan = '2024-12-01'
+WHERE MaSanPham = 'GR01';
 
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-05', NgayHetHan = '2024-12-05'
+WHERE MaSanPham = 'GQ01';
 
-select * from NhapHang
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-10', NgayHetHan = '2025-10-10'
+WHERE MaSanPham = 'NUOC01';
+
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-12', NgayHetHan = '2025-01-12'
+WHERE MaSanPham = 'TAN01';
+
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-15', NgayHetHan = '2024-11-15'
+WHERE MaSanPham = 'BMC01';
+
+select * from Luong
 
 select * from Kho
 
