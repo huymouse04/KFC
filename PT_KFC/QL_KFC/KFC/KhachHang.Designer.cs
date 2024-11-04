@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 584);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1095, 70);
             this.panel1.TabIndex = 4;
@@ -80,7 +80,7 @@
             this.panel4.Controls.Add(this.btnThemm);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, -2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1093, 70);
             this.panel4.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             this.cbbLoc.FormattingEnabled = true;
             this.cbbLoc.Location = new System.Drawing.Point(859, 26);
-            this.cbbLoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbLoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoc.Name = "cbbLoc";
             this.cbbLoc.Size = new System.Drawing.Size(216, 24);
             this.cbbLoc.TabIndex = 5;
@@ -100,7 +100,7 @@
             this.btnLoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLoc.ForeColor = System.Drawing.Color.White;
             this.btnLoc.Location = new System.Drawing.Point(739, 5);
-            this.btnLoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoc.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(112, 63);
             this.btnLoc.TabIndex = 6;
@@ -113,7 +113,7 @@
             this.btnXuat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
             this.btnXuat.Location = new System.Drawing.Point(623, 5);
-            this.btnXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(112, 63);
             this.btnXuat.TabIndex = 4;
@@ -127,7 +127,7 @@
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Location = new System.Drawing.Point(256, 4);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(133, 63);
             this.btnTimKiem.TabIndex = 3;
@@ -149,7 +149,7 @@
             this.btnXoaa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoaa.ForeColor = System.Drawing.Color.White;
             this.btnXoaa.Location = new System.Drawing.Point(135, 5);
-            this.btnXoaa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaa.Name = "btnXoaa";
             this.btnXoaa.Size = new System.Drawing.Size(112, 63);
             this.btnXoaa.TabIndex = 1;
@@ -164,7 +164,7 @@
             this.btnThemm.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemm.ForeColor = System.Drawing.Color.White;
             this.btnThemm.Location = new System.Drawing.Point(16, 4);
-            this.btnThemm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemm.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemm.Name = "btnThemm";
             this.btnThemm.Size = new System.Drawing.Size(112, 63);
             this.btnThemm.TabIndex = 0;
@@ -177,7 +177,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 70);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1093, 0);
             this.panel5.TabIndex = 6;
@@ -187,7 +187,7 @@
             this.panel6.Controls.Add(this.label1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1093, 70);
             this.panel6.TabIndex = 5;
@@ -208,7 +208,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoa.Location = new System.Drawing.Point(620, 4);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(112, 63);
             this.btnXoa.TabIndex = 1;
@@ -220,7 +220,7 @@
             this.btnThem.BackColor = System.Drawing.Color.Firebrick;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.Location = new System.Drawing.Point(331, 4);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(112, 63);
             this.btnThem.TabIndex = 0;
@@ -232,7 +232,7 @@
             this.panelKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelKhachHang.Location = new System.Drawing.Point(0, 70);
-            this.panelKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelKhachHang.Margin = new System.Windows.Forms.Padding(4);
             this.panelKhachHang.Name = "panelKhachHang";
             this.panelKhachHang.Size = new System.Drawing.Size(1095, 584);
             this.panelKhachHang.TabIndex = 6;
@@ -256,7 +256,7 @@
             this.panel2.Controls.Add(this.lblKhachHang);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 70);
             this.panel2.TabIndex = 5;
