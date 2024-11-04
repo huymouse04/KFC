@@ -106,12 +106,6 @@
     <Compile Include="CapNhatKhachHang.Designer.cs">
       <DependentUpon>CapNhatKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapNhatKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatKhuyenMai.Designer.cs">
-      <DependentUpon>CapNhatKhuyenMai.cs</DependentUpon>
-    </Compile>
     <Compile Include="CapNhatLoaiHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +147,9 @@
     </Compile>
     <Compile Include="Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -283,6 +280,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLKFCDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThucDonControl.cs">
       <SubType>UserControl</SubType>
@@ -311,9 +313,6 @@
     <EmbeddedResource Include="CapNhatKhachHang.resx">
       <DependentUpon>CapNhatKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatKhuyenMai.resx">
-      <DependentUpon>CapNhatKhuyenMai.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CapNhatLoaiHang.resx">
       <DependentUpon>CapNhatLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPanel.resx">
+      <DependentUpon>CustomPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -496,6 +498,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="QLKFCDataSet.xsc">
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </None>
@@ -506,6 +509,18 @@
     </None>
     <None Include="QLKFCDataSet.xss">
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+=======
+    <None Include="QLKFCDataSet1.xsc">
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLKFCDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKFCDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKFCDataSet1.xss">
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+>>>>>>> tam
     </None>
     <None Include="Resources\sql.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />

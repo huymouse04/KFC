@@ -52,12 +52,11 @@
             this.labelMJS3.EndColorAlpha = 255;
             this.labelMJS3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMJS3.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.labelMJS3.Location = new System.Drawing.Point(635, 169);
-            this.labelMJS3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMJS3.Location = new System.Drawing.Point(476, 137);
             this.labelMJS3.Name = "labelMJS3";
             this.labelMJS3.ShadowColor = System.Drawing.Color.DarkRed;
             this.labelMJS3.ShadowOffset = 1;
-            this.labelMJS3.Size = new System.Drawing.Size(268, 54);
+            this.labelMJS3.Size = new System.Drawing.Size(217, 42);
             this.labelMJS3.StartColor = System.Drawing.Color.Red;
             this.labelMJS3.StartColorAlpha = 255;
             this.labelMJS3.TabIndex = 16;
@@ -69,30 +68,27 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 605);
+            this.panel1.Size = new System.Drawing.Size(412, 492);
             this.panel1.TabIndex = 15;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(732, 342);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhau.Location = new System.Drawing.Point(549, 278);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(188, 33);
-            this.txtMatKhau.TabIndex = 12;
+            this.txtMatKhau.Size = new System.Drawing.Size(142, 28);
+            this.txtMatKhau.TabIndex = 4;
             this.txtMatKhau.TextChanged += new System.EventHandler(this.txtMatKhau_TextChanged);
             // 
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(732, 294);
-            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(549, 239);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(188, 33);
-            this.txtTaiKhoan.TabIndex = 11;
+            this.txtTaiKhoan.Size = new System.Drawing.Size(142, 28);
+            this.txtTaiKhoan.TabIndex = 3;
             this.txtTaiKhoan.TextChanged += new System.EventHandler(this.txtTaiKhoan_TextChanged);
             // 
             // labelMJS2
@@ -105,12 +101,11 @@
             this.labelMJS2.EndColorAlpha = 255;
             this.labelMJS2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMJS2.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.labelMJS2.Location = new System.Drawing.Point(604, 342);
-            this.labelMJS2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMJS2.Location = new System.Drawing.Point(453, 278);
             this.labelMJS2.Name = "labelMJS2";
             this.labelMJS2.ShadowColor = System.Drawing.Color.DarkRed;
             this.labelMJS2.ShadowOffset = 1;
-            this.labelMJS2.Size = new System.Drawing.Size(112, 25);
+            this.labelMJS2.Size = new System.Drawing.Size(90, 20);
             this.labelMJS2.StartColor = System.Drawing.Color.IndianRed;
             this.labelMJS2.StartColorAlpha = 255;
             this.labelMJS2.TabIndex = 10;
@@ -126,12 +121,11 @@
             this.labelMJS1.EndColorAlpha = 255;
             this.labelMJS1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMJS1.GradientDirection = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
-            this.labelMJS1.Location = new System.Drawing.Point(599, 294);
-            this.labelMJS1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMJS1.Location = new System.Drawing.Point(449, 239);
             this.labelMJS1.Name = "labelMJS1";
             this.labelMJS1.ShadowColor = System.Drawing.Color.DarkRed;
             this.labelMJS1.ShadowOffset = 1;
-            this.labelMJS1.Size = new System.Drawing.Size(119, 25);
+            this.labelMJS1.Size = new System.Drawing.Size(94, 20);
             this.labelMJS1.StartColor = System.Drawing.Color.IndianRed;
             this.labelMJS1.StartColorAlpha = 255;
             this.labelMJS1.TabIndex = 9;
@@ -142,12 +136,11 @@
             this.rdoNhanVien.AutoSize = true;
             this.rdoNhanVien.CheckedColor = System.Drawing.Color.DarkRed;
             this.rdoNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdoNhanVien.Location = new System.Drawing.Point(804, 247);
-            this.rdoNhanVien.Margin = new System.Windows.Forms.Padding(4);
-            this.rdoNhanVien.MinimumSize = new System.Drawing.Size(0, 26);
+            this.rdoNhanVien.Location = new System.Drawing.Point(603, 201);
+            this.rdoNhanVien.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdoNhanVien.Name = "rdoNhanVien";
-            this.rdoNhanVien.Size = new System.Drawing.Size(99, 26);
-            this.rdoNhanVien.TabIndex = 14;
+            this.rdoNhanVien.Size = new System.Drawing.Size(87, 21);
+            this.rdoNhanVien.TabIndex = 2;
             this.rdoNhanVien.TabStop = true;
             this.rdoNhanVien.Text = "Nhân Viên";
             this.rdoNhanVien.UnCheckedColor = System.Drawing.Color.Gray;
@@ -158,12 +151,11 @@
             this.rdoQuanLy.AutoSize = true;
             this.rdoQuanLy.CheckedColor = System.Drawing.Color.DarkRed;
             this.rdoQuanLy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdoQuanLy.Location = new System.Drawing.Point(644, 247);
-            this.rdoQuanLy.Margin = new System.Windows.Forms.Padding(4);
-            this.rdoQuanLy.MinimumSize = new System.Drawing.Size(0, 26);
+            this.rdoQuanLy.Location = new System.Drawing.Point(483, 201);
+            this.rdoQuanLy.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdoQuanLy.Name = "rdoQuanLy";
-            this.rdoQuanLy.Size = new System.Drawing.Size(82, 26);
-            this.rdoQuanLy.TabIndex = 13;
+            this.rdoQuanLy.Size = new System.Drawing.Size(76, 21);
+            this.rdoQuanLy.TabIndex = 1;
             this.rdoQuanLy.TabStop = true;
             this.rdoQuanLy.Text = "Quản Lí";
             this.rdoQuanLy.UnCheckedColor = System.Drawing.Color.Gray;
@@ -179,10 +171,11 @@
             this.btnDangNhap.FlatAppearance.BorderSize = 0;
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(684, 404);
+            this.btnDangNhap.Location = new System.Drawing.Point(513, 328);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(180, 48);
-            this.btnDangNhap.TabIndex = 17;
+            this.btnDangNhap.Size = new System.Drawing.Size(135, 39);
+            this.btnDangNhap.TabIndex = 5;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.TextColor = System.Drawing.Color.White;
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -194,9 +187,9 @@
             // 
             // DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 605);
+            this.ClientSize = new System.Drawing.Size(728, 492);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.labelMJS3);
             this.Controls.Add(this.panel1);
@@ -206,6 +199,7 @@
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.labelMJS2);
             this.Controls.Add(this.labelMJS1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangNhap";

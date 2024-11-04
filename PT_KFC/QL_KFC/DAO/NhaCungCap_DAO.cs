@@ -175,5 +175,22 @@ namespace DAO
                 throw new Exception("Lỗi không xác định: " + ex.Message);
             }
         }
+
+        public string CheckUsage(string maNhaCungCap)
+        {
+            // Kiểm tra xem mã sản phẩm có đang được sử dụng trong bảng Nhập Hàng không
+            bool existsInNhapHang = DB.NhapHangs.Any(nh => nh.MaNhaCungCap == maNhaCungCap);
+
+            // Tạo thông báo sử dụng
+            string usageMessage = "";
+
+            if (existsInNhapHang)
+            {
+                usageMessage += "Mã sản phẩm này đang được sử dụng trong bảng Nhập Hàng.\n";
+            }
+
+            return usageMessage; // Trả về thông báo sử dụng hoặc chuỗi rỗng nếu không có
+        }
+
     }
 }

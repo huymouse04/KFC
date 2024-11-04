@@ -14,11 +14,15 @@ namespace DTO
         public string DonViTinh { get; set; }
         public double? DonGia { get; set; }
         public DateTime NgayNhap { get; set; }
+        public DateTime? NgaySanXuat { get; set; } 
+        public DateTime? NgayHetHan { get; set; }
         public string MaLoaiHang { get; set; }
         public string MaNhaCungCap { get; set; }
         public string TenSanPham { get; set; }
+
         public NhapHang_DTO() { }
-        public NhapHang_DTO(int maNhapHang, string maSanPham, int soLuong, string donViTinh, double donGia, DateTime ngayNhap, string maLoaiHang, string maNhaCungCap, string tenSanPham)
+
+        public NhapHang_DTO(int maNhapHang, string maSanPham, int soLuong, string donViTinh, double donGia, DateTime ngayNhap, DateTime? ngaySanXuat, DateTime? ngayHetHan, string maLoaiHang, string maNhaCungCap, string tenSanPham)
         {
             MaNhapHang = maNhapHang;
             MaSanPham = maSanPham;
@@ -26,6 +30,8 @@ namespace DTO
             DonViTinh = donViTinh;
             DonGia = donGia;
             NgayNhap = ngayNhap;
+            NgaySanXuat = ngaySanXuat;
+            NgayHetHan = ngayHetHan;
             MaLoaiHang = maLoaiHang;
             MaNhaCungCap = maNhaCungCap;
             TenSanPham = tenSanPham;
