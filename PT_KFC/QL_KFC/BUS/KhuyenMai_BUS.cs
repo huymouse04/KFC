@@ -35,5 +35,10 @@ namespace BUS
         {
             return khuyenMaiDAO.GenerateUniqueMaKhuyenMai();
         }
+        public List<KhuyenMai_DTO> TimKiemKhuyenMaiTheoMa(string maKM)
+        {
+            return khuyenMaiDAO.TimKiemKhuyenMaiTheoMa(maKM);
+        }
+
     }
 }

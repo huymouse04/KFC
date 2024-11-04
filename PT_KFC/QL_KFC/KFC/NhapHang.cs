@@ -410,13 +410,12 @@ namespace KFC
         {
             ClearInputFields();
         }
-<<<<<<< HEAD
-=======
+
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             ClearInputFields();
         }
->>>>>>> 9e1dfb742522f62a9adff99aac17d051115204e0
+
     }
 }

@@ -163,9 +163,6 @@
     <Compile Include="CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>

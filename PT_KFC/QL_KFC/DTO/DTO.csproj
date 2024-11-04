@@ -69,6 +69,7 @@
     <Compile Include="NhapHang_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThucDon_DTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />

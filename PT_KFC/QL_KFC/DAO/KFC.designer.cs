@@ -395,6 +395,10 @@ namespace DAO
 		
 		private EntitySet<ChiTietDonDat> _ChiTietDonDats;
 		
+		private EntityRef<Kho> _Kho;
+		
+		private EntityRef<LoaiHang> _LoaiHang;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -414,6 +418,8 @@ namespace DAO
 		public ThucDon()
 		{
 			this._ChiTietDonDats = new EntitySet<ChiTietDonDat>(new Action<ChiTietDonDat>(this.attach_ChiTietDonDats), new Action<ChiTietDonDat>(this.detach_ChiTietDonDats));
+			this._Kho = default(EntityRef<Kho>);
+			this._LoaiHang = default(EntityRef<LoaiHang>);
 			OnCreated();
 		}
 		
@@ -428,6 +434,10 @@ namespace DAO
 			{
 				if ((this._MaSanPham != value))
 				{
+					if (this._Kho.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaSanPhamChanging(value);
 					this.SendPropertyChanging();
 					this._MaSanPham = value;
@@ -457,7 +467,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HinhAnh", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary HinhAnh
 		{
 			get
@@ -508,6 +518,10 @@ namespace DAO
 			{
 				if ((this._MaLoaiHang != value))
 				{
+					if (this._LoaiHang.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaLoaiHangChanging(value);
 					this.SendPropertyChanging();
 					this._MaLoaiHang = value;
@@ -527,6 +541,74 @@ namespace DAO
 			set
 			{
 				this._ChiTietDonDats.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Kho_ThucDon", Storage="_Kho", ThisKey="MaSanPham", OtherKey="MaSanPham", IsForeignKey=true)]
+		public Kho Kho
+		{
+			get
+			{
+				return this._Kho.Entity;
+			}
+			set
+			{
+				Kho previousValue = this._Kho.Entity;
+				if (((previousValue != value) 
+							|| (this._Kho.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Kho.Entity = null;
+						previousValue.ThucDon = null;
+					}
+					this._Kho.Entity = value;
+					if ((value != null))
+					{
+						value.ThucDon = this;
+						this._MaSanPham = value.MaSanPham;
+					}
+					else
+					{
+						this._MaSanPham = default(string);
+					}
+					this.SendPropertyChanged("Kho");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiHang_ThucDon", Storage="_LoaiHang", ThisKey="MaLoaiHang", OtherKey="MaLoaiHang", IsForeignKey=true)]
+		public LoaiHang LoaiHang
+		{
+			get
+			{
+				return this._LoaiHang.Entity;
+			}
+			set
+			{
+				LoaiHang previousValue = this._LoaiHang.Entity;
+				if (((previousValue != value) 
+							|| (this._LoaiHang.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LoaiHang.Entity = null;
+						previousValue.ThucDons.Remove(this);
+					}
+					this._LoaiHang.Entity = value;
+					if ((value != null))
+					{
+						value.ThucDons.Add(this);
+						this._MaLoaiHang = value.MaLoaiHang;
+					}
+					else
+					{
+						this._MaLoaiHang = default(string);
+					}
+					this.SendPropertyChanged("LoaiHang");
+				}
 			}
 		}
 		
@@ -2330,6 +2412,8 @@ namespace DAO
 		
 		private string _MaLoaiHang;
 		
+		private EntityRef<ThucDon> _ThucDon;
+		
 		private EntitySet<ChiTietCombo> _ChiTietCombos;
 		
 		private EntitySet<NhapHang> _NhapHangs;
@@ -2356,6 +2440,7 @@ namespace DAO
 		
 		public Kho()
 		{
+			this._ThucDon = default(EntityRef<ThucDon>);
 			this._ChiTietCombos = new EntitySet<ChiTietCombo>(new Action<ChiTietCombo>(this.attach_ChiTietCombos), new Action<ChiTietCombo>(this.detach_ChiTietCombos));
 			this._NhapHangs = new EntitySet<NhapHang>(new Action<NhapHang>(this.attach_NhapHangs), new Action<NhapHang>(this.detach_NhapHangs));
 			this._LoaiHang = default(EntityRef<LoaiHang>);
@@ -2482,6 +2567,35 @@ namespace DAO
 					this._MaLoaiHang = value;
 					this.SendPropertyChanged("MaLoaiHang");
 					this.OnMaLoaiHangChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Kho_ThucDon", Storage="_ThucDon", ThisKey="MaSanPham", OtherKey="MaSanPham", IsUnique=true, IsForeignKey=false)]
+		public ThucDon ThucDon
+		{
+			get
+			{
+				return this._ThucDon.Entity;
+			}
+			set
+			{
+				ThucDon previousValue = this._ThucDon.Entity;
+				if (((previousValue != value) 
+							|| (this._ThucDon.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ThucDon.Entity = null;
+						previousValue.Kho = null;
+					}
+					this._ThucDon.Entity = value;
+					if ((value != null))
+					{
+						value.Kho = this;
+					}
+					this.SendPropertyChanged("ThucDon");
 				}
 			}
 		}
@@ -2811,6 +2925,8 @@ namespace DAO
 		
 		private string _TenLoaiHang;
 		
+		private EntitySet<ThucDon> _ThucDons;
+		
 		private EntitySet<Kho> _Khos;
 		
 		private EntitySet<NhapHang> _NhapHangs;
@@ -2827,6 +2943,7 @@ namespace DAO
 		
 		public LoaiHang()
 		{
+			this._ThucDons = new EntitySet<ThucDon>(new Action<ThucDon>(this.attach_ThucDons), new Action<ThucDon>(this.detach_ThucDons));
 			this._Khos = new EntitySet<Kho>(new Action<Kho>(this.attach_Khos), new Action<Kho>(this.detach_Khos));
 			this._NhapHangs = new EntitySet<NhapHang>(new Action<NhapHang>(this.attach_NhapHangs), new Action<NhapHang>(this.detach_NhapHangs));
 			OnCreated();
@@ -2869,6 +2986,19 @@ namespace DAO
 					this.SendPropertyChanged("TenLoaiHang");
 					this.OnTenLoaiHangChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoaiHang_ThucDon", Storage="_ThucDons", ThisKey="MaLoaiHang", OtherKey="MaLoaiHang")]
+		public EntitySet<ThucDon> ThucDons
+		{
+			get
+			{
+				return this._ThucDons;
+			}
+			set
+			{
+				this._ThucDons.Assign(value);
 			}
 		}
 		
@@ -2916,6 +3046,18 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_ThucDons(ThucDon entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiHang = this;
+		}
+		
+		private void detach_ThucDons(ThucDon entity)
+		{
+			this.SendPropertyChanging();
+			entity.LoaiHang = null;
 		}
 		
 		private void attach_Khos(Kho entity)
@@ -3298,7 +3440,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhaCungCap", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhaCungCap", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary AnhNhaCungCap
 		{
 			get
@@ -3504,7 +3646,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhanVien", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNhanVien", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary AnhNhanVien
 		{
 			get

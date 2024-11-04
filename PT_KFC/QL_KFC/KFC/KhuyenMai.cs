@@ -22,7 +22,7 @@ namespace KFC
         {
             InitializeComponent();
             LoadKhuyenMai();
-           
+
         }
         private void ClearControls()
         {
@@ -33,6 +33,7 @@ namespace KFC
             txtSL.Clear();
             radConHL.Checked = false;
             radHetHL.Checked = false;
+            txtTimKiem.Clear();
         }
         private void LoadKhuyenMai()
         {
@@ -63,10 +64,6 @@ namespace KFC
                 flowLayoutPanel.Controls.Add(khuyenMaiControl);
             }
         }
-
-
-
-
         private void SelectKhuyenMai(string maKM)
         {
             selectedMaKM = maKM; // Lưu mã khuyến mãi được chọn
@@ -131,7 +128,7 @@ namespace KFC
                     dtKetThuc.Value,
                     decimal.Parse(txtGiaTri.Text),
                     int.Parse(txtSL.Text),
-                    validationResult.trangThai 
+                    validationResult.trangThai
                 );
 
                 if (bus.ThemKhuyenMai(khuyenMai))
@@ -243,7 +240,6 @@ namespace KFC
 
             return (true, trangThai); // Trả về hợp lệ và giá trị trangThai  
         }
-            
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(selectedMaKM)) // Kiểm tra nếu có khuyến mãi được chọn
@@ -273,6 +269,68 @@ namespace KFC
         private void KhuyenMai_Load(object sender, EventArgs e)
         {
             LoadKhuyenMai();
+        }
+        private void TimKiemKhuyenMai()
+        {
+            try
+            {
+                // Lấy mã khuyến mãi từ TextBox
+                string maKMCanTim = txtTimKiem.Text.Trim();
+
+                // Kiểm tra mã khuyến mãi
+                if (string.IsNullOrWhiteSpace(maKMCanTim))
+                {
+                    MessageBox.Show("Vui lòng nhập mã khuyến mãi để tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Gọi phương thức tìm kiếm từ lớp BUS
+                var danhSachKM = bus.TimKiemKhuyenMaiTheoMa(maKMCanTim);
+
+                // Xóa các điều khiển hiện có trong flowLayoutPanel
+                flowLayoutPanel.Controls.Clear();
+
+                // Kiểm tra nếu không tìm thấy khuyến mãi
+                if (!danhSachKM.Any())
+                {
+                    MessageBox.Show("Không tìm thấy khuyến mãi với mã này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Thêm các điều khiển khuyến mãi tìm thấy vào flowLayoutPanel
+                foreach (var km in danhSachKM)
+                {
+                    var khuyenMaiControl = new KhuyenMaiControl
+                    {
+                        MaKM = km.MaKhuyenMai,
+                        GiaTri = km.GiaTriGiam.ToString("N2"),
+                        SoLuong =km.SoLuong.ToString()
+                    };
+
+                    // Đăng ký các sự kiện cho điều khiển khuyến mãi
+                    khuyenMaiControl.OnMaKMDoubleClicked += KhuyenMaiControl_OnMaKMDoubleClicked;
+                    khuyenMaiControl.Click += (s, e) => SelectKhuyenMai(km.MaKhuyenMai);
+
+                    // Thêm vào flowLayoutPanel
+                    flowLayoutPanel.Controls.Add(khuyenMaiControl);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Hiển thị thông báo lỗi cho người dùng
+                MessageBox.Show($"Đã xảy ra lỗi trong quá trình tìm kiếm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLamMoi_Click_1(object sender, EventArgs e)
+        {
+            LoadKhuyenMai();
+            ClearControls();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiemKhuyenMai();
         }
     }
 }

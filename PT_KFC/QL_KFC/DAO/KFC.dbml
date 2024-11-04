@@ -16,6 +16,8 @@
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Association Name="ThucDon_ChiTietDonDat" Member="ChiTietDonDats" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ChiTietDonDat" />
+      <Association Name="Kho_ThucDon" Member="Kho" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="Kho" IsForeignKey="true" />
+      <Association Name="LoaiHang_ThucDon" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Combo" Member="Combos">
@@ -107,6 +109,7 @@
       <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Kho_ThucDon" Member="ThucDon" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ThucDon" Cardinality="One" />
       <Association Name="Kho_ChiTietCombo" Member="ChiTietCombos" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ChiTietCombo" />
       <Association Name="Kho_NhapHang" Member="NhapHangs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="NhapHang" />
       <Association Name="LoaiHang_Kho" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
@@ -127,6 +130,7 @@
     <Type Name="LoaiHang">
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenLoaiHang" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="LoaiHang_ThucDon" Member="ThucDons" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="ThucDon" />
       <Association Name="LoaiHang_Kho" Member="Khos" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="Kho" />
       <Association Name="LoaiHang_NhapHang" Member="NhapHangs" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="NhapHang" />
     </Type>

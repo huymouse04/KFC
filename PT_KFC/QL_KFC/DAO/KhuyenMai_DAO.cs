@@ -122,6 +122,22 @@ namespace DAO
             }
             return false;
         }
+        public List<KhuyenMai_DTO> TimKiemKhuyenMaiTheoMa(string maKM)
+        {
+            var khuyenMais = (from km in DB.KhuyenMais
+                              where km.MaKhuyenMai.Contains(maKM) 
+                              select new KhuyenMai_DTO
+                              {
+                                  MaKhuyenMai = km.MaKhuyenMai,
+                                  NgayBatDau = km.NgayBatDau,
+                                  NgayKetThuc = km.NgayKetThuc,
+                                  GiaTriGiam = km.GiaTriGiam ?? 0m,
+                                  SoLuong = km.SoLuong ?? 0,
+                                  TrangThai = km.TrangThai ?? false
+                              }).ToList();
+            return khuyenMais;
+        }
+
 
     }
 }
