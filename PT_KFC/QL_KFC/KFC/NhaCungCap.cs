@@ -72,13 +72,6 @@ namespace KFC
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            using (CapNhatNhaCungCap capNhatForm = new CapNhatNhaCungCap())
-=======
-
-
-            CapNhatNhaCungCap capNhat = new CapNhatNhaCungCap();
-            capNhat.ShowDialog();
 
             using (CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap()) 
             {
@@ -96,10 +89,9 @@ namespace KFC
         {
             // Mở form Nhập Hàng
             using (NhapHang formNhapHang = new NhapHang())
->>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
             {
                 // Hiển thị form cập nhật nhà cung cấp dưới dạng dialog
-                if (capNhatForm.ShowDialog() == DialogResult.OK)
+                if (formNhapHang.ShowDialog() == DialogResult.OK)
                 {
                     // Nếu cập nhật thành công (DialogResult.OK), load lại dữ liệu của form Nhà Cung Cấp
                     LoadData(); // Gọi phương thức LoadData() trên form Nhà Cung Cấp để cập nhật dữ liệu
