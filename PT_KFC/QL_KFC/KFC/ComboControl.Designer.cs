@@ -31,6 +31,8 @@
             this.lblCombo = new System.Windows.Forms.Label();
             this.lblTenCombo = new System.Windows.Forms.Label();
             this.lblGia = new System.Windows.Forms.Label();
+            this.pbTrangThai = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTrangThai)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCombo
@@ -46,10 +48,10 @@
             // lblTenCombo
             // 
             this.lblTenCombo.AutoSize = true;
-            this.lblTenCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenCombo.Location = new System.Drawing.Point(66, 33);
+            this.lblTenCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenCombo.Location = new System.Drawing.Point(36, 31);
             this.lblTenCombo.Name = "lblTenCombo";
-            this.lblTenCombo.Size = new System.Drawing.Size(181, 36);
+            this.lblTenCombo.Size = new System.Drawing.Size(152, 29);
             this.lblTenCombo.TabIndex = 1;
             this.lblTenCombo.Text = "Tên ComBo";
             // 
@@ -57,21 +59,31 @@
             // 
             this.lblGia.AutoSize = true;
             this.lblGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGia.Location = new System.Drawing.Point(98, 76);
+            this.lblGia.Location = new System.Drawing.Point(64, 69);
             this.lblGia.Name = "lblGia";
             this.lblGia.Size = new System.Drawing.Size(102, 20);
             this.lblGia.TabIndex = 2;
             this.lblGia.Text = "Giá Combo";
             // 
+            // pbTrangThai
+            // 
+            this.pbTrangThai.Location = new System.Drawing.Point(259, 3);
+            this.pbTrangThai.Name = "pbTrangThai";
+            this.pbTrangThai.Size = new System.Drawing.Size(40, 35);
+            this.pbTrangThai.TabIndex = 3;
+            this.pbTrangThai.TabStop = false;
+            // 
             // ComboControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pbTrangThai);
             this.Controls.Add(this.lblGia);
             this.Controls.Add(this.lblTenCombo);
             this.Controls.Add(this.lblCombo);
             this.Name = "ComboControl";
             this.Size = new System.Drawing.Size(302, 108);
+            ((System.ComponentModel.ISupportInitialize)(this.pbTrangThai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Label lblCombo;
         private System.Windows.Forms.Label lblTenCombo;
         private System.Windows.Forms.Label lblGia;
+        private System.Windows.Forms.PictureBox pbTrangThai;
     }
 }

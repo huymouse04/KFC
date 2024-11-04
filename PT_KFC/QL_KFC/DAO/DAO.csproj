@@ -69,6 +69,7 @@
       <DependentUpon>KFC.dbml</DependentUpon>
     </Compile>
     <Compile Include="Kho_DAO.cs" />
+    <Compile Include="KhuyenMai_DAO.cs" />
     <Compile Include="LoaiHang_DAO.cs" />
     <Compile Include="LuongNhanVien_DAO.cs" />
     <Compile Include="NhaCungCap_DAO.cs" />
@@ -81,6 +82,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThucDon_DAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -29,13 +29,14 @@ CREATE TABLE NhanVien (
 CREATE TABLE Luong (  
     MaNhanVien VARCHAR(30) NOT NULL,  
     Thang INT NOT NULL,  
+	Nam INT NOT NULL,  
     LuongCoBan INT NOT NULL,  
     SoNgayLam INT NOT NULL,  
     SoGioLamThem INT , -- Số giờ làm thêm
     ThuongChuyenCan INT, -- Thưởng chuyên cần
     ThuongHieuSuat INT , -- Thưởng hiệu suất
     KhoanTru INT, -- Khoản trừ (thuế, bảo hiểm, v.v.)
-    PRIMARY KEY (MaNhanVien, Thang),  
+    PRIMARY KEY (MaNhanVien, Thang, Nam),  
     FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)  
 );  
 --ALTER TABLE Luong
@@ -191,7 +192,33 @@ CREATE TABLE DoanhThu (
     FOREIGN KEY (MaHoaDon) REFERENCES HoaDon(MaHoaDon),  
 	FOREIGN KEY (MaNhapHang) REFERENCES NhapHang(MaNhapHang)
 );
+<<<<<<< HEAD
 
+INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Email, DiaChi, ChucVu, SoGioLam) VALUES
+('NV001', NULL, N'Nguyễn Văn A', N'Nam', '01/01/1990', '0123456789', 'vana@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV002', NULL, N'Trần Thị B', N'Nữ', '02/02/1991', '0123456780', 'thib@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV003', NULL, N'Lê Văn C', N'Nam', '03/03/1992', '0123456781', 'vanc@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV004', NULL, N'Phạm Thị D', N'Nữ', '04/04/1993', '0123456782', 'thid@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV005', NULL, N'Nguyễn Văn E', N'Nam', '05/05/1994', '0123456783', 'vane@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV006', NULL, N'Trần Thị F', N'Nữ', '06/06/1995', '0123456784', 'thif@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV007', NULL, N'Lê Văn G', N'Nam', '07/07/1996', '0123456785', 'vang@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV008', NULL, N'Phạm Thị H', N'Nữ', '08/08/1997', '0123456786', 'thih@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV009', NULL, N'Nguyễn Văn I', N'Nam', '09/09/1998', '0123456787', 'vani@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV010', NULL, N'Trần Thị J', N'Nữ', '10/10/1999', '0123456788', 'thij@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV011', NULL, N'Lê Văn K', N'Nam', '11/11/1988', '0123456789', 'vank@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV012', NULL, N'Phạm Thị L', N'Nữ', '12/12/1987', '0123456790', 'thil@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV013', NULL, N'Nguyễn Văn M', N'Nam', '13/01/1986', '0123456791', 'vanm@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV014', NULL, N'Trần Thị N', N'Nữ', '14/02/1985', '0123456792', 'thin@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV015', NULL, N'Lê Văn O', N'Nam', '15/03/1984', '0123456793', 'vano@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV016', NULL, N'Phạm Thị P', N'Nữ', '16/04/1983', '0123456794', 'thip@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV017', NULL, N'Nguyễn Văn Q', N'Nam', '17/05/1982', '0123456795', 'vanq@gmail.com', N'Hà Nội', N'Quản lý', 160),
+('NV018', NULL, N'Trần Thị R', N'Nữ', '18/06/1981', '0123456796', 'thir@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV019', NULL, N'Lê Văn S', N'Nam', '19/07/1980', '0123456797', 'vans@gmail.com', N'Hà Nội', N'Nhân viên', 160),
+('NV020', NULL, N'Phạm Thị T', N'Nữ', '20/08/1979', '0123456798', 'thit@gmail.com', N'Hà Nội', N'Nhân viên', 160);
+=======
+ALTER TABLE NhapHang
+ADD NgaySanXuat DATETIME,
+    NgayHetHan DATETIME;
 INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Email, DiaChi, ChucVu, SoGioLam) 
 VALUES 
 (N'NV001', NULL, N'Nguyễn Văn A', N'Nam', '01/01/1990', '0901234567', 'vana@gmail.com', N'Hà Nội', N'Quản lý', 160),
@@ -214,42 +241,35 @@ VALUES
 (N'NV018', NULL, N'Hoàng Thị S', N'Nữ', '18/06/1990', '0917234567', 'this@gmail.com', N'Hải Phòng', N'Nhân viên', 145),
 (N'NV019', NULL, N'Nguyễn Văn T', N'Nam', '19/07/1992', '0918234567', 'vant@gmail.com', N'Đà Nẵng', N'Nhân viên', 150),
 (N'NV020', NULL, N'Phạm Thị U', N'Nữ', '20/08/1994', '0919234567', 'thiu@gmail.com', N'Cần Thơ', N'Nhân viên', 160);
+>>>>>>> hungg
 
 
 
 
-INSERT INTO Luong (MaNhanVien, LuongCoBan, Thang, SoNgayLam, SoGioLamThem, ThuongChuyenCan, ThuongHieuSuat, KhoanTru)
-VALUES
-('NV001', 7000000, 7, 22, 5, 500000, 1000000, 300000),
-('NV001', 7000000, 4, 20, 2, 300000, 800000, 200000),
-('NV002', 6500000, 1, 21, 3, 400000, 900000, 250000),
-('NV002', 6500000, 8, 22, 4, 500000, 1000000, 300000),
-('NV003', 8000000, 10, 23, 2, 500000, 1200000, 400000),
-('NV003', 8000000, 2, 21, 6, 400000, 1100000, 350000),
-('NV004', 6000000, 11, 20, 1, 300000, 800000, 150000),
-('NV004', 6000000, 5, 22, 4, 500000, 900000, 200000),
-('NV005', 5500000, 9, 22, 0, 400000, 700000, 180000),
-('NV005', 5500000, 3, 21, 2, 300000, 600000, 100000),
-('NV006', 6500000, 6, 22, 3, 500000, 900000, 250000),
-('NV006', 6500000, 12, 22, 5, 500000, 1000000, 300000),
-('NV007', 7000000, 4, 23, 6, 600000, 1200000, 400000),
-('NV007', 7000000, 3, 20, 0, 300000, 800000, 100000),
-('NV008', 6000000, 8, 21, 1, 400000, 900000, 150000),
-('NV008', 6000000, 5, 22, 2, 500000, 1000000, 200000),
-('NV009', 5500000, 1, 22, 2, 300000, 700000, 120000),
-('NV009', 5500000, 6, 21, 0, 300000, 600000, 130000),
-('NV010', 5000000, 2, 20, 4, 200000, 500000, 90000),
-('NV010', 5000000, 11, 22, 3, 400000, 700000, 150000),
-('NV011', 7500000, 3, 23, 5, 600000, 1200000, 500000),
-('NV011', 7500000, 10, 22, 4, 500000, 1100000, 400000),
-('NV012', 6000000, 9, 21, 3, 400000, 900000, 200000),
-('NV012', 6000000, 12, 22, 4, 500000, 1000000, 300000),
-('NV013', 5500000, 5, 22, 2, 300000, 700000, 150000),
-('NV013', 5500000, 8, 20, 1, 200000, 600000, 100000),
-('NV014', 6500000, 4, 21, 3, 500000, 900000, 250000),
-('NV014', 6500000, 1, 22, 2, 500000, 1000000, 300000),
-('NV015', 7000000, 2, 22, 4, 600000, 1100000, 200000),
-('NV015', 7000000, 11, 22, 5, 500000, 1200000, 300000);
+
+
+INSERT INTO Luong (MaNhanVien, Thang, Nam, LuongCoBan, SoNgayLam, SoGioLamThem, ThuongChuyenCan, ThuongHieuSuat, KhoanTru) VALUES
+('NV001', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV002', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV003', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV004', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV005', 10, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV006', 10, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV007', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV008', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV009', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV010', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV011', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV012', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV013', 10, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV014', 10, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV015', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV016', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV017', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV018', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV019', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV020', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000);
+
 
 
 
@@ -299,13 +319,31 @@ INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong) VALUES
 INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
 ('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
 
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-01', NgayHetHan = '2024-12-01'
+WHERE MaSanPham = 'GR01';
 
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-05', NgayHetHan = '2024-12-05'
+WHERE MaSanPham = 'GQ01';
 
-select * from NhapHang
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-10', NgayHetHan = '2025-10-10'
+WHERE MaSanPham = 'NUOC01';
+
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-12', NgayHetHan = '2025-01-12'
+WHERE MaSanPham = 'TAN01';
+
+UPDATE NhapHang
+SET NgaySanXuat = '2024-10-15', NgayHetHan = '2024-11-15'
+WHERE MaSanPham = 'BMC01';
+
+select * from Luong
 
 select * from Kho
 
-SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 2;
+SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 10 AND Nam = 2024;
 DELETE FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 2; -- Thay MãNhânViênCầnXóa và 1 bằng giá trị cụ thể
 
 
