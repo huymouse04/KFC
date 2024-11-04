@@ -83,7 +83,7 @@
             this.btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn.ForeColor = System.Drawing.Color.White;
             this.btn.Location = new System.Drawing.Point(169, 368);
-            this.btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn.Margin = new System.Windows.Forms.Padding(4);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(201, 41);
             this.btn.TabIndex = 33;
@@ -93,7 +93,7 @@
             // txtSTT
             // 
             this.txtSTT.Location = new System.Drawing.Point(169, 322);
-            this.txtSTT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSTT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTT.Name = "txtSTT";
             this.txtSTT.Size = new System.Drawing.Size(251, 30);
             this.txtSTT.TabIndex = 31;
@@ -113,7 +113,7 @@
             // txtSTN
             // 
             this.txtSTN.Location = new System.Drawing.Point(169, 283);
-            this.txtSTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSTN.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTN.Name = "txtSTN";
             this.txtSTN.Size = new System.Drawing.Size(251, 30);
             this.txtSTN.TabIndex = 29;
@@ -136,7 +136,7 @@
             this.btnTM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTM.ForeColor = System.Drawing.Color.White;
             this.btnTM.Location = new System.Drawing.Point(415, 233);
-            this.btnTM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTM.Margin = new System.Windows.Forms.Padding(4);
             this.btnTM.Name = "btnTM";
             this.btnTM.Size = new System.Drawing.Size(201, 41);
             this.btnTM.TabIndex = 28;
@@ -148,7 +148,7 @@
             this.dtgvMDD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvMDD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvMDD.Location = new System.Drawing.Point(0, 0);
-            this.dtgvMDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgvMDD.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvMDD.Name = "dtgvMDD";
             this.dtgvMDD.RowHeadersWidth = 51;
             this.dtgvMDD.Size = new System.Drawing.Size(564, 247);
@@ -160,7 +160,7 @@
             this.btnCK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCK.ForeColor = System.Drawing.Color.White;
             this.btnCK.Location = new System.Drawing.Point(205, 233);
-            this.btnCK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCK.Margin = new System.Windows.Forms.Padding(4);
             this.btnCK.Name = "btnCK";
             this.btnCK.Size = new System.Drawing.Size(201, 41);
             this.btnCK.TabIndex = 27;
@@ -182,7 +182,7 @@
             // txtTT
             // 
             this.txtTT.Location = new System.Drawing.Point(169, 193);
-            this.txtTT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTT.Margin = new System.Windows.Forms.Padding(4);
             this.txtTT.Name = "txtTT";
             this.txtTT.Size = new System.Drawing.Size(251, 30);
             this.txtTT.TabIndex = 23;
@@ -214,7 +214,7 @@
             // txtMKH
             // 
             this.txtMKH.Location = new System.Drawing.Point(169, 114);
-            this.txtMKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMKH.Name = "txtMKH";
             this.txtMKH.Size = new System.Drawing.Size(251, 30);
             this.txtMKH.TabIndex = 19;
@@ -236,7 +236,7 @@
             this.pnDM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnDM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnDM.Location = new System.Drawing.Point(200, 0);
-            this.pnDM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnDM.Margin = new System.Windows.Forms.Padding(4);
             this.pnDM.Name = "pnDM";
             this.pnDM.Size = new System.Drawing.Size(566, 569);
             this.pnDM.TabIndex = 4;
@@ -247,7 +247,7 @@
             this.btnCB.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCB.ForeColor = System.Drawing.Color.White;
             this.btnCB.Location = new System.Drawing.Point(-3, 169);
-            this.btnCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCB.Margin = new System.Windows.Forms.Padding(4);
             this.btnCB.Name = "btnCB";
             this.btnCB.Size = new System.Drawing.Size(196, 53);
             this.btnCB.TabIndex = 5;
@@ -260,7 +260,7 @@
             this.btnNUOC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnNUOC.ForeColor = System.Drawing.Color.White;
             this.btnNUOC.Location = new System.Drawing.Point(-3, 229);
-            this.btnNUOC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNUOC.Margin = new System.Windows.Forms.Padding(4);
             this.btnNUOC.Name = "btnNUOC";
             this.btnNUOC.Size = new System.Drawing.Size(196, 53);
             this.btnNUOC.TabIndex = 3;
@@ -273,7 +273,7 @@
             this.btnMC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnMC.ForeColor = System.Drawing.Color.White;
             this.btnMC.Location = new System.Drawing.Point(-3, 108);
-            this.btnMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnMC.Name = "btnMC";
             this.btnMC.Size = new System.Drawing.Size(196, 53);
             this.btnMC.TabIndex = 2;
@@ -286,7 +286,7 @@
             this.btnGA.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnGA.ForeColor = System.Drawing.Color.White;
             this.btnGA.Location = new System.Drawing.Point(-3, 47);
-            this.btnGA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGA.Margin = new System.Windows.Forms.Padding(4);
             this.btnGA.Name = "btnGA";
             this.btnGA.Size = new System.Drawing.Size(196, 53);
             this.btnGA.TabIndex = 1;
@@ -299,7 +299,7 @@
             this.pnMONDD.Controls.Add(this.dtgvMDD);
             this.pnMONDD.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnMONDD.Location = new System.Drawing.Point(200, 569);
-            this.pnMONDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnMONDD.Margin = new System.Windows.Forms.Padding(4);
             this.pnMONDD.Name = "pnMONDD";
             this.pnMONDD.Size = new System.Drawing.Size(566, 249);
             this.pnMONDD.TabIndex = 2;
@@ -324,7 +324,7 @@
             this.pnDD.Controls.Add(this.gbCTDD);
             this.pnDD.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnDD.Location = new System.Drawing.Point(766, 0);
-            this.pnDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnDD.Margin = new System.Windows.Forms.Padding(4);
             this.pnDD.Name = "pnDD";
             this.pnDD.Size = new System.Drawing.Size(624, 818);
             this.pnDD.TabIndex = 5;
@@ -354,9 +354,9 @@
             this.gbDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbDD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gbDD.Location = new System.Drawing.Point(0, 329);
-            this.gbDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDD.Margin = new System.Windows.Forms.Padding(4);
             this.gbDD.Name = "gbDD";
-            this.gbDD.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDD.Padding = new System.Windows.Forms.Padding(4);
             this.gbDD.Size = new System.Drawing.Size(620, 485);
             this.gbDD.TabIndex = 21;
             this.gbDD.TabStop = false;
@@ -393,7 +393,7 @@
             // txtMDD
             // 
             this.txtMDD.Location = new System.Drawing.Point(169, 36);
-            this.txtMDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMDD.Margin = new System.Windows.Forms.Padding(4);
             this.txtMDD.Name = "txtMDD";
             this.txtMDD.Size = new System.Drawing.Size(251, 30);
             this.txtMDD.TabIndex = 16;
@@ -428,9 +428,9 @@
             this.gbCTDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbCTDD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.gbCTDD.Location = new System.Drawing.Point(0, 0);
-            this.gbCTDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbCTDD.Margin = new System.Windows.Forms.Padding(4);
             this.gbCTDD.Name = "gbCTDD";
-            this.gbCTDD.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbCTDD.Padding = new System.Windows.Forms.Padding(4);
             this.gbCTDD.Size = new System.Drawing.Size(620, 329);
             this.gbCTDD.TabIndex = 20;
             this.gbCTDD.TabStop = false;
@@ -442,7 +442,7 @@
             this.btnSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSUA.ForeColor = System.Drawing.Color.White;
             this.btnSUA.Location = new System.Drawing.Point(438, 159);
-            this.btnSUA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSUA.Margin = new System.Windows.Forms.Padding(4);
             this.btnSUA.Name = "btnSUA";
             this.btnSUA.Size = new System.Drawing.Size(152, 41);
             this.btnSUA.TabIndex = 36;
@@ -455,7 +455,7 @@
             this.btnXOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXOA.ForeColor = System.Drawing.Color.White;
             this.btnXOA.Location = new System.Drawing.Point(238, 159);
-            this.btnXOA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXOA.Margin = new System.Windows.Forms.Padding(4);
             this.btnXOA.Name = "btnXOA";
             this.btnXOA.Size = new System.Drawing.Size(152, 41);
             this.btnXOA.TabIndex = 35;
@@ -468,7 +468,7 @@
             this.btnTHEM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTHEM.ForeColor = System.Drawing.Color.White;
             this.btnTHEM.Location = new System.Drawing.Point(33, 159);
-            this.btnTHEM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTHEM.Margin = new System.Windows.Forms.Padding(4);
             this.btnTHEM.Name = "btnTHEM";
             this.btnTHEM.Size = new System.Drawing.Size(152, 41);
             this.btnTHEM.TabIndex = 34;
@@ -478,7 +478,7 @@
             // txtDG1
             // 
             this.txtDG1.Location = new System.Drawing.Point(393, 89);
-            this.txtDG1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDG1.Margin = new System.Windows.Forms.Padding(4);
             this.txtDG1.Name = "txtDG1";
             this.txtDG1.Size = new System.Drawing.Size(223, 30);
             this.txtDG1.TabIndex = 13;
@@ -498,7 +498,7 @@
             // txtSL1
             // 
             this.txtSL1.Location = new System.Drawing.Point(267, 89);
-            this.txtSL1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSL1.Margin = new System.Windows.Forms.Padding(4);
             this.txtSL1.Name = "txtSL1";
             this.txtSL1.Size = new System.Drawing.Size(88, 30);
             this.txtSL1.TabIndex = 9;
@@ -518,7 +518,7 @@
             // txtSP
             // 
             this.txtSP.Location = new System.Drawing.Point(14, 89);
-            this.txtSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtSP.Name = "txtSP";
             this.txtSP.Size = new System.Drawing.Size(223, 30);
             this.txtSP.TabIndex = 5;
@@ -538,7 +538,7 @@
             // tbMDD
             // 
             this.tbMDD.Location = new System.Drawing.Point(130, 22);
-            this.tbMDD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMDD.Margin = new System.Windows.Forms.Padding(4);
             this.tbMDD.Name = "tbMDD";
             this.tbMDD.Size = new System.Drawing.Size(223, 30);
             this.tbMDD.TabIndex = 1;
@@ -566,7 +566,7 @@
             this.pnDSM.Controls.Add(this.lbDSM);
             this.pnDSM.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnDSM.Location = new System.Drawing.Point(0, 0);
-            this.pnDSM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnDSM.Margin = new System.Windows.Forms.Padding(4);
             this.pnDSM.Name = "pnDSM";
             this.pnDSM.Size = new System.Drawing.Size(200, 818);
             this.pnDSM.TabIndex = 3;

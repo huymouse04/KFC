@@ -144,7 +144,7 @@ namespace KFC
 
         private void btnThucDon_Click(object sender, EventArgs e)
         {
-            openformMain(new ThucDon());
+            //openformMain(new ThucDon());
         }
 
 
