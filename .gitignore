@@ -18,4 +18,9 @@ PT_KFC/QL_KFC/DAO/obj/
 PT_KFC/QL_KFC/DTO/obj/
 PT_KFC/QL_KFC/KFC/obj/
 
+# Ignore build cache and temporary Visual Studio files
+PT_KFC/QL_KFC/KFC/.vs/
+PT_KFC/QL_KFC/KFC/*.htm
+
+
 
