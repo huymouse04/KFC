@@ -95,20 +95,20 @@ namespace KFC
 
             // Kiểm tra điều kiện ngày tháng
             DateTime ngayNhap = dtpNN.Value;
-            DateTime ngaySX = dtpNgaySX.Value;
-            DateTime ngayHetHan = dtpNgayHH.Value;
+            //DateTime ngaySX = dtpNgaySX.Value;
+            //DateTime ngayHetHan = dtpNgayHH.Value;
 
-            if (ngaySX >= ngayNhap)
-            {
-                MessageBox.Show("Ngày sản xuất phải trước ngày nhập.");
-                return false;
-            }
+            //if (ngaySX >= ngayNhap)
+            //{
+            //    MessageBox.Show("Ngày sản xuất phải trước ngày nhập.");
+            //    return false;
+            //}
 
-            if (ngayNhap >= ngayHetHan)
-            {
-                MessageBox.Show("Ngày nhập phải trước ngày hết hạn.");
-                return false;
-            }
+            //if (ngayNhap >= ngayHetHan)
+            //{
+            //    MessageBox.Show("Ngày nhập phải trước ngày hết hạn.");
+            //    return false;
+            //}
 
             nhapHang = new NhapHang_DTO
             {
@@ -118,8 +118,8 @@ namespace KFC
                 DonViTinh = txtDVT.Text,
                 DonGia = dongia,
                 NgayNhap = ngayNhap,
-                NgaySanXuat = ngaySX,
-                NgayHetHan = ngayHetHan,
+                //NgaySanXuat = ngaySX,
+                //NgayHetHan = ngayHetHan,
                 MaNhaCungCap = cbMaNCC.SelectedValue.ToString(),
                 MaLoaiHang = cbMaLH.SelectedValue.ToString(),
                 TenSanPham = cbTenSP.SelectedValue.ToString()
@@ -144,44 +144,44 @@ namespace KFC
 
         private void dtGVNH_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                int dong = e.RowIndex;
+            //if (e.RowIndex >= 0)
+            //{
+            //    int dong = e.RowIndex;
 
-                txtMaNH.Text = dtGVNH.Rows[dong].Cells["MaNhapHang"]?.Value?.ToString() ?? string.Empty;
+            //    txtMaNH.Text = dtGVNH.Rows[dong].Cells["MaNhapHang"]?.Value?.ToString() ?? string.Empty;
 
-                txtSL.Text = dtGVNH.Rows[dong].Cells["SoLuong"]?.Value?.ToString() ?? string.Empty;
-                txtDVT.Text = dtGVNH.Rows[dong].Cells["DonViTinh"]?.Value?.ToString() ?? string.Empty;
-                txtMaSP.Text = dtGVNH.Rows[dong].Cells["MaSanPham"]?.Value?.ToString() ?? string.Empty;
-                txtDonGia.Text = dtGVNH.Rows[dong].Cells["DonGia"]?.Value?.ToString() ?? string.Empty;
-                if (DateTime.TryParse(dtGVNH.Rows[dong].Cells["NgayNhap"]?.Value?.ToString(), out DateTime ngayNhap))
-                {
-                    dtpNN.Value = ngayNhap;
-                }
-                else
-                {
-                    dtpNN.Value = DateTime.Now;
-                }
-                if (DateTime.TryParse(dtGVNH.Rows[dong].Cells["NgaySanXuat"]?.Value?.ToString(), out DateTime ngaySX))
-                {
-                    dtpNgaySX.Value = ngaySX;
-                }
-                else
-                {
-                    dtpNgaySX.Value = DateTime.Now;
-                }
-                if (DateTime.TryParse(dtGVNH.Rows[dong].Cells["NgayHetHan"]?.Value?.ToString(), out DateTime ngayHetHan))
-                {
-                   dtpNgayHH.Value = ngayHetHan;
-                }
-                else
-                {
-                    dtpNgayHH.Value = DateTime.Now;
-                }
-                cbTenSP.SelectedValue = dtGVNH.Rows[dong].Cells["TenSanPham"]?.Value?.ToString() ?? string.Empty;
-                cbMaLH.SelectedValue = dtGVNH.Rows[dong].Cells["MaLoaiHang"]?.Value?.ToString() ?? string.Empty;
-                cbMaNCC.SelectedValue = dtGVNH.Rows[dong].Cells["MaNhaCungCap"]?.Value?.ToString() ?? string.Empty;
-            }
+            //    txtSL.Text = dtGVNH.Rows[dong].Cells["SoLuong"]?.Value?.ToString() ?? string.Empty;
+            //    txtDVT.Text = dtGVNH.Rows[dong].Cells["DonViTinh"]?.Value?.ToString() ?? string.Empty;
+            //    txtMaSP.Text = dtGVNH.Rows[dong].Cells["MaSanPham"]?.Value?.ToString() ?? string.Empty;
+            //    txtDonGia.Text = dtGVNH.Rows[dong].Cells["DonGia"]?.Value?.ToString() ?? string.Empty;
+            //    if (DateTime.TryParse(dtGVNH.Rows[dong].Cells["NgayNhap"]?.Value?.ToString(), out DateTime ngayNhap))
+            //    {
+            //        dtpNN.Value = ngayNhap;
+            //    }
+            //    else
+            //    {
+            //        dtpNN.Value = DateTime.Now;
+            //    }
+            //    if (DateTime.TryParse(dtGVNH.Rows[dong].Cells["NgaySanXuat"]?.Value?.ToString(), out DateTime ngaySX))
+            //    {
+            //        dtpNgaySX.Value = ngaySX;
+            //    }
+            //    else
+            //    {
+            //        dtpNgaySX.Value = DateTime.Now;
+            //    }
+            //    if (DateTime.TryParse(dtGVNH.Rows[dong].Cells["NgayHetHan"]?.Value?.ToString(), out DateTime ngayHetHan))
+            //    {
+            //       dtpNgayHH.Value = ngayHetHan;
+            //    }
+            //    else
+            //    {
+            //        dtpNgayHH.Value = DateTime.Now;
+            //    }
+            //    cbTenSP.SelectedValue = dtGVNH.Rows[dong].Cells["TenSanPham"]?.Value?.ToString() ?? string.Empty;
+            //    cbMaLH.SelectedValue = dtGVNH.Rows[dong].Cells["MaLoaiHang"]?.Value?.ToString() ?? string.Empty;
+            //    cbMaNCC.SelectedValue = dtGVNH.Rows[dong].Cells["MaNhaCungCap"]?.Value?.ToString() ?? string.Empty;
+            //}
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -417,12 +417,5 @@ namespace KFC
             ClearInputFields();
         }
 
-<<<<<<< HEAD
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearInputFields();
-        }
-=======
->>>>>>> 15cab5e902a5813aaf6f712e09938fe8465fb609
     }
 }
