@@ -4,6 +4,10 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+<<<<<<< HEAD
+=======
+using System.Data.SqlClient;
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -564,7 +568,12 @@ namespace KFC
         }
         
 
+<<<<<<< HEAD
         public DataTable ConvertListToDataTable(List<DTO.Kho_DTO> list)
+=======
+
+        private void btnDelete_Click(object sender, EventArgs e)
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
         {
             DataTable dataTable = new DataTable();
 
@@ -664,5 +673,66 @@ namespace KFC
             }
         }
 
+<<<<<<< HEAD
+=======
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = txtMaSP.Text.Trim();
+            List<DTO.Kho_DTO> ketQuaList;
+
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                ketQuaList = khoBUS.GetAllKho();
+            }
+            else
+            {
+                ketQuaList = khoBUS.SearchKho(tuKhoa);
+            }
+
+            if (ketQuaList == null || ketQuaList.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy kho nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Chuyển đổi List<DTO.NhanVien_DTO> sang DataTable
+            DataTable ketQua = ConvertListToDataTable(ketQuaList);
+
+            FormReport formKho = new FormReport(FormReport.LoaiBaoCao.Kho, ketQua);
+            formKho.Show();
+        }
+
+
+         public DataTable ConvertListToDataTable(List<DTO.Kho_DTO> list)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Lấy tất cả các thuộc tính của đối tượng Kho_DTO
+            PropertyInfo[] properties = typeof(Kho_DTO).GetProperties();
+
+            // Tạo các cột trong DataTable tương ứng với các thuộc tính
+            foreach (PropertyInfo property in properties)
+            {
+                dataTable.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
+            }
+
+            // Thêm từng đối tượng trong danh sách vào hàng của DataTable
+            foreach (Kho_DTO item in list)
+            {
+                DataRow row = dataTable.NewRow();
+                foreach (PropertyInfo property in properties)
+                {
+                    row[property.Name] = property.GetValue(item) ?? DBNull.Value;
+                }
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
+
+
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
     }
 }

@@ -28,7 +28,10 @@ namespace DAO
             return khoItems.ToList();
         }
 
+<<<<<<< HEAD
         // Tìm kiếm sản phẩm trong kho
+=======
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
         public List<Kho_DTO> SearchKho(string searchTerm)
         {
             try
@@ -47,21 +50,32 @@ namespace DAO
                     SoLuong = k.SoLuong,
                     DonViTinh = k.DonViTinh,
                     DonGia = k.DonGia.HasValue ? (float)k.DonGia.Value : 0f,
+<<<<<<< HEAD
                     MaLoaiHang = k.MaLoaiHang,
                     NgaySanXuat = k.NgaySanXuat,  // Ngày sản xuất
                     NgayHetHan = k.NgayHetHan     // Ngày hết hạn
+=======
+                    MaLoaiHang = k.MaLoaiHang
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
                 }).ToList();
 
                 return khoDtos;
             }
             catch (Exception)
             {
+<<<<<<< HEAD
                 // Xử lý ngoại lệ nếu cần
+=======
+                // Xử lý ngoại lệ ở đây nếu cần, ví dụ ghi log lỗi
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
                 return null;
             }
         }
 
+<<<<<<< HEAD
         // Thêm sản phẩm vào kho
+=======
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
         public void AddKho(Kho_DTO kho)
         {
             Kho newKho = new Kho

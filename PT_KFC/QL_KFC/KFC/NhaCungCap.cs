@@ -72,7 +72,31 @@ namespace KFC
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             using (CapNhatNhaCungCap capNhatForm = new CapNhatNhaCungCap())
+=======
+
+
+            CapNhatNhaCungCap capNhat = new CapNhatNhaCungCap();
+            capNhat.ShowDialog();
+
+            using (CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap()) 
+            {
+                if (formCapNhat.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
+
+
+
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            // Mở form Nhập Hàng
+            using (NhapHang formNhapHang = new NhapHang())
+>>>>>>> 7713ce7537abe4d8a4d085ed4d0222164534e133
             {
                 // Hiển thị form cập nhật nhà cung cấp dưới dạng dialog
                 if (capNhatForm.ShowDialog() == DialogResult.OK)
