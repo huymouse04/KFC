@@ -152,7 +152,6 @@
             this.btnThucDon.Text = "Thực Đơn";
             this.btnThucDon.TextColor = System.Drawing.Color.White;
             this.btnThucDon.UseVisualStyleBackColor = false;
-            this.btnThucDon.Click += new System.EventHandler(this.btnThucDon_Click);
             // 
             // btnComBo
             // 
