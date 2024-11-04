@@ -25,7 +25,37 @@ namespace DAO
 
             return khoItems.ToList();
         }
-       
+
+        public List<Kho_DTO> SearchKho(string searchTerm)
+        {
+            try
+            {
+                var query = DB.Khos.AsQueryable();
+
+                var results = query.Where(kho =>
+                    kho.MaSanPham.Contains(searchTerm) ||
+                    kho.TenSanPham.Contains(searchTerm) ||
+                    kho.DonViTinh.Contains(searchTerm)).ToList();
+
+                List<Kho_DTO> khoDtos = results.Select(k => new Kho_DTO
+                {
+                    MaSanPham = k.MaSanPham,
+                    TenSanPham = k.TenSanPham,
+                    SoLuong = k.SoLuong,
+                    DonViTinh = k.DonViTinh,
+                    DonGia = k.DonGia.HasValue ? (float)k.DonGia.Value : 0f,
+                    MaLoaiHang = k.MaLoaiHang
+                }).ToList();
+
+                return khoDtos;
+            }
+            catch (Exception)
+            {
+                // Xử lý ngoại lệ ở đây nếu cần, ví dụ ghi log lỗi
+                return null;
+            }
+        }
+
         public void AddKho(Kho_DTO kho)
         {
             Kho newKho = new Kho

@@ -5,12 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAO;
+using System.Windows.Forms;
 
 namespace BUS
 {
     public class Kho_BUS
     {
         private Kho_DAO khoDAO = new Kho_DAO();
+        
+        // Phương thức tìm kiếm nhân viên
+        public List<Kho_DTO> SearchKho(string searchTerm)
+        {
+            return khoDAO.SearchKho(searchTerm); // Gọi phương thức tìm kiếm từ DAO
+        }
 
         public List<Kho_DTO> GetAllKho()
         {
