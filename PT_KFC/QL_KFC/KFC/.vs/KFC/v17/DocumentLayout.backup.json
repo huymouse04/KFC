@@ -3,7 +3,8 @@
   "WorkspaceRootPath": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{907CD591-69B5-404E-BD27-FBF9373186D7}|..\\DTO\\DTO.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\dto\\luongnhanvien_dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\kfc\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\luongnhanviens.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -72,15 +73,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LuongNhanVien_DTO.cs",
-              "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\DTO\\LuongNhanVien_DTO.cs",
-              "RelativeDocumentMoniker": "..\\DTO\\LuongNhanVien_DTO.cs",
-              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\DTO\\LuongNhanVien_DTO.cs",
-              "RelativeToolTip": "..\\DTO\\LuongNhanVien_DTO.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAIwDUAAAAAAAAAAAAAAA==",
+              "Title": "Main.cs [Design]",
+              "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Main.cs",
+              "RelativeDocumentMoniker": "Main.cs",
+              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Main.cs [Design]",
+              "RelativeToolTip": "Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T12:48:43.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-03T01:01:05.355Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -90,7 +90,7 @@
               "RelativeDocumentMoniker": "LuongNhanViens.cs",
               "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\LuongNhanViens.cs",
               "RelativeToolTip": "LuongNhanViens.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAASwB4BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAiwB4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-01T07:26:49.467Z"
             },
@@ -115,7 +115,8 @@
               "RelativeToolTip": "..\\BUS\\LuongNhanVien_BUS.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T16:51:17.246Z"
+              "WhenOpened": "2024-10-31T16:51:17.246Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -127,7 +128,8 @@
               "RelativeToolTip": "..\\DAO\\LuongNhanVien_DAO.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAQwCMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T15:56:43.651Z"
+              "WhenOpened": "2024-10-31T15:56:43.651Z",
+              "EditorCaption": ""
             }
           ]
         }
