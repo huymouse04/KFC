@@ -13,6 +13,7 @@ namespace DTO
         public string ChucVu { get; set; } // Để hiển thị chức vụ
         public int LuongCoBan { get; set; }
         public int Thang { get; set; }
+        public int Nam { get; set; }
         public int SoNgayLam { get; set; }
         public int ThuongChuyenCan { get; set; }
         public int ThuongHieuSuat { get; set; }
@@ -34,13 +35,14 @@ namespace DTO
 
         public LuongNhanVien_DTO() { }
 
-        public LuongNhanVien_DTO(string maNhanVien, string tenNhanVien, string chucVu, int luongCoBan, int thang, int soNgayLam, int thuongChuyenCan, int thuongHieuSuat, int soGioLamThem, int khoanTru)
+        public LuongNhanVien_DTO(string maNhanVien, string tenNhanVien, string chucVu, int luongCoBan, int thang, int nam, int soNgayLam, int thuongChuyenCan, int thuongHieuSuat, int soGioLamThem, int khoanTru)
         {
             MaNhanVien = maNhanVien;
             TenNhanVien = tenNhanVien;
             ChucVu = chucVu;
             LuongCoBan = luongCoBan;
             Thang = thang;
+            Nam = nam;
             SoNgayLam = soNgayLam;
             ThuongChuyenCan = thuongChuyenCan;
             ThuongHieuSuat = thuongHieuSuat;

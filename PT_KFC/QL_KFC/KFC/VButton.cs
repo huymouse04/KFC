@@ -98,33 +98,30 @@ namespace CustomButton
 
             Rectangle rectSurface = this.ClientRectangle;
             Rectangle rectBorder = Rectangle.Inflate(rectSurface, -borderSize, -borderSize);
-            int smoothSize = 2;
-            if (borderSize > 0)
-                smoothSize = borderSize;
+            int smoothSize = borderSize > 0 ? borderSize : 2;
+
+            // Lấy màu nền an toàn, dùng Color.Transparent nếu Parent là null
+            Color parentBackColor = this.Parent?.BackColor ?? Color.Transparent;
 
             if (borderRadius > 2) //Rounded button
             {
                 using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
                 using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
-                using (Pen penSurface = new Pen(this.Parent.BackColor, smoothSize))
+                using (Pen penSurface = new Pen(parentBackColor, smoothSize))
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
-                    //Button surface
+                    // Button surface
                     this.Region = new Region(pathSurface);
-                    //Draw surface border for HD result
                     pevent.Graphics.DrawPath(penSurface, pathSurface);
 
-                    //Button border                    
+                    // Button border                    
                     if (borderSize >= 1)
-                        //Draw control border
                         pevent.Graphics.DrawPath(penBorder, pathBorder);
                 }
             }
             else //Normal button
             {
-                //Button surface
                 this.Region = new Region(rectSurface);
-                //Button border
                 if (borderSize >= 1)
                 {
                     using (Pen penBorder = new Pen(borderColor, borderSize))
@@ -135,11 +132,19 @@ namespace CustomButton
                 }
             }
         }
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
-        }
+
+
+        //protected override void OnHandleCreated(EventArgs e)
+        //{
+        //    base.OnHandleCreated(e);
+
+        //    // Kiểm tra Parent khác null trước khi đăng ký sự kiện
+        //    if (this.Parent != null)
+        //    {
+        //        this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+        //    }
+        //}
+
 
         private void Container_BackColorChanged(object sender, EventArgs e)
         {

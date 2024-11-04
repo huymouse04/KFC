@@ -1,10 +1,12 @@
 ﻿using BUS;
+using DAO;
 using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +16,25 @@ namespace KFC
 {
     public partial class NhanVien : Form
     {
+
+        private NhanVien_DTO nhanVien; // Biến lưu trữ thông tin nhân viên
+        private NhanVien_BUS bus = new NhanVien_BUS();
+
         public NhanVien()
         {
             InitializeComponent();
-
+            txtMaNV.Enabled = true;
         }
 
-
-        private NhanVien_BUS bus = new NhanVien_BUS();
+        public NhanVien(NhanVien_DTO nhanVien)
+        {
+            InitializeComponent();
+            this.nhanVien = nhanVien;
+            txtMaNV.Enabled = false; // Khóa trường mã nhân viên để không thể thay đổi
+        }
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            //LoadDanhSachNhanVien();
             LoadData();
         }
 
@@ -42,98 +51,149 @@ namespace KFC
             {
                 NhanVienControl control = new NhanVienControl();
                 control.UpdateData(nhanVien); // Cập nhật thông tin nhân viên vào control
+                control.UserControlDoubleClicked += (s, e) => HienThiThongTinNhanVien(nhanVien);
+
                 flpNhanVien.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
+                flpNhanVien.Refresh();
             }
         }
 
-        private void OpenCapNhatNhanVien(NhanVien_DTO nhanVien)
+        private void HienThiThongTinNhanVien(NhanVien_DTO nhanVien)
         {
-            if (nhanVien == null)
+            if (nhanVien == null) return;
+
+            txtMaNV.Enabled = false;
+
+            txtMaNV.Text = nhanVien.MaNhanVien;
+            txtTenNV.Text = nhanVien.TenNhanVien;
+            mtbSDT.Text = nhanVien.SoDienThoai;
+            dtpNgaySinh.Value = nhanVien.NgaySinh ?? DateTime.Now;
+            txtEmail.Text = nhanVien.Email;
+            txtDiaChi.Text = nhanVien.DiaChi;
+            txtSoGioLam.Text = nhanVien.SoGioLam.ToString();
+            cbChucVu.Text = nhanVien.ChucVu;
+            rdbNam.Checked = nhanVien.GioiTinh == "Nam";
+            rdbNu.Checked = nhanVien.GioiTinh == "Nữ";
+
+            // Load ảnh nếu có
+            if (nhanVien.AnhNhanVien != null)
             {
-                MessageBox.Show("Thông tin nhân viên không hợp lệ.");
-                return;
-            }
-
-            // Lấy thông tin nhân viên đầy đủ từ database
-            NhanVien_DTO nhanVienDayDu = bus.GetNhanVienByMa(nhanVien.MaNhanVien);
-
-            // Kiểm tra nếu không tìm thấy nhân viên
-            if (nhanVienDayDu == null)
-            {
-                MessageBox.Show("Không tìm thấy thông tin nhân viên với mã: " + nhanVien.MaNhanVien);
-                return;
-            }
-
-            // Mở form cập nhật với thông tin đầy đủ
-            CapNhatNhanVien formCapNhat = new CapNhatNhanVien(nhanVienDayDu);
-            formCapNhat.ShowDialog();
-        }
-
-        private void btnLuongNhanVien_Click(object sender, EventArgs e)
-        {
-            LuongNhanVien FormLuong = new LuongNhanVien();
-            FormLuong.ShowDialog();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            CapNhatNhanVien cn = new CapNhatNhanVien();
-            cn.ShowDialog();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra xem có nhân viên nào được chọn không
-            var selectedControl = flpNhanVien.Controls.OfType<NhanVienControl>().FirstOrDefault(c => c.IsSelected);
-
-            if (selectedControl != null)
-            {
-                NhanVien_DTO nhanVien = selectedControl.GetNhanVien(); // Lấy thông tin nhân viên từ điều khiển đã chọn
-
-                if (nhanVien != null)
+                using (MemoryStream ms = new MemoryStream(nhanVien.AnhNhanVien))
                 {
-                    string maNhanVien = nhanVien.MaNhanVien; // Lấy mã nhân viên
-
-                    // Hiển thị hộp thoại xác nhận
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác Nhận Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result == DialogResult.Yes)
-                    {
-                        // Gọi phương thức xóa từ lớp BUS
-                        bus.DeleteNhanVien(maNhanVien);
-
-                        // Cập nhật lại FlowLayoutPanel sau khi xóa
-                        LoadData(); // Gọi lại LoadData để nạp lại danh sách nhân viên
-                        MessageBox.Show("Xóa nhân viên thành công!");
-                    }
+                    pbAnhNV.Image = Image.FromStream(ms);
+                    pbAnhNV.SizeMode = PictureBoxSizeMode.Zoom;
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một nhân viên để xóa.");
+                pbAnhNV.Image = Properties.Resources.logo;
+                pbAnhNV.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+
+            // Kiểm tra chức vụ và cho phép chỉnh sửa số giờ làm việc
+            txtSoGioLam.Enabled = nhanVien.ChucVu.Equals("Tạm Thời", StringComparison.OrdinalIgnoreCase);
+        }
+    
+
+
+        private void btnLuongNhanVien_Click(object sender, EventArgs e)
+        {
+            // Mở form lương như là một form con của Main
+            LuongNhanViens luongForm = new LuongNhanViens();
+            luongForm.TopLevel = false; // Đặt form con
+            luongForm.FormBorderStyle = FormBorderStyle.None; // Ẩn viền
+            luongForm.Dock = DockStyle.Fill; // Đặt dock cho form con
+            this.Parent.Controls.Add(luongForm); // Thêm form vào panel của Main
+            this.Parent.Tag = luongForm; // Gán tag để truy cập nếu cần
+            luongForm.BringToFront(); // Đưa form lên trên cùng
+            luongForm.Show(); // Hiện form
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu các TextBox trống
+            if (string.IsNullOrWhiteSpace(txtMaNV.Text) || string.IsNullOrWhiteSpace(txtTenNV.Text) || string.IsNullOrWhiteSpace(txtDiaChi.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtSoGioLam.Text) || string.IsNullOrWhiteSpace(cbChucVu.Text) ||
+                string.IsNullOrWhiteSpace(mtbSDT.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngăn không cho tiếp tục thực hiện
+            }
+
+
+            var newNhanVien = new NhanVien_DTO
+            {
+                MaNhanVien = txtMaNV.Text,
+                TenNhanVien = txtTenNV.Text,
+                GioiTinh = rdbNam.Checked ? "Nam" : "Nữ",
+                NgaySinh = dtpNgaySinh.Value,
+                SoDienThoai = mtbSDT.Text,
+                Email = txtEmail.Text,
+                DiaChi = txtDiaChi.Text,
+                ChucVu = cbChucVu.Text,
+                SoGioLam = int.Parse(txtSoGioLam.Text),
+                AnhNhanVien = nhanVien?.AnhNhanVien // Lưu trữ ảnh đã chọn
+            };
+
+            try
+            {
+                bus.AddNhanVien(newNhanVien);
+                LoadData();
+                MessageBox.Show("Thêm nhân viên thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            // Thêm hộp thoại xác nhận trước khi xóa
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                try
+                {
+                    string maNhanVien = txtMaNV.Text;
+                    bus.DeleteNhanVien(maNhanVien);
+                    MessageBox.Show("Xóa nhân viên thành công!");
+                    LoadData(); // Gọi lại LoadData sau khi xóa thành công
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa nhân viên: " + ex.Message);
+                }
             }
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LoadData();
-            txtTimKiem.Clear();
+            txtMaNV.Enabled = true;
+            ClearInputFields();
+            cbChucVu.Items.Add("Tạm Thời");
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-             string searchTerm = txtTimKiem.Text.Trim(); // Lấy giá trị tìm kiếm
+            string searchTerm = txtTimKiem.Text.Trim(); // Lấy giá trị tìm kiếm
 
             // Gọi phương thức tìm kiếm từ lớp BUS
             var result = bus.SearchNhanVien(searchTerm);
 
             // Cập nhật FlowLayoutPanel với kết quả tìm kiếm
             flpNhanVien.Controls.Clear();
+            // Duyệt qua danh sách nhân viên và thêm vào FlowLayoutPanel
             foreach (var nhanVien in result)
             {
                 NhanVienControl control = new NhanVienControl();
                 control.UpdateData(nhanVien); // Cập nhật thông tin nhân viên vào control
+                control.UserControlDoubleClicked += (s, i) => HienThiThongTinNhanVien(nhanVien);
+
+
                 flpNhanVien.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
+                flpNhanVien.Refresh();
             }
 
             if (result.Count == 0)
@@ -195,32 +255,255 @@ namespace KFC
             return dataTable;
         }
 
+        //private void btnXuat_Click(object sender, EventArgs e)
+        //{
+        //    string tuKhoa = txtTimKiem.Text.Trim();
+        //    List<DTO.NhanVien_DTO> ketQuaList;
 
-        private void btnXuat_Click(object sender, EventArgs e)
+        //    if (string.IsNullOrEmpty(tuKhoa))
+        //    {
+        //        ketQuaList = bus.GetAllNhanVien();
+        //    }
+        //    else
+        //    {
+        //        ketQuaList = bus.SearchNhanVien(tuKhoa);
+        //    }
+
+        //    if (ketQuaList == null || ketQuaList.Count == 0)
+        //    {
+        //        MessageBox.Show("Không tìm thấy nhân viên nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+
+        //    // Chuyển đổi List<DTO.NhanVien_DTO> sang DataTable
+        //    DataTable ketQua = ConvertListToDataTable(ketQuaList);
+
+        //    FormReport formNhanVien = new FormReport(FormReport.LoaiBaoCao.NhanVien, ketQua);
+        //    formNhanVien.Show();
+        //}
+
+        private void txtSoGioLam_TextChanged(object sender, EventArgs e)
         {
-            string tuKhoa = txtTimKiem.Text.Trim();
-            List<DTO.NhanVien_DTO> ketQuaList;
-
-            if (string.IsNullOrEmpty(tuKhoa))
+            // Kiểm tra số giờ làm
+            if (int.TryParse(txtSoGioLam.Text, out int soGioLam))
             {
-                ketQuaList = bus.GetAllNhanVien();
+                if (soGioLam < 50)
+                {
+                    // Đặt chức vụ là "Tạm thời" và khóa ComboBox chức vụ
+                    cbChucVu.Text = "Tạm thời";
+                    cbChucVu.Enabled = false; // Khóa ComboBox chức vụ
+                }
+                else
+                {
+                    // Mở khóa ComboBox chức vụ nếu số giờ làm từ 50 trở lên
+                    cbChucVu.Enabled = true;
+                }
             }
             else
             {
-                ketQuaList = bus.SearchNhanVien(tuKhoa);
+                MessageBox.Show("Vui lòng nhập số giờ làm hợp lệ.");
             }
+        }
 
-            if (ketQuaList == null || ketQuaList.Count == 0)
+        // Hàm này để nhận dữ liệu nhân viên từ NhanVienControl  
+        private void SetNhanVienData(NhanVien_DTO nhanVien)
+        {
+            if (nhanVien != null)
             {
-                MessageBox.Show("Không tìm thấy nhân viên nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                txtTenNV.Text = nhanVien.TenNhanVien;
+                cbChucVu.Text = nhanVien.ChucVu;
+                txtMaNV.Text = nhanVien.MaNhanVien;
+                mtbSDT.Text = nhanVien.SoDienThoai;
+                txtEmail.Text = nhanVien.Email;
+                txtDiaChi.Text = nhanVien.DiaChi;
+                txtSoGioLam.Text = nhanVien.SoGioLam.ToString();
+                dtpNgaySinh.Value = nhanVien.NgaySinh ?? DateTime.Now; // Nếu ngày sinh chưa được xác định
+
+                // Kiểm tra và hiển thị ảnh nhân viên nếu có
+                if (nhanVien.AnhNhanVien != null && nhanVien.AnhNhanVien.Length > 0)
+                {
+                    try
+                    {
+                        // Chuyển đổi byte[] thành Image
+                        using (MemoryStream ms = new MemoryStream(nhanVien.AnhNhanVien))
+                        {
+                            pbAnhNV.Image = Image.FromStream(ms);
+                            pbAnhNV.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi chế độ hiển thị hình ảnh
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không thể hiển thị ảnh: " + ex.Message);
+                        pbAnhNV.Image = Properties.Resources.logo; // Ảnh mặc định khi không thể load ảnh
+                        pbAnhNV.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi chế độ hiển thị hình ảnh
+                    }
+                }
+                else
+                {
+                    pbAnhNV.Image = Properties.Resources.logo; // Ảnh mặc định khi không có ảnh
+                    pbAnhNV.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi chế độ hiển thị hình ảnh
+                }
+
+                // Kiểm tra giới tính
+                rdbNam.Checked = nhanVien.GioiTinh == "Nam";
+                rdbNu.Checked = nhanVien.GioiTinh == "Nữ";
+            }
+            else
+            {
+                MessageBox.Show("Thông tin nhân viên không có sẵn.");
+            }
+        }
+
+        private void btnAnh_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "C:\\"; // Thư mục khởi đầu
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png, *.bmp)|*.jpg;*.jpeg;*.png;*.bmp"; // Bộ lọc tệp hình ảnh
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Hiển thị đường dẫn tệp ảnh trong TextBox
+                    txtPath.Text = openFileDialog.FileName;
+
+                    // Đọc tệp hình ảnh vào byte[]
+                    try
+                    {
+                        pbAnhNV.Image = Image.FromFile(openFileDialog.FileName); // Hiển thị ảnh trong PictureBox
+                        pbAnhNV.SizeMode = PictureBoxSizeMode.Zoom; // Thay đổi chế độ hiển thị hình ảnh
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không thể tải ảnh: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        // Phương thức chuyển đổi hình ảnh sang mảng byte[]
+        private byte[] ConvertImageToByteArray(Image image)
+        {
+            if (image == null) return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // Lưu hình ảnh vào MemoryStream
+                return ms.ToArray(); // Chuyển đổi thành mảng byte
+            }
+        }
+
+        // Phương thức làm sạch các trường nhập liệu
+        private void ClearInputFields()
+        {
+            // Clear all input fields for a new entry
+            txtMaNV.Clear();
+            txtTenNV.Clear();
+            mtbSDT.Clear();
+            txtEmail.Clear();
+            txtDiaChi.Clear();
+            txtTimKiem.Clear();
+            txtSoGioLam.Clear();
+            cbChucVu.SelectedIndex = -1;
+            rdbNam.Checked = false;
+            rdbNu.Checked = false;
+            pbAnhNV.Image = Properties.Resources.logo; // Reset to default image
+            txtPath.Clear(); // Clear the path TextBox
+        }
+
+        private string GetSelectedGender()
+        {
+            if (rdbNam.Checked)
+                return "Nam";
+            else if (rdbNu.Checked)
+                return "Nữ";
+
+            return null; // Hoặc một giá trị mặc định nếu không chọn
+        }
+        // Hàm kiểm tra số điện thoại
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            return phoneNumber.StartsWith("0") && phoneNumber.Length == 10 && phoneNumber.All(char.IsDigit);
+        }
+
+        private void btnCapNhatNV_Click(object sender, EventArgs e)
+        {
+
+            // Kiểm tra nếu các TextBox trống
+            if (string.IsNullOrWhiteSpace(txtMaNV.Text) || string.IsNullOrWhiteSpace(txtTenNV.Text) || string.IsNullOrWhiteSpace(txtDiaChi.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) || string.IsNullOrWhiteSpace(txtSoGioLam.Text) || string.IsNullOrWhiteSpace(cbChucVu.Text) ||
+                string.IsNullOrWhiteSpace(mtbSDT.Text))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngăn không cho tiếp tục thực hiện
             }
 
-            // Chuyển đổi List<DTO.NhanVien_DTO> sang DataTable
-            DataTable ketQua = ConvertListToDataTable(ketQuaList);
+            var updatedNhanVien = new NhanVien_DTO
+            {
+                MaNhanVien = txtMaNV.Text,
+                TenNhanVien = txtTenNV.Text,
+                GioiTinh = rdbNam.Checked ? "Nam" : "Nữ",
+                NgaySinh = dtpNgaySinh.Value,
+                SoDienThoai = mtbSDT.Text,
+                Email = txtEmail.Text,
+                DiaChi = txtDiaChi.Text,
+                ChucVu = cbChucVu.Text,
+                SoGioLam = int.Parse(txtSoGioLam.Text),
+                AnhNhanVien = ConvertImageToByteArray(pbAnhNV.Image)
 
-            FormReport formNhanVien = new FormReport(FormReport.LoaiBaoCao.NhanVien, ketQua);
-            formNhanVien.Show();
+            };
+
+            try
+            {
+                bus.UpdateNhanVien(updatedNhanVien);
+               
+                MessageBox.Show("Cập nhật nhân viên thành công!");
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+
+        }
+
+        private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có mục nào được chọn không
+            if (cbChucVu.SelectedItem == null)
+            {
+                return; // Thoát nếu không có mục nào được chọn
+            }
+
+            // Lấy giá trị của chức vụ được chọn
+            string selectedChucVu = cbChucVu.SelectedItem.ToString();
+
+            // Kiểm tra xem chức vụ được chọn có phải là "Tạm Thời" không
+            if (selectedChucVu != "Tạm Thời")
+            {
+                // Gán số giờ làm mặc định là 100
+                txtSoGioLam.Text = "100";
+                txtSoGioLam.Enabled = false; // Vô hiệu hóa TextBox nếu không cần nhập
+
+                // Vô hiệu hóa tùy chọn "Tạm Thời" nếu chức vụ không phải là "Tạm Thời"
+                if (cbChucVu.Items.Contains("Tạm Thời"))
+                {
+                    cbChucVu.Items.Remove("Tạm Thời");
+                }
+            }
+            else
+            {
+                // Gán số giờ làm mặc định là 0
+                txtSoGioLam.Text = "0";
+                txtSoGioLam.Enabled = false; // Vô hiệu hóa TextBox nếu không cần nhập
+
+                // Kiểm tra và thêm lại tùy chọn "Tạm Thời" nếu chưa có
+                if (!cbChucVu.Items.Contains("Tạm Thời"))
+                {
+                    cbChucVu.Items.Add("Tạm Thời");
+                }
+            }
         }
     }
 }

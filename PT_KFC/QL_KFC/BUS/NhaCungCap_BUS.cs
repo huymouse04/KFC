@@ -95,5 +95,10 @@ namespace BUS
                 throw new ArgumentException("Tên nhà cung cấp không thể rỗng hoặc null", nameof(nhaCungCap.TenNhaCungCap));
             }
         }
+
+        public string TermDeleteNhaCungCap(string maNhaCungCap)
+        {
+            return dao.CheckUsage(maNhaCungCap);
+        }
     }
 }

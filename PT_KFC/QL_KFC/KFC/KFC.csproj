@@ -100,23 +100,11 @@
     <Compile Include="CapNhapBan.Designer.cs">
       <DependentUpon>CapNhapBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapNhatCombo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatCombo.Designer.cs">
-      <DependentUpon>CapNhatCombo.cs</DependentUpon>
-    </Compile>
     <Compile Include="CapNhatKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CapNhatKhachHang.Designer.cs">
       <DependentUpon>CapNhatKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapNhatKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatKhuyenMai.Designer.cs">
-      <DependentUpon>CapNhatKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="CapNhatLoaiHang.cs">
       <SubType>Form</SubType>
@@ -124,23 +112,11 @@
     <Compile Include="CapNhatLoaiHang.Designer.cs">
       <DependentUpon>CapNhatLoaiHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapNhatLuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatLuong.Designer.cs">
-      <DependentUpon>CapNhatLuong.cs</DependentUpon>
-    </Compile>
     <Compile Include="CapNhatNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CapNhatNhaCungCap.Designer.cs">
       <DependentUpon>CapNhatNhaCungCap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapNhatNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatNhanVien.Designer.cs">
-      <DependentUpon>CapNhatNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="CapNhatThucDon.cs">
       <SubType>Form</SubType>
@@ -171,6 +147,9 @@
     </Compile>
     <Compile Include="Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -252,11 +231,11 @@
     <Compile Include="LoaiHangControl.Designer.cs">
       <DependentUpon>LoaiHangControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="LuongNhanVien.cs">
+    <Compile Include="LuongNhanViens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LuongNhanVien.Designer.cs">
-      <DependentUpon>LuongNhanVien.cs</DependentUpon>
+    <Compile Include="LuongNhanViens.Designer.cs">
+      <DependentUpon>LuongNhanViens.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -301,13 +280,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLKFCDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="ThucDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThucDon.Designer.cs">
-      <DependentUpon>ThucDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThucDonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -332,26 +310,14 @@
     <EmbeddedResource Include="CapNhapBan.resx">
       <DependentUpon>CapNhapBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatCombo.resx">
-      <DependentUpon>CapNhatCombo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CapNhatKhachHang.resx">
       <DependentUpon>CapNhatKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatKhuyenMai.resx">
-      <DependentUpon>CapNhatKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatLoaiHang.resx">
       <DependentUpon>CapNhatLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatLuong.resx">
-      <DependentUpon>CapNhatLuong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CapNhatNhaCungCap.resx">
       <DependentUpon>CapNhatNhaCungCap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatNhanVien.resx">
-      <DependentUpon>CapNhatNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatThucDon.resx">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
@@ -367,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPanel.resx">
+      <DependentUpon>CustomPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -408,8 +377,8 @@
     <EmbeddedResource Include="LoaiHangControl.resx">
       <DependentUpon>LoaiHangControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LuongNhanVien.resx">
-      <DependentUpon>LuongNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="LuongNhanViens.resx">
+      <DependentUpon>LuongNhanViens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LuongNhanVienRP.rdlc" />
     <EmbeddedResource Include="Main.resx">
@@ -427,7 +396,6 @@
     <EmbeddedResource Include="NhanVienControl.resx">
       <DependentUpon>NhanVienControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVienRP.rdlc" />
     <EmbeddedResource Include="NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,9 +412,6 @@
     <EmbeddedResource Include="Reports\RPNhapHang.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThucDon.resx">
-      <DependentUpon>ThucDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThucDonControl.resx">
       <DependentUpon>ThucDonControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,17 +425,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLKFCDataSet.xsc">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLKFCDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLKFCDataSet.xss">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -544,6 +498,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <None Include="QLKFCDataSet.xsc">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLKFCDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKFCDataSet.xss">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+=======
+    <None Include="QLKFCDataSet1.xsc">
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLKFCDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKFCDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKFCDataSet1.xss">
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+>>>>>>> tam
+    </None>
     <None Include="Resources\sql.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>

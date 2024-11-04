@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection_DTO.cs" />
+    <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="Kho_DTO.cs" />
+    <Compile Include="KhuyenMai_DTO.cs" />
     <Compile Include="LoaiHang_DTO.cs" />
     <Compile Include="LuongNhanVien_DTO.cs" />
     <Compile Include="NhaCungCap_DTO.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="NhapHang_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThucDon_DTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
