@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,20 @@ namespace KFC
 {
     public partial class CapNhatKhachHang : Form
     {
+        private KhachHang_DTO khachHang;
         public CapNhatKhachHang()
         {
             InitializeComponent();
+            this.khachHang = khachHang;
+            LoadCustomerData();
+        }
+
+        private void LoadCustomerData()
+        {
+            //// Gán dữ liệu vào các trường trên form, ví dụ:
+            //txtMaKH.Text = khachHang.MaKH;
+            //txtTenKH.Text = khachHang.TenKH;
+            //txtDiemTL.Text = khachHang.DiemTL;
         }
     }
 }

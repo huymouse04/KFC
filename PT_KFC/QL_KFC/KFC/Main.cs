@@ -148,10 +148,17 @@ namespace KFC
             openformMain(new ThucDon());
         }
 
+<<<<<<< HEAD
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             openformMain(new KhuyenMai());
         }
 >>>>>>> hungg
+=======
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            openformMain(new KhachHang());
+        }
+>>>>>>> tam
     }
 }

@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection_DTO.cs" />
+    <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="Kho_DTO.cs" />
     <Compile Include="KhuyenMai_DTO.cs" />
     <Compile Include="LoaiHang_DTO.cs" />

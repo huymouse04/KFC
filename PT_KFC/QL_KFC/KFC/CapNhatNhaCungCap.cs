@@ -211,7 +211,12 @@ namespace KFC
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            ClearInputFields();
+            var result = MessageBox.Show("Bạn có chắc chắn muốn hủy và đóng cửa sổ này?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Đóng form hiện tại
+            }
         }
     }
 }

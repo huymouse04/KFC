@@ -61,7 +61,7 @@
             this.pbNhaCungCap.ErrorImage = global::KFC.Properties.Resources.logo;
             this.pbNhaCungCap.Image = global::KFC.Properties.Resources.logo;
             this.pbNhaCungCap.Location = new System.Drawing.Point(20, 10);
-            this.pbNhaCungCap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbNhaCungCap.Margin = new System.Windows.Forms.Padding(2);
             this.pbNhaCungCap.Name = "pbNhaCungCap";
             this.pbNhaCungCap.Size = new System.Drawing.Size(80, 78);
             this.pbNhaCungCap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -75,9 +75,10 @@
             this.Controls.Add(this.lblSoDienThoai);
             this.Controls.Add(this.lblTenNCC);
             this.Controls.Add(this.pbNhaCungCap);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhaCungCapControl";
             this.Size = new System.Drawing.Size(614, 95);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.NhaCungCapControl_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pbNhaCungCap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -4,8 +4,6 @@ GO
 --drop databasE QLKFC
 USE QLKFC;
 
---drop database QLKFC
-
 set dateformat dmy
 
 GO
@@ -59,7 +57,7 @@ CREATE TABLE NhaCungCap (
     TenNhaCungCap NVARCHAR(100) NOT NULL,  
 	AnhNhaCungCap  VARBINARY(MAX),
     DiaChi NVARCHAR(200),  
-    SoDienThoai VARCHAR(15),  
+    SoDienThoai VARCHAR(10),  
     GhiChu NVARCHAR(200)  
 );  
 
@@ -70,6 +68,8 @@ CREATE TABLE Kho (
     SoLuong INT NOT NULL,  
 	DonViTinh NVARCHAR(50),  
 	DonGia FLOAT, 
+	NgaySanXuat DATE,
+	NgayHetHan DATE,
     MaLoaiHang VARCHAR(20),  
     CONSTRAINT CK_SoLuong CHECK (SoLuong >= 0),  
     FOREIGN KEY (MaLoaiHang) REFERENCES LoaiHang(MaLoaiHang) 
@@ -273,6 +273,7 @@ INSERT INTO Luong (MaNhanVien, Thang, Nam, LuongCoBan, SoNgayLam, SoGioLamThem, 
 
 
 
+-- Bảng Loại Hàng
 INSERT INTO LoaiHang (MaLoaiHang, TenLoaiHang) VALUES
 ('GR', N'Gà Rán'),
 ('GQ', N'Gà Quay'),
@@ -280,42 +281,103 @@ INSERT INTO LoaiHang (MaLoaiHang, TenLoaiHang) VALUES
 ('TM', N'Món Tráng Miệng'),
 ('TAN', N'Thức Ăn Nhẹ'),
 ('BMC', N'Burger - Mì Ý - Cơm');
-INSERT INTO Kho (MaSanPham, TenSanPham, SoLuong, DonViTinh, DonGia, MaLoaiHang)
+
+-- Bảng Kho với mã sản phẩm chuẩn hóa (3 ký tự loại và 3 chữ số)
+INSERT INTO Kho (MaSanPham, TenSanPham, SoLuong, DonViTinh, DonGia, NgaySanXuat, NgayHetHan, MaLoaiHang)
 VALUES
-('GR01', N'Gà Rán Giòn', 100, N'Chiếc', 65000, 'GR'),
-('GR02', N'Gà Rán Nguyên Tâm', 50, N'Chiếc', 70000, 'GR'),
-('GQ01', N'Gà Quay Nguyên Tâm', 80, N'Chiếc', 85000, 'GQ'),
-('NUOC01', N'Nước Ngọt', 200, N'Lít', 15000, 'NUOC'),
-('TM01', N'Bánh Tart', 150, N'Cái', 20000, 'TM'),
-('TAN01', N'Khoai Tây Chiên', 120, N'Cái', 30000, 'TAN'),
-('BMC01', N'Burger Gà', 80, N'Chiếc', 50000, 'BMC'),
-('BMC02', N'Mì Ý', 70, N'Dĩa', 60000, 'BMC');
+('GR001', N'Gà Rán Giòn', 100, N'Chiếc', 65000, '2024-12-01', '2025-06-30', 'GR'),
+('GR002', N'Gà Rán Nguyên Tâm', 50, N'Chiếc', 70000, '2024-12-02', '2025-07-30', 'GR'),
+('GQ001', N'Gà Quay Nguyên Tâm', 80, N'Chiếc', 85000, '2024-12-15', '2025-06-15', 'GQ'),
+('NUOC001', N'Nước Ngọt', 200, N'Lít', 15000, '2024-12-03', '2025-12-03', 'NUOC'),
+('TM001', N'Bánh Tart', 150, N'Cái', 20000, '2024-12-20', '2025-04-20', 'TM'),
+('TAN001', N'Khoai Tây Chiên', 120, N'Cái', 30000, '2024-12-15', '2025-08-15', 'TAN'),
+('BMC001', N'Burger Gà', 80, N'Chiếc', 50000, '2024-12-25', '2025-05-25', 'BMC'),
+('BMC002', N'Mì Ý', 70, N'Dĩa', 60000, '2024-12-05', '2025-05-05', 'BMC'),
+('GR003', N'Gà Rán Cay', 90, N'Chiếc', 68000, '2024-12-30', '2025-07-30', 'GR'),
+('NUOC002', N'Nước Trái Cây', 180, N'Lít', 18000, '2024-12-01', '2025-12-01', 'NUOC'),
+('NUOC003', N'Nước CoCa', 160, N'Lít', 12000, '2024-03-11', '2024-04-11', 'NUOC');
+
+
+-- Bảng Thực Đơn
 INSERT INTO ThucDon (MaSanPham, TenSanPham, HinhAnh, DonGia, MaLoaiHang) VALUES
-('GR01', N'Gà Rán Giòn', NULL, 65000, 'GR'),
-('GR02', N'Gà Rán Nguyên Miếng', NULL, 70000, 'GR'),
-('GQ01', N'Gà Quay Nguyên Miếng', NULL, 85000, 'GQ'),
-('NUOC01', N'Nước Ngọt', NULL, 15000, 'NUOC'),
-('TM01', N'Bánh Tart', NULL, 20000, 'TM'),
-('TAN01', N'Khoai Tây Chiên', NULL, 30000, 'TAN'),
-('BMC01', N'Burger Gà', NULL, 50000, 'BMC'),
-('BMC02', N'Mì Ý', NULL, 60000, 'BMC');
+('GR001', N'Gà Rán Giòn', NULL, 65000, 'GR'),
+('GR002', N'Gà Rán Nguyên Tâm', NULL, 70000, 'GR'),
+('GQ001', N'Gà Quay Nguyên Tâm', NULL, 85000, 'GQ'),
+('NUOC001', N'Nước Ngọt', NULL, 15000, 'NUOC'),
+('TM001', N'Bánh Tart', NULL, 20000, 'TM'),
+('TAN001', N'Khoai Tây Chiên', NULL, 30000, 'TAN'),
+('BMC001', N'Burger Gà', NULL, 50000, 'BMC'),
+('BMC002', N'Mì Ý', NULL, 60000, 'BMC'),
+('GR003', N'Gà Rán Cay', NULL, 68000, 'GR'),
+('NUOC002', N'Nước Trái Cây', NULL, 18000, 'NUOC');
+
+-- Bảng Nhà Cung Cấp
 INSERT INTO NhaCungCap (MaNhaCungCap, TenNhaCungCap, AnhNhaCungCap, DiaChi, SoDienThoai, GhiChu) VALUES
 ('NCC01', N'Nhà Cung Cấp A', NULL, N'Địa chỉ NCC A', '0123456789', N'Nhà cung cấp thực phẩm'),
-('NCC02', N'Nhà Cung Cấp B', NULL, N'Địa chỉ NCC B', '0987654321', N'Nhà cung cấp nước uống');
+('NCC02', N'Nhà Cung Cấp B', NULL, N'Địa chỉ NCC B', '0987654321', N'Nhà cung cấp nước uống'),
+('NCC03', N'Nhà Cung Cấp C', NULL, N'Địa chỉ NCC C', '0912345678', N'Nhà cung cấp đồ ăn nhẹ'),
+('NCC04', N'Nhà Cung Cấp D', NULL, N'Địa chỉ NCC D', '0981234567', N'Nhà cung cấp bánh ngọt'),
+('NCC05', N'Nhà Cung Cấp E', NULL, N'Địa chỉ NCC E', '0962345671', N'Nhà cung cấp nước giải khát'),
+('NCC06', N'Nhà Cung Cấp F', NULL, N'Địa chỉ NCC F', '0932123456', N'Nhà cung cấp gia vị'),
+('NCC07', N'Nhà Cung Cấp G', NULL, N'Địa chỉ NCC G', '0901122334', N'Nhà cung cấp nguyên liệu'),
+('NCC08', N'Nhà Cung Cấp H', NULL, N'Địa chỉ NCC H', '0922133445', N'Nhà cung cấp bánh'),
+('NCC09', N'Nhà Cung Cấp I', NULL, N'Địa chỉ NCC I', '0987654444', N'Nhà cung cấp trái cây'),
+('NCC10', N'Nhà Cung Cấp J', NULL, N'Địa chỉ NCC J', '0976543333', N'Nhà cung cấp rau củ');
+
+-- Bảng Khách Hàng 
+INSERT INTO KhachHangThanThiet (MaKhachHang, TenKhachHang, SoDienThoai, DiemTichLuy) VALUES
+('KH001', N'Nguyễn Văn A', '0123456789', 100),
+('KH002', N'Trần Thị B', '0123456790', 150),
+('KH003', N'Nguyễn Thị C', '0123456791', 200),
+('KH004', N'Phạm Văn D', '0123456792', 250),
+('KH005', N'Đỗ Thị E', '0123456793', 300),
+('KH006', N'Lê Văn F', '0123456794', 120),
+('KH007', N'Nguyễn Văn G', '0123456795', 180),
+('KH008', N'Vũ Thị H', '0123456796', 220),
+('KH009', N'Hồ Văn I', '0123456797', 140),
+('KH010', N'Tôn Thị J', '0123456798', 160);
+
+
+-- Bảng Nhập Hàng
 INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, MaNhaCungCap) VALUES
-('GR01', 100, N'Chiếc', 65000, GETDATE(), 'GR', 'NCC01'),
-('GQ01', 50, N'Chiếc', 85000, GETDATE(), 'GQ', 'NCC01'),
-('NUOC01', 200, N'Lít', 15000, GETDATE(), 'NUOC', 'NCC02'),
-('TAN01', 150, N'Chiếc', 30000, GETDATE(), 'TAN', 'NCC01'),
-('BMC01', 80, N'Chiếc', 50000, GETDATE(), 'BMC', 'NCC01');
+('GR001', 100, N'Chiếc', 65000, GETDATE(), 'GR', 'NCC01'),
+('GR002', 50, N'Chiếc', 70000, GETDATE(), 'GR', 'NCC02'),
+('GQ001', 80, N'Chiếc', 85000, GETDATE(), 'GQ', 'NCC03'),
+('NUOC001', 200, N'Lít', 15000, GETDATE(), 'NUOC', 'NCC04'),
+('TAN001', 120, N'Cái', 30000, GETDATE(), 'TAN', 'NCC05'),
+('BMC001', 80, N'Chiếc', 50000, GETDATE(), 'BMC', 'NCC06'),
+('BMC002', 70, N'Dĩa', 60000, GETDATE(), 'BMC', 'NCC07'),
+('GR003', 90, N'Chiếc', 68000, GETDATE(), 'GR', 'NCC08'),
+('NUOC002', 180, N'Lít', 18000, GETDATE(), 'NUOC', 'NCC09'),
+('TM001', 150, N'Cái', 20000, GETDATE(), 'TM', 'NCC10');
+
+-- Bảng Combo
 INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, ThoiGianHieuLuc) VALUES
 ('CMB01', N'Combo Gà Rán', 95000, GETDATE()),
-('CMB02', N'Combo Gà Quay', 115000, GETDATE());
+('CMB02', N'Combo Gà Quay', 115000, GETDATE()),
+('CMB03', N'Combo Nước Uống', 20000, GETDATE()),
+('CMB04', N'Combo Món Tráng Miệng', 50000, GETDATE()),
+('CMB05', N'Combo Thức Ăn Nhẹ', 75000, GETDATE()),
+('CMB06', N'Combo Burger', 80000, GETDATE()),
+('CMB07', N'Combo Mì Ý', 60000, GETDATE()),
+('CMB08', N'Combo Bánh Tart', 40000, GETDATE()),
+('CMB09', N'Combo Khoai Tây', 30000, GETDATE()),
+('CMB10', N'Combo Gà Cay', 95000, GETDATE());
+
+-- Bảng Chi Tiết Combo
 INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong) VALUES
-('CMB01', 'GR01', 1),
-('CMB01', 'NUOC01', 1),
-('CMB02', 'GQ01', 1),
-('CMB02', 'TAN01', 1);
+('CMB01', 'GR001', 1),
+('CMB01', 'NUOC001', 1),
+('CMB02', 'GQ001', 1),
+('CMB02', 'TAN001', 1),
+('CMB03', 'NUOC001', 2),
+('CMB04', 'TM001', 2),
+('CMB05', 'TAN001', 2),
+('CMB06', 'BMC001', 1),
+('CMB07', 'BMC002', 1),
+('CMB08', 'TM001', 3),
+('CMB09', 'TAN001', 2),
+('CMB10', 'GR003', 1);
 INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
 ('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
 
@@ -353,8 +415,6 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'Luong';
 
 EXEC sp_help 'Luong';
-
-
 
 
 

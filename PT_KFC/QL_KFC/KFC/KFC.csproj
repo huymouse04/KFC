@@ -280,6 +280,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLKFCDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThucDonControl.cs">
       <SubType>UserControl</SubType>
@@ -493,6 +498,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="QLKFCDataSet.xsc">
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </None>
@@ -503,6 +509,18 @@
     </None>
     <None Include="QLKFCDataSet.xss">
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+=======
+    <None Include="QLKFCDataSet1.xsc">
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLKFCDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKFCDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKFCDataSet1.xss">
+      <DependentUpon>QLKFCDataSet1.xsd</DependentUpon>
+>>>>>>> tam
     </None>
     <None Include="Resources\sql.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />

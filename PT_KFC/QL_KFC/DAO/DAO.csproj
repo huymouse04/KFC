@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KFC.dbml</DependentUpon>
     </Compile>
+    <Compile Include="KhachHang_DAO.cs" />
     <Compile Include="Kho_DAO.cs" />
     <Compile Include="KhuyenMai_DAO.cs" />
     <Compile Include="LoaiHang_DAO.cs" />

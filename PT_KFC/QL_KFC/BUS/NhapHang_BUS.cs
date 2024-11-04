@@ -137,7 +137,6 @@ namespace BUS
         {
             return dao.GetTenSanPhamByMa(maSanPham);
         }
-
         public DataTable GetAllSP()
         {
             return dao.GetAllSP();

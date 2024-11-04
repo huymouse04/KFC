@@ -37,8 +37,13 @@ namespace DAO.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7UF615BR\\SQLEXPRESS;Initial Catalog=QLKFC;Integrated Security=" +
             "True;TrustServerCertificate=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-DT6K7IMU\\MSSQLSERVER01;Initial Catalog=QLKFC;Integrated Securi" +
+            "ty=True;TrustServerCertificate=True")]
+>>>>>>> tam
         public string QLKFCConnectionString1 {
             get {
                 return ((string)(this["QLKFCConnectionString1"]));
