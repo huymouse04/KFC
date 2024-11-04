@@ -14,6 +14,11 @@ namespace BUS
         private Kho_DAO khoDAO = new Kho_DAO();
         
         // Phương thức tìm kiếm nhân viên
+<<<<<<< HEAD
+=======
+       
+        // Phương thức tìm kiếm sản phẩm
+>>>>>>> hungg
         public List<Kho_DTO> SearchKho(string searchTerm)
         {
             return khoDAO.SearchKho(searchTerm); // Gọi phương thức tìm kiếm từ DAO
