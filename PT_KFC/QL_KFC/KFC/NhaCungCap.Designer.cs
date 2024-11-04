@@ -60,7 +60,6 @@
             this.panel3.BackColor = System.Drawing.Color.DarkRed;
             this.panel3.Controls.Add(this.btnTimKiem);
             this.panel3.Controls.Add(this.btnLamMoi);
-            this.panel3.Controls.Add(this.txtTimKiem);
             this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Controls.Add(this.BtnAdd);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
