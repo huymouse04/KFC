@@ -158,6 +158,7 @@
             // 
             // dtpNgayHH
             // 
+            this.dtpNgayHH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayHH.Location = new System.Drawing.Point(215, 352);
             this.dtpNgayHH.Name = "dtpNgayHH";
             this.dtpNgayHH.Size = new System.Drawing.Size(259, 26);
@@ -176,6 +177,7 @@
             // 
             // dtpNgaySX
             // 
+            this.dtpNgaySX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySX.Location = new System.Drawing.Point(756, 292);
             this.dtpNgaySX.Name = "dtpNgaySX";
             this.dtpNgaySX.Size = new System.Drawing.Size(259, 26);
