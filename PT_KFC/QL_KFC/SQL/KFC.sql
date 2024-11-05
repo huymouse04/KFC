@@ -282,7 +282,7 @@ INSERT INTO LoaiHang (MaLoaiHang, TenLoaiHang) VALUES
 ('TAN', N'Thức Ăn Nhẹ'),
 ('BMC', N'Burger - Mì Ý - Cơm');
 
--- Bảng Kho với mã sản phẩm chuẩn hóa (3 ký tự loại và 3 chữ số)
+-- Bảng Kho 
 INSERT INTO Kho (MaSanPham, TenSanPham, SoLuong, DonViTinh, DonGia, NgaySanXuat, NgayHetHan, MaLoaiHang)
 VALUES
 ('GR001', N'Gà Rán Giòn', 100, N'Chiếc', 65000, '2024-12-01', '2025-06-30', 'GR'),
