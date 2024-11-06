@@ -158,5 +158,9 @@ namespace KFC
             openformMain(new KhachHang());
         }
 
+        private void btnComBo_Click(object sender, EventArgs e)
+        {
+            openformMain(new Combo());
+        }
     }
 }

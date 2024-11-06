@@ -124,12 +124,6 @@
     <Compile Include="CapNhatThucDon.Designer.cs">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChiTietCombo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChiTietCombo.Designer.cs">
-      <DependentUpon>ChiTietCombo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Combo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,9 +310,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatThucDon.resx">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChiTietCombo.resx">
-      <DependentUpon>ChiTietCombo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Combo.resx">
       <DependentUpon>Combo.cs</DependentUpon>
