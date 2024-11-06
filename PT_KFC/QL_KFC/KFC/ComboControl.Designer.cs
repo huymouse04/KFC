@@ -97,6 +97,7 @@
             this.Controls.Add(this.lblCombo);
             this.Name = "ComboControl";
             this.Size = new System.Drawing.Size(233, 78);
+            this.Click += new System.EventHandler(this.ComboControl_Click);
             this.DoubleClick += new System.EventHandler(this.ComboControl_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pbTrangThai)).EndInit();
             this.ResumeLayout(false);

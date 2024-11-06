@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using DAO;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,39 @@ namespace KFC
 
         public string MaCombo { get {return lblCombo.Text; } set {lblCombo.Text=value; } }
         public string TenCombo { get { return lblTenCombo.Text; } set { lblTenCombo.Text = value; } }
-        public double GiaCombo { get { return double.Parse(lblGia.Text); } set { lblGia.Text = value.ToString(); } }
-        public int SoLuong { get { return int.Parse(lblSoLuong.Text); } set { lblSoLuong.Text = value.ToString(); } }
+        public int GiaCombo
+        {
+            get
+            {
+                int giacombo;
+                if (int.TryParse(lblGia.Text, out giacombo))
+                {
+                    return giacombo;
+                }
+                return 0; // hoặc bất kỳ giá trị mặc định nào bạn muốn nếu chuyển đổi thất bại
+            }
+            set
+            {
+                lblGia.Text = value.ToString();
+            }
+        }
+        public int SoLuong
+        {
+            get
+            {
+                int soLuong;
+                if (int.TryParse(lblSoLuong.Text, out soLuong))
+                {
+                    return soLuong;
+                }
+                return 0; // hoặc bất kỳ giá trị mặc định nào bạn muốn nếu chuyển đổi thất bại
+            }
+            set
+            {
+                lblSoLuong.Text = value.ToString();
+            }
+        }
+
 
         private bool trangThai;
         public bool TrangThai 
@@ -39,7 +71,7 @@ namespace KFC
         {
             InitializeComponent();
             RegisterDoubleClickEvent(this);  // Đăng ký sự kiện nhấp đúp
-
+            RegisterClickEvent(this);
 
         }
 
@@ -108,6 +140,26 @@ namespace KFC
             {
                 RegisterDoubleClickEvent(child);
             }
+        }
+
+        private void RegisterClickEvent(Control control)
+        {
+            // Đăng ký sự kiện nhấp đúp cho chính điều khiển này
+            control.Click += ComboControl_Click;
+
+            // Đăng ký sự kiện nhấp đúp cho tất cả các điều khiển con
+            foreach (Control child in control.Controls)
+            {
+                RegisterClickEvent(child);
+            }
+        }
+
+        public event Action<string> ComboClicked; // Sự kiện khi click vào combo
+        private string maCombo; // Mã combo
+
+        private void ComboControl_Click(object sender, EventArgs e)
+        {
+            ComboClicked?.Invoke(maCombo);
         }
     }
 }

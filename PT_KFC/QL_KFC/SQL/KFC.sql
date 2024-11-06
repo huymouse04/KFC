@@ -97,7 +97,7 @@ CREATE TABLE NhapHang (
 CREATE TABLE Combo (  
     MaCombo VARCHAR(30) PRIMARY KEY NOT NULL,  
     TenCombo NVARCHAR(250) NOT NULL,  
-    GiaCombo FLOAT,  
+    GiaCombo int,  
 	SoLuong int,
 	NgayBatDau datetime,
     NgayKetThuc DATETIME  
