@@ -111,7 +111,6 @@ CREATE TABLE ChiTietCombo (
     MaSanPham VARCHAR(30) NOT NULL,  
     SoLuong INT NOT NULL,  
     FOREIGN KEY (MaCombo) REFERENCES Combo(MaCombo),  
-    FOREIGN KEY (MaSanPham) REFERENCES Kho(MaSanPham)  
 );
 
 -- Bảng Quan Ly Thuc Don  
