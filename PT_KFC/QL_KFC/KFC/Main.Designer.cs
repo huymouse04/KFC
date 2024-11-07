@@ -235,8 +235,7 @@
             this.btnKhuyenMai.Text = "Khuyến mãi";
             this.btnKhuyenMai.TextColor = System.Drawing.Color.White;
             this.btnKhuyenMai.UseVisualStyleBackColor = false;
-            this.btnKhuyenMai.Click += new System.EventHandler(this.btnKhuyenMai_Click_1);
-            // 
+                // 
             // btnBan
             // 
             this.btnBan.BackColor = System.Drawing.Color.Firebrick;
