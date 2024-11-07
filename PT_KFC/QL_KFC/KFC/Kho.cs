@@ -4,9 +4,13 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+<<<<<<< HEAD
+using System.Data.SqlClient;
+=======
 
 using System.Data.SqlClient;
 
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -329,6 +333,52 @@ namespace KFC
             return isValid;
         }
 
+<<<<<<< HEAD
+        
+
+        private void dtGVKHO_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Đảm bảo người dùng click vào hàng hợp lệ
+            {
+                var selectedRow = dtGVKHO.Rows[e.RowIndex];
+
+                txtMaSP.Text = selectedRow.Cells["MaSanPham"].Value.ToString();
+                txtTenSP.Text = selectedRow.Cells["TenSanPham"].Value.ToString();
+                txtSL.Text = selectedRow.Cells["SoLuong"].Value.ToString();
+                txtDVT.Text = selectedRow.Cells["DonViTinh"].Value.ToString();
+                txtDonGia.Text = selectedRow.Cells["DonGia"].Value.ToString();
+                cbLH.SelectedValue = selectedRow.Cells["MaLoaiHang"].Value.ToString();
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+       
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string maSanPhamTimKiem = txtMaSP.Text.Trim();
+
+            if (string.IsNullOrEmpty(maSanPhamTimKiem))
+            {
+                MessageBox.Show("Vui lòng nhập mã sản phẩm cần tìm.");
+                return;
+            }
+
+            // Lấy danh sách tất cả sản phẩm từ nguồn dữ liệu
+            List<Kho_DTO> allKho = khoBUS.GetAllKho(); // Lấy toàn bộ dữ liệu
+
+            // Lọc dữ liệu theo mã sản phẩm
+            var filteredKho = allKho.Where(k => k.MaSanPham == maSanPhamTimKiem).ToList();
+
+            // Cập nhật DataGridView với dữ liệu đã lọc
+            dtGVKHO.DataSource = filteredKho; // Cập nhật nguồn dữ liệu cho DataGridView
+        }
+
+=======
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
         private void dtGVKHO_SelectionChanged(object sender, EventArgs e)
         {
@@ -442,7 +492,15 @@ namespace KFC
         {
             openNhaCungCapForm();
         }
+<<<<<<< HEAD
+        
+
+
+        public DataTable ConvertListToDataTable(List<DTO.Kho_DTO> list)
+
+=======
       
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
         private void btnDelete_Click(object sender, EventArgs e)
 
@@ -545,70 +603,91 @@ namespace KFC
             }
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
+
+        //private void btnXuat_Click(object sender, EventArgs e)
+        //{
+        //    string tuKhoa = txtMaSP.Text.Trim();
+        //    List<DTO.Kho_DTO> ketQuaList;
 
 
-        private void btnXuat_Click(object sender, EventArgs e)
-        {
-            string tuKhoa = txtMaSP.Text.Trim();
-            List<DTO.Kho_DTO> ketQuaList;
+        //    if (string.IsNullOrEmpty(tuKhoa))
+        //    {
+        //        ketQuaList = khoBUS.GetAllKho();
+        //    }
+        //    else
+        //    {
+        //        ketQuaList = khoBUS.SearchKho(tuKhoa);
+        //    }
+
+        //    if (ketQuaList == null || ketQuaList.Count == 0)
+        //    {
+        //        MessageBox.Show("Không tìm thấy kho nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+
+        //    // Chuyển đổi List<DTO.NhanVien_DTO> sang DataTable
+        //    DataTable ketQua = ConvertListToDataTable(ketQuaList);
+
+        //    FormReport formKho = new FormReport(FormReport.LoaiBaoCao.Kho, ketQua);
+        //    formKho.Show();
+        //}
 
 
-            if (string.IsNullOrEmpty(tuKhoa))
-            {
-                ketQuaList = khoBUS.GetAllKho();
-            }
-            else
-            {
-                ketQuaList = khoBUS.SearchKho(tuKhoa);
-            }
+        // public DataTable ConvertListToDataTable(List<DTO.Kho_DTO> list)
+        //{
+        //    DataTable dataTable = new DataTable();
 
-            if (ketQuaList == null || ketQuaList.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy kho nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+        //    // Lấy tất cả các thuộc tính của đối tượng Kho_DTO
+        //    PropertyInfo[] properties = typeof(Kho_DTO).GetProperties();
 
-            // Chuyển đổi List<DTO.NhanVien_DTO> sang DataTable
-            DataTable ketQua = ConvertListToDataTable(ketQuaList);
+        //    // Tạo các cột trong DataTable tương ứng với các thuộc tính
+        //    foreach (PropertyInfo property in properties)
+        //    {
+        //        dataTable.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
+        //    }
 
-            FormReport formKho = new FormReport(FormReport.LoaiBaoCao.Kho, ketQua);
-            formKho.Show();
-        }
+        //    // Thêm từng đối tượng trong danh sách vào hàng của DataTable
+        //    foreach (Kho_DTO item in list)
+        //    {
+        //        DataRow row = dataTable.NewRow();
+        //        foreach (PropertyInfo property in properties)
+        //        {
+        //            row[property.Name] = property.GetValue(item) ?? DBNull.Value;
+        //        }
+        //        dataTable.Rows.Add(row);
+        //    }
 
+        //    return dataTable;
+        //}
 
-         public DataTable ConvertListToDataTable(List<DTO.Kho_DTO> list)
-        {
-            DataTable dataTable = new DataTable();
+        //private void btnThem_Click_1(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        string maSanPham = txtMaSP.Text;
+        //        // Kiểm tra nếu mã sản phẩm đã tồn tại
+        //        if (khoBUS.CheckMaSanPhamExists(maSanPham))
+        //        {
+        //            MessageBox.Show("Mã sản phẩm đã tồn tại, vui lòng nhập mã khác.");
+        //            return;
+        //        }
 
-            // Lấy tất cả các thuộc tính của đối tượng Kho_DTO
-            PropertyInfo[] properties = typeof(Kho_DTO).GetProperties();
-
-            // Tạo các cột trong DataTable tương ứng với các thuộc tính
-            foreach (PropertyInfo property in properties)
-            {
-                dataTable.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
-            }
-
-            // Thêm từng đối tượng trong danh sách vào hàng của DataTable
-            foreach (Kho_DTO item in list)
-            {
-                DataRow row = dataTable.NewRow();
-                foreach (PropertyInfo property in properties)
-                {
-                    row[property.Name] = property.GetValue(item) ?? DBNull.Value;
-                }
-                dataTable.Rows.Add(row);
-            }
-
-            return dataTable;
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                string maSanPham = txtMaSP.Text;
-
+<<<<<<< HEAD
+        //        // Thêm sản phẩm mới
+        //        var kho = new Kho_DTO
+        //        {
+        //            MaSanPham = maSanPham,
+        //            TenSanPham = txtTenSP.Text,
+        //            SoLuong = int.Parse(txtSL.Text),
+        //            DonViTinh = txtDVT.Text,
+        //            DonGia = float.Parse(txtDonGia.Text),
+        //            MaLoaiHang = cbLH.SelectedValue.ToString()
+        //        };
+=======
 
                 // Kiểm tra nếu mã sản phẩm đã tồn tại
                 if (khoBUS.CheckMaSanPhamExists(maSanPham))
@@ -616,18 +695,20 @@ namespace KFC
                     MessageBox.Show("Mã sản phẩm đã tồn tại, vui lòng nhập mã khác.");
                     return;
                 }
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
 
-                // Thêm sản phẩm mới
-                var kho = new Kho_DTO
-                {
-                    MaSanPham = maSanPham,
-                    TenSanPham = txtTenSP.Text,
-                    SoLuong = int.Parse(txtSL.Text),
-                    DonViTinh = txtDVT.Text,
-                    DonGia = float.Parse(txtDonGia.Text),
-                    MaLoaiHang = cbLH.SelectedValue.ToString()
-                };
+        //        khoBUS.AddKho(kho);
+        //        MessageBox.Show("Thêm sản phẩm thành công.");
+        //        LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi khi thêm sản phẩm: " + ex.Message);
+        //    }
+        //}
 
+<<<<<<< HEAD
+=======
                 khoBUS.AddKho(kho);
                 MessageBox.Show("Thêm sản phẩm thành công.");
                 LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
@@ -638,5 +719,6 @@ namespace KFC
             }
         }
 
+>>>>>>> 46a91a48266264f7c9dbf8c18844f4fcc5a03f24
     }
 }

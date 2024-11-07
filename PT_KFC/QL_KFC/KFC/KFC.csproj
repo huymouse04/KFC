@@ -255,6 +255,14 @@
     <Compile Include="NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
+<Compile Include="ThucDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+
+ <Compile Include="ThucDon.Designer.cs">
+      <DependentUpon>ThucDon.cs</DependentUpon>
+    </Compile>
+
     <Compile Include="NhanVienControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -398,6 +406,10 @@
     <EmbeddedResource Include="Reports\RPNhapHang.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+ <EmbeddedResource Include="ThucDon.resx">
+      <DependentUpon>ThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="ThucDonControl.resx">
       <DependentUpon>ThucDonControl.cs</DependentUpon>
     </EmbeddedResource>
