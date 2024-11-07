@@ -30,7 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.flpCombo = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboControl1 = new KFC.ComboControl();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnLamMoiCB = new CustomButton.VBButton();
+            this.btnXoaCB = new CustomButton.VBButton();
+            this.btnCapNhatCB = new CustomButton.VBButton();
+            this.btnThemCB = new CustomButton.VBButton();
             this.dtpNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -45,27 +50,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.cbMaSP = new System.Windows.Forms.ComboBox();
+            this.btnLamMoiChiTietCB = new CustomButton.VBButton();
+            this.btnCapNhatChiTietCB = new CustomButton.VBButton();
+            this.btnXoaChiTietCB = new CustomButton.VBButton();
+            this.btnThemChiTietCB = new CustomButton.VBButton();
+            this.txtSoLuongSP = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtMaCB = new System.Windows.Forms.TextBox();
             this.dgvChiTietComBo = new System.Windows.Forms.DataGridView();
             this.t = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.vbButton4 = new CustomButton.VBButton();
-            this.vbButton2 = new CustomButton.VBButton();
-            this.vbButton3 = new CustomButton.VBButton();
-            this.vbButton1 = new CustomButton.VBButton();
-            this.btnLamMoiCB = new CustomButton.VBButton();
-            this.btnXoaCB = new CustomButton.VBButton();
-            this.btnCapNhatCB = new CustomButton.VBButton();
-            this.btnThemCB = new CustomButton.VBButton();
             this.btnXoa = new CustomButton.VBButton();
-            this.comboControl1 = new KFC.ComboControl();
             this.panel1.SuspendLayout();
             this.flpCombo.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,6 +93,18 @@
             this.flpCombo.Size = new System.Drawing.Size(858, 388);
             this.flpCombo.TabIndex = 2;
             // 
+            // comboControl1
+            // 
+            this.comboControl1.GiaCombo = 0;
+            this.comboControl1.Location = new System.Drawing.Point(3, 3);
+            this.comboControl1.MaCombo = "Mã Combo";
+            this.comboControl1.Name = "comboControl1";
+            this.comboControl1.Size = new System.Drawing.Size(233, 78);
+            this.comboControl1.SoLuong = 0;
+            this.comboControl1.TabIndex = 0;
+            this.comboControl1.TenCombo = "Tên ComBo";
+            this.comboControl1.TrangThai = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkRed;
@@ -118,6 +130,82 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(858, 420);
             this.panel3.TabIndex = 1;
+            // 
+            // btnLamMoiCB
+            // 
+            this.btnLamMoiCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLamMoiCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnLamMoiCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLamMoiCB.BorderRadius = 20;
+            this.btnLamMoiCB.BorderSize = 0;
+            this.btnLamMoiCB.FlatAppearance.BorderSize = 0;
+            this.btnLamMoiCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoiCB.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoiCB.Location = new System.Drawing.Point(589, 195);
+            this.btnLamMoiCB.Name = "btnLamMoiCB";
+            this.btnLamMoiCB.Size = new System.Drawing.Size(134, 44);
+            this.btnLamMoiCB.TabIndex = 16;
+            this.btnLamMoiCB.Text = "Làm mới";
+            this.btnLamMoiCB.TextColor = System.Drawing.Color.White;
+            this.btnLamMoiCB.UseVisualStyleBackColor = false;
+            this.btnLamMoiCB.Click += new System.EventHandler(this.btnLamMoiCB_Click);
+            // 
+            // btnXoaCB
+            // 
+            this.btnXoaCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnXoaCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnXoaCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnXoaCB.BorderRadius = 20;
+            this.btnXoaCB.BorderSize = 0;
+            this.btnXoaCB.FlatAppearance.BorderSize = 0;
+            this.btnXoaCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaCB.ForeColor = System.Drawing.Color.White;
+            this.btnXoaCB.Location = new System.Drawing.Point(589, 132);
+            this.btnXoaCB.Name = "btnXoaCB";
+            this.btnXoaCB.Size = new System.Drawing.Size(134, 44);
+            this.btnXoaCB.TabIndex = 17;
+            this.btnXoaCB.Text = "Xóa";
+            this.btnXoaCB.TextColor = System.Drawing.Color.White;
+            this.btnXoaCB.UseVisualStyleBackColor = false;
+            this.btnXoaCB.Click += new System.EventHandler(this.btnXoaCB_Click);
+            // 
+            // btnCapNhatCB
+            // 
+            this.btnCapNhatCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCapNhatCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnCapNhatCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCapNhatCB.BorderRadius = 20;
+            this.btnCapNhatCB.BorderSize = 0;
+            this.btnCapNhatCB.FlatAppearance.BorderSize = 0;
+            this.btnCapNhatCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhatCB.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhatCB.Location = new System.Drawing.Point(589, 70);
+            this.btnCapNhatCB.Name = "btnCapNhatCB";
+            this.btnCapNhatCB.Size = new System.Drawing.Size(134, 44);
+            this.btnCapNhatCB.TabIndex = 18;
+            this.btnCapNhatCB.Text = "Cập nhật";
+            this.btnCapNhatCB.TextColor = System.Drawing.Color.White;
+            this.btnCapNhatCB.UseVisualStyleBackColor = false;
+            this.btnCapNhatCB.Click += new System.EventHandler(this.btnCapNhatCB_Click);
+            // 
+            // btnThemCB
+            // 
+            this.btnThemCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnThemCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnThemCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnThemCB.BorderRadius = 20;
+            this.btnThemCB.BorderSize = 0;
+            this.btnThemCB.FlatAppearance.BorderSize = 0;
+            this.btnThemCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemCB.ForeColor = System.Drawing.Color.White;
+            this.btnThemCB.Location = new System.Drawing.Point(589, 9);
+            this.btnThemCB.Name = "btnThemCB";
+            this.btnThemCB.Size = new System.Drawing.Size(134, 44);
+            this.btnThemCB.TabIndex = 19;
+            this.btnThemCB.Text = "Thêm";
+            this.btnThemCB.TextColor = System.Drawing.Color.White;
+            this.btnThemCB.UseVisualStyleBackColor = false;
+            this.btnThemCB.Click += new System.EventHandler(this.btnThemCB_Click);
             // 
             // dtpNgayKetThuc
             // 
@@ -168,6 +256,7 @@
             this.txtMaCombo.Name = "txtMaCombo";
             this.txtMaCombo.Size = new System.Drawing.Size(298, 33);
             this.txtMaCombo.TabIndex = 13;
+            this.txtMaCombo.TextChanged += new System.EventHandler(this.txtMaCombo_TextChanged);
             // 
             // label6
             // 
@@ -249,29 +338,114 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkRed;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.vbButton4);
-            this.panel4.Controls.Add(this.vbButton2);
-            this.panel4.Controls.Add(this.vbButton3);
-            this.panel4.Controls.Add(this.vbButton1);
-            this.panel4.Controls.Add(this.textBox8);
+            this.panel4.Controls.Add(this.cbMaSP);
+            this.panel4.Controls.Add(this.btnLamMoiChiTietCB);
+            this.panel4.Controls.Add(this.btnCapNhatChiTietCB);
+            this.panel4.Controls.Add(this.btnXoaChiTietCB);
+            this.panel4.Controls.Add(this.btnThemChiTietCB);
+            this.panel4.Controls.Add(this.txtSoLuongSP);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.textBox6);
             this.panel4.Controls.Add(this.label10);
-            this.panel4.Controls.Add(this.textBox5);
+            this.panel4.Controls.Add(this.txtMaCB);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 388);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(657, 420);
             this.panel4.TabIndex = 1;
             // 
-            // textBox8
+            // cbMaSP
             // 
-            this.textBox8.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(216, 128);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(242, 33);
-            this.textBox8.TabIndex = 11;
+            this.cbMaSP.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMaSP.FormattingEnabled = true;
+            this.cbMaSP.Location = new System.Drawing.Point(217, 72);
+            this.cbMaSP.Name = "cbMaSP";
+            this.cbMaSP.Size = new System.Drawing.Size(240, 34);
+            this.cbMaSP.TabIndex = 20;
+            // 
+            // btnLamMoiChiTietCB
+            // 
+            this.btnLamMoiChiTietCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLamMoiChiTietCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnLamMoiChiTietCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnLamMoiChiTietCB.BorderRadius = 20;
+            this.btnLamMoiChiTietCB.BorderSize = 0;
+            this.btnLamMoiChiTietCB.FlatAppearance.BorderSize = 0;
+            this.btnLamMoiChiTietCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoiChiTietCB.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoiChiTietCB.Location = new System.Drawing.Point(493, 190);
+            this.btnLamMoiChiTietCB.Name = "btnLamMoiChiTietCB";
+            this.btnLamMoiChiTietCB.Size = new System.Drawing.Size(134, 44);
+            this.btnLamMoiChiTietCB.TabIndex = 16;
+            this.btnLamMoiChiTietCB.Text = "Làm mới";
+            this.btnLamMoiChiTietCB.TextColor = System.Drawing.Color.White;
+            this.btnLamMoiChiTietCB.UseVisualStyleBackColor = false;
+            this.btnLamMoiChiTietCB.Click += new System.EventHandler(this.btnLamMoiChiTietCB_Click);
+            // 
+            // btnCapNhatChiTietCB
+            // 
+            this.btnCapNhatChiTietCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnCapNhatChiTietCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnCapNhatChiTietCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCapNhatChiTietCB.BorderRadius = 20;
+            this.btnCapNhatChiTietCB.BorderSize = 0;
+            this.btnCapNhatChiTietCB.FlatAppearance.BorderSize = 0;
+            this.btnCapNhatChiTietCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCapNhatChiTietCB.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhatChiTietCB.Location = new System.Drawing.Point(493, 73);
+            this.btnCapNhatChiTietCB.Name = "btnCapNhatChiTietCB";
+            this.btnCapNhatChiTietCB.Size = new System.Drawing.Size(134, 44);
+            this.btnCapNhatChiTietCB.TabIndex = 18;
+            this.btnCapNhatChiTietCB.Text = "Cập nhật";
+            this.btnCapNhatChiTietCB.TextColor = System.Drawing.Color.White;
+            this.btnCapNhatChiTietCB.UseVisualStyleBackColor = false;
+            this.btnCapNhatChiTietCB.Click += new System.EventHandler(this.btnCapNhatChiTietCB_Click);
+            // 
+            // btnXoaChiTietCB
+            // 
+            this.btnXoaChiTietCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnXoaChiTietCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnXoaChiTietCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnXoaChiTietCB.BorderRadius = 20;
+            this.btnXoaChiTietCB.BorderSize = 0;
+            this.btnXoaChiTietCB.FlatAppearance.BorderSize = 0;
+            this.btnXoaChiTietCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaChiTietCB.ForeColor = System.Drawing.Color.White;
+            this.btnXoaChiTietCB.Location = new System.Drawing.Point(493, 128);
+            this.btnXoaChiTietCB.Name = "btnXoaChiTietCB";
+            this.btnXoaChiTietCB.Size = new System.Drawing.Size(134, 44);
+            this.btnXoaChiTietCB.TabIndex = 17;
+            this.btnXoaChiTietCB.Text = "Xóa";
+            this.btnXoaChiTietCB.TextColor = System.Drawing.Color.White;
+            this.btnXoaChiTietCB.UseVisualStyleBackColor = false;
+            this.btnXoaChiTietCB.Click += new System.EventHandler(this.btnXoaChiTietCB_Click);
+            // 
+            // btnThemChiTietCB
+            // 
+            this.btnThemChiTietCB.BackColor = System.Drawing.Color.Firebrick;
+            this.btnThemChiTietCB.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnThemChiTietCB.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnThemChiTietCB.BorderRadius = 20;
+            this.btnThemChiTietCB.BorderSize = 0;
+            this.btnThemChiTietCB.FlatAppearance.BorderSize = 0;
+            this.btnThemChiTietCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemChiTietCB.ForeColor = System.Drawing.Color.White;
+            this.btnThemChiTietCB.Location = new System.Drawing.Point(493, 19);
+            this.btnThemChiTietCB.Name = "btnThemChiTietCB";
+            this.btnThemChiTietCB.Size = new System.Drawing.Size(134, 44);
+            this.btnThemChiTietCB.TabIndex = 19;
+            this.btnThemChiTietCB.Text = "Thêm";
+            this.btnThemChiTietCB.TextColor = System.Drawing.Color.White;
+            this.btnThemChiTietCB.UseVisualStyleBackColor = false;
+            this.btnThemChiTietCB.Click += new System.EventHandler(this.btnThemChiTietCB_Click);
+            // 
+            // txtSoLuongSP
+            // 
+            this.txtSoLuongSP.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuongSP.Location = new System.Drawing.Point(216, 128);
+            this.txtSoLuongSP.Name = "txtSoLuongSP";
+            this.txtSoLuongSP.Size = new System.Drawing.Size(242, 33);
+            this.txtSoLuongSP.TabIndex = 11;
             // 
             // label7
             // 
@@ -295,14 +469,6 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Tên sản phẩm : ";
             // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(216, 73);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(242, 33);
-            this.textBox6.TabIndex = 12;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -314,13 +480,13 @@
             this.label10.TabIndex = 6;
             this.label10.Text = "Số Lượng : ";
             // 
-            // textBox5
+            // txtMaCB
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(216, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(242, 33);
-            this.textBox5.TabIndex = 13;
+            this.txtMaCB.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaCB.Location = new System.Drawing.Point(216, 19);
+            this.txtMaCB.Name = "txtMaCB";
+            this.txtMaCB.Size = new System.Drawing.Size(242, 33);
+            this.txtMaCB.TabIndex = 13;
             // 
             // dgvChiTietComBo
             // 
@@ -333,6 +499,7 @@
             this.dgvChiTietComBo.RowTemplate.Height = 24;
             this.dgvChiTietComBo.Size = new System.Drawing.Size(657, 808);
             this.dgvChiTietComBo.TabIndex = 0;
+            this.dgvChiTietComBo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietComBo_CellDoubleClick);
             // 
             // t
             // 
@@ -367,154 +534,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(245, 33);
             this.dateTimePicker1.TabIndex = 15;
             // 
-            // vbButton4
-            // 
-            this.vbButton4.BackColor = System.Drawing.Color.Firebrick;
-            this.vbButton4.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.vbButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton4.BorderRadius = 20;
-            this.vbButton4.BorderSize = 0;
-            this.vbButton4.FlatAppearance.BorderSize = 0;
-            this.vbButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton4.ForeColor = System.Drawing.Color.White;
-            this.vbButton4.Location = new System.Drawing.Point(493, 190);
-            this.vbButton4.Name = "vbButton4";
-            this.vbButton4.Size = new System.Drawing.Size(134, 44);
-            this.vbButton4.TabIndex = 16;
-            this.vbButton4.Text = "Làm mới";
-            this.vbButton4.TextColor = System.Drawing.Color.White;
-            this.vbButton4.UseVisualStyleBackColor = false;
-            // 
-            // vbButton2
-            // 
-            this.vbButton2.BackColor = System.Drawing.Color.Firebrick;
-            this.vbButton2.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.vbButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton2.BorderRadius = 20;
-            this.vbButton2.BorderSize = 0;
-            this.vbButton2.FlatAppearance.BorderSize = 0;
-            this.vbButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton2.ForeColor = System.Drawing.Color.White;
-            this.vbButton2.Location = new System.Drawing.Point(493, 73);
-            this.vbButton2.Name = "vbButton2";
-            this.vbButton2.Size = new System.Drawing.Size(134, 44);
-            this.vbButton2.TabIndex = 18;
-            this.vbButton2.Text = "Cập nhật";
-            this.vbButton2.TextColor = System.Drawing.Color.White;
-            this.vbButton2.UseVisualStyleBackColor = false;
-            // 
-            // vbButton3
-            // 
-            this.vbButton3.BackColor = System.Drawing.Color.Firebrick;
-            this.vbButton3.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.vbButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton3.BorderRadius = 20;
-            this.vbButton3.BorderSize = 0;
-            this.vbButton3.FlatAppearance.BorderSize = 0;
-            this.vbButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton3.ForeColor = System.Drawing.Color.White;
-            this.vbButton3.Location = new System.Drawing.Point(493, 128);
-            this.vbButton3.Name = "vbButton3";
-            this.vbButton3.Size = new System.Drawing.Size(134, 44);
-            this.vbButton3.TabIndex = 17;
-            this.vbButton3.Text = "Xóa";
-            this.vbButton3.TextColor = System.Drawing.Color.White;
-            this.vbButton3.UseVisualStyleBackColor = false;
-            // 
-            // vbButton1
-            // 
-            this.vbButton1.BackColor = System.Drawing.Color.Firebrick;
-            this.vbButton1.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.vbButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.vbButton1.BorderRadius = 20;
-            this.vbButton1.BorderSize = 0;
-            this.vbButton1.FlatAppearance.BorderSize = 0;
-            this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(493, 19);
-            this.vbButton1.Name = "vbButton1";
-            this.vbButton1.Size = new System.Drawing.Size(134, 44);
-            this.vbButton1.TabIndex = 19;
-            this.vbButton1.Text = "Thêm";
-            this.vbButton1.TextColor = System.Drawing.Color.White;
-            this.vbButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnLamMoiCB
-            // 
-            this.btnLamMoiCB.BackColor = System.Drawing.Color.Firebrick;
-            this.btnLamMoiCB.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.btnLamMoiCB.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLamMoiCB.BorderRadius = 20;
-            this.btnLamMoiCB.BorderSize = 0;
-            this.btnLamMoiCB.FlatAppearance.BorderSize = 0;
-            this.btnLamMoiCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLamMoiCB.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoiCB.Location = new System.Drawing.Point(589, 195);
-            this.btnLamMoiCB.Name = "btnLamMoiCB";
-            this.btnLamMoiCB.Size = new System.Drawing.Size(134, 44);
-            this.btnLamMoiCB.TabIndex = 16;
-            this.btnLamMoiCB.Text = "Làm mới";
-            this.btnLamMoiCB.TextColor = System.Drawing.Color.White;
-            this.btnLamMoiCB.UseVisualStyleBackColor = false;
-            this.btnLamMoiCB.Click += new System.EventHandler(this.btnLamMoiCB_Click);
-            // 
-            // btnXoaCB
-            // 
-            this.btnXoaCB.BackColor = System.Drawing.Color.Firebrick;
-            this.btnXoaCB.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.btnXoaCB.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnXoaCB.BorderRadius = 20;
-            this.btnXoaCB.BorderSize = 0;
-            this.btnXoaCB.FlatAppearance.BorderSize = 0;
-            this.btnXoaCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaCB.ForeColor = System.Drawing.Color.White;
-            this.btnXoaCB.Location = new System.Drawing.Point(589, 132);
-            this.btnXoaCB.Name = "btnXoaCB";
-            this.btnXoaCB.Size = new System.Drawing.Size(134, 44);
-            this.btnXoaCB.TabIndex = 17;
-            this.btnXoaCB.Text = "Xóa";
-            this.btnXoaCB.TextColor = System.Drawing.Color.White;
-            this.btnXoaCB.UseVisualStyleBackColor = false;
-            this.btnXoaCB.Click += new System.EventHandler(this.btnXoaCB_Click);
-            // 
-            // btnCapNhatCB
-            // 
-            this.btnCapNhatCB.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCapNhatCB.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.btnCapNhatCB.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCapNhatCB.BorderRadius = 20;
-            this.btnCapNhatCB.BorderSize = 0;
-            this.btnCapNhatCB.FlatAppearance.BorderSize = 0;
-            this.btnCapNhatCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhatCB.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhatCB.Location = new System.Drawing.Point(589, 70);
-            this.btnCapNhatCB.Name = "btnCapNhatCB";
-            this.btnCapNhatCB.Size = new System.Drawing.Size(134, 44);
-            this.btnCapNhatCB.TabIndex = 18;
-            this.btnCapNhatCB.Text = "Cập nhật";
-            this.btnCapNhatCB.TextColor = System.Drawing.Color.White;
-            this.btnCapNhatCB.UseVisualStyleBackColor = false;
-            this.btnCapNhatCB.Click += new System.EventHandler(this.btnCapNhatCB_Click);
-            // 
-            // btnThemCB
-            // 
-            this.btnThemCB.BackColor = System.Drawing.Color.Firebrick;
-            this.btnThemCB.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.btnThemCB.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnThemCB.BorderRadius = 20;
-            this.btnThemCB.BorderSize = 0;
-            this.btnThemCB.FlatAppearance.BorderSize = 0;
-            this.btnThemCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemCB.ForeColor = System.Drawing.Color.White;
-            this.btnThemCB.Location = new System.Drawing.Point(589, 9);
-            this.btnThemCB.Name = "btnThemCB";
-            this.btnThemCB.Size = new System.Drawing.Size(134, 44);
-            this.btnThemCB.TabIndex = 19;
-            this.btnThemCB.Text = "Thêm";
-            this.btnThemCB.TextColor = System.Drawing.Color.White;
-            this.btnThemCB.UseVisualStyleBackColor = false;
-            this.btnThemCB.Click += new System.EventHandler(this.btnThemCB_Click);
-            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
@@ -532,18 +551,6 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextColor = System.Drawing.Color.White;
             this.btnXoa.UseVisualStyleBackColor = false;
-            // 
-            // comboControl1
-            // 
-            this.comboControl1.GiaCombo = 0;
-            this.comboControl1.Location = new System.Drawing.Point(3, 3);
-            this.comboControl1.MaCombo = "Mã Combo";
-            this.comboControl1.Name = "comboControl1";
-            this.comboControl1.Size = new System.Drawing.Size(233, 78);
-            this.comboControl1.SoLuong = 0;
-            this.comboControl1.TabIndex = 0;
-            this.comboControl1.TenCombo = "Tên ComBo";
-            this.comboControl1.TrangThai = false;
             // 
             // Combo
             // 
@@ -589,23 +596,23 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private CustomButton.VBButton vbButton4;
-        private CustomButton.VBButton vbButton2;
-        private CustomButton.VBButton vbButton3;
-        private CustomButton.VBButton vbButton1;
+        private CustomButton.VBButton btnLamMoiChiTietCB;
+        private CustomButton.VBButton btnCapNhatChiTietCB;
+        private CustomButton.VBButton btnXoaChiTietCB;
+        private CustomButton.VBButton btnThemChiTietCB;
         private System.Windows.Forms.DataGridView dgvChiTietComBo;
         private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtSoLuongSP;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtMaCB;
         private System.Windows.Forms.TextBox t;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private CustomButton.VBButton btnXoa;
         private ComboControl comboControl1;
+        private System.Windows.Forms.ComboBox cbMaSP;
     }
 }

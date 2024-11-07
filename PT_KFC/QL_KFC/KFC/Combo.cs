@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DAO;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace KFC
         public Combo()
         {
             InitializeComponent();
+            LoadSanPhamToComboBox();
         }
 
         private void LoadDataCombo()
@@ -40,6 +42,7 @@ namespace KFC
                 control.UpdateData(combo); // Cập nhật thông tin nhân viên vào control
                 control.ComboDoubleClicked += (maCombo) => LoadSanPhamTrongCombo(maCombo);
                 control.ComboClicked += (maCombo) => hienthithongtincombo(combo);
+                txtMaCB.Enabled = true;
                 flpCombo.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
                 flpCombo.Refresh();
             }
@@ -58,7 +61,6 @@ namespace KFC
             dtpNgayBatDau.Value = DateTime.Parse(com.NgayBatDau.ToString());
             dtpNgayKetThuc.Value = DateTime.Parse(com.NgayKetThuc.ToString());
         }
-
 
         private void LoadSanPhamTrongCombo(string maCombo)
         {
@@ -145,7 +147,6 @@ namespace KFC
 
         private void btnXoaCB_Click(object sender, EventArgs e)
         {
-            // Lấy mã combo từ ô nhập liệu
             string maCombo = txtMaCombo.Text;
 
             if (string.IsNullOrEmpty(maCombo))
@@ -156,15 +157,25 @@ namespace KFC
 
             try
             {
-                // Gọi phương thức xóa từ BUS
-                if (buscb.DeleteCombo(maCombo)) // Sửa lỗi: DeleteCombo giờ trả về bool
+                // Xóa tất cả các sản phẩm trong combo trước khi xóa combo
+                bool xoaChiTietThanhCong = busct.DeleteSanPhamFromCombo(maCombo);
+
+                if (xoaChiTietThanhCong)
                 {
-                    MessageBox.Show("Xóa combo thành công.");
-                    LoadDataCombo(); // Load lại danh sách combo
+                    // Xóa combo
+                    if (buscb.DeleteCombo(maCombo))
+                    {
+                        MessageBox.Show("Xóa combo thành công.");
+                        LoadDataCombo(); // Load lại danh sách combo
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa combo thất bại.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Xóa combo thất bại.");
+                    MessageBox.Show("Không thể xóa các sản phẩm liên quan đến combo này.");
                 }
             }
             catch (Exception ex)
@@ -172,6 +183,7 @@ namespace KFC
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
         private void btnLamMoiCB_Click(object sender, EventArgs e)
         {
             // Xóa dữ liệu trong các ô nhập liệu
@@ -184,6 +196,117 @@ namespace KFC
 
             // Làm mới dữ liệu trong FlowLayoutPanel
             LoadDataCombo();
+        }
+
+        private void btnThemChiTietCB_Click(object sender, EventArgs e)
+        {
+            // Lấy thông tin từ các ô nhập liệu
+            var chiTietCombo = new ChiTietCombo_DTO
+            {
+                MaCombo = txtMaCB.Text,
+                MaSanPham = cbMaSP.SelectedValue.ToString(),
+                SoLuong = int.Parse(txtSoLuongSP.Text)
+            };
+
+            // Kiểm tra xem sản phẩm đã có trong combo chưa
+            bool isProductExist = busct.CheckProductInCombo(chiTietCombo.MaCombo, chiTietCombo.MaSanPham);
+
+            if (isProductExist)
+            {
+                MessageBox.Show("Sản phẩm đã có trong combo này.");
+                return; // Không thực hiện thêm nếu sản phẩm đã có
+            }
+
+            // Thêm sản phẩm vào combo nếu chưa có
+            if (busct.AddSanPhamToCombo(chiTietCombo))
+            {
+                MessageBox.Show("Thêm sản phẩm vào combo thành công.");
+                LoadSanPhamTrongCombo(chiTietCombo.MaCombo); // Load lại danh sách sản phẩm trong combo
+            }
+            else
+            {
+                MessageBox.Show("Thêm sản phẩm thất bại.");
+            }
+        }
+
+        private void btnCapNhatChiTietCB_Click(object sender, EventArgs e)
+        {
+            var chiTietCombo = new ChiTietCombo_DTO
+            {
+                MaCombo = txtMaCB.Text,
+                MaSanPham = cbMaSP.SelectedValue.ToString(),
+                SoLuong = int.Parse(txtSoLuongSP.Text)
+            };
+
+            if (busct.UpdateSanPhamInCombo(chiTietCombo))
+            {
+                MessageBox.Show("Cập nhật sản phẩm trong combo thành công.");
+                LoadSanPhamTrongCombo(chiTietCombo.MaCombo);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật sản phẩm thất bại.");
+            }
+           
+        }
+
+        private void btnXoaChiTietCB_Click(object sender, EventArgs e)
+        {
+            string maCombo = txtMaCB.Text;
+            string maSanPham = cbMaSP.SelectedValue.ToString();
+
+            if (busct.DeleteSanPhamFromCombo(maCombo, maSanPham))
+            {
+                MessageBox.Show("Xóa sản phẩm khỏi combo thành công.");
+                LoadSanPhamTrongCombo(maCombo);
+            }
+            else
+            {
+                MessageBox.Show("Xóa sản phẩm thất bại.");
+            }
+        }
+
+        private void btnLamMoiChiTietCB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadSanPhamToComboBox()
+        {
+            List<ThucDon_DTO> danhSachSanPham = busct.LayTatCaSanPham();
+
+            if (danhSachSanPham != null && danhSachSanPham.Count > 0)
+            {
+                cbMaSP.DataSource = danhSachSanPham;
+                cbMaSP.DisplayMember = "TenSanPham";
+                cbMaSP.ValueMember = "MaSanPham";
+            }
+            else
+            {
+                MessageBox.Show("Không có sản phẩm nào trong thực đơn.");
+            }
+        }
+
+        private void txtMaCombo_TextChanged(object sender, EventArgs e)
+        {
+            txtMaCB.Text = txtMaCombo.Text.Trim();
+        }
+
+        private void dgvChiTietComBo_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Kiểm tra xem người dùng có click vào dòng hợp lệ không
+            if (e.RowIndex >= 0)
+            {
+                // Lấy thông tin sản phẩm từ dòng đã click
+                var row = dgvChiTietComBo.Rows[e.RowIndex];
+
+                // Giả sử bạn có các control như TextBox hoặc ComboBox
+                // Lấy thông tin từ các cột trong DGV và gán vào các control
+                txtMaCB.Text = row.Cells["MaCombo"].Value.ToString();
+                cbMaSP.Text = row.Cells["MaSanPham"].Value.ToString();
+                // Nếu bạn cần các giá trị khác
+                txtSoLuongSP.Text = row.Cells["SoLuong"].Value.ToString();
+            }
         }
     }
 }
