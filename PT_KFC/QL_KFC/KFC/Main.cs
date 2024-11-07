@@ -157,9 +157,5 @@ namespace KFC
         }
 
 
-        private void btnKhachHang_Click(object sender, EventArgs e)
-        {
-            openformMain(new KhachHang());
-        }
     }
 }

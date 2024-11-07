@@ -51,7 +51,7 @@
             this.btnIn = new CustomButton.VBButton();
             this.btnAdd = new CustomButton.VBButton();
             this.btnUpdate = new CustomButton.VBButton();
-            this.btnDelete = new CustomButton.VBButton();
+           
             this.btnFind = new CustomButton.VBButton();
             this.dtpNgayHetHan = new System.Windows.Forms.DateTimePicker();
             this.dtpNgaySanXuat = new System.Windows.Forms.DateTimePicker();
@@ -243,7 +243,7 @@
             this.pnBET.Controls.Add(this.btnIn);
             this.pnBET.Controls.Add(this.btnAdd);
             this.pnBET.Controls.Add(this.btnUpdate);
-            this.pnBET.Controls.Add(this.btnDelete);
+
             this.pnBET.Controls.Add(this.btnFind);
             this.pnBET.Controls.Add(this.dtpNgayHetHan);
             this.pnBET.Controls.Add(this.dtpNgaySanXuat);
@@ -425,26 +425,7 @@
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Firebrick;
-            this.btnDelete.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.btnDelete.BorderColor = System.Drawing.Color.LavenderBlush;
-            this.btnDelete.BorderRadius = 10;
-            this.btnDelete.BorderSize = 0;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(434, 385);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(142, 48);
-            this.btnDelete.TabIndex = 10;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.TextColor = System.Drawing.Color.White;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
+          
             // btnFind
             // 
             this.btnFind.BackColor = System.Drawing.Color.Firebrick;
@@ -748,7 +729,7 @@
         private CustomButton.VBButton btnIn;
         private CustomButton.VBButton btnAdd;
         private CustomButton.VBButton btnUpdate;
-        private CustomButton.VBButton btnDelete;
+
         private CustomButton.VBButton btnFind;
         private CustomButton.VBButton btnLoaiHangHoa;
         private CustomButton.VBButton btnNhaCungCap;

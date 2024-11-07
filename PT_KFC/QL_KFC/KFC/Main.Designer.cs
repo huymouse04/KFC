@@ -174,7 +174,7 @@
             this.btnComBo.Text = "Combo";
             this.btnComBo.TextColor = System.Drawing.Color.White;
             this.btnComBo.UseVisualStyleBackColor = false;
-            this.btnComBo.Click += new System.EventHandler(this.btnComBo_Click);
+            //this.btnComBo.Click += new System.EventHandler(this.btnComBo_Click);
             // 
             // btnKhuyenMai
             // 
