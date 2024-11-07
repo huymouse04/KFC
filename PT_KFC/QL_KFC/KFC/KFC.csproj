@@ -189,7 +189,9 @@
     <Compile Include="KhachHangControl.Designer.cs">
       <DependentUpon>KhachHangControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kho.cs" />
+    <Compile Include="Kho.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Kho.Designer.cs">
       <DependentUpon>Kho.cs</DependentUpon>
     </Compile>

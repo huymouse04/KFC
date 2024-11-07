@@ -223,41 +223,6 @@ namespace KFC
 
         }
 
-        //Xoa
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Kiểm tra xem có dòng nào được chọn không
-                if (dtGVKHO.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn sản phẩm để xóa.");
-                    return;
-                }
-
-                // Lấy thông tin sản phẩm được chọn
-                string maSanPham = dtGVKHO.SelectedRows[0].Cells["MaSanPham"].Value.ToString();
-                string tenSanPham = dtGVKHO.SelectedRows[0].Cells["TenSanPham"].Value.ToString();
-
-                // Hiển thị hộp thoại xác nhận xóa
-                var confirmResult = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm '{tenSanPham}' (Mã SP: {maSanPham}) không?",
-                                                     "Xác nhận xóa",
-                                                     MessageBoxButtons.YesNo,
-                                                     MessageBoxIcon.Question);
-                if (confirmResult == DialogResult.Yes)
-                {
-                    // Gọi phương thức xóa từ BUS
-                    khoBUS.DeleteKho(maSanPham);
-                    MessageBox.Show("Xóa sản phẩm thành công.");
-                    LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
-                    ClearForm(); // Xóa dữ liệu nhập
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message);
-            }
-        }
 
         //Tim Kiem
         private void btnFind_Click(object sender, EventArgs e)
@@ -348,8 +313,6 @@ namespace KFC
         }
 
 
-
-
         public bool CheckMaSanPhamExists(string maSanPham)
         {
             var khoList = GetAllKho();
@@ -365,7 +328,7 @@ namespace KFC
             childform.FormBorderStyle = FormBorderStyle.None; // Không có viền
            
             childform.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right; // Đặt kích thước form con vừa phải, không quá lớn
-            childform.Size = new Size(panel_Body.Width - 2, panel_Body.Height - 45); // Giảm chiều cao một chút để không quá dài
+            //childform.Size = new Size(panel_Body.Width - 1, panel_Body.Height - 35); // Giảm chiều cao một chút để không quá dài
 
             panel_Body.Controls.Add(childform); // Thêm form vào panel
             panel_Body.Tag = childform; // Đặt tag cho panel
@@ -686,6 +649,41 @@ namespace KFC
         private void btnNhapHangg_Click(object sender, EventArgs e)
         {
             openNhapHangForm();
+        }
+
+        private void btnDeleteeee_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có dòng nào được chọn không
+                if (dtGVKHO.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn sản phẩm để xóa.");
+                    return;
+                }
+
+                // Lấy thông tin sản phẩm được chọn
+                string maSanPham = dtGVKHO.SelectedRows[0].Cells["MaSanPham"].Value.ToString();
+                string tenSanPham = dtGVKHO.SelectedRows[0].Cells["TenSanPham"].Value.ToString();
+
+                // Hiển thị hộp thoại xác nhận xóa
+                var confirmResult = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm '{tenSanPham}' (Mã SP: {maSanPham}) không?",
+                                                     "Xác nhận xóa",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Gọi phương thức xóa từ BUS
+                    khoBUS.DeleteKho(maSanPham);
+                    MessageBox.Show("Xóa sản phẩm thành công.");
+                    LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
+                    ClearForm(); // Xóa dữ liệu nhập
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message);
+            }
         }
     }
 }

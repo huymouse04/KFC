@@ -7489,38 +7489,38 @@ namespace KFC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime NgaySanXuat {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableKho.NgaySanXuatColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NgaySanXuat\' in table \'Kho\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableKho.NgaySanXuatColumn] = value;
-                }
-            }
+            //public System.DateTime NgaySanXuat {
+            //    get {
+            //        try {
+            //            return ((global::System.DateTime)(this[this.tableKho.NgaySanXuatColumn]));
+            //        }
+            //        catch (global::System.InvalidCastException e) {
+            //            throw new global::System.Data.StrongTypingException("The value for column \'NgaySanXuat\' in table \'Kho\' is DBNull.", e);
+            //        }
+            //    }
+            //    set {
+            //        this[this.tableKho.NgaySanXuatColumn] = value;
+            //    }
+            //}
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime NgayHetHan {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableKho.NgayHetHanColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NgayHetHan\' in table \'Kho\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableKho.NgayHetHanColumn] = value;
-                }
-            }
+            //[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            //[global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            //public System.DateTime NgayHetHan {
+            //    get {
+            //        try {
+            //            return ((global::System.DateTime)(this[this.tableKho.NgayHetHanColumn]));
+            //        }
+            //        catch (global::System.InvalidCastException e) {
+            //            throw new global::System.Data.StrongTypingException("The value for column \'NgayHetHan\' in table \'Kho\' is DBNull.", e);
+            //        }
+            //    }
+            //    set {
+            //        this[this.tableKho.NgayHetHanColumn] = value;
+            //    }
+            //}
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            //[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            //[global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string MaLoaiHang {
                 get {
                     try {
