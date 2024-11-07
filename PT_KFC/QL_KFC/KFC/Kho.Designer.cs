@@ -77,7 +77,6 @@
             this.dtGVKHO.RowHeadersWidth = 51;
             this.dtGVKHO.Size = new System.Drawing.Size(1267, 409);
             this.dtGVKHO.TabIndex = 16;
-            this.dtGVKHO.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGVKHO_CellDoubleClick_1);
             // 
             // lbKHO
             // 
@@ -112,7 +111,6 @@
             this.dtGVKHO.RowHeadersWidth = 51;
             this.dtGVKHO.Size = new System.Drawing.Size(1031, 237);
             this.dtGVKHO.TabIndex = 16;
-            this.dtGVKHO.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGVKHO_CellDoubleClick_1);
             // 
             // cbLH
             // 
@@ -368,7 +366,6 @@
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.TextColor = System.Drawing.Color.WhiteSmoke;
             this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXuat
             // 
@@ -471,7 +468,6 @@
             this.btnLoaiHang.Text = "Loại hàng hóa";
             this.btnLoaiHang.TextColor = System.Drawing.Color.White;
             this.btnLoaiHang.UseVisualStyleBackColor = false;
-            this.btnLoaiHang.Click += new System.EventHandler(this.btnLoaiHang_Click_1);
             // 
             // btnNCC
             // 
@@ -492,7 +488,6 @@
             this.btnNCC.Text = "Nhà cung cấp";
             this.btnNCC.TextColor = System.Drawing.Color.White;
             this.btnNCC.UseVisualStyleBackColor = false;
-            this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click_1);
             // 
             // btnNhapHang
             // 
@@ -514,7 +509,6 @@
             this.btnNhapHang.Text = "Nhập hàng";
             this.btnNhapHang.TextColor = System.Drawing.Color.White;
             this.btnNhapHang.UseVisualStyleBackColor = false;
-            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click_1);
             // 
             // Kho
             // 
