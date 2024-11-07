@@ -64,14 +64,14 @@ namespace BUS
             ValidateNhapHang(nhapHang);
             dao.UpdateNhapHang(nhapHang); // Thực hiện cập nhật vào DAO
         }
-        public void UpdateSLKho(string maSP, int soLuong)
+        public void UpdateSLKho(string maSP, int soLuong,DateTime? ngaySX,DateTime? ngayHH)
         {
             if (string.IsNullOrWhiteSpace(maSP))
             {
                 throw new ArgumentException("Mã sản phẩm không hợp lệ", nameof(maSP));
             }
 
-            dao.UpdateKhoSoLuong(maSP, soLuong);
+            dao.UpdateKhoSoLuong(maSP, soLuong,ngaySX,ngayHH);
         }
         public void DeleteNhapHang(int maNhapHang)
         {

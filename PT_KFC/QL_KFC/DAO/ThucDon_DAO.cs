@@ -76,12 +76,15 @@ namespace DAO
         {
             try
             {
-                // Kiểm tra nếu mã sản phẩm đã tồn tại
-                if (db.ThucDons.Any(td => td.MaSanPham == thucDon.MaSanPham))
+                // Kiểm tra nếu mã sản phẩm đã tồn tại trong cơ sở dữ liệu
+                var existingProduct = db.ThucDons.FirstOrDefault(td => td.MaSanPham == thucDon.MaSanPham);
+                if (existingProduct != null)
                 {
+                    // Nếu sản phẩm đã tồn tại, báo lỗi
                     throw new Exception("Mã sản phẩm đã tồn tại.");
                 }
 
+                // Tạo mới món ăn
                 ThucDon newThucDon = new ThucDon
                 {
                     MaSanPham = thucDon.MaSanPham,
@@ -90,13 +93,18 @@ namespace DAO
                     HinhAnh = thucDon.HinhAnh,
                     MaLoaiHang = thucDon.MaLoaiHang
                 };
+
                 db.ThucDons.InsertOnSubmit(newThucDon);
-                db.SubmitChanges();
+                db.SubmitChanges(); // Lưu thay đổi vào cơ sở dữ liệu
+
+                // Làm mới ngữ cảnh sau khi thêm mới
+                db.Dispose();  // Giải phóng ngữ cảnh cũ
+                db = new KFCDataContext(Connection_DAO.ConnectionString); // Khởi tạo lại db với chuỗi kết nối
+
                 return true;
             }
             catch (Exception ex)
             {
-                // Ghi log lỗi hoặc hiển thị thông báo lỗi chi tiết nếu cần
                 throw new Exception("Lỗi khi thêm thực đơn: " + ex.Message);
             }
         }
@@ -104,24 +112,23 @@ namespace DAO
         {
             try
             {
+                // Tìm và xóa món ăn
                 var thucDon = db.ThucDons.FirstOrDefault(td => td.MaSanPham == maSanPham);
-
-                if (thucDon == null)
+                if (thucDon != null)
                 {
-                    Console.WriteLine("Không tìm thấy sản phẩm với mã: " + maSanPham);
-                    return false; 
+                    db.ThucDons.DeleteOnSubmit(thucDon);
+                    db.SubmitChanges(); // Xóa và cập nhật cơ sở dữ liệu
+
+                    // Làm mới ngữ cảnh sau khi xóa
+                    db.Dispose();  // Giải phóng ngữ cảnh cũ
+                    db = new KFCDataContext(Connection_DAO.ConnectionString); // Khởi tạo lại db
                 }
 
-              
-                db.ThucDons.DeleteOnSubmit(thucDon);
-                db.SubmitChanges();
-                Console.WriteLine("Đã xóa sản phẩm thành công: " + maSanPham);
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi xóa thực đơn: " + ex.Message);
-                return false;
+                throw new Exception("Lỗi khi xóa thực đơn: " + ex.Message);
             }
         }
         public ThucDon_DTO LayThucDonTheoMa(string maSP)
@@ -147,17 +154,22 @@ namespace DAO
                 var thucdon = db.ThucDons.FirstOrDefault(td => td.MaSanPham == thucDon.MaSanPham);
                 if (thucdon != null)
                 {
-                    thucdon.TenSanPham=thucDon.TenSanPham;
+                    thucdon.TenSanPham = thucDon.TenSanPham;
                     thucdon.HinhAnh = thucDon.HinhAnh;
                     thucdon.MaLoaiHang = thucDon.MaLoaiHang;
                     thucdon.DonGia = thucDon.DonGia;
                     db.SubmitChanges(); // Lưu thay đổi vào database
+
+                    // Dispose và khởi tạo lại DataContext nếu cần
+                    db.Dispose();
+                    db = new KFCDataContext(Connection_DAO.ConnectionString);
+
                     return true;
                 }
             }
             catch (Exception ex)
             {
-
+                throw new Exception("Lỗi khi cập nhật thực đơn: " + ex.Message);
             }
             return false;
         }

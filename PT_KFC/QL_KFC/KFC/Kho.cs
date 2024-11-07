@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -19,6 +18,9 @@ namespace KFC
         private LoaiHang_BUS loaiHangBUS = new LoaiHang_BUS();
         private NhapHang_BUS nhapHang = new NhapHang_BUS();
         private Kho_DAO khoDAO = new Kho_DAO();
+
+        // Biến static để lưu trạng thái cảnh báo chỉ trong form Kho
+        private static bool hasShownExpiryWarning = false;
 
 
         public List<Kho_DTO> GetAllKho()
@@ -121,8 +123,46 @@ namespace KFC
 
         }
 
-        //Cập Nhật
-        private void btnCapNhat_Click_1(object sender, EventArgs e)
+
+        //Them
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string maSanPham = txtMaSP.Text;
+
+
+                // Kiểm tra nếu mã sản phẩm đã tồn tại
+                if (khoBUS.CheckMaSanPhamExists(maSanPham))
+                {
+                    MessageBox.Show("Mã sản phẩm đã tồn tại, vui lòng nhập mã khác.");
+                    return;
+                }
+
+                // Thêm sản phẩm mới
+                var kho = new Kho_DTO
+                {
+                    MaSanPham = maSanPham,
+                    TenSanPham = txtTenSP.Text,
+                    SoLuong = int.Parse(txtSL.Text),
+                    DonViTinh = txtDVT.Text,
+                    DonGia = float.Parse(txtDonGia.Text),
+                    MaLoaiHang = cbLH.SelectedValue.ToString()
+                };
+
+                khoBUS.AddKho(kho);
+                MessageBox.Show("Thêm sản phẩm thành công.");
+                LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm sản phẩm: " + ex.Message);
+            }
+
+        }
+
+        //Cap Nhat
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -180,10 +220,47 @@ namespace KFC
                 // Mở khóa trường mã sản phẩm sau khi cập nhật
                 txtMaSP.ReadOnly = false;
             }
+
         }
 
-        //Tìm kiếm 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        //Xoa
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có dòng nào được chọn không
+                if (dtGVKHO.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn sản phẩm để xóa.");
+                    return;
+                }
+
+                // Lấy thông tin sản phẩm được chọn
+                string maSanPham = dtGVKHO.SelectedRows[0].Cells["MaSanPham"].Value.ToString();
+                string tenSanPham = dtGVKHO.SelectedRows[0].Cells["TenSanPham"].Value.ToString();
+
+                // Hiển thị hộp thoại xác nhận xóa
+                var confirmResult = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm '{tenSanPham}' (Mã SP: {maSanPham}) không?",
+                                                     "Xác nhận xóa",
+                                                     MessageBoxButtons.YesNo,
+                                                     MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Gọi phương thức xóa từ BUS
+                    khoBUS.DeleteKho(maSanPham);
+                    MessageBox.Show("Xóa sản phẩm thành công.");
+                    LoadDataGridView(); // Tải lại dữ liệu vào DataGridView
+                    ClearForm(); // Xóa dữ liệu nhập
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa sản phẩm: " + ex.Message);
+            }
+        }
+
+        //Tim Kiem
+        private void btnFind_Click(object sender, EventArgs e)
         {
             string maSanPhamTimKiem = txtMaSP.Text.Trim();
 
@@ -201,7 +278,50 @@ namespace KFC
 
             // Cập nhật DataGridView với dữ liệu đã lọc
             dtGVKHO.DataSource = filteredKho; // Cập nhật nguồn dữ liệu cho DataGridView
+
         }
+
+        //Xuat
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            string tuKhoa = txtMaSP.Text.Trim();
+            List<DTO.Kho_DTO> ketQuaList;
+
+
+            if (string.IsNullOrEmpty(tuKhoa))
+            {
+                ketQuaList = khoBUS.GetAllKho();
+            }
+            else
+            {
+                ketQuaList = khoBUS.SearchKho(tuKhoa);
+            }
+
+            if (ketQuaList == null || ketQuaList.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy kho nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Chuyển đổi List<DTO.NhanVien_DTO> sang DataTable
+            DataTable ketQua = ConvertListToDataTable(ketQuaList);
+
+            FormReport formKho = new FormReport(FormReport.LoaiBaoCao.Kho, ketQua);
+            formKho.Show();
+
+        }
+
+        //Lam moi
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            var allKho = khoBUS.GetAllKho();
+            dtGVKHO.DataSource = allKho;
+            ClearForm();
+            dtpNgaySanXuat.Enabled = false;  // Đảm bảo DateTimePicker vẫn bị block khi làm mới
+            dtpNgayHetHan.Enabled = false;
+
+        }
+
 
         private void ClearForm()
         {
@@ -227,17 +347,9 @@ namespace KFC
             dtpNgayHetHan.Value = DateTime.Today;
         }
 
-        private void btnNhapHang_Click(object sender, EventArgs e)
-        {
-            NhapHang nh = new NhapHang();
-            nh.ShowDialog();
-        }
 
-        private void btnLoaiHang_Click(object sender, EventArgs e)
-        {
-            LoaiHang lh = new LoaiHang();
-            lh.ShowDialog();
-        }
+
+
         public bool CheckMaSanPhamExists(string maSanPham)
         {
             var khoList = GetAllKho();
@@ -251,9 +363,8 @@ namespace KFC
 
             childform.TopLevel = false; // Đặt form không phải là top-level
             childform.FormBorderStyle = FormBorderStyle.None; // Không có viền
-
-            // Đặt kích thước form con vừa phải, không quá lớn
-            childform.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+           
+            childform.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right; // Đặt kích thước form con vừa phải, không quá lớn
             childform.Size = new Size(panel_Body.Width - 2, panel_Body.Height - 45); // Giảm chiều cao một chút để không quá dài
 
             panel_Body.Controls.Add(childform); // Thêm form vào panel
@@ -286,10 +397,7 @@ namespace KFC
             openformMain(formNhaCungCap);
         }
 
-        private void btnNCC_Click(object sender, EventArgs e)
-        {
-            openNhaCungCapForm();
-        }
+
 
         private ErrorProvider errorProvider = new ErrorProvider();
 
@@ -343,25 +451,20 @@ namespace KFC
                 txtSL.Text = dtGVKHO.SelectedRows[0].Cells["SoLuong"].Value.ToString();
                 txtDVT.Text = dtGVKHO.SelectedRows[0].Cells["DonViTinh"].Value.ToString();
                 txtDonGia.Text = dtGVKHO.SelectedRows[0].Cells["DonGia"].Value.ToString();
-                dtpNgaySanXuat.Value = Convert.ToDateTime(dtGVKHO.SelectedRows[0].Cells["NgaySanXuat"].Value);
-                dtpNgayHetHan.Value = Convert.ToDateTime(dtGVKHO.SelectedRows[0].Cells["NgayHetHan"].Value);
+
+                // Kiểm tra ngày sản xuất và ngày hết hạn trước khi gán, bỏ qua nếu null
+                var ngaySanXuat = dtGVKHO.SelectedRows[0].Cells["NgaySanXuat"].Value;
+                var ngayHetHan = dtGVKHO.SelectedRows[0].Cells["NgayHetHan"].Value;
+
+                if (ngaySanXuat != DBNull.Value)
+                    dtpNgaySanXuat.Value = Convert.ToDateTime(ngaySanXuat);
+
+                if (ngayHetHan != DBNull.Value)
+                    dtpNgayHetHan.Value = Convert.ToDateTime(ngayHetHan);
 
                 // Khóa trường mã sản phẩm để không cho phép chỉnh sửa
                 txtMaSP.ReadOnly = true;
             }
-        }
-
-
-        private void btnLoaiHang_Click_1(object sender, EventArgs e)
-        {
-            openLoaiHangForm();
-            //LoaiHang loaiHang = new LoaiHang();
-            //loaiHang.ShowDialog();
-        }
-
-        private void btnNhapHang_Click_1(object sender, EventArgs e)
-        {
-            openNhapHangForm();
         }
 
         private void dtGVKHO_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -375,20 +478,21 @@ namespace KFC
                 txtDVT.Text = selectedRow.Cells["DonViTinh"].Value.ToString();
                 txtDonGia.Text = selectedRow.Cells["DonGia"].Value.ToString();
                 cbLH.SelectedValue = selectedRow.Cells["MaLoaiHang"].Value.ToString();
-                dtpNgaySanXuat.Value = Convert.ToDateTime(selectedRow.Cells["NgaySanXuat"].Value);
-                dtpNgayHetHan.Value = Convert.ToDateTime(selectedRow.Cells["NgayHetHan"].Value);
+
+                // Kiểm tra ngày sản xuất và ngày hết hạn trước khi gán, bỏ qua nếu null
+                var ngaySanXuat = selectedRow.Cells["NgaySanXuat"].Value;
+                var ngayHetHan = selectedRow.Cells["NgayHetHan"].Value;
+
+                if (ngaySanXuat != DBNull.Value)
+                    dtpNgaySanXuat.Value = Convert.ToDateTime(ngaySanXuat);
+
+                if (ngayHetHan != DBNull.Value)
+                    dtpNgayHetHan.Value = Convert.ToDateTime(ngayHetHan);
+
                 txtMaSP.ReadOnly = true; // Không cho sửa mã sản phẩm
             }
         }
 
-        private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            var allKho = khoBUS.GetAllKho();
-            dtGVKHO.DataSource = allKho;
-            ClearForm();
-            dtpNgaySanXuat.Enabled = false;  // Đảm bảo DateTimePicker vẫn bị block khi làm mới
-            dtpNgayHetHan.Enabled = false;
-        }
 
         private void openLoaiHangForm()
         {
@@ -436,41 +540,6 @@ namespace KFC
             openformMain(formNhapHang);
         }
 
-        private void btnNCC_Click_1(object sender, EventArgs e)
-        {
-            openNhaCungCapForm();
-        }
-
-
-        private void btnDelete_Click(object sender, EventArgs e)
-
-        {
-            //DataTable dataTable = new DataTable();
-
-            //// Lấy tất cả các thuộc tính của đối tượng Kho_DTO
-            //PropertyInfo[] properties = typeof(Kho_DTO).GetProperties();
-
-            //// Tạo các cột trong DataTable tương ứng với các thuộc tính
-            //foreach (PropertyInfo property in properties)
-            //{
-            //    dataTable.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
-            //}
-
-            //// Thêm từng đối tượng trong danh sách vào hàng của DataTable
-            //foreach (Kho_DTO item in list)
-            //{
-            //    DataRow row = dataTable.NewRow();
-            //    foreach (PropertyInfo property in properties)
-            //    {
-            //        row[property.Name] = property.GetValue(item) ?? DBNull.Value;
-            //    }
-            //    dataTable.Rows.Add(row);
-            //}
-
-            //return dataTable;
-        }
-
-       
         // Thiết lập DatePickers để người dùng không thể chỉnh sửa ngày sản xuất và ngày hết hạn
         private void InitializeDatePickers()
         {
@@ -483,7 +552,8 @@ namespace KFC
         {
             foreach (DataGridViewRow row in dtGVKHO.Rows)
             {
-                if (row.Cells["NgayHetHan"].Value != null)
+                // Kiểm tra xem ngày hết hạn có giá trị không
+                if (row.Cells["NgayHetHan"].Value != null && row.Cells["NgayHetHan"].Value != DBNull.Value)
                 {
                     DateTime ngayHetHan = Convert.ToDateTime(row.Cells["NgayHetHan"].Value);
                     TimeSpan remainingTime = ngayHetHan - DateTime.Now;
@@ -496,54 +566,126 @@ namespace KFC
                     }
                     else if (remainingTime.TotalDays <= 0)
                     {
-                        // Sản phẩm đã hết hạn (màu đỏ và gạch ngang tên sản phẩm)
+                        // Sản phẩm đã hết hạn (màu đỏ và gạch ngang toàn bộ dòng)
                         row.DefaultCellStyle.BackColor = Color.Red;
-                        row.Cells["TenSanPham"].Style.Font = new Font(dtGVKHO.Font, FontStyle.Strikeout);
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            cell.Style.Font = new Font(dtGVKHO.Font, FontStyle.Strikeout);
+                        }
                     }
                     else
                     {
                         // Reset các dòng khác (nếu cần)
                         row.DefaultCellStyle.BackColor = Color.White;
-                        row.Cells["TenSanPham"].Style.Font = new Font(dtGVKHO.Font, FontStyle.Regular);
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            cell.Style.Font = new Font(dtGVKHO.Font, FontStyle.Regular);
+                        }
                     }
+                }
+                else
+                {
+                    // Nếu không có giá trị ngày hết hạn, bỏ qua dòng này
+                    row.DefaultCellStyle.BackColor = Color.White;
                 }
             }
         }
 
         private bool isFirstLoad = true; // Biến để theo dõi lần mở đầu tiên
 
-        //Dùng để báo người dùng sản phẩm nào sắp hết hạns
+
         private void ShowExpiryWarnings()
         {
+            if (hasShownExpiryWarning) return; // Nếu đã hiển thị, không hiển thị lại
+
             bool hasExpiryWarning = false;
-            string warningMessage = "Các sản phẩm sau đây đã hoặc sắp hết hạn:\n";
+            string expiredMessage = "Các sản phẩm đã hết hạn:\n";
+            string upcomingExpiryMessage = "Các sản phẩm sắp hết hạn:\n";
 
             foreach (DataGridViewRow row in dtGVKHO.Rows)
             {
-                if (row.Cells["NgayHetHan"].Value != null)
+                // Kiểm tra xem ngày hết hạn có giá trị không
+                if (row.Cells["NgayHetHan"].Value != null && row.Cells["NgayHetHan"].Value != DBNull.Value)
                 {
                     DateTime ngayHetHan = Convert.ToDateTime(row.Cells["NgayHetHan"].Value);
                     TimeSpan remainingTime = ngayHetHan - DateTime.Now;
 
-                    // Nếu sản phẩm đã hết hạn hoặc còn 3 ngày sắp hết hạn
-                    if (remainingTime.TotalDays <= 3)
+                    string maSanPham = row.Cells["MaSanPham"].Value.ToString();
+                    string tenSanPham = row.Cells["TenSanPham"].Value.ToString();
+
+                    // Kiểm tra sản phẩm đã hết hạn
+                    if (remainingTime.TotalDays <= 0)
                     {
                         hasExpiryWarning = true;
-                        string maSanPham = row.Cells["MaSanPham"].Value.ToString();
-                        string tenSanPham = row.Cells["TenSanPham"].Value.ToString();
-                        warningMessage += $"- {tenSanPham} (Mã SP: {maSanPham}), hết hạn: {ngayHetHan:dd/MM/yyyy}\n";
+                        expiredMessage += $"- {tenSanPham} (Mã SP: {maSanPham}) đã hết hạn vào: {ngayHetHan:dd/MM/yyyy}\n";
+                    }
+                    // Kiểm tra sản phẩm sắp hết hạn (còn 3 ngày trở xuống)
+                    else if (remainingTime.TotalDays <= 3)
+                    {
+                        hasExpiryWarning = true;
+                        int daysLeft = (int)Math.Ceiling(remainingTime.TotalDays);
+                        upcomingExpiryMessage += $"- {tenSanPham} (Mã SP: {maSanPham}) còn {daysLeft} ngày trước khi hết hạn: {ngayHetHan:dd/MM/yyyy}\n";
                     }
                 }
             }
 
-            // Hiển thị thông báo nếu có sản phẩm đã hoặc sắp hết hạn
+            // Hiển thị thông báo nếu có sản phẩm hết hạn hoặc sắp hết hạn
             if (hasExpiryWarning)
             {
-                MessageBox.Show(warningMessage, "Cảnh báo hết hạn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string finalMessage = string.Empty;
+                if (!string.IsNullOrEmpty(expiredMessage))
+                {
+                    finalMessage += expiredMessage; // Thêm thông báo sản phẩm hết hạn
+                }
+                if (!string.IsNullOrEmpty(upcomingExpiryMessage))
+                {
+                    finalMessage += upcomingExpiryMessage; // Thêm thông báo sản phẩm sắp hết hạn
+                }
+                MessageBox.Show(finalMessage, "Cảnh báo hết hạn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                hasShownExpiryWarning = true; // Đánh dấu đã hiển thị cảnh báo
             }
         }
 
+        public DataTable ConvertListToDataTable(List<DTO.Kho_DTO> list)
+        {
+            DataTable dataTable = new DataTable();
 
-   
+            // Lấy tất cả các thuộc tính của đối tượng Kho_DTO
+            PropertyInfo[] properties = typeof(Kho_DTO).GetProperties();
+
+            // Tạo các cột trong DataTable tương ứng với các thuộc tính
+            foreach (PropertyInfo property in properties)
+            {
+                dataTable.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
+            }
+
+            // Thêm từng đối tượng trong danh sách vào hàng của DataTable
+            foreach (Kho_DTO item in list)
+            {
+                DataRow row = dataTable.NewRow();
+                foreach (PropertyInfo property in properties)
+                {
+                    row[property.Name] = property.GetValue(item) ?? DBNull.Value;
+                }
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
+
+        private void btnLoaiHangHoa_Click(object sender, EventArgs e)
+        {
+            openLoaiHangForm();
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            openNhaCungCapForm();
+        }
+
+        private void btnNhapHangg_Click(object sender, EventArgs e)
+        {
+            openNhapHangForm();
+        }
     }
 }

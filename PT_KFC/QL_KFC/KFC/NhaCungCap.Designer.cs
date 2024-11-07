@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.flpNhaCungCap = new System.Windows.Forms.FlowLayoutPanel();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtFind = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new CustomButton.VBButton();
             this.btnLamMoi = new CustomButton.VBButton();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnXoa = new CustomButton.VBButton();
             this.BtnAdd = new CustomButton.VBButton();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,14 +49,10 @@
             this.flpNhaCungCap.Size = new System.Drawing.Size(859, 470);
             this.flpNhaCungCap.TabIndex = 16;
             // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkRed;
+            this.panel3.Controls.Add(this.txtFind);
             this.panel3.Controls.Add(this.btnTimKiem);
             this.panel3.Controls.Add(this.btnLamMoi);
             this.panel3.Controls.Add(this.btnXoa);
@@ -69,6 +64,13 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(859, 62);
             this.panel3.TabIndex = 17;
+            // 
+            // txtFind
+            // 
+            this.txtFind.Location = new System.Drawing.Point(381, 24);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(153, 20);
+            this.txtFind.TabIndex = 13;
             // 
             // btnTimKiem
             // 
@@ -114,14 +116,6 @@
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(380, 24);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(198, 20);
-            this.txtTimKiem.TabIndex = 9;
-            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
@@ -166,6 +160,14 @@
             this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(380, 24);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(198, 20);
+            this.txtTimKiem.TabIndex = 9;
+            // 
             // NhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,7 +178,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NhaCungCap";
             this.Text = "NhaCungCap";
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -186,12 +187,12 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flpNhaCungCap;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel panel3;
         private CustomButton.VBButton btnTimKiem;
         private CustomButton.VBButton btnLamMoi;
         private System.Windows.Forms.TextBox txtTimKiem;
         private CustomButton.VBButton btnXoa;
         private CustomButton.VBButton BtnAdd;
+        private System.Windows.Forms.TextBox txtFind;
     }
 }

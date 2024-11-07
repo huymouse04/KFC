@@ -97,9 +97,12 @@ CREATE TABLE NhapHang (
 CREATE TABLE Combo (  
     MaCombo VARCHAR(30) PRIMARY KEY NOT NULL,  
     TenCombo NVARCHAR(250) NOT NULL,  
-    GiaCombo FLOAT,  
-    ThoiGianHieuLuc DATETIME  
+    GiaCombo int,  
+	SoLuong int,
+	NgayBatDau datetime,
+    NgayKetThuc DATETIME  
 ); 
+
 
 -- Bảng Chi Tiet Combo  
 CREATE TABLE ChiTietCombo (  
@@ -108,7 +111,6 @@ CREATE TABLE ChiTietCombo (
     MaSanPham VARCHAR(30) NOT NULL,  
     SoLuong INT NOT NULL,  
     FOREIGN KEY (MaCombo) REFERENCES Combo(MaCombo),  
-    FOREIGN KEY (MaSanPham) REFERENCES Kho(MaSanPham)  
 );
 
 -- Bảng Quan Ly Thuc Don  
@@ -329,54 +331,42 @@ INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHan
 ('NUOC002', 180, N'Lít', 18000, GETDATE(), 'NUOC', 'NCC09'),
 ('TM001', 150, N'Cái', 20000, GETDATE(), 'TM', 'NCC10');
 
--- Bảng Combo
-INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, ThoiGianHieuLuc) VALUES
-('CMB01', N'Combo Gà Rán', 95000, GETDATE()),
-('CMB02', N'Combo Gà Quay', 115000, GETDATE()),
-('CMB03', N'Combo Nước Uống', 20000, GETDATE()),
-('CMB04', N'Combo Món Tráng Miệng', 50000, GETDATE()),
-('CMB05', N'Combo Thức Ăn Nhẹ', 75000, GETDATE()),
-('CMB06', N'Combo Burger', 80000, GETDATE()),
-('CMB07', N'Combo Mì Ý', 60000, GETDATE()),
-('CMB08', N'Combo Bánh Tart', 40000, GETDATE()),
-('CMB09', N'Combo Khoai Tây', 30000, GETDATE()),
-('CMB10', N'Combo Gà Cay', 95000, GETDATE());
+INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, SoLuong, NgayBatDau , NgayketThuc)  
+VALUES 
+('CB01', N'Combo Gà Rán', 150000, 50, '01/11/2024', '15/11/2024'),
+('CB02', N'Combo Burger', 120000, 30, '01/11/2024', '15/11/2024');
 
--- Bảng Chi Tiết Combo
-INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong) VALUES
-('CMB01', 'GR001', 1),
-('CMB01', 'NUOC001', 1),
-('CMB02', 'GQ001', 1),
-('CMB02', 'TAN001', 1),
-('CMB03', 'NUOC001', 2),
-('CMB04', 'TM001', 2),
-('CMB05', 'TAN001', 2),
-('CMB06', 'BMC001', 1),
-('CMB07', 'BMC002', 1),
-('CMB08', 'TM001', 3),
-('CMB09', 'TAN001', 2),
-('CMB10', 'GR003', 1);
+
+INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong)  
+VALUES 
+('CB01', 'GR001', 2),
+('CB01', 'GR002', 1),
+('CB02', 'TM001', 3),
+('CB02', 'BMC001', 2);
+
+
+
 INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
 ('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
 
 UPDATE NhapHang
-SET NgaySanXuat = '2024-10-01', NgayHetHan = '2024-12-01'
+SET NgaySanXuat = '01/10/2024', NgayHetHan = '01/12/2024'
 WHERE MaSanPham = 'GR01';
 
 UPDATE NhapHang
-SET NgaySanXuat = '2024-10-05', NgayHetHan = '2024-12-05'
+SET NgaySanXuat = '05/10/2024', NgayHetHan = '05/12/2024'
 WHERE MaSanPham = 'GQ01';
 
 UPDATE NhapHang
-SET NgaySanXuat = '2024-10-10', NgayHetHan = '2025-10-10'
+SET NgaySanXuat = '10/10/2024', NgayHetHan = '10/10/2025'
 WHERE MaSanPham = 'NUOC01';
 
 UPDATE NhapHang
-SET NgaySanXuat = '2024-10-12', NgayHetHan = '2025-01-12'
+SET NgaySanXuat = '12/10/2024', NgayHetHan = '12/01/2025'
 WHERE MaSanPham = 'TAN01';
 
 UPDATE NhapHang
-SET NgaySanXuat = '2024-10-15', NgayHetHan = '2024-11-15'
+SET NgaySanXuat = '15/10/2024', NgayHetHan = '15/11/2024'
 WHERE MaSanPham = 'BMC01';
 
 select * from Luong

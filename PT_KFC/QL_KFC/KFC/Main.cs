@@ -155,5 +155,7 @@ namespace KFC
         {
             openformMain(new KhuyenMai());
         }
+
+
     }
 }
