@@ -92,7 +92,7 @@
             this.pnTop.Location = new System.Drawing.Point(0, 0);
             this.pnTop.Margin = new System.Windows.Forms.Padding(4);
             this.pnTop.Name = "pnTop";
-            this.pnTop.Size = new System.Drawing.Size(1564, 74);
+            this.pnTop.Size = new System.Drawing.Size(1464, 74);
             this.pnTop.TabIndex = 8;
             // 
             // dtGVNH
@@ -106,7 +106,7 @@
             this.dtGVNH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtGVNH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGVNH.GridColor = System.Drawing.Color.Firebrick;
-            this.dtGVNH.Location = new System.Drawing.Point(0, 73);
+            this.dtGVNH.Location = new System.Drawing.Point(-49, 73);
             this.dtGVNH.Margin = new System.Windows.Forms.Padding(4);
             this.dtGVNH.Name = "dtGVNH";
             this.dtGVNH.ReadOnly = true;
@@ -119,7 +119,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtGVNH.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtGVNH.RowHeadersWidth = 51;
-            this.dtGVNH.Size = new System.Drawing.Size(1564, 492);
+            this.dtGVNH.Size = new System.Drawing.Size(1513, 492);
             this.dtGVNH.TabIndex = 7;
             this.dtGVNH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGVNH_CellClick);
             // 
@@ -161,12 +161,13 @@
             this.customPanel1.Location = new System.Drawing.Point(69, 591);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.PanelColor = System.Drawing.Color.LightGray;
-            this.customPanel1.Size = new System.Drawing.Size(1430, 388);
+            this.customPanel1.Size = new System.Drawing.Size(1330, 388);
             this.customPanel1.TabIndex = 10;
             // 
             // vbButton1
             // 
-            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.vbButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.vbButton1.BackColor = System.Drawing.Color.Firebrick;
             this.vbButton1.BackgroundColor = System.Drawing.Color.Firebrick;
             this.vbButton1.BorderColor = System.Drawing.Color.Crimson;
@@ -176,7 +177,7 @@
             this.vbButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vbButton1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vbButton1.ForeColor = System.Drawing.Color.White;
-            this.vbButton1.Location = new System.Drawing.Point(1262, 300);
+            this.vbButton1.Location = new System.Drawing.Point(1162, 300);
             this.vbButton1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.vbButton1.Name = "vbButton1";
             this.vbButton1.Size = new System.Drawing.Size(148, 68);
@@ -188,7 +189,8 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLamMoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLamMoi.BackColor = System.Drawing.Color.Firebrick;
             this.btnLamMoi.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnLamMoi.BorderColor = System.Drawing.Color.Crimson;
@@ -198,7 +200,7 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(1100, 218);
+            this.btnLamMoi.Location = new System.Drawing.Point(1000, 218);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(148, 68);
@@ -210,9 +212,9 @@
             // 
             // dtpNgayHH
             // 
-            this.dtpNgayHH.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dtpNgayHH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtpNgayHH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayHH.Location = new System.Drawing.Point(1083, 300);
+            this.dtpNgayHH.Location = new System.Drawing.Point(1033, 300);
             this.dtpNgayHH.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayHH.Name = "dtpNgayHH";
             this.dtpNgayHH.Size = new System.Drawing.Size(136, 26);
@@ -221,9 +223,9 @@
             // 
             // dtpNgaySX
             // 
-            this.dtpNgaySX.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dtpNgaySX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtpNgaySX.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySX.Location = new System.Drawing.Point(735, 298);
+            this.dtpNgaySX.Location = new System.Drawing.Point(685, 298);
             this.dtpNgaySX.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgaySX.Name = "dtpNgaySX";
             this.dtpNgaySX.Size = new System.Drawing.Size(137, 26);
@@ -232,12 +234,12 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DarkRed;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(886, 292);
+            this.label3.Location = new System.Drawing.Point(836, 292);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(189, 34);
@@ -246,12 +248,12 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.DarkRed;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(527, 292);
+            this.label2.Location = new System.Drawing.Point(477, 292);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 34);
@@ -260,7 +262,8 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtDonGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtDonGia.Enabled = false;
             this.txtDonGia.ForeColor = System.Drawing.Color.Firebrick;
             this.txtDonGia.Location = new System.Drawing.Point(267, 300);
@@ -270,12 +273,12 @@
             // 
             // lbMNCC
             // 
-            this.lbMNCC.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbMNCC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbMNCC.AutoSize = true;
             this.lbMNCC.BackColor = System.Drawing.Color.DarkRed;
             this.lbMNCC.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMNCC.ForeColor = System.Drawing.Color.White;
-            this.lbMNCC.Location = new System.Drawing.Point(527, 236);
+            this.lbMNCC.Location = new System.Drawing.Point(477, 236);
             this.lbMNCC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMNCC.Name = "lbMNCC";
             this.lbMNCC.Size = new System.Drawing.Size(196, 34);
@@ -284,7 +287,8 @@
             // 
             // btnDonGia
             // 
-            this.btnDonGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDonGia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDonGia.AutoSize = true;
             this.btnDonGia.BackColor = System.Drawing.Color.DarkRed;
             this.btnDonGia.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,7 +302,8 @@
             // 
             // lbMNH
             // 
-            this.lbMNH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbMNH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbMNH.AutoSize = true;
             this.lbMNH.BackColor = System.Drawing.Color.DarkRed;
             this.lbMNH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,7 +317,8 @@
             // 
             // btnXuat
             // 
-            this.btnXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXuat.BackColor = System.Drawing.Color.Firebrick;
             this.btnXuat.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnXuat.BorderColor = System.Drawing.Color.Crimson;
@@ -322,7 +328,7 @@
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(1262, 220);
+            this.btnXuat.Location = new System.Drawing.Point(1162, 220);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(148, 68);
@@ -334,7 +340,8 @@
             // 
             // lbMSP
             // 
-            this.lbMSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbMSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbMSP.AutoSize = true;
             this.lbMSP.BackColor = System.Drawing.Color.DarkRed;
             this.lbMSP.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -348,7 +355,8 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTimKiem.BackColor = System.Drawing.Color.Firebrick;
             this.btnTimKiem.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnTimKiem.BorderColor = System.Drawing.Color.LavenderBlush;
@@ -358,7 +366,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.Location = new System.Drawing.Point(1262, 126);
+            this.btnTimKiem.Location = new System.Drawing.Point(1162, 126);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(148, 68);
@@ -370,7 +378,8 @@
             // 
             // lbSL
             // 
-            this.lbSL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbSL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbSL.AutoSize = true;
             this.lbSL.BackColor = System.Drawing.Color.DarkRed;
             this.lbSL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,7 +393,8 @@
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThem.BackColor = System.Drawing.Color.Firebrick;
             this.btnThem.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnThem.BorderColor = System.Drawing.Color.Crimson;
@@ -394,7 +404,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(1100, 32);
+            this.btnThem.Location = new System.Drawing.Point(1000, 32);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(148, 68);
@@ -406,12 +416,12 @@
             // 
             // lbDVT
             // 
-            this.lbDVT.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbDVT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbDVT.AutoSize = true;
             this.lbDVT.BackColor = System.Drawing.Color.DarkRed;
             this.lbDVT.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDVT.ForeColor = System.Drawing.Color.White;
-            this.lbDVT.Location = new System.Drawing.Point(559, 66);
+            this.lbDVT.Location = new System.Drawing.Point(509, 66);
             this.lbDVT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDVT.Name = "lbDVT";
             this.lbDVT.Size = new System.Drawing.Size(164, 34);
@@ -420,7 +430,8 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCapNhat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCapNhat.BackColor = System.Drawing.Color.Firebrick;
             this.btnCapNhat.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnCapNhat.BorderColor = System.Drawing.Color.Crimson;
@@ -430,7 +441,7 @@
             this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCapNhat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
-            this.btnCapNhat.Location = new System.Drawing.Point(1262, 32);
+            this.btnCapNhat.Location = new System.Drawing.Point(1162, 32);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(148, 68);
@@ -442,12 +453,12 @@
             // 
             // lbNN
             // 
-            this.lbNN.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbNN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbNN.AutoSize = true;
             this.lbNN.BackColor = System.Drawing.Color.DarkRed;
             this.lbNN.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNN.ForeColor = System.Drawing.Color.White;
-            this.lbNN.Location = new System.Drawing.Point(562, 128);
+            this.lbNN.Location = new System.Drawing.Point(512, 128);
             this.lbNN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNN.Name = "lbNN";
             this.lbNN.Size = new System.Drawing.Size(161, 34);
@@ -456,7 +467,8 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
             this.btnXoa.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnXoa.BorderColor = System.Drawing.Color.LavenderBlush;
@@ -466,7 +478,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(1100, 126);
+            this.btnXoa.Location = new System.Drawing.Point(1000, 126);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(148, 68);
@@ -478,7 +490,8 @@
             // 
             // txtMaNH
             // 
-            this.txtMaNH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtMaNH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtMaNH.Enabled = false;
             this.txtMaNH.ForeColor = System.Drawing.Color.Firebrick;
             this.txtMaNH.Location = new System.Drawing.Point(267, 74);
@@ -489,7 +502,8 @@
             // 
             // txtMaSP
             // 
-            this.txtMaSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtMaSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtMaSP.ForeColor = System.Drawing.Color.Firebrick;
             this.txtMaSP.Location = new System.Drawing.Point(267, 191);
             this.txtMaSP.Margin = new System.Windows.Forms.Padding(4);
@@ -499,7 +513,8 @@
             // 
             // txtSL
             // 
-            this.txtSL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.txtSL.ForeColor = System.Drawing.Color.Firebrick;
             this.txtSL.Location = new System.Drawing.Point(267, 244);
             this.txtSL.Margin = new System.Windows.Forms.Padding(4);
@@ -509,7 +524,8 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -523,10 +539,10 @@
             // 
             // txtDVT
             // 
-            this.txtDVT.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtDVT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtDVT.Enabled = false;
             this.txtDVT.ForeColor = System.Drawing.Color.Firebrick;
-            this.txtDVT.Location = new System.Drawing.Point(750, 74);
+            this.txtDVT.Location = new System.Drawing.Point(700, 74);
             this.txtDVT.Margin = new System.Windows.Forms.Padding(4);
             this.txtDVT.Name = "txtDVT";
             this.txtDVT.Size = new System.Drawing.Size(189, 26);
@@ -534,11 +550,11 @@
             // 
             // cbMaNCC
             // 
-            this.cbMaNCC.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cbMaNCC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbMaNCC.BackColor = System.Drawing.Color.DarkRed;
             this.cbMaNCC.ForeColor = System.Drawing.Color.White;
             this.cbMaNCC.FormattingEnabled = true;
-            this.cbMaNCC.Location = new System.Drawing.Point(750, 242);
+            this.cbMaNCC.Location = new System.Drawing.Point(700, 242);
             this.cbMaNCC.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaNCC.Name = "cbMaNCC";
             this.cbMaNCC.Size = new System.Drawing.Size(189, 28);
@@ -546,7 +562,8 @@
             // 
             // cbTenSP
             // 
-            this.cbTenSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbTenSP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.cbTenSP.BackColor = System.Drawing.Color.DarkRed;
             this.cbTenSP.ForeColor = System.Drawing.Color.White;
             this.cbTenSP.FormattingEnabled = true;
@@ -559,9 +576,9 @@
             // 
             // dtpNN
             // 
-            this.dtpNN.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.dtpNN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dtpNN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNN.Location = new System.Drawing.Point(750, 136);
+            this.dtpNN.Location = new System.Drawing.Point(700, 136);
             this.dtpNN.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNN.Name = "dtpNN";
             this.dtpNN.Size = new System.Drawing.Size(189, 26);
@@ -570,11 +587,11 @@
             // 
             // cbMaLH
             // 
-            this.cbMaLH.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cbMaLH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbMaLH.BackColor = System.Drawing.Color.DarkRed;
             this.cbMaLH.ForeColor = System.Drawing.Color.White;
             this.cbMaLH.FormattingEnabled = true;
-            this.cbMaLH.Location = new System.Drawing.Point(750, 189);
+            this.cbMaLH.Location = new System.Drawing.Point(700, 189);
             this.cbMaLH.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaLH.Name = "cbMaLH";
             this.cbMaLH.Size = new System.Drawing.Size(189, 28);
@@ -582,12 +599,12 @@
             // 
             // lbMLH
             // 
-            this.lbMLH.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lbMLH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbMLH.AutoSize = true;
             this.lbMLH.BackColor = System.Drawing.Color.DarkRed;
             this.lbMLH.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMLH.ForeColor = System.Drawing.Color.White;
-            this.lbMLH.Location = new System.Drawing.Point(527, 183);
+            this.lbMLH.Location = new System.Drawing.Point(477, 183);
             this.lbMLH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMLH.Name = "lbMLH";
             this.lbMLH.Size = new System.Drawing.Size(196, 34);
@@ -605,6 +622,7 @@
             this.Controls.Add(this.dtGVNH);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "NhapHang";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 100, 0);
             this.Text = "NhapHang";
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();

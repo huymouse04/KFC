@@ -366,7 +366,7 @@ namespace KFC
            
             childform.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right; // Đặt kích thước form con vừa phải, không quá lớn
             childform.Size = new Size(panel_Body.Width - 2, panel_Body.Height - 45); // Giảm chiều cao một chút để không quá dài
-
+ 
             panel_Body.Controls.Add(childform); // Thêm form vào panel
             panel_Body.Tag = childform; // Đặt tag cho panel
             childform.BringToFront(); // Đưa form lên trước
