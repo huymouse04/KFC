@@ -60,7 +60,8 @@ namespace DAO
                             NgayHetHan = nh.NgayHetHan,
                             MaLoaiHang = j.MaLoaiHang,
                             MaNhaCungCap = m.MaNhaCungCap,
-                            DonGia = nh.DonGia
+                            DonGia = nh.DonGia,
+                            
                         };
 
             if (!string.IsNullOrEmpty(maSanPham))
