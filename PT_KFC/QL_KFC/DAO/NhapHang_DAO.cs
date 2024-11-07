@@ -154,7 +154,7 @@ namespace DAO
 
                 DB.NhapHangs.InsertOnSubmit(newNhapHang);
                 DB.SubmitChanges();
-                UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong);
+                UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong,nhapHang.NgaySanXuat,nhapHang.NgayHetHan);
             }
             catch (ArgumentException ex)
             {
@@ -163,7 +163,7 @@ namespace DAO
         }
 
 
-        public void UpdateKhoSoLuong(string maSanPham, int soLuongMoi)
+        public void UpdateKhoSoLuong(string maSanPham, int soLuongMoi,DateTime? ngaySX,DateTime? ngayHH)
         {
             // Tìm kiếm sản phẩm trong bảng Kho
             var existingKho = DB.Khos.FirstOrDefault(k => k.MaSanPham == maSanPham);
@@ -175,7 +175,8 @@ namespace DAO
 
                 // Cập nhật số lượng mới trong Kho dựa trên số lượng nhập hàng mới
                 existingKho.SoLuong = soLuongKhoHienTai + soLuongMoi;
-                
+                existingKho.NgaySanXuat = ngaySX;
+                existingKho.NgayHetHan=ngayHH;
                 // Lưu thay đổi vào cơ sở dữ liệu
                 DB.SubmitChanges();
             }
