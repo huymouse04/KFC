@@ -232,6 +232,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(298, 33);
             this.txtSoLuong.TabIndex = 11;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // txtGiaCombo
             // 
@@ -240,6 +241,7 @@
             this.txtGiaCombo.Name = "txtGiaCombo";
             this.txtGiaCombo.Size = new System.Drawing.Size(298, 33);
             this.txtGiaCombo.TabIndex = 11;
+            this.txtGiaCombo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaCombo_KeyPress);
             // 
             // txtTenCombo
             // 
@@ -446,6 +448,7 @@
             this.txtSoLuongSP.Name = "txtSoLuongSP";
             this.txtSoLuongSP.Size = new System.Drawing.Size(242, 33);
             this.txtSoLuongSP.TabIndex = 11;
+            this.txtSoLuongSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuongSP_KeyPress);
             // 
             // label7
             // 

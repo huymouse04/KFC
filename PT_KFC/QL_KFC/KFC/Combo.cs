@@ -42,7 +42,8 @@ namespace KFC
                 control.UpdateData(combo); // Cập nhật thông tin nhân viên vào control
                 control.ComboDoubleClicked += (maCombo) => LoadSanPhamTrongCombo(maCombo);
                 control.ComboClicked += (maCombo) => hienthithongtincombo(combo);
-                txtMaCB.Enabled = true;
+                txtMaCB.Enabled = false;
+                txtMaCombo.Enabled = false;
                 flpCombo.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
                 flpCombo.Refresh();
             }
@@ -84,6 +85,30 @@ namespace KFC
 
         private void btnThemCB_Click(object sender, EventArgs e)
         {
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtMaCombo.Text))
+            {
+                MessageBox.Show("Mã combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtTenCombo.Text))
+            {
+                MessageBox.Show("Tên combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtSoLuong.Text))
+            {
+                MessageBox.Show("Số lượng không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtGiaCombo.Text))
+            {
+                MessageBox.Show("Giá combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Lấy dữ liệu từ form nhập
             var combo = new Combo_DTO
             {
@@ -115,6 +140,31 @@ namespace KFC
 
         private void btnCapNhatCB_Click(object sender, EventArgs e)
         {
+
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtMaCombo.Text))
+            {
+                MessageBox.Show("Mã combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtTenCombo.Text))
+            {
+                MessageBox.Show("Tên combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtSoLuong.Text))
+            {
+                MessageBox.Show("Số lượng không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtGiaCombo.Text))
+            {
+                MessageBox.Show("Giá combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Lấy dữ liệu từ form nhập
             var combo = new Combo_DTO
             {
@@ -167,6 +217,7 @@ namespace KFC
                     {
                         MessageBox.Show("Xóa combo thành công.");
                         LoadDataCombo(); // Load lại danh sách combo
+                        LoadSanPhamTrongCombo(maCombo);
                     }
                     else
                     {
@@ -196,10 +247,29 @@ namespace KFC
 
             // Làm mới dữ liệu trong FlowLayoutPanel
             LoadDataCombo();
+            txtMaCombo.Enabled = true;
         }
 
         private void btnThemChiTietCB_Click(object sender, EventArgs e)
         {
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtMaCB.Text))
+            {
+                MessageBox.Show("Mã combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(cbMaSP.Text))
+            {
+                MessageBox.Show("Tên sản phẩm không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtSoLuongSP.Text))
+            {
+                MessageBox.Show("Số lượng không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Lấy thông tin từ các ô nhập liệu
             var chiTietCombo = new ChiTietCombo_DTO
             {
@@ -231,6 +301,24 @@ namespace KFC
 
         private void btnCapNhatChiTietCB_Click(object sender, EventArgs e)
         {
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtMaCB.Text))
+            {
+                MessageBox.Show("Mã combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(cbMaSP.Text))
+            {
+                MessageBox.Show("Tên sản phẩm không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Kiểm tra dữ liệu trống hoặc không hợp lệ
+            if (string.IsNullOrEmpty(txtSoLuongSP.Text))
+            {
+                MessageBox.Show("Số lượng không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var chiTietCombo = new ChiTietCombo_DTO
             {
                 MaCombo = txtMaCB.Text,
@@ -306,6 +394,33 @@ namespace KFC
                 cbMaSP.Text = row.Cells["MaSanPham"].Value.ToString();
                 // Nếu bạn cần các giá trị khác
                 txtSoLuongSP.Text = row.Cells["SoLuong"].Value.ToString();
+            }
+        }
+
+        private void txtGiaCombo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự nhập vào không phải là số và không phải phím điều khiển
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự nhập vào không phải là số và không phải phím điều khiển
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
+            }
+        }
+
+        private void txtSoLuongSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu ký tự nhập vào không phải là số và không phải phím điều khiển
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Chặn ký tự không hợp lệ
             }
         }
     }
