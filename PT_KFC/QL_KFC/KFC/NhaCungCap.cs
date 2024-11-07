@@ -153,30 +153,39 @@ namespace KFC
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LoadData();
-            txtTimKiem.Clear();
+            txtFind.Clear();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string searchTerm = txtTimKiem.Text.Trim(); // Lấy giá trị tìm kiếm
+            string searchTerm = txtFind.Text.Trim(); // Lấy giá trị tìm kiếm
+
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng xử lý nếu không có từ khóa tìm kiếm
+            }
 
             // Gọi phương thức tìm kiếm từ lớp BUS
             var result = bus.SearchNhaCungCap(searchTerm);
-
-            // Cập nhật FlowLayoutPanel với kết quả tìm kiếm
-            flpNhaCungCap.Controls.Clear();
-            foreach (var nhaCungCap in result)
-            {
-                NhaCungCapControl control = new NhaCungCapControl();
-                control.UpdateData(nhaCungCap); // Cập nhật thông tin nhà cung cấp vào control
-                flpNhaCungCap.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
-            }
 
             // Kiểm tra nếu không có kết quả tìm kiếm
             if (result.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy nhà cung cấp nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                // Cập nhật FlowLayoutPanel với kết quả tìm kiếm
+                flpNhaCungCap.Controls.Clear();
+                foreach (var nhaCungCap in result)
+                {
+                    NhaCungCapControl control = new NhaCungCapControl();
+                    control.UpdateData(nhaCungCap); // Cập nhật thông tin nhà cung cấp vào control
+                    flpNhaCungCap.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
+                }
+            }
+
         }
 
         public DataTable ConvertListToDataTable(List<NhaCungCap_DTO> list)
@@ -213,5 +222,7 @@ namespace KFC
 
             return dataTable;
         }
+
+       
     }
 }

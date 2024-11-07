@@ -59,6 +59,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietCombo_DTO.cs" />
+    <Compile Include="Combo_DTO.cs" />
     <Compile Include="Connection_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="Kho_DTO.cs" />

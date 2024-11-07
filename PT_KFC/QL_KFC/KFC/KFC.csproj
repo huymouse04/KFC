@@ -124,12 +124,6 @@
     <Compile Include="CapNhatThucDon.Designer.cs">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChiTietCombo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChiTietCombo.Designer.cs">
-      <DependentUpon>ChiTietCombo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Combo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,9 +189,7 @@
     <Compile Include="KhachHangControl.Designer.cs">
       <DependentUpon>KhachHangControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kho.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Kho.cs" />
     <Compile Include="Kho.Designer.cs">
       <DependentUpon>Kho.cs</DependentUpon>
     </Compile>
@@ -261,14 +253,12 @@
     <Compile Include="NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
-<Compile Include="ThucDon.cs">
+    <Compile Include="ThucDon.cs">
       <SubType>Form</SubType>
     </Compile>
-
- <Compile Include="ThucDon.Designer.cs">
+    <Compile Include="ThucDon.Designer.cs">
       <DependentUpon>ThucDon.cs</DependentUpon>
     </Compile>
-
     <Compile Include="NhanVienControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -324,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatThucDon.resx">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChiTietCombo.resx">
-      <DependentUpon>ChiTietCombo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Combo.resx">
       <DependentUpon>Combo.cs</DependentUpon>
@@ -415,14 +402,17 @@
     <EmbeddedResource Include="Reports\RPNhapHang.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
- <EmbeddedResource Include="ThucDon.resx">
+    <EmbeddedResource Include="ThucDon.resx">
       <DependentUpon>ThucDon.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="ThucDonControl.resx">
       <DependentUpon>ThucDonControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QLKFCDataSet.LuongDataTable.datasource" />
+    <None Include="Properties\DataSources\QLKFCDataSet.LuongRow.datasource" />
+    <None Include="Properties\DataSources\QLKFCDataSet.NhanVienDataTable.datasource" />
+    <None Include="Properties\DataSources\QLKFCDataSet.NhanVienRow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
