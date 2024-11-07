@@ -74,17 +74,17 @@ namespace KFC
             //UpdateColumnFormat("ThuongChuyenCan");
             //UpdateColumnFormat("ThuongHieuSuat");
 
-            // Kiểm tra và thêm cột Tổng Lương nếu không tồn tại  
-            if (!dgvLuongNhanVien.Columns.Contains("TongLuong"))
-            {
-                DataGridViewTextBoxColumn tongLuongColumn = new DataGridViewTextBoxColumn
-                {
-                    Name = "TongLuong",
-                    HeaderText = "Tổng Lương",
-                    DataPropertyName = "TongLuong"
-                };
-                dgvLuongNhanVien.Columns.Add(tongLuongColumn);
-            }
+            //// Kiểm tra và thêm cột Tổng Lương nếu không tồn tại  
+            //if (!dgvLuongNhanVien.Columns.Contains("TongLuong"))
+            //{
+            //    DataGridViewTextBoxColumn tongLuongColumn = new DataGridViewTextBoxColumn
+            //    {
+            //        Name = "TongLuong",
+            //        HeaderText = "Tổng Lương",
+            //        DataPropertyName = "TongLuong"
+            //    };
+            //    dgvLuongNhanVien.Columns.Add(tongLuongColumn);
+            //}
 
             // Cập nhật định dạng cho cột Tổng Lương  
             //dgvLuongNhanVien.Columns["TongLuong"].DefaultCellStyle.Format = "#,0";
@@ -284,7 +284,68 @@ namespace KFC
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
+            int? thang = cbThang.SelectedIndex > 0 ? (int?)cbThang.SelectedItem : null;
+            int? nam = cbNam.SelectedIndex > 0 ? (int?)cbNam.SelectedItem : null;
+            string keyword = txtTimKiem.Text.Trim();
+
+            // Lấy kết quả tìm kiếm
+            List<LuongNhanVien_DTO> ketQua = bus.TimKiemLuong(thang, nam, keyword);
+
+            if (ketQua != null && ketQua.Count > 0)
+            {
+                // Chuyển List sang DataTable
+                DataTable ketQuaDataTable = ConvertToDataTable(ketQua);
+
+                // Hiển thị báo cáo
+                FormReport formLuong = new FormReport(FormReport.LoaiBaoCao.LuongNhanVien, ketQuaDataTable);
+                formLuong.Show();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
+
+        private DataTable ConvertToDataTable(List<LuongNhanVien_DTO> list)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Thêm cột vào DataTable dựa trên các thuộc tính của LuongNhanVien_DTO
+            dataTable.Columns.Add("MaNhanVien", typeof(string));
+            dataTable.Columns.Add("TenNhanVien", typeof(string));
+            dataTable.Columns.Add("ChucVu", typeof(string));
+            dataTable.Columns.Add("LuongCoBan", typeof(int));
+            dataTable.Columns.Add("Thang", typeof(int));
+            dataTable.Columns.Add("Nam", typeof(int));
+            dataTable.Columns.Add("SoNgayLam", typeof(int));
+            dataTable.Columns.Add("ThuongChuyenCan", typeof(int));
+            dataTable.Columns.Add("ThuongHieuSuat", typeof(int));
+            dataTable.Columns.Add("SoGioLamThem", typeof(int));
+            dataTable.Columns.Add("KhoanTru", typeof(int));
+            dataTable.Columns.Add("TongLuong", typeof(int)); // Giả sử `TongLuong` là kiểu decimal
+
+            // Thêm dữ liệu từ danh sách vào DataTable
+            foreach (var item in list)
+            {
+                dataTable.Rows.Add(
+                    item.MaNhanVien,
+                    item.TenNhanVien,
+                    item.ChucVu,
+                    item.LuongCoBan,
+                    item.Thang,
+                    item.Nam,
+                    item.SoNgayLam,
+                    item.ThuongChuyenCan,
+                    item.ThuongHieuSuat,
+                    item.SoGioLamThem,
+                    item.KhoanTru,
+                    item.TongLuong
+                );
+            }
+
+            return dataTable;
+        }
+
     }
 }

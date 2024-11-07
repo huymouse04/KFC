@@ -356,7 +356,9 @@ namespace KFC
 
         private void btnLamMoiChiTietCB_Click(object sender, EventArgs e)
         {
-
+            cbMaSP.SelectedValue = -1;
+            txtSoLuongSP.Clear();
+           
         }
 
         private void LoadSanPhamToComboBox()
