@@ -140,5 +140,60 @@ namespace DAO
             }
             return null;
         }
+        public bool CapNhatThucDon(ThucDon_DTO thucDon)
+        {
+            try
+            {
+                var thucdon = db.ThucDons.FirstOrDefault(td => td.MaSanPham == thucDon.MaSanPham);
+                if (thucdon != null)
+                {
+                    thucdon.TenSanPham=thucDon.TenSanPham;
+                    thucdon.HinhAnh = thucDon.HinhAnh;
+                    thucdon.MaLoaiHang = thucDon.MaLoaiHang;
+                    thucdon.DonGia = thucDon.DonGia;
+                    db.SubmitChanges(); // Lưu thay đổi vào database
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return false;
+        }
+        public List<ThucDon_DTO> TimKiemKThucDonTheoMa(string maTD)
+        {
+            var thucDons = db.ThucDons
+                              .Where(td => td.MaSanPham.Contains(maTD))
+                              .AsEnumerable() 
+                              .Select(td => new ThucDon_DTO
+                              {
+                                  MaSanPham = td.MaSanPham,
+                                  TenSanPham = td.TenSanPham,
+                                  DonGia = td.DonGia.HasValue ? (float)td.DonGia.Value : 0,
+                                  HinhAnh = td.HinhAnh != null ? td.HinhAnh.ToArray() : new byte[0],
+                                  MaLoaiHang = td.MaLoaiHang
+                              }).ToList();
+
+            return thucDons;
+        }
+
+        public List<ThucDon_DTO> TimKiemKThucDonTheoTen(string tenTD)
+        {
+            var thucDons = db.ThucDons
+                              .Where(td => td.TenSanPham.Contains(tenTD))
+                              .AsEnumerable() 
+                              .Select(td => new ThucDon_DTO
+                              {
+                                  MaSanPham = td.MaSanPham,
+                                  TenSanPham = td.TenSanPham,
+                                  DonGia = td.DonGia.HasValue ? (float)td.DonGia.Value : 0,
+                                  HinhAnh = td.HinhAnh != null ? td.HinhAnh.ToArray() : new byte[0],
+                                  MaLoaiHang = td.MaLoaiHang
+                              }).ToList();
+
+            return thucDons;
+        }
+
     }
 }

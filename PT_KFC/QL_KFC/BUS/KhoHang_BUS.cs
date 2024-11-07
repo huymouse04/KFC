@@ -19,7 +19,10 @@ namespace BUS
         {
             return khoDAO.SearchKho(searchTerm); // Gọi phương thức tìm kiếm từ DAO
         }
-
+        public List<Kho_DTO> GetKhoData()
+        {
+            return khoDAO.GetKhoData(); // Gọi phương thức tìm kiếm từ DAO
+        }
         // Lấy tất cả sản phẩm trong kho
         public List<Kho_DTO> GetAllKho()
         {

@@ -46,6 +46,7 @@
             this.lblTenMon.Size = new System.Drawing.Size(243, 88);
             this.lblTenMon.TabIndex = 7;
             this.lblTenMon.Text = "Tên Món";
+            this.lblTenMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDonGia
             // 
@@ -56,6 +57,7 @@
             this.lblDonGia.Size = new System.Drawing.Size(243, 55);
             this.lblDonGia.TabIndex = 9;
             this.lblDonGia.Text = "Đơn Giá";
+            this.lblDonGia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbMon
             // 

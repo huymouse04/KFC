@@ -99,7 +99,7 @@ namespace DAO
             }
             catch (Exception ex)
             {
-                // Xử lý ngoại lệ
+                
             }
             return false;
         }
