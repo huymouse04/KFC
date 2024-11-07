@@ -52,6 +52,7 @@
             this.btnIn = new CustomButton.VBButton();
             this.btnAdd = new CustomButton.VBButton();
             this.btnUpdate = new CustomButton.VBButton();
+           
             this.btnFind = new CustomButton.VBButton();
             this.dtpNgayHetHan = new System.Windows.Forms.DateTimePicker();
             this.dtpNgaySanXuat = new System.Windows.Forms.DateTimePicker();
@@ -240,7 +241,7 @@
             this.pnBET.Controls.Add(this.btnIn);
             this.pnBET.Controls.Add(this.btnAdd);
             this.pnBET.Controls.Add(this.btnUpdate);
-            this.pnBET.Controls.Add(this.btnDeleteeee);
+
             this.pnBET.Controls.Add(this.btnFind);
             this.pnBET.Controls.Add(this.dtpNgayHetHan);
             this.pnBET.Controls.Add(this.dtpNgaySanXuat);
@@ -422,6 +423,8 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnDelete
+          
             // btnFind
             // 
             this.btnFind.BackColor = System.Drawing.Color.Firebrick;
@@ -731,6 +734,7 @@
         private CustomButton.VBButton btnIn;
         private CustomButton.VBButton btnAdd;
         private CustomButton.VBButton btnUpdate;
+
         private CustomButton.VBButton btnFind;
         private CustomButton.VBButton btnLoaiHangHoa;
         private CustomButton.VBButton btnNhaCungCap;

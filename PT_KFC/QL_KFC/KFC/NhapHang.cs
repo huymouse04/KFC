@@ -47,7 +47,7 @@ namespace KFC
                 try
                 {
                     nh.AddNhapHang(nhapHang);
-                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong);
+                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong,nhapHang.NgaySanXuat,nhapHang.NgayHetHan);
                     MessageBox.Show("Thêm nhập hàng thành công!");
                     LoadData();
                     ClearInputFields();
@@ -222,7 +222,7 @@ namespace KFC
                 try
                 {
                     nh.UpdateNhapHang(nhapHang);
-                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong);
+                    nh.UpdateSLKho(nhapHang.MaSanPham, nhapHang.SoLuong, nhapHang.NgaySanXuat, nhapHang.NgayHetHan);
                     MessageBox.Show("Cập nhật nhập hàng thành công!");
                     LoadData();
 

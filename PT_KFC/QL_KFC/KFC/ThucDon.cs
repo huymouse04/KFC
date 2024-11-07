@@ -110,7 +110,6 @@ namespace KFC
         }
         private bool KiemTraDuLieu()
         {
-            // Kiểm tra Mã Sản Phẩm
             if (string.IsNullOrWhiteSpace(cbMaMon.Text))
             {
                 MessageBox.Show("Vui lòng chọn Mã Sản Phẩm.");
@@ -133,13 +132,12 @@ namespace KFC
                 txtGia.Focus();
                 return false;
             }
-            if (!float.TryParse(txtGia.Text, out float gia))
+            if (!float.TryParse(txtGia.Text, out float gia) || gia <= 0)
             {
-                MessageBox.Show("Giá không hợp lệ. Vui lòng nhập số.");
+                MessageBox.Show("Giá không hợp lệ. Vui lòng nhập số lớn hơn 0.");
                 txtGia.Focus();
                 return false;
             }
-
 
             // Kiểm tra đường dẫn Hình Ảnh (nếu cần thiết)
             if (!string.IsNullOrWhiteSpace(txtImagePath.Text) && !File.Exists(txtImagePath.Text))
@@ -149,7 +147,7 @@ namespace KFC
                 return false;
             }
 
-            return true; // Tất cả dữ liệu đều hợp lệ
+            return true;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -166,7 +164,14 @@ namespace KFC
                 string tenMon = txtTenMon.Text;
                 float gia = float.Parse(txtGia.Text);
                 byte[] hinhAnh = File.Exists(txtImagePath.Text) ? File.ReadAllBytes(txtImagePath.Text) : null;
-                string maLoaiHang = cbMaLH.SelectedValue.ToString();
+
+                string maLoaiHang = cbMaLH.SelectedValue?.ToString();
+                if (maLoaiHang == null)
+                {
+                    MessageBox.Show("Vui lòng chọn Mã Loại Hàng.");
+                    cbMaLH.Focus();
+                    return;
+                }
 
                 var thucDon = new ThucDon_DTO
                 {
@@ -182,8 +187,8 @@ namespace KFC
                 if (isSuccess)
                 {
                     MessageBox.Show("Món ăn đã được thêm thành công!");
-                    HienThiThucDon();
-                    ClearControls();
+                    
+                    ClearControls();HienThiThucDon();
                 }
                 else
                 {
@@ -220,7 +225,7 @@ namespace KFC
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(selectedMaSP))
+            if (string.IsNullOrEmpty(cbMaMon.Text))
             {
                 MessageBox.Show("Vui lòng chọn món cần xóa.");
                 return;
@@ -235,7 +240,7 @@ namespace KFC
 
             // Gọi phương thức xóa trong DAO
             var thucDonDAO = new ThucDon_DAO();
-            if (thucDonDAO.XoaThucDon(selectedMaSP))
+            if (thucDonDAO.XoaThucDon(cbMaMon.Text))
             {
                 MessageBox.Show("Đã xóa món thành công.");
                 HienThiThucDon();
