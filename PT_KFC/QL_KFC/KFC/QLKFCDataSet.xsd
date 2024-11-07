@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="QLKFCDataSet" targetNamespace="http://tempuri.org/QLKFCDataSet.xsd" xmlns:mstns="http://tempuri.org/QLKFCDataSet.xsd" xmlns="http://tempuri.org/QLKFCDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="QLKFCDataSet" targetNamespace="http://tempuri.org/QLKFCDataSet1.xsd" xmlns:mstns="http://tempuri.org/QLKFCDataSet1.xsd" xmlns="http://tempuri.org/QLKFCDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLKFCConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLKFCConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.KFC.Properties.Settings.GlobalReference.Default.QLKFCConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLKFCConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLKFCConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.KFC.Properties.Settings.GlobalReference.Default.QLKFCConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BanTableAdapter" GeneratorDataComponentClassName="BanTableAdapter" Name="Ban" UserDataComponentName="BanTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.Ban" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.Ban" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Ban] WHERE (([MaBan] = @Original_MaBan) AND ([TenBan] = @Original_TenBan) AND ((@IsNull_TrangThaiBan = 1 AND [TrangThaiBan] IS NULL) OR ([TrangThaiBan] = @Original_TrangThaiBan)))</CommandText>
@@ -133,7 +133,7 @@ SELECT MaCombo, TenCombo, GiaCombo, SoLuong, ThoiGianHieuLuc FROM Combo WHERE (M
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ChiTietComboTableAdapter" GeneratorDataComponentClassName="ChiTietComboTableAdapter" Name="ChiTietCombo" UserDataComponentName="ChiTietComboTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.ChiTietCombo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.ChiTietCombo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[ChiTietCombo] WHERE (([MaChiTietCombo] = @Original_MaChiTietCombo) AND ([MaCombo] = @Original_MaCombo) AND ([MaSanPham] = @Original_MaSanPham) AND ([SoLuong] = @Original_SoLuong))</CommandText>
@@ -190,7 +190,7 @@ SELECT MaChiTietCombo, MaCombo, MaSanPham, SoLuong FROM ChiTietCombo WHERE (MaCh
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ChiTietDonDatTableAdapter" GeneratorDataComponentClassName="ChiTietDonDatTableAdapter" Name="ChiTietDonDat" UserDataComponentName="ChiTietDonDatTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.ChiTietDonDat" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.ChiTietDonDat" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[ChiTietDonDat] WHERE (([MaDonDat] = @Original_MaDonDat) AND ([ID] = @Original_ID) AND ((@IsNull_MaSanPham = 1 AND [MaSanPham] IS NULL) OR ([MaSanPham] = @Original_MaSanPham)) AND ((@IsNull_MaCombo = 1 AND [MaCombo] IS NULL) OR ([MaCombo] = @Original_MaCombo)) AND ([SoLuong] = @Original_SoLuong) AND ((@IsNull_DonGia = 1 AND [DonGia] IS NULL) OR ([DonGia] = @Original_DonGia)))</CommandText>
@@ -261,9 +261,71 @@ SELECT MaDonDat, ID, MaSanPham, MaCombo, SoLuong, DonGia FROM ChiTietDonDat WHER
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComboTableAdapter" GeneratorDataComponentClassName="ComboTableAdapter" Name="Combo" UserDataComponentName="ComboTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.Combo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Combo] WHERE (([MaCombo] = @Original_MaCombo) AND ([TenCombo] = @Original_TenCombo) AND ((@IsNull_GiaCombo = 1 AND [GiaCombo] IS NULL) OR ([GiaCombo] = @Original_GiaCombo)) AND ((@IsNull_ThoiGianHieuLuc = 1 AND [ThoiGianHieuLuc] IS NULL) OR ([ThoiGianHieuLuc] = @Original_ThoiGianHieuLuc)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MaCombo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MaCombo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TenCombo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TenCombo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GiaCombo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GiaCombo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_GiaCombo" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="GiaCombo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ThoiGianHieuLuc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ThoiGianHieuLuc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ThoiGianHieuLuc" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ThoiGianHieuLuc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Combo] ([MaCombo], [TenCombo], [GiaCombo], [ThoiGianHieuLuc]) VALUES (@MaCombo, @TenCombo, @GiaCombo, @ThoiGianHieuLuc);
+SELECT MaCombo, TenCombo, GiaCombo, ThoiGianHieuLuc FROM Combo WHERE (MaCombo = @MaCombo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MaCombo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MaCombo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TenCombo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TenCombo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@GiaCombo" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="GiaCombo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ThoiGianHieuLuc" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ThoiGianHieuLuc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MaCombo, TenCombo, GiaCombo, ThoiGianHieuLuc FROM dbo.Combo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Combo] SET [MaCombo] = @MaCombo, [TenCombo] = @TenCombo, [GiaCombo] = @GiaCombo, [ThoiGianHieuLuc] = @ThoiGianHieuLuc WHERE (([MaCombo] = @Original_MaCombo) AND ([TenCombo] = @Original_TenCombo) AND ((@IsNull_GiaCombo = 1 AND [GiaCombo] IS NULL) OR ([GiaCombo] = @Original_GiaCombo)) AND ((@IsNull_ThoiGianHieuLuc = 1 AND [ThoiGianHieuLuc] IS NULL) OR ([ThoiGianHieuLuc] = @Original_ThoiGianHieuLuc)));
+SELECT MaCombo, TenCombo, GiaCombo, ThoiGianHieuLuc FROM Combo WHERE (MaCombo = @MaCombo)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MaCombo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MaCombo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TenCombo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TenCombo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@GiaCombo" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="GiaCombo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@ThoiGianHieuLuc" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ThoiGianHieuLuc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MaCombo" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MaCombo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TenCombo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TenCombo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GiaCombo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GiaCombo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_GiaCombo" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="GiaCombo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ThoiGianHieuLuc" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ThoiGianHieuLuc" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_ThoiGianHieuLuc" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="ThoiGianHieuLuc" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaCombo" DataSetColumn="MaCombo" />
+              <Mapping SourceColumn="TenCombo" DataSetColumn="TenCombo" />
+              <Mapping SourceColumn="GiaCombo" DataSetColumn="GiaCombo" />
+              <Mapping SourceColumn="ThoiGianHieuLuc" DataSetColumn="ThoiGianHieuLuc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DoanhThuTableAdapter" GeneratorDataComponentClassName="DoanhThuTableAdapter" Name="DoanhThu" UserDataComponentName="DoanhThuTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.DoanhThu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.DoanhThu" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[DoanhThu] WHERE (((@IsNull_MaNhapHang = 1 AND [MaNhapHang] IS NULL) OR ([MaNhapHang] = @Original_MaNhapHang)) AND ([Thang] = @Original_Thang) AND ([Nam] = @Original_Nam) AND ([NgayGhiNhan] = @Original_NgayGhiNhan) AND ((@IsNull_MaHoaDon = 1 AND [MaHoaDon] IS NULL) OR ([MaHoaDon] = @Original_MaHoaDon)) AND ((@IsNull_TongChiTieu = 1 AND [TongChiTieu] IS NULL) OR ([TongChiTieu] = @Original_TongChiTieu)) AND ((@IsNull_TongDoanhThu = 1 AND [TongDoanhThu] IS NULL) OR ([TongDoanhThu] = @Original_TongDoanhThu)))</CommandText>
@@ -344,7 +406,7 @@ SELECT MaNhapHang, Thang, Nam, NgayGhiNhan, MaHoaDon, TongChiTieu, TongDoanhThu 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DonDatTableAdapter" GeneratorDataComponentClassName="DonDatTableAdapter" Name="DonDat" UserDataComponentName="DonDatTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.DonDat" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.DonDat" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[DonDat] WHERE (([MaDonDat] = @Original_MaDonDat) AND ([MaBan] = @Original_MaBan) AND ((@IsNull_TongTien = 1 AND [TongTien] IS NULL) OR ([TongTien] = @Original_TongTien)) AND ((@IsNull_HinhThucThanhToan = 1 AND [HinhThucThanhToan] IS NULL) OR ([HinhThucThanhToan] = @Original_HinhThucThanhToan)) AND ((@IsNull_SoTienNhan = 1 AND [SoTienNhan] IS NULL) OR ([SoTienNhan] = @Original_SoTienNhan)) AND ((@IsNull_SoTienTra = 1 AND [SoTienTra] IS NULL) OR ([SoTienTra] = @Original_SoTienTra)) AND ((@IsNull_MaKhuyenMai = 1 AND [MaKhuyenMai] IS NULL) OR ([MaKhuyenMai] = @Original_MaKhuyenMai)) AND ((@IsNull_MaKhachHang = 1 AND [MaKhachHang] IS NULL) OR ([MaKhachHang] = @Original_MaKhachHang)))</CommandText>
@@ -433,7 +495,7 @@ SELECT MaDonDat, MaBan, TongTien, HinhThucThanhToan, SoTienNhan, SoTienTra, MaKh
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HoaDonTableAdapter" GeneratorDataComponentClassName="HoaDonTableAdapter" Name="HoaDon" UserDataComponentName="HoaDonTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.HoaDon" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.HoaDon" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[HoaDon] WHERE (([MaHoaDon] = @Original_MaHoaDon) AND ([MaDonDat] = @Original_MaDonDat) AND ((@IsNull_NgayThanhToan = 1 AND [NgayThanhToan] IS NULL) OR ([NgayThanhToan] = @Original_NgayThanhToan)))</CommandText>
@@ -487,7 +549,7 @@ SELECT MaHoaDon, MaDonDat, NgayThanhToan FROM HoaDon WHERE (MaHoaDon = @MaHoaDon
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KhachHangThanThietTableAdapter" GeneratorDataComponentClassName="KhachHangThanThietTableAdapter" Name="KhachHangThanThiet" UserDataComponentName="KhachHangThanThietTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.KhachHangThanThiet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.KhachHangThanThiet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[KhachHangThanThiet] WHERE (([MaKhachHang] = @Original_MaKhachHang) AND ([TenKhachHang] = @Original_TenKhachHang) AND ((@IsNull_SoDienThoai = 1 AND [SoDienThoai] IS NULL) OR ([SoDienThoai] = @Original_SoDienThoai)) AND ((@IsNull_DiemTichLuy = 1 AND [DiemTichLuy] IS NULL) OR ([DiemTichLuy] = @Original_DiemTichLuy)))</CommandText>
@@ -549,7 +611,7 @@ SELECT MaKhachHang, TenKhachHang, SoDienThoai, DiemTichLuy FROM KhachHangThanThi
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KhoTableAdapter" GeneratorDataComponentClassName="KhoTableAdapter" Name="Kho" UserDataComponentName="KhoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.Kho" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.Kho" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Kho] WHERE (([MaSanPham] = @Original_MaSanPham) AND ([TenSanPham] = @Original_TenSanPham) AND ([SoLuong] = @Original_SoLuong) AND ((@IsNull_DonViTinh = 1 AND [DonViTinh] IS NULL) OR ([DonViTinh] = @Original_DonViTinh)) AND ((@IsNull_DonGia = 1 AND [DonGia] IS NULL) OR ([DonGia] = @Original_DonGia)) AND ((@IsNull_NgaySanXuat = 1 AND [NgaySanXuat] IS NULL) OR ([NgaySanXuat] = @Original_NgaySanXuat)) AND ((@IsNull_NgayHetHan = 1 AND [NgayHetHan] IS NULL) OR ([NgayHetHan] = @Original_NgayHetHan)) AND ((@IsNull_MaLoaiHang = 1 AND [MaLoaiHang] IS NULL) OR ([MaLoaiHang] = @Original_MaLoaiHang)))</CommandText>
@@ -637,7 +699,7 @@ SELECT MaSanPham, TenSanPham, SoLuong, DonViTinh, DonGia, NgaySanXuat, NgayHetHa
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KhuyenMaiTableAdapter" GeneratorDataComponentClassName="KhuyenMaiTableAdapter" Name="KhuyenMai" UserDataComponentName="KhuyenMaiTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.KhuyenMai" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.KhuyenMai" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[KhuyenMai] WHERE (([MaKhuyenMai] = @Original_MaKhuyenMai) AND ([NgayBatDau] = @Original_NgayBatDau) AND ([NgayKetThuc] = @Original_NgayKetThuc) AND ((@IsNull_GiaTriGiam = 1 AND [GiaTriGiam] IS NULL) OR ([GiaTriGiam] = @Original_GiaTriGiam)) AND ((@IsNull_SoLuong = 1 AND [SoLuong] IS NULL) OR ([SoLuong] = @Original_SoLuong)) AND ((@IsNull_TrangThai = 1 AND [TrangThai] IS NULL) OR ([TrangThai] = @Original_TrangThai)))</CommandText>
@@ -711,7 +773,7 @@ SELECT MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai FROM
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LoaiHangTableAdapter" GeneratorDataComponentClassName="LoaiHangTableAdapter" Name="LoaiHang" UserDataComponentName="LoaiHangTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.LoaiHang" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.LoaiHang" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[LoaiHang] WHERE (([MaLoaiHang] = @Original_MaLoaiHang) AND ([TenLoaiHang] = @Original_TenLoaiHang))</CommandText>
@@ -759,7 +821,7 @@ SELECT MaLoaiHang, TenLoaiHang FROM LoaiHang WHERE (MaLoaiHang = @MaLoaiHang)</C
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LuongTableAdapter" GeneratorDataComponentClassName="LuongTableAdapter" Name="Luong" UserDataComponentName="LuongTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.Luong" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.Luong" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Luong] WHERE (([MaNhanVien] = @Original_MaNhanVien) AND ([Thang] = @Original_Thang) AND ([Nam] = @Original_Nam) AND ([LuongCoBan] = @Original_LuongCoBan) AND ([SoNgayLam] = @Original_SoNgayLam) AND ((@IsNull_SoGioLamThem = 1 AND [SoGioLamThem] IS NULL) OR ([SoGioLamThem] = @Original_SoGioLamThem)) AND ((@IsNull_ThuongChuyenCan = 1 AND [ThuongChuyenCan] IS NULL) OR ([ThuongChuyenCan] = @Original_ThuongChuyenCan)) AND ((@IsNull_ThuongHieuSuat = 1 AND [ThuongHieuSuat] IS NULL) OR ([ThuongHieuSuat] = @Original_ThuongHieuSuat)) AND ((@IsNull_KhoanTru = 1 AND [KhoanTru] IS NULL) OR ([KhoanTru] = @Original_KhoanTru)))</CommandText>
@@ -850,7 +912,7 @@ SELECT MaNhanVien, Thang, Nam, LuongCoBan, SoNgayLam, SoGioLamThem, ThuongChuyen
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NhaCungCapTableAdapter" GeneratorDataComponentClassName="NhaCungCapTableAdapter" Name="NhaCungCap" UserDataComponentName="NhaCungCapTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.NhaCungCap" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.NhaCungCap" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[NhaCungCap] WHERE (([MaNhaCungCap] = @Original_MaNhaCungCap) AND ([TenNhaCungCap] = @Original_TenNhaCungCap) AND ((@IsNull_DiaChi = 1 AND [DiaChi] IS NULL) OR ([DiaChi] = @Original_DiaChi)) AND ((@IsNull_SoDienThoai = 1 AND [SoDienThoai] IS NULL) OR ([SoDienThoai] = @Original_SoDienThoai)) AND ((@IsNull_GhiChu = 1 AND [GhiChu] IS NULL) OR ([GhiChu] = @Original_GhiChu)))</CommandText>
@@ -922,7 +984,7 @@ SELECT MaNhaCungCap, TenNhaCungCap, AnhNhaCungCap, DiaChi, SoDienThoai, GhiChu F
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NhanVienTableAdapter" GeneratorDataComponentClassName="NhanVienTableAdapter" Name="NhanVien" UserDataComponentName="NhanVienTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.NhanVien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.NhanVien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[NhanVien] WHERE (([MaNhanVien] = @Original_MaNhanVien) AND ([TenNhanVien] = @Original_TenNhanVien) AND ((@IsNull_GioiTinh = 1 AND [GioiTinh] IS NULL) OR ([GioiTinh] = @Original_GioiTinh)) AND ((@IsNull_NgaySinh = 1 AND [NgaySinh] IS NULL) OR ([NgaySinh] = @Original_NgaySinh)) AND ((@IsNull_SoDienThoai = 1 AND [SoDienThoai] IS NULL) OR ([SoDienThoai] = @Original_SoDienThoai)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_DiaChi = 1 AND [DiaChi] IS NULL) OR ([DiaChi] = @Original_DiaChi)) AND ((@IsNull_ChucVu = 1 AND [ChucVu] IS NULL) OR ([ChucVu] = @Original_ChucVu)) AND ((@IsNull_SoGioLam = 1 AND [SoGioLam] IS NULL) OR ([SoGioLam] = @Original_SoGioLam)))</CommandText>
@@ -1022,7 +1084,7 @@ SELECT MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, SoDienThoai, Em
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NhapHangTableAdapter" GeneratorDataComponentClassName="NhapHangTableAdapter" Name="NhapHang" UserDataComponentName="NhapHangTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.NhapHang" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.NhapHang" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[NhapHang] WHERE (([MaNhapHang] = @Original_MaNhapHang) AND ([MaSanPham] = @Original_MaSanPham) AND ([SoLuong] = @Original_SoLuong) AND ((@IsNull_DonViTinh = 1 AND [DonViTinh] IS NULL) OR ([DonViTinh] = @Original_DonViTinh)) AND ((@IsNull_DonGia = 1 AND [DonGia] IS NULL) OR ([DonGia] = @Original_DonGia)) AND ([NgayNhap] = @Original_NgayNhap) AND ((@IsNull_MaLoaiHang = 1 AND [MaLoaiHang] IS NULL) OR ([MaLoaiHang] = @Original_MaLoaiHang)) AND ((@IsNull_MaNhaCungCap = 1 AND [MaNhaCungCap] IS NULL) OR ([MaNhaCungCap] = @Original_MaNhaCungCap)) AND ((@IsNull_NgaySanXuat = 1 AND [NgaySanXuat] IS NULL) OR ([NgaySanXuat] = @Original_NgaySanXuat)) AND ((@IsNull_NgayHetHan = 1 AND [NgayHetHan] IS NULL) OR ([NgayHetHan] = @Original_NgayHetHan)))</CommandText>
@@ -1121,7 +1183,7 @@ SELECT MaNhapHang, MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ThucDonTableAdapter" GeneratorDataComponentClassName="ThucDonTableAdapter" Name="ThucDon" UserDataComponentName="ThucDonTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLKFCConnectionString (Settings)" DbObjectName="QLKFC.dbo.ThucDon" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLKFCConnectionString1 (Settings)" DbObjectName="QLKFC.dbo.ThucDon" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[ThucDon] WHERE (([MaSanPham] = @Original_MaSanPham) AND ([TenSanPham] = @Original_TenSanPham) AND ((@IsNull_DonGia = 1 AND [DonGia] IS NULL) OR ([DonGia] = @Original_DonGia)) AND ((@IsNull_MaLoaiHang = 1 AND [MaLoaiHang] IS NULL) OR ([MaLoaiHang] = @Original_MaLoaiHang)))</CommandText>
@@ -1213,29 +1275,6 @@ SELECT MaSanPham, TenSanPham, HinhAnh, DonGia, MaLoaiHang FROM ThucDon WHERE (Ma
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Combo" msprop:Generator_RowEvHandlerName="ComboRowChangeEventHandler" msprop:Generator_RowDeletedName="ComboRowDeleted" msprop:Generator_RowDeletingName="ComboRowDeleting" msprop:Generator_RowEvArgName="ComboRowChangeEvent" msprop:Generator_TablePropName="Combo" msprop:Generator_RowChangedName="ComboRowChanged" msprop:Generator_RowChangingName="ComboRowChanging" msprop:Generator_TableClassName="ComboDataTable" msprop:Generator_RowClassName="ComboRow" msprop:Generator_TableVarName="tableCombo" msprop:Generator_UserTableName="Combo">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MaCombo" msprop:Generator_ColumnPropNameInRow="MaCombo" msprop:Generator_ColumnPropNameInTable="MaComboColumn" msprop:Generator_ColumnVarNameInTable="columnMaCombo" msprop:Generator_UserColumnName="MaCombo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TenCombo" msprop:Generator_ColumnPropNameInRow="TenCombo" msprop:Generator_ColumnPropNameInTable="TenComboColumn" msprop:Generator_ColumnVarNameInTable="columnTenCombo" msprop:Generator_UserColumnName="TenCombo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="250" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="GiaCombo" msprop:Generator_ColumnPropNameInRow="GiaCombo" msprop:Generator_ColumnPropNameInTable="GiaComboColumn" msprop:Generator_ColumnVarNameInTable="columnGiaCombo" msprop:Generator_UserColumnName="GiaCombo" type="xs:double" minOccurs="0" />
-              <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
-              <xs:element name="ThoiGianHieuLuc" msprop:Generator_ColumnPropNameInRow="ThoiGianHieuLuc" msprop:Generator_ColumnPropNameInTable="ThoiGianHieuLucColumn" msprop:Generator_ColumnVarNameInTable="columnThoiGianHieuLuc" msprop:Generator_UserColumnName="ThoiGianHieuLuc" type="xs:dateTime" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="ChiTietCombo" msprop:Generator_RowEvHandlerName="ChiTietComboRowChangeEventHandler" msprop:Generator_RowDeletedName="ChiTietComboRowDeleted" msprop:Generator_RowDeletingName="ChiTietComboRowDeleting" msprop:Generator_RowEvArgName="ChiTietComboRowChangeEvent" msprop:Generator_TablePropName="ChiTietCombo" msprop:Generator_RowChangedName="ChiTietComboRowChanged" msprop:Generator_RowChangingName="ChiTietComboRowChanging" msprop:Generator_TableClassName="ChiTietComboDataTable" msprop:Generator_RowClassName="ChiTietComboRow" msprop:Generator_TableVarName="tableChiTietCombo" msprop:Generator_UserTableName="ChiTietCombo">
           <xs:complexType>
             <xs:sequence>
@@ -1279,6 +1318,28 @@ SELECT MaSanPham, TenSanPham, HinhAnh, DonGia, MaLoaiHang FROM ThucDon WHERE (Ma
               </xs:element>
               <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_UserColumnName="SoLuong" type="xs:int" />
               <xs:element name="DonGia" msprop:Generator_ColumnPropNameInRow="DonGia" msprop:Generator_ColumnPropNameInTable="DonGiaColumn" msprop:Generator_ColumnVarNameInTable="columnDonGia" msprop:Generator_UserColumnName="DonGia" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Combo" msprop:Generator_RowEvHandlerName="ComboRowChangeEventHandler" msprop:Generator_RowDeletedName="ComboRowDeleted" msprop:Generator_RowDeletingName="ComboRowDeleting" msprop:Generator_RowEvArgName="ComboRowChangeEvent" msprop:Generator_TablePropName="Combo" msprop:Generator_RowChangedName="ComboRowChanged" msprop:Generator_RowChangingName="ComboRowChanging" msprop:Generator_TableClassName="ComboDataTable" msprop:Generator_RowClassName="ComboRow" msprop:Generator_TableVarName="tableCombo" msprop:Generator_UserTableName="Combo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaCombo" msprop:Generator_ColumnPropNameInRow="MaCombo" msprop:Generator_ColumnPropNameInTable="MaComboColumn" msprop:Generator_ColumnVarNameInTable="columnMaCombo" msprop:Generator_UserColumnName="MaCombo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenCombo" msprop:Generator_ColumnPropNameInRow="TenCombo" msprop:Generator_ColumnPropNameInTable="TenComboColumn" msprop:Generator_ColumnVarNameInTable="columnTenCombo" msprop:Generator_UserColumnName="TenCombo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GiaCombo" msprop:Generator_ColumnPropNameInRow="GiaCombo" msprop:Generator_ColumnPropNameInTable="GiaComboColumn" msprop:Generator_ColumnVarNameInTable="columnGiaCombo" msprop:Generator_UserColumnName="GiaCombo" type="xs:double" minOccurs="0" />
+              <xs:element name="ThoiGianHieuLuc" msprop:Generator_ColumnPropNameInRow="ThoiGianHieuLuc" msprop:Generator_ColumnPropNameInTable="ThoiGianHieuLucColumn" msprop:Generator_ColumnVarNameInTable="columnThoiGianHieuLuc" msprop:Generator_UserColumnName="ThoiGianHieuLuc" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1642,10 +1703,6 @@ SELECT MaSanPham, TenSanPham, HinhAnh, DonGia, MaLoaiHang FROM ThucDon WHERE (Ma
       <xs:selector xpath=".//mstns:Ban" />
       <xs:field xpath="mstns:MaBan" />
     </xs:unique>
-    <xs:unique name="Combo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Combo" />
-      <xs:field xpath="mstns:MaCombo" />
-    </xs:unique>
     <xs:unique name="ChiTietCombo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ChiTietCombo" />
       <xs:field xpath="mstns:MaChiTietCombo" />
@@ -1653,6 +1710,10 @@ SELECT MaSanPham, TenSanPham, HinhAnh, DonGia, MaLoaiHang FROM ThucDon WHERE (Ma
     <xs:unique name="ChiTietDonDat_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ChiTietDonDat" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Combo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Combo" />
+      <xs:field xpath="mstns:MaCombo" />
     </xs:unique>
     <xs:unique name="DoanhThu_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DoanhThu" />
@@ -1709,9 +1770,9 @@ SELECT MaSanPham, TenSanPham, HinhAnh, DonGia, MaLoaiHang FROM ThucDon WHERE (Ma
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__ChiTietCo__MaCom__4AB81AF0" msdata:parent="Combo" msdata:child="ChiTietCombo" msdata:parentkey="MaCombo" msdata:childkey="MaCombo" msprop:Generator_UserParentTable="Combo" msprop:Generator_UserChildTable="ChiTietCombo" msprop:Generator_RelationVarName="relationFK__ChiTietCo__MaCom__4AB81AF0" msprop:Generator_ChildPropName="GetChiTietComboRows" msprop:Generator_ParentPropName="ComboRow" msprop:Generator_UserRelationName="FK__ChiTietCo__MaCom__4AB81AF0" />
+      <msdata:Relationship name="FK__ChiTietCo__MaCom__4AB81AF0" msdata:parent="Combo" msdata:child="ChiTietCombo" msdata:parentkey="MaCombo" msdata:childkey="MaCombo" msprop:Generator_UserParentTable="Combo" msprop:Generator_UserChildTable="ChiTietCombo" msprop:Generator_RelationVarName="relationFK__ChiTietCo__MaCom__4AB81AF0" msprop:Generator_UserRelationName="FK__ChiTietCo__MaCom__4AB81AF0" msprop:Generator_ChildPropName="GetChiTietComboRows" msprop:Generator_ParentPropName="ComboRow" />
       <msdata:Relationship name="FK__ChiTietCo__MaSan__4BAC3F29" msdata:parent="Kho" msdata:child="ChiTietCombo" msdata:parentkey="MaSanPham" msdata:childkey="MaSanPham" msprop:Generator_UserParentTable="Kho" msprop:Generator_UserChildTable="ChiTietCombo" msprop:Generator_RelationVarName="relationFK__ChiTietCo__MaSan__4BAC3F29" msprop:Generator_UserRelationName="FK__ChiTietCo__MaSan__4BAC3F29" msprop:Generator_ChildPropName="GetChiTietComboRows" msprop:Generator_ParentPropName="KhoRow" />
-      <msdata:Relationship name="FK__ChiTietDo__MaCom__5FB337D6" msdata:parent="Combo" msdata:child="ChiTietDonDat" msdata:parentkey="MaCombo" msdata:childkey="MaCombo" msprop:Generator_UserParentTable="Combo" msprop:Generator_UserChildTable="ChiTietDonDat" msprop:Generator_RelationVarName="relationFK__ChiTietDo__MaCom__5FB337D6" msprop:Generator_ChildPropName="GetChiTietDonDatRows" msprop:Generator_ParentPropName="ComboRow" msprop:Generator_UserRelationName="FK__ChiTietDo__MaCom__5FB337D6" />
+      <msdata:Relationship name="FK__ChiTietDo__MaCom__5FB337D6" msdata:parent="Combo" msdata:child="ChiTietDonDat" msdata:parentkey="MaCombo" msdata:childkey="MaCombo" msprop:Generator_UserParentTable="Combo" msprop:Generator_UserChildTable="ChiTietDonDat" msprop:Generator_RelationVarName="relationFK__ChiTietDo__MaCom__5FB337D6" msprop:Generator_UserRelationName="FK__ChiTietDo__MaCom__5FB337D6" msprop:Generator_ChildPropName="GetChiTietDonDatRows" msprop:Generator_ParentPropName="ComboRow" />
       <msdata:Relationship name="FK__ChiTietDo__MaDon__5DCAEF64" msdata:parent="DonDat" msdata:child="ChiTietDonDat" msdata:parentkey="MaDonDat" msdata:childkey="MaDonDat" msprop:Generator_UserParentTable="DonDat" msprop:Generator_UserChildTable="ChiTietDonDat" msprop:Generator_RelationVarName="relationFK__ChiTietDo__MaDon__5DCAEF64" msprop:Generator_UserRelationName="FK__ChiTietDo__MaDon__5DCAEF64" msprop:Generator_ChildPropName="GetChiTietDonDatRows" msprop:Generator_ParentPropName="DonDatRow" />
       <msdata:Relationship name="FK__ChiTietDo__MaSan__5EBF139D" msdata:parent="ThucDon" msdata:child="ChiTietDonDat" msdata:parentkey="MaSanPham" msdata:childkey="MaSanPham" msprop:Generator_UserParentTable="ThucDon" msprop:Generator_UserChildTable="ChiTietDonDat" msprop:Generator_RelationVarName="relationFK__ChiTietDo__MaSan__5EBF139D" msprop:Generator_UserRelationName="FK__ChiTietDo__MaSan__5EBF139D" msprop:Generator_ChildPropName="GetChiTietDonDatRows" msprop:Generator_ParentPropName="ThucDonRow" />
       <msdata:Relationship name="FK__DoanhThu__MaHoaD__656C112C" msdata:parent="HoaDon" msdata:child="DoanhThu" msdata:parentkey="MaHoaDon" msdata:childkey="MaHoaDon" msprop:Generator_UserParentTable="HoaDon" msprop:Generator_UserChildTable="DoanhThu" msprop:Generator_RelationVarName="relationFK__DoanhThu__MaHoaD__656C112C" msprop:Generator_UserRelationName="FK__DoanhThu__MaHoaD__656C112C" msprop:Generator_ChildPropName="GetDoanhThuRows" msprop:Generator_ParentPropName="HoaDonRow" />

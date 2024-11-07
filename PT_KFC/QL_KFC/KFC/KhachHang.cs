@@ -119,7 +119,7 @@ namespace KFC
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string searchTerm = tbtTimKiem.Text.Trim(); // Lấy giá trị tìm kiếm
+            string searchTerm = tbtTiemKiem.Text.Trim(); // Lấy giá trị tìm kiếm
 
             // Gọi phương thức tìm kiếm từ lớp BUS
             var result = bus.SearchKhachHang(searchTerm);
@@ -144,7 +144,7 @@ namespace KFC
         {
             // Gọi lại dữ liệu khi nhấn vào lblKhachHang
             LoadData();
-            tbtTimKiem.Clear();
+            tbtTiemKiem.Clear();
         }
 
         public DataTable ConvertListToDataTable(List<DTO.KhachHang_DTO> list)
@@ -181,8 +181,6 @@ namespace KFC
 
             return dataTable;
         }
-
-
 
     }
 }
