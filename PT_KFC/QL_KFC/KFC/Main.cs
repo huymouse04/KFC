@@ -151,11 +151,11 @@ namespace KFC
             openformMain(new ThucDon());
         }
 
-        private void btnKhuyenMai_Click(object sender, EventArgs e)
+      
+
+        private void btnKhuyenMai_Click_1(object sender, EventArgs e)
         {
-            openformMain(new KhuyenMai());
+openformMain(new KhuyenMai());
         }
-
-
     }
 }

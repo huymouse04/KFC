@@ -123,7 +123,7 @@
             // 
             // thucDonControl1
             // 
-            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND VND";
+            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND VND VND";
             this.thucDonControl1.ImagePath = null;
             this.thucDonControl1.Location = new System.Drawing.Point(1051, 4);
             this.thucDonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -255,10 +255,10 @@
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(1214, 222);
+            this.btnXuat.Location = new System.Drawing.Point(1200, 222);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(137, 78);
+            this.btnXuat.Size = new System.Drawing.Size(151, 78);
             this.btnXuat.TabIndex = 48;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextColor = System.Drawing.Color.White;
