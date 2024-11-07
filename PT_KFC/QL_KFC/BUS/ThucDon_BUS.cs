@@ -51,5 +51,16 @@ namespace BUS
         {
             return dao.LayThucDonTheoMa(maSP);
         }
+        public bool CapNhatThucDon(ThucDon_DTO td)
+        {
+            return dao.CapNhatThucDon(td);
+        }
+        public List<ThucDon_DTO> TimKiemTheoMa(string maSP) { 
+            return dao.TimKiemKThucDonTheoMa(maSP) ;
+        }
+        public List<ThucDon_DTO>TimKiemTheoTen(string tenSP)
+        {
+            return dao.TimKiemKThucDonTheoTen(tenSP) ;
+        }
     }
 }

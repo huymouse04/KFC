@@ -34,6 +34,7 @@
             this.thucDonControl3 = new KFC.ThucDonControl();
             this.thucDonControl4 = new KFC.ThucDonControl();
             this.thucDonControl6 = new KFC.ThucDonControl();
+            this.thucDonControl1 = new KFC.ThucDonControl();
             this.customPanel1 = new CustomPanel();
             this.btnReNew = new CustomButton.VBButton();
             this.cbMaLH = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.thucDonControl1 = new KFC.ThucDonControl();
             this.flowLayoutPanel1.SuspendLayout();
             this.customPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +120,18 @@
             this.thucDonControl6.Size = new System.Drawing.Size(256, 296);
             this.thucDonControl6.TabIndex = 5;
             this.thucDonControl6.TenMon = "Tên Món";
+            // 
+            // thucDonControl1
+            // 
+            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND";
+            this.thucDonControl1.ImagePath = null;
+            this.thucDonControl1.Location = new System.Drawing.Point(1051, 4);
+            this.thucDonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.thucDonControl1.MaSanPham = null;
+            this.thucDonControl1.Name = "thucDonControl1";
+            this.thucDonControl1.Size = new System.Drawing.Size(256, 296);
+            this.thucDonControl1.TabIndex = 6;
+            this.thucDonControl1.TenMon = "Tên Món";
             // 
             // customPanel1
             // 
@@ -271,6 +283,7 @@
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.TextColor = System.Drawing.Color.White;
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // label2
             // 
@@ -314,6 +327,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextColor = System.Drawing.Color.White;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnBrowse
             // 
@@ -399,18 +413,6 @@
             this.label1.Size = new System.Drawing.Size(115, 29);
             this.label1.TabIndex = 36;
             this.label1.Text = "Tên món:";
-            // 
-            // thucDonControl1
-            // 
-            this.thucDonControl1.DonGia = "Đơn Giá";
-            this.thucDonControl1.ImagePath = null;
-            this.thucDonControl1.Location = new System.Drawing.Point(1051, 4);
-            this.thucDonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.thucDonControl1.MaSanPham = null;
-            this.thucDonControl1.Name = "thucDonControl1";
-            this.thucDonControl1.Size = new System.Drawing.Size(256, 296);
-            this.thucDonControl1.TabIndex = 6;
-            this.thucDonControl1.TenMon = "Tên Món";
             // 
             // ThucDon
             // 

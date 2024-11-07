@@ -17,7 +17,6 @@ namespace DAO
         {
             return DB.NhapHangs.Any(nh => nh.MaNhapHang == maNhapHang);
         }
-
         public List<NhapHang_DTO> GetAllNhapHang()
         {
             var nhapHangs = from nh in DB.NhapHangs
@@ -33,7 +32,7 @@ namespace DAO
                                 SoLuong = nh.SoLuong,
                                 NgayNhap = nh.NgayNhap,
                                 NgaySanXuat = nh.NgaySanXuat,
-                                NgayHetHan=nh.NgayHetHan,
+                                NgayHetHan = nh.NgayHetHan,
                                 MaLoaiHang = j.MaLoaiHang,
                                 MaNhaCungCap = m.MaNhaCungCap,
                                 DonGia = nh.DonGia
@@ -42,6 +41,7 @@ namespace DAO
 
             return nhapHangs.ToList();
         }
+       
         public List<NhapHang_DTO> GetNhapHangByConditions(string maSanPham, string maLoaiHang, string maNhaCungCap)
         {
             var query = from nh in DB.NhapHangs
@@ -60,7 +60,8 @@ namespace DAO
                             NgayHetHan = nh.NgayHetHan,
                             MaLoaiHang = j.MaLoaiHang,
                             MaNhaCungCap = m.MaNhaCungCap,
-                            DonGia = nh.DonGia
+                            DonGia = nh.DonGia,
+                            
                         };
 
             if (!string.IsNullOrEmpty(maSanPham))
@@ -78,8 +79,53 @@ namespace DAO
 
             return query.ToList();
         }
+        public List<NhapHang_DTO> GetNhapHangByMonth(int month, int year)
+        {
+            var nhapHangs = from nh in DB.NhapHangs
+                            join k in DB.Khos on nh.MaSanPham equals k.MaSanPham
+                            where nh.NgayNhap.Month == month && nh.NgayNhap.Year == year
+                            select new NhapHang_DTO
+                            {
+                                MaNhapHang = nh.MaNhapHang,
+                                MaSanPham = k.MaSanPham,
+                                TenSanPham = k.TenSanPham,
+                                DonViTinh = nh.DonViTinh,
+                                SoLuong = nh.SoLuong,
+                                NgayNhap = nh.NgayNhap,
+                                NgaySanXuat = nh.NgaySanXuat,
+                                NgayHetHan = nh.NgayHetHan,
+                                MaLoaiHang = nh.MaLoaiHang,
+                                MaNhaCungCap = nh.MaNhaCungCap,
+                                DonGia = nh.DonGia
+                            };
 
+            return nhapHangs.ToList();
+        }
+        public List<NhapHang_DTO> GetProductsNearExpiration()
+        {
+            var currentDate = DateTime.Now;  // Lấy ngày hiện tại
+            var nearExpirationDate = currentDate.AddDays(2);  // Ngày hết hạn trong 2 ngày tới
 
+            var nhapHangs = from nh in DB.NhapHangs
+                            join k in DB.Khos on nh.MaSanPham equals k.MaSanPham
+                            where nh.NgayHetHan <= nearExpirationDate // Bao gồm sản phẩm đã hết hạn và sắp hết hạn
+                            select new NhapHang_DTO
+                            {
+                                MaNhapHang = nh.MaNhapHang,
+                                MaSanPham = k.MaSanPham,
+                                TenSanPham = k.TenSanPham,
+                                DonViTinh = nh.DonViTinh,
+                                SoLuong = nh.SoLuong,
+                                NgayNhap = nh.NgayNhap,
+                                NgaySanXuat = nh.NgaySanXuat,
+                                NgayHetHan = nh.NgayHetHan,
+                                MaLoaiHang = nh.MaLoaiHang,
+                                MaNhaCungCap = nh.MaNhaCungCap,
+                                DonGia = nh.DonGia
+                            };
+
+            return nhapHangs.ToList();
+        }
         public void AddNhapHang(NhapHang_DTO nhapHang)
         {
             try

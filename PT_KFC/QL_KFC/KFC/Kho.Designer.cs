@@ -138,7 +138,6 @@
             // txtDonGia
             // 
 
-
             this.txtDonGia.Location = new System.Drawing.Point(624, 218);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(186, 20);
@@ -250,6 +249,7 @@
 
             this.panel_Body.Size = new System.Drawing.Size(950, 661);
 
+
             this.panel_Body.TabIndex = 1;
             // 
             // pnTop
@@ -308,7 +308,6 @@
             this.pnBET.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnBET.Name = "pnBET";
 
-
             this.pnBET.Size = new System.Drawing.Size(1031, 490);
 
             this.pnBET.TabIndex = 0;
@@ -361,14 +360,6 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 
 
-            
-            this.btnLamMoi.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-
-            this.btnLamMoi.Location = new System.Drawing.Point(791, 253);
-
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
 
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(142, 48);
@@ -390,14 +381,6 @@
             this.btnXuat.FlatAppearance.BorderSize = 0;
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 
-
-            this.btnXuat.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(840, 311);
-            this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(189, 59);
-            this.btnXuat.TabIndex = 10;
 
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextColor = System.Drawing.Color.White;
@@ -435,7 +418,6 @@
             this.btnCapNhat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
 
-
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(142, 48);
             this.btnCapNhat.TabIndex = 9;
@@ -447,7 +429,6 @@
             // 
             // btnXoa
             // 
-
 
             // 
             // btnTimKiem
@@ -461,7 +442,6 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-
 
 
             this.btnTimKiem.Name = "btnTimKiem";
@@ -483,8 +463,6 @@
             this.btnLoaiHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoaiHang.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnLoaiHang.ForeColor = System.Drawing.Color.White;
-
-
 
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.Size = new System.Drawing.Size(142, 48);
@@ -527,6 +505,7 @@
             this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhapHang.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhapHang.ForeColor = System.Drawing.Color.White;
+            this.btnNhapHang.Location = new System.Drawing.Point(791, 197);
 
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(142, 48);
@@ -541,6 +520,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
+
+            this.ClientSize = new System.Drawing.Size(950, 661);
+            this.Controls.Add(this.panel_Body);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
             this.Name = "Kho";
             this.Text = "Kho";

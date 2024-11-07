@@ -22,7 +22,6 @@ namespace BUS
         {
             return dao.GetAllNhapHang();
         }
-
         public List<NhapHang_DTO> GetNhapHangByMa(int maNhapHang)
         {
             if (maNhapHang <= 0)
@@ -32,7 +31,14 @@ namespace BUS
 
             return dao.GetNhapHangByMa(maNhapHang); // Trả về danh sách
         }
-
+        public List<NhapHang_DTO> GetProductsNearExpiration()
+        {
+            return dao.GetProductsNearExpiration();
+        }
+        public List<NhapHang_DTO>GetNhapHnagTheoThang(int month,int year)
+        {
+            return dao.GetNhapHangByMonth(month, year);
+        }
         public List<NhapHang_DTO> GetNhapHangByMaSP(string maSP)
         {
             if (string.IsNullOrWhiteSpace(maSP))

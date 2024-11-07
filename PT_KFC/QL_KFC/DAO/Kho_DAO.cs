@@ -28,7 +28,24 @@ namespace DAO
             return khoItems.ToList();
         }
 
-
+        public List<Kho_DTO> GetKhoData()
+        {
+            using (var context = new KFCDataContext(Connection_DAO.ConnectionString))
+            {
+                return context.Khos
+                              .Select(k => new Kho_DTO
+                              {
+                                  MaSanPham = k.MaSanPham,
+                                  TenSanPham = k.TenSanPham,
+                                  SoLuong = k.SoLuong,
+                                  DonViTinh = k.DonViTinh,
+                                  DonGia = k.DonGia.HasValue ? (float)k.DonGia.Value : 0f,
+                                  MaLoaiHang = k.MaLoaiHang,
+                                  NgaySanXuat = k.NgaySanXuat,
+                                  NgayHetHan = k.NgayHetHan
+                              }).ToList();
+            }
+        }
         public List<Kho_DTO> SearchKho(string searchTerm)
         {
             try

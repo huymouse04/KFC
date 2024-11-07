@@ -25,7 +25,7 @@ namespace KFC
             HienThiThucDon();
             LayMaSP();
         }
-        private void SelectKhuyenMai(string maSP)
+        private void SelectThucDon(string maSP)
         {
             selectedMaSP = maSP; // Lưu mã khuyến mãi được chọn
                                  // Đổi màu nền cho tất cả control khác về trắng
@@ -61,7 +61,7 @@ namespace KFC
 
                 // Kết nối sự kiện double-click
                 thucDonControl.OnMaSanPhamDoubleClicked += ThucDonControl_OnMaSPDoubleClicked;
-                thucDonControl.Click += (s, e) => SelectKhuyenMai(item.MaSanPham);
+                thucDonControl.Click += (s, e) => SelectThucDon(item.MaSanPham);
 
                 flowLayoutPanel1.Controls.Add(thucDonControl);
             }
@@ -195,14 +195,15 @@ namespace KFC
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
-        public void ClearControls() {
-           
+        public void ClearControls()
+        {
+
             cbMaMon.SelectedIndex = -1;
-            txtGia.Text= string.Empty;
-            txtImagePath.Text= string.Empty;
-            txtTenMon.Text= string.Empty;
-            txtTimKiem.Text= string.Empty;
-        
+            txtGia.Text = string.Empty;
+            txtImagePath.Text = string.Empty;
+            txtTenMon.Text = string.Empty;
+            txtTimKiem.Text = string.Empty;
+
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
@@ -237,8 +238,8 @@ namespace KFC
             if (thucDonDAO.XoaThucDon(selectedMaSP))
             {
                 MessageBox.Show("Đã xóa món thành công.");
-                HienThiThucDon(); 
-                ClearControls(); 
+                HienThiThucDon();
+                ClearControls();
             }
             else
             {
@@ -250,6 +251,94 @@ namespace KFC
         {
             HienThiThucDon();
             ClearControls();
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (!KiemTraDuLieu())
+                {
+                    return;
+                }
+
+                var td = new ThucDon_DTO(
+                    cbMaMon.Text,
+                    txtTenMon.Text,
+                    float.Parse(txtGia.Text),
+                    Encoding.UTF8.GetBytes(txtImagePath.Text),
+                cbMaLH.Text
+                );
+
+                bool isSuccess = bus.CapNhatThucDon(td);
+                if (isSuccess)
+                {
+                    MessageBox.Show("Cập nhật thực đơn thành công!");
+                    HienThiThucDon();
+                    ClearControls();
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu không hợp lệ hoặc cập nhật thất bại.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string searchText = txtTimKiem.Text.Trim();
+            List<ThucDon_DTO> thucDons;
+            flowLayoutPanel1.Controls.Clear();
+
+            // Kiểm tra nếu ô tìm kiếm không rỗng
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                // Tìm kiếm theo mã sản phẩm trước
+                thucDons = bus.TimKiemTheoMa(searchText);
+
+                // Nếu không tìm thấy, tìm kiếm theo tên sản phẩm
+                if (!thucDons.Any())
+                {
+                    thucDons = bus.TimKiemTheoTen(searchText);
+                }
+
+                // Hiển thị kết quả tìm kiếm
+                if (thucDons.Any())
+                {
+                    foreach (var item in thucDons)
+                    {
+                        var thucdonControl = new ThucDonControl
+                        {
+                            TenMon = item.TenSanPham,
+                            DonGia = item.DonGia.ToString("N2"),
+                            ImagePath = ConvertToImagePath(item.HinhAnh)
+                        };
+
+                        thucdonControl.OnMaSanPhamDoubleClicked += ThucDonControl_OnMaSPDoubleClicked;
+                        thucdonControl.Click += (s, v) => SelectThucDon(item.MaSanPham);
+                        flowLayoutPanel1.Controls.Add(thucdonControl);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy sản phẩm nào phù hợp.");
+                    HienThiThucDon();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập thông tin tìm kiếm.");
+                HienThiThucDon();
+            }
+        }
+        private bool IsDigitsOnly(string str)
+        {
+            return str.All(char.IsDigit);
         }
     }
 }

@@ -141,26 +141,19 @@ namespace KFC
             openformMain(new Kho());
         }
 
-
-        private void btnThucDon_Click(object sender, EventArgs e)
-        {
-            //openformMain(new ThucDon());
-        }
-
-
-        private void btnKhuyenMai_Click(object sender, EventArgs e)
-        {
-            openformMain(new KhuyenMai());
-        }
-
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             openformMain(new KhachHang());
         }
 
-        private void btnComBo_Click(object sender, EventArgs e)
+        private void btnThucDon_Click(object sender, EventArgs e)
         {
-            openformMain(new Combo());
+            openformMain(new ThucDon());
+        }
+
+        private void btnKhuyenMai_Click(object sender, EventArgs e)
+        {
+            openformMain(new KhuyenMai());
         }
     }
 }
