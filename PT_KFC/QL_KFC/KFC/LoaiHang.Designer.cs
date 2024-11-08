@@ -45,7 +45,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1024, 559);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(910, 367);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // fileSystemWatcher1
@@ -59,10 +59,10 @@
             this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Controls.Add(this.BtnAdd);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 559);
+            this.panel3.Location = new System.Drawing.Point(0, 367);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1024, 95);
+            this.panel3.Size = new System.Drawing.Size(910, 76);
             this.panel3.TabIndex = 15;
             // 
             // btnLamMoi
@@ -77,10 +77,10 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(282, 0);
+            this.btnLamMoi.Location = new System.Drawing.Point(250, 0);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(141, 95);
+            this.btnLamMoi.Size = new System.Drawing.Size(125, 76);
             this.btnLamMoi.TabIndex = 8;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.TextColor = System.Drawing.Color.White;
@@ -99,10 +99,10 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(141, 0);
+            this.btnXoa.Location = new System.Drawing.Point(125, 0);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(141, 95);
+            this.btnXoa.Size = new System.Drawing.Size(125, 76);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextColor = System.Drawing.Color.White;
@@ -124,7 +124,7 @@
             this.BtnAdd.Location = new System.Drawing.Point(0, 0);
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(141, 95);
+            this.BtnAdd.Size = new System.Drawing.Size(125, 76);
             this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Thêm";
             this.BtnAdd.TextColor = System.Drawing.Color.White;
@@ -133,13 +133,13 @@
             // 
             // LoaiHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 654);
+            this.ClientSize = new System.Drawing.Size(910, 523);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoaiHang";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 80);
             this.Text = "LoaiHang";
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.panel3.ResumeLayout(false);

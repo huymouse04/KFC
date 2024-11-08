@@ -88,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1581, 621);
+            this.panel1.Size = new System.Drawing.Size(1521, 621);
             this.panel1.TabIndex = 0;
             // 
             // btnXuat
@@ -445,7 +445,7 @@
             this.dgvLuongNhanVien.Name = "dgvLuongNhanVien";
             this.dgvLuongNhanVien.RowHeadersWidth = 51;
             this.dgvLuongNhanVien.RowTemplate.Height = 24;
-            this.dgvLuongNhanVien.Size = new System.Drawing.Size(1581, 560);
+            this.dgvLuongNhanVien.Size = new System.Drawing.Size(1521, 560);
             this.dgvLuongNhanVien.TabIndex = 0;
             this.dgvLuongNhanVien.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuongNhanVien_CellDoubleClick);
             // 
@@ -496,6 +496,7 @@
             this.ClientSize = new System.Drawing.Size(1581, 621);
             this.Controls.Add(this.panel1);
             this.Name = "LuongNhanViens";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 60, 0);
             this.Text = "LuongNhanVien";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
