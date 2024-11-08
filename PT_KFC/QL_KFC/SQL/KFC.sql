@@ -317,6 +317,18 @@ INSERT INTO KhachHangThanThiet (MaKhachHang, TenKhachHang, SoDienThoai, DiemTich
 ('KH009', N'Hồ Văn I', '0123456797', 140),
 ('KH010', N'Tôn Thị J', '0123456798', 160);
 
+INSERT INTO Ban (MaBan, TenBan, TrangThaiBan) VALUES
+('B01', N'Bàn 1', 1),
+('B02', N'Bàn 2', 0),
+('B03', N'Bàn 3', 1),
+('B04', N'Bàn 4', 0),
+('B05', N'Bàn 5', 1),
+('B06', N'Bàn 6', 0),
+('B07', N'Bàn 7', 1),
+('B08', N'Bàn 8', 0),
+('B09', N'Bàn 9', 1),
+('B10', N'Bàn 10', 0);
+
 
 -- Bảng Nhập Hàng
 INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, MaNhaCungCap) VALUES
