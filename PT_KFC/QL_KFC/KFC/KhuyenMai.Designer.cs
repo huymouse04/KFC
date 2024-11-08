@@ -164,7 +164,7 @@
             this.radHetHL.AutoSize = true;
             this.radHetHL.BackColor = System.Drawing.Color.DarkRed;
             this.radHetHL.CausesValidation = false;
-            this.radHetHL.CheckedColor = System.Drawing.Color.Firebrick;
+            this.radHetHL.CheckedColor = System.Drawing.Color.Gold;
             this.radHetHL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radHetHL.ForeColor = System.Drawing.Color.White;
             this.radHetHL.Location = new System.Drawing.Point(252, 28);
@@ -182,7 +182,7 @@
             // 
             this.radConHL.AutoSize = true;
             this.radConHL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.radConHL.CheckedColor = System.Drawing.Color.Firebrick;
+            this.radConHL.CheckedColor = System.Drawing.Color.Gold;
             this.radConHL.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radConHL.ForeColor = System.Drawing.Color.White;
             this.radConHL.Location = new System.Drawing.Point(74, 28);

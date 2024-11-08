@@ -67,10 +67,10 @@
             this.flowLayoutPanel1.Controls.Add(this.thucDonControl6);
             this.flowLayoutPanel1.Controls.Add(this.thucDonControl1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1414, 474);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1394, 474);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // thucDonControl2
@@ -123,7 +123,7 @@
             // 
             // thucDonControl1
             // 
-            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND";
+            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND VND VND VND";
             this.thucDonControl1.ImagePath = null;
             this.thucDonControl1.Location = new System.Drawing.Point(1051, 4);
             this.thucDonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -155,11 +155,11 @@
             this.customPanel1.Controls.Add(this.label3);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customPanel1.Location = new System.Drawing.Point(20, 474);
+            this.customPanel1.Location = new System.Drawing.Point(30, 474);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Padding = new System.Windows.Forms.Padding(20, 40, 0, 40);
             this.customPanel1.PanelColor = System.Drawing.Color.LightGray;
-            this.customPanel1.Size = new System.Drawing.Size(1414, 339);
+            this.customPanel1.Size = new System.Drawing.Size(1394, 339);
             this.customPanel1.TabIndex = 6;
             // 
             // btnReNew
@@ -255,14 +255,15 @@
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(1214, 222);
+            this.btnXuat.Location = new System.Drawing.Point(1200, 222);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(137, 78);
+            this.btnXuat.Size = new System.Drawing.Size(151, 78);
             this.btnXuat.TabIndex = 48;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextColor = System.Drawing.Color.White;
             this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnCapNhat
             // 
@@ -423,7 +424,7 @@
             this.Controls.Add(this.customPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ThucDon";
-            this.Padding = new System.Windows.Forms.Padding(20, 0, 20, 150);
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 150);
             this.Text = "ThucDon";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.customPanel1.ResumeLayout(false);

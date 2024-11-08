@@ -151,7 +151,9 @@ namespace KFC
             openformMain(new ThucDon());
         }
 
-        private void btnKhuyenMai_Click(object sender, EventArgs e)
+
+
+        private void btnKhuyenMai_Click_1(object sender, EventArgs e)
         {
 
         }
@@ -170,6 +172,7 @@ namespace KFC
         {
             openformMain(new KhuyenMai());
         }
+<<<<<<< HEAD
 
         private void btnBan_Click(object sender, EventArgs e)
         {
@@ -180,5 +183,7 @@ namespace KFC
         {
             openformMain(new KhachHang());
         }
+=======
+>>>>>>> hungg
     }
 }

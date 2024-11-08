@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DAO
 {
@@ -206,6 +207,21 @@ namespace DAO
 
             return thucDons;
         }
+        public List<ThucDon_DTO>Xuat(string maMon)
+        {
+            var thucDonsQuery = db.ThucDons
+                          .Where(td => string.IsNullOrEmpty(maMon) || td.MaSanPham == maMon) 
+                          .AsEnumerable()
+                          .Select(td => new ThucDon_DTO
+                          {
+                              MaSanPham = td.MaSanPham,
+                              TenSanPham = td.TenSanPham,
+                              DonGia = td.DonGia.HasValue ? (float)td.DonGia.Value : 0,
+                              HinhAnh = td.HinhAnh != null ? td.HinhAnh.ToArray() : new byte[0],
+                              MaLoaiHang = td.MaLoaiHang
+                          }).ToList();
 
+            return thucDonsQuery;
+        }
     }
 }

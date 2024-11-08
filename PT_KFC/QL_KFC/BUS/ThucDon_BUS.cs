@@ -43,6 +43,10 @@ namespace BUS
                 throw new Exception("Lỗi trong BUS khi thêm thực đơn: " + ex.Message);
             }
         }
+        public List<ThucDon_DTO> Xuat(string maMon)
+        {
+            return dao.Xuat(maMon);
+        }
         public bool XoaThucDon(string maSanPham)
         {
             return dao.XoaThucDon(maSanPham);
