@@ -123,7 +123,7 @@
             // 
             // thucDonControl1
             // 
-            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND VND VND";
+            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND VND VND VND";
             this.thucDonControl1.ImagePath = null;
             this.thucDonControl1.Location = new System.Drawing.Point(1051, 4);
             this.thucDonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -263,6 +263,7 @@
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextColor = System.Drawing.Color.White;
             this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnCapNhat
             // 

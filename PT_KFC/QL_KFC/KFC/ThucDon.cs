@@ -345,5 +345,10 @@ namespace KFC
         {
             return str.All(char.IsDigit);
         }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
