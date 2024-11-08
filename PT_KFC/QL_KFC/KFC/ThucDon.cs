@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace KFC
 {
@@ -18,6 +19,8 @@ namespace KFC
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
         private ThucDon_BUS bus = new ThucDon_BUS();
+        private LoaiHang_BUS lh=new LoaiHang_BUS();
+        private Kho_BUS k=new Kho_BUS();
         public string selectedMaSP;
         public ThucDon()
         {
@@ -348,7 +351,47 @@ namespace KFC
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
+            var reportForm = new Form();
+            var viewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            viewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+            viewer.LocalReport.ReportPath = @"Reports\RPThucDon.rdlc"; 
+            List<ThucDon_DTO> report;
+            List<LoaiHang_DTO> loaiHang=lh.GetAllLoaiHang();
+            List<Kho_DTO> kho = k.GetAllKho();
+            string masp=cbMaMon.Text;
+            if (!string.IsNullOrEmpty(masp))
+            {
+                report = bus.Xuat(masp);
+            }
+            else { 
+            report=bus.LayDanhSachThucDon();
+            }
+            ClearControls();
+            if (report != null && report.Count > 0)
+            {
+                // Tạo nguồn dữ liệu cho báo cáo
+                var reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", report);
+                var loaihangs = new Microsoft.Reporting.WinForms.ReportDataSource("DataSet2", loaiHang);
+                var khos= new Microsoft.Reporting.WinForms.ReportDataSource("DataSet3", kho);
+                // Xóa các nguồn dữ liệu cũ trước khi thêm mới
+                viewer.LocalReport.DataSources.Clear();
 
+                // Thêm nguồn dữ liệu vào báo cáo
+                viewer.LocalReport.DataSources.Add(reportDataSource);
+                viewer.LocalReport.DataSources.Add(loaihangs);
+                viewer.LocalReport.DataSources.Add(khos);
+                viewer.RefreshReport();
+
+                // Hiển thị báo cáo
+                reportForm.Controls.Add(viewer);
+                viewer.Dock = DockStyle.Fill;
+                reportForm.ShowDialog();
+            }
+            else
+            {
+                // Không có dữ liệu để xuất
+                MessageBox.Show("Không có dữ liệu để xuất báo cáo.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
