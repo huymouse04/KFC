@@ -104,12 +104,12 @@
             this.btnXuat.TextColor = System.Drawing.Color.White;
             this.btnXuat.UseVisualStyleBackColor = false;
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(853, 30);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(187, 24);
-            this.comboBox1.TabIndex = 15;
+            //this.comboBox1.FormattingEnabled = true;
+            //this.comboBox1.Location = new System.Drawing.Point(853, 30);
+            //this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            //this.comboBox1.Name = "comboBox1";
+            //this.comboBox1.Size = new System.Drawing.Size(187, 24);
+            //this.comboBox1.TabIndex = 15;
             // 
             // btnLoc
             // 

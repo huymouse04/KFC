@@ -176,9 +176,5 @@ namespace KFC
 
         }
 
-        private void btnBan_Click(object sender, EventArgs e)
-        {
-            openformMain(new Ban());
-        }
     }
 }

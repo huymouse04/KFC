@@ -62,6 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ban_BUS.cs" />
+<Compile Include="Combo_BUS.cs" />
+<Compile Include="ChiTietCombo_BUS.cs" />
+
     <Compile Include="Connection_BUS.cs" />
     <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="KhoHang_BUS.cs" />
@@ -76,6 +79,12 @@
     <Compile Include="ThucDon_BUS.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
       <Project>{bd5523a2-1d6e-49d4-9947-8bf1ffbc2e8f}</Project>
       <Name>DAO</Name>
@@ -84,12 +93,6 @@
       <Project>{907cd591-69b5-404e-bd27-fbf9373186d7}</Project>
       <Name>DTO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

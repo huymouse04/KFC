@@ -485,20 +485,6 @@
     <None Include="Image\z5925020250115_f6fae7d2cbe238e34954c0a85a50fad1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{3ba46191-c03d-421e-8add-4332a4734886}</Project>
-      <Name>BUS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{bd5523a2-1d6e-49d4-9947-8bf1ffbc2e8f}</Project>
-      <Name>DAO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{907cd591-69b5-404e-bd27-fbf9373186d7}</Project>
-      <Name>DTO</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="QLKFCDataSet.xsc">
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </None>
@@ -512,6 +498,20 @@
     </None>
     <None Include="Resources\sql.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{3ba46191-c03d-421e-8add-4332a4734886}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{bd5523a2-1d6e-49d4-9947-8bf1ffbc2e8f}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{907cd591-69b5-404e-bd27-fbf9373186d7}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
