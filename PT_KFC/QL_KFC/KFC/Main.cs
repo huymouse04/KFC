@@ -125,8 +125,8 @@ namespace KFC
             btnHoaDon.Visible = true;
             btnKhachHang.Visible = true;
             btnKhuyenMai.Visible = isManager;
-            btnThucDon.Visible = isManager;      
-            btnThoat.Visible = true ;
+            btnThucDon.Visible = isManager;
+            btnThoat.Visible = true;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -153,13 +153,32 @@ namespace KFC
 
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
-            openformMain(new KhuyenMai());
+
         }
 
         private void btnComBo_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnComBo_Click_1(object sender, EventArgs e)
+        {
             openformMain(new Combo());
         }
 
+        private void btnKhuyenMai_Click_1(object sender, EventArgs e)
+        {
+            openformMain(new KhuyenMai());
+        }
+
+        private void btnBan_Click(object sender, EventArgs e)
+        {
+            openformMain(new Ban());
+        }
+
+        private void btnKhachHang_Click_1(object sender, EventArgs e)
+        {
+            openformMain(new KhachHang());
+        }
     }
 }

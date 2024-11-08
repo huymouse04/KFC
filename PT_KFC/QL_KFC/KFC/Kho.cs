@@ -326,9 +326,9 @@ namespace KFC
 
             childform.TopLevel = false; // Đặt form không phải là top-level
             childform.FormBorderStyle = FormBorderStyle.None; // Không có viền
-           
+
             childform.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right; // Đặt kích thước form con vừa phải, không quá lớn
-            //childform.Size = new Size(panel_Body.Width - 1, panel_Body.Height - 35); // Giảm chiều cao một chút để không quá dài
+            childform.Size = new Size(panel_Body.Width - 1, panel_Body.Height - 35); // Giảm chiều cao một chút để không quá dài
 
             panel_Body.Controls.Add(childform); // Thêm form vào panel
             panel_Body.Tag = childform; // Đặt tag cho panel
@@ -651,8 +651,11 @@ namespace KFC
             openNhapHangForm();
         }
 
-        private void btnDeleteeee_Click(object sender, EventArgs e)
+
+
+        private void btnXoaaa_Click(object sender, EventArgs e)
         {
+
             try
             {
                 // Kiểm tra xem có dòng nào được chọn không

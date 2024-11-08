@@ -35,19 +35,18 @@
             this.btnTimKiem = new CustomButton.VBButton();
             this.tbtTiemKiem = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panelKhachHang = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnLoc = new CustomButton.VBButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnXuat = new CustomButton.VBButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnLoc = new CustomButton.VBButton();
+            this.panelKhachHang = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(299, 24);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Location = new System.Drawing.Point(448, 37);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(279, 20);
+            this.txtTimKiem.Size = new System.Drawing.Size(416, 26);
             this.txtTimKiem.TabIndex = 18;
             // 
             // BtnAdd
@@ -63,9 +62,8 @@
             this.BtnAdd.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAdd.ForeColor = System.Drawing.Color.White;
             this.BtnAdd.Location = new System.Drawing.Point(0, 0);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(94, 62);
+            this.BtnAdd.Size = new System.Drawing.Size(141, 95);
             this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Thêm";
             this.BtnAdd.TextColor = System.Drawing.Color.White;
@@ -83,10 +81,9 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(94, 0);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Location = new System.Drawing.Point(141, 0);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(94, 62);
+            this.btnXoa.Size = new System.Drawing.Size(141, 95);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextColor = System.Drawing.Color.White;
@@ -104,10 +101,9 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(188, 0);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLamMoi.Location = new System.Drawing.Point(282, 0);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(94, 62);
+            this.btnLamMoi.Size = new System.Drawing.Size(141, 95);
             this.btnLamMoi.TabIndex = 10;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.TextColor = System.Drawing.Color.White;
@@ -125,10 +121,9 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.Location = new System.Drawing.Point(282, 0);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Location = new System.Drawing.Point(423, 0);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(94, 62);
+            this.btnTimKiem.Size = new System.Drawing.Size(141, 95);
             this.btnTimKiem.TabIndex = 12;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.TextColor = System.Drawing.Color.White;
@@ -136,9 +131,10 @@
             // 
             // tbtTiemKiem
             // 
-            this.tbtTiemKiem.Location = new System.Drawing.Point(381, 24);
+            this.tbtTiemKiem.Location = new System.Drawing.Point(572, 37);
+            this.tbtTiemKiem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbtTiemKiem.Name = "tbtTiemKiem";
-            this.tbtTiemKiem.Size = new System.Drawing.Size(153, 20);
+            this.tbtTiemKiem.Size = new System.Drawing.Size(228, 26);
             this.tbtTiemKiem.TabIndex = 13;
             // 
             // panel3
@@ -154,48 +150,10 @@
             this.panel3.Controls.Add(this.BtnAdd);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Location = new System.Drawing.Point(0, 469);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(0, 622);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(893, 62);
+            this.panel3.Size = new System.Drawing.Size(1340, 95);
             this.panel3.TabIndex = 20;
-            // 
-            // panelKhachHang
-            // 
-            this.panelKhachHang.AutoScroll = true;
-            this.panelKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelKhachHang.Location = new System.Drawing.Point(0, 0);
-            this.panelKhachHang.Margin = new System.Windows.Forms.Padding(2);
-            this.panelKhachHang.Name = "panelKhachHang";
-            this.panelKhachHang.Size = new System.Drawing.Size(893, 469);
-            this.panelKhachHang.TabIndex = 19;
-            // 
-            // btnLoc
-            // 
-            this.btnLoc.BackColor = System.Drawing.Color.Firebrick;
-            this.btnLoc.BackgroundColor = System.Drawing.Color.Firebrick;
-            this.btnLoc.BorderColor = System.Drawing.Color.Crimson;
-            this.btnLoc.BorderRadius = 10;
-            this.btnLoc.BorderSize = 0;
-            this.btnLoc.FlatAppearance.BorderSize = 0;
-            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLoc.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
-            this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(540, 0);
-            this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(94, 62);
-            this.btnLoc.TabIndex = 14;
-            this.btnLoc.Text = "Lọc";
-            this.btnLoc.TextColor = System.Drawing.Color.White;
-            this.btnLoc.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(640, 24);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(141, 21);
-            this.comboBox1.TabIndex = 15;
             // 
             // btnXuat
             // 
@@ -208,24 +166,63 @@
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(787, 0);
+            this.btnXuat.Location = new System.Drawing.Point(1180, 0);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(94, 62);
+            this.btnXuat.Size = new System.Drawing.Size(141, 95);
             this.btnXuat.TabIndex = 16;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextColor = System.Drawing.Color.White;
             this.btnXuat.UseVisualStyleBackColor = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(960, 37);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(210, 28);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLoc.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnLoc.BorderColor = System.Drawing.Color.Crimson;
+            this.btnLoc.BorderRadius = 10;
+            this.btnLoc.BorderSize = 0;
+            this.btnLoc.FlatAppearance.BorderSize = 0;
+            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoc.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
+            this.btnLoc.ForeColor = System.Drawing.Color.White;
+            this.btnLoc.Location = new System.Drawing.Point(810, 0);
+            this.btnLoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(141, 95);
+            this.btnLoc.TabIndex = 14;
+            this.btnLoc.Text = "Lọc";
+            this.btnLoc.TextColor = System.Drawing.Color.White;
+            this.btnLoc.UseVisualStyleBackColor = false;
+            // 
+            // panelKhachHang
+            // 
+            this.panelKhachHang.AutoScroll = true;
+            this.panelKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelKhachHang.Location = new System.Drawing.Point(0, 0);
+            this.panelKhachHang.Name = "panelKhachHang";
+            this.panelKhachHang.Size = new System.Drawing.Size(1340, 622);
+            this.panelKhachHang.TabIndex = 19;
+            // 
             // KhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 531);
+            this.ClientSize = new System.Drawing.Size(1340, 817);
             this.Controls.Add(this.panelKhachHang);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtTimKiem);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "KhachHang";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
             this.Text = "KhachHang";
             this.Load += new System.EventHandler(this.KhachHang_Load);
             this.panel3.ResumeLayout(false);
