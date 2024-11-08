@@ -17,6 +17,7 @@ namespace KFC
         public NhaCungCap()
         {
             InitializeComponent();
+            LoadData();
         }
 
         private NhaCungCap_BUS bus = new NhaCungCap_BUS();
@@ -68,6 +69,7 @@ namespace KFC
                     LoadData();
                 }
             }
+            LoadData();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -81,7 +83,7 @@ namespace KFC
                 }
             }
 
-
+            LoadData();
 
         }
 

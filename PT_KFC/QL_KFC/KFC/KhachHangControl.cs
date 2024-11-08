@@ -93,9 +93,14 @@ namespace KFC
             // Mở form cập nhật khi click đúp
             if (khachHang != null) // Kiểm tra xem khachHang có hợp lệ không
             {
-                //CapNhatKhachHang capNhatForm = new CapNhatKhachHang(khachHang);
-                //capNhatForm.ShowDialog(); // Hiển thị form cập nhật khách hàng
+                CapNhatKhachHang capNhatForm = new CapNhatKhachHang(khachHang);
+                capNhatForm.ShowDialog(); // Hiển thị form cập nhật khách hàng
             }
+        }
+
+        private bool IsDoubleClick()
+        {
+            return MouseButtons == MouseButtons.Left && Control.MouseButtons == MouseButtons.None;
         }
 
         private void KhachHangControl_MouseDown(object sender, MouseEventArgs e)

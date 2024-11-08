@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ban_BUS.cs" />
     <Compile Include="Connection_BUS.cs" />
     <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="KhoHang_BUS.cs" />

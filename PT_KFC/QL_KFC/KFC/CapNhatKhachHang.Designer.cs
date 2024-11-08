@@ -35,10 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
+            this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDiem = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,12 +50,12 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtMaNV);
-            this.panel1.Controls.Add(this.txtTenNV);
+            this.panel1.Controls.Add(this.txtMaKhachHang);
+            this.panel1.Controls.Add(this.txtTenKhachHang);
             this.panel1.Controls.Add(this.txtSDT);
-            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtDiem);
             this.panel1.Location = new System.Drawing.Point(40, 31);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 210);
             this.panel1.TabIndex = 3;
@@ -71,13 +71,14 @@
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(148, 150);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(81, 29);
             this.btnHuy.TabIndex = 23;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextColor = System.Drawing.Color.White;
             this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click_1);
             // 
             // btnLuu
             // 
@@ -90,13 +91,14 @@
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Location = new System.Drawing.Point(40, 150);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(81, 29);
             this.btnLuu.TabIndex = 22;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextColor = System.Drawing.Color.White;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label4
             // 
@@ -138,37 +140,37 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Mã khách hàng";
             // 
-            // txtMaNV
+            // txtMaKhachHang
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(103, 24);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(174, 20);
-            this.txtMaNV.TabIndex = 0;
+            this.txtMaKhachHang.Location = new System.Drawing.Point(103, 24);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Size = new System.Drawing.Size(174, 20);
+            this.txtMaKhachHang.TabIndex = 0;
             // 
-            // txtTenNV
+            // txtTenKhachHang
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(101, 56);
-            this.txtTenNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(176, 20);
-            this.txtTenNV.TabIndex = 1;
+            this.txtTenKhachHang.Location = new System.Drawing.Point(101, 56);
+            this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTenKhachHang.Name = "txtTenKhachHang";
+            this.txtTenKhachHang.Size = new System.Drawing.Size(176, 20);
+            this.txtTenKhachHang.TabIndex = 1;
             // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(103, 80);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(174, 20);
             this.txtSDT.TabIndex = 4;
             // 
-            // txtEmail
+            // txtDiem
             // 
-            this.txtEmail.Location = new System.Drawing.Point(103, 106);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(174, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtDiem.Location = new System.Drawing.Point(103, 106);
+            this.txtDiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiem.Name = "txtDiem";
+            this.txtDiem.Size = new System.Drawing.Size(174, 20);
+            this.txtDiem.TabIndex = 5;
             // 
             // CapNhatKhachHang
             // 
@@ -176,7 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 278);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CapNhatKhachHang";
             this.Text = "CapNhatKhachHang";
             this.panel1.ResumeLayout(false);
@@ -194,9 +196,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.TextBox txtTenNV;
+        private System.Windows.Forms.TextBox txtMaKhachHang;
+        private System.Windows.Forms.TextBox txtTenKhachHang;
         private System.Windows.Forms.TextBox txtSDT;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDiem;
     }
 }

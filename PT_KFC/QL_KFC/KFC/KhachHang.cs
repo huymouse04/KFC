@@ -23,18 +23,18 @@ namespace KFC
 
         private void LoadData()
         {
-            // Xóa tất cả các điều khiển hiện có trong panelKhachHang
-            panelKhachHang.Controls.Clear();
+            // Xóa tất cả các điều khiển hiện có trong flpKhachHang
+            flpKhachHang.Controls.Clear();
 
             // Lấy danh sách khách hàng từ lớp BUS
             var khachHangList = bus.GetAllKhachHang();
 
-            // Duyệt qua danh sách khách hàng và thêm vào panelKhachHang
+            // Duyệt qua danh sách khách hàng và thêm vào flpKhachHang
             foreach (var khachHang in khachHangList)
             {
                 KhachHangControl control = new KhachHangControl();
-                control.UpdateData(khachHang);
-                panelKhachHang.Controls.Add(control); // Thêm điều khiển vào panelKhachHang
+                control.UpdateData(khachHang); // Cập nhật thông tin khách hàng vào control
+                flpKhachHang.Controls.Add(control); // Thêm điều khiển vào flpKhachHang
             }
         }
 
@@ -56,31 +56,33 @@ namespace KFC
                 return;
             }
 
-            //using (CapNhatKhachHang formCapNhat = new CapNhatKhachHang(khachHangDayDu))
-            //{
-            //    if (formCapNhat.ShowDialog() == DialogResult.OK)
-            //    {
-            //        LoadData();
-            //    }
-            //}
+            using (CapNhatKhachHang formCapNhat = new CapNhatKhachHang(khachHangDayDu))
+            {
+                if (formCapNhat.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData(); // Cập nhật lại dữ liệu sau khi cập nhật
+                }
+            }
+            LoadData();
         }
 
-        private void btnThemm_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             using (CapNhatKhachHang capNhatForm = new CapNhatKhachHang())
             {
                 // Hiển thị form cập nhật khách hàng dưới dạng dialog
                 if (capNhatForm.ShowDialog() == DialogResult.OK)
                 {
-                    LoadData(); // Gọi phương thức LoadData() để cập nhật dữ liệu
+                    LoadData(); // Cập nhật lại dữ liệu sau khi thêm khách hàng mới
                 }
             }
+            LoadData();
         }
 
-        private void btnXoaa_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem có khách hàng nào được chọn không
-            var selectedControl = panelKhachHang.Controls.OfType<KhachHangControl>().FirstOrDefault(c => c.IsSelected);
+            var selectedControl = flpKhachHang.Controls.OfType<KhachHangControl>().FirstOrDefault(c => c.IsSelected);
 
             if (selectedControl != null)
             {
@@ -101,7 +103,7 @@ namespace KFC
                             bus.DeleteKhachHang(maKhachHang);
                             MessageBox.Show("Xóa khách hàng thành công!");
 
-                            // Cập nhật lại panelKhachHang sau khi xóa
+                            // Cập nhật lại flpKhachHang sau khi xóa
                             LoadData();
                         }
                         catch (Exception ex)
@@ -117,20 +119,20 @@ namespace KFC
             }
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
         {
             string searchTerm = tbtTiemKiem.Text.Trim(); // Lấy giá trị tìm kiếm
 
             // Gọi phương thức tìm kiếm từ lớp BUS
             var result = bus.SearchKhachHang(searchTerm);
 
-            // Cập nhật panelKhachHang với kết quả tìm kiếm
-            panelKhachHang.Controls.Clear();
+            // Cập nhật flpKhachHang với kết quả tìm kiếm
+            flpKhachHang.Controls.Clear();
             foreach (var khachHang in result)
             {
                 KhachHangControl control = new KhachHangControl();
                 control.UpdateData(khachHang); // Cập nhật thông tin khách hàng vào control
-                panelKhachHang.Controls.Add(control); // Thêm điều khiển vào panelKhachHang
+                flpKhachHang.Controls.Add(control); // Thêm điều khiển vào flpKhachHang
             }
 
             // Kiểm tra nếu không có kết quả tìm kiếm
@@ -140,9 +142,8 @@ namespace KFC
             }
         }
 
-        private void lblKhachHang_Click(object sender, EventArgs e)
+        private void btnLamMoi_Click_1(object sender, EventArgs e)
         {
-            // Gọi lại dữ liệu khi nhấn vào lblKhachHang
             LoadData();
             tbtTiemKiem.Clear();
         }
@@ -182,5 +183,6 @@ namespace KFC
             return dataTable;
         }
 
+        
     }
 }

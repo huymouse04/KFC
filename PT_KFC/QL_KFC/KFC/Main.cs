@@ -153,10 +153,14 @@ namespace KFC
             openformMain(new KhuyenMai());
         }
 
-
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             openformMain(new KhachHang());
+        }
+
+        private void btnBan_Click(object sender, EventArgs e)
+        {
+            openformMain(new Ban());
         }
     }
 }

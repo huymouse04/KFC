@@ -213,6 +213,7 @@
             this.btnBan.Text = "Bàn";
             this.btnBan.TextColor = System.Drawing.Color.White;
             this.btnBan.UseVisualStyleBackColor = false;
+            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
             // 
             // btnDonDat
             // 
