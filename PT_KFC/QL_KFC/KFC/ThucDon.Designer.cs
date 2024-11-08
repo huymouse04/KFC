@@ -70,7 +70,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1394, 474);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1471, 506);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // thucDonControl2
@@ -123,7 +123,7 @@
             // 
             // thucDonControl1
             // 
-            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND VND VND VND";
+            this.thucDonControl1.DonGia = "Giá: Giá: Giá: Giá: Giá: Giá: Giá: Giá: Đơn Giá VND VND VND VND VND VND VND VND";
             this.thucDonControl1.ImagePath = null;
             this.thucDonControl1.Location = new System.Drawing.Point(1051, 4);
             this.thucDonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -155,15 +155,16 @@
             this.customPanel1.Controls.Add(this.label3);
             this.customPanel1.Controls.Add(this.label1);
             this.customPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customPanel1.Location = new System.Drawing.Point(30, 474);
+            this.customPanel1.Location = new System.Drawing.Point(30, 506);
             this.customPanel1.Name = "customPanel1";
             this.customPanel1.Padding = new System.Windows.Forms.Padding(20, 40, 0, 40);
             this.customPanel1.PanelColor = System.Drawing.Color.LightGray;
-            this.customPanel1.Size = new System.Drawing.Size(1394, 339);
+            this.customPanel1.Size = new System.Drawing.Size(1471, 339);
             this.customPanel1.TabIndex = 6;
             // 
             // btnReNew
             // 
+            this.btnReNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReNew.BackColor = System.Drawing.Color.Firebrick;
             this.btnReNew.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnReNew.BorderColor = System.Drawing.Color.Crimson;
@@ -173,7 +174,7 @@
             this.btnReNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReNew.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReNew.ForeColor = System.Drawing.Color.White;
-            this.btnReNew.Location = new System.Drawing.Point(1200, 66);
+            this.btnReNew.Location = new System.Drawing.Point(1180, 66);
             this.btnReNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReNew.Name = "btnReNew";
             this.btnReNew.Size = new System.Drawing.Size(151, 78);
@@ -185,16 +186,18 @@
             // 
             // cbMaLH
             // 
+            this.cbMaLH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cbMaLH.BackColor = System.Drawing.Color.DarkRed;
             this.cbMaLH.ForeColor = System.Drawing.Color.White;
             this.cbMaLH.FormattingEnabled = true;
-            this.cbMaLH.Location = new System.Drawing.Point(755, 87);
+            this.cbMaLH.Location = new System.Drawing.Point(735, 87);
             this.cbMaLH.Name = "cbMaLH";
             this.cbMaLH.Size = new System.Drawing.Size(177, 28);
             this.cbMaLH.TabIndex = 49;
             // 
             // txtTimKiem
             // 
+            this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTimKiem.ForeColor = System.Drawing.Color.Firebrick;
             this.txtTimKiem.Location = new System.Drawing.Point(824, 274);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -204,6 +207,7 @@
             // 
             // btnXoa
             // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
             this.btnXoa.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnXoa.BorderColor = System.Drawing.Color.LavenderBlush;
@@ -225,6 +229,7 @@
             // 
             // BtnAdd
             // 
+            this.BtnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnAdd.BackColor = System.Drawing.Color.Firebrick;
             this.BtnAdd.BackgroundColor = System.Drawing.Color.Firebrick;
             this.BtnAdd.BorderColor = System.Drawing.Color.LavenderBlush;
@@ -246,6 +251,7 @@
             // 
             // btnXuat
             // 
+            this.btnXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXuat.BackColor = System.Drawing.Color.Firebrick;
             this.btnXuat.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnXuat.BorderColor = System.Drawing.Color.Crimson;
@@ -255,7 +261,7 @@
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(1200, 222);
+            this.btnXuat.Location = new System.Drawing.Point(1180, 222);
             this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(151, 78);
@@ -267,6 +273,7 @@
             // 
             // btnCapNhat
             // 
+            this.btnCapNhat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCapNhat.BackColor = System.Drawing.Color.Firebrick;
             this.btnCapNhat.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnCapNhat.BorderColor = System.Drawing.Color.LavenderBlush;
@@ -288,6 +295,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.DarkRed;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,6 +308,7 @@
             // 
             // cbMaMon
             // 
+            this.cbMaMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbMaMon.BackColor = System.Drawing.Color.DarkRed;
             this.cbMaMon.ForeColor = System.Drawing.Color.White;
             this.cbMaMon.FormattingEnabled = true;
@@ -311,6 +320,7 @@
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnTimKiem.BackColor = System.Drawing.Color.Firebrick;
             this.btnTimKiem.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnTimKiem.BorderColor = System.Drawing.Color.Crimson;
@@ -332,6 +342,7 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBrowse.BackColor = System.Drawing.Color.Firebrick;
             this.btnBrowse.BackgroundColor = System.Drawing.Color.Firebrick;
             this.btnBrowse.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -352,11 +363,12 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.DarkRed;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(556, 83);
+            this.label4.Location = new System.Drawing.Point(536, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 29);
             this.label4.TabIndex = 43;
@@ -364,8 +376,9 @@
             // 
             // txtGia
             // 
+            this.txtGia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtGia.ForeColor = System.Drawing.Color.Firebrick;
-            this.txtGia.Location = new System.Drawing.Point(755, 32);
+            this.txtGia.Location = new System.Drawing.Point(735, 32);
             this.txtGia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(177, 26);
@@ -373,6 +386,7 @@
             // 
             // txtImagePath
             // 
+            this.txtImagePath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtImagePath.ForeColor = System.Drawing.Color.Firebrick;
             this.txtImagePath.Location = new System.Drawing.Point(222, 136);
             this.txtImagePath.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -382,6 +396,7 @@
             // 
             // txtTenMon
             // 
+            this.txtTenMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTenMon.ForeColor = System.Drawing.Color.Firebrick;
             this.txtTenMon.Location = new System.Drawing.Point(222, 80);
             this.txtTenMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -391,11 +406,12 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DarkRed;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(667, 29);
+            this.label3.Location = new System.Drawing.Point(647, 29);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 29);
@@ -404,6 +420,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -419,12 +436,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1454, 963);
+            this.ClientSize = new System.Drawing.Size(1551, 995);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.customPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ThucDon";
-            this.Padding = new System.Windows.Forms.Padding(30, 0, 30, 150);
+            this.Padding = new System.Windows.Forms.Padding(30, 0, 50, 150);
             this.Text = "ThucDon";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.customPanel1.ResumeLayout(false);
