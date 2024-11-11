@@ -214,7 +214,7 @@
             this.pnTop.Controls.Add(this.lblNH);
             this.pnTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnTop.Location = new System.Drawing.Point(0, 0);
-            this.pnTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnTop.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.pnTop.Name = "pnTop";
             this.pnTop.Size = new System.Drawing.Size(1549, 62);
             this.pnTop.TabIndex = 74;
@@ -514,7 +514,7 @@
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnLamMoi.Location = new System.Drawing.Point(0, 0);
-            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(141, 48);
             this.btnLamMoi.TabIndex = 16;
@@ -533,7 +533,7 @@
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.ForeColor = System.Drawing.Color.White;
             this.btnXuat.Location = new System.Drawing.Point(0, 0);
-            this.btnXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(149, 39);
             this.btnXuat.TabIndex = 75;
@@ -553,7 +553,7 @@
             this.btnThem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Location = new System.Drawing.Point(0, 0);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(149, 39);
             this.btnThem.TabIndex = 76;
@@ -573,7 +573,7 @@
             this.btnCapNhat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.Color.White;
             this.btnCapNhat.Location = new System.Drawing.Point(0, 0);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(141, 48);
             this.btnCapNhat.TabIndex = 9;
@@ -591,7 +591,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Location = new System.Drawing.Point(0, 0);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(149, 39);
             this.btnXoa.TabIndex = 77;
@@ -610,7 +610,7 @@
             this.btnTimKiem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Location = new System.Drawing.Point(0, 0);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(141, 48);
             this.btnTimKiem.TabIndex = 11;
@@ -630,7 +630,7 @@
             this.btnLoaiHang.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnLoaiHang.ForeColor = System.Drawing.Color.White;
             this.btnLoaiHang.Location = new System.Drawing.Point(0, 0);
-            this.btnLoaiHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLoaiHang.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.Size = new System.Drawing.Size(141, 48);
             this.btnLoaiHang.TabIndex = 13;
@@ -650,7 +650,7 @@
             this.btnNCC.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNCC.ForeColor = System.Drawing.Color.White;
             this.btnNCC.Location = new System.Drawing.Point(0, 0);
-            this.btnNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNCC.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnNCC.Name = "btnNCC";
             this.btnNCC.Size = new System.Drawing.Size(141, 48);
             this.btnNCC.TabIndex = 14;
@@ -670,7 +670,7 @@
             this.btnNhapHang.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhapHang.ForeColor = System.Drawing.Color.White;
             this.btnNhapHang.Location = new System.Drawing.Point(0, 0);
-            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(141, 48);
             this.btnNhapHang.TabIndex = 15;
@@ -704,7 +704,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1549, 844);
             this.Controls.Add(this.panel_Body);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Kho";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.Text = "Kho";

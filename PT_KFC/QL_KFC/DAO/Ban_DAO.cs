@@ -12,13 +12,11 @@ namespace DAO
 
         public Ban_DAO() { }
 
-        // Phương thức tìm kiếm bàn dựa trên tham số nhập vào
         public List<Ban_DTO> SearchBan(string searchTerm)
         {
             try
             {
                 var query = DB.Bans.AsQueryable();
-
                 var results = query.Where(ban =>
                     ban.MaBan.Contains(searchTerm) ||
                     ban.TenBan.Contains(searchTerm)).ToList();
@@ -27,7 +25,9 @@ namespace DAO
                 {
                     MaBan = ban.MaBan,
                     TenBan = ban.TenBan,
-                    TrangThaiBan = ban.TrangThaiBan ?? false // Thêm giá trị mặc định là false
+                    ThoiGianDen = ban.ThoiGianDen,
+                    ThoiGianRoi = ban.ThoiGianRoi,
+                    TrangThaiBan = ban.TrangThaiBan ?? false
                 }).ToList();
 
                 return banDtos;
@@ -46,18 +46,19 @@ namespace DAO
 
         public bool IsMaBanExists(string maBan)
         {
-            return DB.Bans.Any(ban => ban.MaBan == maBan);
+            return DB.Bans.Any(ban => ban.MaBan == maBan);  // Kiểm tra nếu có bất kỳ bàn nào có mã trùng với mã truyền vào
         }
-
         public void AddBan(Ban_DTO ban)
         {
             try
             {
+                // Kiểm tra xem mã bàn đã tồn tại chưa
                 if (IsMaBanExists(ban.MaBan))
                 {
                     throw new Exception("Mã bàn đã tồn tại!");
                 }
 
+                // Khởi tạo đối tượng mới từ DTO
                 var newBan = new Ban
                 {
                     MaBan = ban.MaBan,
@@ -65,14 +66,23 @@ namespace DAO
                     TrangThaiBan = ban.TrangThaiBan
                 };
 
+                // Kiểm tra và gán ThoiGianDen, nếu không có giá trị thì gán DateTime.MinValue
+                newBan.ThoiGianDen = ban.ThoiGianDen ?? DateTime.MinValue;
+
+                // Kiểm tra và gán ThoiGianRoi, nếu không có giá trị thì gán DateTime.MinValue
+                newBan.ThoiGianRoi = ban.ThoiGianRoi ?? DateTime.MinValue;
+
+                // Thêm đối tượng vào cơ sở dữ liệu
                 DB.Bans.InsertOnSubmit(newBan);
                 DB.SubmitChanges();
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                HandleException(ex); // Xử lý ngoại lệ
             }
         }
+
+
 
         public List<Ban_DTO> GetAllBan()
         {
@@ -81,6 +91,8 @@ namespace DAO
                        {
                            MaBan = ban.MaBan,
                            TenBan = ban.TenBan,
+                           ThoiGianDen = ban.ThoiGianDen,
+                           ThoiGianRoi = ban.ThoiGianRoi,
                            TrangThaiBan = ban.TrangThaiBan ?? false
                        };
 
@@ -96,12 +108,23 @@ namespace DAO
                     throw new ArgumentNullException(nameof(ban), "Bàn không được null");
                 }
 
+                // Tìm bàn hiện tại trong cơ sở dữ liệu
                 var existingBan = DB.Bans.FirstOrDefault(b => b.MaBan == ban.MaBan);
+
                 if (existingBan != null)
                 {
+                    // Cập nhật thông tin cho bàn
                     existingBan.TenBan = ban.TenBan;
+
+                    // Kiểm tra và gán thời gian vào các trường
+                    // Nếu ThoiGianDen và ThoiGianRoi là null, sẽ giữ nguyên giá trị cũ hoặc gán DateTime.MinValue nếu cần
+                    existingBan.ThoiGianDen = ban.ThoiGianDen ?? existingBan.ThoiGianDen;
+                    existingBan.ThoiGianRoi = ban.ThoiGianRoi ?? existingBan.ThoiGianRoi;
+
+                    // Cập nhật trạng thái bàn
                     existingBan.TrangThaiBan = ban.TrangThaiBan;
 
+                    // Lưu thay đổi vào cơ sở dữ liệu
                     DB.SubmitChanges();
                 }
                 else
@@ -111,9 +134,10 @@ namespace DAO
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                HandleException(ex); // Xử lý lỗi
             }
         }
+
 
         public void DeleteBan(string maBan)
         {
@@ -122,20 +146,21 @@ namespace DAO
                 var existingBan = DB.Bans.FirstOrDefault(ban => ban.MaBan == maBan);
                 if (existingBan != null)
                 {
-                    DB.Bans.DeleteOnSubmit(existingBan);
-                    DB.SubmitChanges();
+                    DB.Bans.DeleteOnSubmit(existingBan);  // Xóa bản ghi khỏi cơ sở dữ liệu
+                    DB.SubmitChanges();  // Lưu thay đổi
                 }
                 else
                 {
-                    throw new Exception("Bàn không tồn tại.");
+                    throw new Exception("Bàn không tồn tại.");  // Báo lỗi nếu bàn không tồn tại
                 }
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                HandleException(ex);  // Gọi hàm xử lý ngoại lệ nếu có lỗi
             }
         }
 
+        // Phương thức xử lý ngoại lệ
         private void HandleException(Exception ex)
         {
             if (ex is ArgumentNullException)
@@ -155,5 +180,7 @@ namespace DAO
                 throw new Exception("Lỗi không xác định: " + ex.Message);
             }
         }
+
+
     }
 }

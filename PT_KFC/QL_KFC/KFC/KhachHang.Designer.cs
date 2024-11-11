@@ -30,10 +30,10 @@
         {
             this.flpKhachHang = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cbbLoc = new System.Windows.Forms.ComboBox();
-            this.tbtTiemKiem = new System.Windows.Forms.TextBox();
             this.btnXuat = new CustomButton.VBButton();
+            this.cbbLoc = new System.Windows.Forms.ComboBox();
             this.btnLoc = new CustomButton.VBButton();
+            this.tbtTiemKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new CustomButton.VBButton();
             this.btnLamMoi = new CustomButton.VBButton();
             this.btnXoa = new CustomButton.VBButton();
@@ -48,7 +48,7 @@
             this.flpKhachHang.Location = new System.Drawing.Point(0, 0);
             this.flpKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.flpKhachHang.Name = "flpKhachHang";
-            this.flpKhachHang.Size = new System.Drawing.Size(893, 291);
+            this.flpKhachHang.Size = new System.Drawing.Size(910, 237);
             this.flpKhachHang.TabIndex = 22;
             // 
             // panel3
@@ -64,26 +64,11 @@
             this.panel3.Controls.Add(this.BtnAdd);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Location = new System.Drawing.Point(0, 226);
+            this.panel3.Location = new System.Drawing.Point(0, 175);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(893, 65);
+            this.panel3.Size = new System.Drawing.Size(910, 62);
             this.panel3.TabIndex = 24;
-            // 
-            // cbbLoc
-            // 
-            this.cbbLoc.FormattingEnabled = true;
-            this.cbbLoc.Location = new System.Drawing.Point(640, 24);
-            this.cbbLoc.Name = "cbbLoc";
-            this.cbbLoc.Size = new System.Drawing.Size(141, 21);
-            this.cbbLoc.TabIndex = 15;
-            // 
-            // tbtTiemKiem
-            // 
-            this.tbtTiemKiem.Location = new System.Drawing.Point(381, 24);
-            this.tbtTiemKiem.Name = "tbtTiemKiem";
-            this.tbtTiemKiem.Size = new System.Drawing.Size(153, 20);
-            this.tbtTiemKiem.TabIndex = 13;
             // 
             // btnXuat
             // 
@@ -96,20 +81,24 @@
             this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXuat.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(787, 0);
+            this.btnXuat.Location = new System.Drawing.Point(785, 0);
+            this.btnXuat.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(94, 62);
             this.btnXuat.TabIndex = 16;
             this.btnXuat.Text = "Xuất";
             this.btnXuat.TextColor = System.Drawing.Color.White;
             this.btnXuat.UseVisualStyleBackColor = false;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
-            //this.comboBox1.FormattingEnabled = true;
-            //this.comboBox1.Location = new System.Drawing.Point(853, 30);
-            //this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            //this.comboBox1.Name = "comboBox1";
-            //this.comboBox1.Size = new System.Drawing.Size(187, 24);
-            //this.comboBox1.TabIndex = 15;
+            // cbbLoc
+            // 
+            this.cbbLoc.FormattingEnabled = true;
+            this.cbbLoc.Location = new System.Drawing.Point(641, 23);
+            this.cbbLoc.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbLoc.Name = "cbbLoc";
+            this.cbbLoc.Size = new System.Drawing.Size(140, 21);
+            this.cbbLoc.TabIndex = 15;
             // 
             // btnLoc
             // 
@@ -122,14 +111,22 @@
             this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoc.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(720, 0);
-            this.btnLoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoc.Location = new System.Drawing.Point(542, 0);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(125, 76);
+            this.btnLoc.Size = new System.Drawing.Size(94, 62);
             this.btnLoc.TabIndex = 14;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.TextColor = System.Drawing.Color.White;
             this.btnLoc.UseVisualStyleBackColor = false;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
+            // 
+            // tbtTiemKiem
+            // 
+            this.tbtTiemKiem.Location = new System.Drawing.Point(392, 24);
+            this.tbtTiemKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.tbtTiemKiem.Name = "tbtTiemKiem";
+            this.tbtTiemKiem.Size = new System.Drawing.Size(145, 20);
+            this.tbtTiemKiem.TabIndex = 13;
             // 
             // btnTimKiem
             // 
@@ -146,7 +143,7 @@
             this.btnTimKiem.Location = new System.Drawing.Point(282, 0);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(94, 65);
+            this.btnTimKiem.Size = new System.Drawing.Size(106, 62);
             this.btnTimKiem.TabIndex = 12;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.TextColor = System.Drawing.Color.White;
@@ -168,7 +165,7 @@
             this.btnLamMoi.Location = new System.Drawing.Point(188, 0);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(94, 65);
+            this.btnLamMoi.Size = new System.Drawing.Size(94, 62);
             this.btnLamMoi.TabIndex = 10;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.TextColor = System.Drawing.Color.White;
@@ -190,7 +187,7 @@
             this.btnXoa.Location = new System.Drawing.Point(94, 0);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(94, 65);
+            this.btnXoa.Size = new System.Drawing.Size(94, 62);
             this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextColor = System.Drawing.Color.White;
@@ -212,7 +209,7 @@
             this.BtnAdd.Location = new System.Drawing.Point(0, 0);
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(94, 65);
+            this.BtnAdd.Size = new System.Drawing.Size(94, 62);
             this.BtnAdd.TabIndex = 6;
             this.BtnAdd.Text = "Thêm";
             this.BtnAdd.TextColor = System.Drawing.Color.White;
@@ -221,14 +218,14 @@
             // 
             // KhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 343);
+            this.ClientSize = new System.Drawing.Size(910, 279);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.flpKhachHang);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "KhachHang";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 52);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 42);
             this.Text = "KhachHang";
             this.Load += new System.EventHandler(this.KhachHang_Load);
             this.panel3.ResumeLayout(false);

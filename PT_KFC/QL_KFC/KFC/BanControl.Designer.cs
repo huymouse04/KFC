@@ -30,6 +30,7 @@
         {
             this.lblTrangThai = new System.Windows.Forms.Label();
             this.lblBan = new System.Windows.Forms.Label();
+            this.lblThoiGian = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTrangThai
@@ -54,15 +55,29 @@
             this.lblBan.TabIndex = 1;
             this.lblBan.Text = "Tên bàn";
             // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoiGian.Location = new System.Drawing.Point(14, 88);
+            this.lblThoiGian.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(97, 19);
+            this.lblThoiGian.TabIndex = 2;
+            this.lblThoiGian.Text = "Thời gian đặt";
+            this.lblThoiGian.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // BanControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblThoiGian);
             this.Controls.Add(this.lblBan);
             this.Controls.Add(this.lblTrangThai);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BanControl";
-            this.Size = new System.Drawing.Size(169, 119);
+            this.Size = new System.Drawing.Size(198, 119);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.BanControl_Paint_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -72,5 +87,6 @@
 
         private System.Windows.Forms.Label lblTrangThai;
         private System.Windows.Forms.Label lblBan;
+        private System.Windows.Forms.Label lblThoiGian;
     }
 }

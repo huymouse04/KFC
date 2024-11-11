@@ -14,11 +14,13 @@ namespace KFC
         public KhachHang()
         {
             InitializeComponent();
+            var khachHangList = bus.GetAllKhachHang();
         }
 
         private void KhachHang_Load(object sender, EventArgs e)
         {
             LoadData();
+            LoadComboBoxLoc(); // Tải các item lọc vào ComboBox khi form tải
         }
 
         private void LoadData()
@@ -146,6 +148,7 @@ namespace KFC
         {
             LoadData();
             tbtTiemKiem.Clear();
+            cbbLoc.SelectedIndex = 0; // Đặt lại ComboBox về "Tất cả"
         }
 
         public DataTable ConvertListToDataTable(List<DTO.KhachHang_DTO> list)
@@ -183,6 +186,69 @@ namespace KFC
             return dataTable;
         }
 
-        
+
+        // Hàm tải dữ liệu cho ComboBox lọc
+        private void LoadComboBoxLoc()
+        {
+            // Thêm các item vào ComboBox để lọc theo điểm tích lũy
+            cbbLoc.Items.Clear();
+            cbbLoc.Items.Add("Tất cả");  // Tùy chọn không lọc
+            cbbLoc.Items.Add("Dưới 50 điểm");
+            cbbLoc.Items.Add("Từ 50 đến dưới 100 điểm");
+            cbbLoc.Items.Add("Từ 100 đến dưới 150 điểm");
+            cbbLoc.Items.Add("Bằng 150 điểm");
+
+            cbbLoc.SelectedIndex = 0;  // Chọn mặc định là "Tất cả"
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            // Lấy giá trị từ ComboBox
+            string selectedCondition = cbbLoc.SelectedItem.ToString();
+
+            List<KhachHang_DTO> result = new List<KhachHang_DTO>();
+
+            switch (selectedCondition)
+            {
+                case "Tất cả":
+                    result = bus.GetAllKhachHang(); // Lấy toàn bộ khách hàng
+                    break;
+                case "Dưới 50 điểm":
+                    result = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy < 50).ToList(); // Lọc khách hàng có điểm dưới 50
+                    break;
+                case "Từ 50 đến dưới 100 điểm":
+                    result = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy >= 50 && kh.DiemTichLuy < 100).ToList(); // Lọc khách hàng có điểm từ 50 đến dưới 100
+                    break;
+                case "Từ 100 đến dưới 150 điểm":
+                    result = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy >= 100 && kh.DiemTichLuy < 150).ToList(); // Lọc khách hàng có điểm từ 100 đến dưới 150
+                    break;
+                case "Bằng 150 điểm":
+                    result = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy == 150).ToList(); // Lọc khách hàng có điểm bằng 150
+                    break;
+                default:
+                    MessageBox.Show("Không có điều kiện lọc phù hợp.");
+                    return;
+            }
+
+            // Cập nhật lại danh sách khách hàng hiển thị
+            flpKhachHang.Controls.Clear();
+            foreach (var khachHang in result)
+            {
+                KhachHangControl control = new KhachHangControl();
+                control.UpdateData(khachHang); // Cập nhật thông tin khách hàng vào control
+                flpKhachHang.Controls.Add(control); // Thêm điều khiển vào flpKhachHang
+            }
+
+            // Nếu không có kết quả lọc
+            if (result.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy khách hàng với điều kiện lọc đã chọn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnXuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

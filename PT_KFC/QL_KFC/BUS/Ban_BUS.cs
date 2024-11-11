@@ -11,51 +11,42 @@ namespace BUS
 
         public Ban_BUS() { }
 
-        // Phương thức tìm kiếm bàn
         public List<Ban_DTO> SearchBan(string searchTerm)
         {
-            return dao.SearchBan(searchTerm); // Gọi phương thức tìm kiếm từ DAO
+            return dao.SearchBan(searchTerm);
         }
 
-        // Lấy bàn theo mã
         public Ban_DTO GetBanByMa(string maBan)
         {
             var ban = dao.GetBanByMa(maBan);
             if (ban != null)
             {
-                Console.WriteLine("Lấy thông tin bàn thành công: " + ban.TenBan);
-
                 return new Ban_DTO
                 {
                     MaBan = ban.MaBan,
                     TenBan = ban.TenBan,
+                    ThoiGianDen = ban.ThoiGianDen,
+                    ThoiGianRoi = ban.ThoiGianRoi,
                     TrangThaiBan = ban.TrangThaiBan ?? false
                 };
-            }
-            else
-            {
-                Console.WriteLine("Không tìm thấy bàn với mã: " + maBan);
             }
             return null;
         }
 
-        // Thêm bàn mới
         public void AddBan(Ban_DTO ban)
         {
-            ValidateBan(ban); // Kiểm tra dữ liệu đầu vào
+            ValidateBan(ban);
             dao.AddBan(ban);
         }
 
-        // Lấy tất cả bàn
         public List<Ban_DTO> GetAllBan()
         {
             return dao.GetAllBan();
         }
 
-        // Cập nhật thông tin bàn
         public void UpdateBan(Ban_DTO ban)
         {
-            ValidateBan(ban); // Kiểm tra dữ liệu đầu vào
+            ValidateBan(ban);
             dao.UpdateBan(ban);
         }
 
