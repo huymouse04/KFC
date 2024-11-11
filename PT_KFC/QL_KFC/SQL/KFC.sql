@@ -79,6 +79,7 @@ CREATE TABLE Kho (
 CREATE TABLE NhapHang (  
     MaNhapHang INT IDENTITY(1,1) PRIMARY KEY,  
     MaSanPham VARCHAR(30) NOT NULL,  
+	TenSanPham NVARCHAR (100) not null,
     SoLuong INT NOT NULL,  
     DonViTinh NVARCHAR(50),  
     DonGia FLOAT,  
@@ -138,7 +139,8 @@ CREATE TABLE KhuyenMai (
 CREATE TABLE Ban (  
     MaBan VARCHAR(20) PRIMARY KEY NOT NULL,  
     TenBan NVARCHAR(50) NOT NULL,
-	ThoiGianDen DATETIME NOT NULL,  
+	ThoiGianDen DATETIME NOT NULL,
+	ThoiGianRoi DATETIME NOT NULL,  
     TrangThaiBan BIT  
 );  
 

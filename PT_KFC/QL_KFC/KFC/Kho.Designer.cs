@@ -81,17 +81,19 @@
             this.dtGVKHO.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGVKHO.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dtGVKHO.Location = new System.Drawing.Point(0, 453);
-            this.dtGVKHO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtGVKHO.Margin = new System.Windows.Forms.Padding(4);
             this.dtGVKHO.Name = "dtGVKHO";
             this.dtGVKHO.RowHeadersWidth = 51;
             this.dtGVKHO.Size = new System.Drawing.Size(1549, 361);
             this.dtGVKHO.TabIndex = 16;
+            this.dtGVKHO.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGVKHO_CellDoubleClick);
+            this.dtGVKHO.SelectionChanged += new System.EventHandler(this.dtGVKHO_SelectionChanged_1);
             // 
             // cbLH
             // 
             this.cbLH.FormattingEnabled = true;
             this.cbLH.Location = new System.Drawing.Point(347, 177);
-            this.cbLH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbLH.Margin = new System.Windows.Forms.Padding(4);
             this.cbLH.Name = "cbLH";
             this.cbLH.Size = new System.Drawing.Size(247, 24);
             this.cbLH.TabIndex = 0;
@@ -203,7 +205,7 @@
             this.panel_Body.Controls.Add(this.dtGVKHO);
             this.panel_Body.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Body.Location = new System.Drawing.Point(0, 0);
-            this.panel_Body.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Body.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Body.Name = "panel_Body";
             this.panel_Body.Size = new System.Drawing.Size(1549, 814);
             this.panel_Body.TabIndex = 1;
@@ -271,7 +273,7 @@
             this.pnBET.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnBET.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnBET.Location = new System.Drawing.Point(0, 0);
-            this.pnBET.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnBET.Margin = new System.Windows.Forms.Padding(4);
             this.pnBET.Name = "pnBET";
             this.pnBET.Size = new System.Drawing.Size(1549, 453);
             this.pnBET.TabIndex = 0;

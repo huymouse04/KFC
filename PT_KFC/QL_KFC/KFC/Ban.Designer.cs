@@ -30,13 +30,13 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbbLoc = new System.Windows.Forms.ComboBox();
-            this.tbtTiemKiem = new System.Windows.Forms.TextBox();
-            this.flpBan = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLoc = new CustomButton.VBButton();
+            this.tbtTiemKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new CustomButton.VBButton();
             this.btnLamMoi = new CustomButton.VBButton();
             this.btnXoa = new CustomButton.VBButton();
             this.BtnAdd = new CustomButton.VBButton();
+            this.flpBan = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.panel3.Controls.Add(this.BtnAdd);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Location = new System.Drawing.Point(0, 307);
+            this.panel3.Location = new System.Drawing.Point(0, 287);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1069, 80);
@@ -62,28 +62,10 @@
             // 
             this.cbbLoc.FormattingEnabled = true;
             this.cbbLoc.Location = new System.Drawing.Point(853, 30);
-            this.cbbLoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbLoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbbLoc.Name = "cbbLoc";
             this.cbbLoc.Size = new System.Drawing.Size(187, 24);
             this.cbbLoc.TabIndex = 15;
-            // 
-            // tbtTiemKiem
-            // 
-            this.tbtTiemKiem.Location = new System.Drawing.Point(508, 30);
-            this.tbtTiemKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbtTiemKiem.Name = "tbtTiemKiem";
-            this.tbtTiemKiem.Size = new System.Drawing.Size(203, 22);
-            this.tbtTiemKiem.TabIndex = 13;
-            // 
-            // flpBan
-            // 
-            this.flpBan.AutoScroll = true;
-            this.flpBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpBan.Location = new System.Drawing.Point(0, 0);
-            this.flpBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.flpBan.Name = "flpBan";
-            this.flpBan.Size = new System.Drawing.Size(1069, 307);
-            this.flpBan.TabIndex = 26;
             // 
             // btnLoc
             // 
@@ -104,6 +86,14 @@
             this.btnLoc.Text = "Lọc";
             this.btnLoc.TextColor = System.Drawing.Color.White;
             this.btnLoc.UseVisualStyleBackColor = false;
+            // 
+            // tbtTiemKiem
+            // 
+            this.tbtTiemKiem.Location = new System.Drawing.Point(508, 30);
+            this.tbtTiemKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.tbtTiemKiem.Name = "tbtTiemKiem";
+            this.tbtTiemKiem.Size = new System.Drawing.Size(203, 22);
+            this.tbtTiemKiem.TabIndex = 13;
             // 
             // btnTimKiem
             // 
@@ -193,6 +183,16 @@
             this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
+            // flpBan
+            // 
+            this.flpBan.AutoScroll = true;
+            this.flpBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpBan.Location = new System.Drawing.Point(0, 0);
+            this.flpBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flpBan.Name = "flpBan";
+            this.flpBan.Size = new System.Drawing.Size(1069, 287);
+            this.flpBan.TabIndex = 26;
+            // 
             // Ban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,7 +202,7 @@
             this.Controls.Add(this.panel3);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Ban";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 120);
             this.Text = "Ban";
             this.Load += new System.EventHandler(this.Ban_Load);
             this.panel3.ResumeLayout(false);
