@@ -3,6 +3,8 @@
     <Type Name="Ban">
       <Column Name="MaBan" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenBan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianDen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianRoi" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="TrangThaiBan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Ban_DonDat" Member="DonDats" ThisKey="MaBan" OtherKey="MaBan" Type="DonDat" />
     </Type>
@@ -17,18 +19,6 @@
       <Association Name="ThucDon_ChiTietDonDat" Member="ChiTietDonDats" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ChiTietDonDat" />
       <Association Name="Kho_ThucDon" Member="Kho" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="Kho" IsForeignKey="true" />
       <Association Name="LoaiHang_ThucDon" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Combo" Member="Combos">
-    <Type Name="Combo">
-      <Column Name="MaCombo" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenCombo" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="GiaCombo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="Combo_ChiTietCombo" Member="ChiTietCombos" ThisKey="MaCombo" OtherKey="MaCombo" Type="ChiTietCombo" />
-      <Association Name="Combo_ChiTietDonDat" Member="ChiTietDonDats" ThisKey="MaCombo" OtherKey="MaCombo" Type="ChiTietDonDat" />
     </Type>
   </Table>
   <Table Name="dbo.ChiTietCombo" Member="ChiTietCombos">
@@ -48,9 +38,21 @@
       <Column Name="MaCombo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="Combo_ChiTietDonDat" Member="Combo" ThisKey="MaCombo" OtherKey="MaCombo" Type="Combo" IsForeignKey="true" />
       <Association Name="ThucDon_ChiTietDonDat" Member="ThucDon" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ThucDon" IsForeignKey="true" />
+      <Association Name="Combo_ChiTietDonDat" Member="Combo" ThisKey="MaCombo" OtherKey="MaCombo" Type="Combo" IsForeignKey="true" />
       <Association Name="DonDat_ChiTietDonDat" Member="DonDat" ThisKey="MaDonDat" OtherKey="MaDonDat" Type="DonDat" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Combo" Member="Combos">
+    <Type Name="Combo">
+      <Column Name="MaCombo" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenCombo" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaCombo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Combo_ChiTietCombo" Member="ChiTietCombos" ThisKey="MaCombo" OtherKey="MaCombo" Type="ChiTietCombo" />
+      <Association Name="Combo_ChiTietDonDat" Member="ChiTietDonDats" ThisKey="MaCombo" OtherKey="MaCombo" Type="ChiTietDonDat" />
     </Type>
   </Table>
   <Table Name="dbo.DoanhThu" Member="DoanhThus">

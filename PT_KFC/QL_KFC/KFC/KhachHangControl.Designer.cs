@@ -37,9 +37,10 @@
             // 
             this.lblMaKH.AutoSize = true;
             this.lblMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaKH.Location = new System.Drawing.Point(31, 24);
+            this.lblMaKH.Location = new System.Drawing.Point(23, 20);
+            this.lblMaKH.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaKH.Name = "lblMaKH";
-            this.lblMaKH.Size = new System.Drawing.Size(114, 16);
+            this.lblMaKH.Size = new System.Drawing.Size(97, 13);
             this.lblMaKH.TabIndex = 0;
             this.lblMaKH.Text = "Mã khách Hàng";
             // 
@@ -47,9 +48,10 @@
             // 
             this.lblTen.AutoSize = true;
             this.lblTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTen.Location = new System.Drawing.Point(62, 64);
+            this.lblTen.Location = new System.Drawing.Point(46, 52);
+            this.lblTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(252, 36);
+            this.lblTen.Size = new System.Drawing.Size(206, 29);
             this.lblTen.TabIndex = 1;
             this.lblTen.Text = "Tên Khách Hàng";
             // 
@@ -57,21 +59,24 @@
             // 
             this.lblDiemTL.AutoSize = true;
             this.lblDiemTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiemTL.Location = new System.Drawing.Point(65, 119);
+            this.lblDiemTL.Location = new System.Drawing.Point(49, 97);
+            this.lblDiemTL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiemTL.Name = "lblDiemTL";
-            this.lblDiemTL.Size = new System.Drawing.Size(104, 16);
+            this.lblDiemTL.Size = new System.Drawing.Size(90, 13);
             this.lblDiemTL.TabIndex = 2;
             this.lblDiemTL.Text = "Điểm Tích Lũy";
             // 
             // KhachHangControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblDiemTL);
             this.Controls.Add(this.lblTen);
             this.Controls.Add(this.lblMaKH);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "KhachHangControl";
-            this.Size = new System.Drawing.Size(535, 179);
+            this.Size = new System.Drawing.Size(401, 145);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.KhachHangControl_Paint_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

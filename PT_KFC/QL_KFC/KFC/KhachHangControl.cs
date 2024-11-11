@@ -130,7 +130,7 @@ namespace KFC
             }
         }
 
-        private void KhachHangControl_Paint(object sender, PaintEventArgs e)
+        private void KhachHangControl_Paint_1(object sender, PaintEventArgs e)
         {
             Color borderColor = Color.Red; // Màu viền
             int borderWidth = 2; // Độ dày viền

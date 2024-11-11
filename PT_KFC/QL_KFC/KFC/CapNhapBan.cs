@@ -23,6 +23,7 @@ namespace KFC
             InitializeComponent();
             isUpdateMode = false; // Đánh dấu đây là chế độ thêm mới
             txtMaBan.Enabled = true; // Cho phép nhập mã bàn
+            ToggleDateTimePickers(); // Khóa hoặc mở khóa DateTimePicker khi tạo mới
         }
 
         public CapNhapBan(Ban_DTO ban)
@@ -51,10 +52,41 @@ namespace KFC
                 txtTenBan.Text = ban.TenBan;
                 radKhongTrong.Checked = ban.TrangThaiBan;
                 radBanTrong.Checked = !ban.TrangThaiBan;
+
+                // Gán giá trị thời gian nếu có
+                if (ban.ThoiGianDen.HasValue)
+                {
+                    dtpkThoiGianDen.Value = ban.ThoiGianDen.Value;
+                }
+
+                if (ban.ThoiGianRoi.HasValue)
+                {
+                    dtpkThoiGianRoi.Value = ban.ThoiGianRoi.Value;
+                }
             }
             else
             {
                 MessageBox.Show("Thông tin bàn không có sẵn.");
+            }
+        }
+
+        // Hàm để bật/tắt DateTimePicker dựa trên trạng thái của bàn
+        private void ToggleDateTimePickers()
+        {
+            // Kiểm tra trạng thái bàn
+            bool isBanTrong = radBanTrong.Checked;
+
+            // Nếu bàn trống, khóa DateTimePicker
+            dtpkThoiGianDen.Enabled = !isBanTrong;
+            dtpkThoiGianRoi.Enabled = !isBanTrong;
+
+            // Nếu bàn không trống, bắt buộc phải chọn giờ
+            if (!isBanTrong)
+            {
+                if (dtpkThoiGianDen.Value == DateTime.MinValue || dtpkThoiGianRoi.Value == DateTime.MinValue)
+                {
+                    MessageBox.Show("Vui lòng chọn thời gian cho bàn này.");
+                }
             }
         }
 
@@ -65,11 +97,13 @@ namespace KFC
             txtTenBan.Clear();
             radKhongTrong.Checked = true;
         }
-        
+
         private void UpdateBan()
         {
             ban.TenBan = txtTenBan.Text.Trim();
             ban.TrangThaiBan = radKhongTrong.Checked;
+            ban.ThoiGianDen = dtpkThoiGianDen.Value; // Lấy thời gian đến
+            ban.ThoiGianRoi = dtpkThoiGianRoi.Value; // Lấy thời gian rời
 
             bus.UpdateBan(ban);
         }
@@ -80,7 +114,9 @@ namespace KFC
             {
                 MaBan = txtMaBan.Text.Trim(),
                 TenBan = txtTenBan.Text.Trim(),
-                TrangThaiBan = radKhongTrong.Checked
+                TrangThaiBan = radKhongTrong.Checked,
+                ThoiGianDen = dtpkThoiGianDen.Value, // Lấy thời gian đến
+                ThoiGianRoi = dtpkThoiGianRoi.Value  // Lấy thời gian rời
             };
 
             bus.AddBan(newBan);
@@ -100,6 +136,15 @@ namespace KFC
                 {
                     MessageBox.Show("Tên bàn không được để trống và không quá 100 ký tự.");
                     return;
+                }
+
+                if (radKhongTrong.Checked) // Nếu bàn không trống
+                {
+                    if (dtpkThoiGianDen.Value == DateTime.MinValue || dtpkThoiGianRoi.Value == DateTime.MinValue)
+                    {
+                        MessageBox.Show("Vui lòng chọn thời gian.");
+                        return;
+                    }
                 }
 
                 if (isUpdateMode)
@@ -128,6 +173,17 @@ namespace KFC
             {
                 this.Close(); // Đóng form hiện tại
             }
+        }
+
+        // Sự kiện thay đổi trạng thái bàn
+        private void radKhongTrong_CheckedChanged(object sender, EventArgs e)
+        {
+            ToggleDateTimePickers(); // Gọi hàm bật/tắt DateTimePickers
+        }
+
+        private void radBanTrong_CheckedChanged(object sender, EventArgs e)
+        {
+            ToggleDateTimePickers(); // Gọi hàm bật/tắt DateTimePickers
         }
     }
 }
