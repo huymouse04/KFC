@@ -86,6 +86,7 @@
             this.btnLoc.Text = "Lọc";
             this.btnLoc.TextColor = System.Drawing.Color.White;
             this.btnLoc.UseVisualStyleBackColor = false;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // tbtTiemKiem
             // 

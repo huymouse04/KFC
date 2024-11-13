@@ -42,6 +42,7 @@ namespace DAO
         {
             return DB.ThucDons.Select(sp => new ThucDon_DTO
             {
+                
                 MaSanPham = sp.MaSanPham,
                 TenSanPham = sp.TenSanPham,
             }).ToList();
