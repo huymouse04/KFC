@@ -243,6 +243,10 @@ namespace DAO
 		
 		private string _TenBan;
 		
+		private System.DateTime _ThoiGianDen;
+		
+		private System.DateTime _ThoiGianRoi;
+		
 		private System.Nullable<bool> _TrangThaiBan;
 		
 		private EntitySet<DonDat> _DonDats;
@@ -255,6 +259,10 @@ namespace DAO
     partial void OnMaBanChanged();
     partial void OnTenBanChanging(string value);
     partial void OnTenBanChanged();
+    partial void OnThoiGianDenChanging(System.DateTime value);
+    partial void OnThoiGianDenChanged();
+    partial void OnThoiGianRoiChanging(System.DateTime value);
+    partial void OnThoiGianRoiChanged();
     partial void OnTrangThaiBanChanging(System.Nullable<bool> value);
     partial void OnTrangThaiBanChanged();
     #endregion
@@ -301,6 +309,46 @@ namespace DAO
 					this._TenBan = value;
 					this.SendPropertyChanged("TenBan");
 					this.OnTenBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianDen", DbType="DateTime NOT NULL")]
+		public System.DateTime ThoiGianDen
+		{
+			get
+			{
+				return this._ThoiGianDen;
+			}
+			set
+			{
+				if ((this._ThoiGianDen != value))
+				{
+					this.OnThoiGianDenChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiGianDen = value;
+					this.SendPropertyChanged("ThoiGianDen");
+					this.OnThoiGianDenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianRoi", DbType="DateTime NOT NULL")]
+		public System.DateTime ThoiGianRoi
+		{
+			get
+			{
+				return this._ThoiGianRoi;
+			}
+			set
+			{
+				if ((this._ThoiGianRoi != value))
+				{
+					this.OnThoiGianRoiChanging(value);
+					this.SendPropertyChanging();
+					this._ThoiGianRoi = value;
+					this.SendPropertyChanged("ThoiGianRoi");
+					this.OnThoiGianRoiChanged();
 				}
 			}
 		}
@@ -3927,6 +3975,8 @@ namespace DAO
 		
 		private string _MaSanPham;
 		
+		private string _TenSanPham;
+		
 		private int _SoLuong;
 		
 		private string _DonViTinh;
@@ -3959,6 +4009,8 @@ namespace DAO
     partial void OnMaNhapHangChanged();
     partial void OnMaSanPhamChanging(string value);
     partial void OnMaSanPhamChanged();
+    partial void OnTenSanPhamChanging(string value);
+    partial void OnTenSanPhamChanged();
     partial void OnSoLuongChanging(int value);
     partial void OnSoLuongChanged();
     partial void OnDonViTinhChanging(string value);
@@ -4026,6 +4078,26 @@ namespace DAO
 					this._MaSanPham = value;
 					this.SendPropertyChanged("MaSanPham");
 					this.OnMaSanPhamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TenSanPham
+		{
+			get
+			{
+				return this._TenSanPham;
+			}
+			set
+			{
+				if ((this._TenSanPham != value))
+				{
+					this.OnTenSanPhamChanging(value);
+					this.SendPropertyChanging();
+					this._TenSanPham = value;
+					this.SendPropertyChanged("TenSanPham");
+					this.OnTenSanPhamChanged();
 				}
 			}
 		}

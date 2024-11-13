@@ -142,6 +142,7 @@ namespace DAO
                 var newNhapHang = new NhapHang
                 {
                     MaSanPham = nhapHang.MaSanPham,
+                    TenSanPham=nhapHang.TenSanPham,
                     SoLuong = nhapHang.SoLuong,
                     DonViTinh = nhapHang.DonViTinh,
                     NgaySanXuat = nhapHang.NgaySanXuat,
@@ -327,6 +328,7 @@ namespace DAO
                 existingNhapHang.MaLoaiHang = nhapHang.MaLoaiHang;
                 existingNhapHang.MaNhaCungCap = nhapHang.MaNhaCungCap;
                 existingNhapHang.DonGia = nhapHang.DonGia;
+                existingNhapHang.TenSanPham = nhapHang.TenSanPham;
 
                 DB.SubmitChanges();
                 Console.WriteLine("Cập nhật thành công.");

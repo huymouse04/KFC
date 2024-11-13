@@ -79,6 +79,7 @@ CREATE TABLE Kho (
 CREATE TABLE NhapHang (  
     MaNhapHang INT IDENTITY(1,1) PRIMARY KEY,  
     MaSanPham VARCHAR(30) NOT NULL,  
+	TenSanPham NVARCHAR (100) not null,
     SoLuong INT NOT NULL,  
     DonViTinh NVARCHAR(50),  
     DonGia FLOAT,  
@@ -137,7 +138,9 @@ CREATE TABLE KhuyenMai (
 -- Bảng Quan Ly Ban  
 CREATE TABLE Ban (  
     MaBan VARCHAR(20) PRIMARY KEY NOT NULL,  
-    TenBan NVARCHAR(50) NOT NULL,  
+    TenBan NVARCHAR(50) NOT NULL,
+	ThoiGianDen DATETIME NOT NULL,
+	ThoiGianRoi DATETIME NOT NULL,  
     TrangThaiBan BIT  
 );  
 
@@ -307,27 +310,28 @@ INSERT INTO NhaCungCap (MaNhaCungCap, TenNhaCungCap, AnhNhaCungCap, DiaChi, SoDi
 -- Bảng Khách Hàng 
 INSERT INTO KhachHangThanThiet (MaKhachHang, TenKhachHang, SoDienThoai, DiemTichLuy) VALUES
 ('KH001', N'Nguyễn Văn A', '0123456789', 100),
-('KH002', N'Trần Thị B', '0123456790', 150),
-('KH003', N'Nguyễn Thị C', '0123456791', 200),
-('KH004', N'Phạm Văn D', '0123456792', 250),
-('KH005', N'Đỗ Thị E', '0123456793', 300),
+('KH002', N'Trần Thị B', '0123456790', 10),
+('KH003', N'Nguyễn Thị C', '0123456791', 50),
+('KH004', N'Phạm Văn D', '0123456792', 90),
+('KH005', N'Đỗ Thị E', '0123456793', 150),
 ('KH006', N'Lê Văn F', '0123456794', 120),
-('KH007', N'Nguyễn Văn G', '0123456795', 180),
-('KH008', N'Vũ Thị H', '0123456796', 220),
+('KH007', N'Nguyễn Văn G', '0123456795', 55),
+('KH008', N'Vũ Thị H', '0123456796', 15),
 ('KH009', N'Hồ Văn I', '0123456797', 140),
-('KH010', N'Tôn Thị J', '0123456798', 160);
+('KH010', N'Tôn Thị J', '0123456798', 150);
 
-INSERT INTO Ban (MaBan, TenBan, TrangThaiBan) VALUES
-('B01', N'Bàn 1', 1),
-('B02', N'Bàn 2', 0),
-('B03', N'Bàn 3', 1),
-('B04', N'Bàn 4', 0),
-('B05', N'Bàn 5', 1),
-('B06', N'Bàn 6', 0),
-('B07', N'Bàn 7', 1),
-('B08', N'Bàn 8', 0),
-('B09', N'Bàn 9', 1),
-('B10', N'Bàn 10', 0);
+INSERT INTO Ban (MaBan, TenBan, ThoiGianDen, ThoiGianRoi, TrangThaiBan)
+VALUES 
+    ('B001', 'Bàn 1', '10:30:00', '12:00:00', 1),  -- Bàn 1, khách đến lúc 10:30 và rời lúc 12:00
+    ('B002', 'Bàn 2', '11:00:00', '13:00:00', 1),  -- Bàn 2, khách đến lúc 11:00 và rời lúc 13:00
+    ('B003', 'Bàn 3', '12:00:00', '14:30:00', 1),  -- Bàn 3, khách đến lúc 12:00 và rời lúc 14:30
+    ('B004', 'Bàn 4', '13:30:00', '15:00:00', 0),  -- Bàn 4, khách đến lúc 13:30 và rời lúc 15:00
+    ('B005', 'Bàn 5', '09:45:00', '11:45:00', 1),  -- Bàn 5, khách đến lúc 09:45 và rời lúc 11:45
+    ('B006', 'Bàn 6', '14:00:00', '16:00:00', 0),  -- Bàn 6, khách đến lúc 14:00 và rời lúc 16:00
+    ('B007', 'Bàn 7', '10:15:00', '12:45:00', 1),  -- Bàn 7, khách đến lúc 10:15 và rời lúc 12:45
+    ('B008', 'Bàn 8', '11:30:00', '13:30:00', 0),  -- Bàn 8, khách đến lúc 11:30 và rời lúc 13:30
+    ('B009', 'Bàn 9', '12:15:00', '14:15:00', 1),  -- Bàn 9, khách đến lúc 12:15 và rời lúc 14:15
+    ('B010', 'Bàn 10', '15:00:00', '17:30:00', 1); -- Bàn 10, khách đến lúc 15:00 và rời lúc 17:30
 
 
 -- Bảng Nhập Hàng

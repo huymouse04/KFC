@@ -168,6 +168,7 @@ namespace DAO
         {
             bool existsInNhapHang = DB.NhapHangs.Any(nh => nh.MaSanPham == maSanPham);
             bool existsInChiTietCombo = DB.ChiTietCombos.Any(ct => ct.MaSanPham == maSanPham);
+            bool existsInThucDon = DB.ThucDons.Any(ct => ct.MaSanPham == maSanPham);
 
             string usageMessage = "";
 
@@ -178,7 +179,12 @@ namespace DAO
 
             if (existsInChiTietCombo)
             {
-                usageMessage += "Mã sản phẩm này đang được sử dụng trong bảng Chi Tiết Nhập Hàng.";
+                usageMessage += "Mã sản phẩm này đang được sử dụng trong bảng Chi Tiết Combos";
+            }
+
+            if (existsInThucDon)
+            {
+                usageMessage += "Mã sản phẩm này đang được sử dụng trong bảng Thực Đơn";
             }
 
             return usageMessage; // Trả về thông báo sử dụng hoặc chuỗi rỗng nếu không có

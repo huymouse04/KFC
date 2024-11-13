@@ -109,6 +109,16 @@ namespace KFC
                 return false;
             }
 
+            // Kiểm tra `SelectedValue` của `cbMaNCC` và `cbMaLH`
+            if (cbMaNCC.SelectedValue == null || cbMaLH.SelectedValue == null)
+            {
+                MessageBox.Show("Vui lòng chọn nhà cung cấp và loại hàng hợp lệ.");
+                return false;
+            }
+
+            // Sử dụng `SelectedItem` để lấy tên sản phẩm thay vì `DisplayMember`
+            string tenSanPham = cbTenSP.SelectedItem?.ToString() ?? "";
+
             nhapHang = new NhapHang_DTO
             {
                 MaNhapHang = isUpdate ? int.Parse(txtMaNH.Text) : 0,
@@ -121,7 +131,7 @@ namespace KFC
                 NgayHetHan = ngayHetHan,
                 MaNhaCungCap = cbMaNCC.SelectedValue.ToString(),
                 MaLoaiHang = cbMaLH.SelectedValue.ToString(),
-                TenSanPham = cbTenSP.SelectedValue.ToString()
+                TenSanPham = tenSanPham
             };
 
             return true;
