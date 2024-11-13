@@ -76,6 +76,8 @@ namespace KFC
             {
                 dgvChiTietComBo.DataSource = danhSachSanPham;
             }
+
+            dgvChiTietComBo.Columns[0].Visible = false;
         }
 
         private void Combo_Load(object sender, EventArgs e)
