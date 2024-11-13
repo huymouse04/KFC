@@ -61,8 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ban_BUS.cs" />
+<Compile Include="Combo_BUS.cs" />
+<Compile Include="ChiTietCombo_BUS.cs" />
+
     <Compile Include="Connection_BUS.cs" />
+    <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="KhoHang_BUS.cs" />
+    <Compile Include="KhuyenMai_BUS.cs" />
     <Compile Include="LoaiHang_BUS.cs" />
     <Compile Include="LuongNhanVien_BUS.cs" />
     <Compile Include="NhaCungCap_BUS.cs" />
@@ -70,6 +76,13 @@
     <Compile Include="NhapHang_BUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThucDon_BUS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
@@ -80,12 +93,6 @@
       <Project>{907cd591-69b5-404e-bd27-fbf9373186d7}</Project>
       <Name>DTO</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

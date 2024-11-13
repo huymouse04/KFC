@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMaBan = new System.Windows.Forms.Label();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             this.lblBan = new System.Windows.Forms.Label();
+            this.lblThoiGian = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblMaBan
+            // lblTrangThai
             // 
-            this.lblMaBan.AutoSize = true;
-            this.lblMaBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaBan.Location = new System.Drawing.Point(19, 21);
-            this.lblMaBan.Name = "lblMaBan";
-            this.lblMaBan.Size = new System.Drawing.Size(76, 23);
-            this.lblMaBan.TabIndex = 0;
-            this.lblMaBan.Text = "Mã Bàn";
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrangThai.Location = new System.Drawing.Point(19, 21);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(132, 23);
+            this.lblTrangThai.TabIndex = 0;
+            this.lblTrangThai.Text = "Trạng thái bàn";
             // 
             // lblBan
             // 
@@ -52,14 +53,28 @@
             this.lblBan.TabIndex = 1;
             this.lblBan.Text = "Tên bàn";
             // 
+            // lblThoiGian
+            // 
+            this.lblThoiGian.AutoSize = true;
+            this.lblThoiGian.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThoiGian.Location = new System.Drawing.Point(19, 108);
+            this.lblThoiGian.Name = "lblThoiGian";
+            this.lblThoiGian.Size = new System.Drawing.Size(121, 23);
+            this.lblThoiGian.TabIndex = 2;
+            this.lblThoiGian.Text = "Thời gian đặt";
+            this.lblThoiGian.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // BanControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblThoiGian);
             this.Controls.Add(this.lblBan);
-            this.Controls.Add(this.lblMaBan);
+            this.Controls.Add(this.lblTrangThai);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BanControl";
-            this.Size = new System.Drawing.Size(225, 146);
+            this.Size = new System.Drawing.Size(336, 146);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.BanControl_Paint_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -67,7 +82,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblMaBan;
+        private System.Windows.Forms.Label lblTrangThai;
         private System.Windows.Forms.Label lblBan;
+        private System.Windows.Forms.Label lblThoiGian;
     }
 }

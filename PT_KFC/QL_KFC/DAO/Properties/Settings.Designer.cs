@@ -33,5 +33,15 @@ namespace DAO.Properties {
                 return ((string)(this["QLKFCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+
+        public string QLKFCConnectionString1 {
+            get {
+                return ((string)(this["QLKFCConnectionString1"]));
+            }
+        }
     }
 }

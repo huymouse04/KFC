@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnFILL = new System.Windows.Forms.Panel();
+            this.mtbSDT = new System.Windows.Forms.MaskedTextBox();
             this.lbGC = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.btnHuy = new CustomButton.VBButton();
@@ -43,7 +44,6 @@
             this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.pbAnhNCC = new System.Windows.Forms.PictureBox();
-            this.mtbSDT = new System.Windows.Forms.MaskedTextBox();
             this.pnFILL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnhNCC)).BeginInit();
             this.SuspendLayout();
@@ -66,10 +66,19 @@
             this.pnFILL.Controls.Add(this.txtPath);
             this.pnFILL.Controls.Add(this.pbAnhNCC);
             this.pnFILL.Location = new System.Drawing.Point(11, 25);
-            this.pnFILL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnFILL.Margin = new System.Windows.Forms.Padding(2);
             this.pnFILL.Name = "pnFILL";
             this.pnFILL.Size = new System.Drawing.Size(499, 474);
             this.pnFILL.TabIndex = 4;
+            // 
+            // mtbSDT
+            // 
+            this.mtbSDT.Location = new System.Drawing.Point(312, 220);
+            this.mtbSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbSDT.Mask = "0000000000";
+            this.mtbSDT.Name = "mtbSDT";
+            this.mtbSDT.Size = new System.Drawing.Size(159, 20);
+            this.mtbSDT.TabIndex = 4;
             // 
             // lbGC
             // 
@@ -84,7 +93,7 @@
             // txtGhiChu
             // 
             this.txtGhiChu.Location = new System.Drawing.Point(312, 290);
-            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGhiChu.Margin = new System.Windows.Forms.Padding(2);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(159, 20);
             this.txtGhiChu.TabIndex = 5;
@@ -98,9 +107,10 @@
             this.btnHuy.BorderSize = 0;
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Location = new System.Drawing.Point(312, 412);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(78, 34);
             this.btnHuy.TabIndex = 7;
@@ -118,9 +128,10 @@
             this.BtnSave.BorderSize = 0;
             this.BtnSave.FlatAppearance.BorderSize = 0;
             this.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSave.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
             this.BtnSave.ForeColor = System.Drawing.Color.White;
             this.BtnSave.Location = new System.Drawing.Point(155, 412);
-            this.BtnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnSave.Margin = new System.Windows.Forms.Padding(2);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(73, 34);
             this.BtnSave.TabIndex = 6;
@@ -138,9 +149,10 @@
             this.btnBrowse.BorderSize = 0;
             this.btnBrowse.FlatAppearance.BorderSize = 0;
             this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.Font = new System.Drawing.Font("Candara", 10F, System.Drawing.FontStyle.Bold);
             this.btnBrowse.ForeColor = System.Drawing.Color.White;
             this.btnBrowse.Location = new System.Drawing.Point(359, 120);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(78, 35);
             this.btnBrowse.TabIndex = 0;
@@ -172,7 +184,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(69, 354);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(159, 20);
             this.txtDiaChi.TabIndex = 3;
@@ -190,7 +202,7 @@
             // txtTenNCC
             // 
             this.txtTenNCC.Location = new System.Drawing.Point(69, 290);
-            this.txtTenNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenNCC.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(159, 20);
             this.txtTenNCC.TabIndex = 2;
@@ -208,7 +220,7 @@
             // txtMaNCC
             // 
             this.txtMaNCC.Location = new System.Drawing.Point(69, 220);
-            this.txtMaNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaNCC.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(159, 20);
             this.txtMaNCC.TabIndex = 1;
@@ -216,29 +228,20 @@
             // txtPath
             // 
             this.txtPath.Location = new System.Drawing.Point(346, 84);
-            this.txtPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(101, 20);
+            this.txtPath.Size = new System.Drawing.Size(125, 20);
             this.txtPath.TabIndex = 25;
             this.txtPath.Visible = false;
             // 
             // pbAnhNCC
             // 
             this.pbAnhNCC.Location = new System.Drawing.Point(186, 26);
-            this.pbAnhNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbAnhNCC.Margin = new System.Windows.Forms.Padding(2);
             this.pbAnhNCC.Name = "pbAnhNCC";
             this.pbAnhNCC.Size = new System.Drawing.Size(132, 129);
             this.pbAnhNCC.TabIndex = 11;
             this.pbAnhNCC.TabStop = false;
-            // 
-            // mtbSDT
-            // 
-            this.mtbSDT.Location = new System.Drawing.Point(312, 220);
-            this.mtbSDT.Margin = new System.Windows.Forms.Padding(2);
-            this.mtbSDT.Mask = "0000000000";
-            this.mtbSDT.Name = "mtbSDT";
-            this.mtbSDT.Size = new System.Drawing.Size(159, 20);
-            this.mtbSDT.TabIndex = 4;
             // 
             // CapNhatNhaCungCap
             // 
@@ -246,7 +249,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 523);
             this.Controls.Add(this.pnFILL);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CapNhatNhaCungCap";
             this.Text = "CapNhatNhaCungCap";
             this.pnFILL.ResumeLayout(false);

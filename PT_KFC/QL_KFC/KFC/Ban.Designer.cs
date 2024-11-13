@@ -28,147 +28,199 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSUA = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.lblDatBan = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbbLoc = new System.Windows.Forms.ComboBox();
+            this.btnLoc = new CustomButton.VBButton();
+            this.tbtTiemKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new CustomButton.VBButton();
+            this.btnLamMoi = new CustomButton.VBButton();
+            this.btnXoa = new CustomButton.VBButton();
+            this.BtnAdd = new CustomButton.VBButton();
+            this.flpBan = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel3
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnSUA);
-            this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnThem);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 479);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(897, 70);
-            this.panel1.TabIndex = 7;
+            this.panel3.BackColor = System.Drawing.Color.DarkRed;
+            this.panel3.Controls.Add(this.cbbLoc);
+            this.panel3.Controls.Add(this.btnLoc);
+            this.panel3.Controls.Add(this.tbtTiemKiem);
+            this.panel3.Controls.Add(this.btnTimKiem);
+            this.panel3.Controls.Add(this.btnLamMoi);
+            this.panel3.Controls.Add(this.btnXoa);
+            this.panel3.Controls.Add(this.BtnAdd);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel3.Location = new System.Drawing.Point(0, 287);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1069, 80);
+            this.panel3.TabIndex = 25;
             // 
-            // btnSUA
+            // cbbLoc
             // 
-            this.btnSUA.BackColor = System.Drawing.Color.Firebrick;
-            this.btnSUA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSUA.Location = new System.Drawing.Point(148, 1);
-            this.btnSUA.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSUA.Name = "btnSUA";
-            this.btnSUA.Size = new System.Drawing.Size(112, 63);
-            this.btnSUA.TabIndex = 2;
-            this.btnSUA.Text = "Cập nhật";
-            this.btnSUA.UseVisualStyleBackColor = false;
+            this.cbbLoc.FormattingEnabled = true;
+            this.cbbLoc.Location = new System.Drawing.Point(853, 30);
+            this.cbbLoc.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbLoc.Name = "cbbLoc";
+            this.cbbLoc.Size = new System.Drawing.Size(187, 24);
+            this.cbbLoc.TabIndex = 15;
+            // 
+            // btnLoc
+            // 
+            this.btnLoc.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLoc.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnLoc.BorderColor = System.Drawing.Color.Crimson;
+            this.btnLoc.BorderRadius = 10;
+            this.btnLoc.BorderSize = 0;
+            this.btnLoc.FlatAppearance.BorderSize = 0;
+            this.btnLoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoc.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold);
+            this.btnLoc.ForeColor = System.Drawing.Color.White;
+            this.btnLoc.Location = new System.Drawing.Point(720, 0);
+            this.btnLoc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(125, 76);
+            this.btnLoc.TabIndex = 14;
+            this.btnLoc.Text = "Lọc";
+            this.btnLoc.TextColor = System.Drawing.Color.White;
+            this.btnLoc.UseVisualStyleBackColor = false;
+            // 
+            // tbtTiemKiem
+            // 
+            this.tbtTiemKiem.Location = new System.Drawing.Point(508, 30);
+            this.tbtTiemKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.tbtTiemKiem.Name = "tbtTiemKiem";
+            this.tbtTiemKiem.Size = new System.Drawing.Size(203, 22);
+            this.tbtTiemKiem.TabIndex = 13;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Firebrick;
+            this.btnTimKiem.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnTimKiem.BorderColor = System.Drawing.Color.Crimson;
+            this.btnTimKiem.BorderRadius = 10;
+            this.btnTimKiem.BorderSize = 0;
+            this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTimKiem.FlatAppearance.BorderSize = 0;
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.Color.White;
+            this.btnTimKiem.Location = new System.Drawing.Point(375, 0);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(125, 80);
+            this.btnTimKiem.TabIndex = 12;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.TextColor = System.Drawing.Color.White;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLamMoi.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnLamMoi.BorderColor = System.Drawing.Color.Crimson;
+            this.btnLamMoi.BorderRadius = 10;
+            this.btnLamMoi.BorderSize = 0;
+            this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLamMoi.FlatAppearance.BorderSize = 0;
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.Location = new System.Drawing.Point(250, 0);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(125, 80);
+            this.btnLamMoi.TabIndex = 10;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.TextColor = System.Drawing.Color.White;
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoa.Location = new System.Drawing.Point(282, 1);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.btnXoa.BorderColor = System.Drawing.Color.Crimson;
+            this.btnXoa.BorderRadius = 10;
+            this.btnXoa.BorderSize = 0;
+            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(125, 0);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(112, 63);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "XÓA";
+            this.btnXoa.Size = new System.Drawing.Size(125, 80);
+            this.btnXoa.TabIndex = 7;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextColor = System.Drawing.Color.White;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnThem
+            // BtnAdd
             // 
-            this.btnThem.BackColor = System.Drawing.Color.Firebrick;
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThem.Location = new System.Drawing.Point(12, 1);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(112, 63);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "THÊM";
-            this.btnThem.UseVisualStyleBackColor = false;
+            this.BtnAdd.BackColor = System.Drawing.Color.Firebrick;
+            this.BtnAdd.BackgroundColor = System.Drawing.Color.Firebrick;
+            this.BtnAdd.BorderColor = System.Drawing.Color.LavenderBlush;
+            this.BtnAdd.BorderRadius = 10;
+            this.BtnAdd.BorderSize = 0;
+            this.BtnAdd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtnAdd.FlatAppearance.BorderSize = 0;
+            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAdd.Font = new System.Drawing.Font("Candara", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAdd.ForeColor = System.Drawing.Color.White;
+            this.BtnAdd.Location = new System.Drawing.Point(0, 0);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(125, 80);
+            this.BtnAdd.TabIndex = 6;
+            this.BtnAdd.Text = "Thêm";
+            this.BtnAdd.TextColor = System.Drawing.Color.White;
+            this.BtnAdd.UseVisualStyleBackColor = false;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // lblDatBan
+            // flpBan
             // 
-            this.lblDatBan.AutoSize = true;
-            this.lblDatBan.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblDatBan.Location = new System.Drawing.Point(355, 11);
-            this.lblDatBan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDatBan.Name = "lblDatBan";
-            this.lblDatBan.Size = new System.Drawing.Size(160, 45);
-            this.lblDatBan.TabIndex = 1;
-            this.lblDatBan.Text = "Đặt Bàn";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.lblDatBan);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(897, 70);
-            this.panel2.TabIndex = 8;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 70);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(897, 409);
-            this.flowLayoutPanel1.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Firebrick;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(771, 1);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 63);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(540, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 22);
-            this.textBox1.TabIndex = 4;
+            this.flpBan.AutoScroll = true;
+            this.flpBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpBan.Location = new System.Drawing.Point(0, 0);
+            this.flpBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flpBan.Name = "flpBan";
+            this.flpBan.Size = new System.Drawing.Size(1069, 287);
+            this.flpBan.TabIndex = 26;
             // 
             // Ban
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 549);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1069, 487);
+            this.Controls.Add(this.flpBan);
+            this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Ban";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 120);
             this.Text = "Ban";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Load += new System.EventHandler(this.Ban_Load);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSUA;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Label lblDatBan;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cbbLoc;
+        private CustomButton.VBButton btnLoc;
+        private System.Windows.Forms.TextBox tbtTiemKiem;
+        private CustomButton.VBButton btnTimKiem;
+        private CustomButton.VBButton btnLamMoi;
+        private CustomButton.VBButton btnXoa;
+        private CustomButton.VBButton BtnAdd;
+        private System.Windows.Forms.FlowLayoutPanel flpBan;
     }
 }

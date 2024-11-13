@@ -22,7 +22,6 @@ namespace BUS
         {
             return dao.GetAllNhapHang();
         }
-
         public List<NhapHang_DTO> GetNhapHangByMa(int maNhapHang)
         {
             if (maNhapHang <= 0)
@@ -32,7 +31,14 @@ namespace BUS
 
             return dao.GetNhapHangByMa(maNhapHang); // Trả về danh sách
         }
-
+        public List<NhapHang_DTO> GetProductsNearExpiration()
+        {
+            return dao.GetProductsNearExpiration();
+        }
+        public List<NhapHang_DTO>GetNhapHnagTheoThang(int month,int year)
+        {
+            return dao.GetNhapHangByMonth(month, year);
+        }
         public List<NhapHang_DTO> GetNhapHangByMaSP(string maSP)
         {
             if (string.IsNullOrWhiteSpace(maSP))
@@ -58,14 +64,14 @@ namespace BUS
             ValidateNhapHang(nhapHang);
             dao.UpdateNhapHang(nhapHang); // Thực hiện cập nhật vào DAO
         }
-        public void UpdateSLKho(string maSP, int soLuong)
+        public void UpdateSLKho(string maSP, int soLuong,DateTime? ngaySX,DateTime? ngayHH)
         {
             if (string.IsNullOrWhiteSpace(maSP))
             {
                 throw new ArgumentException("Mã sản phẩm không hợp lệ", nameof(maSP));
             }
 
-            dao.UpdateKhoSoLuong(maSP, soLuong);
+            dao.UpdateKhoSoLuong(maSP, soLuong,ngaySX,ngayHH);
         }
         public void DeleteNhapHang(int maNhapHang)
         {
@@ -137,7 +143,6 @@ namespace BUS
         {
             return dao.GetTenSanPhamByMa(maSanPham);
         }
-
         public DataTable GetAllSP()
         {
             return dao.GetAllSP();

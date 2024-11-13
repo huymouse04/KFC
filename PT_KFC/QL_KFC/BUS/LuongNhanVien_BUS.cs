@@ -15,6 +15,11 @@ namespace BUS
 
         public LuongNhanVien_BUS() { }
 
+        public void CapNhatLuong(LuongNhanVien_DTO luongDTO)
+        {
+            dao.CapNhatLuong(luongDTO);
+        }
+
       public List<LuongNhanVien_DTO> TimKiemLuong(int? thang, int? nam, string keyword)
         {
           return  dao.TimKiemLuong(thang,nam,keyword);

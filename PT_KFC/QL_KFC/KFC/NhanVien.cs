@@ -172,6 +172,7 @@ namespace KFC
             LoadData();
             txtMaNV.Enabled = true;
             ClearInputFields();
+            cbChucVu.Items.Add("Tạm Thời");
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -469,18 +470,39 @@ namespace KFC
 
         private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Kiểm tra xem có mục nào được chọn không
+            if (cbChucVu.SelectedItem == null)
+            {
+                return; // Thoát nếu không có mục nào được chọn
+            }
+
+            // Lấy giá trị của chức vụ được chọn
+            string selectedChucVu = cbChucVu.SelectedItem.ToString();
+
             // Kiểm tra xem chức vụ được chọn có phải là "Tạm Thời" không
-            if (cbChucVu.Text != "Tạm Thời")
+            if (selectedChucVu != "Tạm Thời")
             {
                 // Gán số giờ làm mặc định là 100
                 txtSoGioLam.Text = "100";
                 txtSoGioLam.Enabled = false; // Vô hiệu hóa TextBox nếu không cần nhập
+
+                // Vô hiệu hóa tùy chọn "Tạm Thời" nếu chức vụ không phải là "Tạm Thời"
+                if (cbChucVu.Items.Contains("Tạm Thời"))
+                {
+                    cbChucVu.Items.Remove("Tạm Thời");
+                }
             }
             else
             {
-                // Gán số giờ làm mặc định là 100
+                // Gán số giờ làm mặc định là 0
                 txtSoGioLam.Text = "0";
                 txtSoGioLam.Enabled = false; // Vô hiệu hóa TextBox nếu không cần nhập
+
+                // Kiểm tra và thêm lại tùy chọn "Tạm Thời" nếu chưa có
+                if (!cbChucVu.Items.Contains("Tạm Thời"))
+                {
+                    cbChucVu.Items.Add("Tạm Thời");
+                }
             }
         }
     }

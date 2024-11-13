@@ -17,7 +17,6 @@ namespace DAO
         {
             return DB.NhapHangs.Any(nh => nh.MaNhapHang == maNhapHang);
         }
-
         public List<NhapHang_DTO> GetAllNhapHang()
         {
             var nhapHangs = from nh in DB.NhapHangs
@@ -32,6 +31,8 @@ namespace DAO
                                 DonViTinh = nh.DonViTinh,
                                 SoLuong = nh.SoLuong,
                                 NgayNhap = nh.NgayNhap,
+                                NgaySanXuat = nh.NgaySanXuat,
+                                NgayHetHan = nh.NgayHetHan,
                                 MaLoaiHang = j.MaLoaiHang,
                                 MaNhaCungCap = m.MaNhaCungCap,
                                 DonGia = nh.DonGia
@@ -40,6 +41,7 @@ namespace DAO
 
             return nhapHangs.ToList();
         }
+       
         public List<NhapHang_DTO> GetNhapHangByConditions(string maSanPham, string maLoaiHang, string maNhaCungCap)
         {
             var query = from nh in DB.NhapHangs
@@ -54,9 +56,12 @@ namespace DAO
                             DonViTinh = nh.DonViTinh,
                             SoLuong = nh.SoLuong,
                             NgayNhap = nh.NgayNhap,
+                            NgaySanXuat = nh.NgaySanXuat,
+                            NgayHetHan = nh.NgayHetHan,
                             MaLoaiHang = j.MaLoaiHang,
                             MaNhaCungCap = m.MaNhaCungCap,
-                            DonGia = nh.DonGia
+                            DonGia = nh.DonGia,
+                            
                         };
 
             if (!string.IsNullOrEmpty(maSanPham))
@@ -74,27 +79,92 @@ namespace DAO
 
             return query.ToList();
         }
+        public List<NhapHang_DTO> GetNhapHangByMonth(int month, int year)
+        {
+            var nhapHangs = from nh in DB.NhapHangs
+                            join k in DB.Khos on nh.MaSanPham equals k.MaSanPham
+                            where nh.NgayNhap.Month == month && nh.NgayNhap.Year == year
+                            select new NhapHang_DTO
+                            {
+                                MaNhapHang = nh.MaNhapHang,
+                                MaSanPham = k.MaSanPham,
+                                TenSanPham = k.TenSanPham,
+                                DonViTinh = nh.DonViTinh,
+                                SoLuong = nh.SoLuong,
+                                NgayNhap = nh.NgayNhap,
+                                NgaySanXuat = nh.NgaySanXuat,
+                                NgayHetHan = nh.NgayHetHan,
+                                MaLoaiHang = nh.MaLoaiHang,
+                                MaNhaCungCap = nh.MaNhaCungCap,
+                                DonGia = nh.DonGia
+                            };
 
+            return nhapHangs.ToList();
+        }
+        public List<NhapHang_DTO> GetProductsNearExpiration()
+        {
+            var currentDate = DateTime.Now;  // Lấy ngày hiện tại
+            var nearExpirationDate = currentDate.AddDays(2);  // Ngày hết hạn trong 2 ngày tới
 
+            var nhapHangs = from nh in DB.NhapHangs
+                            join k in DB.Khos on nh.MaSanPham equals k.MaSanPham
+                            where nh.NgayHetHan <= nearExpirationDate // Bao gồm sản phẩm đã hết hạn và sắp hết hạn
+                            select new NhapHang_DTO
+                            {
+                                MaNhapHang = nh.MaNhapHang,
+                                MaSanPham = k.MaSanPham,
+                                TenSanPham = k.TenSanPham,
+                                DonViTinh = nh.DonViTinh,
+                                SoLuong = nh.SoLuong,
+                                NgayNhap = nh.NgayNhap,
+                                NgaySanXuat = nh.NgaySanXuat,
+                                NgayHetHan = nh.NgayHetHan,
+                                MaLoaiHang = nh.MaLoaiHang,
+                                MaNhaCungCap = nh.MaNhaCungCap,
+                                DonGia = nh.DonGia
+                            };
+
+            return nhapHangs.ToList();
+        }
         public void AddNhapHang(NhapHang_DTO nhapHang)
         {
-            var newNhapHang = new NhapHang
+            try
             {
-                MaSanPham = nhapHang.MaSanPham,
-                SoLuong = nhapHang.SoLuong,
-                DonViTinh = nhapHang.DonViTinh,
-                NgayNhap = nhapHang.NgayNhap,
-                MaLoaiHang = nhapHang.MaLoaiHang,
-                MaNhaCungCap = nhapHang.MaNhaCungCap,
-                DonGia = nhapHang.DonGia
-            };
+                if (nhapHang.NgaySanXuat > nhapHang.NgayNhap)
+                {
+                    throw new ArgumentException("Lỗi: Ngày sản xuất phải nhỏ hơn hoặc bằng Ngày nhập.");
+                }
+                if (nhapHang.NgayNhap >= nhapHang.NgayHetHan)
+                {
+                    throw new ArgumentException("Lỗi: Ngày nhập phải nhỏ hơn Ngày hết hạn.");
+                }
 
-            DB.NhapHangs.InsertOnSubmit(newNhapHang);
-            DB.SubmitChanges();
-            UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong);
+                var newNhapHang = new NhapHang
+                {
+                    MaSanPham = nhapHang.MaSanPham,
+                    TenSanPham=nhapHang.TenSanPham,
+                    SoLuong = nhapHang.SoLuong,
+                    DonViTinh = nhapHang.DonViTinh,
+                    NgaySanXuat = nhapHang.NgaySanXuat,
+                    NgayNhap = nhapHang.NgayNhap,
+                    NgayHetHan = nhapHang.NgayHetHan,
+                    MaLoaiHang = nhapHang.MaLoaiHang,
+                    MaNhaCungCap = nhapHang.MaNhaCungCap,
+                    DonGia = nhapHang.DonGia
+                };
+
+                DB.NhapHangs.InsertOnSubmit(newNhapHang);
+                DB.SubmitChanges();
+                UpdateKhoSoLuong(nhapHang.MaSanPham, nhapHang.SoLuong,nhapHang.NgaySanXuat,nhapHang.NgayHetHan);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);  // Xuất lỗi chi tiết
+            }
         }
 
-        public void UpdateKhoSoLuong(string maSanPham, int soLuongMoi)
+
+        public void UpdateKhoSoLuong(string maSanPham, int soLuongMoi,DateTime? ngaySX,DateTime? ngayHH)
         {
             // Tìm kiếm sản phẩm trong bảng Kho
             var existingKho = DB.Khos.FirstOrDefault(k => k.MaSanPham == maSanPham);
@@ -106,7 +176,8 @@ namespace DAO
 
                 // Cập nhật số lượng mới trong Kho dựa trên số lượng nhập hàng mới
                 existingKho.SoLuong = soLuongKhoHienTai + soLuongMoi;
-
+                existingKho.NgaySanXuat = ngaySX;
+                existingKho.NgayHetHan=ngayHH;
                 // Lưu thay đổi vào cơ sở dữ liệu
                 DB.SubmitChanges();
             }
@@ -129,6 +200,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              DonGia = nh.DonGia
@@ -149,6 +222,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -170,6 +245,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -191,6 +268,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -211,6 +290,8 @@ namespace DAO
                              DonViTinh = nh.DonViTinh,
                              SoLuong = nh.SoLuong,
                              NgayNhap = nh.NgayNhap,
+                             NgaySanXuat = nh.NgaySanXuat,
+                             NgayHetHan = nh.NgayHetHan,
                              MaLoaiHang = nh.MaLoaiHang,
                              MaNhaCungCap = nh.MaNhaCungCap,
                              TenSanPham = k.TenSanPham,
@@ -224,30 +305,43 @@ namespace DAO
             try
             {
                 var existingNhapHang = DB.NhapHangs.FirstOrDefault(nh => nh.MaNhapHang == nhapHang.MaNhapHang);
-                if (existingNhapHang != null)
+                if (existingNhapHang == null)
                 {
-                    existingNhapHang.MaSanPham = nhapHang.MaSanPham;
-                    existingNhapHang.SoLuong = nhapHang.SoLuong;
-                    existingNhapHang.DonViTinh = nhapHang.DonViTinh;
-                    existingNhapHang.NgayNhap = nhapHang.NgayNhap;
-                    existingNhapHang.MaLoaiHang = nhapHang.MaLoaiHang;
-                    existingNhapHang.MaNhaCungCap = nhapHang.MaNhaCungCap;
-                    existingNhapHang.DonGia = nhapHang.DonGia;
+                    throw new ArgumentException("Lỗi: Mã nhập hàng không tồn tại.");
+                }
 
-                    DB.SubmitChanges();
-                    Console.WriteLine("Cập nhật thành công."); // Ghi log thành công
-                }
-                else
+                if (nhapHang.NgaySanXuat > nhapHang.NgayNhap)
                 {
-                    Console.WriteLine("Mã nhập hàng không tồn tại."); // Ghi log không tìm thấy
+                    throw new ArgumentException("Lỗi: Ngày sản xuất phải nhỏ hơn hoặc bằng Ngày nhập.");
                 }
+                if (nhapHang.NgayNhap >= nhapHang.NgayHetHan)
+                {
+                    throw new ArgumentException("Lỗi: Ngày nhập phải nhỏ hơn Ngày hết hạn.");
+                }
+
+                existingNhapHang.MaSanPham = nhapHang.MaSanPham;
+                existingNhapHang.SoLuong = nhapHang.SoLuong;
+                existingNhapHang.DonViTinh = nhapHang.DonViTinh;
+                existingNhapHang.NgaySanXuat = nhapHang.NgaySanXuat;
+                existingNhapHang.NgayNhap = nhapHang.NgayNhap;
+                existingNhapHang.NgayHetHan = nhapHang.NgayHetHan;
+                existingNhapHang.MaLoaiHang = nhapHang.MaLoaiHang;
+                existingNhapHang.MaNhaCungCap = nhapHang.MaNhaCungCap;
+                existingNhapHang.DonGia = nhapHang.DonGia;
+                existingNhapHang.TenSanPham = nhapHang.TenSanPham;
+
+                DB.SubmitChanges();
+                Console.WriteLine("Cập nhật thành công.");
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);  // Xuất lỗi chi tiết
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Lỗi khi cập nhật: {ex.Message}"); // Ghi log lỗi
+                Console.WriteLine($"Lỗi không xác định: {ex.Message}");  // Lỗi hệ thống hoặc ngoại lệ khác
             }
         }
-
         public void DeleteNhapHang(int maNhapHang)
         {
             var existingNhapHang = DB.NhapHangs.FirstOrDefault(nh => nh.MaNhapHang == maNhapHang);
@@ -360,6 +454,8 @@ namespace DAO
 
             return result;
         }
+
+       
 
     }
 }

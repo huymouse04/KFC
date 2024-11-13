@@ -100,23 +100,11 @@
     <Compile Include="CapNhapBan.Designer.cs">
       <DependentUpon>CapNhapBan.cs</DependentUpon>
     </Compile>
-    <Compile Include="CapNhatCombo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatCombo.Designer.cs">
-      <DependentUpon>CapNhatCombo.cs</DependentUpon>
-    </Compile>
     <Compile Include="CapNhatKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CapNhatKhachHang.Designer.cs">
       <DependentUpon>CapNhatKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CapNhatKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CapNhatKhuyenMai.Designer.cs">
-      <DependentUpon>CapNhatKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="CapNhatLoaiHang.cs">
       <SubType>Form</SubType>
@@ -136,12 +124,6 @@
     <Compile Include="CapNhatThucDon.Designer.cs">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChiTietCombo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChiTietCombo.Designer.cs">
-      <DependentUpon>ChiTietCombo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Combo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +141,9 @@
     </Compile>
     <Compile Include="Connection.Designer.cs">
       <DependentUpon>Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomPanel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -270,6 +255,12 @@
     <Compile Include="NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThucDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThucDon.Designer.cs">
+      <DependentUpon>ThucDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -290,12 +281,6 @@
       <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="ThucDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThucDon.Designer.cs">
-      <DependentUpon>ThucDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="ThucDonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -320,14 +305,8 @@
     <EmbeddedResource Include="CapNhapBan.resx">
       <DependentUpon>CapNhapBan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatCombo.resx">
-      <DependentUpon>CapNhatCombo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CapNhatKhachHang.resx">
       <DependentUpon>CapNhatKhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CapNhatKhuyenMai.resx">
-      <DependentUpon>CapNhatKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CapNhatLoaiHang.resx">
       <DependentUpon>CapNhatLoaiHang.cs</DependentUpon>
@@ -338,9 +317,6 @@
     <EmbeddedResource Include="CapNhatThucDon.resx">
       <DependentUpon>CapNhatThucDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChiTietCombo.resx">
-      <DependentUpon>ChiTietCombo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Combo.resx">
       <DependentUpon>Combo.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Connection.resx">
       <DependentUpon>Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomPanel.resx">
+      <DependentUpon>CustomPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
@@ -425,13 +404,19 @@
     <EmbeddedResource Include="Reports\RPNhapHang.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPThucDon.rdlc" />
     <EmbeddedResource Include="ThucDon.resx">
       <DependentUpon>ThucDon.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ThucDonControl.resx">
       <DependentUpon>ThucDonControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\QLKFCDataSet.LuongDataTable.datasource" />
+    <None Include="Properties\DataSources\QLKFCDataSet.LuongRow.datasource" />
+    <None Include="Properties\DataSources\QLKFCDataSet.NhanVienDataTable.datasource" />
+    <None Include="Properties\DataSources\QLKFCDataSet.NhanVienRow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -441,17 +426,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLKFCDataSet.xsc">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLKFCDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLKFCDataSet.xss">
-      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -511,6 +485,21 @@
     <None Include="Image\z5925020250115_f6fae7d2cbe238e34954c0a85a50fad1.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLKFCDataSet.xsc">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLKFCDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKFCDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKFCDataSet.xss">
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\sql.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{3ba46191-c03d-421e-8add-4332a4734886}</Project>
       <Name>BUS</Name>
@@ -524,10 +513,5 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\sql.jpg" />
-    <Content Include="SqlServerTypes\readme.htm" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

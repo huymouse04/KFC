@@ -17,6 +17,7 @@ namespace KFC
         public NhaCungCap()
         {
             InitializeComponent();
+            LoadData();
         }
 
         private NhaCungCap_BUS bus = new NhaCungCap_BUS();
@@ -68,14 +69,11 @@ namespace KFC
                     LoadData();
                 }
             }
+            LoadData();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-
-
-            CapNhatNhaCungCap capNhat = new CapNhatNhaCungCap();
-            capNhat.ShowDialog();
 
             using (CapNhatNhaCungCap formCapNhat = new CapNhatNhaCungCap()) 
             {
@@ -85,7 +83,7 @@ namespace KFC
                 }
             }
 
-
+            LoadData();
 
         }
 
@@ -94,16 +92,12 @@ namespace KFC
             // Mở form Nhập Hàng
             using (NhapHang formNhapHang = new NhapHang())
             {
-                formNhapHang.ShowDialog(); // Mở form nhập hàng
-            }
-        }
-
-        private void btnLoaiHang_Click(object sender, EventArgs e)
-        {
-            // Mở form Loại Hàng
-            using (LoaiHang formLoaiHang = new LoaiHang())
-            {
-                formLoaiHang.ShowDialog(); // Mở form loại hàng
+                // Hiển thị form cập nhật nhà cung cấp dưới dạng dialog
+                if (formNhapHang.ShowDialog() == DialogResult.OK)
+                {
+                    // Nếu cập nhật thành công (DialogResult.OK), load lại dữ liệu của form Nhà Cung Cấp
+                    LoadData(); // Gọi phương thức LoadData() trên form Nhà Cung Cấp để cập nhật dữ liệu
+                }
             }
         }
 
@@ -114,7 +108,7 @@ namespace KFC
 
             if (selectedControl != null)
             {
-                NhaCungCap_DTO nhaCungCap = selectedControl.GetNhaCungCap(); // Lấy thông tin nhà cung cấp từ điều khiển đã chọn
+                NhaCungCap_DTO nhaCungCap = selectedControl.GetNhaCungCap(); // Lấy thông tin nhà cung cấp từ control đã chọn
 
                 if (nhaCungCap != null)
                 {
@@ -125,12 +119,30 @@ namespace KFC
 
                     if (result == DialogResult.Yes)
                     {
-                        // Gọi phương thức xóa từ lớp BUS
-                        bus.DeleteNhaCungCap(maNhaCungCap);
+                        try
+                        {
+                            // Kiểm tra xem nhà cung cấp có đang được sử dụng trong bảng Nhập Hàng không
+                            string usageMessage = bus.TermDeleteNhaCungCap(maNhaCungCap);
 
-                        // Cập nhật lại FlowLayoutPanel sau khi xóa
-                        LoadData(); // Gọi lại LoadData để nạp lại danh sách nhà cung cấp
-                        MessageBox.Show("Xóa nhà cung cấp thành công!");
+                            if (string.IsNullOrEmpty(usageMessage))
+                            {
+                                // Nếu không có thông báo sử dụng, thực hiện xóa nhà cung cấp
+                                bus.DeleteNhaCungCap(maNhaCungCap);
+                                MessageBox.Show("Xóa nhà cung cấp thành công!");
+
+                                // Cập nhật lại FlowLayoutPanel sau khi xóa
+                                LoadData();
+                            }
+                            else
+                            {
+                                // Nếu có thông báo sử dụng, hiển thị thông báo cho người dùng
+                                MessageBox.Show(usageMessage);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Lỗi khi xóa nhà cung cấp: " + ex.Message);
+                        }
                     }
                 }
             }
@@ -143,111 +155,39 @@ namespace KFC
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LoadData();
-            txtTimKiem.Clear();
+            txtFind.Clear();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string searchTerm = txtTimKiem.Text.Trim(); // Lấy giá trị tìm kiếm
+            string searchTerm = txtFind.Text.Trim(); // Lấy giá trị tìm kiếm
+
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng xử lý nếu không có từ khóa tìm kiếm
+            }
 
             // Gọi phương thức tìm kiếm từ lớp BUS
             var result = bus.SearchNhaCungCap(searchTerm);
-
-            // Cập nhật FlowLayoutPanel với kết quả tìm kiếm
-            flpNhaCungCap.Controls.Clear();
-            foreach (var nhaCungCap in result)
-            {
-                NhaCungCapControl control = new NhaCungCapControl();
-                control.UpdateData(nhaCungCap); // Cập nhật thông tin nhà cung cấp vào control
-                flpNhaCungCap.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
-            }
 
             // Kiểm tra nếu không có kết quả tìm kiếm
             if (result.Count == 0)
             {
                 MessageBox.Show("Không tìm thấy nhà cung cấp nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        public DataTable ConvertListToDataTable(List<DTO.NhanVien_DTO> list)
-        {
-            DataTable dataTable = new DataTable(typeof(DTO.NhanVien_DTO).Name);
-
-            // Lấy tất cả các thuộc tính của DTO.NhanVien_DTO
-            var properties = typeof(DTO.NhanVien_DTO).GetProperties();
-
-            // Tạo các cột cho DataTable dựa trên các thuộc tính
-            foreach (var prop in properties)
+            else
             {
-                var propType = prop.PropertyType;
-
-                // Nếu là DateTime, tạo cột với kiểu string để chỉ hiển thị ngày
-                if (propType == typeof(DateTime) ||
-                    (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(Nullable<>) && Nullable.GetUnderlyingType(propType) == typeof(DateTime)))
+                // Cập nhật FlowLayoutPanel với kết quả tìm kiếm
+                flpNhaCungCap.Controls.Clear();
+                foreach (var nhaCungCap in result)
                 {
-                    dataTable.Columns.Add(prop.Name, typeof(string)); // Đổi cột thành kiểu string
+                    NhaCungCapControl control = new NhaCungCapControl();
+                    control.UpdateData(nhaCungCap); // Cập nhật thông tin nhà cung cấp vào control
+                    flpNhaCungCap.Controls.Add(control); // Thêm điều khiển vào FlowLayoutPanel
                 }
-                else
-                {
-                    // Kiểm tra nếu thuộc tính là kiểu Nullable, lấy kiểu cơ bản nếu cần
-                    if (propType.IsGenericType && propType.GetGenericTypeDefinition() == typeof(Nullable<>))
-                    {
-                        propType = Nullable.GetUnderlyingType(propType);
-                    }
-                    dataTable.Columns.Add(prop.Name, propType);
-                }
-
-                // Thêm dữ liệu từ List vào DataTable
-                foreach (var item in list)
-                {
-                    var values = new object[properties.Length];
-                    for (int i = 0; i < properties.Length; i++)
-                    {
-                        var propValue = properties[i].GetValue(item, null);
-
-                        // Kiểm tra nếu là kiểu DateTime và định dạng lại chỉ hiển thị ngày
-                        if (propValue is DateTime dateValue)
-                        {
-                            values[i] = dateValue.ToString("dd/MM/yyyy"); // Chuyển đổi DateTime thành string chỉ chứa ngày
-                        }
-                        else
-                        {
-                            values[i] = propValue ?? DBNull.Value; // Gán DBNull.Value nếu giá trị null
-                        }
-                    }
-                    dataTable.Rows.Add(values);
-                }
-
             }
-            return dataTable;
 
-        }
-
-        private void btnXuat_Click(object sender, EventArgs e)
-        {
-            //    string tuKhoa = txtTimKiem.Text.Trim();
-            //    List<NhaCungCap_DTO> ketQuaList;
-
-            //    if (string.IsNullOrEmpty(tuKhoa))
-            //    {
-            //        ketQuaList = bus.GetAllNhaCungCap();
-            //    }
-            //    else
-            //    {
-            //        ketQuaList = bus.SearchNhaCungCap(tuKhoa);
-            //    }
-
-            //    if (ketQuaList == null || ketQuaList.Count == 0)
-            //    {
-            //        MessageBox.Show("Không tìm thấy nhà cung cấp nào với từ khóa đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        return;
-            //    }
-
-            //    // Chuyển đổi List<NhaCungCap_DTO> sang DataTable
-            //    DataTable ketQua = ConvertListToDataTable(ketQuaList);
-
-            //    FormReport formNhaCungCap = new FormReport(FormReport.LoaiBaoCao.NhaCungCap, ketQua);
-            //    formNhaCungCap.Show();
         }
 
         public DataTable ConvertListToDataTable(List<NhaCungCap_DTO> list)
@@ -284,5 +224,7 @@ namespace KFC
 
             return dataTable;
         }
+
+       
     }
 }
