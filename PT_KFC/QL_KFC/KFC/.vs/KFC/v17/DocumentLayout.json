@@ -42,16 +42,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "DonDat.cs [Design]",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs",
               "RelativeDocumentMoniker": "DonDat.cs",
-              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs [Design]",
-              "RelativeToolTip": "DonDat.cs [Design]",
+              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs [Design]*",
+              "RelativeToolTip": "DonDat.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T15:43:13.709Z",
               "IsPinned": true,
@@ -63,9 +67,9 @@
               "Title": "DonDat.cs",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs",
               "RelativeDocumentMoniker": "DonDat.cs",
-              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs",
-              "RelativeToolTip": "DonDat.cs",
-              "ViewState": "AgIAAHABAAAAAAAAAAAqwH8BAAAtAAAAAAAAAA==",
+              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs*",
+              "RelativeToolTip": "DonDat.cs*",
+              "ViewState": "AgIAAHIBAAAAAAAAAAAYwIYBAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T16:07:45.237Z",
               "IsPinned": true,

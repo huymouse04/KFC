@@ -11,6 +11,7 @@ using BUS;
 using DTO;
 using DAO;
 using System.IO;
+using ZXing;
 
 namespace KFC
 {
@@ -373,25 +374,27 @@ namespace KFC
             // Kiểm tra xem giá trị tổng tiền có hợp lệ không
             if (int.TryParse(txtTongTien.Text, out int soTien))
             {
-                // Chuỗi thông tin cho mã QR (tạo mã QR theo chuẩn của ngân hàng)
-                string tenChuTaiKhoan = "PHAM BA HUY";  // Tên chủ tài khoản (có thể thay đổi)
-                string soTaiKhoan = "0358468058";  // Số tài khoản (có thể thay đổi)
+                // Chuỗi thông tin cho mã QR
+                string tenChuTaiKhoan = "PHAM BA HUY";  // Tên chủ tài khoản
+                string soTaiKhoan = "0358468058";  // Số tài khoản
 
-                // Xây dựng chuỗi mã QR
-                string noiDung = $"STK:{soTaiKhoan}; Tên:{tenChuTaiKhoan}; Số tiền:{soTien}";
+                // Xây dựng chuỗi mã QR với nội dung bao gồm các ký tự có dấu
+                string noiDung = $"STK:{soTaiKhoan}; Tên:{tenChuTaiKhoan}; Số tiền:{soTien}; Nội dung: Thanh toán đơn hàng #{currentMaDonDat}";
 
                 // Tạo mã QR từ chuỗi thông tin
-                var qrCodeWriter = new ZXing.BarcodeWriter<Bitmap>
+                var qrCodeWriter = new ZXing.BarcodeWriter
                 {
-                    Format = ZXing.BarcodeFormat.QR_CODE,
+                    Format = ZXing.BarcodeFormat.QR_CODE,  // Định dạng mã QR
                     Options = new ZXing.Common.EncodingOptions
                     {
-                        Width = 300,  // Kích thước mã QR
-                        Height = 300
-                    }
+                        Width = 150,  // Kích thước mã QR (300x300)
+                        Height = 150
+                    },
+                    Renderer = new ZXing.Rendering.BitmapRenderer()  // Đặt Renderer cho mã QR
                 };
 
-                var qrImage = qrCodeWriter.Write(noiDung);  // Tạo mã QR từ chuỗi
+                // Tạo mã QR từ chuỗi
+                var qrImage = qrCodeWriter.Write(noiDung);
 
                 // Hiển thị mã QR lên PictureBox
                 picQRCode.Image = qrImage;
