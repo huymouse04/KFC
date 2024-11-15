@@ -13,6 +13,14 @@ namespace DAO
     {
         private KFCDataContext db = new KFCDataContext(Connection_DAO.ConnectionString);
 
+
+        public List<ThucDon_DTO> LayDanhSachThucDonTheoLoai(string maLoaiHang)
+        {
+            // Lấy toàn bộ sản phẩm và lọc bằng LINQ theo mã loại hàng
+            return LayDanhSachThucDon()
+                .Where(sanPham => sanPham.MaLoaiHang == maLoaiHang)
+                .ToList();
+        }
         public List<ThucDon_DTO> LayDanhSachThucDon2()
         {
             try

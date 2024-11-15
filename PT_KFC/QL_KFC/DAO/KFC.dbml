@@ -30,7 +30,6 @@
       <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="Combo_ChiTietCombo" Member="ChiTietCombos" ThisKey="MaCombo" OtherKey="MaCombo" Type="ChiTietCombo" />
-      <Association Name="Combo_ChiTietDonDat" Member="ChiTietDonDats" ThisKey="MaCombo" OtherKey="MaCombo" Type="ChiTietDonDat" />
     </Type>
   </Table>
   <Table Name="dbo.ChiTietCombo" Member="ChiTietCombos">
@@ -47,10 +46,8 @@
       <Column Name="MaDonDat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="MaCombo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="Combo_ChiTietDonDat" Member="Combo" ThisKey="MaCombo" OtherKey="MaCombo" Type="Combo" IsForeignKey="true" />
       <Association Name="ThucDon_ChiTietDonDat" Member="ThucDon" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ThucDon" IsForeignKey="true" />
       <Association Name="DonDat_ChiTietDonDat" Member="DonDat" ThisKey="MaDonDat" OtherKey="MaDonDat" Type="DonDat" IsForeignKey="true" />
     </Type>

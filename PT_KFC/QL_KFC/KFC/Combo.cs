@@ -67,20 +67,29 @@ namespace KFC
 
         private void LoadSanPhamTrongCombo(string maCombo)
         {
+            // Lấy danh sách sản phẩm theo mã Combo
             var danhSachSanPham = busct.LayDanhSachSanPhamTheoCombo(maCombo);
 
             if (danhSachSanPham == null || danhSachSanPham.Count == 0)
             {
+                // Nếu không có sản phẩm nào trong Combo
                 MessageBox.Show("Combo này hiện chưa có sản phẩm nào.");
                 dgvChiTietComBo.DataSource = null;
             }
             else
             {
+                // Gán danh sách sản phẩm vào DataGridView
                 dgvChiTietComBo.DataSource = danhSachSanPham;
-            }
 
-            dgvChiTietComBo.Columns[0].Visible = false;
+                // Kiểm tra xem DataGridView đã có ít nhất 1 cột chưa
+                if (dgvChiTietComBo.Columns.Count > 0)
+                {
+                    // Ẩn cột đầu tiên nếu cần
+                    dgvChiTietComBo.Columns[0].Visible = false;
+                }
+            }
         }
+
 
         private void Combo_Load(object sender, EventArgs e)
         {

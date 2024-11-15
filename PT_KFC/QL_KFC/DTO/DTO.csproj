@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Ban_DTO.cs" />
     <Compile Include="ChiTietCombo_DTO.cs" />
+    <Compile Include="ChiTietDonDat_DTO.cs" />
     <Compile Include="Combo_DTO.cs" />
     <Compile Include="Connection_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />

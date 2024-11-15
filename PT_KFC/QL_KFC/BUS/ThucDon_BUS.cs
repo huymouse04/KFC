@@ -13,6 +13,12 @@ namespace BUS
     {
         ThucDon_DAO dao=new ThucDon_DAO();
 
+        // Lấy toàn bộ danh sách sản phẩm
+        public List<ThucDon_DTO> LayDanhSachThucDonTheoLoai(string maLoaiHang)
+        {
+            return dao.LayDanhSachThucDonTheoLoai(maLoaiHang);
+        }
+
         public List<ThucDon_DTO> LayDanhSachThucDon2()
         {
             return dao.LayDanhSachThucDon2();

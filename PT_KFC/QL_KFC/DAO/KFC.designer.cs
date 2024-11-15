@@ -707,8 +707,6 @@ namespace DAO
 		
 		private EntitySet<ChiTietCombo> _ChiTietCombos;
 		
-		private EntitySet<ChiTietDonDat> _ChiTietDonDats;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -730,7 +728,6 @@ namespace DAO
 		public Combo()
 		{
 			this._ChiTietCombos = new EntitySet<ChiTietCombo>(new Action<ChiTietCombo>(this.attach_ChiTietCombos), new Action<ChiTietCombo>(this.detach_ChiTietCombos));
-			this._ChiTietDonDats = new EntitySet<ChiTietDonDat>(new Action<ChiTietDonDat>(this.attach_ChiTietDonDats), new Action<ChiTietDonDat>(this.detach_ChiTietDonDats));
 			OnCreated();
 		}
 		
@@ -867,19 +864,6 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietDonDat", Storage="_ChiTietDonDats", ThisKey="MaCombo", OtherKey="MaCombo")]
-		public EntitySet<ChiTietDonDat> ChiTietDonDats
-		{
-			get
-			{
-				return this._ChiTietDonDats;
-			}
-			set
-			{
-				this._ChiTietDonDats.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -907,18 +891,6 @@ namespace DAO
 		}
 		
 		private void detach_ChiTietCombos(ChiTietCombo entity)
-		{
-			this.SendPropertyChanging();
-			entity.Combo = null;
-		}
-		
-		private void attach_ChiTietDonDats(ChiTietDonDat entity)
-		{
-			this.SendPropertyChanging();
-			entity.Combo = this;
-		}
-		
-		private void detach_ChiTietDonDats(ChiTietDonDat entity)
 		{
 			this.SendPropertyChanging();
 			entity.Combo = null;
@@ -1112,13 +1084,9 @@ namespace DAO
 		
 		private string _MaSanPham;
 		
-		private string _MaCombo;
-		
 		private int _SoLuong;
 		
 		private System.Nullable<double> _DonGia;
-		
-		private EntityRef<Combo> _Combo;
 		
 		private EntityRef<ThucDon> _ThucDon;
 		
@@ -1134,8 +1102,6 @@ namespace DAO
     partial void OnIDChanged();
     partial void OnMaSanPhamChanging(string value);
     partial void OnMaSanPhamChanged();
-    partial void OnMaComboChanging(string value);
-    partial void OnMaComboChanged();
     partial void OnSoLuongChanging(int value);
     partial void OnSoLuongChanged();
     partial void OnDonGiaChanging(System.Nullable<double> value);
@@ -1144,7 +1110,6 @@ namespace DAO
 		
 		public ChiTietDonDat()
 		{
-			this._Combo = default(EntityRef<Combo>);
 			this._ThucDon = default(EntityRef<ThucDon>);
 			this._DonDat = default(EntityRef<DonDat>);
 			OnCreated();
@@ -1218,30 +1183,6 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCombo", DbType="VarChar(30)")]
-		public string MaCombo
-		{
-			get
-			{
-				return this._MaCombo;
-			}
-			set
-			{
-				if ((this._MaCombo != value))
-				{
-					if (this._Combo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaComboChanging(value);
-					this.SendPropertyChanging();
-					this._MaCombo = value;
-					this.SendPropertyChanged("MaCombo");
-					this.OnMaComboChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
 		public int SoLuong
 		{
@@ -1278,40 +1219,6 @@ namespace DAO
 					this._DonGia = value;
 					this.SendPropertyChanged("DonGia");
 					this.OnDonGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietDonDat", Storage="_Combo", ThisKey="MaCombo", OtherKey="MaCombo", IsForeignKey=true)]
-		public Combo Combo
-		{
-			get
-			{
-				return this._Combo.Entity;
-			}
-			set
-			{
-				Combo previousValue = this._Combo.Entity;
-				if (((previousValue != value) 
-							|| (this._Combo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Combo.Entity = null;
-						previousValue.ChiTietDonDats.Remove(this);
-					}
-					this._Combo.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietDonDats.Add(this);
-						this._MaCombo = value.MaCombo;
-					}
-					else
-					{
-						this._MaCombo = default(string);
-					}
-					this.SendPropertyChanged("Combo");
 				}
 			}
 		}

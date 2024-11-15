@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Ban_DAO.cs" />
     <Compile Include="ChiTietCombo_DAO.cs" />
+    <Compile Include="ChiTietDonDat_DAO.cs" />
     <Compile Include="Combo_DAO.cs" />
     <Compile Include="Connection_DAO.cs" />
     <Compile Include="KFC.designer.cs">
