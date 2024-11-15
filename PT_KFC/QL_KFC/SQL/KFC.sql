@@ -156,10 +156,10 @@ CREATE TABLE KhachHangThanThiet (
 CREATE TABLE DonDat (  
     MaDonDat VARCHAR(10) PRIMARY KEY,  
     MaBan VARCHAR(20)  NULL,  
-	TongTien FLOAT,
+	TongTien int,
     HinhThucThanhToan NVARCHAR(50),  
-    SoTienNhan FLOAT NULL, 
-    SoTienTra FLOAT NULL,  
+    SoTienNhan int NULL, 
+    SoTienTra int NULL,  
 	MaKhuyenMai VARCHAR(12) null,
 	MaKhachHang VARCHAR(30) null,
     FOREIGN KEY (MaBan) REFERENCES Ban(MaBan)  ,
@@ -173,7 +173,7 @@ CREATE TABLE ChiTietDonDat (
     ID INT IDENTITY(1,1) PRIMARY KEY,  
     MaSanPham VARCHAR(30) NULL,
 	SoLuong INT NOT NULL,   
-	DonGia FLOAT NULL, 
+	DonGia int NULL, 
 	FOREIGN KEY (MaDonDat) REFERENCES DonDat(MaDonDat),
     FOREIGN KEY (MaSanPham) REFERENCES ThucDon(MaSanPham),  
 );
@@ -385,12 +385,15 @@ WHERE MaSanPham = 'BMC01';
 
 select * from Luong
 
-select * from Kho
+select * from ChiTietDonDat
+
+--DELETE FROM DonDat WHERE MaDonDat IN ('DDa57366fe', 'DDb84ef177', 'DDcc12f513', 'DDd7a37830', 'DD6a2fbb57', 'DDd160fdd7', 'DD8d3e0de4', 'DD6cfe3b59', 'DD6ca3d0c6', 'DD225430f8', 'DD316bc9d2', 'DD64a49ea2', 'DDd38dd19b');
+
 
 SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 10 AND Nam = 2024;
-DELETE FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 2; -- Thay MãNhânViênCầnXóa và 1 bằng giá trị cụ thể
 
-
+--DELETE FROM ChiTietDonDat WHERE MaDonDat = 'DD0ff33b8e'
+--DELETE FROM DonDat WHERE MaDonDat = 'DD0ff33b8e'
 
 SELECT COLUMN_NAME, DATA_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
