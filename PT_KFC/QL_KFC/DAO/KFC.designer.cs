@@ -1106,7 +1106,7 @@ namespace DAO
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MaDonDat;
+		private string _MaDonDat;
 		
 		private int _ID;
 		
@@ -1128,7 +1128,7 @@ namespace DAO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaDonDatChanging(int value);
+    partial void OnMaDonDatChanging(string value);
     partial void OnMaDonDatChanged();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
@@ -1150,8 +1150,8 @@ namespace DAO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="Int NOT NULL")]
-		public int MaDonDat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="VarChar(10)")]
+		public string MaDonDat
 		{
 			get
 			{
@@ -1377,7 +1377,7 @@ namespace DAO
 					}
 					else
 					{
-						this._MaDonDat = default(int);
+						this._MaDonDat = default(string);
 					}
 					this.SendPropertyChanged("DonDat");
 				}
@@ -1699,7 +1699,7 @@ namespace DAO
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MaDonDat;
+		private string _MaDonDat;
 		
 		private string _MaBan;
 		
@@ -1729,7 +1729,7 @@ namespace DAO
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMaDonDatChanging(int value);
+    partial void OnMaDonDatChanging(string value);
     partial void OnMaDonDatChanged();
     partial void OnMaBanChanging(string value);
     partial void OnMaBanChanged();
@@ -1757,8 +1757,8 @@ namespace DAO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaDonDat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaDonDat
 		{
 			get
 			{
@@ -1777,7 +1777,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBan", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaBan", DbType="VarChar(20)")]
 		public string MaBan
 		{
 			get
@@ -2110,7 +2110,7 @@ namespace DAO
 		
 		private int _MaHoaDon;
 		
-		private int _MaDonDat;
+		private string _MaDonDat;
 		
 		private System.Nullable<System.DateTime> _NgayThanhToan;
 		
@@ -2124,7 +2124,7 @@ namespace DAO
     partial void OnCreated();
     partial void OnMaHoaDonChanging(int value);
     partial void OnMaHoaDonChanged();
-    partial void OnMaDonDatChanging(int value);
+    partial void OnMaDonDatChanging(string value);
     partial void OnMaDonDatChanged();
     partial void OnNgayThanhToanChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayThanhToanChanged();
@@ -2157,8 +2157,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="Int NOT NULL")]
-		public int MaDonDat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="VarChar(10)")]
+		public string MaDonDat
 		{
 			get
 			{
@@ -2241,7 +2241,7 @@ namespace DAO
 					}
 					else
 					{
-						this._MaDonDat = default(int);
+						this._MaDonDat = default(string);
 					}
 					this.SendPropertyChanged("DonDat");
 				}

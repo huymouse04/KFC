@@ -176,5 +176,9 @@ namespace KFC
 
         }
 
+        private void btnDonDat_Click(object sender, EventArgs e)
+        {
+            openformMain(new DonDat());
+        }
     }
 }

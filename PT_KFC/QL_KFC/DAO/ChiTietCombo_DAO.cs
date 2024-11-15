@@ -45,6 +45,7 @@ namespace DAO
                 
                 MaSanPham = sp.MaSanPham,
                 TenSanPham = sp.TenSanPham,
+                DonGia = (int)sp.DonGia,
             }).ToList();
         }
 
@@ -209,7 +210,8 @@ namespace DAO
                                        {
                                            MaCombo = maCombo,
                                            MaSanPham = sp.TenSanPham,
-                                           SoLuong = ctc.SoLuong
+                                           SoLuong = ctc.SoLuong,
+                                           GiaSanPham = (int)sp.DonGia,
                                        }).ToList();
 
                 return danhSachSanPham;

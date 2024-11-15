@@ -13,6 +13,42 @@ namespace DAO
     {
         private KFCDataContext db = new KFCDataContext(Connection_DAO.ConnectionString);
 
+        public List<ThucDon_DTO> LayDanhSachThucDon2()
+        {
+            try
+            {
+                // Lấy danh sách thực đơn
+                var thucDonList = db.ThucDons.ToList();
+
+                // Tạo danh sách DTO
+                var result = new List<ThucDon_DTO>();
+
+                foreach (var td in thucDonList)
+                {
+                    var kho = db.Khos.FirstOrDefault(k => k.MaSanPham == td.MaSanPham);
+                    var loaiHang = db.LoaiHangs.FirstOrDefault(lh => lh.MaLoaiHang == td.MaLoaiHang);
+
+                    var thucDonDTO = new ThucDon_DTO
+                    {
+                        MaSanPham = td.MaSanPham,
+                        TenSanPham = td.TenSanPham,
+                        DonGia = td.DonGia.HasValue ? (float)td.DonGia.Value : 0,
+                        MaLoaiHang = td.MaLoaiHang
+                    };
+
+                    result.Add(thucDonDTO);
+                }
+
+                return result; // Trả về danh sách không null
+            }
+            catch (Exception ex)
+            {
+                // Ghi log hoặc xử lý lỗi
+                throw new Exception("Lỗi khi lấy danh sách thực đơn: " + ex.Message);
+            }
+        }
+
+
         public List<ThucDon_DTO> LayDanhSachThucDon()
         {
             try

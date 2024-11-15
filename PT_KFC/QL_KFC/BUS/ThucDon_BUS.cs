@@ -12,6 +12,11 @@ namespace BUS
     public class ThucDon_BUS
     {
         ThucDon_DAO dao=new ThucDon_DAO();
+
+        public List<ThucDon_DTO> LayDanhSachThucDon2()
+        {
+            return dao.LayDanhSachThucDon2();
+        }
         public List<ThucDon_DTO> LayDanhSachThucDon()
         {
             return dao.LayDanhSachThucDon();

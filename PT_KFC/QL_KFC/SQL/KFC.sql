@@ -154,8 +154,8 @@ CREATE TABLE KhachHangThanThiet (
 
 -- bảng đơn đặt
 CREATE TABLE DonDat (  
-    MaDonDat INT IDENTITY(1,1) PRIMARY KEY,  
-    MaBan VARCHAR(20) NOT NULL,  
+    MaDonDat VARCHAR(10) PRIMARY KEY,  
+    MaBan VARCHAR(20)  NULL,  
 	TongTien FLOAT,
     HinhThucThanhToan NVARCHAR(50),  
     SoTienNhan FLOAT NULL, 
@@ -169,7 +169,7 @@ CREATE TABLE DonDat (
 
 -- Bảng chi tiết hóa đơn
 CREATE TABLE ChiTietDonDat (  
-	MaDonDat INT NOT NULL, 
+	MaDonDat VARCHAR(10), 
     ID INT IDENTITY(1,1) PRIMARY KEY,  
     MaSanPham VARCHAR(30) NULL,  
     MaCombo VARCHAR(30) NULL,  
@@ -184,7 +184,7 @@ CREATE TABLE ChiTietDonDat (
 -- Bảng Hoa Don  
 CREATE TABLE HoaDon (  
     MaHoaDon INT IDENTITY(1,1) PRIMARY KEY, 
-	MaDonDat INT not NULL,   
+	MaDonDat VARCHAR(10), 
     NgayThanhToan DATETIME,   
     FOREIGN KEY (MaDonDat) REFERENCES DonDat(MaDonDat)  
 );   

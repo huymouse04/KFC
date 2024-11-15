@@ -61,6 +61,8 @@ namespace KFC
             txtSoLuong.Text = com.SoLuong.ToString();
             dtpNgayBatDau.Value = DateTime.Parse(com.NgayBatDau.ToString());
             dtpNgayKetThuc.Value = DateTime.Parse(com.NgayKetThuc.ToString());
+
+
         }
 
         private void LoadSanPhamTrongCombo(string maCombo)
@@ -109,6 +111,12 @@ namespace KFC
             if (string.IsNullOrEmpty(txtGiaCombo.Text))
             {
                 MessageBox.Show("Giá combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtPhanTramGiam.Text))
+            {
+                MessageBox.Show("Phần trăm giảm combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // Lấy dữ liệu từ form nhập
@@ -167,13 +175,19 @@ namespace KFC
                 MessageBox.Show("Giá combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            if (string.IsNullOrEmpty(txtPhanTramGiam.Text))
+            {
+                MessageBox.Show("Phần trăm giảm combo không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Lấy dữ liệu từ form nhập
             var combo = new Combo_DTO
             {
                 MaCombo = txtMaCombo.Text,
                 TenCombo = txtTenCombo.Text,
-                GiaCombo = int.Parse(txtGiaCombo.Text),
                 SoLuong = int.Parse(txtSoLuong.Text),
+                GiaCombo = int.Parse(txtGiaCombo.Text),
                 NgayBatDau = dtpNgayBatDau.Value,
                 NgayKetThuc = dtpNgayKetThuc.Value
             };
@@ -427,5 +441,54 @@ namespace KFC
                 e.Handled = true; // Chặn ký tự không hợp lệ
             }
         }
+
+        private void TinhTongGiaCombo()
+        {
+            try
+            {
+                // Lấy phần trăm giảm giá từ textbox và chuyển sang kiểu số
+                decimal phanTramGiam = 0;
+                if (!string.IsNullOrEmpty(txtPhanTramGiam.Text))
+                {
+                    phanTramGiam = decimal.Parse(txtPhanTramGiam.Text) / 100;
+                }
+
+                // Tính tổng giá combo dựa trên chi tiết sản phẩm
+                decimal tongGia = 0;
+                foreach (DataGridViewRow row in dgvChiTietComBo.Rows)
+                {
+                    // Kiểm tra xem hàng có dữ liệu không (tránh dòng trống)
+                    if (row.Cells["GiaSanPham"] != null && row.Cells["GiaSanPham"].Value != null)
+                    {
+                        decimal giaSanPham = decimal.Parse(row.Cells["GiaSanPham"].Value.ToString());
+                        int soLuong = int.Parse(row.Cells["SoLuong"].Value.ToString());
+
+                        // Tính giá của sản phẩm trong combo
+                        tongGia += giaSanPham * soLuong;
+                    }
+                }
+
+                // Áp dụng phần trăm giảm giá
+                decimal giaSauGiam = tongGia * (1 - phanTramGiam);
+
+                // Hiển thị kết quả
+                txtGiaCombo.Text = giaSauGiam.ToString("0.##"); // Định dạng để hiển thị 2 chữ số thập phân
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tính tổng giá combo: " + ex.Message);
+            }
+        }
+
+        private void txtPhanTramGiam_TextChanged(object sender, EventArgs e)
+        {
+            TinhTongGiaCombo();
+        }
+
+        private void txtGiaCombo_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
+    

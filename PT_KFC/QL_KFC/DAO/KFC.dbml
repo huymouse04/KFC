@@ -44,7 +44,7 @@
   </Table>
   <Table Name="dbo.ChiTietDonDat" Member="ChiTietDonDats">
     <Type Name="ChiTietDonDat">
-      <Column Name="MaDonDat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaDonDat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="MaCombo" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
@@ -70,8 +70,8 @@
   </Table>
   <Table Name="dbo.DonDat" Member="DonDats">
     <Type Name="DonDat">
-      <Column Name="MaDonDat" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaBan" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaDonDat" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaBan" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="HinhThucThanhToan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SoTienNhan" Type="System.Double" DbType="Float" CanBeNull="true" />
@@ -88,7 +88,7 @@
   <Table Name="dbo.HoaDon" Member="HoaDons">
     <Type Name="HoaDon">
       <Column Name="MaHoaDon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaDonDat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaDonDat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="NgayThanhToan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="HoaDon_DoanhThu" Member="DoanhThus" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="DoanhThu" />
       <Association Name="DonDat_HoaDon" Member="DonDat" ThisKey="MaDonDat" OtherKey="MaDonDat" Type="DonDat" IsForeignKey="true" />
