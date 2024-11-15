@@ -171,13 +171,11 @@ CREATE TABLE DonDat (
 CREATE TABLE ChiTietDonDat (  
 	MaDonDat VARCHAR(10), 
     ID INT IDENTITY(1,1) PRIMARY KEY,  
-    MaSanPham VARCHAR(30) NULL,  
-    MaCombo VARCHAR(30) NULL,  
-    SoLuong INT NOT NULL,   
+    MaSanPham VARCHAR(30) NULL,
+	SoLuong INT NOT NULL,   
 	DonGia FLOAT NULL, 
 	FOREIGN KEY (MaDonDat) REFERENCES DonDat(MaDonDat),
     FOREIGN KEY (MaSanPham) REFERENCES ThucDon(MaSanPham),  
-    FOREIGN KEY (MaCombo) REFERENCES Combo(MaCombo)  
 );
 
 

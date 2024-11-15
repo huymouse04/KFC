@@ -47,7 +47,7 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DonGia" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="ThucDon_ChiTietDonDat" Member="ThucDon" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="ThucDon" IsForeignKey="true" />
       <Association Name="DonDat_ChiTietDonDat" Member="DonDat" ThisKey="MaDonDat" OtherKey="MaDonDat" Type="DonDat" IsForeignKey="true" />
     </Type>
@@ -69,10 +69,10 @@
     <Type Name="DonDat">
       <Column Name="MaDonDat" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaBan" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="TongTien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="HinhThucThanhToan" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SoTienNhan" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="SoTienTra" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SoTienNhan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoTienTra" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaKhuyenMai" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
       <Column Name="MaKhachHang" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Association Name="DonDat_ChiTietDonDat" Member="ChiTietDonDats" ThisKey="MaDonDat" OtherKey="MaDonDat" Type="ChiTietDonDat" />

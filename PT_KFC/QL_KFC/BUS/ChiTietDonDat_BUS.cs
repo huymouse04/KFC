@@ -12,6 +12,23 @@ namespace BUS
     {
         private ChiTietDonDat_DAO dao = new ChiTietDonDat_DAO();
 
+        public List<ChiTietDonDat_DTO> GetChiTietDonDatByMaDon(string maDonDat)
+        {
+            var chiTietDonDats = dao.GetChiTietDonDatByMaDon(maDonDat); // Gọi DAO để lấy dữ liệu
+
+            // Chuyển dữ liệu từ DAO (ChiTietDonDat) sang DTO (ChiTietDonDat_DTO) trước khi trả về
+            List<ChiTietDonDat_DTO> chiTietDTOs = chiTietDonDats.Select(c => new ChiTietDonDat_DTO
+            {
+                ID = c.ID,
+                MaDonDat = c.MaDonDat,
+                MaSanPham = c.MaSanPham,
+                SoLuong = c.SoLuong,
+                DonGia = (int)c.DonGia
+            }).ToList();
+
+            return chiTietDTOs;
+        }
+
         // Method to get all order details
         public List<ChiTietDonDat_DTO> GetAllChiTietDonDat()
         {

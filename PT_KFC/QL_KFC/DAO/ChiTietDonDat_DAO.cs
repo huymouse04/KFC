@@ -12,6 +12,15 @@ namespace DAO
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
 
+
+        // Phương thức lấy danh sách chi tiết đơn đặt theo mã đơn đặt
+        public List<ChiTietDonDat> GetChiTietDonDatByMaDon(string maDonDat)
+        {
+            // Truy vấn vào bảng ChiTietDonDat để lấy các bản ghi theo MaDonDat
+            var query = DB.ChiTietDonDats.Where(c => c.MaDonDat == maDonDat).ToList();
+            return query;
+        }
+
         // Method to get all order details
         public List<ChiTietDonDat_DTO> GetAllChiTietDonDat()
         {
@@ -24,7 +33,7 @@ namespace DAO
                                    MaSanPham = c.MaSanPham,
                                    TenSanPham = t.TenSanPham,
                                    SoLuong = c.SoLuong,
-                                   DonGia = (float)c.DonGia
+                                   DonGia = (int)c.DonGia
                                }).ToList();
 
             return chiTietList;
@@ -42,7 +51,7 @@ namespace DAO
                                       ID = c.ID,
                                       MaSanPham = c.MaSanPham,
                                       SoLuong = c.SoLuong,
-                                      DonGia = (float)c.DonGia
+                                      DonGia = (int)c.DonGia
                                   })
                                   .FirstOrDefault();
             return chiTiet;
@@ -80,7 +89,7 @@ namespace DAO
                 MaDonDat = dto.MaDonDat,
                 MaSanPham = dto.MaSanPham,
                 SoLuong = dto.SoLuong,
-                DonGia = dto.DonGia
+                DonGia = (int)dto.DonGia
             };
 
             DB.ChiTietDonDats.InsertOnSubmit(chiTiet);
@@ -100,7 +109,7 @@ namespace DAO
                 chiTiet.MaDonDat = dto.MaDonDat;
                 chiTiet.MaSanPham = dto.MaSanPham;
                 chiTiet.SoLuong = dto.SoLuong;
-                chiTiet.DonGia = dto.DonGia;
+                chiTiet.DonGia = (int)dto.DonGia;
                 DB.SubmitChanges();
             }
         }

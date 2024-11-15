@@ -24,6 +24,10 @@ namespace KFC
         LoaiHang_BUS busloaihang = new LoaiHang_BUS();
         Combo_BUS buscombo = new Combo_BUS();
         ChiTietDonDat_BUS buschitietdondat = new ChiTietDonDat_BUS();
+        DonDat_BUS busdondat = new DonDat_BUS();
+        private string currentMaDonDat;
+
+
 
 
 
@@ -59,21 +63,26 @@ namespace KFC
 
         private void btnMaDonDat_Click(object sender, EventArgs e)
         {
-            string maDon;
+            //string maDon;
 
-            // Tạo mã mới cho đến khi không trùng lặp
-            do
-            {
-                maDon = GenerateRandomCode(10);
-            }
-            while (existingCodes.Contains(maDon));
+            //// Tạo mã mới cho đến khi không trùng lặp
+            //do
+            //{
+            //    maDon = GenerateRandomCode(10);
+            //}
+            //while (existingCodes.Contains(maDon));
 
-            // Thêm mã mới vào HashSet và lưu vào file
-            existingCodes.Add(maDon);
-            SaveCodeToFile(maDon);
+            //// Thêm mã mới vào HashSet và lưu vào file
+            //existingCodes.Add(maDon);
+            //SaveCodeToFile(maDon);
 
-            // Hiển thị mã mới trong TextBox
-            txtMaDonDat.Text = maDon;
+            //// Hiển thị mã mới trong TextBox
+            //txtMaDonDat.Text = maDon;
+
+            currentMaDonDat = busdondat.TaoDonDatMoi();
+            //MessageBox.Show("Đã tạo mã đơn đặt: " + currentMaDonDat, "Thông báo");
+            txtMaDonDat.Text = currentMaDonDat.ToString();
+
         }
 
         private string GenerateRandomCode(int length)
@@ -216,17 +225,46 @@ namespace KFC
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(currentMaDonDat))
+            {
+                MessageBox.Show("Bạn chưa tạo mã đơn đặt. Vui lòng tạo mã trước khi thêm sản phẩm.", "Lỗi");
+                return;
+            }
+
+            // Tạo đối tượng ChiTietDonDat_DTO từ dữ liệu nhập
             var dto = new ChiTietDonDat_DTO
             {
-                MaDonDat = txtMaDonDat.Text,
+                MaDonDat = currentMaDonDat,
                 MaSanPham = txtMaSanPham.Text,
                 SoLuong = int.Parse(txtSoLuong.Text),
-                DonGia = float.Parse(txtDonGia.Text)
+                DonGia = int.Parse(txtDonGia.Text)
             };
 
+            // Thêm chi tiết đơn đặt vào cơ sở dữ liệu
             buschitietdondat.AddChiTietDonDat(dto);
-            LoadChiTietDonDat(); // Refresh the DataGridView
+
+            // Tải lại danh sách chi tiết đơn đặt
+            LoadChiTietDonDat();
+
+            // Cập nhật tổng tiền
+            CapNhatTongTien();
         }
+
+        private void CapNhatTongTien()
+        {
+            if (!string.IsNullOrEmpty(currentMaDonDat))
+            {
+                // Lấy danh sách chi tiết đơn đặt cho mã hiện tại
+                var danhSachChiTiet = buschitietdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
+
+                // Tính tổng tiền
+                int tongTien = danhSachChiTiet.Sum(item => item.SoLuong * item.DonGia);
+
+                // Hiển thị tổng tiền trong TextBox
+                txtTongTien.Text = tongTien.ToString(); // Định dạng số
+            }
+        }
+
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -236,14 +274,16 @@ namespace KFC
                 var dto = new ChiTietDonDat_DTO
                 {
                     ID = (int)selectedRow.Cells["ID"].Value,
-                    MaDonDat = txtMaDonDat.Text,
+                    MaDonDat = currentMaDonDat,
                     MaSanPham = txtSanPham.Text,
                     SoLuong = int.Parse(txtSoLuong.Text),
-                    DonGia = float.Parse(txtDonGia.Text)
+                    DonGia = int.Parse(txtDonGia.Text)
                 };
 
                 buschitietdondat.UpdateChiTietDonDat(dto);
-                LoadChiTietDonDat(); // Refresh the DataGridView
+
+                LoadChiTietDonDat(); // Refresh DataGridView
+                CapNhatTongTien();   // Update total
             }
         }
 
@@ -255,11 +295,11 @@ namespace KFC
                 int id = (int)selectedRow.Cells["ID"].Value;
 
                 buschitietdondat.DeleteChiTietDonDat(id);
-                LoadChiTietDonDat(); // Refresh the DataGridView
+
+                LoadChiTietDonDat(); // Refresh DataGridView
+                CapNhatTongTien();   // Update total
             }
         }
-
-
 
         private void dgvDonDat_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -271,6 +311,95 @@ namespace KFC
                 txtSanPham.Text = row.Cells["TenSanPham"].Value.ToString();
                 txtSoLuong.Text = row.Cells["SoLuong"].Value.ToString();
                 txtDonGia.Text = row.Cells["DonGia"].Value.ToString();
+            }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem MaDonDat và TongTien có giá trị hợp lệ không
+            if (string.IsNullOrEmpty(currentMaDonDat) || string.IsNullOrEmpty(txtTongTien.Text.Trim()))
+            {
+                MessageBox.Show("Mã đơn và tổng tiền là bắt buộc!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;  // Dừng lại nếu không có mã đơn hoặc tổng tiền
+            }
+
+            // Kiểm tra và parse Tổng Tiền
+            int tongTien = 0;
+            bool isValidTongTien = int.TryParse(txtTongTien.Text.Trim(), out tongTien);
+
+            // Kiểm tra xem giá trị nhập vào có hợp lệ không (nếu không hợp lệ, thông báo lỗi)
+            if (!isValidTongTien)
+            {
+                MessageBox.Show("Tổng tiền phải là một số hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Nếu không hợp lệ, dừng lại
+            }
+
+            // Kiểm tra nếu tổng tiền nhỏ hơn 0
+            if (tongTien < 0)
+            {
+                MessageBox.Show("Tổng tiền phải lớn hơn hoặc bằng 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Nếu tổng tiền nhỏ hơn 0, dừng lại
+            }
+
+            // Cố gắng parse SoTienNhan và SoTienTra thành số nguyên, nếu không thì gán mặc định là 0
+            int soTienNhan = 0, soTienTra = 0;
+            int.TryParse(txtTienNhan.Text.Trim(), out soTienNhan);
+            int.TryParse(txtTienTra.Text.Trim(), out soTienTra);
+
+            // Tạo đối tượng DonDat_DTO với các giá trị đã kiểm tra
+            var donDat = new DonDat_DTO
+            {
+                MaDonDat = currentMaDonDat,
+                MaBan = string.IsNullOrEmpty(cboBan.Text) ? (string)null : Convert.ToString(cboBan.Text),  // Nếu không có MaBan, gán NULL
+                MaKhuyenMai = string.IsNullOrEmpty(cboMaKhuyenMai.Text) ? null : cboMaKhuyenMai.Text,  // Nếu không có MaKhuyenMai, gán NULL
+                MaKhachHang = string.IsNullOrEmpty(txtMaKhachHang.Text) ? null : txtMaKhachHang.Text,  // Nếu không có MaKhachHang, gán NULL
+                SoTienNhan = soTienNhan,
+                SoTienTra = soTienTra
+            };
+
+            // Cập nhật thông tin đơn đặt vào cơ sở dữ liệu
+            if (busdondat.CapNhatThongTinDonDat(donDat))
+            {
+                MessageBox.Show($"Thanh toán thành công! Tổng tiền: {tongTien}", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Thanh toán thất bại!", "Lỗi");
+            }
+        }
+
+        private void btnChuyenKhoan_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem giá trị tổng tiền có hợp lệ không
+            if (int.TryParse(txtTongTien.Text, out int soTien))
+            {
+                // Chuỗi thông tin cho mã QR (tạo mã QR theo chuẩn của ngân hàng)
+                string tenChuTaiKhoan = "PHAM BA HUY";  // Tên chủ tài khoản (có thể thay đổi)
+                string soTaiKhoan = "0358468058";  // Số tài khoản (có thể thay đổi)
+
+                // Xây dựng chuỗi mã QR
+                string noiDung = $"STK:{soTaiKhoan}; Tên:{tenChuTaiKhoan}; Số tiền:{soTien}";
+
+                // Tạo mã QR từ chuỗi thông tin
+                var qrCodeWriter = new ZXing.BarcodeWriter<Bitmap>
+                {
+                    Format = ZXing.BarcodeFormat.QR_CODE,
+                    Options = new ZXing.Common.EncodingOptions
+                    {
+                        Width = 300,  // Kích thước mã QR
+                        Height = 300
+                    }
+                };
+
+                var qrImage = qrCodeWriter.Write(noiDung);  // Tạo mã QR từ chuỗi
+
+                // Hiển thị mã QR lên PictureBox
+                picQRCode.Image = qrImage;
+                picQRCode.Visible = true;  // Hiển thị PictureBox
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập tổng tiền hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

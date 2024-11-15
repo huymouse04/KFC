@@ -13,7 +13,7 @@ namespace DTO
         public string MaSanPham { get; set; }
         public string TenSanPham {  set; get; }
         public int SoLuong { get; set; }
-        public float DonGia { get; set; }
+        public int DonGia { get; set; }
 
         // Calculated field for Total Price
         public float TongGia
@@ -22,7 +22,7 @@ namespace DTO
         }
         public ChiTietDonDat_DTO() { }
 
-        public ChiTietDonDat_DTO(string maDonDat, int iD, string maSanPham, string tenSanPham, int soLuong, float donGia)
+        public ChiTietDonDat_DTO(string maDonDat, int iD, string maSanPham, string tenSanPham, int soLuong, int donGia)
         {
             MaDonDat = maDonDat;
             ID = iD;

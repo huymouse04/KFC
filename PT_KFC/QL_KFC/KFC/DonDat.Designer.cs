@@ -57,7 +57,9 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.lbDG1 = new System.Windows.Forms.Label();
+            this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.txtSanPham = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbMSP = new System.Windows.Forms.Label();
             this.txtMaDonDat = new System.Windows.Forms.TextBox();
             this.lbMDD = new System.Windows.Forms.Label();
@@ -65,14 +67,14 @@
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.dgvDonDat = new System.Windows.Forms.DataGridView();
             this.pnDSM = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaSanPham = new System.Windows.Forms.TextBox();
+            this.picQRCode = new System.Windows.Forms.PictureBox();
             this.pnDD.SuspendLayout();
             this.gbDD.SuspendLayout();
             this.gbCTDD.SuspendLayout();
             this.pnMONDD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).BeginInit();
             this.SuspendLayout();
             // 
             // pnDD
@@ -150,6 +152,7 @@
             this.btnThanhToan.TabIndex = 33;
             this.btnThanhToan.Text = "THANH TOÁN";
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // txtTienTra
             // 
@@ -216,6 +219,7 @@
             this.btnChuyenKhoan.TabIndex = 27;
             this.btnChuyenKhoan.Text = "CHUYỂN KHOẢN";
             this.btnChuyenKhoan.UseVisualStyleBackColor = false;
+            this.btnChuyenKhoan.Click += new System.EventHandler(this.btnChuyenKhoan_Click);
             // 
             // lbHTTT
             // 
@@ -438,6 +442,14 @@
             this.lbDG1.TabIndex = 12;
             this.lbDG1.Text = "Đơn giá :";
             // 
+            // txtMaSanPham
+            // 
+            this.txtMaSanPham.Location = new System.Drawing.Point(12, 86);
+            this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaSanPham.Name = "txtMaSanPham";
+            this.txtMaSanPham.Size = new System.Drawing.Size(250, 30);
+            this.txtMaSanPham.TabIndex = 5;
+            // 
             // txtSanPham
             // 
             this.txtSanPham.Location = new System.Drawing.Point(13, 141);
@@ -445,6 +457,18 @@
             this.txtSanPham.Name = "txtSanPham";
             this.txtSanPham.Size = new System.Drawing.Size(250, 30);
             this.txtSanPham.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(11, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 21);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Mã sản phẩm :";
             // 
             // lbMSP
             // 
@@ -482,6 +506,7 @@
             // pnMONDD
             // 
             this.pnMONDD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnMONDD.Controls.Add(this.picQRCode);
             this.pnMONDD.Controls.Add(this.dgvThucDon);
             this.pnMONDD.Controls.Add(this.dgvDonDat);
             this.pnMONDD.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -528,25 +553,14 @@
             this.pnDSM.Size = new System.Drawing.Size(165, 754);
             this.pnDSM.TabIndex = 3;
             // 
-            // label1
+            // picQRCode
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(11, 60);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 21);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Mã sản phẩm :";
-            // 
-            // txtMaSanPham
-            // 
-            this.txtMaSanPham.Location = new System.Drawing.Point(12, 86);
-            this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaSanPham.Name = "txtMaSanPham";
-            this.txtMaSanPham.Size = new System.Drawing.Size(250, 30);
-            this.txtMaSanPham.TabIndex = 5;
+            this.picQRCode.Location = new System.Drawing.Point(602, 287);
+            this.picQRCode.Name = "picQRCode";
+            this.picQRCode.Size = new System.Drawing.Size(200, 200);
+            this.picQRCode.TabIndex = 2;
+            this.picQRCode.TabStop = false;
+            this.picQRCode.Visible = false;
             // 
             // DonDat
             // 
@@ -568,6 +582,7 @@
             this.pnMONDD.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -612,5 +627,6 @@
         private System.Windows.Forms.Label lbSL1;
         private System.Windows.Forms.TextBox txtMaSanPham;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox picQRCode;
     }
 }

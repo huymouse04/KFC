@@ -1086,7 +1086,7 @@ namespace DAO
 		
 		private int _SoLuong;
 		
-		private System.Nullable<double> _DonGia;
+		private System.Nullable<int> _DonGia;
 		
 		private EntityRef<ThucDon> _ThucDon;
 		
@@ -1104,7 +1104,7 @@ namespace DAO
     partial void OnMaSanPhamChanged();
     partial void OnSoLuongChanging(int value);
     partial void OnSoLuongChanged();
-    partial void OnDonGiaChanging(System.Nullable<double> value);
+    partial void OnDonGiaChanging(System.Nullable<int> value);
     partial void OnDonGiaChanged();
     #endregion
 		
@@ -1203,8 +1203,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Float")]
-		public System.Nullable<double> DonGia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Int")]
+		public System.Nullable<int> DonGia
 		{
 			get
 			{
@@ -1610,13 +1610,13 @@ namespace DAO
 		
 		private string _MaBan;
 		
-		private System.Nullable<double> _TongTien;
+		private System.Nullable<int> _TongTien;
 		
 		private string _HinhThucThanhToan;
 		
-		private System.Nullable<double> _SoTienNhan;
+		private System.Nullable<int> _SoTienNhan;
 		
-		private System.Nullable<double> _SoTienTra;
+		private System.Nullable<int> _SoTienTra;
 		
 		private string _MaKhuyenMai;
 		
@@ -1640,13 +1640,13 @@ namespace DAO
     partial void OnMaDonDatChanged();
     partial void OnMaBanChanging(string value);
     partial void OnMaBanChanged();
-    partial void OnTongTienChanging(System.Nullable<double> value);
+    partial void OnTongTienChanging(System.Nullable<int> value);
     partial void OnTongTienChanged();
     partial void OnHinhThucThanhToanChanging(string value);
     partial void OnHinhThucThanhToanChanged();
-    partial void OnSoTienNhanChanging(System.Nullable<double> value);
+    partial void OnSoTienNhanChanging(System.Nullable<int> value);
     partial void OnSoTienNhanChanged();
-    partial void OnSoTienTraChanging(System.Nullable<double> value);
+    partial void OnSoTienTraChanging(System.Nullable<int> value);
     partial void OnSoTienTraChanged();
     partial void OnMaKhuyenMaiChanging(string value);
     partial void OnMaKhuyenMaiChanged();
@@ -1708,8 +1708,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Float")]
-		public System.Nullable<double> TongTien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Int")]
+		public System.Nullable<int> TongTien
 		{
 			get
 			{
@@ -1748,8 +1748,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienNhan", DbType="Float")]
-		public System.Nullable<double> SoTienNhan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienNhan", DbType="Int")]
+		public System.Nullable<int> SoTienNhan
 		{
 			get
 			{
@@ -1768,8 +1768,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienTra", DbType="Float")]
-		public System.Nullable<double> SoTienTra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienTra", DbType="Int")]
+		public System.Nullable<int> SoTienTra
 		{
 			get
 			{
