@@ -12,6 +12,22 @@ namespace BUS
     {
         private ChiTietDonDat_DAO dao = new ChiTietDonDat_DAO();
 
+
+        public void AddChiTietDonDatOrCombo(string maDonDat, string maSanPhamOrCombo, int soLuong)
+        {
+
+                dao.AddChiTietDonDatOrCombo(maDonDat, maSanPhamOrCombo, soLuong);
+            
+
+        }
+
+
+        public void AddComboToOrder(string maDonDat, string maCombo, int comboQuantity)
+        {
+            dao.AddComboToOrder(maDonDat,maCombo,comboQuantity);
+        }
+
+
         public List<ChiTietDonDat_DTO> GetChiTietDonDatByMaDon(string maDonDat)
         {
             var chiTietDonDats = dao.GetChiTietDonDatByMaDon(maDonDat); // Gọi DAO để lấy dữ liệu

@@ -64,17 +64,17 @@
             this.txtMaDonDat = new System.Windows.Forms.TextBox();
             this.lbMDD = new System.Windows.Forms.Label();
             this.pnMONDD = new System.Windows.Forms.Panel();
+            this.picQRCode = new System.Windows.Forms.PictureBox();
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.dgvDonDat = new System.Windows.Forms.DataGridView();
             this.pnDSM = new System.Windows.Forms.Panel();
-            this.picQRCode = new System.Windows.Forms.PictureBox();
             this.pnDD.SuspendLayout();
             this.gbDD.SuspendLayout();
             this.gbCTDD.SuspendLayout();
             this.pnMONDD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).BeginInit();
             this.SuspendLayout();
             // 
             // pnDD
@@ -86,7 +86,7 @@
             this.pnDD.Location = new System.Drawing.Point(1119, 0);
             this.pnDD.Margin = new System.Windows.Forms.Padding(4);
             this.pnDD.Name = "pnDD";
-            this.pnDD.Size = new System.Drawing.Size(624, 754);
+            this.pnDD.Size = new System.Drawing.Size(624, 788);
             this.pnDD.TabIndex = 5;
             // 
             // gbDD
@@ -113,11 +113,11 @@
             this.gbDD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbDD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gbDD.Location = new System.Drawing.Point(0, 329);
+            this.gbDD.Location = new System.Drawing.Point(0, 334);
             this.gbDD.Margin = new System.Windows.Forms.Padding(4);
             this.gbDD.Name = "gbDD";
             this.gbDD.Padding = new System.Windows.Forms.Padding(4);
-            this.gbDD.Size = new System.Drawing.Size(620, 421);
+            this.gbDD.Size = new System.Drawing.Size(620, 450);
             this.gbDD.TabIndex = 21;
             this.gbDD.TabStop = false;
             this.gbDD.Text = "Đơn đặt";
@@ -341,14 +341,14 @@
             this.gbCTDD.Margin = new System.Windows.Forms.Padding(4);
             this.gbCTDD.Name = "gbCTDD";
             this.gbCTDD.Padding = new System.Windows.Forms.Padding(4);
-            this.gbCTDD.Size = new System.Drawing.Size(620, 329);
+            this.gbCTDD.Size = new System.Drawing.Size(620, 334);
             this.gbCTDD.TabIndex = 20;
             this.gbCTDD.TabStop = false;
             this.gbCTDD.Text = "Chi tiết đơn đặt";
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(15, 268);
+            this.txtSoLuong.Location = new System.Drawing.Point(15, 272);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(88, 30);
@@ -359,7 +359,7 @@
             this.lbSL1.AutoSize = true;
             this.lbSL1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbSL1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbSL1.Location = new System.Drawing.Point(11, 247);
+            this.lbSL1.Location = new System.Drawing.Point(11, 251);
             this.lbSL1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSL1.Name = "lbSL1";
             this.lbSL1.Size = new System.Drawing.Size(90, 21);
@@ -371,7 +371,7 @@
             this.btnSua.BackColor = System.Drawing.Color.Firebrick;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(273, 169);
+            this.btnSua.Location = new System.Drawing.Point(273, 161);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(152, 41);
@@ -385,7 +385,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(273, 225);
+            this.btnXoa.Location = new System.Drawing.Point(273, 217);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(152, 41);
@@ -413,7 +413,7 @@
             this.btnThem.BackColor = System.Drawing.Color.Firebrick;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(273, 108);
+            this.btnThem.Location = new System.Drawing.Point(273, 100);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(152, 41);
@@ -424,7 +424,7 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(12, 206);
+            this.txtDonGia.Location = new System.Drawing.Point(12, 210);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(248, 30);
@@ -435,7 +435,7 @@
             this.lbDG1.AutoSize = true;
             this.lbDG1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbDG1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbDG1.Location = new System.Drawing.Point(8, 185);
+            this.lbDG1.Location = new System.Drawing.Point(8, 189);
             this.lbDG1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDG1.Name = "lbDG1";
             this.lbDG1.Size = new System.Drawing.Size(85, 21);
@@ -444,7 +444,7 @@
             // 
             // txtMaSanPham
             // 
-            this.txtMaSanPham.Location = new System.Drawing.Point(12, 86);
+            this.txtMaSanPham.Location = new System.Drawing.Point(12, 90);
             this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSanPham.Name = "txtMaSanPham";
             this.txtMaSanPham.Size = new System.Drawing.Size(250, 30);
@@ -452,7 +452,7 @@
             // 
             // txtSanPham
             // 
-            this.txtSanPham.Location = new System.Drawing.Point(13, 141);
+            this.txtSanPham.Location = new System.Drawing.Point(13, 145);
             this.txtSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.txtSanPham.Name = "txtSanPham";
             this.txtSanPham.Size = new System.Drawing.Size(250, 30);
@@ -463,7 +463,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(11, 60);
+            this.label1.Location = new System.Drawing.Point(11, 64);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 21);
@@ -475,7 +475,7 @@
             this.lbMSP.AutoSize = true;
             this.lbMSP.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbMSP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbMSP.Location = new System.Drawing.Point(11, 120);
+            this.lbMSP.Location = new System.Drawing.Point(11, 124);
             this.lbMSP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMSP.Name = "lbMSP";
             this.lbMSP.Size = new System.Drawing.Size(100, 21);
@@ -513,8 +513,17 @@
             this.pnMONDD.Location = new System.Drawing.Point(165, 0);
             this.pnMONDD.Margin = new System.Windows.Forms.Padding(4);
             this.pnMONDD.Name = "pnMONDD";
-            this.pnMONDD.Size = new System.Drawing.Size(954, 754);
+            this.pnMONDD.Size = new System.Drawing.Size(954, 788);
             this.pnMONDD.TabIndex = 2;
+            // 
+            // picQRCode
+            // 
+            this.picQRCode.Location = new System.Drawing.Point(602, 287);
+            this.picQRCode.Name = "picQRCode";
+            this.picQRCode.Size = new System.Drawing.Size(200, 200);
+            this.picQRCode.TabIndex = 2;
+            this.picQRCode.TabStop = false;
+            this.picQRCode.Visible = false;
             // 
             // dgvThucDon
             // 
@@ -525,7 +534,7 @@
             this.dgvThucDon.Name = "dgvThucDon";
             this.dgvThucDon.RowHeadersWidth = 51;
             this.dgvThucDon.RowTemplate.Height = 24;
-            this.dgvThucDon.Size = new System.Drawing.Size(952, 72);
+            this.dgvThucDon.Size = new System.Drawing.Size(952, 106);
             this.dgvThucDon.TabIndex = 1;
             this.dgvThucDon.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThucDon_CellDoubleClick);
             // 
@@ -534,7 +543,7 @@
             this.dgvDonDat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDonDat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDonDat.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDonDat.Location = new System.Drawing.Point(0, 72);
+            this.dgvDonDat.Location = new System.Drawing.Point(0, 106);
             this.dgvDonDat.Name = "dgvDonDat";
             this.dgvDonDat.RowHeadersWidth = 51;
             this.dgvDonDat.RowTemplate.Height = 24;
@@ -550,23 +559,14 @@
             this.pnDSM.Location = new System.Drawing.Point(0, 0);
             this.pnDSM.Margin = new System.Windows.Forms.Padding(4);
             this.pnDSM.Name = "pnDSM";
-            this.pnDSM.Size = new System.Drawing.Size(165, 754);
+            this.pnDSM.Size = new System.Drawing.Size(165, 788);
             this.pnDSM.TabIndex = 3;
-            // 
-            // picQRCode
-            // 
-            this.picQRCode.Location = new System.Drawing.Point(602, 287);
-            this.picQRCode.Name = "picQRCode";
-            this.picQRCode.Size = new System.Drawing.Size(200, 200);
-            this.picQRCode.TabIndex = 2;
-            this.picQRCode.TabStop = false;
-            this.picQRCode.Visible = false;
             // 
             // DonDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1743, 754);
+            this.ClientSize = new System.Drawing.Size(1743, 788);
             this.Controls.Add(this.pnMONDD);
             this.Controls.Add(this.pnDD);
             this.Controls.Add(this.pnDSM);
@@ -580,9 +580,9 @@
             this.gbCTDD.ResumeLayout(false);
             this.gbCTDD.PerformLayout();
             this.pnMONDD.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThucDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonDat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picQRCode)).EndInit();
             this.ResumeLayout(false);
 
         }

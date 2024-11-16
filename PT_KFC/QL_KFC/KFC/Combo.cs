@@ -25,6 +25,7 @@ namespace KFC
         {
             InitializeComponent();
             LoadSanPhamToComboBox();
+            txtGiaCombo.Enabled = false;
         }
 
         private void LoadDataCombo()
@@ -59,6 +60,7 @@ namespace KFC
             txtTenCombo.Text = com.TenCombo;
             txtGiaCombo.Text = com.GiaCombo.ToString();
             txtSoLuong.Text = com.SoLuong.ToString();
+            txtPhanTramGiam.Text = com.PhamTramGiam.ToString();
             dtpNgayBatDau.Value = DateTime.Parse(com.NgayBatDau.ToString());
             dtpNgayKetThuc.Value = DateTime.Parse(com.NgayKetThuc.ToString());
 
@@ -135,6 +137,7 @@ namespace KFC
                 TenCombo = txtTenCombo.Text,
                 GiaCombo = int.Parse(txtGiaCombo.Text),
                 SoLuong = int.Parse(txtSoLuong.Text),
+                PhamTramGiam = int.Parse(txtPhanTramGiam.Text),
                 NgayBatDau = dtpNgayBatDau.Value,
                 NgayKetThuc = dtpNgayKetThuc.Value
             };
@@ -197,6 +200,7 @@ namespace KFC
                 TenCombo = txtTenCombo.Text,
                 SoLuong = int.Parse(txtSoLuong.Text),
                 GiaCombo = int.Parse(txtGiaCombo.Text),
+                PhamTramGiam = int.Parse(txtPhanTramGiam.Text),
                 NgayBatDau = dtpNgayBatDau.Value,
                 NgayKetThuc = dtpNgayKetThuc.Value
             };
@@ -267,6 +271,7 @@ namespace KFC
             txtTenCombo.Clear();
             txtGiaCombo.Clear();
             txtSoLuong.Clear();
+            txtPhanTramGiam.Clear();
             dtpNgayBatDau.Value = DateTime.Now;
             dtpNgayKetThuc.Value = DateTime.Now;
 
@@ -317,6 +322,7 @@ namespace KFC
             {
                 MessageBox.Show("Thêm sản phẩm vào combo thành công.");
                 LoadSanPhamTrongCombo(chiTietCombo.MaCombo); // Load lại danh sách sản phẩm trong combo
+                TinhTongGiaCombo();
             }
             else
             {
@@ -355,6 +361,7 @@ namespace KFC
             {
                 MessageBox.Show("Cập nhật sản phẩm trong combo thành công.");
                 LoadSanPhamTrongCombo(chiTietCombo.MaCombo);
+                TinhTongGiaCombo();
             }
             else
             {
@@ -372,6 +379,7 @@ namespace KFC
             {
                 MessageBox.Show("Xóa sản phẩm khỏi combo thành công.");
                 LoadSanPhamTrongCombo(maCombo);
+                TinhTongGiaCombo();
             }
             else
             {

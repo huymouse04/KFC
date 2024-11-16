@@ -27,9 +27,7 @@ namespace KFC
         ChiTietDonDat_BUS buschitietdondat = new ChiTietDonDat_BUS();
         DonDat_BUS busdondat = new DonDat_BUS();
         private string currentMaDonDat;
-
-
-
+        // Đảm bảo rằng bạn khai báo danh sách này ở phạm vi lớp
 
 
         public DonDat()
@@ -39,6 +37,8 @@ namespace KFC
             load();
             txtMaDonDat2.Enabled = false;
             txtMaDonDat.Enabled = false;
+            txtDonGia.Enabled = false;
+            txtTongTien.Enabled = false;
             LoadLoaiHangButtons();
             LoadChiTietDonDat();
         }
@@ -232,23 +232,26 @@ namespace KFC
                 return;
             }
 
-            // Tạo đối tượng ChiTietDonDat_DTO từ dữ liệu nhập
-            var dto = new ChiTietDonDat_DTO
+            // Kiểm tra mã combo hoặc sản phẩm
+            string maSanPhamOrCombo = txtMaSanPham.Text.Trim(); // Đọc mã sản phẩm hoặc mã combo từ TextBox
+            int soLuong = int.Parse(txtSoLuong.Text); // Lấy số lượng sản phẩm hoặc combo
+
+            var busChiTietDonDat = new BUS.ChiTietDonDat_BUS();
+            try
             {
-                MaDonDat = currentMaDonDat,
-                MaSanPham = txtMaSanPham.Text,
-                SoLuong = int.Parse(txtSoLuong.Text),
-                DonGia = int.Parse(txtDonGia.Text)
-            };
+                // Gọi phương thức trong BUS để thêm chi tiết đơn đặt hoặc combo vào đơn hàng
+                busChiTietDonDat.AddChiTietDonDatOrCombo(currentMaDonDat, maSanPhamOrCombo, soLuong);
 
-            // Thêm chi tiết đơn đặt vào cơ sở dữ liệu
-            buschitietdondat.AddChiTietDonDat(dto);
+                // Tải lại danh sách chi tiết đơn đặt sau khi thêm
+                LoadChiTietDonDat();
 
-            // Tải lại danh sách chi tiết đơn đặt
-            LoadChiTietDonDat();
-
-            // Cập nhật tổng tiền
-            CapNhatTongTien();
+                // Cập nhật tổng tiền
+                CapNhatTongTien();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm sản phẩm hoặc combo: " + ex.Message, "Lỗi");
+            }
         }
 
         private void CapNhatTongTien()
@@ -275,8 +278,8 @@ namespace KFC
                 var dto = new ChiTietDonDat_DTO
                 {
                     ID = (int)selectedRow.Cells["ID"].Value,
-                    MaDonDat = currentMaDonDat,
-                    MaSanPham = txtSanPham.Text,
+                    MaDonDat = txtMaDonDat.Text,
+                    MaSanPham = txtMaSanPham.Text,
                     SoLuong = int.Parse(txtSoLuong.Text),
                     DonGia = int.Parse(txtDonGia.Text)
                 };
@@ -306,13 +309,23 @@ namespace KFC
         {
             if (e.RowIndex >= 0)
             {
-                var row = dgvThucDon.Rows[e.RowIndex];
-                txtMaDonDat.Text = row.Cells["MaDonDat"].Value.ToString();
+                var row = dgvDonDat.Rows[e.RowIndex];
+                // Kiểm tra cột có tồn tại không
+                if (row.Cells["MaDonDat"] != null)
+                {
+                    txtMaDonDat.Text = row.Cells["MaDonDat"].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Cột 'MaDonDat' không tồn tại trong hàng hiện tại.");
+                    return;
+                }
                 txtMaSanPham.Text = row.Cells["MaSanPham"].Value.ToString();
                 txtSanPham.Text = row.Cells["TenSanPham"].Value.ToString();
                 txtSoLuong.Text = row.Cells["SoLuong"].Value.ToString();
                 txtDonGia.Text = row.Cells["DonGia"].Value.ToString();
             }
+
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -404,6 +417,16 @@ namespace KFC
             {
                 MessageBox.Show("Vui lòng nhập tổng tiền hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void Clear()
+        {
+            txtMaDonDat.Clear();
+            txtMaSanPham.Clear();
+            txtMaDonDat2.Clear();
+            txtSanPham.Clear();
+            txtSoLuong.Clear();
+            txtDonGia.Clear();
         }
     }
 }

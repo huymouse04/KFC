@@ -701,6 +701,8 @@ namespace DAO
 		
 		private System.Nullable<int> _SoLuong;
 		
+		private System.Nullable<int> _PhanTramGiam;
+		
 		private System.Nullable<System.DateTime> _NgayBatDau;
 		
 		private System.Nullable<System.DateTime> _NgayKetThuc;
@@ -719,6 +721,8 @@ namespace DAO
     partial void OnGiaComboChanged();
     partial void OnSoLuongChanging(System.Nullable<int> value);
     partial void OnSoLuongChanged();
+    partial void OnPhanTramGiamChanging(System.Nullable<int> value);
+    partial void OnPhanTramGiamChanged();
     partial void OnNgayBatDauChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayBatDauChanged();
     partial void OnNgayKetThucChanging(System.Nullable<System.DateTime> value);
@@ -807,6 +811,26 @@ namespace DAO
 					this._SoLuong = value;
 					this.SendPropertyChanged("SoLuong");
 					this.OnSoLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhanTramGiam", DbType="Int")]
+		public System.Nullable<int> PhanTramGiam
+		{
+			get
+			{
+				return this._PhanTramGiam;
+			}
+			set
+			{
+				if ((this._PhanTramGiam != value))
+				{
+					this.OnPhanTramGiamChanging(value);
+					this.SendPropertyChanging();
+					this._PhanTramGiam = value;
+					this.SendPropertyChanged("PhanTramGiam");
+					this.OnPhanTramGiamChanged();
 				}
 			}
 		}

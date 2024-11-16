@@ -27,6 +27,7 @@
       <Column Name="TenCombo" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
       <Column Name="GiaCombo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PhanTramGiam" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NgayBatDau" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="NgayKetThuc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="Combo_ChiTietCombo" Member="ChiTietCombos" ThisKey="MaCombo" OtherKey="MaCombo" Type="ChiTietCombo" />

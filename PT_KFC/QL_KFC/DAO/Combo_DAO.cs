@@ -25,6 +25,7 @@ namespace DAO
                         TenCombo = combo.TenCombo,
                         GiaCombo = (int)combo.GiaCombo,
                         SoLuong = (int)combo.SoLuong,
+                        PhamTramGiam = (int)combo.PhanTramGiam,
                         NgayBatDau = combo.NgayBatDau,
                         NgayKetThuc = combo.NgayKetThuc
                     };
@@ -58,6 +59,7 @@ namespace DAO
                 TenCombo = comboDTO.TenCombo,
                 GiaCombo = comboDTO.GiaCombo,
                 SoLuong = comboDTO.SoLuong,
+                PhanTramGiam= comboDTO.PhamTramGiam,
                 NgayBatDau = comboDTO.NgayBatDau,
                 NgayKetThuc = comboDTO.NgayKetThuc
             };
@@ -77,6 +79,7 @@ namespace DAO
                 combo.TenCombo = comboDTO.TenCombo;
                 combo.GiaCombo = comboDTO.GiaCombo;
                 combo.SoLuong = comboDTO.SoLuong;
+                combo.PhanTramGiam = comboDTO.PhamTramGiam;
                 combo.NgayBatDau = comboDTO.NgayBatDau;
                 combo.NgayKetThuc = comboDTO.NgayKetThuc;
 
@@ -107,6 +110,7 @@ namespace DAO
                               TenCombo = combo.TenCombo,
                               GiaCombo = (int)combo.GiaCombo, // xử lý null cho giá trị float
                               SoLuong = (int)combo.SoLuong,    // xử lý null cho giá trị int
+                              PhamTramGiam = (int)combo.PhanTramGiam,
                               NgayBatDau = combo.NgayBatDau.HasValue && combo.NgayBatDau.Value >= new DateTime(1753, 1, 1) ? combo.NgayBatDau.Value : (DateTime?)null,
                               NgayKetThuc = combo.NgayKetThuc.HasValue && combo.NgayKetThuc.Value >= new DateTime(1753, 1, 1) ? combo.NgayKetThuc.Value : (DateTime?)null,
                           }).ToList();
