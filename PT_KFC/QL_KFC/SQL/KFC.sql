@@ -440,12 +440,12 @@ INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHan
 
 INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, SoLuong, PhanTramGiam, NgayBatDau , NgayketThuc)  
 VALUES 
-('CB01', N'Combo Gà Rán', 150000, 50, 10, '01/11/2024', '15/11/2024'),
-('CB02', N'Combo Burger', 120000, 30, 20, '01/11/2024', '15/11/2024'),
+('CB01', N'Combo Gà Rán', 150000, 50, 10, '01/11/2024', '15/12/2024'),
+('CB02', N'Combo Burger', 120000, 30, 20, '01/11/2024', '15/12/2024'),
 ('CB03', N'Combo Nước', 150000, 50, 10, '01/11/2024', '15/11/2024'),
 ('CB04', N'Combo Mỳ Gà', 120000, 30, 20, '01/11/2024', '15/11/2024'),
-('CB05', N'Combo Bánh', 150000, 50, 10, '01/11/2024', '15/11/2024'),
-('CB06', N'Combo Cơm', 120000, 30, 20, '01/11/2024', '15/11/2024');
+('CB05', N'Combo Bánh', 150000, 50, 10, '01/11/2024', '15/12/2024'),
+('CB06', N'Combo Cơm', 120000, 30, 20, '01/11/2024', '15/12/2024');
 
 INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong)  
 VALUES 
