@@ -13,6 +13,12 @@ namespace DAO
     {
         private KFCDataContext db = new KFCDataContext(Connection_DAO.ConnectionString);
 
+        public string GetTenSanPhamByMaSanPham(string maSanPham)
+        {
+            var sanPham = db.ThucDons.FirstOrDefault(t => t.MaSanPham == maSanPham);
+            return sanPham?.TenSanPham;  // Nếu tìm thấy thì trả về TenSanPham, nếu không trả về null
+        }
+
 
         public List<ThucDon_DTO> LayDanhSachThucDonTheoLoai(string maLoaiHang)
         {

@@ -32,6 +32,7 @@
             this.gbDD = new System.Windows.Forms.GroupBox();
             this.cboMaKhuyenMai = new System.Windows.Forms.ComboBox();
             this.cboBan = new System.Windows.Forms.ComboBox();
+            this.btnLuuBan = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.txtTienTra = new System.Windows.Forms.TextBox();
             this.lblSTT = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.dgvDonDat = new System.Windows.Forms.DataGridView();
             this.pnDSM = new System.Windows.Forms.Panel();
-            this.btnLuuBan = new System.Windows.Forms.Button();
             this.pnDD.SuspendLayout();
             this.gbDD.SuspendLayout();
             this.gbCTDD.SuspendLayout();
@@ -132,6 +132,7 @@
             this.cboMaKhuyenMai.Name = "cboMaKhuyenMai";
             this.cboMaKhuyenMai.Size = new System.Drawing.Size(251, 31);
             this.cboMaKhuyenMai.TabIndex = 35;
+            this.cboMaKhuyenMai.SelectedIndexChanged += new System.EventHandler(this.cboMaKhuyenMai_SelectedIndexChanged);
             // 
             // cboBan
             // 
@@ -141,6 +142,20 @@
             this.cboBan.Name = "cboBan";
             this.cboBan.Size = new System.Drawing.Size(251, 31);
             this.cboBan.TabIndex = 34;
+            // 
+            // btnLuuBan
+            // 
+            this.btnLuuBan.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLuuBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuuBan.ForeColor = System.Drawing.Color.White;
+            this.btnLuuBan.Location = new System.Drawing.Point(44, 368);
+            this.btnLuuBan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuuBan.Name = "btnLuuBan";
+            this.btnLuuBan.Size = new System.Drawing.Size(107, 41);
+            this.btnLuuBan.TabIndex = 33;
+            this.btnLuuBan.Text = "Lưu Bàn";
+            this.btnLuuBan.UseVisualStyleBackColor = false;
+            this.btnLuuBan.Click += new System.EventHandler(this.btnLuuBan_Click);
             // 
             // btnThanhToan
             // 
@@ -563,20 +578,6 @@
             this.pnDSM.Name = "pnDSM";
             this.pnDSM.Size = new System.Drawing.Size(165, 788);
             this.pnDSM.TabIndex = 3;
-            // 
-            // btnLuuBan
-            // 
-            this.btnLuuBan.BackColor = System.Drawing.Color.Firebrick;
-            this.btnLuuBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLuuBan.ForeColor = System.Drawing.Color.White;
-            this.btnLuuBan.Location = new System.Drawing.Point(44, 368);
-            this.btnLuuBan.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLuuBan.Name = "btnLuuBan";
-            this.btnLuuBan.Size = new System.Drawing.Size(107, 41);
-            this.btnLuuBan.TabIndex = 33;
-            this.btnLuuBan.Text = "Lưu Bàn";
-            this.btnLuuBan.UseVisualStyleBackColor = false;
-            this.btnLuuBan.Click += new System.EventHandler(this.btnLuuBan_Click);
             // 
             // DonDat
             // 

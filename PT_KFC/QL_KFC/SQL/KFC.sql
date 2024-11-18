@@ -485,9 +485,11 @@ UPDATE NhapHang
 SET NgaySanXuat = '15/10/2024', NgayHetHan = '15/11/2024'
 WHERE MaSanPham = 'BMC01';
 
-select * from Luong
+select * from DonDat
 
 select * from ChiTietDonDat
+
+select * from Ban
 
 --DELETE FROM DonDat 
 --WHERE MaDonDat IN ('DD1f977b63');

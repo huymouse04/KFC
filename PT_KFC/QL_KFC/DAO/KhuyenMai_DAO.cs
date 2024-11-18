@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace DAO
@@ -8,6 +9,50 @@ namespace DAO
     public class KhuyenMai_DAO
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
+
+        public KhuyenMai_DTO GetKhuyenMaiByMa(string maKhuyenMai)
+        {
+
+                return DB.KhuyenMais
+                              .Where(km => km.MaKhuyenMai == maKhuyenMai)
+                              .Select(km => new KhuyenMai_DTO
+                              {
+                                  MaKhuyenMai = km.MaKhuyenMai,
+                                  GiaTriGiam = (decimal)km.GiaTriGiam,
+                                  SoLuong = (int)km.SoLuong
+                              })
+                              .FirstOrDefault();
+            
+        }
+
+
+        public bool GiamSoLuong(string maKhuyenMai)
+        {
+
+                var khuyenMai = DB.KhuyenMais.FirstOrDefault(km => km.MaKhuyenMai == maKhuyenMai);
+                if (khuyenMai != null && khuyenMai.SoLuong > 0)
+                {
+                    khuyenMai.SoLuong -= 1;
+                    DB.SubmitChanges();
+                    return true;
+                }
+                return false;
+            
+        }
+
+
+
+
+        public List<string> GetDanhSachKhuyenMai()
+        {
+
+            var danhSachKhuyenMai = DB.KhuyenMais
+                                       .Select(b => b.MaKhuyenMai)
+                                       .ToList();
+            return danhSachKhuyenMai;
+
+        }
+
 
         public List<KhuyenMai_DTO> GetAllKhuyenMai()
         {

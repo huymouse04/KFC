@@ -18,22 +18,25 @@ namespace KFC
     public partial class DonDat : Form
     {
         private string maBan;
+        private string maKhuyenMai;
         private string maDon;
         private Button btnCB;
-        private HashSet<string> existingCodes = new HashSet<string>();
+        //private HashSet<string> existingCodes = new HashSet<string>();
         ThucDon_BUS busthucdon = new ThucDon_BUS();
         LoaiHang_BUS busloaihang = new LoaiHang_BUS();
         Combo_BUS buscombo = new Combo_BUS();
         ChiTietDonDat_BUS buschitietdondat = new ChiTietDonDat_BUS();
         DonDat_BUS busdondat = new DonDat_BUS();
         Ban_BUS busban = new Ban_BUS();
+        KhuyenMai_BUS buskhuyenmai = new KhuyenMai_BUS();
         private string currentMaDonDat;
+        private decimal tongTienGoc = 0; // Biến lưu tổng tiền gốc
 
 
         public DonDat()
         {
             InitializeComponent();
-            LoadCodesFromFile();
+            //LoadCodesFromFile();
             load();
             txtMaDonDat2.Enabled = false;
             txtMaDonDat.Enabled = false;
@@ -41,6 +44,8 @@ namespace KFC
             txtTongTien.Enabled = false;
             LoadLoaiHangButtons();
             LoadChiTietDonDat();
+            HienThiTenSanPham();
+            LoadDanhSachKhuyenMai();
         }
 
         public DonDat(string maban, string madon = null)
@@ -48,13 +53,15 @@ namespace KFC
             this.maBan = maban;
             this.maDon = madon;
             InitializeComponent();
-            LoadCodesFromFile();
+            //LoadCodesFromFile();
             load();
             txtMaDonDat2.Enabled = false;
             txtMaDonDat.Enabled = false;
             txtDonGia.Enabled = false;
             txtTongTien.Enabled = false;
             LoadLoaiHangButtons();
+            HienThiTenSanPham();
+            LoadDanhSachKhuyenMai();
 
             if (madon != null)
             {
@@ -94,10 +101,19 @@ namespace KFC
         private void LoadDanhSachBan()
         {
             // Lấy danh sách mã bàn từ Ban_BUS
-            List<string> danhSachBan = new Ban_BUS().GetDanhSachMaBan();
+            List<string> danhSachBan = busban.GetDanhSachMaBan();
 
             cboBan.DataSource = danhSachBan; // Gán danh sách mã bàn vào combobox
             cboBan.Text = maBan; // Chọn mã bàn hiện tại
+        }
+
+        private void LoadDanhSachKhuyenMai()
+        {
+            // Lấy danh sách mã bàn từ Ban_BUS
+            List<string> danhSachKhuyenMai = buskhuyenmai.GetDanhSachKhuyenMai();
+
+            cboMaKhuyenMai.DataSource = danhSachKhuyenMai; // Gán danh sách mã bàn vào combobox
+            cboMaKhuyenMai.Text = maKhuyenMai; // Chọn mã bàn hiện tại
         }
 
         private void LoadChiTietDonDat()
@@ -106,6 +122,7 @@ namespace KFC
             {
                 // Nếu có mã đơn hiện tại, chỉ hiển thị chi tiết của đơn đó
                 dgvDonDat.DataSource = buschitietdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
+                HienThiTenSanPham();
             }
             else
             {
@@ -113,6 +130,28 @@ namespace KFC
                 dgvDonDat.DataSource = null;
             }
         }
+
+        private void HienThiTenSanPham()
+        {
+            // Duyệt qua từng dòng trong dgvDonDat
+            foreach (DataGridViewRow row in dgvDonDat.Rows)
+            {
+                if (row.Cells["MaSanPham"].Value != null)
+                {
+                    // Lấy mã sản phẩm từ cột MaSanPham
+                    string maSanPham = row.Cells["MaSanPham"].Value.ToString();
+
+                    // Truy vấn tên sản phẩm từ ThucDon
+                    var sanPham = busthucdon.GetTenSanPhamByMaSanPham(maSanPham);
+                    if (sanPham != null)
+                    {
+                        // Cập nhật tên sản phẩm vào cột Tên Sản Phẩm
+                        row.Cells["TenSanPham"].Value = sanPham;
+                    }
+                }
+            }
+        }
+
 
         private void load()
         {
@@ -161,26 +200,26 @@ namespace KFC
             return new string(code);
         }
 
-        // Hàm lưu mã mới vào file
-        private void SaveCodeToFile(string code)
-        {
-            using (StreamWriter writer = new StreamWriter("existingCodes.txt", true))
-            {
-                writer.WriteLine(code);
-            }
-        }
+        //// Hàm lưu mã mới vào file
+        //private void SaveCodeToFile(string code)
+        //{
+        //    using (StreamWriter writer = new StreamWriter("existingCodes.txt", true))
+        //    {
+        //        writer.WriteLine(code);
+        //    }
+        //}
 
-        // Hàm tải các mã đã lưu từ file vào HashSet khi khởi động
-        private void LoadCodesFromFile()
-        {
-            if (File.Exists("existingCodes.txt"))
-            {
-                foreach (var line in File.ReadAllLines("existingCodes.txt"))
-                {
-                    existingCodes.Add(line.Trim()); // Thêm từng dòng vào HashSet
-                }
-            }
-        }
+        //// Hàm tải các mã đã lưu từ file vào HashSet khi khởi động
+        //private void LoadCodesFromFile()
+        //{
+        //    if (File.Exists("existingCodes.txt"))
+        //    {
+        //        foreach (var line in File.ReadAllLines("existingCodes.txt"))
+        //        {
+        //            existingCodes.Add(line.Trim()); // Thêm từng dòng vào HashSet
+        //        }
+        //    }
+        //}
 
         private void InitializeComboButton()
         {
@@ -433,23 +472,30 @@ namespace KFC
                 return;  // Dừng lại nếu không có mã đơn hoặc tổng tiền
             }
 
-            // Kiểm tra và parse Tổng Tiền
-            int tongTien = 0;
-            bool isValidTongTien = int.TryParse(txtTongTien.Text.Trim(), out tongTien);
+            // Kiểm tra tổng tiền gốc
+            //if (tongTienGoc <= 0)
+            //{
+            //    MessageBox.Show("Tổng tiền không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-            // Kiểm tra xem giá trị nhập vào có hợp lệ không (nếu không hợp lệ, thông báo lỗi)
-            if (!isValidTongTien)
+            decimal tongTienThanhToan = tongTienGoc; // Sử dụng tổng tiền gốc
+
+            // Áp dụng khuyến mãi (nếu có)
+            string maKhuyenMai = cboMaKhuyenMai.Text.Trim();
+            if (!string.IsNullOrEmpty(maKhuyenMai))
             {
-                MessageBox.Show("Tổng tiền phải là một số hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Nếu không hợp lệ, dừng lại
+                var khuyenMai = buskhuyenmai.GetKhuyenMaiByMa(maKhuyenMai); // Lấy thông tin khuyến mãi
+                if (khuyenMai != null && khuyenMai.SoLuong > 0)
+                {
+                    tongTienThanhToan -= khuyenMai.GiaTriGiam; // Trừ giá trị khuyến mãi
+                    if (tongTienThanhToan < 0) tongTienThanhToan = 0;
+                    buskhuyenmai.GiamSoLuong(maKhuyenMai); // Giảm số lượng mã khuyến mãi
+                }
             }
 
-            // Kiểm tra nếu tổng tiền nhỏ hơn 0
-            if (tongTien < 0)
-            {
-                MessageBox.Show("Tổng tiền phải lớn hơn hoặc bằng 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // Nếu tổng tiền nhỏ hơn 0, dừng lại
-            }
+            // Thực hiện các bước thanh toán tiếp theo
+            txtTongTien.Text = tongTienThanhToan.ToString();
 
             // Cố gắng parse SoTienNhan và SoTienTra thành số nguyên, nếu không thì gán mặc định là 0
             int soTienNhan = 0, soTienTra = 0;
@@ -461,8 +507,8 @@ namespace KFC
             {
                 MaDonDat = currentMaDonDat,
                 MaBan = string.IsNullOrEmpty(cboBan.Text) ? (string)null : Convert.ToString(cboBan.Text),  // Nếu không có MaBan, gán NULL
-                MaKhuyenMai = string.IsNullOrEmpty(cboMaKhuyenMai.Text) ? null : cboMaKhuyenMai.Text,  // Nếu không có MaKhuyenMai, gán NULL
-                MaKhachHang = string.IsNullOrEmpty(txtMaKhachHang.Text) ? null : txtMaKhachHang.Text,  // Nếu không có MaKhachHang, gán NULL
+                MaKhuyenMai = string.IsNullOrEmpty(maKhuyenMai) ? null : maKhuyenMai,
+                MaKhachHang = string.IsNullOrEmpty(txtMaKhachHang.Text) ? null : txtMaKhachHang.Text,
                 SoTienNhan = soTienNhan,
                 SoTienTra = soTienTra
             };
@@ -470,7 +516,27 @@ namespace KFC
             // Cập nhật thông tin đơn đặt vào cơ sở dữ liệu
             if (busdondat.CapNhatThongTinDonDat(donDat))
             {
-                MessageBox.Show($"Thanh toán thành công! Tổng tiền: {tongTien}", "Thông báo");
+                // Cập nhật trạng thái bàn thành trống (không còn đơn đặt)
+                var ban = busban.GetBanByMaBan(maBan);
+                if (ban != null)
+                {
+                    ban.MaDonDat = null;  // Gỡ mã đơn đặt khỏi bàn
+                    ban.TrangThaiBan = false;  // Đánh dấu bàn trống
+                    busban.UpdateBan(ban);
+                    ban.ThoiGianDen = null;
+                    ban.ThoiGianRoi = null;
+                }
+
+                // Giảm số lượng mã khuyến mãi (nếu có)
+                if (!string.IsNullOrEmpty(maKhuyenMai))
+                {
+                    buskhuyenmai.GiamSoLuong(maKhuyenMai); // Gọi phương thức giảm số lượng mã khuyến mãi
+                }
+
+                MessageBox.Show($"Thanh toán thành công! Tổng tiền: {tongTienThanhToan}", "Thông báo");
+
+                // Xuất hóa đơn (ví dụ in mã đơn hoặc thực hiện các bước liên quan đến in hóa đơn)
+                this.Close();
             }
             else
             {
@@ -566,6 +632,37 @@ namespace KFC
             {
                 MessageBox.Show($"Lỗi khi lưu đơn đặt: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cboMaKhuyenMai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lưu tổng tiền gốc nếu chưa lưu
+            if (tongTienGoc == 0 && decimal.TryParse(txtTongTien.Text.Trim(), out decimal tongTien))
+            {
+                tongTienGoc = tongTien;
+            }
+
+
+            // Áp dụng khuyến mãi (nếu có)
+            string maKhuyenMai = cboMaKhuyenMai.Text.Trim();
+            decimal tongTienSauGiam = tongTienGoc;
+            if (!string.IsNullOrEmpty(maKhuyenMai))
+            {
+                var khuyenMai = buskhuyenmai.GetKhuyenMaiByMa(maKhuyenMai); // Lấy thông tin khuyến mãi
+                if (khuyenMai != null && khuyenMai.SoLuong > 0)
+                {
+                    tongTienSauGiam -= khuyenMai.GiaTriGiam; // Trừ giá trị khuyến mãi
+                    if (tongTienSauGiam < 0) tongTienSauGiam = 0; // Đảm bảo tổng tiền không âm
+                }
+                else
+                {
+                    MessageBox.Show("Mã khuyến mãi không hợp lệ hoặc đã hết!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            // Hiển thị tổng tiền tạm thời sau khi áp dụng khuyến mãi
+            txtTongTien.Text = tongTienSauGiam.ToString();
         }
     }
 }
