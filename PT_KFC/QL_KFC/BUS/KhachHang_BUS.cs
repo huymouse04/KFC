@@ -14,6 +14,14 @@ namespace BUS
 
         public KhachHang_BUS() { }
 
+
+        public List<string> GetDanhSachKhachHang()
+        {
+
+           return dao.GetDanhSachKhachHang();
+        }
+
+
         // Phương thức tìm kiếm khách hàng
         public List<KhachHang_DTO> SearchKhachHang(string searchTerm)
         {

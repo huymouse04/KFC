@@ -44,7 +44,6 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.lbTT = new System.Windows.Forms.Label();
             this.lbMKM = new System.Windows.Forms.Label();
-            this.txtMaKhachHang = new System.Windows.Forms.TextBox();
             this.lblMKH = new System.Windows.Forms.Label();
             this.lblMB = new System.Windows.Forms.Label();
             this.txtMaDonDat2 = new System.Windows.Forms.TextBox();
@@ -69,6 +68,8 @@
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.dgvDonDat = new System.Windows.Forms.DataGridView();
             this.pnDSM = new System.Windows.Forms.Panel();
+            this.cboKhachHang = new System.Windows.Forms.ComboBox();
+            this.btnLamSach = new System.Windows.Forms.Button();
             this.pnDD.SuspendLayout();
             this.gbDD.SuspendLayout();
             this.gbCTDD.SuspendLayout();
@@ -93,6 +94,8 @@
             // gbDD
             // 
             this.gbDD.BackColor = System.Drawing.Color.DarkRed;
+            this.gbDD.Controls.Add(this.btnLamSach);
+            this.gbDD.Controls.Add(this.cboKhachHang);
             this.gbDD.Controls.Add(this.cboMaKhuyenMai);
             this.gbDD.Controls.Add(this.cboBan);
             this.gbDD.Controls.Add(this.btnLuuBan);
@@ -107,7 +110,6 @@
             this.gbDD.Controls.Add(this.txtTongTien);
             this.gbDD.Controls.Add(this.lbTT);
             this.gbDD.Controls.Add(this.lbMKM);
-            this.gbDD.Controls.Add(this.txtMaKhachHang);
             this.gbDD.Controls.Add(this.lblMKH);
             this.gbDD.Controls.Add(this.lblMB);
             this.gbDD.Controls.Add(this.txtMaDonDat2);
@@ -126,6 +128,7 @@
             // 
             // cboMaKhuyenMai
             // 
+            this.cboMaKhuyenMai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaKhuyenMai.FormattingEnabled = true;
             this.cboMaKhuyenMai.Location = new System.Drawing.Point(169, 151);
             this.cboMaKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -136,7 +139,10 @@
             // 
             // cboBan
             // 
+            this.cboBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBan.FormattingEnabled = true;
+            this.cboBan.Items.AddRange(new object[] {
+            ""});
             this.cboBan.Location = new System.Drawing.Point(169, 73);
             this.cboBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboBan.Name = "cboBan";
@@ -281,14 +287,6 @@
             this.lbMKM.Size = new System.Drawing.Size(135, 21);
             this.lbMKM.TabIndex = 22;
             this.lbMKM.Text = "Mã khuyết mãi :";
-            // 
-            // txtMaKhachHang
-            // 
-            this.txtMaKhachHang.Location = new System.Drawing.Point(169, 114);
-            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(251, 30);
-            this.txtMaKhachHang.TabIndex = 19;
             // 
             // lblMKH
             // 
@@ -579,6 +577,30 @@
             this.pnDSM.Size = new System.Drawing.Size(165, 788);
             this.pnDSM.TabIndex = 3;
             // 
+            // cboKhachHang
+            // 
+            this.cboKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKhachHang.FormattingEnabled = true;
+            this.cboKhachHang.Location = new System.Drawing.Point(169, 112);
+            this.cboKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboKhachHang.Name = "cboKhachHang";
+            this.cboKhachHang.Size = new System.Drawing.Size(251, 31);
+            this.cboKhachHang.TabIndex = 36;
+            // 
+            // btnLamSach
+            // 
+            this.btnLamSach.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLamSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLamSach.ForeColor = System.Drawing.Color.White;
+            this.btnLamSach.Location = new System.Drawing.Point(444, 126);
+            this.btnLamSach.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamSach.Name = "btnLamSach";
+            this.btnLamSach.Size = new System.Drawing.Size(120, 41);
+            this.btnLamSach.TabIndex = 37;
+            this.btnLamSach.Text = "Làm sạch";
+            this.btnLamSach.UseVisualStyleBackColor = false;
+            this.btnLamSach.Click += new System.EventHandler(this.btnLamSach_Click);
+            // 
             // DonDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -620,7 +642,6 @@
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label lbTT;
         private System.Windows.Forms.Label lbMKM;
-        private System.Windows.Forms.TextBox txtMaKhachHang;
         private System.Windows.Forms.Label lblMKH;
         private System.Windows.Forms.Label lblMB;
         private System.Windows.Forms.TextBox txtMaDonDat2;
@@ -646,5 +667,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picQRCode;
         private System.Windows.Forms.Button btnLuuBan;
+        private System.Windows.Forms.ComboBox cboKhachHang;
+        private System.Windows.Forms.Button btnLamSach;
     }
 }
