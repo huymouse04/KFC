@@ -204,6 +204,7 @@
             this.txtTienNhan.Name = "txtTienNhan";
             this.txtTienNhan.Size = new System.Drawing.Size(251, 30);
             this.txtTienNhan.TabIndex = 29;
+            this.txtTienNhan.TextChanged += new System.EventHandler(this.txtTienNhan_TextChanged);
             // 
             // lbTN
             // 

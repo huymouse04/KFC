@@ -161,6 +161,7 @@ namespace KFC
             txtMaDonDat.Enabled = false;
             txtDonGia.Enabled = false;
             txtTongTien.Enabled = false;
+            txtTienTra.Enabled = false;
             LoadLoaiHangButtons();
             HienThiTenSanPham();
             LoadDanhSachKhuyenMai();
@@ -674,6 +675,31 @@ namespace KFC
         {
             cboKhachHang.SelectedIndex = -1;
             cboMaKhuyenMai.SelectedIndex = -1;
+        }
+
+            private void txtTienNhan_TextChanged(object sender, EventArgs e)
+            {
+            decimal tienTra = 0;
+            decimal tienNhan = 0;
+            decimal tongTien = 0;
+
+            // Kiểm tra và chuyển đổi giá trị từ txtTienNhan
+            if (!decimal.TryParse(txtTienNhan.Text, out tienNhan))
+            {
+                tienNhan = 0; // Nếu không hợp lệ, gán giá trị mặc định
+            }
+
+            // Kiểm tra và chuyển đổi giá trị từ txtTongTien
+            if (!decimal.TryParse(txtTongTien.Text, out tongTien))
+            {
+                tongTien = 0; // Nếu không hợp lệ, gán giá trị mặc định
+            }
+
+            // Tính tiền trả lại
+            tienTra = tienNhan - tongTien;
+
+            // Cập nhật vào ô txtTienTra
+            txtTienTra.Text = tienTra.ToString("N2");
         }
     }
 }
