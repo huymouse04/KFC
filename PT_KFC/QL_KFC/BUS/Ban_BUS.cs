@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace BUS
 {
@@ -10,6 +11,29 @@ namespace BUS
         private Ban_DAO dao = new Ban_DAO();
 
         public Ban_BUS() { }
+
+        public Ban_DTO GetBanByMaBan(string maBan)
+        {
+            return dao.GetBanByMaBan(maBan);
+        }
+
+        public string GetMaDonByMaBan(string maBan)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(maBan))
+                {
+                    throw new ArgumentException("Mã bàn không được để trống");
+                }
+                return dao.GetMaDonByMaBan(maBan);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy mã đơn đặt: " + ex.Message);
+            }
+        }
+
+
 
         public List<string> GetDanhSachMaBan()
         {

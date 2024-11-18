@@ -48,12 +48,29 @@ namespace KFC
 
         private void BanControl_Click(object sender, EventArgs e)
         {
-            if (sender == this) // Chỉ xử lý khi chính BanControl được click
+            if (sender == this)
             {
                 if (ban != null)
                 {
-                    DonDat Form = new DonDat(maban);
-                    Form.ShowDialog();
+                    // Kiểm tra xem bàn có mã đơn đặt hay không
+                    string maDon = bus.GetMaDonByMaBan(maban); // Thêm phương thức này vào Ban_BUS
+
+                    DonDat donDatForm;
+                    if (string.IsNullOrEmpty(maDon))
+                    {
+                        // Nếu bàn chưa có đơn đặt, mở form trống để tạo đơn mới
+                        donDatForm = new DonDat(maban, null);
+                    }
+                    else
+                    {
+                        // Nếu bàn đã có đơn đặt, mở form với mã đơn hiện tại
+                        donDatForm = new DonDat(maban, maDon);
+                    }
+
+                    donDatForm.ShowDialog();
+
+                    // Cập nhật lại trạng thái bàn sau khi đóng form
+                    UpdateData(bus.GetBanByMaBan(maban));
                 }
             }
         }
@@ -77,18 +94,15 @@ namespace KFC
                 throw new ArgumentNullException(nameof(ban), "Dữ liệu bàn không được null");
             }
 
-            // Dừng timer trước khi cập nhật dữ liệu
             countdownTimer.Stop();
 
             this.ban = ban;
-            this.maban = ban.MaBan; // Gán mã bàn từ Ban_DTO
+            this.maban = ban.MaBan;
             lblTrangThai.Text = ban.TrangThaiBan ? "Đang sử dụng" : "Trống";
             lblBan.Text = ban.TenBan;
 
-            // Kiểm tra nếu bàn trống, không hiển thị thời gian đặt
             if (ban.TrangThaiBan)
             {
-                // Nếu bàn đang sử dụng, hiển thị thời gian còn lại
                 if (ban.ThoiGianDen != DateTime.MinValue && ban.ThoiGianRoi != DateTime.MinValue)
                 {
                     TimeSpan thoiGianConLai = (TimeSpan)(ban.ThoiGianRoi - DateTime.Now);
@@ -96,7 +110,7 @@ namespace KFC
                     if (thoiGianConLai > TimeSpan.Zero)
                     {
                         lblThoiGian.Text = $"Còn lại: {thoiGianConLai.Hours} giờ {thoiGianConLai.Minutes} phút {thoiGianConLai.Seconds} giây";
-                        countdownTimer.Start(); // Bắt đầu đếm ngược
+                        countdownTimer.Start();
                     }
                     else
                     {
@@ -110,7 +124,6 @@ namespace KFC
             }
             else
             {
-                // Nếu bàn trống, không hiển thị thời gian đặt
                 lblThoiGian.Text = "";
             }
         }

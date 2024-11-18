@@ -18,17 +18,16 @@ namespace KFC
     public partial class DonDat : Form
     {
         private string maBan;
-        private Button btnCB; // Lưu nút Combo ở cấp lớp để truy cập dễ dàng
-
-        // Khai báo một HashSet để lưu các mã đã tạo
+        private string maDon;
+        private Button btnCB;
         private HashSet<string> existingCodes = new HashSet<string>();
         ThucDon_BUS busthucdon = new ThucDon_BUS();
         LoaiHang_BUS busloaihang = new LoaiHang_BUS();
         Combo_BUS buscombo = new Combo_BUS();
         ChiTietDonDat_BUS buschitietdondat = new ChiTietDonDat_BUS();
         DonDat_BUS busdondat = new DonDat_BUS();
+        Ban_BUS busban = new Ban_BUS();
         private string currentMaDonDat;
-        // Đảm bảo rằng bạn khai báo danh sách này ở phạm vi lớp
 
 
         public DonDat()
@@ -44,9 +43,10 @@ namespace KFC
             LoadChiTietDonDat();
         }
 
-        public DonDat(string maban)
+        public DonDat(string maban, string madon = null)
         {
-            this.maBan = maban; // Gán mã bàn vào biến
+            this.maBan = maban;
+            this.maDon = madon;
             InitializeComponent();
             LoadCodesFromFile();
             load();
@@ -55,10 +55,24 @@ namespace KFC
             txtDonGia.Enabled = false;
             txtTongTien.Enabled = false;
             LoadLoaiHangButtons();
-            LoadChiTietDonDat();
+
+            if (madon != null)
+            {
+                // Nếu có mã đơn, hiển thị thông tin đơn đặt
+                currentMaDonDat = madon;
+                txtMaDonDat.Text = madon;
+                txtMaDonDat2.Text = madon;
+                LoadChiTietDonDat();
+                CapNhatTongTien();
+            }
+            else
+            {
+                // Nếu không có mã đơn, form sẽ trống để tạo đơn mới
+                LoadChiTietDonDat();
+            }
         }
 
-        private void DonDat_Load(object sender, EventArgs e)
+            private void DonDat_Load(object sender, EventArgs e)
         {
             if (maBan != null)
             {
@@ -88,7 +102,16 @@ namespace KFC
 
         private void LoadChiTietDonDat()
         {
-            dgvDonDat.DataSource = buschitietdondat.GetAllChiTietDonDat();
+            if (!string.IsNullOrEmpty(currentMaDonDat))
+            {
+                // Nếu có mã đơn hiện tại, chỉ hiển thị chi tiết của đơn đó
+                dgvDonDat.DataSource = buschitietdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
+            }
+            else
+            {
+                // Nếu không có mã đơn, hiển thị lưới trống hoặc tất cả đơn tùy theo yêu cầu
+                dgvDonDat.DataSource = null;
+            }
         }
 
         private void load()
@@ -270,20 +293,19 @@ namespace KFC
                 return;
             }
 
-            // Kiểm tra mã combo hoặc sản phẩm
-            string maSanPhamOrCombo = txtMaSanPham.Text.Trim(); // Đọc mã sản phẩm hoặc mã combo từ TextBox
-            int soLuong = int.Parse(txtSoLuong.Text); // Lấy số lượng sản phẩm hoặc combo
+            string maSanPhamOrCombo = txtMaSanPham.Text.Trim();
+            int soLuong;
+            if (!int.TryParse(txtSoLuong.Text, out soLuong) || soLuong <= 0)
+            {
+                MessageBox.Show("Vui lòng nhập số lượng hợp lệ.", "Lỗi");
+                return;
+            }
 
             var busChiTietDonDat = new BUS.ChiTietDonDat_BUS();
             try
             {
-                // Gọi phương thức trong BUS để thêm chi tiết đơn đặt hoặc combo vào đơn hàng
                 busChiTietDonDat.AddChiTietDonDatOrCombo(currentMaDonDat, maSanPhamOrCombo, soLuong);
-
-                // Tải lại danh sách chi tiết đơn đặt sau khi thêm
                 LoadChiTietDonDat();
-
-                // Cập nhật tổng tiền
                 CapNhatTongTien();
             }
             catch (Exception ex)
@@ -346,25 +368,60 @@ namespace KFC
 
         private void dgvDonDat_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0) // Kiểm tra hàng hợp lệ
             {
                 var row = dgvDonDat.Rows[e.RowIndex];
-                // Kiểm tra cột có tồn tại không
-                if (row.Cells["MaDonDat"] != null)
+
+                // Kiểm tra từng ô trước khi truy cập
+                if (row.Cells["MaDonDat"] != null && row.Cells["MaDonDat"].Value != null)
                 {
                     txtMaDonDat.Text = row.Cells["MaDonDat"].Value.ToString();
                 }
                 else
                 {
-                    MessageBox.Show("Cột 'MaDonDat' không tồn tại trong hàng hiện tại.");
-                    return;
+                    txtMaDonDat.Text = ""; // Xử lý giá trị mặc định
                 }
-                txtMaSanPham.Text = row.Cells["MaSanPham"].Value.ToString();
-                txtSanPham.Text = row.Cells["TenSanPham"].Value.ToString();
-                txtSoLuong.Text = row.Cells["SoLuong"].Value.ToString();
-                txtDonGia.Text = row.Cells["DonGia"].Value.ToString();
-            }
 
+                if (row.Cells["MaSanPham"] != null && row.Cells["MaSanPham"].Value != null)
+                {
+                    txtMaSanPham.Text = row.Cells["MaSanPham"].Value.ToString();
+                }
+                else
+                {
+                    txtMaSanPham.Text = "";
+                }
+
+                if (row.Cells["TenSanPham"] != null && row.Cells["TenSanPham"].Value != null)
+                {
+                    txtSanPham.Text = row.Cells["TenSanPham"].Value.ToString();
+                }
+                else
+                {
+                    txtSanPham.Text = "";
+                }
+
+                if (row.Cells["SoLuong"] != null && row.Cells["SoLuong"].Value != null)
+                {
+                    txtSoLuong.Text = row.Cells["SoLuong"].Value.ToString();
+                }
+                else
+                {
+                    txtSoLuong.Text = "";
+                }
+
+                if (row.Cells["DonGia"] != null && row.Cells["DonGia"].Value != null)
+                {
+                    txtDonGia.Text = row.Cells["DonGia"].Value.ToString();
+                }
+                else
+                {
+                    txtDonGia.Text = "";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hàng được chọn không hợp lệ!");
+            }
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -470,7 +527,45 @@ namespace KFC
 
         private void btnLuuBan_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrEmpty(currentMaDonDat))
+                {
+                    MessageBox.Show("Vui lòng tạo đơn đặt trước khi lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                if (string.IsNullOrEmpty(maBan))
+                {
+                    MessageBox.Show("Vui lòng chọn bàn trước khi lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy thông tin bàn hiện tại
+                var ban = busban.GetBanByMaBan(maBan);
+                if (ban != null)
+                {
+                    // Cập nhật thông tin bàn
+                    ban.MaDonDat = currentMaDonDat;
+                    ban.TrangThaiBan = true; // Đánh dấu bàn đang được sử dụng
+                    ban.ThoiGianDen = DateTime.Now;
+                    ban.ThoiGianRoi = DateTime.Now.AddHours(2); // Mặc định thời gian sử dụng là 2 tiếng
+
+                    // Lưu thông tin bàn
+                    busban.UpdateBan(ban);
+
+                    MessageBox.Show("Đã lưu đơn đặt vào bàn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin bàn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi lưu đơn đặt: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

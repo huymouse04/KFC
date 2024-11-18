@@ -92,6 +92,7 @@ namespace DAO
 
 
 
+
         // Phương thức lấy danh sách chi tiết đơn đặt theo mã đơn đặt
         public List<ChiTietDonDat> GetChiTietDonDatByMaDon(string maDonDat)
         {
@@ -161,7 +162,43 @@ namespace DAO
 
         //    DB.SubmitChanges(); // Lưu thay đổi vào DB
         }
+        public void AddChiTietDonDat(ChiTietDonDat_DTO dto)
+        {
+            //    // Kiểm tra xem MaDonDat có tồn tại trong bảng DonDat không
+            //    var donDat = DB.DonDats.FirstOrDefault(d => d.MaDonDat == dto.MaDonDat);
 
+            //    if (donDat == null)
+            //    {
+            //        // Thêm một bản ghi mới vào bảng DonDat nếu không tồn tại
+            //        donDat = new DonDat
+            //        {
+            //            MaDonDat = dto.MaDonDat,
+            //            // Thêm các thuộc tính khác của DonDat nếu cần
+            //        };
+            //        DB.DonDats.InsertOnSubmit(donDat);
+            //        DB.SubmitChanges();  // Commit thêm bản ghi DonDat
+            //    }
+
+            //    // Kiểm tra xem MaSanPham có tồn tại trong bảng ThucDon không
+            //    var sanPham = DB.ThucDons.FirstOrDefault(t => t.MaSanPham == dto.MaSanPham);
+
+            //    if (sanPham == null)
+            //    {
+            //        throw new Exception($"MaSanPham '{dto.MaSanPham}' không tồn tại trong bảng ThucDon.");
+            //    }
+
+            //    // Tiến hành thêm bản ghi vào bảng ChiTietDonDat
+            //    var chiTiet = new ChiTietDonDat
+            //    {
+            //        MaDonDat = dto.MaDonDat,
+            //        MaSanPham = dto.MaSanPham,
+            //        SoLuong = dto.SoLuong,
+            //        DonGia = (int)dto.DonGia
+            //    };
+
+            //    DB.ChiTietDonDats.InsertOnSubmit(chiTiet);
+            //    DB.SubmitChanges();
+        }
         // Method to get a specific order detail by ID
         public ChiTietDonDat_DTO GetChiTietDonDatById(int id)
         {
@@ -180,43 +217,7 @@ namespace DAO
         }
 
         // Method to add a new order detail
-        public void AddChiTietDonDat(ChiTietDonDat_DTO dto)
-        {
-        //    // Kiểm tra xem MaDonDat có tồn tại trong bảng DonDat không
-        //    var donDat = DB.DonDats.FirstOrDefault(d => d.MaDonDat == dto.MaDonDat);
-
-        //    if (donDat == null)
-        //    {
-        //        // Thêm một bản ghi mới vào bảng DonDat nếu không tồn tại
-        //        donDat = new DonDat
-        //        {
-        //            MaDonDat = dto.MaDonDat,
-        //            // Thêm các thuộc tính khác của DonDat nếu cần
-        //        };
-        //        DB.DonDats.InsertOnSubmit(donDat);
-        //        DB.SubmitChanges();  // Commit thêm bản ghi DonDat
-        //    }
-
-        //    // Kiểm tra xem MaSanPham có tồn tại trong bảng ThucDon không
-        //    var sanPham = DB.ThucDons.FirstOrDefault(t => t.MaSanPham == dto.MaSanPham);
-
-        //    if (sanPham == null)
-        //    {
-        //        throw new Exception($"MaSanPham '{dto.MaSanPham}' không tồn tại trong bảng ThucDon.");
-        //    }
-
-        //    // Tiến hành thêm bản ghi vào bảng ChiTietDonDat
-        //    var chiTiet = new ChiTietDonDat
-        //    {
-        //        MaDonDat = dto.MaDonDat,
-        //        MaSanPham = dto.MaSanPham,
-        //        SoLuong = dto.SoLuong,
-        //        DonGia = (int)dto.DonGia
-        //    };
-
-        //    DB.ChiTietDonDats.InsertOnSubmit(chiTiet);
-        //    DB.SubmitChanges();
-        }
+      
 
         // Method to update an order detail
         public void UpdateChiTietDonDat(ChiTietDonDat_DTO dto)
