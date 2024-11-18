@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BD5523A2-1D6E-49D4-9947-8BF1FFBC2E8F}|..\\DAO\\DAO.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\dao\\combo_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\kfc\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD5523A2-1D6E-49D4-9947-8BF1FFBC2E8F}|..\\DAO\\DAO.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\dao\\combo_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\kfc\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -87,7 +87,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
@@ -154,13 +154,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Combo.cs",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Combo.cs",
               "RelativeDocumentMoniker": "Combo.cs",
-              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Combo.cs",
-              "RelativeToolTip": "Combo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAoAAAAAAAAAA==",
+              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Combo.cs*",
+              "RelativeToolTip": "Combo.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAGMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T18:13:56.461Z",
               "EditorCaption": ""
@@ -171,8 +171,8 @@
               "Title": "Combo.cs [Design]",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Combo.cs",
               "RelativeDocumentMoniker": "Combo.cs",
-              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Combo.cs [Design]",
-              "RelativeToolTip": "Combo.cs [Design]",
+              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Combo.cs [Design]*",
+              "RelativeToolTip": "Combo.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T18:13:51.246Z",
               "EditorCaption": " [Design]"
@@ -192,13 +192,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Combo_DAO.cs",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\DAO\\Combo_DAO.cs",
               "RelativeDocumentMoniker": "..\\DAO\\Combo_DAO.cs",
               "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\DAO\\Combo_DAO.cs",
               "RelativeToolTip": "..\\DAO\\Combo_DAO.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAwwDwAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswEoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-18T18:11:04.554Z",
               "EditorCaption": ""

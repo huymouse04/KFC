@@ -17,17 +17,19 @@ namespace DAO
             try
             {
                 var currentDate = DateTime.Now;
+                var expiringDateLimit = currentDate.AddDays(7); // Giới hạn ngày hết hạn trong 7 ngày tới
 
-                // Lấy danh sách các combo đã hết hạn hoặc số lượng đã hết
+                // Lấy danh sách các combo hết hạn (Ngày kết thúc nhỏ hơn ngày hiện tại)
                 var expiredCombos = DB.Combos.Where(c =>
-                    (c.SoLuong <= 0 || c.NgayKetThuc.HasValue && c.NgayKetThuc.Value < currentDate)
+                    c.NgayKetThuc.HasValue && c.NgayKetThuc.Value < currentDate
                 ).ToList();
 
-                if (expiredCombos.Count == 0)
-                {
-                    MessageBox.Show("Không có combo nào hết hạn hoặc hết số lượng.");
-                    return;
-                }
+                // Lấy danh sách các combo sắp hết hạn (Ngày kết thúc trong vòng 7 ngày tới)
+                var expiringCombos = DB.Combos.Where(c =>
+                    c.NgayKetThuc.HasValue && c.NgayKetThuc.Value >= currentDate && c.NgayKetThuc.Value <= expiringDateLimit
+                ).ToList();
+
+                List<string> expiringComboNames = new List<string>();
 
                 List<string> deletedComboNames = new List<string>(); // Danh sách lưu tên các combo đã xóa
 
@@ -49,11 +51,30 @@ namespace DAO
                     deletedComboNames.Add(combo.TenCombo);
                 }
 
-                DB.SubmitChanges();  // Lưu thay đổi vào cơ sở dữ liệu
+                // Xử lý các combo sắp hết hạn (chỉ thông báo)
+                foreach (var combo in expiringCombos)
+                {
+                    expiringComboNames.Add(combo.TenCombo);
+                }
 
-                // Thông báo số lượng combo đã xóa và tên của các combo
-                string message = $"Đã xóa {deletedComboNames.Count} combo(s):\n" + string.Join("\n", deletedComboNames);
-                MessageBox.Show(message, "Thông báo");
+                // Commit các thay đổi vào cơ sở dữ liệu (xóa các combo đã hết hạn)
+                DB.SubmitChanges();
+
+                // Thông báo các combo đã hết hạn
+                if (deletedComboNames.Count > 0)
+                {
+                    string expiredMessage = $"Các combo đã hết hạn và đã được xóa:\n" + string.Join("\n", deletedComboNames);
+                    MessageBox.Show(expiredMessage, "Thông báo");
+                }
+
+                // Thông báo các combo sắp hết hạn
+                if (expiringComboNames.Count > 0)
+                {
+                    string expiringMessage = $"Các combo sắp hết hạn trong vòng 7 ngày tới:\n" + string.Join("\n", expiringComboNames);
+                    MessageBox.Show(expiringMessage, "Thông báo");
+                }
+
+
             }
             catch (Exception ex)
             {

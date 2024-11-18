@@ -27,6 +27,7 @@ namespace KFC
             LoadSanPhamToComboBox();
             txtGiaCombo.Enabled = false;
             buscb.XoaCombosHethan();
+
         }
 
         private void LoadDataCombo()
@@ -96,6 +97,7 @@ namespace KFC
 
         private void Combo_Load(object sender, EventArgs e)
         {
+          
             LoadDataCombo();
         }
 
