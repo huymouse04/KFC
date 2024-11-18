@@ -11,6 +11,12 @@ namespace BUS
 
         public Ban_BUS() { }
 
+        public List<string> GetDanhSachMaBan()
+        {
+            // Gọi hàm từ Ban_DAO để lấy danh sách
+            return dao.GetDanhSachMaBan();
+        }
+
         public List<Ban_DTO> SearchBan(string searchTerm)
         {
             return dao.SearchBan(searchTerm);

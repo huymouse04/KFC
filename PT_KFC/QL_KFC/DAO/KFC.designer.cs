@@ -243,11 +243,13 @@ namespace DAO
 		
 		private string _TenBan;
 		
-		private System.DateTime _ThoiGianDen;
+		private System.Nullable<System.DateTime> _ThoiGianDen;
 		
-		private System.DateTime _ThoiGianRoi;
+		private System.Nullable<System.DateTime> _ThoiGianRoi;
 		
 		private System.Nullable<bool> _TrangThaiBan;
+		
+		private string _MaDonDat;
 		
 		private EntitySet<DonDat> _DonDats;
 		
@@ -259,12 +261,14 @@ namespace DAO
     partial void OnMaBanChanged();
     partial void OnTenBanChanging(string value);
     partial void OnTenBanChanged();
-    partial void OnThoiGianDenChanging(System.DateTime value);
+    partial void OnThoiGianDenChanging(System.Nullable<System.DateTime> value);
     partial void OnThoiGianDenChanged();
-    partial void OnThoiGianRoiChanging(System.DateTime value);
+    partial void OnThoiGianRoiChanging(System.Nullable<System.DateTime> value);
     partial void OnThoiGianRoiChanged();
     partial void OnTrangThaiBanChanging(System.Nullable<bool> value);
     partial void OnTrangThaiBanChanged();
+    partial void OnMaDonDatChanging(string value);
+    partial void OnMaDonDatChanged();
     #endregion
 		
 		public Ban()
@@ -313,8 +317,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianDen", DbType="DateTime NOT NULL")]
-		public System.DateTime ThoiGianDen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianDen", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ThoiGianDen
 		{
 			get
 			{
@@ -333,8 +337,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianRoi", DbType="DateTime NOT NULL")]
-		public System.DateTime ThoiGianRoi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianRoi", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ThoiGianRoi
 		{
 			get
 			{
@@ -369,6 +373,26 @@ namespace DAO
 					this._TrangThaiBan = value;
 					this.SendPropertyChanged("TrangThaiBan");
 					this.OnTrangThaiBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="VarChar(10)")]
+		public string MaDonDat
+		{
+			get
+			{
+				return this._MaDonDat;
+			}
+			set
+			{
+				if ((this._MaDonDat != value))
+				{
+					this.OnMaDonDatChanging(value);
+					this.SendPropertyChanging();
+					this._MaDonDat = value;
+					this.SendPropertyChanged("MaDonDat");
+					this.OnMaDonDatChanged();
 				}
 			}
 		}
@@ -4013,7 +4037,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100)")]
 		public string TenSanPham
 		{
 			get

@@ -37,12 +37,6 @@ CREATE TABLE Luong (
     PRIMARY KEY (MaNhanVien, Thang, Nam),  
     FOREIGN KEY (MaNhanVien) REFERENCES NhanVien(MaNhanVien)  
 );  
---ALTER TABLE Luong
---ALTER COLUMN LuongCoBan DECIMAL(18, 2);
---ALTER TABLE Luong
---ALTER COLUMN ThuongChuyenCan DECIMAL(18, 2);
---ALTER TABLE Luong
---ALTER COLUMN ThuongHieuSuat DECIMAL(18, 2);
 
 
 -- Bảng Loai Hang  
@@ -79,7 +73,7 @@ CREATE TABLE Kho (
 CREATE TABLE NhapHang (  
     MaNhapHang INT IDENTITY(1,1) PRIMARY KEY,  
     MaSanPham VARCHAR(30) NOT NULL,  
-	TenSanPham NVARCHAR (100) not null,
+	TenSanPham NVARCHAR (100) null,
     SoLuong INT NOT NULL,  
     DonViTinh NVARCHAR(50),  
     DonGia FLOAT,  
@@ -100,6 +94,7 @@ CREATE TABLE Combo (
     TenCombo NVARCHAR(250) NOT NULL,  
     GiaCombo int,  
 	SoLuong int,
+	PhanTramGiam int,
 	NgayBatDau datetime,
     NgayKetThuc DATETIME  
 ); 
@@ -139,9 +134,10 @@ CREATE TABLE KhuyenMai (
 CREATE TABLE Ban (  
     MaBan VARCHAR(20) PRIMARY KEY NOT NULL,  
     TenBan NVARCHAR(50) NOT NULL,
-	ThoiGianDen DATETIME NOT NULL,
-	ThoiGianRoi DATETIME NOT NULL,  
-    TrangThaiBan BIT  
+	ThoiGianDen DATETIME  NULL,
+	ThoiGianRoi DATETIME  NULL,  
+    TrangThaiBan BIT,
+	MaDonDat VARCHAR(10) null
 );  
 
 -- Bảng Khach Hang Than Thiet  
@@ -224,11 +220,6 @@ INSERT INTO NhanVien (MaNhanVien, AnhNhanVien, TenNhanVien, GioiTinh, NgaySinh, 
 ('NV019', NULL, N'Lê Văn S', N'Nam', '19/07/1980', '0123456797', 'vans@gmail.com', N'Hà Nội', N'Nhân viên', 160),
 ('NV020', NULL, N'Phạm Thị T', N'Nữ', '20/08/1979', '0123456798', 'thit@gmail.com', N'Hà Nội', N'Nhân viên', 160);
 
-
-
-
-
-
 INSERT INTO Luong (MaNhanVien, Thang, Nam, LuongCoBan, SoNgayLam, SoGioLamThem, ThuongChuyenCan, ThuongHieuSuat, KhoanTru) VALUES
 ('NV001', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
 ('NV002', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
@@ -249,17 +240,54 @@ INSERT INTO Luong (MaNhanVien, Thang, Nam, LuongCoBan, SoNgayLam, SoGioLamThem, 
 ('NV017', 10, 2024, 5000000, 22, 5, 500000, 300000, 100000),
 ('NV018', 10, 2024, 4000000, 22, 2, 300000, 200000, 80000),
 ('NV019', 10, 2024, 4000000, 22, 0, 300000, 200000, 80000),
-('NV020', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000);
-
-
-
+('NV020', 10, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV001', 9, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV002', 9, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV003', 9, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV004', 9, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV005', 9, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV006', 9, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV007', 9, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV008', 9, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV009', 9, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV010', 9, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV011', 9, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV012', 9, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV013', 9, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV014', 9, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV015', 9, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV016', 9, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV017', 9, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV018', 9, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV019', 9, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV020', 9, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV001', 8, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV002', 8, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV003', 8, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV004', 8, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV005', 8, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV006', 8, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV007', 8, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV008', 8, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV009', 8, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV010', 8, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV011', 8, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV012', 8, 2024, 3500000, 22, 4, 200000, 150000, 70000),
+('NV013', 8, 2024, 5000000, 22, 3, 500000, 300000, 100000),
+('NV014', 8, 2024, 3500000, 22, 1, 200000, 150000, 70000),
+('NV015', 8, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV016', 8, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV017', 8, 2024, 5000000, 22, 5, 500000, 300000, 100000),
+('NV018', 8, 2024, 4000000, 22, 2, 300000, 200000, 80000),
+('NV019', 8, 2024, 4000000, 22, 0, 300000, 200000, 80000),
+('NV020', 8, 2024, 3500000, 22, 4, 200000, 150000, 70000);
 
 -- Bảng Loại Hàng
 INSERT INTO LoaiHang (MaLoaiHang, TenLoaiHang) VALUES
 ('GR', N'Gà Rán'),
 ('GQ', N'Gà Quay'),
 ('NUOC', N'Nước Uống'),
-('TM', N'Món Tráng Miệng'),
+('TM', N'Tráng Miệng'),
 ('TAN', N'Thức Ăn Nhẹ'),
 ('BMC', N'Burger - Mì Ý - Cơm');
 
@@ -268,29 +296,55 @@ INSERT INTO Kho (MaSanPham, TenSanPham, SoLuong, DonViTinh, DonGia, NgaySanXuat,
 VALUES
 ('GR001', N'Gà Rán Giòn', 100, N'Chiếc', 65000, '2024-12-01', '2025-06-30', 'GR'),
 ('GR002', N'Gà Rán Nguyên Tâm', 50, N'Chiếc', 70000, '2024-12-02', '2025-07-30', 'GR'),
+('GR003', N'Gà Rán Cay', 90, N'Chiếc', 68000, '2024-12-30', '2025-07-30', 'GR'),
 ('GQ001', N'Gà Quay Nguyên Tâm', 80, N'Chiếc', 85000, '2024-12-15', '2025-06-15', 'GQ'),
-('NUOC001', N'Nước Ngọt', 200, N'Lít', 15000, '2024-12-03', '2025-12-03', 'NUOC'),
 ('TM001', N'Bánh Tart', 150, N'Cái', 20000, '2024-12-20', '2025-04-20', 'TM'),
+('TM002', N'Bánh trứng', 150, N'Cái', 20000, '2024-12-20', '2025-04-20', 'TM'),
+('TM003', N'socola', 150, N'Cái', 20000, '2024-12-20', '2025-04-20', 'TM'),
+('TM004', N'kem vani', 150, N'Cái', 20000, '2024-12-20', '2025-04-20', 'TM'),
+('TM005', N'kem dâu', 150, N'Cái', 20000, '2024-12-20', '2025-04-20', 'TM'),
+('TM006', N'kem socola', 150, N'Cái', 20000, '2024-12-20', '2025-04-20', 'TM'),
 ('TAN001', N'Khoai Tây Chiên', 120, N'Cái', 30000, '2024-12-15', '2025-08-15', 'TAN'),
 ('BMC001', N'Burger Gà', 80, N'Chiếc', 50000, '2024-12-25', '2025-05-25', 'BMC'),
 ('BMC002', N'Mì Ý', 70, N'Dĩa', 60000, '2024-12-05', '2025-05-05', 'BMC'),
-('GR003', N'Gà Rán Cay', 90, N'Chiếc', 68000, '2024-12-30', '2025-07-30', 'GR'),
+('BMC003', N'Burger Gà quay', 80, N'Chiếc', 50000, '2024-12-25', '2025-05-25', 'BMC'),
+('BMC004', N'burger gà rán', 70, N'Chiếc', 60000, '2024-12-05', '2025-05-05', 'BMC'),
+('BMC005', N'Burger tôm', 80, N'Chiếc', 50000, '2024-12-25', '2025-05-25', 'BMC'),
+('BMC006', N'cơm gà quay', 70, N'Dĩa', 60000, '2024-12-05', '2025-05-05', 'BMC'),
+('BMC007', N'cơm gà rán', 70, N'Dĩa', 60000, '2024-12-05', '2025-05-05', 'BMC'),
+('NUOC001', N'Nước Ngọt', 200, N'Lít', 15000, '2024-12-03', '2025-12-03', 'NUOC'),
 ('NUOC002', N'Nước Trái Cây', 180, N'Lít', 18000, '2024-12-01', '2025-12-01', 'NUOC'),
-('NUOC003', N'Nước CoCa', 160, N'Lít', 12000, '2024-03-11', '2024-04-11', 'NUOC');
-
+('NUOC003', N'CoCa', 160, N'Lít', 12000, '2024-03-11', '2024-04-11', 'NUOC'),
+('NUOC004', N'Pepsi', 180, N'Lít', 18000, '2024-12-01', '2025-12-01', 'NUOC'),
+('NUOC005', N'mirinda', 200, N'Lít', 15000, '2024-12-03', '2025-12-03', 'NUOC'),
+('NUOC006', N'7 up', 180, N'Lít', 18000, '2024-12-01', '2025-12-01', 'NUOC');
 
 -- Bảng Thực Đơn
 INSERT INTO ThucDon (MaSanPham, TenSanPham, HinhAnh, DonGia, MaLoaiHang) VALUES
-('GR001', N'Gà Rán Giòn', NULL, 65000, 'GR'),
-('GR002', N'Gà Rán Nguyên Tâm', NULL, 70000, 'GR'),
-('GQ001', N'Gà Quay Nguyên Tâm', NULL, 85000, 'GQ'),
-('NUOC001', N'Nước Ngọt', NULL, 15000, 'NUOC'),
-('TM001', N'Bánh Tart', NULL, 20000, 'TM'),
-('TAN001', N'Khoai Tây Chiên', NULL, 30000, 'TAN'),
-('BMC001', N'Burger Gà', NULL, 50000, 'BMC'),
-('BMC002', N'Mì Ý', NULL, 60000, 'BMC'),
-('GR003', N'Gà Rán Cay', NULL, 68000, 'GR'),
-('NUOC002', N'Nước Trái Cây', NULL, 18000, 'NUOC');
+('GR001', N'Gà Rán Giòn', null, 65000, 'GR'),
+('GR002', N'Gà Rán Nguyên Tâm', null, 70000,'GR'),
+('GR003', N'Gà Rán Cay', null,68000,'GR'),
+('GQ001', N'Gà Quay Nguyên Tâm', null,85000,'GQ'),
+('TM001', N'Bánh Tart', null,20000,'TM'),
+('TM002', N'Bánh trứng', null, 20000,'TM'),
+('TM003', N'socola', null,20000,'TM'),
+('TM004', N'kem vani', null,20000,'TM'),
+('TM005', N'kem dâu', null,20000,'TM'),
+('TM006', N'kem socola', null,20000,'TM'),
+('TAN001', N'Khoai Tây Chiên', null,30000,'TAN'),
+('BMC001', N'Burger Gà', null, 50000,'BMC'),
+('BMC002', N'Mì Ý', null, 60000, 'BMC'),
+('BMC003', N'Burger Gà quay', null,50000, 'BMC'),
+('BMC004', N'burger gà rán', null, 60000,'BMC'),
+('BMC005', N'Burger tôm', null, 50000, 'BMC'),
+('BMC006', N'cơm gà quay', null, 60000,'BMC'),
+('BMC007', N'cơm gà rán', null,60000, 'BMC'),
+('NUOC001', N'Nước Ngọt', null, 15000,'NUOC'),
+('NUOC002', N'Nước Trái Cây', null,18000, 'NUOC'),
+('NUOC003', N'CoCa', null, 12000,'NUOC'),
+('NUOC004', N'Pepsi', null, 18000,'NUOC'),
+('NUOC005', N'mirinda', null,15000,'NUOC'),
+('NUOC006', N'7 up', null,18000,'NUOC');
 
 -- Bảng Nhà Cung Cấp
 INSERT INTO NhaCungCap (MaNhaCungCap, TenNhaCungCap, AnhNhaCungCap, DiaChi, SoDienThoai, GhiChu) VALUES
@@ -306,31 +360,70 @@ INSERT INTO NhaCungCap (MaNhaCungCap, TenNhaCungCap, AnhNhaCungCap, DiaChi, SoDi
 ('NCC10', N'Nhà Cung Cấp J', NULL, N'Địa chỉ NCC J', '0976543333', N'Nhà cung cấp rau củ');
 
 -- Bảng Khách Hàng 
-INSERT INTO KhachHangThanThiet (MaKhachHang, TenKhachHang, SoDienThoai, DiemTichLuy) VALUES
-('KH001', N'Nguyễn Văn A', '0123456789', 100),
-('KH002', N'Trần Thị B', '0123456790', 10),
-('KH003', N'Nguyễn Thị C', '0123456791', 50),
-('KH004', N'Phạm Văn D', '0123456792', 90),
-('KH005', N'Đỗ Thị E', '0123456793', 150),
-('KH006', N'Lê Văn F', '0123456794', 120),
-('KH007', N'Nguyễn Văn G', '0123456795', 55),
-('KH008', N'Vũ Thị H', '0123456796', 15),
-('KH009', N'Hồ Văn I', '0123456797', 140),
-('KH010', N'Tôn Thị J', '0123456798', 150);
+INSERT INTO KhachHangThanThiet (MaKhachHang, TenKhachHang, SoDienThoai, DiemTichLuy) VALUES 
+('KH001', N'Nguyễn Văn An', '0123456000', 100),
+('KH002', N'Trần Thị Bích', '0123456001', 10),
+('KH003', N'Nguyễn Thị Cẩm', '0123456002', 50),
+('KH004', N'Phạm Văn Dương', '0123456003', 90),
+('KH005', N'Đỗ Thị Hạnh', '0123456004', 150),
+('KH006', N'Lê Văn Hùng', '0123456005', 120),
+('KH007', N'Nguyễn Văn Hòa', '0123456006', 55),
+('KH008', N'Vũ Thị Minh', '0123456007', 15),
+('KH009', N'Hồ Văn Khánh', '0123456008', 140),
+('KH010', N'Vũ Thị Ngọc', '0123456009', 20),
+('KH011', N'Tôn Thị Lan', '0123456010', 150),
+('KH012', N'Nguyễn Văn Phú', '0123456011', 100),
+('KH013', N'Trần Thị Xuân', '0123456012', 10),
+('KH014', N'Nguyễn Thị Liên', '0123456013', 50),
+('KH015', N'Phạm Văn Cường', '0123456014', 90),
+('KH016', N'Đỗ Thị Mai', '0123456015', 150),
+('KH017', N'Lê Văn Quân', '0123456016', 120),
+('KH018', N'Nguyễn Văn Bảo', '0123456017', 55),
+('KH019', N'Hồ Văn Lâm', '0123456018', 140),
+('KH020', N'Tôn Thị Huệ', '0123456019', 150),
+('KH021', N'Lý Văn Thành', '0123456020', 80),
+('KH022', N'Trịnh Thị Vân', '0123456021', 25),
+('KH023', N'Nguyễn Thị Phương', '0123456022', 70),
+('KH024', N'Phạm Văn Tuấn', '0123456023', 110),
+('KH025', N'Đỗ Thị Hà', '0123456024', 95),
+('KH026', N'Lê Văn Tâm', '0123456025', 130),
+('KH027', N'Nguyễn Văn Sang', '0123456026', 60),
+('KH028', N'Vũ Thị Yến', '0123456027', 40),
+('KH029', N'Hồ Văn Bình', '0123456028', 120),
+('KH030', N'Tôn Thị Nhung', '0123456029', 50);
 
-INSERT INTO Ban (MaBan, TenBan, ThoiGianDen, ThoiGianRoi, TrangThaiBan)
+INSERT INTO Ban (MaBan, TenBan, ThoiGianDen, ThoiGianRoi, TrangThaiBan, MaDonDat)
 VALUES 
-    ('B001', 'Bàn 1', '10:30:00', '12:00:00', 1),  -- Bàn 1, khách đến lúc 10:30 và rời lúc 12:00
-    ('B002', 'Bàn 2', '11:00:00', '13:00:00', 1),  -- Bàn 2, khách đến lúc 11:00 và rời lúc 13:00
-    ('B003', 'Bàn 3', '12:00:00', '14:30:00', 1),  -- Bàn 3, khách đến lúc 12:00 và rời lúc 14:30
-    ('B004', 'Bàn 4', '13:30:00', '15:00:00', 0),  -- Bàn 4, khách đến lúc 13:30 và rời lúc 15:00
-    ('B005', 'Bàn 5', '09:45:00', '11:45:00', 1),  -- Bàn 5, khách đến lúc 09:45 và rời lúc 11:45
-    ('B006', 'Bàn 6', '14:00:00', '16:00:00', 0),  -- Bàn 6, khách đến lúc 14:00 và rời lúc 16:00
-    ('B007', 'Bàn 7', '10:15:00', '12:45:00', 1),  -- Bàn 7, khách đến lúc 10:15 và rời lúc 12:45
-    ('B008', 'Bàn 8', '11:30:00', '13:30:00', 0),  -- Bàn 8, khách đến lúc 11:30 và rời lúc 13:30
-    ('B009', 'Bàn 9', '12:15:00', '14:15:00', 1),  -- Bàn 9, khách đến lúc 12:15 và rời lúc 14:15
-    ('B010', 'Bàn 10', '15:00:00', '17:30:00', 1); -- Bàn 10, khách đến lúc 15:00 và rời lúc 17:30
-
+    ('B001', 'Bàn 1', null, null, 0 , null), 
+    ('B002', 'Bàn 2', null, null, 0 , null),
+    ('B003', 'Bàn 3', null, null, 0 , null),  
+    ('B004', 'Bàn 4',  null, null, 0 , null), 
+    ('B005', 'Bàn 5', null, null, 0 , null),  
+    ('B006', 'Bàn 6',  null, null, 0 , null),  
+    ('B007', 'Bàn 7',  null, null, 0 , null),  
+    ('B008', 'Bàn 8', null, null, 0 , null), 
+    ('B009', 'Bàn 9', null, null, 0 , null),  
+    ('B010', 'Bàn 10',  null, null, 0 , null), 
+	('B011', 'Bàn 11',  null, null, 0 , null), 
+    ('B012', 'Bàn 12',  null, null, 0 , null),  
+    ('B013', 'Bàn 13',  null, null, 0 , null),  
+    ('B014', 'Bàn 14',  null, null, 0 , null),  
+    ('B015', 'Bàn 15',  null, null, 0 , null), 
+    ('B016', 'Bàn 16',  null, null, 0 , null),
+    ('B017', 'Bàn 17',  null, null, 0 , null), 
+    ('B018', 'Bàn 18',  null, null, 0 , null), 
+    ('B019', 'Bàn 19',  null, null, 0 , null),  
+    ('B020', 'Bàn 20',  null, null, 0 , null), 
+	('B021', 'Bàn 21',  null, null, 0 , null), 
+    ('B022', 'Bàn 22',  null, null, 0 , null),  
+    ('B023', 'Bàn 23',  null, null, 0 , null),  
+    ('B024', 'Bàn 24',  null, null, 0 , null), 
+    ('B025', 'Bàn 25',  null, null, 0 , null),  
+    ('B026', 'Bàn 26',  null, null, 0 , null),  
+    ('B027', 'Bàn 27',  null, null, 0 , null), 
+    ('B028', 'Bàn 28',  null, null, 0 , null),  
+    ('B029', 'Bàn 29',  null, null, 0 , null),  
+    ('B030', 'Bàn 30',  null, null, 0 , null);
 
 -- Bảng Nhập Hàng
 INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, MaNhaCungCap) VALUES
@@ -345,20 +438,29 @@ INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHan
 ('NUOC002', 180, N'Lít', 18000, GETDATE(), 'NUOC', 'NCC09'),
 ('TM001', 150, N'Cái', 20000, GETDATE(), 'TM', 'NCC10');
 
-INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, SoLuong, NgayBatDau , NgayketThuc)  
+INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, SoLuong, PhanTramGiam, NgayBatDau , NgayketThuc)  
 VALUES 
-('CB01', N'Combo Gà Rán', 150000, 50, '01/11/2024', '15/11/2024'),
-('CB02', N'Combo Burger', 120000, 30, '01/11/2024', '15/11/2024');
-
+('CB01', N'Combo Gà Rán', 150000, 50, 10, '01/11/2024', '15/11/2024'),
+('CB02', N'Combo Burger', 120000, 30, 20, '01/11/2024', '15/11/2024'),
+('CB03', N'Combo Nước', 150000, 50, 10, '01/11/2024', '15/11/2024'),
+('CB04', N'Combo Mỳ Gà', 120000, 30, 20, '01/11/2024', '15/11/2024'),
+('CB05', N'Combo Bánh', 150000, 50, 10, '01/11/2024', '15/11/2024'),
+('CB06', N'Combo Cơm', 120000, 30, 20, '01/11/2024', '15/11/2024');
 
 INSERT INTO ChiTietCombo (MaCombo, MaSanPham, SoLuong)  
 VALUES 
 ('CB01', 'GR001', 2),
 ('CB01', 'GR002', 1),
 ('CB02', 'TM001', 3),
-('CB02', 'BMC001', 2);
-
-
+('CB02', 'BMC001', 2),
+('CB03', 'NUOC006', 3),
+('CB03', 'NUOC004', 2),
+('CB04', 'GR003', 3),
+('CB04', 'BMC002', 2),
+('CB05', 'TM001', 3),
+('CB05', 'TM002', 2),
+('CB06', 'BMC006', 3),
+('CB06', 'BMC007', 2);
 
 INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
 ('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
@@ -387,19 +489,18 @@ select * from Luong
 
 select * from ChiTietDonDat
 
---DELETE FROM DonDat WHERE MaDonDat IN ('DDa57366fe', 'DDb84ef177', 'DDcc12f513', 'DDd7a37830', 'DD6a2fbb57', 'DDd160fdd7', 'DD8d3e0de4', 'DD6cfe3b59', 'DD6ca3d0c6', 'DD225430f8', 'DD316bc9d2', 'DD64a49ea2', 'DDd38dd19b');
+--DELETE FROM DonDat 
+--WHERE MaDonDat IN ('DD1f977b63');
 
 
-SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 10 AND Nam = 2024;
+--SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 10 AND Nam = 2024;
 
---DELETE FROM ChiTietDonDat WHERE MaDonDat = 'DD0ff33b8e'
---DELETE FROM DonDat WHERE MaDonDat = 'DD0ff33b8e'
 
-SELECT COLUMN_NAME, DATA_TYPE
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'Luong';
+--SELECT COLUMN_NAME, DATA_TYPE
+--FROM INFORMATION_SCHEMA.COLUMNS
+--WHERE TABLE_NAME = 'Luong';
 
-EXEC sp_help 'Luong';
+--EXEC sp_help 'Luong';
 
 
 

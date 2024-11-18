@@ -13,6 +13,7 @@ namespace DTO
         public DateTime? ThoiGianDen { get; set; } // Thời gian khách đến
         public DateTime? ThoiGianRoi { get; set; } // Thời gian khách rời
         public bool TrangThaiBan { get; set; }  // Trạng thái bàn (Đang sử dụng / Trống)
+        public string MaDonDat {  get; set; }
 
         // Constructor không tham số
         public Ban_DTO()
@@ -20,14 +21,14 @@ namespace DTO
             TrangThaiBan = false; // Mặc định là bàn trống
         }
 
-        // Constructor có tham số
-        public Ban_DTO(string maBan, string tenBan, DateTime thoiGianDen, DateTime thoiGianRoi, bool trangThaiBan)
+        public Ban_DTO(string maBan, string tenBan, DateTime? thoiGianDen, DateTime? thoiGianRoi, bool trangThaiBan, string maDonDat)
         {
             MaBan = maBan;
             TenBan = tenBan;
             ThoiGianDen = thoiGianDen;
             ThoiGianRoi = thoiGianRoi;
             TrangThaiBan = trangThaiBan;
+            MaDonDat = maDonDat;
         }
     }
 }

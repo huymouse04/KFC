@@ -12,6 +12,19 @@ namespace DAO
 
         public Ban_DAO() { }
 
+        // Hàm lấy danh sách mã bàn từ bảng Ban
+        public List<string> GetDanhSachMaBan()
+        {
+
+            var danhSachMaBan = DB.Bans
+                                       .Select(b => b.MaBan)
+                                       .ToList();
+            return danhSachMaBan;
+
+        }
+
+
+
         public List<Ban_DTO> SearchBan(string searchTerm)
         {
             try
@@ -27,7 +40,9 @@ namespace DAO
                     TenBan = ban.TenBan,
                     ThoiGianDen = ban.ThoiGianDen,
                     ThoiGianRoi = ban.ThoiGianRoi,
-                    TrangThaiBan = ban.TrangThaiBan ?? false
+                    TrangThaiBan = ban.TrangThaiBan ?? false,
+                    MaDonDat = ban.MaDonDat,
+
                 }).ToList();
 
                 return banDtos;
@@ -63,7 +78,9 @@ namespace DAO
                 {
                     MaBan = ban.MaBan,
                     TenBan = ban.TenBan,
-                    TrangThaiBan = ban.TrangThaiBan
+                    TrangThaiBan = ban.TrangThaiBan,
+                    MaDonDat = ban.MaDonDat
+
                 };
 
                 // Kiểm tra và gán ThoiGianDen, nếu không có giá trị thì gán DateTime.MinValue
@@ -93,7 +110,8 @@ namespace DAO
                            TenBan = ban.TenBan,
                            ThoiGianDen = ban.ThoiGianDen,
                            ThoiGianRoi = ban.ThoiGianRoi,
-                           TrangThaiBan = ban.TrangThaiBan ?? false
+                           TrangThaiBan = ban.TrangThaiBan ?? false,
+                           MaDonDat = ban.MaDonDat,
                        };
 
             return bans.ToList();
@@ -123,6 +141,7 @@ namespace DAO
 
                     // Cập nhật trạng thái bàn
                     existingBan.TrangThaiBan = ban.TrangThaiBan;
+                    existingBan.MaDonDat = ban.MaDonDat;
 
                     // Lưu thay đổi vào cơ sở dữ liệu
                     DB.SubmitChanges();

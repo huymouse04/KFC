@@ -68,6 +68,7 @@
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.dgvDonDat = new System.Windows.Forms.DataGridView();
             this.pnDSM = new System.Windows.Forms.Panel();
+            this.btnLuuBan = new System.Windows.Forms.Button();
             this.pnDD.SuspendLayout();
             this.gbDD.SuspendLayout();
             this.gbCTDD.SuspendLayout();
@@ -94,6 +95,7 @@
             this.gbDD.BackColor = System.Drawing.Color.DarkRed;
             this.gbDD.Controls.Add(this.cboMaKhuyenMai);
             this.gbDD.Controls.Add(this.cboBan);
+            this.gbDD.Controls.Add(this.btnLuuBan);
             this.gbDD.Controls.Add(this.btnThanhToan);
             this.gbDD.Controls.Add(this.txtTienTra);
             this.gbDD.Controls.Add(this.lblSTT);
@@ -562,6 +564,20 @@
             this.pnDSM.Size = new System.Drawing.Size(165, 788);
             this.pnDSM.TabIndex = 3;
             // 
+            // btnLuuBan
+            // 
+            this.btnLuuBan.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLuuBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuuBan.ForeColor = System.Drawing.Color.White;
+            this.btnLuuBan.Location = new System.Drawing.Point(44, 368);
+            this.btnLuuBan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuuBan.Name = "btnLuuBan";
+            this.btnLuuBan.Size = new System.Drawing.Size(107, 41);
+            this.btnLuuBan.TabIndex = 33;
+            this.btnLuuBan.Text = "Lưu Bàn";
+            this.btnLuuBan.UseVisualStyleBackColor = false;
+            this.btnLuuBan.Click += new System.EventHandler(this.btnLuuBan_Click);
+            // 
             // DonDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -628,5 +644,6 @@
         private System.Windows.Forms.TextBox txtMaSanPham;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picQRCode;
+        private System.Windows.Forms.Button btnLuuBan;
     }
 }

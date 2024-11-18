@@ -17,6 +17,7 @@ namespace KFC
 {
     public partial class DonDat : Form
     {
+        private string maBan;
         private Button btnCB; // Lưu nút Combo ở cấp lớp để truy cập dễ dàng
 
         // Khai báo một HashSet để lưu các mã đã tạo
@@ -43,9 +44,48 @@ namespace KFC
             LoadChiTietDonDat();
         }
 
+        public DonDat(string maban)
+        {
+            this.maBan = maban; // Gán mã bàn vào biến
+            InitializeComponent();
+            LoadCodesFromFile();
+            load();
+            txtMaDonDat2.Enabled = false;
+            txtMaDonDat.Enabled = false;
+            txtDonGia.Enabled = false;
+            txtTongTien.Enabled = false;
+            LoadLoaiHangButtons();
+            LoadChiTietDonDat();
+        }
+
         private void DonDat_Load(object sender, EventArgs e)
         {
 
+            if(maBan != null)
+            {
+ // Hiển thị mã bàn trong ComboBox
+            cboBan.Items.Clear(); // Xóa các mục hiện tại nếu có
+            cboBan.Items.Add(maBan); // Thêm mã bàn được truyền vào
+            cboBan.SelectedIndex = 0; // Chọn mã bàn vừa thêm
+
+            // Nếu bạn muốn người dùng không thể thay đổi mã bàn, bạn có thể disable ComboBox
+            cboBan.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+            else
+            {
+                LoadDanhSachBan();
+            }
+           
+        }
+
+        // Hàm load danh sách mã bàn vào combobox
+        private void LoadDanhSachBan()
+        {
+            // Lấy danh sách mã bàn từ Ban_BUS
+            List<string> danhSachBan = new Ban_BUS().GetDanhSachMaBan();
+
+            cboBan.DataSource = danhSachBan; // Gán danh sách mã bàn vào combobox
+            cboBan.Text = maBan; // Chọn mã bàn hiện tại
         }
 
         private void LoadChiTietDonDat()
@@ -247,6 +287,7 @@ namespace KFC
 
                 // Cập nhật tổng tiền
                 CapNhatTongTien();
+                Clear();
             }
             catch (Exception ex)
             {
@@ -269,7 +310,6 @@ namespace KFC
             }
         }
 
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (dgvDonDat.SelectedRows.Count > 0)
@@ -288,6 +328,7 @@ namespace KFC
 
                 LoadChiTietDonDat(); // Refresh DataGridView
                 CapNhatTongTien();   // Update total
+                Clear();
             }
         }
 
@@ -302,6 +343,7 @@ namespace KFC
 
                 LoadChiTietDonDat(); // Refresh DataGridView
                 CapNhatTongTien();   // Update total
+                Clear();
             }
         }
 
@@ -427,6 +469,11 @@ namespace KFC
             txtSanPham.Clear();
             txtSoLuong.Clear();
             txtDonGia.Clear();
+        }
+
+        private void btnLuuBan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

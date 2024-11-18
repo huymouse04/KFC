@@ -10,6 +10,7 @@ namespace KFC
     public partial class BanControl : UserControl
     {
         public Ban_DTO ban { get; private set; }
+        public string maban { get; private set; }
         private static BanControl selectedControl; // Đối tượng đã chọn
         private System.Windows.Forms.Timer countdownTimer; // Timer để cập nhật thời gian đếm ngược
 
@@ -36,13 +37,27 @@ namespace KFC
         // Hàm đăng ký sự kiện click cho tất cả các thành phần con
         private void RegisterClickEvent(Control control)
         {
-            control.MouseDown += BanControl_MouseDown; // Đăng ký sự kiện nhấn chuột
+            control.Click -= BanControl_Click; // Hủy đăng ký sự kiện trước
+            control.Click += BanControl_Click;
 
             foreach (Control childControl in control.Controls)
             {
-                RegisterClickEvent(childControl);
+                RegisterClickEvent(childControl); // Đệ quy đăng ký cho các control con
             }
         }
+
+        private void BanControl_Click(object sender, EventArgs e)
+        {
+            if (sender == this) // Chỉ xử lý khi chính BanControl được click
+            {
+                if (ban != null)
+                {
+                    DonDat Form = new DonDat(maban);
+                    Form.ShowDialog();
+                }
+            }
+        }
+
 
         // Hàm đăng ký sự kiện click đúp cho tất cả các thành phần con
         private void RegisterDoubleClickEvent(Control control)
@@ -66,6 +81,7 @@ namespace KFC
             countdownTimer.Stop();
 
             this.ban = ban;
+            this.maban = ban.MaBan; // Gán mã bàn từ Ban_DTO
             lblTrangThai.Text = ban.TrangThaiBan ? "Đang sử dụng" : "Trống";
             lblBan.Text = ban.TenBan;
 
@@ -99,6 +115,7 @@ namespace KFC
             }
         }
 
+     
         private void CountdownTimer_Tick(object sender, EventArgs e)
         {
             if (ban != null && ban.ThoiGianRoi != DateTime.MinValue && ban.ThoiGianRoi > DateTime.Now)
@@ -144,33 +161,6 @@ namespace KFC
             }
         }
 
-        private void BanControl_MouseDown(object sender, MouseEventArgs e)
-        {
-            // Xử lý sự kiện nhấn chuột
-            if (e.Button == MouseButtons.Left)
-            {
-                if (!Control.ModifierKeys.HasFlag(Keys.Control)) // Kiểm tra phím Ctrl có được giữ không
-                {
-                    // Đặt màu nền cho đối tượng này
-                    if (selectedControl != null && selectedControl != this)
-                    {
-                        selectedControl.IsSelected = false; // Đối tượng trước không được chọn
-                        selectedControl.BackColor = Color.Transparent; // Đặt lại màu nền cho đối tượng trước
-                    }
-
-                    selectedControl = this; // Gán đối tượng hiện tại thành đối tượng đã chọn
-                    IsSelected = true; // Đánh dấu là đã chọn
-                    this.BackColor = Color.LightBlue; // Đổi màu nền
-                }
-                else
-                {
-                    // Nếu Ctrl được giữ, chỉ đổi màu nền
-                    IsSelected = !IsSelected; // Chuyển đổi trạng thái chọn
-                    this.BackColor = IsSelected ? Color.LightBlue : Color.Transparent;
-                }
-            }
-        }
-
         private void BanControl_Paint_1(object sender, PaintEventArgs e)
         {
             Color borderColor = Color.Red; // Màu viền
@@ -182,5 +172,7 @@ namespace KFC
                 e.Graphics.DrawRectangle(pen, 0, 0, this.Width - 1, this.Height - 1);
             }
         }
+
+     
     }
 }

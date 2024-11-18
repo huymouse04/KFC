@@ -3,9 +3,10 @@
     <Type Name="Ban">
       <Column Name="MaBan" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenBan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ThoiGianDen" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ThoiGianRoi" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ThoiGianDen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThoiGianRoi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TrangThaiBan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaDonDat" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="Ban_DonDat" Member="DonDats" ThisKey="MaBan" OtherKey="MaBan" Type="DonDat" />
     </Type>
   </Table>
@@ -180,7 +181,7 @@
     <Type Name="NhapHang">
       <Column Name="MaNhapHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MaSanPham" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DonGia" Type="System.Double" DbType="Float" CanBeNull="true" />
