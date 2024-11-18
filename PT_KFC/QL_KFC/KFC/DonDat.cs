@@ -60,22 +60,20 @@ namespace KFC
 
         private void DonDat_Load(object sender, EventArgs e)
         {
-
-            if(maBan != null)
+            if (maBan != null)
             {
- // Hiển thị mã bàn trong ComboBox
-            cboBan.Items.Clear(); // Xóa các mục hiện tại nếu có
-            cboBan.Items.Add(maBan); // Thêm mã bàn được truyền vào
-            cboBan.SelectedIndex = 0; // Chọn mã bàn vừa thêm
+                // Hiển thị mã bàn trong ComboBox
+                cboBan.Items.Clear(); // Xóa các mục hiện tại nếu có
+                cboBan.Items.Add(maBan); // Thêm mã bàn được truyền vào
+                cboBan.SelectedIndex = 0; // Chọn mã bàn vừa thêm
 
-            // Nếu bạn muốn người dùng không thể thay đổi mã bàn, bạn có thể disable ComboBox
-            cboBan.DropDownStyle = ComboBoxStyle.DropDownList;
+                // Nếu bạn muốn người dùng không thể thay đổi mã bàn, bạn có thể disable ComboBox
+                cboBan.DropDownStyle = ComboBoxStyle.DropDownList;
             }
             else
             {
                 LoadDanhSachBan();
             }
-           
         }
 
         // Hàm load danh sách mã bàn vào combobox
@@ -287,7 +285,6 @@ namespace KFC
 
                 // Cập nhật tổng tiền
                 CapNhatTongTien();
-                Clear();
             }
             catch (Exception ex)
             {
