@@ -26,6 +26,7 @@ namespace KFC
             InitializeComponent();
             LoadSanPhamToComboBox();
             txtGiaCombo.Enabled = false;
+            buscb.XoaCombosHethan();
         }
 
         private void LoadDataCombo()

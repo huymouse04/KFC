@@ -79,7 +79,7 @@ namespace KFC
             }
         }
 
-            private void DonDat_Load(object sender, EventArgs e)
+        private void DonDat_Load(object sender, EventArgs e)
         {
             if (maBan != null)
             {
@@ -151,7 +151,6 @@ namespace KFC
                 }
             }
         }
-
 
         private void load()
         {

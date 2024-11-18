@@ -4,12 +4,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAO
 {
     public class Combo_DAO
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
+
+        public void XoaCombosHethan()
+        {
+            try
+            {
+                var currentDate = DateTime.Now;
+
+                // Lấy danh sách các combo đã hết hạn hoặc số lượng đã hết
+                var expiredCombos = DB.Combos.Where(c =>
+                    (c.SoLuong <= 0 || c.NgayKetThuc.HasValue && c.NgayKetThuc.Value < currentDate)
+                ).ToList();
+
+                if (expiredCombos.Count == 0)
+                {
+                    MessageBox.Show("Không có combo nào hết hạn hoặc hết số lượng.");
+                    return;
+                }
+
+                List<string> deletedComboNames = new List<string>(); // Danh sách lưu tên các combo đã xóa
+
+                foreach (var combo in expiredCombos)
+                {
+                    // Lấy danh sách sản phẩm thuộc combo này (nếu có bảng ChiTietCombo)
+                    var chiTietCombos = DB.ChiTietCombos.Where(ct => ct.MaCombo == combo.MaCombo).ToList();
+
+                    // Xóa các sản phẩm thuộc combo
+                    foreach (var chiTiet in chiTietCombos)
+                    {
+                        DB.ChiTietCombos.DeleteOnSubmit(chiTiet);
+                    }
+
+                    // Xóa combo
+                    DB.Combos.DeleteOnSubmit(combo);
+
+                    // Thêm tên combo đã xóa vào danh sách
+                    deletedComboNames.Add(combo.TenCombo);
+                }
+
+                DB.SubmitChanges();  // Lưu thay đổi vào cơ sở dữ liệu
+
+                // Thông báo số lượng combo đã xóa và tên của các combo
+                string message = $"Đã xóa {deletedComboNames.Count} combo(s):\n" + string.Join("\n", deletedComboNames);
+                MessageBox.Show(message, "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi kiểm tra và xóa combo hết hạn: " + ex.Message, "Lỗi");
+            }
+        }
+
+
 
         // Phương thức lấy thông tin combo từ MaCombo
         public Combo_DTO GetComboByMaCombo(string maCombo)
