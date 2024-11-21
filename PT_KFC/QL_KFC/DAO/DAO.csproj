@@ -68,6 +68,7 @@
     <Compile Include="Ban_DAO.cs" />
     <Compile Include="ChiTietCombo_DAO.cs" />
     <Compile Include="ChiTietDonDat_DAO.cs" />
+<Compile Include="DoanhThu_DAO.cs" />
     <Compile Include="Combo_DAO.cs" />
     <Compile Include="Connection_DAO.cs" />
     <Compile Include="DonDat_DAO.cs" />
@@ -110,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{907cd591-69b5-404e-bd27-fbf9373186d7}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

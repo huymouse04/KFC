@@ -180,5 +180,10 @@ namespace KFC
         {
             openformMain(new DonDat());
         }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            openformMain(new DoanhThu());
+        }
     }
 }
