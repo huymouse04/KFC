@@ -176,5 +176,10 @@ namespace KFC
         {
             txtMaDonDat2.Text = txtMaDonDat.Text.Trim();
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

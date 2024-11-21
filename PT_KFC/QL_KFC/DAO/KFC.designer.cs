@@ -243,11 +243,13 @@ namespace DAO
 		
 		private string _TenBan;
 		
-		private System.DateTime _ThoiGianDen;
+		private System.Nullable<System.DateTime> _ThoiGianDen;
 		
-		private System.DateTime _ThoiGianRoi;
+		private System.Nullable<System.DateTime> _ThoiGianRoi;
 		
 		private System.Nullable<bool> _TrangThaiBan;
+		
+		private string _MaDonDat;
 		
 		private EntitySet<DonDat> _DonDats;
 		
@@ -259,12 +261,14 @@ namespace DAO
     partial void OnMaBanChanged();
     partial void OnTenBanChanging(string value);
     partial void OnTenBanChanged();
-    partial void OnThoiGianDenChanging(System.DateTime value);
+    partial void OnThoiGianDenChanging(System.Nullable<System.DateTime> value);
     partial void OnThoiGianDenChanged();
-    partial void OnThoiGianRoiChanging(System.DateTime value);
+    partial void OnThoiGianRoiChanging(System.Nullable<System.DateTime> value);
     partial void OnThoiGianRoiChanged();
     partial void OnTrangThaiBanChanging(System.Nullable<bool> value);
     partial void OnTrangThaiBanChanged();
+    partial void OnMaDonDatChanging(string value);
+    partial void OnMaDonDatChanged();
     #endregion
 		
 		public Ban()
@@ -313,8 +317,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianDen", DbType="DateTime NOT NULL")]
-		public System.DateTime ThoiGianDen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianDen", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ThoiGianDen
 		{
 			get
 			{
@@ -333,8 +337,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianRoi", DbType="DateTime NOT NULL")]
-		public System.DateTime ThoiGianRoi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianRoi", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ThoiGianRoi
 		{
 			get
 			{
@@ -369,6 +373,26 @@ namespace DAO
 					this._TrangThaiBan = value;
 					this.SendPropertyChanged("TrangThaiBan");
 					this.OnTrangThaiBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="VarChar(10)")]
+		public string MaDonDat
+		{
+			get
+			{
+				return this._MaDonDat;
+			}
+			set
+			{
+				if ((this._MaDonDat != value))
+				{
+					this.OnMaDonDatChanging(value);
+					this.SendPropertyChanging();
+					this._MaDonDat = value;
+					this.SendPropertyChanged("MaDonDat");
+					this.OnMaDonDatChanged();
 				}
 			}
 		}
@@ -701,13 +725,13 @@ namespace DAO
 		
 		private System.Nullable<int> _SoLuong;
 		
+		private System.Nullable<int> _PhanTramGiam;
+		
 		private System.Nullable<System.DateTime> _NgayBatDau;
 		
 		private System.Nullable<System.DateTime> _NgayKetThuc;
 		
 		private EntitySet<ChiTietCombo> _ChiTietCombos;
-		
-		private EntitySet<ChiTietDonDat> _ChiTietDonDats;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -721,6 +745,8 @@ namespace DAO
     partial void OnGiaComboChanged();
     partial void OnSoLuongChanging(System.Nullable<int> value);
     partial void OnSoLuongChanged();
+    partial void OnPhanTramGiamChanging(System.Nullable<int> value);
+    partial void OnPhanTramGiamChanged();
     partial void OnNgayBatDauChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayBatDauChanged();
     partial void OnNgayKetThucChanging(System.Nullable<System.DateTime> value);
@@ -730,7 +756,6 @@ namespace DAO
 		public Combo()
 		{
 			this._ChiTietCombos = new EntitySet<ChiTietCombo>(new Action<ChiTietCombo>(this.attach_ChiTietCombos), new Action<ChiTietCombo>(this.detach_ChiTietCombos));
-			this._ChiTietDonDats = new EntitySet<ChiTietDonDat>(new Action<ChiTietDonDat>(this.attach_ChiTietDonDats), new Action<ChiTietDonDat>(this.detach_ChiTietDonDats));
 			OnCreated();
 		}
 		
@@ -814,6 +839,26 @@ namespace DAO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhanTramGiam", DbType="Int")]
+		public System.Nullable<int> PhanTramGiam
+		{
+			get
+			{
+				return this._PhanTramGiam;
+			}
+			set
+			{
+				if ((this._PhanTramGiam != value))
+				{
+					this.OnPhanTramGiamChanging(value);
+					this.SendPropertyChanging();
+					this._PhanTramGiam = value;
+					this.SendPropertyChanged("PhanTramGiam");
+					this.OnPhanTramGiamChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBatDau", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NgayBatDau
 		{
@@ -867,19 +912,6 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietDonDat", Storage="_ChiTietDonDats", ThisKey="MaCombo", OtherKey="MaCombo")]
-		public EntitySet<ChiTietDonDat> ChiTietDonDats
-		{
-			get
-			{
-				return this._ChiTietDonDats;
-			}
-			set
-			{
-				this._ChiTietDonDats.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -907,18 +939,6 @@ namespace DAO
 		}
 		
 		private void detach_ChiTietCombos(ChiTietCombo entity)
-		{
-			this.SendPropertyChanging();
-			entity.Combo = null;
-		}
-		
-		private void attach_ChiTietDonDats(ChiTietDonDat entity)
-		{
-			this.SendPropertyChanging();
-			entity.Combo = this;
-		}
-		
-		private void detach_ChiTietDonDats(ChiTietDonDat entity)
 		{
 			this.SendPropertyChanging();
 			entity.Combo = null;
@@ -1112,13 +1132,9 @@ namespace DAO
 		
 		private string _MaSanPham;
 		
-		private string _MaCombo;
-		
 		private int _SoLuong;
 		
-		private System.Nullable<double> _DonGia;
-		
-		private EntityRef<Combo> _Combo;
+		private System.Nullable<int> _DonGia;
 		
 		private EntityRef<ThucDon> _ThucDon;
 		
@@ -1134,17 +1150,14 @@ namespace DAO
     partial void OnIDChanged();
     partial void OnMaSanPhamChanging(string value);
     partial void OnMaSanPhamChanged();
-    partial void OnMaComboChanging(string value);
-    partial void OnMaComboChanged();
     partial void OnSoLuongChanging(int value);
     partial void OnSoLuongChanged();
-    partial void OnDonGiaChanging(System.Nullable<double> value);
+    partial void OnDonGiaChanging(System.Nullable<int> value);
     partial void OnDonGiaChanged();
     #endregion
 		
 		public ChiTietDonDat()
 		{
-			this._Combo = default(EntityRef<Combo>);
 			this._ThucDon = default(EntityRef<ThucDon>);
 			this._DonDat = default(EntityRef<DonDat>);
 			OnCreated();
@@ -1218,30 +1231,6 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCombo", DbType="VarChar(30)")]
-		public string MaCombo
-		{
-			get
-			{
-				return this._MaCombo;
-			}
-			set
-			{
-				if ((this._MaCombo != value))
-				{
-					if (this._Combo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaComboChanging(value);
-					this.SendPropertyChanging();
-					this._MaCombo = value;
-					this.SendPropertyChanged("MaCombo");
-					this.OnMaComboChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
 		public int SoLuong
 		{
@@ -1262,8 +1251,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Float")]
-		public System.Nullable<double> DonGia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Int")]
+		public System.Nullable<int> DonGia
 		{
 			get
 			{
@@ -1278,40 +1267,6 @@ namespace DAO
 					this._DonGia = value;
 					this.SendPropertyChanged("DonGia");
 					this.OnDonGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietDonDat", Storage="_Combo", ThisKey="MaCombo", OtherKey="MaCombo", IsForeignKey=true)]
-		public Combo Combo
-		{
-			get
-			{
-				return this._Combo.Entity;
-			}
-			set
-			{
-				Combo previousValue = this._Combo.Entity;
-				if (((previousValue != value) 
-							|| (this._Combo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Combo.Entity = null;
-						previousValue.ChiTietDonDats.Remove(this);
-					}
-					this._Combo.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietDonDats.Add(this);
-						this._MaCombo = value.MaCombo;
-					}
-					else
-					{
-						this._MaCombo = default(string);
-					}
-					this.SendPropertyChanged("Combo");
 				}
 			}
 		}
@@ -1703,13 +1658,13 @@ namespace DAO
 		
 		private string _MaBan;
 		
-		private System.Nullable<double> _TongTien;
+		private System.Nullable<int> _TongTien;
 		
 		private string _HinhThucThanhToan;
 		
-		private System.Nullable<double> _SoTienNhan;
+		private System.Nullable<int> _SoTienNhan;
 		
-		private System.Nullable<double> _SoTienTra;
+		private System.Nullable<int> _SoTienTra;
 		
 		private string _MaKhuyenMai;
 		
@@ -1733,13 +1688,13 @@ namespace DAO
     partial void OnMaDonDatChanged();
     partial void OnMaBanChanging(string value);
     partial void OnMaBanChanged();
-    partial void OnTongTienChanging(System.Nullable<double> value);
+    partial void OnTongTienChanging(System.Nullable<int> value);
     partial void OnTongTienChanged();
     partial void OnHinhThucThanhToanChanging(string value);
     partial void OnHinhThucThanhToanChanged();
-    partial void OnSoTienNhanChanging(System.Nullable<double> value);
+    partial void OnSoTienNhanChanging(System.Nullable<int> value);
     partial void OnSoTienNhanChanged();
-    partial void OnSoTienTraChanging(System.Nullable<double> value);
+    partial void OnSoTienTraChanging(System.Nullable<int> value);
     partial void OnSoTienTraChanged();
     partial void OnMaKhuyenMaiChanging(string value);
     partial void OnMaKhuyenMaiChanged();
@@ -1801,8 +1756,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Float")]
-		public System.Nullable<double> TongTien
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongTien", DbType="Int")]
+		public System.Nullable<int> TongTien
 		{
 			get
 			{
@@ -1841,8 +1796,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienNhan", DbType="Float")]
-		public System.Nullable<double> SoTienNhan
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienNhan", DbType="Int")]
+		public System.Nullable<int> SoTienNhan
 		{
 			get
 			{
@@ -1861,8 +1816,8 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienTra", DbType="Float")]
-		public System.Nullable<double> SoTienTra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoTienTra", DbType="Int")]
+		public System.Nullable<int> SoTienTra
 		{
 			get
 			{
@@ -4082,7 +4037,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSanPham", DbType="NVarChar(100)")]
 		public string TenSanPham
 		{
 			get
