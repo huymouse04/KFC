@@ -19,6 +19,7 @@ namespace KFC
           
             LuongNhanVien,
             Kho,
+            KhachHang,
         }
 
         private LoaiBaoCao loaiBaoCao;
@@ -44,6 +45,9 @@ namespace KFC
                     break;
                 case LoaiBaoCao.Kho:
                     reportViewer1.LocalReport.ReportEmbeddedResource = "KFC.KhoRP.rdlc";
+                    break;
+                case LoaiBaoCao.KhachHang:
+                    reportViewer1.LocalReport.ReportEmbeddedResource = "KFC.KhachHang.rdlc";
                     break;
             }
             ReportDataSource rds = new ReportDataSource("DataSet1", duLieuBaoCao);

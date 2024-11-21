@@ -93,24 +93,35 @@ namespace KFC
         {
             try
             {
+                // Kiểm tra mã khách hàng
                 if (txtMaKhachHang.Text.Length > 10)
                 {
                     MessageBox.Show("Mã khách hàng không được vượt quá 10 ký tự.");
                     return;
                 }
 
+                // Kiểm tra tên khách hàng
                 if (string.IsNullOrWhiteSpace(txtTenKhachHang.Text) || txtTenKhachHang.Text.Length > 100)
                 {
                     MessageBox.Show("Tên khách hàng không được để trống và không quá 100 ký tự.");
                     return;
                 }
 
+                // Kiểm tra số điện thoại
                 if (!txtSDT.Text.StartsWith("0") || txtSDT.Text.Length != 10)
                 {
                     MessageBox.Show("Số điện thoại phải bắt đầu bằng số 0 và đủ 10 số.");
                     return;
                 }
 
+                // Kiểm tra điểm tích lũy
+                if (!int.TryParse(txtDiem.Text, out int diem) || diem < 0 || diem > 150)
+                {
+                    MessageBox.Show("Điểm tích lũy phải là số nguyên từ 0 đến 150.");
+                    return;
+                }
+
+                // Gọi phương thức cập nhật hoặc thêm khách hàng
                 if (isUpdateMode)
                 {
                     UpdateKhachHang();

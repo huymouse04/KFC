@@ -248,7 +248,67 @@ namespace KFC
 
         private void btnXuat_Click(object sender, EventArgs e)
         {
+            // Lấy khách hàng được chọn trong danh sách (nếu có)
+            var selectedControl = flpKhachHang.Controls.OfType<KhachHangControl>().FirstOrDefault(c => c.IsSelected);
 
+            List<DTO.KhachHang_DTO> ketQuaList;
+
+            // Kiểm tra nếu có khách hàng được chọn để xuất thông tin của khách hàng đó
+            if (selectedControl != null)
+            {
+                KhachHang_DTO khachHang = selectedControl.GetKhachHang(); // Lấy thông tin khách hàng từ control đã chọn
+                if (khachHang != null)
+                {
+                    // Chuyển đổi đối tượng khách hàng thành DataTable
+                    ketQuaList = new List<DTO.KhachHang_DTO> { khachHang };
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin khách hàng được chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+            else
+            {
+                // Không có khách hàng nào được chọn, thực hiện xuất theo điều kiện lọc hiện tại
+                string selectedCondition = cbbLoc.SelectedItem.ToString();
+
+                switch (selectedCondition)
+                {
+                    case "Tất cả":
+                        ketQuaList = bus.GetAllKhachHang(); // Lấy toàn bộ khách hàng
+                        break;
+                    case "Dưới 50 điểm":
+                        ketQuaList = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy < 50).ToList();
+                        break;
+                    case "Từ 50 đến dưới 100 điểm":
+                        ketQuaList = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy >= 50 && kh.DiemTichLuy < 100).ToList();
+                        break;
+                    case "Từ 100 đến dưới 150 điểm":
+                        ketQuaList = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy >= 100 && kh.DiemTichLuy < 150).ToList();
+                        break;
+                    case "Bằng 150 điểm":
+                        ketQuaList = bus.GetAllKhachHang().Where(kh => kh.DiemTichLuy == 150).ToList();
+                        break;
+                    default:
+                        MessageBox.Show("Không có điều kiện lọc phù hợp.");
+                        return;
+                }
+            }
+
+            // Kiểm tra nếu danh sách trống
+            if (ketQuaList == null || ketQuaList.Count == 0)
+            {
+                MessageBox.Show("Không có khách hàng nào phù hợp để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Chuyển đổi danh sách khách hàng sang DataTable
+            DataTable ketQua = ConvertListToDataTable(ketQuaList);
+
+            // Hiển thị form báo cáo với dữ liệu đã chọn hoặc đã lọc
+            FormReport formKhachHang = new FormReport(FormReport.LoaiBaoCao.KhachHang, ketQua);
+            formKhachHang.Show();
         }
     }
 }

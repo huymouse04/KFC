@@ -83,11 +83,11 @@ CREATE TABLE NhapHang (
     SoLuong INT NOT NULL,  
     DonViTinh NVARCHAR(50),  
     DonGia FLOAT,  
-    NgayNhap DATETIME NOT NULL,  
+    NgayNhap DATETIME NOT NULL,		
     MaLoaiHang VARCHAR(20),  
 	MaNhaCungCap VARCHAR(10),
-	NgaySanXuat DATETIME,
-    NgayHetHan DATETIME
+	NgaySanXuat DATE,
+    NgayHetHan DATE,
     FOREIGN KEY (MaSanPham) REFERENCES Kho(MaSanPham),  
     FOREIGN KEY (MaLoaiHang) REFERENCES LoaiHang(MaLoaiHang),
 	FOREIGN KEY (MaNhaCungCap) REFERENCES NhaCungCap(MaNhaCungCap)
@@ -140,7 +140,7 @@ CREATE TABLE Ban (
     MaBan VARCHAR(20) PRIMARY KEY NOT NULL,  
     TenBan NVARCHAR(50) NOT NULL,
 	ThoiGianDen DATETIME NOT NULL,
-	ThoiGianRoi DATETIME NOT NULL,  
+	ThoiGianRoi	DATETIME NOT NULL,  
     TrangThaiBan BIT  
 );  
 
@@ -322,30 +322,32 @@ INSERT INTO KhachHangThanThiet (MaKhachHang, TenKhachHang, SoDienThoai, DiemTich
 
 INSERT INTO Ban (MaBan, TenBan, ThoiGianDen, ThoiGianRoi, TrangThaiBan)
 VALUES 
-    ('B001', 'Bàn 1', '10:30:00', '12:00:00', 1),  -- Bàn 1, khách đến lúc 10:30 và rời lúc 12:00
-    ('B002', 'Bàn 2', '11:00:00', '13:00:00', 1),  -- Bàn 2, khách đến lúc 11:00 và rời lúc 13:00
-    ('B003', 'Bàn 3', '12:00:00', '14:30:00', 1),  -- Bàn 3, khách đến lúc 12:00 và rời lúc 14:30
-    ('B004', 'Bàn 4', '13:30:00', '15:00:00', 0),  -- Bàn 4, khách đến lúc 13:30 và rời lúc 15:00
-    ('B005', 'Bàn 5', '09:45:00', '11:45:00', 1),  -- Bàn 5, khách đến lúc 09:45 và rời lúc 11:45
-    ('B006', 'Bàn 6', '14:00:00', '16:00:00', 0),  -- Bàn 6, khách đến lúc 14:00 và rời lúc 16:00
-    ('B007', 'Bàn 7', '10:15:00', '12:45:00', 1),  -- Bàn 7, khách đến lúc 10:15 và rời lúc 12:45
-    ('B008', 'Bàn 8', '11:30:00', '13:30:00', 0),  -- Bàn 8, khách đến lúc 11:30 và rời lúc 13:30
-    ('B009', 'Bàn 9', '12:15:00', '14:15:00', 1),  -- Bàn 9, khách đến lúc 12:15 và rời lúc 14:15
-    ('B010', 'Bàn 10', '15:00:00', '17:30:00', 1); -- Bàn 10, khách đến lúc 15:00 và rời lúc 17:30
+    ('B001', 'Bàn 1', '10:30:00', '12:00:00', 1),  
+    ('B002', 'Bàn 2', '11:00:00', '13:00:00', 1),  
+    ('B003', 'Bàn 3', '12:00:00', '14:30:00', 1), 
+    ('B004', 'Bàn 4', '13:30:00', '15:00:00', 0),  
+    ('B005', 'Bàn 5', '09:45:00', '11:45:00', 1),  
+    ('B006', 'Bàn 6', '14:00:00', '16:00:00', 0),  
+    ('B007', 'Bàn 7', '10:15:00', '12:45:00', 1),  
+    ('B008', 'Bàn 8', '11:30:00', '13:30:00', 0),  
+    ('B009', 'Bàn 9', '12:15:00', '14:15:00', 1), 
+    ('B010', 'Bàn 10', '15:00:00', '17:30:00', 1); 
 
 
 -- Bảng Nhập Hàng
-INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, MaNhaCungCap) VALUES
-('GR001', 100, N'Chiếc', 65000, GETDATE(), 'GR', 'NCC01'),
-('GR002', 50, N'Chiếc', 70000, GETDATE(), 'GR', 'NCC02'),
-('GQ001', 80, N'Chiếc', 85000, GETDATE(), 'GQ', 'NCC03'),
-('NUOC001', 200, N'Lít', 15000, GETDATE(), 'NUOC', 'NCC04'),
-('TAN001', 120, N'Cái', 30000, GETDATE(), 'TAN', 'NCC05'),
-('BMC001', 80, N'Chiếc', 50000, GETDATE(), 'BMC', 'NCC06'),
-('BMC002', 70, N'Dĩa', 60000, GETDATE(), 'BMC', 'NCC07'),
-('GR003', 90, N'Chiếc', 68000, GETDATE(), 'GR', 'NCC08'),
-('NUOC002', 180, N'Lít', 18000, GETDATE(), 'NUOC', 'NCC09'),
-('TM001', 150, N'Cái', 20000, GETDATE(), 'TM', 'NCC10');
+INSERT INTO NhapHang (MaSanPham, TenSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, MaNhaCungCap, NgaySanXuat, NgayHetHan) VALUES
+('GR001', N'Gà Rán Giòn', 50, N'Chiếc', 65000, GETDATE(), 'GR', 'NCC01', '2024-12-01', '2025-06-30'),
+('GR002', N'Gà Rán Nguyên Tâm', 30, N'Chiếc', 70000, GETDATE(), 'GR', 'NCC02', '2024-12-02', '2025-07-30'),
+('GQ001', N'Gà Quay Nguyên Tâm', 40, N'Chiếc', 85000, GETDATE(), 'GQ', 'NCC03', '2024-12-15', '2025-06-15'),
+('NUOC001', N'Nước Ngọt', 100, N'Lít', 15000, GETDATE(), 'NUOC', 'NCC04', '2024-12-03', '2025-12-03'),
+('TM001', N'Bánh Tart', 70, N'Cái', 20000, GETDATE(), 'TM', 'NCC05', '2024-12-20', '2025-04-20'),
+('TAN001', N'Khoai Tây Chiên', 80, N'Cái', 30000, GETDATE(), 'TAN', 'NCC06', '2024-12-15', '2025-08-15'),
+('BMC001', N'Burger Gà', 40, N'Chiếc', 50000, GETDATE(), 'BMC', 'NCC07', '2024-12-25', '2025-05-25'),
+('BMC002', N'Mì Ý', 30, N'Dĩa', 60000, GETDATE(), 'BMC', 'NCC08', '2024-12-05', '2025-05-05'),
+('GR003', N'Gà Rán Cay', 45, N'Chiếc', 68000, GETDATE(), 'GR', 'NCC01', '2024-12-30', '2025-07-30'),
+('NUOC002', N'Nước Trái Cây', 90, N'Lít', 18000, GETDATE(), 'NUOC', 'NCC09', '2024-12-01', '2025-12-01');
+
+
 
 INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, SoLuong, NgayBatDau , NgayketThuc)  
 VALUES 
@@ -360,10 +362,60 @@ VALUES
 ('CB02', 'TM001', 3),
 ('CB02', 'BMC001', 2);
 
-
-
 INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
-('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
+('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1),
+('KM02', GETDATE(), DATEADD(DAY, 15, GETDATE()), 10000, 50, 1),
+('KM03', GETDATE(), DATEADD(DAY, 20, GETDATE()), 50000, 20, 1),
+('KM04', GETDATE(), DATEADD(DAY, 10, GETDATE()), 30000, 70, 0),
+('KM05', GETDATE(), DATEADD(DAY, 25, GETDATE()), 15000, 150, 1),
+('KM06', GETDATE(), DATEADD(DAY, 40, GETDATE()), 25000, 60, 1),
+('KM07', GETDATE(), DATEADD(DAY, 50, GETDATE()), 50000, 30, 0),
+('KM08', GETDATE(), DATEADD(DAY, 5, GETDATE()), 20000, 10, 1),
+('KM09', GETDATE(), DATEADD(DAY, 7, GETDATE()), 10000, 25, 1),
+('KM10', GETDATE(), DATEADD(DAY, 18, GETDATE()), 30000, 90, 1);
+
+INSERT INTO DonDat (MaBan, TongTien, HinhThucThanhToan, SoTienNhan, SoTienTra, MaKhuyenMai, MaKhachHang) VALUES
+('B001', 300000, 'Tiền mặt', 300000, 0, 'KM01', 'KH001'),
+('B002', 450000, 'Thẻ tín dụng', NULL, NULL, 'KM02', 'KH002'),
+('B003', 200000, 'Tiền mặt', 200000, 0, 'KM03', NULL),
+('B004', 550000, 'Chuyển khoản', NULL, NULL, 'KM04', 'KH003'),
+('B005', 100000, 'Tiền mặt', 100000, 0, NULL, 'KH004'),
+('B006', 650000, 'Thẻ tín dụng', NULL, NULL, 'KM05', 'KH005'),
+('B007', 300000, 'Chuyển khoản', NULL, NULL, NULL, NULL),
+('B008', 250000, 'Tiền mặt', 300000, 50000, 'KM06', 'KH006'),
+('B009', 400000, 'Chuyển khoản', NULL, NULL, NULL, NULL),
+('B010', 700000, 'Thẻ tín dụng', NULL, NULL, 'KM07', 'KH007');
+
+INSERT INTO HoaDon (MaDonDat, NgayThanhToan) VALUES
+(1, GETDATE()),
+(2, GETDATE()),
+(3, GETDATE()),
+(4, GETDATE()),
+(5, GETDATE()),
+(6, GETDATE()),
+(7, GETDATE()),
+(8, GETDATE()),
+(9, GETDATE()),
+(10, GETDATE());
+
+
+INSERT INTO DoanhThu (MaNhapHang, Thang, Nam, NgayGhiNhan, MaHoaDon, TongChiTieu, TongDoanhThu)
+VALUES
+-- Nhập hàng có lãi
+(1, 11, 2024, '2024-11-01', 1, 6000000, 14000000), -- Lãi: 8000000
+(2, 11, 2024, '2024-11-02', 2, 3200000, 7200000), -- Lãi: 4000000
+(3, 11, 2024, '2024-11-03', 3, 6600000, 14600000), -- Lãi: 8000000
+-- Nhập hàng hòa vốn
+(4, 11, 2024, '2024-11-04', 4, 5000000, 5000000), -- Hòa vốn
+(5, 11, 2024, '2024-11-05', 5, 3600000, 3600000), -- Hòa vốn
+-- Nhập hàng lỗ
+(6, 11, 2024, '2024-11-06', 6, 9000000, 8000000), -- Lỗ: 1000000
+(7, 11, 2024, '2024-11-07', 7, 7000000, 6500000), -- Lỗ: 500000
+-- Nhập hàng có lãi cao
+(8, 11, 2024, '2024-11-08', 8, 5500000, 12500000), -- Lãi: 7000000
+(9, 11, 2024, '2024-11-09', 9, 2500000, 6000000), -- Lãi: 3500000
+(10, 11, 2024, '2024-11-10', 10, 3200000, 7000000); -- Lãi: 3800000
+
 
 UPDATE NhapHang
 SET NgaySanXuat = '01/10/2024', NgayHetHan = '01/12/2024'
@@ -401,7 +453,7 @@ WHERE TABLE_NAME = 'Luong';
 EXEC sp_help 'Luong';
 
 
-
+Select * from DoanhThu
 
 
 

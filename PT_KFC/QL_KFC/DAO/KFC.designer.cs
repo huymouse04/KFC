@@ -36,15 +36,15 @@ namespace DAO
     partial void InsertThucDon(ThucDon instance);
     partial void UpdateThucDon(ThucDon instance);
     partial void DeleteThucDon(ThucDon instance);
-    partial void InsertCombo(Combo instance);
-    partial void UpdateCombo(Combo instance);
-    partial void DeleteCombo(Combo instance);
     partial void InsertChiTietCombo(ChiTietCombo instance);
     partial void UpdateChiTietCombo(ChiTietCombo instance);
     partial void DeleteChiTietCombo(ChiTietCombo instance);
     partial void InsertChiTietDonDat(ChiTietDonDat instance);
     partial void UpdateChiTietDonDat(ChiTietDonDat instance);
     partial void DeleteChiTietDonDat(ChiTietDonDat instance);
+    partial void InsertCombo(Combo instance);
+    partial void UpdateCombo(Combo instance);
+    partial void DeleteCombo(Combo instance);
     partial void InsertDoanhThu(DoanhThu instance);
     partial void UpdateDoanhThu(DoanhThu instance);
     partial void DeleteDoanhThu(DoanhThu instance);
@@ -120,14 +120,6 @@ namespace DAO
 			}
 		}
 		
-		public System.Data.Linq.Table<Combo> Combos
-		{
-			get
-			{
-				return this.GetTable<Combo>();
-			}
-		}
-		
 		public System.Data.Linq.Table<ChiTietCombo> ChiTietCombos
 		{
 			get
@@ -141,6 +133,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<ChiTietDonDat>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Combo> Combos
+		{
+			get
+			{
+				return this.GetTable<Combo>();
 			}
 		}
 		
@@ -687,6 +687,486 @@ namespace DAO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietCombo")]
+	public partial class ChiTietCombo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaChiTietCombo;
+		
+		private string _MaCombo;
+		
+		private string _MaSanPham;
+		
+		private int _SoLuong;
+		
+		private EntityRef<Combo> _Combo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaChiTietComboChanging(int value);
+    partial void OnMaChiTietComboChanged();
+    partial void OnMaComboChanging(string value);
+    partial void OnMaComboChanged();
+    partial void OnMaSanPhamChanging(string value);
+    partial void OnMaSanPhamChanged();
+    partial void OnSoLuongChanging(int value);
+    partial void OnSoLuongChanged();
+    #endregion
+		
+		public ChiTietCombo()
+		{
+			this._Combo = default(EntityRef<Combo>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaChiTietCombo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int MaChiTietCombo
+		{
+			get
+			{
+				return this._MaChiTietCombo;
+			}
+			set
+			{
+				if ((this._MaChiTietCombo != value))
+				{
+					this.OnMaChiTietComboChanging(value);
+					this.SendPropertyChanging();
+					this._MaChiTietCombo = value;
+					this.SendPropertyChanged("MaChiTietCombo");
+					this.OnMaChiTietComboChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCombo", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string MaCombo
+		{
+			get
+			{
+				return this._MaCombo;
+			}
+			set
+			{
+				if ((this._MaCombo != value))
+				{
+					if (this._Combo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaComboChanging(value);
+					this.SendPropertyChanging();
+					this._MaCombo = value;
+					this.SendPropertyChanged("MaCombo");
+					this.OnMaComboChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string MaSanPham
+		{
+			get
+			{
+				return this._MaSanPham;
+			}
+			set
+			{
+				if ((this._MaSanPham != value))
+				{
+					this.OnMaSanPhamChanging(value);
+					this.SendPropertyChanging();
+					this._MaSanPham = value;
+					this.SendPropertyChanged("MaSanPham");
+					this.OnMaSanPhamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
+		public int SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this.OnSoLuongChanging(value);
+					this.SendPropertyChanging();
+					this._SoLuong = value;
+					this.SendPropertyChanged("SoLuong");
+					this.OnSoLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietCombo", Storage="_Combo", ThisKey="MaCombo", OtherKey="MaCombo", IsForeignKey=true)]
+		public Combo Combo
+		{
+			get
+			{
+				return this._Combo.Entity;
+			}
+			set
+			{
+				Combo previousValue = this._Combo.Entity;
+				if (((previousValue != value) 
+							|| (this._Combo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Combo.Entity = null;
+						previousValue.ChiTietCombos.Remove(this);
+					}
+					this._Combo.Entity = value;
+					if ((value != null))
+					{
+						value.ChiTietCombos.Add(this);
+						this._MaCombo = value.MaCombo;
+					}
+					else
+					{
+						this._MaCombo = default(string);
+					}
+					this.SendPropertyChanged("Combo");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietDonDat")]
+	public partial class ChiTietDonDat : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaDonDat;
+		
+		private int _ID;
+		
+		private string _MaSanPham;
+		
+		private string _MaCombo;
+		
+		private int _SoLuong;
+		
+		private System.Nullable<double> _DonGia;
+		
+		private EntityRef<ThucDon> _ThucDon;
+		
+		private EntityRef<Combo> _Combo;
+		
+		private EntityRef<DonDat> _DonDat;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaDonDatChanging(int value);
+    partial void OnMaDonDatChanged();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnMaSanPhamChanging(string value);
+    partial void OnMaSanPhamChanged();
+    partial void OnMaComboChanging(string value);
+    partial void OnMaComboChanged();
+    partial void OnSoLuongChanging(int value);
+    partial void OnSoLuongChanged();
+    partial void OnDonGiaChanging(System.Nullable<double> value);
+    partial void OnDonGiaChanged();
+    #endregion
+		
+		public ChiTietDonDat()
+		{
+			this._ThucDon = default(EntityRef<ThucDon>);
+			this._Combo = default(EntityRef<Combo>);
+			this._DonDat = default(EntityRef<DonDat>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="Int NOT NULL")]
+		public int MaDonDat
+		{
+			get
+			{
+				return this._MaDonDat;
+			}
+			set
+			{
+				if ((this._MaDonDat != value))
+				{
+					if (this._DonDat.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaDonDatChanging(value);
+					this.SendPropertyChanging();
+					this._MaDonDat = value;
+					this.SendPropertyChanged("MaDonDat");
+					this.OnMaDonDatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(30)")]
+		public string MaSanPham
+		{
+			get
+			{
+				return this._MaSanPham;
+			}
+			set
+			{
+				if ((this._MaSanPham != value))
+				{
+					if (this._ThucDon.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaSanPhamChanging(value);
+					this.SendPropertyChanging();
+					this._MaSanPham = value;
+					this.SendPropertyChanged("MaSanPham");
+					this.OnMaSanPhamChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCombo", DbType="VarChar(30)")]
+		public string MaCombo
+		{
+			get
+			{
+				return this._MaCombo;
+			}
+			set
+			{
+				if ((this._MaCombo != value))
+				{
+					if (this._Combo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaComboChanging(value);
+					this.SendPropertyChanging();
+					this._MaCombo = value;
+					this.SendPropertyChanged("MaCombo");
+					this.OnMaComboChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
+		public int SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this.OnSoLuongChanging(value);
+					this.SendPropertyChanging();
+					this._SoLuong = value;
+					this.SendPropertyChanged("SoLuong");
+					this.OnSoLuongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Float")]
+		public System.Nullable<double> DonGia
+		{
+			get
+			{
+				return this._DonGia;
+			}
+			set
+			{
+				if ((this._DonGia != value))
+				{
+					this.OnDonGiaChanging(value);
+					this.SendPropertyChanging();
+					this._DonGia = value;
+					this.SendPropertyChanged("DonGia");
+					this.OnDonGiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ThucDon_ChiTietDonDat", Storage="_ThucDon", ThisKey="MaSanPham", OtherKey="MaSanPham", IsForeignKey=true)]
+		public ThucDon ThucDon
+		{
+			get
+			{
+				return this._ThucDon.Entity;
+			}
+			set
+			{
+				ThucDon previousValue = this._ThucDon.Entity;
+				if (((previousValue != value) 
+							|| (this._ThucDon.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._ThucDon.Entity = null;
+						previousValue.ChiTietDonDats.Remove(this);
+					}
+					this._ThucDon.Entity = value;
+					if ((value != null))
+					{
+						value.ChiTietDonDats.Add(this);
+						this._MaSanPham = value.MaSanPham;
+					}
+					else
+					{
+						this._MaSanPham = default(string);
+					}
+					this.SendPropertyChanged("ThucDon");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietDonDat", Storage="_Combo", ThisKey="MaCombo", OtherKey="MaCombo", IsForeignKey=true)]
+		public Combo Combo
+		{
+			get
+			{
+				return this._Combo.Entity;
+			}
+			set
+			{
+				Combo previousValue = this._Combo.Entity;
+				if (((previousValue != value) 
+							|| (this._Combo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Combo.Entity = null;
+						previousValue.ChiTietDonDats.Remove(this);
+					}
+					this._Combo.Entity = value;
+					if ((value != null))
+					{
+						value.ChiTietDonDats.Add(this);
+						this._MaCombo = value.MaCombo;
+					}
+					else
+					{
+						this._MaCombo = default(string);
+					}
+					this.SendPropertyChanged("Combo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DonDat_ChiTietDonDat", Storage="_DonDat", ThisKey="MaDonDat", OtherKey="MaDonDat", IsForeignKey=true)]
+		public DonDat DonDat
+		{
+			get
+			{
+				return this._DonDat.Entity;
+			}
+			set
+			{
+				DonDat previousValue = this._DonDat.Entity;
+				if (((previousValue != value) 
+							|| (this._DonDat.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DonDat.Entity = null;
+						previousValue.ChiTietDonDats.Remove(this);
+					}
+					this._DonDat.Entity = value;
+					if ((value != null))
+					{
+						value.ChiTietDonDats.Add(this);
+						this._MaDonDat = value.MaDonDat;
+					}
+					else
+					{
+						this._MaDonDat = default(int);
+					}
+					this.SendPropertyChanged("DonDat");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Combo")]
 	public partial class Combo : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -922,486 +1402,6 @@ namespace DAO
 		{
 			this.SendPropertyChanging();
 			entity.Combo = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietCombo")]
-	public partial class ChiTietCombo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaChiTietCombo;
-		
-		private string _MaCombo;
-		
-		private string _MaSanPham;
-		
-		private int _SoLuong;
-		
-		private EntityRef<Combo> _Combo;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaChiTietComboChanging(int value);
-    partial void OnMaChiTietComboChanged();
-    partial void OnMaComboChanging(string value);
-    partial void OnMaComboChanged();
-    partial void OnMaSanPhamChanging(string value);
-    partial void OnMaSanPhamChanged();
-    partial void OnSoLuongChanging(int value);
-    partial void OnSoLuongChanged();
-    #endregion
-		
-		public ChiTietCombo()
-		{
-			this._Combo = default(EntityRef<Combo>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaChiTietCombo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaChiTietCombo
-		{
-			get
-			{
-				return this._MaChiTietCombo;
-			}
-			set
-			{
-				if ((this._MaChiTietCombo != value))
-				{
-					this.OnMaChiTietComboChanging(value);
-					this.SendPropertyChanging();
-					this._MaChiTietCombo = value;
-					this.SendPropertyChanged("MaChiTietCombo");
-					this.OnMaChiTietComboChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCombo", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string MaCombo
-		{
-			get
-			{
-				return this._MaCombo;
-			}
-			set
-			{
-				if ((this._MaCombo != value))
-				{
-					if (this._Combo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaComboChanging(value);
-					this.SendPropertyChanging();
-					this._MaCombo = value;
-					this.SendPropertyChanged("MaCombo");
-					this.OnMaComboChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
-		public string MaSanPham
-		{
-			get
-			{
-				return this._MaSanPham;
-			}
-			set
-			{
-				if ((this._MaSanPham != value))
-				{
-					this.OnMaSanPhamChanging(value);
-					this.SendPropertyChanging();
-					this._MaSanPham = value;
-					this.SendPropertyChanged("MaSanPham");
-					this.OnMaSanPhamChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
-		public int SoLuong
-		{
-			get
-			{
-				return this._SoLuong;
-			}
-			set
-			{
-				if ((this._SoLuong != value))
-				{
-					this.OnSoLuongChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuong = value;
-					this.SendPropertyChanged("SoLuong");
-					this.OnSoLuongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietCombo", Storage="_Combo", ThisKey="MaCombo", OtherKey="MaCombo", IsForeignKey=true)]
-		public Combo Combo
-		{
-			get
-			{
-				return this._Combo.Entity;
-			}
-			set
-			{
-				Combo previousValue = this._Combo.Entity;
-				if (((previousValue != value) 
-							|| (this._Combo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Combo.Entity = null;
-						previousValue.ChiTietCombos.Remove(this);
-					}
-					this._Combo.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietCombos.Add(this);
-						this._MaCombo = value.MaCombo;
-					}
-					else
-					{
-						this._MaCombo = default(string);
-					}
-					this.SendPropertyChanged("Combo");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ChiTietDonDat")]
-	public partial class ChiTietDonDat : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaDonDat;
-		
-		private int _ID;
-		
-		private string _MaSanPham;
-		
-		private string _MaCombo;
-		
-		private int _SoLuong;
-		
-		private System.Nullable<double> _DonGia;
-		
-		private EntityRef<Combo> _Combo;
-		
-		private EntityRef<ThucDon> _ThucDon;
-		
-		private EntityRef<DonDat> _DonDat;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDonDatChanging(int value);
-    partial void OnMaDonDatChanged();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnMaSanPhamChanging(string value);
-    partial void OnMaSanPhamChanged();
-    partial void OnMaComboChanging(string value);
-    partial void OnMaComboChanged();
-    partial void OnSoLuongChanging(int value);
-    partial void OnSoLuongChanged();
-    partial void OnDonGiaChanging(System.Nullable<double> value);
-    partial void OnDonGiaChanged();
-    #endregion
-		
-		public ChiTietDonDat()
-		{
-			this._Combo = default(EntityRef<Combo>);
-			this._ThucDon = default(EntityRef<ThucDon>);
-			this._DonDat = default(EntityRef<DonDat>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonDat", DbType="Int NOT NULL")]
-		public int MaDonDat
-		{
-			get
-			{
-				return this._MaDonDat;
-			}
-			set
-			{
-				if ((this._MaDonDat != value))
-				{
-					if (this._DonDat.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaDonDatChanging(value);
-					this.SendPropertyChanging();
-					this._MaDonDat = value;
-					this.SendPropertyChanged("MaDonDat");
-					this.OnMaDonDatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSanPham", DbType="VarChar(30)")]
-		public string MaSanPham
-		{
-			get
-			{
-				return this._MaSanPham;
-			}
-			set
-			{
-				if ((this._MaSanPham != value))
-				{
-					if (this._ThucDon.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaSanPhamChanging(value);
-					this.SendPropertyChanging();
-					this._MaSanPham = value;
-					this.SendPropertyChanged("MaSanPham");
-					this.OnMaSanPhamChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaCombo", DbType="VarChar(30)")]
-		public string MaCombo
-		{
-			get
-			{
-				return this._MaCombo;
-			}
-			set
-			{
-				if ((this._MaCombo != value))
-				{
-					if (this._Combo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaComboChanging(value);
-					this.SendPropertyChanging();
-					this._MaCombo = value;
-					this.SendPropertyChanged("MaCombo");
-					this.OnMaComboChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int NOT NULL")]
-		public int SoLuong
-		{
-			get
-			{
-				return this._SoLuong;
-			}
-			set
-			{
-				if ((this._SoLuong != value))
-				{
-					this.OnSoLuongChanging(value);
-					this.SendPropertyChanging();
-					this._SoLuong = value;
-					this.SendPropertyChanged("SoLuong");
-					this.OnSoLuongChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonGia", DbType="Float")]
-		public System.Nullable<double> DonGia
-		{
-			get
-			{
-				return this._DonGia;
-			}
-			set
-			{
-				if ((this._DonGia != value))
-				{
-					this.OnDonGiaChanging(value);
-					this.SendPropertyChanging();
-					this._DonGia = value;
-					this.SendPropertyChanged("DonGia");
-					this.OnDonGiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Combo_ChiTietDonDat", Storage="_Combo", ThisKey="MaCombo", OtherKey="MaCombo", IsForeignKey=true)]
-		public Combo Combo
-		{
-			get
-			{
-				return this._Combo.Entity;
-			}
-			set
-			{
-				Combo previousValue = this._Combo.Entity;
-				if (((previousValue != value) 
-							|| (this._Combo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Combo.Entity = null;
-						previousValue.ChiTietDonDats.Remove(this);
-					}
-					this._Combo.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietDonDats.Add(this);
-						this._MaCombo = value.MaCombo;
-					}
-					else
-					{
-						this._MaCombo = default(string);
-					}
-					this.SendPropertyChanged("Combo");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ThucDon_ChiTietDonDat", Storage="_ThucDon", ThisKey="MaSanPham", OtherKey="MaSanPham", IsForeignKey=true)]
-		public ThucDon ThucDon
-		{
-			get
-			{
-				return this._ThucDon.Entity;
-			}
-			set
-			{
-				ThucDon previousValue = this._ThucDon.Entity;
-				if (((previousValue != value) 
-							|| (this._ThucDon.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ThucDon.Entity = null;
-						previousValue.ChiTietDonDats.Remove(this);
-					}
-					this._ThucDon.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietDonDats.Add(this);
-						this._MaSanPham = value.MaSanPham;
-					}
-					else
-					{
-						this._MaSanPham = default(string);
-					}
-					this.SendPropertyChanged("ThucDon");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DonDat_ChiTietDonDat", Storage="_DonDat", ThisKey="MaDonDat", OtherKey="MaDonDat", IsForeignKey=true)]
-		public DonDat DonDat
-		{
-			get
-			{
-				return this._DonDat.Entity;
-			}
-			set
-			{
-				DonDat previousValue = this._DonDat.Entity;
-				if (((previousValue != value) 
-							|| (this._DonDat.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DonDat.Entity = null;
-						previousValue.ChiTietDonDats.Remove(this);
-					}
-					this._DonDat.Entity = value;
-					if ((value != null))
-					{
-						value.ChiTietDonDats.Add(this);
-						this._MaDonDat = value.MaDonDat;
-					}
-					else
-					{
-						this._MaDonDat = default(int);
-					}
-					this.SendPropertyChanged("DonDat");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -4230,7 +4230,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySanXuat", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySanXuat", DbType="Date")]
 		public System.Nullable<System.DateTime> NgaySanXuat
 		{
 			get
@@ -4250,7 +4250,7 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHetHan", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayHetHan", DbType="Date")]
 		public System.Nullable<System.DateTime> NgayHetHan
 		{
 			get

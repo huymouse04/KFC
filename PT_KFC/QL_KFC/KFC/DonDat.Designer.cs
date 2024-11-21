@@ -69,6 +69,8 @@
             this.tbMDD = new System.Windows.Forms.TextBox();
             this.lbMDD = new System.Windows.Forms.Label();
             this.pnDSM = new System.Windows.Forms.Panel();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMDD)).BeginInit();
             this.pnMONDD.SuspendLayout();
             this.pnDD.SuspendLayout();
@@ -82,9 +84,9 @@
             this.btn.BackColor = System.Drawing.Color.Firebrick;
             this.btn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn.ForeColor = System.Drawing.Color.White;
-            this.btn.Location = new System.Drawing.Point(127, 299);
+            this.btn.Location = new System.Drawing.Point(9, 299);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(151, 33);
+            this.btn.Size = new System.Drawing.Size(145, 33);
             this.btn.TabIndex = 33;
             this.btn.Text = "THANH TOÁN";
             this.btn.UseVisualStyleBackColor = false;
@@ -310,6 +312,8 @@
             // gbDD
             // 
             this.gbDD.BackColor = System.Drawing.Color.DarkRed;
+            this.gbDD.Controls.Add(this.btnHuy);
+            this.gbDD.Controls.Add(this.btnLuu);
             this.gbDD.Controls.Add(this.comboBox2);
             this.gbDD.Controls.Add(this.comboBox1);
             this.gbDD.Controls.Add(this.btn);
@@ -342,7 +346,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(127, 123);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(189, 27);
             this.comboBox2.TabIndex = 35;
@@ -351,7 +355,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(127, 59);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 27);
             this.comboBox1.TabIndex = 34;
@@ -532,6 +536,30 @@
             this.pnDSM.Size = new System.Drawing.Size(151, 609);
             this.pnDSM.TabIndex = 3;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Location = new System.Drawing.Point(160, 299);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(145, 33);
+            this.btnLuu.TabIndex = 36;
+            this.btnLuu.Text = "LƯU";
+            this.btnLuu.UseVisualStyleBackColor = false;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.Color.Firebrick;
+            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.Location = new System.Drawing.Point(310, 299);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(145, 33);
+            this.btnHuy.TabIndex = 37;
+            this.btnHuy.Text = "HỦY";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            // 
             // DonDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,7 +569,7 @@
             this.Controls.Add(this.pnMONDD);
             this.Controls.Add(this.pnDD);
             this.Controls.Add(this.pnDSM);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DonDat";
             this.Text = "Đơn Đặt";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMDD)).EndInit();
@@ -599,5 +627,7 @@
         private System.Windows.Forms.TextBox tbMDD;
         private System.Windows.Forms.Label lbMDD;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

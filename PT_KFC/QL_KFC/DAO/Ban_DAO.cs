@@ -181,6 +181,42 @@ namespace DAO
             }
         }
 
+        // Phương thức cập nhật trạng thái bàn về "Trống" sau khi hết thời gian
+        public void UpdateBanStatusToEmptyAfterExpired(string maBan)
+        {
+            try
+            {
+                var existingBan = DB.Bans.FirstOrDefault(ban => ban.MaBan == maBan);
+                if (existingBan != null)
+                {
+                    // Kiểm tra nếu thời gian kết thúc đã qua (bàn đã hết thời gian)
+                    if (existingBan.ThoiGianRoi <= DateTime.Now)
+                    {
+                        // Đặt trạng thái bàn về "Trống"
+                        existingBan.TrangThaiBan = false; // false = bàn trống
 
+                        // Cập nhật lại thời gian
+                        existingBan.ThoiGianDen = DateTime.MinValue;
+                        existingBan.ThoiGianRoi = DateTime.MinValue;
+
+                        // Lưu thay đổi vào cơ sở dữ liệu
+                        DB.SubmitChanges();
+                    }
+                    else
+                    {
+                        // Nếu bàn chưa hết thời gian, không cần thay đổi trạng thái
+                        throw new Exception("Bàn chưa hết thời gian. Không thể cập nhật trạng thái.");
+                    }
+                }
+                else
+                {
+                    throw new Exception("Bàn không tồn tại.");
+                }
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex);
+            }
+        }
     }
 }

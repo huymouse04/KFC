@@ -79,5 +79,17 @@ namespace BUS
                 throw new ArgumentException("Tên bàn không thể rỗng hoặc null", nameof(ban.TenBan));
             }
         }
+
+        // Phương thức cập nhật trạng thái bàn về "Trống" sau khi hết thời gian
+        public void UpdateBanStatusToEmpty(string maBan)
+        {
+            if (string.IsNullOrWhiteSpace(maBan))
+            {
+                throw new ArgumentException("Mã bàn không thể rỗng hoặc null", nameof(maBan));
+            }
+
+            // Gọi phương thức trong DAO để cập nhật trạng thái
+            dao.UpdateBanStatusToEmptyAfterExpired(maBan);
+        }
     }
 }

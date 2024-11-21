@@ -62,10 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ban_BUS.cs" />
-<Compile Include="Combo_BUS.cs" />
-<Compile Include="ChiTietCombo_BUS.cs" />
-
+    <Compile Include="Combo_BUS.cs" />
+    <Compile Include="ChiTietCombo_BUS.cs" />
     <Compile Include="Connection_BUS.cs" />
+    <Compile Include="DoanhThu_BUS.cs" />
     <Compile Include="KhachHang_BUS.cs" />
     <Compile Include="KhoHang_BUS.cs" />
     <Compile Include="KhuyenMai_BUS.cs" />

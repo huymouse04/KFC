@@ -66,6 +66,7 @@
     <Compile Include="ChiTietCombo_DAO.cs" />
     <Compile Include="Combo_DAO.cs" />
     <Compile Include="Connection_DAO.cs" />
+    <Compile Include="DoanhThu_DAO.cs" />
     <Compile Include="KFC.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
