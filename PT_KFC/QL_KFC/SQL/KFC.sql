@@ -493,6 +493,9 @@ VALUES
 (9, 11, 2024, '2024-11-09', 9, 2500000, 6000000), -- Lãi: 3500000
 (10, 11, 2024, '2024-11-10', 10, 3200000, 7000000); -- Lãi: 3800000
 
+INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
+('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
+
 
 UPDATE NhapHang
 SET NgaySanXuat = '01/10/2024', NgayHetHan = '01/12/2024'

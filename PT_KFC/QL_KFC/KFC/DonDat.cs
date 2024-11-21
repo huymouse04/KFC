@@ -650,7 +650,8 @@ namespace KFC
                 MaKhuyenMai = string.IsNullOrEmpty(maKhuyenMai) ? null : maKhuyenMai,
                 MaKhachHang = string.IsNullOrEmpty(maKhachHang) ? null : maKhachHang,
                 SoTienNhan = soTienNhan,
-                SoTienTra = soTienTra
+                SoTienTra = soTienTra,
+                TongTien = (int)tongTienThanhToan
             };
 
             // Cập nhật đơn đặt
