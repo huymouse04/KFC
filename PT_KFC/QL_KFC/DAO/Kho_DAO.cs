@@ -9,6 +9,43 @@ namespace DAO
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
 
+
+        public Kho_DTO GetSanPhamByMa(string maSanPham)
+        {
+                return DB.Khos
+                         .Where(sp => sp.MaSanPham == maSanPham)
+                         .Select(sp => new Kho_DTO
+                         {
+                             MaSanPham = sp.MaSanPham,
+                             TenSanPham = sp.TenSanPham,
+                             SoLuong = sp.SoLuong,
+                         })
+                         .FirstOrDefault();
+            
+        }
+
+        public bool UpdateSoLuongTon(string maSanPham, int soLuongTru)
+        {
+                var sanPham = DB.Khos.FirstOrDefault(sp => sp.MaSanPham == maSanPham);
+                if (sanPham != null)
+                {
+                    // Kiểm tra nếu số lượng tồn nhỏ hơn số lượng cần trừ
+                    if (sanPham.SoLuong < soLuongTru)
+                        return false; // Không đủ hàng để trừ
+
+                    // Trừ số lượng tồn
+                    sanPham.SoLuong -= soLuongTru;
+
+                    // Lưu thay đổi vào cơ sở dữ liệu
+                    DB.SubmitChanges();
+                    return true;
+                }
+                return false; // Không tìm thấy sản phẩm
+            
+        }
+
+
+
         // Lấy tất cả sản phẩm trong kho
         public List<Kho_DTO> GetAllKho()
         {

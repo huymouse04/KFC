@@ -14,7 +14,20 @@ namespace DAO
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
 
 
-   
+        public List<ChiTietDonDat_DTO> GetChiTietDonDatByMaDon(string maDonDat)
+        {
+                return DB.ChiTietDonDats
+                         .Where(ct => ct.MaDonDat == maDonDat)
+                         .Select(ct => new ChiTietDonDat_DTO
+                         {
+                             MaDonDat = ct.MaDonDat,
+                             MaSanPham = ct.MaSanPham,
+                             SoLuong = ct.SoLuong
+                         })
+                         .ToList();
+            
+        }
+
 
         public string TaoDonDatMoi()
         {

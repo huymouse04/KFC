@@ -12,10 +12,21 @@ namespace BUS
     public class Kho_BUS
     {
         private Kho_DAO khoDAO = new Kho_DAO();
-        
-        // Phương thức tìm kiếm nhân viên
 
-        public List<Kho_DTO> SearchKho(string searchTerm)
+        public Kho_DTO GetSanPhamByMa(string maSanPham)
+        {
+            return khoDAO.GetSanPhamByMa(maSanPham);
+
+        }
+
+        public bool UpdateSoLuongTon(string maSanPham, int soLuongTru)
+        {
+          return  khoDAO.UpdateSoLuongTon(maSanPham, soLuongTru);
+        }
+
+            // Phương thức tìm kiếm nhân viên
+
+            public List<Kho_DTO> SearchKho(string searchTerm)
         {
             return khoDAO.SearchKho(searchTerm); // Gọi phương thức tìm kiếm từ DAO
         }

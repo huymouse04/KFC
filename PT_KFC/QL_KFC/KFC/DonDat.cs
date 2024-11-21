@@ -31,6 +31,7 @@ namespace KFC
         Ban_BUS busban = new Ban_BUS();
         KhuyenMai_BUS buskhuyenmai = new KhuyenMai_BUS();
         KhachHang_BUS buskhachhang = new KhachHang_BUS();
+        Kho_BUS buskho = new Kho_BUS();
         private string currentMaDonDat;
         private decimal tongTienGoc = 0; // Biến lưu tổng tiền gốc
 
@@ -188,6 +189,8 @@ namespace KFC
             //// Hiển thị mã mới trong TextBox
             //txtMaDonDat.Text = maDon;
 
+            // Kiểm tra nếu txtMaDonDat đã có dữ liệu
+
             currentMaDonDat = busdondat.TaoDonDatMoi();
             //MessageBox.Show("Đã tạo mã đơn đặt: " + currentMaDonDat, "Thông báo");
             txtMaDonDat.Text = currentMaDonDat.ToString();
@@ -330,6 +333,14 @@ namespace KFC
         private void txtMaDonDat_TextChanged(object sender, EventArgs e)
         {
             txtMaDonDat2.Text = txtMaDonDat.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(txtMaDonDat.Text))
+            {
+                btnMaDonDat.Enabled = false;
+            }
+            else
+            {
+                btnMaDonDat.Enabled = true;
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -534,6 +545,33 @@ namespace KFC
 
             txtTongTien.Text = tongTienThanhToan.ToString("N0");
 
+            // Cộng điểm tích lũy mới cho khách hàng
+            if (!string.IsNullOrEmpty(maKhachHang))
+            {
+                var khachHang = buskhachhang.GetKhachHangByMa(maKhachHang);
+                if (khachHang != null)
+                {
+                    int diemMoi = (int)(tongTienThanhToan / 10000); // 10,000 VNĐ = 1 điểm
+                    khachHang.DiemTichLuy += diemMoi;
+                    buskhachhang.UpdateKhachHang(khachHang);
+                }
+            }
+
+            // Trừ số lượng trong kho
+            var chiTietDonDat = busdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
+            foreach (var chiTiet in chiTietDonDat)
+            {
+                // Gọi phương thức UpdateSoLuongTon
+                bool isUpdated = buskho.UpdateSoLuongTon(chiTiet.MaSanPham, chiTiet.SoLuong);
+
+                if (!isUpdated)
+                {
+                    MessageBox.Show($"Sản phẩm {chiTiet.MaSanPham} không đủ số lượng trong kho!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Dừng thanh toán nếu có lỗi
+                }
+            }
+
+
             // Xử lý tiền nhận và tiền trả
             int soTienNhan = 0, soTienTra = 0;
             int.TryParse(txtTienNhan.Text.Trim(), out soTienNhan);
@@ -732,76 +770,77 @@ namespace KFC
 
         private void txtDiemThuong_TextChanged(object sender, EventArgs e)
         {
-            // Lấy tổng tiền gốc
-            decimal tongTienThanhToan = tongTienGoc;
-
-            // Áp dụng khuyến mãi (nếu có)
-            string maKhuyenMai = cboMaKhuyenMai.Text.Trim();
-            if (!string.IsNullOrEmpty(maKhuyenMai))
+            try
             {
-                var khuyenMai = buskhuyenmai.GetKhuyenMaiByMa(maKhuyenMai);
-                if (khuyenMai != null && khuyenMai.SoLuong > 0)
+                // Kiểm tra nếu không có khách hàng được chọn
+                if (string.IsNullOrEmpty(cboKhachHang.Text))
                 {
-                    tongTienThanhToan -= khuyenMai.GiaTriGiam;
-                    if (tongTienThanhToan < 0) tongTienThanhToan = 0;
+                    return;
                 }
-            }
 
-            // Xử lý điểm thưởng
-            int diemThuong = 0;
-            string diemThuongText = txtDiemThuong.Text.Trim();
-
-            // Nếu textbox điểm thưởng trống, chỉ hiển thị tổng tiền sau khuyến mãi
-            if (string.IsNullOrEmpty(diemThuongText))
-            {
-                txtTongTien.Text = tongTienThanhToan.ToString("N0");
-                return;
-            }
-
-            // Kiểm tra điểm thưởng có hợp lệ không
-            if (!int.TryParse(diemThuongText, out diemThuong) || diemThuong < 0)
-            {
-                MessageBox.Show("Vui lòng nhập số điểm hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtDiemThuong.Text = "0";
-                txtTongTien.Text = tongTienThanhToan.ToString("N0");
-                return;
-            }
-
-            // Chỉ xử lý điểm thưởng khi có khách hàng được chọn
-            if (!string.IsNullOrEmpty(cboKhachHang.Text))
-            {
+                // Lấy thông tin khách hàng
                 string maKhachHang = cboKhachHang.Text.Trim();
                 var khachHang = buskhachhang.GetKhachHangByMa(maKhachHang);
-                if (khachHang != null)
+                if (khachHang == null)
                 {
-                    // Kiểm tra và giới hạn điểm sử dụng không vượt quá điểm tích lũy
-                    if (diemThuong > khachHang.DiemTichLuy)
+                    return;
+                }
+
+                // Xử lý điểm thưởng
+                decimal tongTienHienTai = tongTienGoc;
+                int diemSuDung = 0;
+
+                if (!string.IsNullOrEmpty(txtDiemThuong.Text) &&
+                    int.TryParse(txtDiemThuong.Text, out diemSuDung))
+                {
+                    // Kiểm tra điểm sử dụng không âm
+                    if (diemSuDung < 0)
                     {
-                        MessageBox.Show($"Bạn chỉ có {khachHang.DiemTichLuy} điểm tích lũy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        diemThuong = khachHang.DiemTichLuy;
-                        txtDiemThuong.Text = diemThuong.ToString();
+                        txtDiemThuong.Text = "0";
+                        diemSuDung = 0;
                     }
 
-                    // Quy đổi điểm thành tiền (1 điểm = 1000 đồng)
-                    decimal giaTriDiem = diemThuong * 1000;
-
-                    // Chỉ trừ điểm nếu tổng tiền sau khi trừ vẫn lớn hơn hoặc bằng 0
-                    if (tongTienThanhToan >= giaTriDiem)
+                    // Kiểm tra điểm sử dụng không vượt quá điểm tích lũy
+                    if (diemSuDung > khachHang.DiemTichLuy)
                     {
-                        tongTienThanhToan -= giaTriDiem;
+                        MessageBox.Show($"Bạn chỉ có {khachHang.DiemTichLuy} điểm tích lũy!", "Thông báo");
+                        txtDiemThuong.Text = khachHang.DiemTichLuy.ToString();
+                        diemSuDung = khachHang.DiemTichLuy;
                     }
-                    else
+
+                    // Tính giá trị tiền từ điểm (1 điểm = 1000 đồng)
+                    decimal giaTriDiem = diemSuDung * 1000;
+
+                    // Kiểm tra nếu giá trị điểm vượt quá tổng tiền
+                    if (giaTriDiem > tongTienGoc)
                     {
-                        // Nếu giá trị điểm lớn hơn tổng tiền, tính lại số điểm tối đa có thể sử dụng
-                        diemThuong = (int)(tongTienThanhToan / 1000);
-                        txtDiemThuong.Text = diemThuong.ToString();
-                        tongTienThanhToan -= (diemThuong * 1000);
+                        int diemToiDa = (int)(tongTienGoc / 1000);
+                        txtDiemThuong.Text = diemToiDa.ToString();
+                        giaTriDiem = diemToiDa * 1000;
+                    }
+
+                    tongTienHienTai -= giaTriDiem;
+                }
+
+                // Áp dụng khuyến mãi sau khi tính điểm (nếu có)
+                string maKhuyenMai = cboMaKhuyenMai.Text.Trim();
+                if (!string.IsNullOrEmpty(maKhuyenMai))
+                {
+                    var khuyenMai = buskhuyenmai.GetKhuyenMaiByMa(maKhuyenMai);
+                    if (khuyenMai != null && khuyenMai.SoLuong > 0)
+                    {
+                        tongTienHienTai -= khuyenMai.GiaTriGiam;
+                        if (tongTienHienTai < 0) tongTienHienTai = 0;
                     }
                 }
-            }
 
-            // Cập nhật hiển thị tổng tiền
-            txtTongTien.Text = tongTienThanhToan.ToString("N0");
+                txtTongTien.Text = tongTienHienTai.ToString("N0");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tính điểm: {ex.Message}", "Lỗi");
+                txtTongTien.Text = tongTienGoc.ToString("N0");
+            }
         }
     }
 }
