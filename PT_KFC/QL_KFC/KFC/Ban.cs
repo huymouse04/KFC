@@ -19,6 +19,7 @@ namespace KFC
 
         private void Ban_Load(object sender, EventArgs e)
         {
+
             LoadData();
             LoadComboBoxLoc();
         }
@@ -137,6 +138,7 @@ namespace KFC
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
+
             LoadData();
             tbtTiemKiem.Clear();
         }

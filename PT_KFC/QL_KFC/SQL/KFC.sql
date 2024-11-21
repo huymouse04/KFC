@@ -77,11 +77,11 @@ CREATE TABLE NhapHang (
     SoLuong INT NOT NULL,  
     DonViTinh NVARCHAR(50),  
     DonGia FLOAT,  
-    NgayNhap DATETIME NOT NULL,  
+    NgayNhap DATETIME NOT NULL,		
     MaLoaiHang VARCHAR(20),  
 	MaNhaCungCap VARCHAR(10),
-	NgaySanXuat DATETIME,
-    NgayHetHan DATETIME
+	NgaySanXuat DATE,
+    NgayHetHan DATE,
     FOREIGN KEY (MaSanPham) REFERENCES Kho(MaSanPham),  
     FOREIGN KEY (MaLoaiHang) REFERENCES LoaiHang(MaLoaiHang),
 	FOREIGN KEY (MaNhaCungCap) REFERENCES NhaCungCap(MaNhaCungCap)
@@ -426,17 +426,19 @@ VALUES
     ('B030', 'Bàn 30',  null, null, 0 , null);
 
 -- Bảng Nhập Hàng
-INSERT INTO NhapHang (MaSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, MaNhaCungCap) VALUES
-('GR001', 100, N'Chiếc', 65000, GETDATE(), 'GR', 'NCC01'),
-('GR002', 50, N'Chiếc', 70000, GETDATE(), 'GR', 'NCC02'),
-('GQ001', 80, N'Chiếc', 85000, GETDATE(), 'GQ', 'NCC03'),
-('NUOC001', 200, N'Lít', 15000, GETDATE(), 'NUOC', 'NCC04'),
-('TAN001', 120, N'Cái', 30000, GETDATE(), 'TAN', 'NCC05'),
-('BMC001', 80, N'Chiếc', 50000, GETDATE(), 'BMC', 'NCC06'),
-('BMC002', 70, N'Dĩa', 60000, GETDATE(), 'BMC', 'NCC07'),
-('GR003', 90, N'Chiếc', 68000, GETDATE(), 'GR', 'NCC08'),
-('NUOC002', 180, N'Lít', 18000, GETDATE(), 'NUOC', 'NCC09'),
-('TM001', 150, N'Cái', 20000, GETDATE(), 'TM', 'NCC10');
+INSERT INTO NhapHang (MaSanPham, TenSanPham, SoLuong, DonViTinh, DonGia, NgayNhap, MaLoaiHang, MaNhaCungCap, NgaySanXuat, NgayHetHan) VALUES
+('GR001', N'Gà Rán Giòn', 50, N'Chiếc', 65000, GETDATE(), 'GR', 'NCC01', '2024-12-01', '2025-06-30'),
+('GR002', N'Gà Rán Nguyên Tâm', 30, N'Chiếc', 70000, GETDATE(), 'GR', 'NCC02', '2024-12-02', '2025-07-30'),
+('GQ001', N'Gà Quay Nguyên Tâm', 40, N'Chiếc', 85000, GETDATE(), 'GQ', 'NCC03', '2024-12-15', '2025-06-15'),
+('NUOC001', N'Nước Ngọt', 100, N'Lít', 15000, GETDATE(), 'NUOC', 'NCC04', '2024-12-03', '2025-12-03'),
+('TM001', N'Bánh Tart', 70, N'Cái', 20000, GETDATE(), 'TM', 'NCC05', '2024-12-20', '2025-04-20'),
+('TAN001', N'Khoai Tây Chiên', 80, N'Cái', 30000, GETDATE(), 'TAN', 'NCC06', '2024-12-15', '2025-08-15'),
+('BMC001', N'Burger Gà', 40, N'Chiếc', 50000, GETDATE(), 'BMC', 'NCC07', '2024-12-25', '2025-05-25'),
+('BMC002', N'Mì Ý', 30, N'Dĩa', 60000, GETDATE(), 'BMC', 'NCC08', '2024-12-05', '2025-05-05'),
+('GR003', N'Gà Rán Cay', 45, N'Chiếc', 68000, GETDATE(), 'GR', 'NCC01', '2024-12-30', '2025-07-30'),
+('NUOC002', N'Nước Trái Cây', 90, N'Lít', 18000, GETDATE(), 'NUOC', 'NCC09', '2024-12-01', '2025-12-01');
+
+
 
 INSERT INTO Combo (MaCombo, TenCombo, GiaCombo, SoLuong, PhanTramGiam, NgayBatDau , NgayketThuc)  
 VALUES 
@@ -461,9 +463,36 @@ VALUES
 ('CB05', 'TM002', 2),
 ('CB06', 'BMC006', 3),
 ('CB06', 'BMC007', 2);
+INSERT INTO HoaDon (MaDonDat, NgayThanhToan) VALUES
+(1, GETDATE()),
+(2, GETDATE()),
+(3, GETDATE()),
+(4, GETDATE()),
+(5, GETDATE()),
+(6, GETDATE()),
+(7, GETDATE()),
+(8, GETDATE()),
+(9, GETDATE()),
+(10, GETDATE());
 
-INSERT INTO KhuyenMai (MaKhuyenMai, NgayBatDau, NgayKetThuc, GiaTriGiam, SoLuong, TrangThai) VALUES
-('KM01', GETDATE(), DATEADD(DAY, 30, GETDATE()), 20000, 100, 1);
+
+INSERT INTO DoanhThu (MaNhapHang, Thang, Nam, NgayGhiNhan, MaHoaDon, TongChiTieu, TongDoanhThu)
+VALUES
+-- Nhập hàng có lãi
+(1, 11, 2024, '2024-11-01', 1, 6000000, 14000000), -- Lãi: 8000000
+(2, 11, 2024, '2024-11-02', 2, 3200000, 7200000), -- Lãi: 4000000
+(3, 11, 2024, '2024-11-03', 3, 6600000, 14600000), -- Lãi: 8000000
+-- Nhập hàng hòa vốn
+(4, 11, 2024, '2024-11-04', 4, 5000000, 5000000), -- Hòa vốn
+(5, 11, 2024, '2024-11-05', 5, 3600000, 3600000), -- Hòa vốn
+-- Nhập hàng lỗ
+(6, 11, 2024, '2024-11-06', 6, 9000000, 8000000), -- Lỗ: 1000000
+(7, 11, 2024, '2024-11-07', 7, 7000000, 6500000), -- Lỗ: 500000
+-- Nhập hàng có lãi cao
+(8, 11, 2024, '2024-11-08', 8, 5500000, 12500000), -- Lãi: 7000000
+(9, 11, 2024, '2024-11-09', 9, 2500000, 6000000), -- Lãi: 3500000
+(10, 11, 2024, '2024-11-10', 10, 3200000, 7000000); -- Lãi: 3800000
+
 
 UPDATE NhapHang
 SET NgaySanXuat = '01/10/2024', NgayHetHan = '01/12/2024'
@@ -505,7 +534,7 @@ select * from Ban
 --EXEC sp_help 'Luong';
 
 
-
+Select * from DoanhThu
 
 
 

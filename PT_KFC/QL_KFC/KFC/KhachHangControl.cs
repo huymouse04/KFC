@@ -64,10 +64,12 @@ namespace KFC
                 throw new ArgumentNullException(nameof(khachHang), "Dữ liệu khách hàng không được null");
             }
 
-            this.khachHang = khachHang; // Gán dữ liệu khách hàng để sử dụng trong các sự kiện
-            lblMaKH.Text = khachHang.MaKhachHang; // Hiển thị mã khách hàng
-            lblTen.Text = khachHang.TenKhachHang; // Hiển thị tên khách hàng  
-            lblDiemTL.Text = khachHang.DiemTichLuy.ToString(); // Hiển thị điểm tích lũy
+            this.khachHang = khachHang;
+            lblMaKH.Text = khachHang.MaKhachHang;
+            lblTen.Text = khachHang.TenKhachHang;
+            lblDiemTL.Text = khachHang.DiemTichLuy.ToString();
+
+            Invalidate(); // Làm mới control để cập nhật viền khi điểm thay đổi
         }
 
         public string MaKH
@@ -132,8 +134,34 @@ namespace KFC
 
         private void KhachHangControl_Paint_1(object sender, PaintEventArgs e)
         {
-            Color borderColor = Color.Red; // Màu viền
-            int borderWidth = 2; // Độ dày viền
+            Color borderColor = Color.Red; // Màu viền mặc định là đỏ
+            int borderWidth = 2; // Độ dày mặc định của viền
+
+            // Cập nhật màu viền và độ dày dựa trên DiemTichLuy
+            if (khachHang != null)
+            {
+                if (khachHang.DiemTichLuy >= 150)
+                {
+                    borderColor = Color.DarkRed; // Màu viền đặc biệt cho mức cao nhất
+                    borderWidth = 4;
+                    this.BackColor = Color.Gold; // Đổi nền cho khách hàng cao cấp
+                }
+                else if (khachHang.DiemTichLuy >= 100)
+                {
+                    borderColor = Color.OrangeRed;
+                    borderWidth = 3;
+                }
+                else if (khachHang.DiemTichLuy >= 50)
+                {
+                    borderColor = Color.Tomato;
+                    borderWidth = 2;
+                }
+                else
+                {
+                    borderColor = Color.Red;
+                    borderWidth = 1;
+                }
+            }
 
             using (Pen pen = new Pen(borderColor, borderWidth))
             {
