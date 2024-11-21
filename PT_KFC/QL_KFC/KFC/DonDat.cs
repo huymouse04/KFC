@@ -503,7 +503,7 @@ namespace KFC
                 // Lấy dữ liệu
                 var report = buschitietdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
                 var donDat = busdondat.GetDonDatByMa(currentMaDonDat);
-                var kho = k.GetAllKho();
+                var kho = buskho.GetAllKho();
                 var ban = busban.GetBanByMaBan(currentMaDonDat);
                 var khachHang = buskhachhang.GetKhachHangByMaDonDat(currentMaDonDat);
 
