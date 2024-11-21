@@ -585,7 +585,8 @@ namespace KFC
                 MaKhuyenMai = string.IsNullOrEmpty(maKhuyenMai) ? null : maKhuyenMai,
                 MaKhachHang = string.IsNullOrEmpty(maKhachHang) ? null : maKhachHang,
                 SoTienNhan = soTienNhan,
-                SoTienTra = soTienTra
+                SoTienTra = soTienTra,
+                TongTien = (int)tongTienThanhToan,
             };
 
             // Cập nhật đơn đặt
@@ -760,7 +761,7 @@ namespace KFC
             tienTra = tienNhan - tongTien;
 
             // Cập nhật vào ô txtTienTra
-            txtTienTra.Text = tienTra.ToString("N2");
+            txtTienTra.Text = tienTra.ToString("N0");
         }
 
         private void btnTienMat_Click(object sender, EventArgs e)
