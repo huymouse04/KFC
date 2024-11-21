@@ -453,7 +453,7 @@ namespace KFC
             var reportForm = new Form();
             var viewer = new Microsoft.Reporting.WinForms.ReportViewer();
             viewer.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
-            viewer.LocalReport.ReportPath = @"Reports\RPNhapHang.rdlc";  // Đường dẫn báo cáo cũ
+            viewer.LocalReport.ReportPath = @"Reports\RPHetHan.rdlc";  // Đường dẫn báo cáo cũ
 
             // Khởi tạo lớp BUS
             NhapHang_BUS nhapHangBUS = new NhapHang_BUS();

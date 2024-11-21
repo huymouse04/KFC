@@ -16,7 +16,10 @@ namespace BUS
         {
             return dao.GetBanByMaBan(maBan);
         }
-
+        public Ban_DTO GetBanByMaDonDat(string maDonDat)
+        {
+            return dao.GetBanByMaDonDat(maDonDat);
+        }
         public string GetMaDonByMaBan(string maBan)
         {
             try

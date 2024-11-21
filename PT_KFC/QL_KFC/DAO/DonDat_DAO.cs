@@ -72,6 +72,45 @@ namespace DAO
             }
             return false;
         }
+        public List<DonDat_DTO> LayTatCaDonDat()
+        {
+            var danhSachDonDat = DB.DonDats.Select(d => new DonDat_DTO
+            {
+                MaDonDat = d.MaDonDat,
+                MaBan = d.MaBan,
+                MaKhachHang = d.MaKhachHang,
+                MaKhuyenMai = d.MaKhuyenMai,
+                HinhThucThanhToan = d.HinhThucThanhToan,
+                TongTien = d.TongTien??0,
+                SoTienNhan = d.SoTienNhan,
+                SoTienTra = d.SoTienTra
+            }).ToList();
+
+            return danhSachDonDat;
+        }
+        public List<DonDat_DTO> GetDonDatByMa(string maDonDat)
+        {
+            if (string.IsNullOrEmpty(maDonDat))
+                return new List<DonDat_DTO>();
+
+            var danhSachDonDat = DB.DonDats
+                .Where(d => d.MaDonDat == maDonDat)
+                .Select(d => new DonDat_DTO
+                {
+                    MaDonDat = d.MaDonDat,
+                    MaBan = d.MaBan,
+                    MaKhachHang = d.MaKhachHang,
+                    MaKhuyenMai = d.MaKhuyenMai,
+                    HinhThucThanhToan = d.HinhThucThanhToan,
+                    TongTien = d.TongTien ?? 0,
+                    SoTienNhan = d.SoTienNhan,
+                    SoTienTra = d.SoTienTra
+                }).ToList();
+
+            return danhSachDonDat;
+        }
+
+
 
         private string LayDuongDanFile()
         {
