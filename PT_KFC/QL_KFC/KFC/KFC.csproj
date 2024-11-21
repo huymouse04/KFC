@@ -410,9 +410,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\PPHetHan.rdlc" />
     <EmbeddedResource Include="Reports\RPNhapHang.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPThanhToan.rdlc" />
     <EmbeddedResource Include="Reports\RPThucDon.rdlc" />
     <EmbeddedResource Include="ThucDon.resx">
       <DependentUpon>ThucDon.cs</DependentUpon>

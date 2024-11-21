@@ -153,6 +153,46 @@ namespace DAO
                 HandleException(ex);
             }
         }
+        // Phương thức lấy khách hàng theo mã đơn đặt
+        public KhachHang_DTO GetKhachHangByMaDonDat(string maDonDat)
+        {
+            try
+            {
+                // Kiểm tra mã đơn đặt hợp lệ
+                if (string.IsNullOrEmpty(maDonDat))
+                {
+                    throw new ArgumentException("Mã đơn đặt không được để trống");
+                }
+
+                // Lấy đơn đặt từ mã đơn đặt
+                var donDat = DB.DonDats.FirstOrDefault(dd => dd.MaDonDat == maDonDat);
+                if (donDat == null)
+                {
+                    return null; // Không tìm thấy đơn đặt với mã này
+                }
+
+                // Lấy thông tin khách hàng từ bảng KhachHangThanThiet bằng MaKhachHang
+                var khachHang = DB.KhachHangThanThiets.FirstOrDefault(kh => kh.MaKhachHang == donDat.MaKhachHang);
+                if (khachHang == null)
+                {
+                    return null; // Không tìm thấy khách hàng
+                }
+
+                // Trả về thông tin khách hàng dưới dạng DTO
+                return new KhachHang_DTO
+                {
+                    MaKhachHang = khachHang.MaKhachHang,
+                    TenKhachHang = khachHang.TenKhachHang,
+                    SoDienThoai = khachHang.SoDienThoai,
+                    DiemTichLuy = khachHang.DiemTichLuy ?? 0
+                };
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex);
+                return null;
+            }
+        }
 
         private void HandleException(Exception ex)
         {

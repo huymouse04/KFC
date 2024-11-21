@@ -10,7 +10,7 @@ namespace DAO
     public class Ban_DAO
     {
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
-
+        DonDat_DAO daoDonDat = new DonDat_DAO();
         public Ban_DAO() { }
 
         public Ban_DTO GetBanByMaBan(string maBan)
@@ -41,6 +41,40 @@ namespace DAO
             catch (Exception ex)
             {
                 throw new Exception("Lỗi khi lấy thông tin bàn: " + ex.Message);
+            }
+        }
+        public Ban_DTO GetBanByMaDonDat(string maDonDat)
+        {
+            try
+            {
+                // Kiểm tra mã đơn đặt hợp lệ
+                if (string.IsNullOrEmpty(maDonDat))
+                {
+                    throw new ArgumentException("Mã đơn đặt không được để trống");
+                }
+
+                // Truy vấn trực tiếp để lấy bàn dựa trên MaDonDat
+                var ban = DB.Bans.FirstOrDefault(b => b.MaDonDat == maDonDat);
+
+                if (ban == null)
+                {
+                    return null; // Không tìm thấy bàn liên kết với mã đơn đặt
+                }
+
+                // Trả về thông tin bàn dưới dạng DTO
+                return new Ban_DTO
+                {
+                    MaBan = ban.MaBan,
+                    TenBan = ban.TenBan,
+                    ThoiGianDen = ban.ThoiGianDen,
+                    ThoiGianRoi = ban.ThoiGianRoi,
+                    TrangThaiBan = ban.TrangThaiBan ?? false,
+                    MaDonDat = ban.MaDonDat
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy thông tin bàn từ mã đơn đặt: " + ex.Message);
             }
         }
 
@@ -151,8 +185,8 @@ namespace DAO
                        {
                            MaBan = ban.MaBan,
                            TenBan = ban.TenBan,
-                           ThoiGianDen = ban.ThoiGianDen,
-                           ThoiGianRoi = ban.ThoiGianRoi,
+                           ThoiGianDen = ban.ThoiGianDen ?? DateTime.Now,
+                           ThoiGianRoi = ban.ThoiGianRoi ?? DateTime.Now,
                            TrangThaiBan = ban.TrangThaiBan ?? false,
                            MaDonDat = ban.MaDonDat,
                        };

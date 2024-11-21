@@ -23,8 +23,14 @@ namespace BUS
         {
             return dao.CapNhatDonDat(donDat);
         }
-
-       
+        public List<DonDat_DTO> LayTatCaDonDat()
+        {
+            return dao.LayTatCaDonDat();
+        }
+        public List<DonDat_DTO> GetDonDatByMa(string maDonDat)
+        {
+            return dao.GetDonDatByMa(maDonDat);
+        }
 
     }
 }

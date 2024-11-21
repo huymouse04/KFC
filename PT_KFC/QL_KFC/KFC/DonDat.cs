@@ -31,6 +31,7 @@ namespace KFC
         Ban_BUS busban = new Ban_BUS();
         KhuyenMai_BUS buskhuyenmai = new KhuyenMai_BUS();
         KhachHang_BUS buskhachhang = new KhachHang_BUS();
+        private Kho_BUS k = new Kho_BUS();
         private string currentMaDonDat;
         private decimal tongTienGoc = 0; // Biến lưu tổng tiền gốc
 
@@ -470,6 +471,70 @@ namespace KFC
                 MessageBox.Show("Hàng được chọn không hợp lệ!");
             }
         }
+        private void Report()
+        {
+            if (string.IsNullOrEmpty(currentMaDonDat))
+            {
+                MessageBox.Show("Mã đơn đặt không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                // Khởi tạo form và viewer
+                var reportForm = new Form();
+                var viewer = new Microsoft.Reporting.WinForms.ReportViewer
+                {
+                    ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local,
+                    LocalReport = { ReportPath = @"Reports\RPThanhToan.rdlc" },
+                    Dock = DockStyle.Fill
+                };
+
+                // Lấy dữ liệu
+                var report = buschitietdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
+                var donDat = busdondat.GetDonDatByMa(currentMaDonDat);
+                var kho = k.GetAllKho();
+                var ban = busban.GetBanByMaBan(currentMaDonDat);
+                var khachHang = buskhachhang.GetKhachHangByMaDonDat(currentMaDonDat);
+
+                // Kiểm tra dữ liệu
+                if (report == null || report.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu chi tiết đơn đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (donDat == null)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin đơn đặt.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Xử lý các trường hợp null
+                var banList = ban != null ? new List<Ban_DTO> { ban } : new List<Ban_DTO>();
+                var khachHangList = khachHang != null ? new List<KhachHang_DTO> { khachHang } : new List<KhachHang_DTO>();
+
+                // Tạo nguồn dữ liệu cho báo cáo
+                viewer.LocalReport.DataSources.Clear();
+                viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("ChiTietDonDat", report));
+                viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DonDat", donDat));
+                viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("Kho", kho));
+                viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("Ban", banList));
+                viewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("KhachHang", khachHangList));
+
+                // Làm mới báo cáo
+                viewer.RefreshReport();
+
+                // Hiển thị form báo cáo
+                reportForm.Controls.Add(viewer);
+                reportForm.WindowState = FormWindowState.Maximized;
+                reportForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi tạo báo cáo: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
@@ -538,7 +603,8 @@ namespace KFC
             int soTienNhan = 0, soTienTra = 0;
             int.TryParse(txtTienNhan.Text.Trim(), out soTienNhan);
             int.TryParse(txtTienTra.Text.Trim(), out soTienTra);
-
+            int tongtien = 0;
+            int.TryParse(txtTongTien.Text.Trim(),out tongtien);
             // Tạo đối tượng đơn đặt
             var donDat = new DonDat_DTO
             {
@@ -547,7 +613,9 @@ namespace KFC
                 MaKhuyenMai = string.IsNullOrEmpty(maKhuyenMai) ? null : maKhuyenMai,
                 MaKhachHang = string.IsNullOrEmpty(maKhachHang) ? null : maKhachHang,
                 SoTienNhan = soTienNhan,
-                SoTienTra = soTienTra
+                SoTienTra = soTienTra,
+                TongTien = tongtien
+                
             };
 
             // Cập nhật đơn đặt
@@ -566,6 +634,7 @@ namespace KFC
 
                 MessageBox.Show($"Thanh toán thành công! Tổng tiền: {tongTienThanhToan:N0} VNĐ", "Thông báo");
                 this.Close();
+                Report();
             }
             else
             {
@@ -802,6 +871,11 @@ namespace KFC
 
             // Cập nhật hiển thị tổng tiền
             txtTongTien.Text = tongTienThanhToan.ToString("N0");
+        }
+
+        private void txtTongTien_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

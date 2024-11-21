@@ -27,7 +27,10 @@ namespace BUS
         {
             return dao.SearchKhachHang(searchTerm); // Gọi phương thức tìm kiếm từ DAO
         }
-
+        public KhachHang_DTO GetKhachHangByMaDonDat(string maDonDat)
+        {
+            return dao.GetKhachHangByMaDonDat(maDonDat);
+        }
         // Lấy khách hàng theo mã
         public KhachHang_DTO GetKhachHangByMa(string maKhachHang)
         {
