@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace DAO
 {
@@ -11,6 +12,62 @@ namespace DAO
         private KFCDataContext DB = new KFCDataContext(Connection_DAO.ConnectionString);
 
         public Ban_DAO() { }
+
+        public Ban_DTO GetBanByMaBan(string maBan)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(maBan))
+                {
+                    throw new ArgumentException("Mã bàn không được để trống");
+                }
+
+                var ban = GetBanByMa(maBan);
+                if (ban == null)
+                {
+                    return null;
+                }
+
+                return new Ban_DTO
+                {
+                    MaBan = ban.MaBan,
+                    TenBan = ban.TenBan,
+                    ThoiGianDen = ban.ThoiGianDen,
+                    ThoiGianRoi = ban.ThoiGianRoi,
+                    TrangThaiBan = ban.TrangThaiBan ?? false,
+                    MaDonDat = ban.MaDonDat
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi lấy thông tin bàn: " + ex.Message);
+            }
+        }
+
+        public string GetMaDonByMaBan(string maBan)
+        {
+            try
+            {
+                var ban = DB.Bans.FirstOrDefault(b => b.MaBan == maBan);
+                return ban?.MaDonDat; // Returns null if ban is null or MaDonDat is null
+            }
+            catch (Exception ex)
+            {
+                HandleException(ex);
+                return null;
+            }
+        }
+
+        // Hàm lấy danh sách mã bàn từ bảng Ban
+        public List<string> GetDanhSachMaBan()
+        {
+
+            var danhSachMaBan = DB.Bans
+                                       .Select(b => b.MaBan)
+                                       .ToList();
+            return danhSachMaBan;
+
+        }
 
         public List<Ban_DTO> SearchBan(string searchTerm)
         {
@@ -27,7 +84,9 @@ namespace DAO
                     TenBan = ban.TenBan,
                     ThoiGianDen = ban.ThoiGianDen,
                     ThoiGianRoi = ban.ThoiGianRoi,
-                    TrangThaiBan = ban.TrangThaiBan ?? false
+                    TrangThaiBan = ban.TrangThaiBan ?? false,
+                    MaDonDat = ban.MaDonDat,
+
                 }).ToList();
 
                 return banDtos;
@@ -48,6 +107,7 @@ namespace DAO
         {
             return DB.Bans.Any(ban => ban.MaBan == maBan);  // Kiểm tra nếu có bất kỳ bàn nào có mã trùng với mã truyền vào
         }
+
         public void AddBan(Ban_DTO ban)
         {
             try
@@ -63,7 +123,9 @@ namespace DAO
                 {
                     MaBan = ban.MaBan,
                     TenBan = ban.TenBan,
-                    TrangThaiBan = ban.TrangThaiBan
+                    TrangThaiBan = ban.TrangThaiBan,
+                    MaDonDat = ban.MaDonDat
+
                 };
 
                 // Kiểm tra và gán ThoiGianDen, nếu không có giá trị thì gán DateTime.MinValue
@@ -82,8 +144,6 @@ namespace DAO
             }
         }
 
-
-
         public List<Ban_DTO> GetAllBan()
         {
             var bans = from ban in DB.Bans
@@ -93,7 +153,8 @@ namespace DAO
                            TenBan = ban.TenBan,
                            ThoiGianDen = ban.ThoiGianDen,
                            ThoiGianRoi = ban.ThoiGianRoi,
-                           TrangThaiBan = ban.TrangThaiBan ?? false
+                           TrangThaiBan = ban.TrangThaiBan ?? false,
+                           MaDonDat = ban.MaDonDat,
                        };
 
             return bans.ToList();
@@ -123,6 +184,7 @@ namespace DAO
 
                     // Cập nhật trạng thái bàn
                     existingBan.TrangThaiBan = ban.TrangThaiBan;
+                    existingBan.MaDonDat = ban.MaDonDat;
 
                     // Lưu thay đổi vào cơ sở dữ liệu
                     DB.SubmitChanges();
@@ -137,7 +199,6 @@ namespace DAO
                 HandleException(ex); // Xử lý lỗi
             }
         }
-
 
         public void DeleteBan(string maBan)
         {

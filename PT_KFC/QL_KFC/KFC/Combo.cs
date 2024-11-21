@@ -25,6 +25,9 @@ namespace KFC
         {
             InitializeComponent();
             LoadSanPhamToComboBox();
+            txtGiaCombo.Enabled = false;
+            buscb.XoaCombosHethan();
+
         }
 
         private void LoadDataCombo()
@@ -59,6 +62,7 @@ namespace KFC
             txtTenCombo.Text = com.TenCombo;
             txtGiaCombo.Text = com.GiaCombo.ToString();
             txtSoLuong.Text = com.SoLuong.ToString();
+            txtPhanTramGiam.Text = com.PhamTramGiam.ToString();
             dtpNgayBatDau.Value = DateTime.Parse(com.NgayBatDau.ToString());
             dtpNgayKetThuc.Value = DateTime.Parse(com.NgayKetThuc.ToString());
 
@@ -67,23 +71,33 @@ namespace KFC
 
         private void LoadSanPhamTrongCombo(string maCombo)
         {
+            // Lấy danh sách sản phẩm theo mã Combo
             var danhSachSanPham = busct.LayDanhSachSanPhamTheoCombo(maCombo);
 
             if (danhSachSanPham == null || danhSachSanPham.Count == 0)
             {
+                // Nếu không có sản phẩm nào trong Combo
                 MessageBox.Show("Combo này hiện chưa có sản phẩm nào.");
                 dgvChiTietComBo.DataSource = null;
             }
             else
             {
+                // Gán danh sách sản phẩm vào DataGridView
                 dgvChiTietComBo.DataSource = danhSachSanPham;
-            }
 
-            dgvChiTietComBo.Columns[0].Visible = false;
+                // Kiểm tra xem DataGridView đã có ít nhất 1 cột chưa
+                if (dgvChiTietComBo.Columns.Count > 0)
+                {
+                    // Ẩn cột đầu tiên nếu cần
+                    dgvChiTietComBo.Columns[0].Visible = false;
+                }
+            }
         }
+
 
         private void Combo_Load(object sender, EventArgs e)
         {
+          
             LoadDataCombo();
         }
 
@@ -126,6 +140,7 @@ namespace KFC
                 TenCombo = txtTenCombo.Text,
                 GiaCombo = int.Parse(txtGiaCombo.Text),
                 SoLuong = int.Parse(txtSoLuong.Text),
+                PhamTramGiam = int.Parse(txtPhanTramGiam.Text),
                 NgayBatDau = dtpNgayBatDau.Value,
                 NgayKetThuc = dtpNgayKetThuc.Value
             };
@@ -188,6 +203,7 @@ namespace KFC
                 TenCombo = txtTenCombo.Text,
                 SoLuong = int.Parse(txtSoLuong.Text),
                 GiaCombo = int.Parse(txtGiaCombo.Text),
+                PhamTramGiam = int.Parse(txtPhanTramGiam.Text),
                 NgayBatDau = dtpNgayBatDau.Value,
                 NgayKetThuc = dtpNgayKetThuc.Value
             };
@@ -258,6 +274,7 @@ namespace KFC
             txtTenCombo.Clear();
             txtGiaCombo.Clear();
             txtSoLuong.Clear();
+            txtPhanTramGiam.Clear();
             dtpNgayBatDau.Value = DateTime.Now;
             dtpNgayKetThuc.Value = DateTime.Now;
 
@@ -308,6 +325,7 @@ namespace KFC
             {
                 MessageBox.Show("Thêm sản phẩm vào combo thành công.");
                 LoadSanPhamTrongCombo(chiTietCombo.MaCombo); // Load lại danh sách sản phẩm trong combo
+                TinhTongGiaCombo();
             }
             else
             {
@@ -346,6 +364,7 @@ namespace KFC
             {
                 MessageBox.Show("Cập nhật sản phẩm trong combo thành công.");
                 LoadSanPhamTrongCombo(chiTietCombo.MaCombo);
+                TinhTongGiaCombo();
             }
             else
             {
@@ -363,6 +382,7 @@ namespace KFC
             {
                 MessageBox.Show("Xóa sản phẩm khỏi combo thành công.");
                 LoadSanPhamTrongCombo(maCombo);
+                TinhTongGiaCombo();
             }
             else
             {

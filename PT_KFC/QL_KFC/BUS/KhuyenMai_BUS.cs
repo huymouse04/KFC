@@ -9,6 +9,27 @@ namespace BUS
     {
         private KhuyenMai_DAO khuyenMaiDAO = new KhuyenMai_DAO();
 
+        public KhuyenMai_DTO GetKhuyenMaiByMa(string maKhuyenMai)
+        {
+
+            return khuyenMaiDAO.GetKhuyenMaiByMa(maKhuyenMai);
+
+        }
+
+
+        public bool GiamSoLuong(string maKhuyenMai)
+        {
+
+            return khuyenMaiDAO.GiamSoLuong(maKhuyenMai);
+
+        }
+
+        public List<string> GetDanhSachKhuyenMai()
+        {
+            // Gọi hàm từ Ban_DAO để lấy danh sách
+            return khuyenMaiDAO.GetDanhSachKhuyenMai();
+        }
+
         public List<KhuyenMai_DTO> GetAllKhuyenMai()
         {
             return khuyenMaiDAO.GetAllKhuyenMai();

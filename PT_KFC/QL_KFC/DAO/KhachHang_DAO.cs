@@ -13,6 +13,18 @@ namespace DAO
 
         public KhachHang_DAO() { }
 
+
+        public List<string> GetDanhSachKhachHang()
+        {
+
+            var danhSachKhachHang = DB.KhachHangThanThiets
+                                       .Select(b => b.MaKhachHang)
+                                       .ToList();
+            return danhSachKhachHang;
+
+        }
+
+
         // Phương thức tìm kiếm khách hàng dựa trên tham số nhập vào
         public List<KhachHang_DTO> SearchKhachHang(string searchTerm)
         {

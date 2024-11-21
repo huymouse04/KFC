@@ -74,6 +74,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BanControl";
             this.Size = new System.Drawing.Size(336, 146);
+            this.Click += new System.EventHandler(this.BanControl_Click);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.BanControl_Paint_1);
             this.ResumeLayout(false);
             this.PerformLayout();

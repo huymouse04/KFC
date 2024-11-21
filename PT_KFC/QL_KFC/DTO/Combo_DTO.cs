@@ -12,17 +12,19 @@ namespace DTO
         public string TenCombo { get; set; }
         public int GiaCombo { get; set; }
         public int SoLuong { get; set; }
+        public int PhamTramGiam { get; set; }
         public DateTime? NgayBatDau { get; set; }
         public DateTime? NgayKetThuc { get; set; }
 
         public Combo_DTO() { }
 
-        public Combo_DTO(string maCombo, string tenCombo, int giaCombo, int soLuong, DateTime? ngayBatDau, DateTime? ngayKetThuc)
+        public Combo_DTO(string maCombo, string tenCombo, int giaCombo, int soLuong, int phamTramGiam, DateTime? ngayBatDau, DateTime? ngayKetThuc)
         {
             MaCombo = maCombo;
             TenCombo = tenCombo;
             GiaCombo = giaCombo;
             SoLuong = soLuong;
+            PhamTramGiam = phamTramGiam;
             NgayBatDau = ngayBatDau;
             NgayKetThuc = ngayKetThuc;
         }

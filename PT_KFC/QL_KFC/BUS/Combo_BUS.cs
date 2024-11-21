@@ -12,6 +12,13 @@ namespace BUS
     {
         private Combo_DAO dao = new Combo_DAO();
 
+
+
+        public void XoaCombosHethan()
+        {
+            dao.XoaCombosHethan();
+        }
+
         // Phương thức gọi đến DAO để lấy thông tin combo từ MaCombo
         public Combo_DTO GetComboByMaCombo(string maCombo)
         {
