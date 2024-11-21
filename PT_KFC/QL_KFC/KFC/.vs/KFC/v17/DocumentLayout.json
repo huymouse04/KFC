@@ -3,18 +3,18 @@
   "WorkspaceRootPath": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\dondat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\kfc\\dondat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:dondat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\kfc\\dondat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\dondat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:dondat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD5523A2-1D6E-49D4-9947-8BF1FFBC2E8F}|..\\DAO\\DAO.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\dao\\dondat_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3BA46191-C03D-421E-8ADD-4332A4734886}|..\\BUS\\BUS.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\bus\\khachhang_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BA46191-C03D-421E-8ADD-4332A4734886}|..\\BUS\\BUS.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\bus\\khachhang_bus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD5523A2-1D6E-49D4-9947-8BF1FFBC2E8F}|..\\DAO\\DAO.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\dao\\dondat_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BD5523A2-1D6E-49D4-9947-8BF1FFBC2E8F}|..\\DAO\\DAO.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\dao\\khachhang_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -29,11 +29,11 @@
       "AbsoluteMoniker": "D:0:0:{BD5523A2-1D6E-49D4-9947-8BF1FFBC2E8F}|..\\DAO\\DAO.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\dao\\combo_dao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\kfc\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|f:\\k\\kfc\\pt_kfc\\ql_kfc\\kfc\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{43125734-9A19-447E-9BBB-CFEB4EE7BF96}|KFC.csproj|solutionrelative:combo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -93,12 +93,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -107,7 +103,7 @@
               "RelativeDocumentMoniker": "DonDat.cs",
               "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs*",
               "RelativeToolTip": "DonDat.cs*",
-              "ViewState": "AgIAAKECAAAAAAAAAAA1wL0CAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAMDAAAAAAAAAAAAwCMDAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T16:07:45.237Z",
               "IsPinned": true,
@@ -119,12 +115,11 @@
               "Title": "DonDat.cs [Design]",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs",
               "RelativeDocumentMoniker": "DonDat.cs",
-              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs [Design]*",
-              "RelativeToolTip": "DonDat.cs [Design]*",
+              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DonDat.cs [Design]",
+              "RelativeToolTip": "DonDat.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T15:43:13.709Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -164,16 +159,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "KhachHang_BUS.cs",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\BUS\\KhachHang_BUS.cs",
               "RelativeDocumentMoniker": "..\\BUS\\KhachHang_BUS.cs",
               "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\BUS\\KhachHang_BUS.cs",
               "RelativeToolTip": "..\\BUS\\KhachHang_BUS.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAwGcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T19:11:08.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T19:11:08.202Z"
             },
             {
               "$type": "Document",
@@ -185,8 +179,7 @@
               "RelativeToolTip": "..\\DAO\\KhachHang_DAO.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T19:10:23.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T19:10:23.315Z"
             },
             {
               "$type": "Document",
@@ -198,8 +191,7 @@
               "RelativeToolTip": "Combo.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAGMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T18:13:56.461Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T18:13:56.461Z"
             },
             {
               "$type": "Document",
@@ -210,8 +202,7 @@
               "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Combo.cs [Design]",
               "RelativeToolTip": "Combo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T18:13:51.246Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-18T18:13:51.246Z"
             },
             {
               "$type": "Document",
@@ -223,8 +214,7 @@
               "RelativeToolTip": "..\\BUS\\Combo_BUS.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T18:13:27.076Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T18:13:27.076Z"
             },
             {
               "$type": "Document",
@@ -236,8 +226,7 @@
               "RelativeToolTip": "..\\DAO\\Combo_DAO.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAswEoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T18:11:04.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T18:11:04.554Z"
             },
             {
               "$type": "Document",
@@ -249,8 +238,7 @@
               "RelativeToolTip": "..\\BUS\\KhuyenMai_BUS.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T16:40:07.875Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T16:40:07.875Z"
             },
             {
               "$type": "Document",
@@ -262,8 +250,7 @@
               "RelativeToolTip": "..\\DAO\\KhuyenMai_DAO.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAQwDYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T16:39:09.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T16:39:09.556Z"
             },
             {
               "$type": "Document",
@@ -275,8 +262,7 @@
               "RelativeToolTip": "..\\DTO\\Ban_DTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T16:34:18.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T16:34:18.623Z"
             },
             {
               "$type": "Document",
@@ -288,8 +274,7 @@
               "RelativeToolTip": "..\\BUS\\Ban_BUS.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAuwCkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T02:37:08.961Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T02:37:08.961Z"
             },
             {
               "$type": "Document",
@@ -301,8 +286,7 @@
               "RelativeToolTip": "..\\DAO\\Ban_DAO.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAmwDkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T02:35:38.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T02:35:38.568Z"
             },
             {
               "$type": "Document",
@@ -314,8 +298,7 @@
               "RelativeToolTip": "Ban.cs",
               "ViewState": "AgIAALkAAAAAAAAAAAAUwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T13:16:15.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T13:16:15.972Z"
             },
             {
               "$type": "Document",
@@ -327,8 +310,7 @@
               "RelativeToolTip": "BanControl.cs",
               "ViewState": "AgIAAGAAAAAAAAAAAAAIwHQAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T13:16:30.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-17T13:16:30.274Z"
             },
             {
               "$type": "Document",
@@ -339,8 +321,7 @@
               "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\BanControl.cs [Design]",
               "RelativeToolTip": "BanControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T13:16:22.675Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-17T13:16:22.675Z"
             },
             {
               "$type": "Document",
@@ -351,8 +332,7 @@
               "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\Ban.cs [Design]",
               "RelativeToolTip": "Ban.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T13:16:13.928Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-17T13:16:13.928Z"
             },
             {
               "$type": "Document",
@@ -368,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DonDat_DAO.cs",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\DAO\\DonDat_DAO.cs",
               "RelativeDocumentMoniker": "..\\DAO\\DonDat_DAO.cs",
@@ -376,8 +356,7 @@
               "RelativeToolTip": "..\\DAO\\DonDat_DAO.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAEwDgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T08:14:49.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T08:14:49.054Z"
             },
             {
               "$type": "Document",
@@ -401,8 +380,7 @@
               "RelativeToolTip": "..\\DTO\\ChiTietDonDat_DTO.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAA/wB0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T07:44:23.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T07:44:23.166Z"
             },
             {
               "$type": "Document",
@@ -414,8 +392,7 @@
               "RelativeToolTip": "..\\BUS\\ChiTietDonDat_BUS.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAYwAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T05:53:23.88Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T05:53:23.88Z"
             },
             {
               "$type": "Document",
@@ -427,8 +404,7 @@
               "RelativeToolTip": "..\\DAO\\ChiTietDonDat_DAO.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAFIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T05:45:46.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T05:45:46.92Z"
             },
             {
               "$type": "Document",
@@ -440,8 +416,7 @@
               "RelativeToolTip": "..\\BUS\\ThucDon_BUS.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAuwBEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T05:25:36.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T05:25:36.671Z"
             },
             {
               "$type": "Document",
@@ -453,8 +428,7 @@
               "RelativeToolTip": "..\\DAO\\ThucDon_DAO.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAkwBMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T05:24:54.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-15T05:24:54.398Z"
             }
           ]
         }

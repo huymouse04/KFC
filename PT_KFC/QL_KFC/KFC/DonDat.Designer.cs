@@ -30,6 +30,8 @@
         {
             this.pnDD = new System.Windows.Forms.Panel();
             this.gbDD = new System.Windows.Forms.GroupBox();
+            this.btnLamSach = new System.Windows.Forms.Button();
+            this.cboKhachHang = new System.Windows.Forms.ComboBox();
             this.cboMaKhuyenMai = new System.Windows.Forms.ComboBox();
             this.cboBan = new System.Windows.Forms.ComboBox();
             this.btnLuuBan = new System.Windows.Forms.Button();
@@ -68,8 +70,8 @@
             this.dgvThucDon = new System.Windows.Forms.DataGridView();
             this.dgvDonDat = new System.Windows.Forms.DataGridView();
             this.pnDSM = new System.Windows.Forms.Panel();
-            this.cboKhachHang = new System.Windows.Forms.ComboBox();
-            this.btnLamSach = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDiemThuong = new System.Windows.Forms.TextBox();
             this.pnDD.SuspendLayout();
             this.gbDD.SuspendLayout();
             this.gbCTDD.SuspendLayout();
@@ -94,6 +96,8 @@
             // gbDD
             // 
             this.gbDD.BackColor = System.Drawing.Color.DarkRed;
+            this.gbDD.Controls.Add(this.txtDiemThuong);
+            this.gbDD.Controls.Add(this.label2);
             this.gbDD.Controls.Add(this.btnLamSach);
             this.gbDD.Controls.Add(this.cboKhachHang);
             this.gbDD.Controls.Add(this.cboMaKhuyenMai);
@@ -117,20 +121,44 @@
             this.gbDD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbDD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbDD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gbDD.Location = new System.Drawing.Point(0, 334);
+            this.gbDD.Location = new System.Drawing.Point(0, 303);
             this.gbDD.Margin = new System.Windows.Forms.Padding(4);
             this.gbDD.Name = "gbDD";
             this.gbDD.Padding = new System.Windows.Forms.Padding(4);
-            this.gbDD.Size = new System.Drawing.Size(620, 450);
+            this.gbDD.Size = new System.Drawing.Size(620, 481);
             this.gbDD.TabIndex = 21;
             this.gbDD.TabStop = false;
             this.gbDD.Text = "Đơn đặt";
+            // 
+            // btnLamSach
+            // 
+            this.btnLamSach.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLamSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnLamSach.ForeColor = System.Drawing.Color.White;
+            this.btnLamSach.Location = new System.Drawing.Point(444, 110);
+            this.btnLamSach.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLamSach.Name = "btnLamSach";
+            this.btnLamSach.Size = new System.Drawing.Size(120, 41);
+            this.btnLamSach.TabIndex = 37;
+            this.btnLamSach.Text = "Làm sạch";
+            this.btnLamSach.UseVisualStyleBackColor = false;
+            this.btnLamSach.Click += new System.EventHandler(this.btnLamSach_Click);
+            // 
+            // cboKhachHang
+            // 
+            this.cboKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKhachHang.FormattingEnabled = true;
+            this.cboKhachHang.Location = new System.Drawing.Point(169, 96);
+            this.cboKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboKhachHang.Name = "cboKhachHang";
+            this.cboKhachHang.Size = new System.Drawing.Size(251, 31);
+            this.cboKhachHang.TabIndex = 36;
             // 
             // cboMaKhuyenMai
             // 
             this.cboMaKhuyenMai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMaKhuyenMai.FormattingEnabled = true;
-            this.cboMaKhuyenMai.Location = new System.Drawing.Point(169, 151);
+            this.cboMaKhuyenMai.Location = new System.Drawing.Point(169, 174);
             this.cboMaKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboMaKhuyenMai.Name = "cboMaKhuyenMai";
             this.cboMaKhuyenMai.Size = new System.Drawing.Size(251, 31);
@@ -143,7 +171,7 @@
             this.cboBan.FormattingEnabled = true;
             this.cboBan.Items.AddRange(new object[] {
             ""});
-            this.cboBan.Location = new System.Drawing.Point(169, 73);
+            this.cboBan.Location = new System.Drawing.Point(169, 57);
             this.cboBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboBan.Name = "cboBan";
             this.cboBan.Size = new System.Drawing.Size(251, 31);
@@ -154,7 +182,7 @@
             this.btnLuuBan.BackColor = System.Drawing.Color.Firebrick;
             this.btnLuuBan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLuuBan.ForeColor = System.Drawing.Color.White;
-            this.btnLuuBan.Location = new System.Drawing.Point(44, 368);
+            this.btnLuuBan.Location = new System.Drawing.Point(44, 391);
             this.btnLuuBan.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuBan.Name = "btnLuuBan";
             this.btnLuuBan.Size = new System.Drawing.Size(107, 41);
@@ -168,7 +196,7 @@
             this.btnThanhToan.BackColor = System.Drawing.Color.Firebrick;
             this.btnThanhToan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Location = new System.Drawing.Point(187, 368);
+            this.btnThanhToan.Location = new System.Drawing.Point(187, 391);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(201, 41);
@@ -179,7 +207,7 @@
             // 
             // txtTienTra
             // 
-            this.txtTienTra.Location = new System.Drawing.Point(169, 322);
+            this.txtTienTra.Location = new System.Drawing.Point(169, 345);
             this.txtTienTra.Margin = new System.Windows.Forms.Padding(4);
             this.txtTienTra.Name = "txtTienTra";
             this.txtTienTra.Size = new System.Drawing.Size(251, 30);
@@ -190,7 +218,7 @@
             this.lblSTT.AutoSize = true;
             this.lblSTT.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblSTT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSTT.Location = new System.Drawing.Point(8, 334);
+            this.lblSTT.Location = new System.Drawing.Point(8, 357);
             this.lblSTT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSTT.Name = "lblSTT";
             this.lblSTT.Size = new System.Drawing.Size(81, 21);
@@ -199,7 +227,7 @@
             // 
             // txtTienNhan
             // 
-            this.txtTienNhan.Location = new System.Drawing.Point(169, 283);
+            this.txtTienNhan.Location = new System.Drawing.Point(169, 306);
             this.txtTienNhan.Margin = new System.Windows.Forms.Padding(4);
             this.txtTienNhan.Name = "txtTienNhan";
             this.txtTienNhan.Size = new System.Drawing.Size(251, 30);
@@ -211,7 +239,7 @@
             this.lbTN.AutoSize = true;
             this.lbTN.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTN.Location = new System.Drawing.Point(8, 294);
+            this.lbTN.Location = new System.Drawing.Point(8, 317);
             this.lbTN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTN.Name = "lbTN";
             this.lbTN.Size = new System.Drawing.Size(99, 21);
@@ -223,20 +251,21 @@
             this.btnTienMat.BackColor = System.Drawing.Color.Firebrick;
             this.btnTienMat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnTienMat.ForeColor = System.Drawing.Color.White;
-            this.btnTienMat.Location = new System.Drawing.Point(333, 233);
+            this.btnTienMat.Location = new System.Drawing.Point(333, 256);
             this.btnTienMat.Margin = new System.Windows.Forms.Padding(4);
             this.btnTienMat.Name = "btnTienMat";
             this.btnTienMat.Size = new System.Drawing.Size(120, 41);
             this.btnTienMat.TabIndex = 28;
             this.btnTienMat.Text = "TIỀN MẶT";
             this.btnTienMat.UseVisualStyleBackColor = false;
+            this.btnTienMat.Click += new System.EventHandler(this.btnTienMat_Click);
             // 
             // btnChuyenKhoan
             // 
             this.btnChuyenKhoan.BackColor = System.Drawing.Color.Firebrick;
             this.btnChuyenKhoan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnChuyenKhoan.ForeColor = System.Drawing.Color.White;
-            this.btnChuyenKhoan.Location = new System.Drawing.Point(111, 233);
+            this.btnChuyenKhoan.Location = new System.Drawing.Point(111, 256);
             this.btnChuyenKhoan.Margin = new System.Windows.Forms.Padding(4);
             this.btnChuyenKhoan.Name = "btnChuyenKhoan";
             this.btnChuyenKhoan.Size = new System.Drawing.Size(214, 41);
@@ -250,7 +279,7 @@
             this.lbHTTT.AutoSize = true;
             this.lbHTTT.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbHTTT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbHTTT.Location = new System.Drawing.Point(4, 242);
+            this.lbHTTT.Location = new System.Drawing.Point(4, 265);
             this.lbHTTT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHTTT.Name = "lbHTTT";
             this.lbHTTT.Size = new System.Drawing.Size(111, 21);
@@ -259,7 +288,7 @@
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(169, 193);
+            this.txtTongTien.Location = new System.Drawing.Point(169, 216);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(251, 30);
@@ -270,7 +299,7 @@
             this.lbTT.AutoSize = true;
             this.lbTT.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbTT.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTT.Location = new System.Drawing.Point(8, 204);
+            this.lbTT.Location = new System.Drawing.Point(8, 227);
             this.lbTT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTT.Name = "lbTT";
             this.lbTT.Size = new System.Drawing.Size(94, 21);
@@ -282,7 +311,7 @@
             this.lbMKM.AutoSize = true;
             this.lbMKM.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbMKM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbMKM.Location = new System.Drawing.Point(8, 165);
+            this.lbMKM.Location = new System.Drawing.Point(8, 188);
             this.lbMKM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMKM.Name = "lbMKM";
             this.lbMKM.Size = new System.Drawing.Size(135, 21);
@@ -294,7 +323,7 @@
             this.lblMKH.AutoSize = true;
             this.lblMKH.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMKH.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMKH.Location = new System.Drawing.Point(8, 126);
+            this.lblMKH.Location = new System.Drawing.Point(8, 110);
             this.lblMKH.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMKH.Name = "lblMKH";
             this.lblMKH.Size = new System.Drawing.Size(143, 21);
@@ -306,7 +335,7 @@
             this.lblMB.AutoSize = true;
             this.lblMB.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMB.Location = new System.Drawing.Point(8, 86);
+            this.lblMB.Location = new System.Drawing.Point(8, 70);
             this.lblMB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMB.Name = "lblMB";
             this.lblMB.Size = new System.Drawing.Size(82, 21);
@@ -315,7 +344,7 @@
             // 
             // txtMaDonDat2
             // 
-            this.txtMaDonDat2.Location = new System.Drawing.Point(169, 36);
+            this.txtMaDonDat2.Location = new System.Drawing.Point(169, 20);
             this.txtMaDonDat2.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaDonDat2.Name = "txtMaDonDat2";
             this.txtMaDonDat2.Size = new System.Drawing.Size(251, 30);
@@ -326,7 +355,7 @@
             this.lblMDD.AutoSize = true;
             this.lblMDD.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMDD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblMDD.Location = new System.Drawing.Point(8, 47);
+            this.lblMDD.Location = new System.Drawing.Point(8, 31);
             this.lblMDD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMDD.Name = "lblMDD";
             this.lblMDD.Size = new System.Drawing.Size(112, 21);
@@ -357,14 +386,14 @@
             this.gbCTDD.Margin = new System.Windows.Forms.Padding(4);
             this.gbCTDD.Name = "gbCTDD";
             this.gbCTDD.Padding = new System.Windows.Forms.Padding(4);
-            this.gbCTDD.Size = new System.Drawing.Size(620, 334);
+            this.gbCTDD.Size = new System.Drawing.Size(620, 303);
             this.gbCTDD.TabIndex = 20;
             this.gbCTDD.TabStop = false;
             this.gbCTDD.Text = "Chi tiết đơn đặt";
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(15, 272);
+            this.txtSoLuong.Location = new System.Drawing.Point(15, 264);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(88, 30);
@@ -375,7 +404,7 @@
             this.lbSL1.AutoSize = true;
             this.lbSL1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbSL1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbSL1.Location = new System.Drawing.Point(11, 251);
+            this.lbSL1.Location = new System.Drawing.Point(11, 243);
             this.lbSL1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSL1.Name = "lbSL1";
             this.lbSL1.Size = new System.Drawing.Size(90, 21);
@@ -387,7 +416,7 @@
             this.btnSua.BackColor = System.Drawing.Color.Firebrick;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(273, 161);
+            this.btnSua.Location = new System.Drawing.Point(273, 153);
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(152, 41);
@@ -401,7 +430,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.Firebrick;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(273, 217);
+            this.btnXoa.Location = new System.Drawing.Point(273, 209);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(152, 41);
@@ -429,7 +458,7 @@
             this.btnThem.BackColor = System.Drawing.Color.Firebrick;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(273, 100);
+            this.btnThem.Location = new System.Drawing.Point(273, 92);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(152, 41);
@@ -440,7 +469,7 @@
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Location = new System.Drawing.Point(12, 210);
+            this.txtDonGia.Location = new System.Drawing.Point(12, 202);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(248, 30);
@@ -451,7 +480,7 @@
             this.lbDG1.AutoSize = true;
             this.lbDG1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbDG1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbDG1.Location = new System.Drawing.Point(8, 189);
+            this.lbDG1.Location = new System.Drawing.Point(8, 181);
             this.lbDG1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDG1.Name = "lbDG1";
             this.lbDG1.Size = new System.Drawing.Size(85, 21);
@@ -460,7 +489,7 @@
             // 
             // txtMaSanPham
             // 
-            this.txtMaSanPham.Location = new System.Drawing.Point(12, 90);
+            this.txtMaSanPham.Location = new System.Drawing.Point(12, 82);
             this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaSanPham.Name = "txtMaSanPham";
             this.txtMaSanPham.Size = new System.Drawing.Size(250, 30);
@@ -468,7 +497,7 @@
             // 
             // txtSanPham
             // 
-            this.txtSanPham.Location = new System.Drawing.Point(13, 145);
+            this.txtSanPham.Location = new System.Drawing.Point(13, 137);
             this.txtSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.txtSanPham.Name = "txtSanPham";
             this.txtSanPham.Size = new System.Drawing.Size(250, 30);
@@ -479,7 +508,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(11, 64);
+            this.label1.Location = new System.Drawing.Point(11, 56);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 21);
@@ -491,7 +520,7 @@
             this.lbMSP.AutoSize = true;
             this.lbMSP.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbMSP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbMSP.Location = new System.Drawing.Point(11, 124);
+            this.lbMSP.Location = new System.Drawing.Point(11, 116);
             this.lbMSP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMSP.Name = "lbMSP";
             this.lbMSP.Size = new System.Drawing.Size(100, 21);
@@ -578,29 +607,26 @@
             this.pnDSM.Size = new System.Drawing.Size(165, 788);
             this.pnDSM.TabIndex = 3;
             // 
-            // cboKhachHang
+            // label2
             // 
-            this.cboKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboKhachHang.FormattingEnabled = true;
-            this.cboKhachHang.Location = new System.Drawing.Point(169, 112);
-            this.cboKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboKhachHang.Name = "cboKhachHang";
-            this.cboKhachHang.Size = new System.Drawing.Size(251, 31);
-            this.cboKhachHang.TabIndex = 36;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(8, 146);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(117, 21);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Điểm Thưởng";
             // 
-            // btnLamSach
+            // txtDiemThuong
             // 
-            this.btnLamSach.BackColor = System.Drawing.Color.Firebrick;
-            this.btnLamSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLamSach.ForeColor = System.Drawing.Color.White;
-            this.btnLamSach.Location = new System.Drawing.Point(444, 126);
-            this.btnLamSach.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLamSach.Name = "btnLamSach";
-            this.btnLamSach.Size = new System.Drawing.Size(120, 41);
-            this.btnLamSach.TabIndex = 37;
-            this.btnLamSach.Text = "Làm sạch";
-            this.btnLamSach.UseVisualStyleBackColor = false;
-            this.btnLamSach.Click += new System.EventHandler(this.btnLamSach_Click);
+            this.txtDiemThuong.Location = new System.Drawing.Point(169, 135);
+            this.txtDiemThuong.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiemThuong.Name = "txtDiemThuong";
+            this.txtDiemThuong.Size = new System.Drawing.Size(251, 30);
+            this.txtDiemThuong.TabIndex = 39;
+            this.txtDiemThuong.TextChanged += new System.EventHandler(this.txtDiemThuong_TextChanged);
             // 
             // DonDat
             // 
@@ -670,5 +696,7 @@
         private System.Windows.Forms.Button btnLuuBan;
         private System.Windows.Forms.ComboBox cboKhachHang;
         private System.Windows.Forms.Button btnLamSach;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDiemThuong;
     }
 }
