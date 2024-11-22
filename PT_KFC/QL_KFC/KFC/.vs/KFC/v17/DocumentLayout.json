@@ -64,7 +64,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
@@ -129,6 +129,18 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DoanhThu.cs [Design]",
+              "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DoanhThu.cs",
+              "RelativeDocumentMoniker": "DoanhThu.cs",
+              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DoanhThu.cs [Design]",
+              "RelativeToolTip": "DoanhThu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T00:40:25.896Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "DoanhThu.Designer.cs",
               "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DoanhThu.Designer.cs",
@@ -139,18 +151,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T15:11:48.944Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DoanhThu.cs [Design]",
-              "DocumentMoniker": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DoanhThu.cs",
-              "RelativeDocumentMoniker": "DoanhThu.cs",
-              "ToolTip": "F:\\K\\KFC\\PT_KFC\\QL_KFC\\KFC\\DoanhThu.cs [Design]",
-              "RelativeToolTip": "DoanhThu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T00:40:25.896Z",
-              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",

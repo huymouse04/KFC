@@ -32,6 +32,7 @@ namespace KFC
         KhuyenMai_BUS buskhuyenmai = new KhuyenMai_BUS();
         KhachHang_BUS buskhachhang = new KhachHang_BUS();
         Kho_BUS buskho = new Kho_BUS();
+        private Kho_BUS k = new Kho_BUS();
         private string currentMaDonDat;
         private decimal tongTienGoc ; // Biến lưu tổng tiền gốc
 
@@ -503,7 +504,7 @@ namespace KFC
                 // Lấy dữ liệu
                 var report = buschitietdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
                 var donDat = busdondat.GetDonDatByMa(currentMaDonDat);
-                var kho = buskho.GetAllKho();
+                var kho = k.GetAllKho();
                 var ban = busban.GetBanByMaBan(currentMaDonDat);
                 var khachHang = buskhachhang.GetKhachHangByMaDonDat(currentMaDonDat);
 

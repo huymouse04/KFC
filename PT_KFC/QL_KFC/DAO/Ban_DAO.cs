@@ -53,14 +53,18 @@ namespace DAO
                     throw new ArgumentException("Mã đơn đặt không được để trống");
                 }
 
-                // Truy vấn trực tiếp để lấy bàn dựa trên MaDonDat
-                var ban = DB.Bans.FirstOrDefault(b => b.MaDonDat == maDonDat);
-
-                if (ban == null)
+                var donDat = DB.DonDats.FirstOrDefault(dd => dd.MaDonDat == maDonDat);
+                if (donDat == null)
                 {
-                    return null; // Không tìm thấy bàn liên kết với mã đơn đặt
+                    return null; // Không tìm thấy đơn đặt với mã này
                 }
 
+               
+                var ban= DB.Bans.FirstOrDefault(tab => tab.MaBan == donDat.MaBan);
+                if (ban == null)
+                {
+                    return null;
+                }
                 // Trả về thông tin bàn dưới dạng DTO
                 return new Ban_DTO
                 {
