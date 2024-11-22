@@ -505,7 +505,7 @@ namespace KFC
                 var report = buschitietdondat.GetChiTietDonDatByMaDon(currentMaDonDat);
                 var donDat = busdondat.GetDonDatByMa(currentMaDonDat);
                 var kho = k.GetAllKho();
-                var ban = busban.GetBanByMaBan(currentMaDonDat);
+                var ban = busban.GetBanByMaDonDat(currentMaDonDat);
                 var khachHang = buskhachhang.GetKhachHangByMaDonDat(currentMaDonDat);
 
                 // Kiểm tra dữ liệu
@@ -652,10 +652,7 @@ namespace KFC
                 MaKhachHang = string.IsNullOrEmpty(maKhachHang) ? null : maKhachHang,
                 SoTienNhan = soTienNhan,
                 SoTienTra = soTienTra,
-                TongTien = (int)tongTienThanhToan,
-                SoTienTra = soTienTra,
-                TongTien = tongtien
-                
+                TongTien = (int)tongTienThanhToan           
             };
 
             // Cập nhật đơn đặt
