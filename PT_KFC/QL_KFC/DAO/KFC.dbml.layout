@@ -2,212 +2,212 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 19.875" name="KFC">
   <DataContextMoniker Name="/KFCDataContext" />
   <nestedChildShapes>
-    <classShape Id="66a28742-4ace-4f62-80a2-6177c88894c4" absoluteBounds="0.75, 0.75, 2, 1.9631982421875">
+    <classShape Id="cc27e793-3bd9-4cf2-99a5-38898f1b4337" absoluteBounds="0.75, 0.75, 2, 1.9631982421875">
       <DataClassMoniker Name="/KFCDataContext/Ban" />
       <nestedChildShapes>
-        <elementListCompartment Id="ea5f889b-e508-4168-9dbc-a7677ffbcb28" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="55194070-4458-48b0-8c0d-b9eab8649573" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="016ed0ba-fc27-44ca-b71a-26b7b208d52a" absoluteBounds="3.5, 10.875, 2, 1.7708968098958344">
+    <classShape Id="b9b791fa-6376-4bc6-9205-0bdf4e5d934b" absoluteBounds="3.5, 10.875, 2, 1.7708968098958344">
       <DataClassMoniker Name="/KFCDataContext/ThucDon" />
       <nestedChildShapes>
-        <elementListCompartment Id="81b7959d-6725-467e-a75c-358c247a6b25" absoluteBounds="3.515, 11.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="06fc3d56-88cd-4196-a420-2bfdd383d243" absoluteBounds="3.515, 11.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="305f4aa3-2396-4805-ab6e-dbe7ec337907" absoluteBounds="6.75, 11.625, 2, 2.1554996744791666">
+    <classShape Id="56738689-8f1b-46d4-b95a-47c50fb74702" absoluteBounds="6.75, 11.625, 2, 2.1554996744791666">
       <DataClassMoniker Name="/KFCDataContext/Combo" />
       <nestedChildShapes>
-        <elementListCompartment Id="136feae8-fd40-4c20-8fab-99e9547e8247" absoluteBounds="6.765, 12.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5ddb8318-3bf4-453e-8d58-60afac37f647" absoluteBounds="6.765, 12.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4f2bc231-6500-4e73-9d59-bd6418e29015" absoluteBounds="9.5, 11.875, 2, 1.5785953776041666">
+    <classShape Id="585ca067-2ecb-49cf-b9de-c9bb4e65fe05" absoluteBounds="9.5, 11.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/KFCDataContext/ChiTietCombo" />
       <nestedChildShapes>
-        <elementListCompartment Id="61af3127-cdc8-427d-81b5-4060fa04d995" absoluteBounds="9.515, 12.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="24b4c656-d8d9-4e0c-a91e-5d8fbf3a1619" absoluteBounds="9.515, 12.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="aa5791a7-510e-4940-8b46-b39fb1bed284" absoluteBounds="6.25, 1.25, 2, 1.7708968098958331">
+    <classShape Id="7837449a-3bd1-45ab-91fd-6684d8c73dd3" absoluteBounds="6.25, 1.25, 2, 1.7708968098958331">
       <DataClassMoniker Name="/KFCDataContext/ChiTietDonDat" />
       <nestedChildShapes>
-        <elementListCompartment Id="207db5c5-cd87-421a-90a1-b4b0ffb44abb" absoluteBounds="6.265, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1aae823a-3524-4676-a966-8c70dfcb4d43" absoluteBounds="6.265, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2c619152-2ad4-48fc-a491-dc625e8a76cc" absoluteBounds="9, 4, 2, 2.1554996744791666">
+    <classShape Id="1c39c763-c3cf-4f49-b0b0-9db6d11c407d" absoluteBounds="9, 4, 2, 2.1554996744791666">
       <DataClassMoniker Name="/KFCDataContext/DoanhThu" />
       <nestedChildShapes>
-        <elementListCompartment Id="15c0a159-35f4-4ec8-8144-e6491ee33b22" absoluteBounds="9.015, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="de37cd45-0d07-411b-8d71-8b8f827ffd2a" absoluteBounds="9.015, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="22c6c08c-1eae-4107-aa8c-185bf4f0524f" absoluteBounds="3.5, 3.875, 2, 2.3478011067708344">
+    <classShape Id="923122f5-a239-4aae-9f51-902f212cbe49" absoluteBounds="3.5, 3.875, 2, 2.3478011067708344">
       <DataClassMoniker Name="/KFCDataContext/DonDat" />
       <nestedChildShapes>
-        <elementListCompartment Id="3b01182a-d4cb-4077-a09d-cdc7f5c66ea3" absoluteBounds="3.515, 4.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3b7f946b-9db5-4f13-ad41-40052dd9c594" absoluteBounds="3.515, 4.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2f4670d0-06e0-408b-8f20-0b99349a9bc8" absoluteBounds="6.25, 4.375, 2, 1.3862939453125005">
+    <classShape Id="9ae44151-4b17-45e7-aca3-f2e3330829a9" absoluteBounds="6.25, 4.375, 2, 1.3862939453125005">
       <DataClassMoniker Name="/KFCDataContext/HoaDon" />
       <nestedChildShapes>
-        <elementListCompartment Id="c3613ed7-497a-48cc-8131-7a59eceae446" absoluteBounds="6.265, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="565b3b86-e644-41ce-8ea3-eb0ac1c73fae" absoluteBounds="6.265, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="0daf70a6-c0db-4721-bbbf-e2fee7c58192" absoluteBounds="0.75, 4.25, 2, 1.5785953776041675">
+    <classShape Id="d236b0e3-9e33-4508-bdf5-bee737505d98" absoluteBounds="0.75, 4.25, 2, 1.5785953776041675">
       <DataClassMoniker Name="/KFCDataContext/KhachHangThanThiet" />
       <nestedChildShapes>
-        <elementListCompartment Id="519deb33-f917-4167-b8a2-20ed5a946c37" absoluteBounds="0.765, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="979d511e-b821-4c0a-b421-b7383a7763fd" absoluteBounds="0.765, 4.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8662bb60-9fce-487b-b42f-6bbcf8695326" absoluteBounds="0.75, 10.625, 2, 2.3478011067708344">
+    <classShape Id="c923f9ee-ebc8-4c3a-9cfa-b165cd88ec52" absoluteBounds="0.75, 10.625, 2, 2.3478011067708344">
       <DataClassMoniker Name="/KFCDataContext/Kho" />
       <nestedChildShapes>
-        <elementListCompartment Id="4f0cfcd4-8121-4827-8a52-f7bdf819c18e" absoluteBounds="0.765, 11.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9f565792-451c-47d9-9cf7-7f70eba43419" absoluteBounds="0.765, 11.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4c648495-b3f0-404b-8f01-c1f33281bf69" absoluteBounds="0.75, 7.5, 2, 1.9631982421875005">
+    <classShape Id="560ca4d9-8026-4703-bfc9-8dbbffd5cfe8" absoluteBounds="0.75, 7.5, 2, 1.9631982421875005">
       <DataClassMoniker Name="/KFCDataContext/KhuyenMai" />
       <nestedChildShapes>
-        <elementListCompartment Id="5ebbfb78-6397-489d-9983-287fa6cc2945" absoluteBounds="0.765, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="61d0c2b4-f8c4-401e-8a74-c7b99131d4ae" absoluteBounds="0.765, 7.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f3af1cb8-7a38-4389-b879-1a6b8352cfe6" absoluteBounds="1.5, 14.125, 2, 1.1939925130208344">
+    <classShape Id="2d9e4648-0d57-42b1-8c11-634ebdefba7b" absoluteBounds="1.5, 14.125, 2, 1.1939925130208344">
       <DataClassMoniker Name="/KFCDataContext/LoaiHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="645bb2a2-941b-4d88-9f66-3df842549ab9" absoluteBounds="1.5150000000000001, 14.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="338650b5-23dd-4aa8-bbcf-2b73390a81c2" absoluteBounds="1.5150000000000001, 14.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d0aad1da-157e-4067-8465-765592acb753" absoluteBounds="9.5, 7.75, 2, 2.5401025390624996">
+    <classShape Id="709ca0e2-cbcd-45f9-9729-295804820a75" absoluteBounds="9.5, 7.75, 2, 2.5401025390624996">
       <DataClassMoniker Name="/KFCDataContext/Luong" />
       <nestedChildShapes>
-        <elementListCompartment Id="26c20fda-4af8-4eca-9798-ee2241626dec" absoluteBounds="9.515, 8.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b2da0884-85e7-48ec-8c5b-fd0d6fa06b22" absoluteBounds="9.515, 8.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b568b9e5-4a16-40e6-8ea0-8fe270621c37" absoluteBounds="3.5, 17.125, 2, 1.9631982421874987">
+    <classShape Id="6b47c6bf-5de2-41cd-be59-5b31c6ae4f07" absoluteBounds="3.5, 17.125, 2, 1.9631982421874987">
       <DataClassMoniker Name="/KFCDataContext/NhaCungCap" />
       <nestedChildShapes>
-        <elementListCompartment Id="80dd5967-8ebf-47da-b912-e460ef02c497" absoluteBounds="3.515, 17.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6e85586a-c72a-42ed-9c10-fca42e046b42" absoluteBounds="3.515, 17.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8fb8a371-dd5f-4718-9f17-6c052269de31" absoluteBounds="6.75, 7.625, 2, 2.7324039713541666">
+    <classShape Id="9cadbc68-436d-46ae-9303-11e7079944fa" absoluteBounds="6.75, 7.625, 2, 2.7324039713541666">
       <DataClassMoniker Name="/KFCDataContext/NhanVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="bb3e5ab1-e704-4218-b255-73b0fb0a80b3" absoluteBounds="6.765, 8.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="83754747-a239-4f6e-acd0-3cf3d5eac062" absoluteBounds="6.765, 8.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8bf31fac-00b7-487a-92b2-f228a6dc4be5" absoluteBounds="6.25, 16.625, 2, 2.9247054036458309">
+    <classShape Id="e5634a64-6af1-4399-812f-e87aadc446fc" absoluteBounds="6.25, 16.625, 2, 2.9247054036458309">
       <DataClassMoniker Name="/KFCDataContext/NhapHang" />
       <nestedChildShapes>
-        <elementListCompartment Id="43ad3a8a-a439-41a4-8cda-3a3ec5ff09c2" absoluteBounds="6.265, 17.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="dc17e967-7c7b-4660-b5aa-77d95243af22" absoluteBounds="6.265, 17.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(8.75 : 12.6642976888021); (9.13541666666667 : 12.6642976888021 : JumpStart); (9.30208333333333 : 12.6642976888021 : JumpEnd); (9.5 : 12.6642976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/Combo/Combo_ChiTietCombo" />
       <nodes>
-        <classShapeMoniker Id="305f4aa3-2396-4805-ab6e-dbe7ec337907" />
-        <classShapeMoniker Id="4f2bc231-6500-4e73-9d59-bd6418e29015" />
+        <classShapeMoniker Id="56738689-8f1b-46d4-b95a-47c50fb74702" />
+        <classShapeMoniker Id="585ca067-2ecb-49cf-b9de-c9bb4e65fe05" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 10.8763612283153); (5.875 : 10.5013612283153); (5.875 : 2.13544840494792); (6.25 : 2.13544840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/ThucDon/ThucDon_ChiTietDonDat" />
       <nodes>
-        <classShapeMoniker Id="016ed0ba-fc27-44ca-b71a-26b7b208d52a" />
-        <classShapeMoniker Id="aa5791a7-510e-4940-8b46-b39fb1bed284" />
+        <classShapeMoniker Id="b9b791fa-6376-4bc6-9205-0bdf4e5d934b" />
+        <classShapeMoniker Id="7837449a-3bd1-45ab-91fd-6684d8c73dd3" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(4.5 : 3.875); (4.5 : 2.60942510742187); (5.79166666666667 : 2.60942510742187 : JumpStart); (5.95833333333333 : 2.60942510742187 : JumpEnd); (6.25 : 2.60942510742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/DonDat/DonDat_ChiTietDonDat" />
       <nodes>
-        <classShapeMoniker Id="22c6c08c-1eae-4107-aa8c-185bf4f0524f" />
-        <classShapeMoniker Id="aa5791a7-510e-4940-8b46-b39fb1bed284" />
+        <classShapeMoniker Id="923122f5-a239-4aae-9f51-902f212cbe49" />
+        <classShapeMoniker Id="7837449a-3bd1-45ab-91fd-6684d8c73dd3" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 1.67971255371094); (3.9687475 : 1.67971255371094); (3.9687475 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/Ban/Ban_DonDat" />
       <nodes>
-        <classShapeMoniker Id="66a28742-4ace-4f62-80a2-6177c88894c4" />
-        <classShapeMoniker Id="22c6c08c-1eae-4107-aa8c-185bf4f0524f" />
+        <classShapeMoniker Id="cc27e793-3bd9-4cf2-99a5-38898f1b4337" />
+        <classShapeMoniker Id="923122f5-a239-4aae-9f51-902f212cbe49" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 5.06814697265625); (9 : 5.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/HoaDon/HoaDon_DoanhThu" />
       <nodes>
-        <classShapeMoniker Id="2f4670d0-06e0-408b-8f20-0b99349a9bc8" />
-        <classShapeMoniker Id="2c619152-2ad4-48fc-a491-dc625e8a76cc" />
+        <classShapeMoniker Id="9ae44151-4b17-45e7-aca3-f2e3330829a9" />
+        <classShapeMoniker Id="1c39c763-c3cf-4f49-b0b0-9db6d11c407d" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 5.06814697265625); (5.79166666666667 : 5.06814697265625 : JumpStart); (5.95833333333333 : 5.06814697265625 : JumpEnd); (6.25 : 5.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/DonDat/DonDat_HoaDon" />
       <nodes>
-        <classShapeMoniker Id="22c6c08c-1eae-4107-aa8c-185bf4f0524f" />
-        <classShapeMoniker Id="2f4670d0-06e0-408b-8f20-0b99349a9bc8" />
+        <classShapeMoniker Id="923122f5-a239-4aae-9f51-902f212cbe49" />
+        <classShapeMoniker Id="9ae44151-4b17-45e7-aca3-f2e3330829a9" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 5.03929768880208); (3.5 : 5.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/KhachHangThanThiet/KhachHangThanThiet_DonDat" />
       <nodes>
-        <classShapeMoniker Id="0daf70a6-c0db-4721-bbbf-e2fee7c58192" />
-        <classShapeMoniker Id="22c6c08c-1eae-4107-aa8c-185bf4f0524f" />
+        <classShapeMoniker Id="d236b0e3-9e33-4508-bdf5-bee737505d98" />
+        <classShapeMoniker Id="923122f5-a239-4aae-9f51-902f212cbe49" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 11.7604484049479); (3.5 : 11.7604484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/Kho/Kho_ThucDon" />
       <nodes>
-        <classShapeMoniker Id="8662bb60-9fce-487b-b42f-6bbcf8695326" />
-        <classShapeMoniker Id="016ed0ba-fc27-44ca-b71a-26b7b208d52a" />
+        <classShapeMoniker Id="c923f9ee-ebc8-4c3a-9cfa-b165cd88ec52" />
+        <classShapeMoniker Id="b9b791fa-6376-4bc6-9205-0bdf4e5d934b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 8.48159912109375); (4.5 : 8.48159912109375); (4.5 : 6.22280110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/KhuyenMai/KhuyenMai_DonDat" />
       <nodes>
-        <classShapeMoniker Id="4c648495-b3f0-404b-8f01-c1f33281bf69" />
-        <classShapeMoniker Id="22c6c08c-1eae-4107-aa8c-185bf4f0524f" />
+        <classShapeMoniker Id="560ca4d9-8026-4703-bfc9-8dbbffd5cfe8" />
+        <classShapeMoniker Id="923122f5-a239-4aae-9f51-902f212cbe49" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(3.5 : 14.7219962565104); (4.53125 : 14.7219962565104); (4.53125 : 12.6458968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/LoaiHang/LoaiHang_ThucDon" />
       <nodes>
-        <classShapeMoniker Id="f3af1cb8-7a38-4389-b879-1a6b8352cfe6" />
-        <classShapeMoniker Id="016ed0ba-fc27-44ca-b71a-26b7b208d52a" />
+        <classShapeMoniker Id="2d9e4648-0d57-42b1-8c11-634ebdefba7b" />
+        <classShapeMoniker Id="b9b791fa-6376-4bc6-9205-0bdf4e5d934b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.125 : 14.125); (2.125 : 12.9728011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/LoaiHang/LoaiHang_Kho" />
       <nodes>
-        <classShapeMoniker Id="f3af1cb8-7a38-4389-b879-1a6b8352cfe6" />
-        <classShapeMoniker Id="8662bb60-9fce-487b-b42f-6bbcf8695326" />
+        <classShapeMoniker Id="2d9e4648-0d57-42b1-8c11-634ebdefba7b" />
+        <classShapeMoniker Id="c923f9ee-ebc8-4c3a-9cfa-b165cd88ec52" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.75 : 9.02005126953125); (9.13541666666667 : 9.02005126953125 : JumpStart); (9.30208333333333 : 9.02005126953125 : JumpEnd); (9.5 : 9.02005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/NhanVien/NhanVien_Luong" />
       <nodes>
-        <classShapeMoniker Id="8fb8a371-dd5f-4718-9f17-6c052269de31" />
-        <classShapeMoniker Id="d0aad1da-157e-4067-8465-765592acb753" />
+        <classShapeMoniker Id="9cadbc68-436d-46ae-9303-11e7079944fa" />
+        <classShapeMoniker Id="709ca0e2-cbcd-45f9-9729-295804820a75" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 18.0873527018229); (9.21875 : 18.0873527018229); (9.21875 : 6.15549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/NhapHang/NhapHang_DoanhThu" />
       <nodes>
-        <classShapeMoniker Id="8bf31fac-00b7-487a-92b2-f228a6dc4be5" />
-        <classShapeMoniker Id="2c619152-2ad4-48fc-a491-dc625e8a76cc" />
+        <classShapeMoniker Id="e5634a64-6af1-4399-812f-e87aadc446fc" />
+        <classShapeMoniker Id="1c39c763-c3cf-4f49-b0b0-9db6d11c407d" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.46875 : 15.3189925130208); (2.46875 : 16.84375); (6.25 : 16.84375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/LoaiHang/LoaiHang_NhapHang" />
       <nodes>
-        <classShapeMoniker Id="f3af1cb8-7a38-4389-b879-1a6b8352cfe6" />
-        <classShapeMoniker Id="8bf31fac-00b7-487a-92b2-f228a6dc4be5" />
+        <classShapeMoniker Id="2d9e4648-0d57-42b1-8c11-634ebdefba7b" />
+        <classShapeMoniker Id="e5634a64-6af1-4399-812f-e87aadc446fc" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 18.1065991210938); (6.25 : 18.1065991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/NhaCungCap/NhaCungCap_NhapHang" />
       <nodes>
-        <classShapeMoniker Id="b568b9e5-4a16-40e6-8ea0-8fe270621c37" />
-        <classShapeMoniker Id="8bf31fac-00b7-487a-92b2-f228a6dc4be5" />
+        <classShapeMoniker Id="6b47c6bf-5de2-41cd-be59-5b31c6ae4f07" />
+        <classShapeMoniker Id="e5634a64-6af1-4399-812f-e87aadc446fc" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.09375 : 12.9728011067708); (1.09375 : 19.3502018229167); (6.25 : 19.3502018229167)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/KFCDataContext/Kho/Kho_NhapHang" />
       <nodes>
-        <classShapeMoniker Id="8662bb60-9fce-487b-b42f-6bbcf8695326" />
-        <classShapeMoniker Id="8bf31fac-00b7-487a-92b2-f228a6dc4be5" />
+        <classShapeMoniker Id="c923f9ee-ebc8-4c3a-9cfa-b165cd88ec52" />
+        <classShapeMoniker Id="e5634a64-6af1-4399-812f-e87aadc446fc" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

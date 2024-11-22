@@ -630,6 +630,10 @@
             this.pnDSM.Size = new System.Drawing.Size(165, 979);
             this.pnDSM.TabIndex = 3;
             // 
+            // btnLuu
+            // 
+    
+            // 
             // DonDat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);

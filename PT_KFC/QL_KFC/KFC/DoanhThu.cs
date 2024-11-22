@@ -1,6 +1,10 @@
-﻿using System;
+﻿using BUS;
+using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -8,154 +12,239 @@ namespace KFC
 {
     public partial class DoanhThu : Form
     {
-        private RadioButton rdoTheoThang;
-        private RadioButton rdoTheoNgay;
-        private Chart chart;
-        private ChartArea chartArea; // Khai báo chartArea
+        private DoanhThu_BUS doanhThuBUS = new DoanhThu_BUS();
 
         public DoanhThu()
         {
             InitializeComponent();
-            this.Text = "Biểu đồ doanh thu";
-            this.Size = new Size(900, 700);
-
-            // Khởi tạo RadioButton
-            rdoTheoThang = new RadioButton();
-            rdoTheoThang.Text = "Theo Tháng";
-            rdoTheoThang.Checked = true;
-            rdoTheoThang.Location = new Point(20, 20);
-            rdoTheoThang.Font = new Font("Arial", 12, FontStyle.Bold);
-            rdoTheoThang.ForeColor = Color.DarkBlue;
-            rdoTheoThang.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
-
-            rdoTheoNgay = new RadioButton();
-            rdoTheoNgay.Text = "Theo Ngày";
-            rdoTheoNgay.Location = new Point(150, 20);
-            rdoTheoNgay.Font = new Font("Arial", 12, FontStyle.Bold);
-            rdoTheoNgay.ForeColor = Color.DarkBlue;
-            rdoTheoNgay.CheckedChanged += new EventHandler(RadioButton_CheckedChanged);
-
-            // Khởi tạo biểu đồ
-            chart = new Chart();
-            chart.Dock = DockStyle.Bottom;
-            chart.Height = 500;
-
-            // Khởi tạo chartArea và thêm vào chart
-            chartArea = new ChartArea("MainArea"); // Đảm bảo chartArea được khởi tạo
-            chartArea.BackColor = Color.WhiteSmoke;
-            chartArea.AxisX.MajorGrid.LineColor = Color.LightGray;
-            chartArea.AxisY.MajorGrid.LineColor = Color.LightGray;
-            chartArea.AxisX.LabelStyle.Font = new Font("Arial", 10, FontStyle.Bold);
-            chartArea.AxisY.LabelStyle.Font = new Font("Arial", 10, FontStyle.Bold);
-            chartArea.AxisX.LabelStyle.ForeColor = Color.DarkSlateGray;
-            chartArea.AxisY.LabelStyle.ForeColor = Color.DarkSlateGray;
-
-            // Thêm chartArea vào chart
-            chart.ChartAreas.Add(chartArea);
-
-            // Thêm tiêu đề
-            Title title = new Title();
-            title.Text = "Biểu đồ doanh thu";
-            title.Font = new Font("Arial", 18, FontStyle.Bold);
-            title.ForeColor = Color.DarkRed;
-            chart.Titles.Add(title);
-
-            // Thêm các control vào form
-            this.Controls.Add(rdoTheoThang);
-            this.Controls.Add(rdoTheoNgay);
-            this.Controls.Add(chart);
-
-            // Hiển thị biểu đồ theo tháng mặc định
-            HienThiDoanhThuTheoThang();
+            ConfigureFormControls();
+            ConfigureDataGridView();
+            LoadInitialData();
         }
 
-        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        private void ConfigureFormControls()
         {
-            // Kiểm tra lựa chọn của RadioButton và cập nhật biểu đồ
-            if (rdoTheoThang.Checked)
-            {
-                HienThiDoanhThuTheoThang();
-            }
-            else if (rdoTheoNgay.Checked)
-            {
-                HienThiDoanhThuTheoNgay();
-            }
+            // Cấu hình sự kiện
+            btnTimKiem.Click += btnTimKiem_Click;
+            btnLoc.Click += btnLoc_Click;
+            btnLamMoi.Click += btnLamMoi_Click;
+
+            // Cấu hình ComboBox lọc - chỉ còn tháng và năm
+            cbbLoc.Items.Clear();
+            cbbLoc.Items.AddRange(new string[] { "Tháng", "Năm" });
+            cbbLoc.SelectedIndex = 0;
+
+            // Cấu hình biểu đồ
+            ConfigureChartAppearance();
         }
 
-        private void HienThiDoanhThuTheoThang()
+        private void ConfigureDataGridView()
         {
-            // Xóa các series trước đó
-            chart.Series.Clear();
+            dtgvDoanhThu.Columns.Clear();
 
-            // Tạo series mới cho doanh thu theo tháng
-            Series series = new Series();
-            series.Name = "DoanhThuTheoThang";
-            series.ChartType = SeriesChartType.Column;
-            series.Color = Color.DeepSkyBlue;
-            series.BackGradientStyle = GradientStyle.TopBottom;
-            series.BackSecondaryColor = Color.MidnightBlue;
-            series.BorderWidth = 2;
-            series.BorderColor = Color.DarkBlue;
-            series.ShadowOffset = 3;
-            series.IsValueShownAsLabel = true;
-            series.LabelForeColor = Color.Black;
-            series.Font = new Font("Arial", 12, FontStyle.Bold);
-
-            // Doanh thu giả lập theo từng tháng
-            List<int> doanhThu = new List<int> { 12000000, 15000000, 17000000, 13000000, 20000000, 19000000, 21000000, 18000000, 16000000, 22000000, 23000000, 25000000 };
-            for (int i = 0; i < doanhThu.Count; i++)
+            // Thêm các cột hiển thị đầy đủ thông tin
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
             {
-                series.Points.AddXY($"Tháng {i + 1}", doanhThu[i]);
-            }
+                Name = "MaNhapHang",
+                HeaderText = "Mã Nhập Hàng",
+                DataPropertyName = "MaNhapHang",
+                Width = 100
+            });
 
-            // Cấu hình cột
-            foreach (var point in series.Points)
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
             {
-                point.Color = Color.LightSkyBlue;
-                point.BackGradientStyle = GradientStyle.VerticalCenter;
-                point.BackSecondaryColor = Color.SteelBlue;
-                point.BorderWidth = 1;
-                point.BorderColor = Color.Navy;
-            }
+                Name = "Thang",
+                HeaderText = "Tháng",
+                DataPropertyName = "Thang",
+                Width = 80
+            });
 
-            // Thêm series vào biểu đồ
-            chart.Series.Add(series);
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Nam",
+                HeaderText = "Năm",
+                DataPropertyName = "Nam",
+                Width = 80
+            });
 
-            // Cấu hình 3D
-            chartArea.Area3DStyle.Enable3D = true;
-            chartArea.Area3DStyle.LightStyle = LightStyle.Realistic;
-            chartArea.Area3DStyle.Inclination = 15;
-            chartArea.Area3DStyle.Rotation = 10;
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "NgayGhiNhan",
+                HeaderText = "Ngày Ghi Nhận",
+                DataPropertyName = "NgayGhiNhan",
+                Width = 120
+            });
+
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "MaHoaDon",
+                HeaderText = "Mã Hóa Đơn",
+                DataPropertyName = "MaHoaDon",
+                Width = 100
+            });
+
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TongDoanhThu",
+                HeaderText = "Tổng Doanh Thu",
+                DataPropertyName = "TongDoanhThu",
+                Width = 120
+            });
+
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TongChiTieu",
+                HeaderText = "Tổng Chi Tiêu",
+                DataPropertyName = "TongChiTieu",
+                Width = 120
+            });
+
+            dtgvDoanhThu.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "TongTienDoanhThu",
+                HeaderText = "Tổng Tiền Doanh Thu",
+                DataPropertyName = "TongTienDoanhThu",
+                Width = 150
+            });
         }
 
-        private void HienThiDoanhThuTheoNgay()
+
+        private void ConfigureChartAppearance()
         {
-            // Xóa các series trước đó
-            chart.Series.Clear();
+            chartDoanhThu.ChartAreas[0].AxisY.LabelStyle.Format = "{0:0.##}%";
+            chartDoanhThu.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";
+            chartDoanhThu.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
+        }
 
-            // Tạo series mới cho doanh thu theo ngày trong tháng
-            Series series = new Series();
-            series.Name = "DoanhThuTheoNgay";
-            series.ChartType = SeriesChartType.Line;
-            series.Color = Color.Crimson;
-            series.BorderWidth = 3;
-            series.ShadowOffset = 2;
-            series.IsValueShownAsLabel = true;
-            series.LabelForeColor = Color.Black;
-            series.Font = new Font("Arial", 12, FontStyle.Bold);
-
-            // Doanh thu giả lập theo từng ngày trong tháng
-            List<int> doanhThu = new List<int> { 500000, 700000, 600000, 550000, 800000, 750000, 900000, 650000, 700000, 800000, 850000, 950000, 1000000, 1100000, 1150000 };
-            for (int i = 0; i < doanhThu.Count; i++)
+        private void LoadInitialData()
+        {
+            try
             {
-                series.Points.AddXY($"Ngày {i + 1}", doanhThu[i]);
+                var doanhThuList = doanhThuBUS.GetAllDoanhThu();
+                if (doanhThuList == null || !doanhThuList.Any())
+                {
+                    MessageBox.Show("Không có dữ liệu hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                UpdateDataGridView(doanhThuList);
+                UpdateChartWithPercentages(doanhThuList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi tải dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dateTimePicker1.Value;
+            DateTime denNgay = dateTimePicker2.Value;
+
+            try
+            {
+                var doanhThuList = doanhThuBUS.TimKiemDoanhThu(tuNgay, denNgay);
+                UpdateDataGridView(doanhThuList);
+                UpdateChartWithPercentages(doanhThuList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int? thang = null;
+                int? nam = null;
+
+                switch (cbbLoc.SelectedItem.ToString())
+                {
+                    case "Tháng":
+                        if (DateTime.TryParseExact(txtLoc.Text, "MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime thangNam))
+                        {
+                            thang = thangNam.Month;
+                            nam = thangNam.Year;
+                        }
+                        break;
+                    case "Năm":
+                        if (int.TryParse(txtLoc.Text, out int namLoc))
+                            nam = namLoc;
+                        break;
+                }
+
+                var doanhThuList = doanhThuBUS.LocDoanhThuTheo(thang: thang, nam: nam);
+                UpdateDataGridView(doanhThuList);
+                UpdateChartWithPercentages(doanhThuList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi lọc: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            LoadInitialData();
+        }
+
+        private void UpdateDataGridView(List<DoanhThu_DTO> doanhThuList)
+        {
+            var displayList = doanhThuList.Select(dt => new
+            {
+                MaNhapHang = dt.MaNhapHang,
+                Thang = dt.Thang,
+                Nam = dt.Nam,
+                NgayGhiNhan = dt.NgayGhiNhan.ToString("dd/MM/yyyy"),
+                MaHoaDon = dt.MaHoaDon,
+                TongDoanhThu = dt.TongDoanhThu.ToString("N0") + " VND",
+                TongChiTieu = dt.TongChiTieu.ToString("N0") + " VND",
+                TongTienDoanhThu = (dt.TongDoanhThu - dt.TongChiTieu).ToString("N0") + " VND"
+            }).ToList();
+
+            dtgvDoanhThu.DataSource = displayList;
+
+            // Tính tổng tiền doanh thu
+            float tongTienDoanhThu = doanhThuList.Sum(dt => dt.TongDoanhThu - dt.TongChiTieu);
+            tbTongDoanhThu.Text = tongTienDoanhThu.ToString("N0") + " VND";
+        }
+
+        private void UpdateChartWithPercentages(List<DoanhThu_DTO> doanhThuList)
+        {
+            if (doanhThuList == null || !doanhThuList.Any()) return;
+
+            float tongDoanhThu = doanhThuList.Sum(dt => dt.TongDoanhThu);
+            float tongChiTieu = doanhThuList.Sum(dt => dt.TongChiTieu);
+
+            chartDoanhThu.Series.Clear();
+            Series doanhThuSeries = new Series("Doanh Thu (%)");
+            Series chiTieuSeries = new Series("Chi Tiêu (%)");
+
+            doanhThuSeries.ChartType = SeriesChartType.Column;
+            chiTieuSeries.ChartType = SeriesChartType.Column;
+
+            foreach (var item in doanhThuList)
+            {
+                float phanTramDoanhThu = tongDoanhThu > 0 ? (item.TongDoanhThu / tongDoanhThu) * 100 : 0;
+                float phanTramChiTieu = tongChiTieu > 0 ? (item.TongChiTieu / tongChiTieu) * 100 : 0;
+
+                doanhThuSeries.Points.AddXY(item.NgayGhiNhan.ToString("dd/MM/yyyy"), phanTramDoanhThu);
+                chiTieuSeries.Points.AddXY(item.NgayGhiNhan.ToString("dd/MM/yyyy"), phanTramChiTieu);
             }
 
-            // Thêm series vào biểu đồ
-            chart.Series.Add(series);
+            chartDoanhThu.Series.Add(doanhThuSeries);
+            chartDoanhThu.Series.Add(chiTieuSeries);
 
-            // Cấu hình 3D
-            chartArea.Area3DStyle.Enable3D = false; // Tắt 3D cho biểu đồ đường
+            chartDoanhThu.ChartAreas[0].AxisX.Title = "Ngày";
+            chartDoanhThu.ChartAreas[0].AxisY.Title = "Tỷ Lệ (%)";
+            chartDoanhThu.Titles.Clear();
+            chartDoanhThu.Titles.Add(new Title("Biểu Đồ Doanh Thu và Chi Tiêu"));
+
+            // Cập nhật tổng doanh thu và chi tiêu
+            tbTongDoanhThu.Text = tongDoanhThu.ToString("N0") + " VND";
+            tbTongChiTieu.Text = tongChiTieu.ToString("N0") + " VND";
         }
+
     }
 }

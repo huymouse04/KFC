@@ -83,8 +83,8 @@
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = global::KFC.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(142, 130);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +103,7 @@
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhanVien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.Location = new System.Drawing.Point(3, 136);
+            this.btnNhanVien.Location = new System.Drawing.Point(3, 134);
             this.btnNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(142, 66);
@@ -124,7 +124,7 @@
             this.btnKho.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKho.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKho.ForeColor = System.Drawing.Color.White;
-            this.btnKho.Location = new System.Drawing.Point(3, 206);
+            this.btnKho.Location = new System.Drawing.Point(3, 204);
             this.btnKho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKho.Name = "btnKho";
             this.btnKho.Size = new System.Drawing.Size(142, 66);
@@ -145,7 +145,7 @@
             this.btnThucDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThucDon.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThucDon.ForeColor = System.Drawing.Color.White;
-            this.btnThucDon.Location = new System.Drawing.Point(3, 276);
+            this.btnThucDon.Location = new System.Drawing.Point(3, 274);
             this.btnThucDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThucDon.Name = "btnThucDon";
             this.btnThucDon.Size = new System.Drawing.Size(142, 66);
@@ -166,7 +166,7 @@
             this.btnComBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComBo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComBo.ForeColor = System.Drawing.Color.White;
-            this.btnComBo.Location = new System.Drawing.Point(3, 346);
+            this.btnComBo.Location = new System.Drawing.Point(3, 344);
             this.btnComBo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnComBo.Name = "btnComBo";
             this.btnComBo.Size = new System.Drawing.Size(142, 66);
@@ -187,7 +187,7 @@
             this.btnKhuyenMai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhuyenMai.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhuyenMai.ForeColor = System.Drawing.Color.White;
-            this.btnKhuyenMai.Location = new System.Drawing.Point(3, 416);
+            this.btnKhuyenMai.Location = new System.Drawing.Point(3, 414);
             this.btnKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhuyenMai.Name = "btnKhuyenMai";
             this.btnKhuyenMai.Size = new System.Drawing.Size(142, 66);
@@ -208,7 +208,7 @@
             this.btnBan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan.ForeColor = System.Drawing.Color.White;
-            this.btnBan.Location = new System.Drawing.Point(3, 486);
+            this.btnBan.Location = new System.Drawing.Point(3, 484);
             this.btnBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBan.Name = "btnBan";
             this.btnBan.Size = new System.Drawing.Size(142, 66);
@@ -229,7 +229,7 @@
             this.btnDonDat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDonDat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDonDat.ForeColor = System.Drawing.Color.White;
-            this.btnDonDat.Location = new System.Drawing.Point(3, 556);
+            this.btnDonDat.Location = new System.Drawing.Point(3, 554);
             this.btnDonDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDonDat.Name = "btnDonDat";
             this.btnDonDat.Size = new System.Drawing.Size(142, 66);
@@ -250,7 +250,7 @@
             this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoaDon.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Location = new System.Drawing.Point(3, 626);
+            this.btnHoaDon.Location = new System.Drawing.Point(3, 624);
             this.btnHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(142, 66);
@@ -270,7 +270,7 @@
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.Location = new System.Drawing.Point(3, 696);
+            this.btnKhachHang.Location = new System.Drawing.Point(3, 694);
             this.btnKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(142, 66);
@@ -292,7 +292,7 @@
             this.btnDoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDoanhThu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoanhThu.ForeColor = System.Drawing.Color.White;
-            this.btnDoanhThu.Location = new System.Drawing.Point(3, 766);
+            this.btnDoanhThu.Location = new System.Drawing.Point(3, 764);
             this.btnDoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDoanhThu.Name = "btnDoanhThu";
             this.btnDoanhThu.Size = new System.Drawing.Size(135, 66);
@@ -300,6 +300,7 @@
             this.btnDoanhThu.Text = "Doanh Thu";
             this.btnDoanhThu.TextColor = System.Drawing.Color.White;
             this.btnDoanhThu.UseVisualStyleBackColor = false;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
             // 
             // btnThoat
             // 
@@ -313,7 +314,7 @@
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(3, 836);
+            this.btnThoat.Location = new System.Drawing.Point(3, 834);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(135, 66);

@@ -188,8 +188,8 @@
       <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="MaLoaiHang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="MaNhaCungCap" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="NgaySanXuat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="NgayHetHan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NgaySanXuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayHetHan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="NhapHang_DoanhThu" Member="DoanhThus" ThisKey="MaNhapHang" OtherKey="MaNhapHang" Type="DoanhThu" />
       <Association Name="LoaiHang_NhapHang" Member="LoaiHang" ThisKey="MaLoaiHang" OtherKey="MaLoaiHang" Type="LoaiHang" IsForeignKey="true" />
       <Association Name="NhaCungCap_NhapHang" Member="NhaCungCap" ThisKey="MaNhaCungCap" OtherKey="MaNhaCungCap" Type="NhaCungCap" IsForeignKey="true" />

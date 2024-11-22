@@ -68,6 +68,7 @@
     <Compile Include="Combo_DTO.cs" />
     <Compile Include="Connection_DTO.cs" />
     <Compile Include="DonDat_DTO.cs" />
+  <Compile Include="DoanhThu_DTO.cs" />
     <Compile Include="KhachHang_DTO.cs" />
     <Compile Include="Kho_DTO.cs" />
     <Compile Include="KhuyenMai_DTO.cs" />

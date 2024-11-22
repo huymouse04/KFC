@@ -264,6 +264,11 @@
     <Compile Include="NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLKFCDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKFCDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ThucDon.cs">
       <SubType>Form</SubType>
     </Compile>
