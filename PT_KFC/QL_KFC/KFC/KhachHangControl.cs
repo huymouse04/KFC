@@ -140,13 +140,13 @@ namespace KFC
             // Cập nhật màu viền và độ dày dựa trên DiemTichLuy
             if (khachHang != null)
             {
-                if (khachHang.DiemTichLuy >= 150)
+                if (khachHang.DiemTichLuy >= 300)
                 {
                     borderColor = Color.DarkRed; // Màu viền đặc biệt cho mức cao nhất
                     borderWidth = 4;
                     this.BackColor = Color.Gold; // Đổi nền cho khách hàng cao cấp
                 }
-                else if (khachHang.DiemTichLuy >= 100)
+                else if (khachHang.DiemTichLuy >= 150)
                 {
                     borderColor = Color.OrangeRed;
                     borderWidth = 3;

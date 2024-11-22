@@ -524,7 +524,7 @@ select * from ChiTietDonDat
 select * from Ban
 
 --DELETE FROM DonDat 
---WHERE MaDonDat IN ('DD1f977b63');
+--WHERE MaDonDat IN ('DDbc0ac8f1','DDe7139f26');
 
 
 --SELECT * FROM Luong WHERE MaNhanVien = 'NV001' AND Thang = 10 AND Nam = 2024;

@@ -76,7 +76,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(146, 1427);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(146, 1488);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -258,6 +258,7 @@
             this.btnHoaDon.Text = "Hóa đơn";
             this.btnHoaDon.TextColor = System.Drawing.Color.White;
             this.btnHoaDon.UseVisualStyleBackColor = false;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnKhachHang
             // 
@@ -333,7 +334,7 @@
             this.panel1.Location = new System.Drawing.Point(145, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1409, 129);
+            this.panel1.Size = new System.Drawing.Size(1448, 129);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -342,7 +343,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(600, 38);
+            this.label1.Location = new System.Drawing.Point(620, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 53);
             this.label1.TabIndex = 0;
@@ -360,7 +361,7 @@
             this.panel_Body.Location = new System.Drawing.Point(0, 0);
             this.panel_Body.Margin = new System.Windows.Forms.Padding(1);
             this.panel_Body.Name = "panel_Body";
-            this.panel_Body.Size = new System.Drawing.Size(1554, 1427);
+            this.panel_Body.Size = new System.Drawing.Size(1593, 1488);
             this.panel_Body.TabIndex = 17;
             this.panel_Body.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -368,7 +369,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1419, 844);
+            this.ClientSize = new System.Drawing.Size(1458, 905);
             this.Controls.Add(this.panel_Body);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Main";

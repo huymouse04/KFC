@@ -33,7 +33,7 @@ namespace KFC
         KhachHang_BUS buskhachhang = new KhachHang_BUS();
         Kho_BUS buskho = new Kho_BUS();
         private string currentMaDonDat;
-        private decimal tongTienGoc = 0; // Biến lưu tổng tiền gốc
+        private decimal tongTienGoc ; // Biến lưu tổng tiền gốc
 
 
         public DonDat()
@@ -569,6 +569,9 @@ namespace KFC
                 }
             }
 
+            // Cập nhật lại giá trị tổng tiền sau khi áp dụng khuyến mãi
+            txtTongTien.Text = tongTienThanhToan.ToString("N0");
+
             // Xử lý điểm thưởng
             int diemThuong = 0;
             if (!int.TryParse(txtDiemThuong.Text.Trim(), out diemThuong) || diemThuong < 0)
@@ -749,7 +752,7 @@ namespace KFC
                     ban.MaDonDat = currentMaDonDat;
                     ban.TrangThaiBan = true; // Đánh dấu bàn đang được sử dụng
                     ban.ThoiGianDen = DateTime.Now;
-                    ban.ThoiGianRoi = DateTime.Now.AddHours(2); // Mặc định thời gian sử dụng là 2 tiếng
+                    ban.ThoiGianRoi = DateTime.Now.AddHours(3); // Mặc định thời gian sử dụng là 2 tiếng
 
                     // Lưu thông tin bàn
                     busban.UpdateBan(ban);
@@ -802,6 +805,7 @@ namespace KFC
         private void btnLamSach_Click(object sender, EventArgs e)
         {
             cboKhachHang.SelectedIndex = -1;
+            txtDiemThuong.Clear();
             cboMaKhuyenMai.SelectedIndex = -1;
         }
 
