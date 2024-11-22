@@ -13,6 +13,11 @@ namespace BUS
 
         private DonDat_DAO dao = new DonDat_DAO();
 
+        public List<ChiTietDonDat_DTO> GetChiTietDonDatByMaDon(string maDonDat)
+        {
+            return dao.GetChiTietDonDatByMaDon(maDonDat);
+
+        }
 
         public string TaoDonDatMoi()
         {
@@ -31,6 +36,8 @@ namespace BUS
         {
             return dao.GetDonDatByMa(maDonDat);
         }
+
+
 
     }
 }
