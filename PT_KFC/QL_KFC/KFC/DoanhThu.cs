@@ -13,6 +13,9 @@ namespace KFC
     public partial class DoanhThu : Form
     {
         private DoanhThu_BUS doanhThuBUS = new DoanhThu_BUS();
+        private List<DoanhThu_DTO> currentDoanhThuList; // Thêm biến để lưu trữ danh sách hiện tại
+        private SortOrder currentSortOrder = SortOrder.Ascending; // Thêm biến để theo dõi trạng thái sắp xếp
+        private string currentSortColumn = string.Empty; // Thêm biến để theo dõi cột đang được sắp xếp
 
         public DoanhThu()
         {
@@ -35,7 +38,14 @@ namespace KFC
             cbbLoc.SelectedIndex = 0;
 
             // Cấu hình biểu đồ
-            ConfigureChartAppearance();
+            SetupChartAppearance();
+        }
+
+        private void SetupChartAppearance()
+        {
+            chartDoanhThu.ChartAreas[0].AxisY.LabelStyle.Format = "{0:0.##}%";
+            chartDoanhThu.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";
+            chartDoanhThu.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
         }
 
         private void ConfigureDataGridView()
@@ -106,28 +116,94 @@ namespace KFC
                 DataPropertyName = "TongTienDoanhThu",
                 Width = 150
             });
+
+            // Thêm sự kiện click vào header của cột
+            dtgvDoanhThu.ColumnHeaderMouseClick += DtgvDoanhThu_ColumnHeaderMouseClick;
         }
 
-
-        private void ConfigureChartAppearance()
+        private void DtgvDoanhThu_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            chartDoanhThu.ChartAreas[0].AxisY.LabelStyle.Format = "{0:0.##}%";
-            chartDoanhThu.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";
-            chartDoanhThu.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Days;
+            if (currentDoanhThuList == null || !currentDoanhThuList.Any())
+                return;
+
+            DataGridViewColumn column = dtgvDoanhThu.Columns[e.ColumnIndex];
+            string columnName = column.Name;
+
+            // Đảo ngược trạng thái sắp xếp nếu click vào cùng một cột
+            if (columnName == currentSortColumn)
+            {
+                currentSortOrder = currentSortOrder == SortOrder.Ascending ?
+                    SortOrder.Descending : SortOrder.Ascending;
+            }
+            else
+            {
+                currentSortColumn = columnName;
+                currentSortOrder = SortOrder.Ascending;
+            }
+
+            // Sắp xếp dữ liệu dựa trên cột được chọn
+            var sortedList = SortDoanhThuList(currentDoanhThuList, columnName, currentSortOrder);
+            UpdateDataGridView(sortedList);
+            UpdateChartWithPercentages(sortedList);
+        }
+
+        private List<DoanhThu_DTO> SortDoanhThuList(List<DoanhThu_DTO> list, string columnName, SortOrder sortOrder)
+        {
+            IOrderedEnumerable<DoanhThu_DTO> orderedList;
+
+            // Sử dụng if-else thay vì switch expression
+            if (columnName == "MaNhapHang")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.MaNhapHang) :
+                    list.OrderByDescending(item => item.MaNhapHang);
+            else if (columnName == "Thang")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.Thang) :
+                    list.OrderByDescending(item => item.Thang);
+            else if (columnName == "Nam")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.Nam) :
+                    list.OrderByDescending(item => item.Nam);
+            else if (columnName == "NgayGhiNhan")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.NgayGhiNhan) :
+                    list.OrderByDescending(item => item.NgayGhiNhan);
+            else if (columnName == "MaHoaDon")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.MaHoaDon) :
+                    list.OrderByDescending(item => item.MaHoaDon);
+            else if (columnName == "TongDoanhThu")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.TongDoanhThu) :
+                    list.OrderByDescending(item => item.TongDoanhThu);
+            else if (columnName == "TongChiTieu")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.TongChiTieu) :
+                    list.OrderByDescending(item => item.TongChiTieu);
+            else if (columnName == "TongTienDoanhThu")
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.TongDoanhThu - item.TongChiTieu) :
+                    list.OrderByDescending(item => item.TongDoanhThu - item.TongChiTieu);
+            else
+                orderedList = sortOrder == SortOrder.Ascending ?
+                    list.OrderBy(item => item.NgayGhiNhan) :
+                    list.OrderByDescending(item => item.NgayGhiNhan);
+
+            return orderedList.ToList();
         }
 
         private void LoadInitialData()
         {
             try
             {
-                var doanhThuList = doanhThuBUS.GetAllDoanhThu();
-                if (doanhThuList == null || !doanhThuList.Any())
+                currentDoanhThuList = doanhThuBUS.GetAllDoanhThu();
+                if (currentDoanhThuList == null || !currentDoanhThuList.Any())
                 {
                     MessageBox.Show("Không có dữ liệu hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                UpdateDataGridView(doanhThuList);
-                UpdateChartWithPercentages(doanhThuList);
+                UpdateDataGridView(currentDoanhThuList);
+                UpdateChartWithPercentages(currentDoanhThuList);
             }
             catch (Exception ex)
             {
@@ -142,9 +218,9 @@ namespace KFC
 
             try
             {
-                var doanhThuList = doanhThuBUS.TimKiemDoanhThu(tuNgay, denNgay);
-                UpdateDataGridView(doanhThuList);
-                UpdateChartWithPercentages(doanhThuList);
+                currentDoanhThuList = doanhThuBUS.TimKiemDoanhThu(tuNgay, denNgay);
+                UpdateDataGridView(currentDoanhThuList);
+                UpdateChartWithPercentages(currentDoanhThuList);
             }
             catch (Exception ex)
             {
@@ -174,9 +250,9 @@ namespace KFC
                         break;
                 }
 
-                var doanhThuList = doanhThuBUS.LocDoanhThuTheo(thang: thang, nam: nam);
-                UpdateDataGridView(doanhThuList);
-                UpdateChartWithPercentages(doanhThuList);
+                currentDoanhThuList = doanhThuBUS.LocDoanhThuTheo(thang: thang, nam: nam);
+                UpdateDataGridView(currentDoanhThuList);
+                UpdateChartWithPercentages(currentDoanhThuList);
             }
             catch (Exception ex)
             {
@@ -244,7 +320,92 @@ namespace KFC
             // Cập nhật tổng doanh thu và chi tiêu
             tbTongDoanhThu.Text = tongDoanhThu.ToString("N0") + " VND";
             tbTongChiTieu.Text = tongChiTieu.ToString("N0") + " VND";
+
         }
 
+        private void cbbLoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtLoc.Clear();
+
+            switch (cbbLoc.SelectedItem.ToString())
+            {
+                case "Tháng":
+                    SetPlaceholder(txtLoc, "MM/yyyy");
+                    break;
+                case "Năm":
+                    SetPlaceholder(txtLoc, "yyyy");
+                    break;
+            }
+        }
+
+        private void SetPlaceholder(TextBox textBox, string placeholder)
+        {
+            textBox.Tag = placeholder; // Store the placeholder in the Tag property
+            textBox.ForeColor = Color.Gray; // Set the text color to gray for placeholder
+            textBox.Text = placeholder;
+
+            // Add events for handling placeholder behavior
+            textBox.Enter += (s, e) =>
+            {
+                if (textBox.Text == (string)textBox.Tag)
+                {
+                    textBox.Text = string.Empty;
+                    textBox.ForeColor = Color.Black; // Restore the text color
+                }
+            };
+
+            textBox.Leave += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = (string)textBox.Tag;
+                    textBox.ForeColor = Color.Gray; // Set the text color to gray
+                }
+            };
+        }
+
+
+        private void txtLoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string currentText = txtLoc.Text;
+
+            switch (cbbLoc.SelectedItem.ToString())
+            {
+                case "Tháng":
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '/')
+                    {
+                        e.Handled = true;
+                    }
+                    // Kiểm tra định dạng MM/yyyy
+                    if (e.KeyChar != (char)Keys.Back && currentText.Length >= 7)
+                    {
+                        e.Handled = true;
+                    }
+                    break;
+
+                case "Năm":
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                    // Giới hạn năm 4 số
+                    if (e.KeyChar != (char)Keys.Back && currentText.Length >= 4)
+                    {
+                        e.Handled = true;
+                    }
+                    break;
+            }
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (currentDoanhThuList != null)
+            {
+                currentDoanhThuList.Clear();
+                currentDoanhThuList = null;
+            }
+        }
     }
+
 }
